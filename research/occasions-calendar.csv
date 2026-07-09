@@ -1,0 +1,36 @@
+occasion,category,occasion_date,weekday,start_selling_by,last_order_by,days_until_start_selling,days_until_occasion,status,notes
+Parents' Day,family,2026-07-26,Sun,2026-05-26,2026-07-12,-45,16,BEHIND,4th Sun of July
+Friendship Day (US),friends,2026-08-02,Sun,2026-06-02,2026-07-19,-38,23,BEHIND,1st Sun of Aug; Sisters' Day same date
+National Dog Day,pets,2026-08-26,Wed,2026-06-26,2026-08-12,-14,47,BEHIND,fixed
+Labor Day,seasonal,2026-09-07,Mon,2026-07-07,2026-08-24,-3,59,BEHIND,1st Mon of Sep
+Grandparents Day,family,2026-09-13,Sun,2026-07-13,2026-08-30,3,65,ACT NOW,1st Sun after Labor Day
+National Pet Memorial Day,pets/memorial,2026-09-13,Sun,2026-07-13,2026-08-30,3,65,ACT NOW,2nd Sun of Sep
+Boss's Day,work,2026-10-16,Fri,2026-08-16,2026-10-02,37,98,PREP SOON,fixed
+Sweetest Day,partner,2026-10-17,Sat,2026-08-17,2026-10-03,38,99,PREP SOON,3rd Sat of Oct (esp. Midwest/NE US)
+Halloween,seasonal,2026-10-31,Sat,2026-08-31,2026-10-17,52,113,PREP SOON,fixed
+Day of the Dead,memorial,2026-11-01,Sun,2026-09-01,2026-10-18,53,114,PREP SOON,Nov 1-2
+Veterans Day,military,2026-11-11,Wed,2026-09-11,2026-10-28,63,124,PREP SOON,fixed
+Thanksgiving,seasonal,2026-11-26,Thu,2026-09-26,2026-11-12,78,139,future,4th Thu of Nov
+Black Friday / Cyber Monday,retail,2026-11-27,Fri,2026-09-27,2026-11-13,79,140,future,day after Thanksgiving
+Hanukkah (begins),seasonal,2026-12-04,Fri,2026-10-04,2026-11-20,86,147,future,"starts sunset Dec 4, 2026"
+Christmas,seasonal,2026-12-25,Fri,2026-10-25,2026-12-11,107,168,future,peak POD season; buying opens early Oct
+Kwanzaa,seasonal,2026-12-26,Sat,2026-10-26,2026-12-12,108,169,future,Dec 26 - Jan 1
+New Year's Day,seasonal,2027-01-01,Fri,2026-11-01,2026-12-18,114,175,future,fixed
+Galentine's Day,friends,2027-02-13,Sat,2026-12-13,2027-01-30,156,218,future,fixed
+Valentine's Day,partner,2027-02-14,Sun,2026-12-14,2027-01-31,157,219,future,fixed
+Presidents' Day,retail,2027-02-15,Mon,2026-12-15,2027-02-01,158,220,future,3rd Mon of Feb
+International Women's Day,identity,2027-03-08,Mon,2027-01-08,2027-02-22,182,241,future,fixed
+St. Patrick's Day,seasonal,2027-03-17,Wed,2027-01-17,2027-03-03,191,250,future,fixed
+Easter,seasonal,2027-03-28,Sun,2027-01-28,2027-03-14,202,261,future,computed for 2027
+National Pet Day,pets,2027-04-11,Sun,2027-02-11,2027-03-28,216,275,future,fixed
+Administrative Professionals Day,work,2027-04-21,Wed,2027-02-21,2027-04-07,226,285,future,Wed of last full wk Apr (definition varies - verify)
+Teacher Appreciation Day,work,2027-05-04,Tue,2027-03-04,2027-04-20,237,298,future,Tue of 1st full wk May; week May 3-7
+Cinco de Mayo,seasonal,2027-05-05,Wed,2027-03-05,2027-04-21,238,299,future,fixed
+Nurses Day,work,2027-05-06,Thu,2027-03-06,2027-04-22,239,300,future,Nurses Week May 6-12
+Mother's Day,family,2027-05-09,Sun,2027-03-09,2027-04-25,242,303,future,2nd Sun of May - top POD occasion
+Armed Forces Day,military,2027-05-15,Sat,2027-03-15,2027-05-01,248,309,future,3rd Sat of May
+Graduation season,milestone,2027-05-15,Sat,2027-03-15,2027-05-01,248,309,future,season mid-May to mid-Jun
+Memorial Day,military,2027-05-31,Mon,2027-03-31,2027-05-17,264,325,future,last Mon of May
+Juneteenth,identity,2027-06-19,Sat,2027-04-19,2027-06-05,283,344,future,fixed
+Father's Day,family,2027-06-20,Sun,2027-04-20,2027-06-06,284,345,future,3rd Sun of Jun - top POD occasion
+Independence Day,seasonal,2027-07-04,Sun,2027-05-04,2027-06-20,298,359,future,fixed
