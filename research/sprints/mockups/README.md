@@ -9,13 +9,18 @@ watercolor aesthetic per [`../../05-idea-crafting.md`](../../05-idea-crafting.md
 > names). A designer builds the production file *after* a concept passes a test. Use these to
 > post/validate, not to print.
 
-## The head-to-head (post both, same day — see [`../briefs/GPD02-grandmas-garden.md`](../briefs/GPD02-grandmas-garden.md))
+## The metaphor head-to-head (same product = sweatshirt, so the only variable is the design — see [`../briefs/GPD02-grandmas-garden.md`](../briefs/GPD02-grandmas-garden.md))
 
-### 2A — "Grandma's Garden" (birth flower per grandchild)
-![Grandma's Garden sweatshirt](GPD02-2A-grandmas-garden-sweatshirt.png)
+Post all three the same day; hold product constant so the winner is the *metaphor*, not the item.
+
+### 2A — "Grandma's Garden" (birth flower per grandchild) — *v2, larger names*
+![Grandma's Garden sweatshirt v2](GPD02-2A-grandmas-garden-sweatshirt-v2.png)
 
 ### 2B — "Grandma's Little Birds" (a bird per grandchild) — *the differentiated lane*
 ![Grandma's Little Birds sweatshirt](GPD02-2B-grandmas-little-birds-sweatshirt.png)
+
+### 2C — "Grandma's Night Sky" (a star per grandchild) — *third metaphor, works year-round*
+![Grandma's Night Sky sweatshirt](GPD02-2C-grandmas-night-sky-sweatshirt.png)
 
 ## Other lead concepts
 
@@ -31,8 +36,9 @@ watercolor aesthetic per [`../../05-idea-crafting.md`](../../05-idea-crafting.md
 ## Concept → file map
 | Concept | Idea ID | File |
 |---------|---------|------|
-| Grandma's Garden sweatshirt | GPD02-2A | `GPD02-2A-grandmas-garden-sweatshirt.png` |
+| Grandma's Garden sweatshirt (v2, legible names) | GPD02-2A | `GPD02-2A-grandmas-garden-sweatshirt-v2.png` (v1: `…-sweatshirt.png`) |
 | Grandma's Little Birds sweatshirt | GPD02-2B | `GPD02-2B-grandmas-little-birds-sweatshirt.png` |
+| Grandma's Night Sky sweatshirt | GPD02-2C | `GPD02-2C-grandmas-night-sky-sweatshirt.png` |
 | Grandma's Crew mug | GPD01-1A | `GPD01-1A-grandmas-crew-mug.png` |
 | Grandma's Recipe tea towel | GPD15-3A | `GPD15-3A-grandmas-recipe-teatowel.png` |
 | First Dad, Now Grandpa mug | GPD07-4A | `GPD07-4A-first-dad-now-grandpa-mug.png` |

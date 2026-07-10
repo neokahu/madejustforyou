@@ -76,6 +76,31 @@ only test that proves people pay.
 
 ---
 
+## Design vs product — two variables, tested in order (don't blob them)
+
+One design ports to many products (mug / shirt / blanket / rug / tote) — that's the leverage from
+the Roster mechanic ([`05-idea-crafting.md`](05-idea-crafting.md)). But **don't test the design on
+many products at once** — you'd confound *"is the concept good?"* with *"is the product good?"*,
+split your traffic thin, and multiply SKUs before anything is proven. Run two single-variable
+experiments in sequence:
+
+| Phase | Question | Hold constant | Vary | Product used |
+|-------|----------|---------------|------|--------------|
+| **1 · Validate the design** | Does the concept/hook/metaphor resonate? | **product** (one cheap substrate) | the **design** | mug or shirt — low cost, low ship |
+| **2 · Find the money product** | Which product sells the winning design best? | **design** (the Phase-1 winner) | the **product** | 2–3 tiers: mug $ · shirt $$ · blanket/rug $$$ |
+| **3 · Scale + collection** | — | both winners | budget | roll winner; *then* offer the design across all products for AOV |
+
+- **Phase 1 first, always.** Test `Garden vs Birds vs Night Sky` all on the **same sweatshirt** —
+  so the winner is the *metaphor*, not the item. (Testing Garden-on-mug vs Birds-on-blanket tells
+  you nothing clean.)
+- **Product still matters — but later.** Same design earns very differently on a $19 mug vs a $60
+  blanket; and some mechanics fit some products (recipe→tea towel, birth-flower→apparel/wall art,
+  photo→mug/canvas). Phase 2 finds that fit *with the design already proven*.
+- **Collection = merchandising, not a test.** Once a design wins, listing it across products (and
+  bundling) lifts AOV and lets the buyer self-select — do it after validation, not to validate.
+
+> Rule of thumb: **prove the design on one cheap product; expand the winner across products.**
+
 ## Decision discipline
 
 1. **Thresholds are set before launch** and written on the experiment card. No post-hoc moving.
