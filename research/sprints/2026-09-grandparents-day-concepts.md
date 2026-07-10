@@ -112,3 +112,5 @@ Live links to the actual top sellers / viral posts each concept was crafted from
 4. **4B "Grandpa's Crew — hobby"** (mug)
 
 Formal brief for the lead is in [`briefs/GPD02-grandmas-garden.md`](briefs/GPD02-grandmas-garden.md); the rest follow the same template.
+
+**Concept mockups for all 5 leads:** [`mockups/`](mockups/README.md) — Tier-1 test visuals (Nano Banana Pro), including the Garden-vs-Birds pair.
