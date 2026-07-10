@@ -71,5 +71,26 @@ and mostly *not* grandpa at all:
 
 **Tactics observed:** multi-page ad-account structure (macorner), short-code product URLs, always-on sitewide-discount campaigns, worldwide shipping in every wanderprints ad.
 
-> Full ad set is 108 active ads (54 read this pass) + 24 top posts — re-read datasets above for
-> creative URLs, images, and landing pages.
+## Addendum — full 108-ad read (both pages complete)
+
+Reading all 108 active ads **confirms and sharpens** the above:
+
+**White space holds ✓** — across all 108 ads, neither competitor actively runs a **grandma
+names-mug** or **recipe keepsake**. The closest grandma items they *do* fund are a
+[grandma-granddaughter pillow](https://wanderprints.com/at928dil189), a
+[grandma phone case w/ kids' names](https://wanderprints.com/kk1519cin4382), and a
+[birth-flower doormat for Nana & Papa](https://wanderprints.com/bd1431nah4311) — adjacent, not our top two slots. **GPD01 + GPD15 remain their blind spot.**
+
+**Their funded grandparent lane is grandpa apparel/caps** (harder to fight): macorner
+["Grandpa: Man Myth Bad Influence" w/ grandkids' names](https://macorner.co/products/grandpa-the-man-the-myth-the-bad-influence-custom-with-grandkids-names-personalized-shirt-grp051202huhn) (since 2025-12) + ["Legend…Grandpa" Hawaiian shirt](https://macorner.co/products/legend-husband-dad-and-grandpa-custom-family-name-personalized-hawaiian-shirt-mauftaf9o); wanderprints [patriotic grandpa cap](https://wanderprints.com/dh022hal3408). → reinforces GPD08/09/10/14, cautions against a me-too grandpa tee.
+
+**New nuances worth banking:**
+- **They already run the differentiation move #4 for us:** macorner runs [birth-flower + name for *coworkers/teacher*](https://macorner.co/products/custom-birth-flower-name-for-her-coworkers-friends-teacher-personalized-desk-mat-mawepm5ap) — proof the "proven mechanic → new recipient" port is real revenue.
+- **Roster mechanic on car accessories** — "drive safe daddy/papa/**grandma** w/ kids' faces" visor clips (both brands). Another product to port the names/faces roster onto.
+- **Memorial is deeply funded & long-running** (wanderprints memorial leather journal live since **2025-01**; macorner cardinal memorial stake, angel ornaments) → GPD16 is well-validated.
+- **Operating pattern:** always-on **collection-level dynamic ads** (valentines/birthday/retirement collections) + evergreen sitewide-discount ads, on top of product ads. They advertise on the ~2-month lead too (currently pushing Father's Day, graduation, and America-250/patriotic).
+
+> All 108 active ads + 24 top posts are in the datasets above — re-read for creative URLs, images,
+> and landing pages. Page entities seen: Macorner / Macorner Home Decor / Macorner Decor / Macorner
+> Pet Lover Gifts / MA Commerce Inc; Wander Prints Home Decor / Wander Family Decor Prints — all
+> first-party, no reseller contamination in the sample.
