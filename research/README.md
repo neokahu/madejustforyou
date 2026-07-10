@@ -51,6 +51,7 @@ Each stage has its own reference doc / template (below).
 |------|-----------|
 | [`01-dimension-libraries.md`](01-dimension-libraries.md) | Stage 0 — the controlled vocabularies (products, recipients, occasions, personalization, angles) |
 | [`02-signal-sources.md`](02-signal-sources.md) | Stage 1 — every demand signal source, what it reveals, and the exact tool/query to pull it |
+| [`05-idea-crafting.md`](05-idea-crafting.md) | Stage 2 (deep) — the **idea engine**: how to *craft* a design from a validated slot (mechanic + angle + hook + aesthetic) instead of copying |
 | [`03-scoring-rubric.md`](03-scoring-rubric.md) | Stage 3 — the weighted scoring model + worked example |
 | [`04-validation-testing.md`](04-validation-testing.md) | Stage 5 — test tiers, metrics, benchmark thresholds, decision rules |
 | [`templates/idea-database.csv`](templates/idea-database.csv) | The backlog / knowledge base schema (Stages 2 & 6) |
