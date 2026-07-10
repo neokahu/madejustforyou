@@ -74,8 +74,9 @@ Scored rows live in [`../templates/idea-database.csv`](../templates/idea-databas
 - Winners must be production-ready before the **Aug 30** last-order date.
 
 ## Competitor intel (from this run)
-- **macorner** — winning grandpa novelty apparel on TikTok ([4.2M-play Hawaiian shirt](https://www.tiktok.com/@macorner_official/video/7581810611122654471)); also active on Pinterest ("Grandma's Garden" shirt, "Legend Husband Dad Grandpa").
-- **wanderprints** — posts high *volume* on TikTok but low engagement (~110–270 plays); catalog-style videos ([example](https://www.tiktok.com/@wanderprints/video/7660461309749775634)). Beatable on organic with better emotional framing.
+Superseded by a **targeted** pull → see [`competitor-intel-2026-07.md`](competitor-intel-2026-07.md). Corrected headline:
+- Both competitors' engines are **sentimental relationship gifts** (couple / mom / siblings / **memorial** / "to the moon" on suncatchers & ornaments), not grandparent lines. macorner's 4.2M grandpa Hawaiian shirt was a keyhole view — their real top posts are 20–54M and mostly non-grandpa.
+- **Active paid ads (running now):** both fund **memorial** heavily (validates GPD16); macorner actively pushes **grandpa novelty apparel + caps**. Neither actively advertises a **grandma names-mug or recipe keepsake** → those are **white space** for us.
 
 > **Want to see what's selling?** Reference links to the actual top Etsy listings and viral posts,
 > grouped by concept, are in [`2026-09-grandparents-day-concepts.md` → Reference examples](2026-09-grandparents-day-concepts.md#-reference-examples--see-what-the-researched-designs-look-like).

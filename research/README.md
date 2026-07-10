@@ -105,3 +105,8 @@ data tools next, in priority order:
 5. **Write down every result.** A losing test is data you paid for — the knowledge base is
    the real asset and the thing competitors can't copy.
 6. **Respect lead times.** A great Mother's Day idea found in April is worth little.
+7. **Every idea and concept carries its sources — no claim without a link.** Each backlog row
+   records the source URL(s) it came from; every crafted concept links the live listings / posts /
+   ads it was built from (the standard **"Reference examples"** section in sprint concept docs).
+   This keeps findings auditable, lets anyone eyeball the real designs, and — as the macorner
+   "4.2M Hawaiian shirt" correction showed — stops a keyhole sample from becoming a false claim.

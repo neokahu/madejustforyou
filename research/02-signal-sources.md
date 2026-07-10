@@ -78,9 +78,14 @@ scale (ad libraries = they've likely validated it). This is the *disciplined* ve
 - Scrape each competitor's **New Arrivals** and **Best Sellers** collections; diff vs last week
   to get only *what changed*.
 - Check **Meta Ad Library** and **TikTok Creative Center / Ad Library** for their active ads —
-  creatives running for weeks are validated winners; reverse-engineer the angle, not the art.
+  creatives running for weeks/months are validated winners; reverse-engineer the angle, not the art.
+  **Active ads = present-tense spend**, so this is the one competitor signal with no recency gap.
+- **Target profiles directly** for their real top content — a keyword search only shows what ranks
+  for *your* query (keyhole bias); scrape the profile to see their actual best.
 - Competitors: macorner.co, wanderprints.com, wrappiness.co, almagems.com.
-**Automate:** Firecrawl `firecrawl_scrape`/`_crawl` or Tavily on collection URLs; store diffs.
+**Automate (proven 2026-07):** Meta ads → Apify `curious_coder/facebook-ads-library-scraper`
+(Ad Library keyword/page URLs); top organic → `clockworks/tiktok-scraper` with `profiles:[…]`,
+sort=popular; storefront diffs → Firecrawl/Tavily on collection URLs. Store every creative/listing URL.
 
 ## 6. Voice-of-customer — reviews
 
@@ -104,5 +109,10 @@ pipe zero-result queries into the backlog automatically.
 ## From signal → backlog
 
 For every notable signal, create an Idea Database row capturing: the dimensions it implies,
-the **hook**, the **source**, and any raw numbers (search volume, review velocity, saves).
+the **hook**, the **source — including the direct URL(s)** (a *required* field, not optional —
+see principle #7), and any raw numbers (search volume, review velocity, saves).
 Don't score yet — Stage 3 does that. The job here is volume and coverage: cast wide, cheaply.
+
+**Reference-linking is a standard step at every stage:** when a listing, pin, video, or ad
+informs an idea or concept, capture its URL then. Sprint concept docs must end with a
+**"Reference examples"** section grouped by concept so anyone can open the real designs.
