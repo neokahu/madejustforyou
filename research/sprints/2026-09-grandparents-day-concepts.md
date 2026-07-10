@@ -76,6 +76,35 @@ The **Roster mechanic** ("one-per-grandchild") powers Slots 1, 2, and 4 and **po
 
 → **Test the mechanic once (2A vs 2B), then scale the winning mechanic across recipients, occasions, and products.** That's the compounding the playbook is built for.
 
+## 🔗 Reference examples — see what the researched designs look like
+
+Live links to the actual top sellers / viral posts each concept was crafted from (pulled
+2026-07-10). Open these to eyeball the current execution — then craft *better/different*, don't copy.
+
+**Slot 1 — Grandma names mug**
+- [Promoted to Grandma coffee mug](https://www.etsy.com/listing/4488928378/personalized-grandma-coffee-mug-promoted) — 46 in cart
+- [Grandma mug, grandkids' names](https://www.etsy.com/listing/1871768694/grandma-mug-personalized-grandma-cup) · [Custom grandma mug, kids' names](https://www.etsy.com/listing/1905318081/personalized-grandma-gifts-custom)
+- [nickname vocab: "In a world full of grandmas be a Mimi"](https://www.etsy.com/listing/4493919376/comfort-colors-personalized-mimi-shirt)
+
+**Slot 2 — Birth-flower sweatshirt** *(the lane to differentiate from)*
+- [Grandma floral applique sweatshirt](https://www.etsy.com/listing/1901482573/custom-embroidered-grandma-sweatshirt) — 64 in cart
+- [Grandkids' names on sleeve](https://www.etsy.com/listing/1678839513/custom-grandma-sweatshirt-with-grandkids) · [Grandma's Garden "Love Grows Here"](https://www.etsy.com/listing/1520310048/grandmas-garden-sweatshirt-custom)
+- [Birth-flower pillow](https://www.etsy.com/listing/1892175786/grandmas-garden-birth-flower-pillow) · [Birth-flower tumbler](https://www.etsy.com/listing/1699539399/birth-month-flowers-mom-grandma-nana)
+- TikTok aesthetic ref (handmade framing): [kids' hand-painted gift — 920K plays](https://www.tiktok.com/@caitbrooks10/video/7501307189974338862)
+
+**Slot 3 — Grandma's Recipe keepsake**
+- [TikTok: grandma's recipe cards framed — 193K plays / 5.8K saves](https://www.tiktok.com/@olivialaustin/video/7577807875108588830) *(the validating post)*
+- [kitchen/heritage vocab: "Everything Tastes Better At Grandma's House"](https://www.etsy.com/listing/4332728849/personalized-charcuterie-board-for)
+
+**Slot 4 — Grandpa mug / crew**
+- [First Dad Now Grandpa mug](https://www.etsy.com/listing/1877254645/personalized-first-dad-now-grandpa-mug) — 178 in cart
+- [Grandpa's grilling plate, kids' names](https://www.etsy.com/listing/4490605970/grandpas-grilling-plate-fathers-day-gift) · [grilling cutting board](https://www.etsy.com/listing/4304358508/grilling-cutting-board-personalized) — 793 in cart
+- [possession vocab: Grandpa "belongs to" Hawaiian shirt](https://www.etsy.com/listing/4507653410/custom-grandpa-hawaiian-shirt-with-kids) · [macorner viral Hawaiian shirt — 4.2M plays](https://www.tiktok.com/@macorner_official/video/7581810611122654471)
+
+> Full source set from the 2026-07-10 run — Apify datasets (re-read anytime for fresh links):
+> Etsy `Tr77mPjhVXXMyjLep` (86 listings) · Pinterest `eAn1JJqoqnxQ93lE9` (180 pins) · TikTok
+> `obrCNbh1kei0EvuFn` (45 videos). Dataset links refresh on each new sprint pull.
+
 ## What to hand to design (lead concepts → Tier-1)
 1. **2A "Grandma's Garden"** vs **2B "Grandma's Little Birds"** (sweatshirt) — the key head-to-head
 2. **1A "Grandma's Crew"** (mug)

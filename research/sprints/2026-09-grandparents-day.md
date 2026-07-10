@@ -74,8 +74,11 @@ Scored rows live in [`../templates/idea-database.csv`](../templates/idea-databas
 - Winners must be production-ready before the **Aug 30** last-order date.
 
 ## Competitor intel (from this run)
-- **macorner** — winning grandpa novelty apparel on TikTok (4.2M-play Hawaiian shirt); also active on Pinterest ("Grandma's Garden" shirt, "Legend Husband Dad Grandpa").
-- **wanderprints** — posts high *volume* on TikTok but low engagement (~110–270 plays); catalog-style videos. Beatable on organic with better emotional framing.
+- **macorner** — winning grandpa novelty apparel on TikTok ([4.2M-play Hawaiian shirt](https://www.tiktok.com/@macorner_official/video/7581810611122654471)); also active on Pinterest ("Grandma's Garden" shirt, "Legend Husband Dad Grandpa").
+- **wanderprints** — posts high *volume* on TikTok but low engagement (~110–270 plays); catalog-style videos ([example](https://www.tiktok.com/@wanderprints/video/7660461309749775634)). Beatable on organic with better emotional framing.
+
+> **Want to see what's selling?** Reference links to the actual top Etsy listings and viral posts,
+> grouped by concept, are in [`2026-09-grandparents-day-concepts.md` → Reference examples](2026-09-grandparents-day-concepts.md#-reference-examples--see-what-the-researched-designs-look-like).
 
 ## Suggested next pulls
 - **Etsy review-growth re-pull in ~1 week** to separate *accelerating* items from already-peaked.
