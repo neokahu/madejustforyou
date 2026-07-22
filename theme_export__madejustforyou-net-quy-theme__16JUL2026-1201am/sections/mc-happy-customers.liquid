@@ -1,0 +1,155 @@
+{{ 'mc-foundation.css' | asset_url | stylesheet_tag }}
+{{ 'mc-happy-customers.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'mc-happy-customers.js' | asset_url }}" defer></script>
+
+{%- liquid
+  assign button_font_weight = section.settings.button_font_weight
+  if button_font_weight == blank or button_font_weight == 'theme'
+    assign button_font_weight = 'var(--mc-font-accent-weight)'
+  endif
+-%}
+
+<mc-happy-customers
+  class="mc-happy-customers"
+  data-reveal-step="{{ section.settings.reveal_step }}"
+  style="--mc-customers-bg: {{ section.settings.background }}; --mc-customers-text: {{ section.settings.text_color }}; --mc-customers-card-bg: {{ section.settings.card_background }}; --mc-customers-columns: {{ section.settings.columns }}; --mc-customers-mobile-width: {{ section.settings.mobile_card_width }}vw; --mc-customers-button-bg: {{ section.settings.button_background }}; --mc-customers-button-text: {{ section.settings.button_text_color }}; --mc-customers-button-border: {{ section.settings.button_border_color }}; --mc-customers-button-hover-bg: {{ section.settings.button_hover_background }}; --mc-customers-button-hover-text: {{ section.settings.button_hover_text_color }}; --mc-customers-button-radius: {{ section.settings.button_border_radius }}px; --mc-customers-button-weight: {{ button_font_weight }};"
+>
+  <section class="mc-happy-customers__section">
+    <div class="mc-container">
+      <header class="mc-happy-customers__header">
+        {% if section.settings.eyebrow != blank %}<p>{{ section.settings.eyebrow }}</p>{% endif %}
+        <h2>{{ section.settings.heading }}</h2>
+        {% if section.settings.text != blank %}<div>{{ section.settings.text }}</div>{% endif %}
+      </header>
+
+      <div class="mc-happy-customers__grid{% if section.settings.mobile_carousel %} mc-happy-customers__grid--mobile-carousel{% endif %}" data-mc-customer-grid>
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            <div
+              class="mc-happy-customers__item{% if block.type == '@app' %} mc-happy-customers__item--app{% endif %}"
+              data-mc-customer-item
+              data-block-id="{{ block.id }}"
+              {% if forloop.index > section.settings.initial_items %}hidden data-mc-extra-customer{% endif %}
+              {{ block.shopify_attributes }}
+            >
+              {% if block.type == '@app' %}
+                {% render block %}
+              {% else %}
+                <article class="mc-happy-customers__card">
+                  <div class="mc-happy-customers__media">
+                    {% if block.settings.image != blank %}
+                      {{ block.settings.image | image_url: width: 700 | image_tag: class: 'mc-happy-customers__image', widths: '240, 360, 480, 700', sizes: '(min-width: 990px) 25vw, 74vw', loading: 'lazy', alt: block.settings.customer_name }}
+                    {% else %}
+                      {% assign placeholder_index = forloop.index | modulo: 2 | plus: 1 %}
+                      {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'mc-happy-customers__placeholder' }}
+                    {% endif %}
+                  </div>
+                  {% if block.settings.quote != blank or block.settings.customer_name != blank or block.settings.product_label != blank %}
+                    <div class="mc-happy-customers__content">
+                      {% if block.settings.quote != blank %}
+                        <div class="mc-happy-customers__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
+                          <span aria-hidden="true">★★★★★</span>
+                        </div>
+                        <blockquote>{{ block.settings.quote }}</blockquote>
+                      {% endif %}
+                      {% if block.settings.customer_name != blank %}<p class="mc-happy-customers__name">{{ block.settings.customer_name }}</p>{% endif %}
+                      {% if block.settings.product_label != blank %}
+                        <a href="{% if section.settings.use_placeholder_links %}#{% else %}{{ block.settings.product_link | default: '#' }}{% endif %}">{{ block.settings.product_label }}</a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                </article>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% for index in (1..6) %}
+            <div class="mc-happy-customers__item" data-mc-customer-item {% if forloop.index > section.settings.initial_items %}hidden data-mc-extra-customer{% endif %}>
+              <article class="mc-happy-customers__card">
+                <div class="mc-happy-customers__media">
+                  {% assign placeholder_index = index | modulo: 2 | plus: 1 %}
+                  {{ 'lifestyle-' | append: placeholder_index | placeholder_svg_tag: 'mc-happy-customers__placeholder' }}
+                </div>
+              </article>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      {% assign available_items = section.blocks.size %}
+      {% if available_items == 0 %}{% assign available_items = 6 %}{% endif %}
+      {% if available_items > section.settings.initial_items and section.settings.show_more_label != blank %}
+        <div class="mc-happy-customers__more">
+          <button class="mc-happy-customers__more-button mc-focus-ring" type="button" data-mc-customer-more>{{ section.settings.show_more_label }}</button>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+</mc-happy-customers>
+
+{% schema %}
+{
+  "name": "MC happy customers",
+  "max_blocks": 16,
+  "settings": [
+    { "type": "checkbox", "id": "use_placeholder_links", "label": "Use # for all links", "default": true },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Made with love" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Happy Customers" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Real moments shared by our community.</p>" },
+    { "type": "range", "id": "columns", "label": "Desktop columns", "min": 3, "max": 5, "step": 1, "default": 4 },
+    { "type": "range", "id": "initial_items", "label": "Items shown initially", "min": 3, "max": 8, "step": 1, "default": 4 },
+    { "type": "range", "id": "reveal_step", "label": "Items revealed per click", "min": 1, "max": 4, "step": 1, "default": 4 },
+    { "type": "checkbox", "id": "mobile_carousel", "label": "Swipe cards on mobile", "default": true },
+    { "type": "range", "id": "mobile_card_width", "label": "Mobile card width", "min": 60, "max": 85, "step": 5, "unit": "%", "default": 75 },
+    { "type": "text", "id": "show_more_label", "label": "Show more label", "default": "Show More" },
+    { "type": "header", "content": "Button style" },
+    { "type": "color", "id": "button_background", "label": "Button background", "default": "#0D2A4A" },
+    { "type": "color", "id": "button_text_color", "label": "Button text color", "default": "#FFFFFF" },
+    { "type": "color", "id": "button_border_color", "label": "Button border color", "default": "#0D2A4A" },
+    { "type": "color", "id": "button_hover_background", "label": "Button hover background", "default": "#FFFFFF" },
+    { "type": "color", "id": "button_hover_text_color", "label": "Button hover text color", "default": "#0D2A4A" },
+    { "type": "select", "id": "button_font_weight", "label": "Button font weight", "default": "theme", "options": [
+      { "value": "theme", "label": "Use theme font weight" },
+      { "value": "400", "label": "400 — Regular" },
+      { "value": "500", "label": "500 — Medium" },
+      { "value": "600", "label": "600 — Semi bold" },
+      { "value": "700", "label": "700 — Bold" },
+      { "value": "800", "label": "800 — Extra bold" },
+      { "value": "900", "label": "900 — Black" }
+    ] },
+    { "type": "range", "id": "button_border_radius", "label": "Button border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 6 },
+    { "type": "header", "content": "Section colors" },
+    { "type": "color", "id": "background", "label": "Background", "default": "#FFF8F5" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#151515" },
+    { "type": "color", "id": "card_background", "label": "Card background", "default": "#FFFFFF" }
+  ],
+  "blocks": [
+    {
+      "type": "customer",
+      "name": "Customer story",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Customer photo" },
+        { "type": "textarea", "id": "quote", "label": "Review quote" },
+        { "type": "range", "id": "rating", "label": "Rating", "min": 1, "max": 5, "step": 1, "default": 5 },
+        { "type": "text", "id": "customer_name", "label": "Customer name" },
+        { "type": "text", "id": "product_label", "label": "Product label" },
+        { "type": "url", "id": "product_link", "label": "Product link" }
+      ]
+    },
+    { "type": "@app" }
+  ],
+  "presets": [
+    {
+      "name": "MC happy customers",
+      "blocks": [
+        { "type": "customer" },
+        { "type": "customer" },
+        { "type": "customer" },
+        { "type": "customer" },
+        { "type": "customer" },
+        { "type": "customer" }
+      ]
+    }
+  ]
+}
+{% endschema %}

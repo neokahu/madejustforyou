@@ -1,0 +1,78 @@
+{%- liquid
+  assign panel_collection = tab_collection
+  assign max_products = products_per_tab | default: 8
+  assign initial_count = initial_products | default: 4
+  assign rendered_count = max_products
+
+  if panel_collection != blank and panel_collection.products_count > 0
+    assign rendered_count = panel_collection.products_count
+    if rendered_count > max_products
+      assign rendered_count = max_products
+    endif
+  endif
+
+  assign panel_has_more = false
+  if rendered_count > initial_count
+    assign panel_has_more = true
+  endif
+-%}
+
+<div
+  class="mc-tabbed-products__grid{% if mobile_carousel %} mc-tabbed-products__grid--mobile-carousel{% endif %}"
+  style="--mc-tabbed-columns: {{ columns }};"
+  data-mc-tabbed-grid
+>
+  {% if panel_collection != blank and panel_collection.products_count > 0 %}
+    {% for product in panel_collection.products limit: max_products %}
+      <div
+        class="mc-tabbed-products__item"
+        {% if forloop.index > initial_count %}hidden data-mc-extra-product{% endif %}
+      >
+        {% render 'mc-product-card',
+          product: product,
+          placeholder_links: placeholder_links,
+          show_rating: show_rating,
+          show_badge: show_badge,
+          show_wishlist: show_wishlist,
+          image_ratio: image_ratio,
+          placeholder_index: forloop.index,
+          bestseller_label: bestseller_label,
+          sale_label: sale_label,
+          sold_out_label: sold_out_label,
+          wishlist_label: wishlist_label,
+          rating_label: rating_label
+        %}
+      </div>
+    {% endfor %}
+  {% else %}
+    {% for index in (1..12) limit: max_products %}
+      {% assign placeholder_image_index = index | modulo: 6 | plus: 1 %}
+      <div
+        class="mc-tabbed-products__item"
+        {% if forloop.index > initial_count %}hidden data-mc-extra-product{% endif %}
+      >
+        {% render 'mc-product-card',
+          placeholder_links: true,
+          show_rating: show_rating,
+          show_badge: show_badge,
+          show_wishlist: show_wishlist,
+          image_ratio: image_ratio,
+          placeholder_index: placeholder_image_index,
+          bestseller_label: bestseller_label,
+          sale_label: sale_label,
+          sold_out_label: sold_out_label,
+          wishlist_label: wishlist_label,
+          rating_label: rating_label
+        %}
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% if panel_has_more and show_more_label != blank %}
+  <div class="mc-tabbed-products__more">
+    <button class="mc-tabbed-products__more-button mc-focus-ring" type="button" data-mc-show-more>
+      {{ show_more_label }}
+    </button>
+  </div>
+{% endif %}

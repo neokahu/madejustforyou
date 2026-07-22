@@ -1,0 +1,32 @@
+.mc-campaign-hero .mc-campaign-hero__button {
+  min-width: var(--mc-hero-button-min-width, 210px);
+  min-height: var(--mc-hero-button-height, 58px);
+  padding-inline: var(--mc-hero-button-padding-x, 42px);
+  color: var(--mc-hero-button-text, #171218);
+  background: var(--mc-hero-button-bg, #fff);
+  border: 1px solid var(--mc-hero-button-border, #fff);
+  border-radius: var(--mc-hero-button-radius, 8px);
+  font-family: var(--mc-font-button-primary-family);
+  font-style: var(--mc-font-accent-style);
+  font-size: 15px;
+  font-weight: var(--mc-hero-button-weight, var(--mc-font-accent-weight));
+  letter-spacing: 0.01em;
+  transition:
+    color var(--mc-transition),
+    background-color var(--mc-transition),
+    border-color var(--mc-transition),
+    transform var(--mc-transition),
+    box-shadow var(--mc-transition);
+}
+
+.mc-campaign-hero .mc-campaign-hero__button:hover {
+  color: var(--mc-hero-button-hover-text, #fff);
+  background: var(--mc-hero-button-hover-bg, transparent);
+  border-color: var(--mc-hero-button-hover-border, #fff);
+}
+
+@media (max-width: 749px) {
+  .mc-campaign-hero .mc-campaign-hero__button {
+    max-width: 100%;
+  }
+}

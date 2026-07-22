@@ -1,0 +1,85 @@
+{{ 'mc-foundation.css' | asset_url | stylesheet_tag }}
+{{ 'mc-campaign-split-banner.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign button_url = section.settings.button_link
+  if button_url == blank
+    assign button_url = '#'
+  endif
+
+  assign button_font_weight = section.settings.button_font_weight
+  if button_font_weight == blank or button_font_weight == 'theme'
+    assign button_font_weight = 'var(--mc-font-accent-weight)'
+  endif
+
+  assign has_mobile_image = false
+  if section.settings.mobile_image != blank
+    assign has_mobile_image = true
+  endif
+-%}
+
+<section
+  class="mc-split-banner mc-split-banner--image-{{ section.settings.image_position }}{% if has_mobile_image %} mc-split-banner--has-mobile-image{% endif %}"
+  style="--mc-split-bg: {{ section.settings.background }}; --mc-split-heading: {{ section.settings.heading_color }}; --mc-split-text: {{ section.settings.text_color }}; --mc-split-button: {{ section.settings.button_color }}; --mc-split-button-text: {{ section.settings.button_text_color }}; --mc-split-button-weight: {{ button_font_weight }}; --mc-split-height: {{ section.settings.desktop_height }}px;"
+>
+  <div class="mc-container">
+    <div class="mc-split-banner__layout">
+      <div class="mc-split-banner__media">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 1800 | image_tag: class: 'mc-split-banner__image mc-split-banner__image--desktop', widths: '540, 720, 960, 1200, 1500, 1800', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy', alt: section.settings.heading }}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'mc-split-banner__placeholder mc-split-banner__image--desktop' }}
+        {% endif %}
+
+        {% if section.settings.mobile_image != blank %}
+          {{ section.settings.mobile_image | image_url: width: 900 | image_tag: class: 'mc-split-banner__image mc-split-banner__image--mobile', widths: '360, 540, 720, 900', sizes: '100vw', loading: 'lazy', alt: section.settings.heading }}
+        {% endif %}
+      </div>
+
+      <div class="mc-split-banner__content">
+        <div class="mc-split-banner__content-inner">
+          {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+          {% if section.settings.text != blank %}<div class="mc-split-banner__text">{{ section.settings.text }}</div>{% endif %}
+          {% if section.settings.button_label != blank %}
+            <a class="mc-split-banner__button mc-focus-ring" href="{{ button_url }}">{{ section.settings.button_label }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MC split campaign banner",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Desktop image" },
+    { "type": "image_picker", "id": "mobile_image", "label": "Mobile image" },
+    { "type": "select", "id": "image_position", "label": "Image position on desktop", "default": "left", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "right", "label": "Right" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Summer Gifts" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Bright picks for sunny days.</p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP ALL" },
+    { "type": "url", "id": "button_link", "label": "Button link" },
+    { "type": "header", "content": "Button style" },
+    { "type": "select", "id": "button_font_weight", "label": "Button font weight", "default": "theme", "options": [
+      { "value": "theme", "label": "Use theme font weight" },
+      { "value": "400", "label": "400 — Regular" },
+      { "value": "500", "label": "500 — Medium" },
+      { "value": "600", "label": "600 — Semi bold" },
+      { "value": "700", "label": "700 — Bold" },
+      { "value": "800", "label": "800 — Extra bold" },
+      { "value": "900", "label": "900 — Black" }
+    ] },
+    { "type": "range", "id": "desktop_height", "label": "Desktop height", "min": 300, "max": 620, "step": 20, "unit": "px", "default": 380 },
+    { "type": "color", "id": "background", "label": "Content background", "default": "#FFF8F3" },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#C90909" },
+    { "type": "color", "id": "text_color", "label": "Text color", "default": "#0D2A4A" },
+    { "type": "color", "id": "button_color", "label": "Button color", "default": "#FF8A16" },
+    { "type": "color", "id": "button_text_color", "label": "Button text color", "default": "#FFFFFF" }
+  ],
+  "presets": [{ "name": "MC split campaign banner" }]
+}
+{% endschema %}

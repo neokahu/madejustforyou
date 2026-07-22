@@ -1,0 +1,39 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "mc_footer": {
+      "type": "mc-footer",
+      "settings": {
+        "use_placeholder_links": true,
+        "show_newsletter": true,
+        "newsletter_eyebrow": "Stay inspired",
+        "newsletter_heading": "Personalized gift ideas, delivered.",
+        "newsletter_text": "Sign up for exclusive offers, seasonal inspiration, and early access to new personalized products.",
+        "newsletter_placeholder": "Enter your email",
+        "newsletter_button": "Subscribe",
+        "logo_width": 180,
+        "about_text": "<p>Meaningful personalized gifts for every person, story, and occasion.</p>",
+        "support_heading": "Need help?",
+        "support_text": "<p>Support available Monday–Friday.<br>Email: support@example.com</p>",
+        "menu_1_heading": "Shop by Product",
+        "menu_2_heading": "Shop by Occasion",
+        "menu_3_heading": "Shop by Recipient",
+        "menu_4_heading": "Help & Support",
+        "facebook_url": "#",
+        "instagram_url": "#",
+        "tiktok_url": "#",
+        "pinterest_url": "#",
+        "show_localization": true,
+        "show_payment_icons": true,
+        "background": "#171218",
+        "text_color": "#F7F3F6",
+        "muted_color": "#C9C1C7",
+        "accent_color": "#FF5C9D"
+      }
+    }
+  },
+  "order": [
+    "mc_footer"
+  ]
+}

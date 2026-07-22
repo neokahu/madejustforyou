@@ -1,0 +1,47 @@
+.mc-image-link-card__builtin-frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.mc-image-link-card__builtin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 200%;
+  max-width: none;
+  display: block;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+  transform-origin: top left;
+}
+
+.mc-image-link-card__builtin--bestie { transform: translate3d(0, 0, 0); }
+.mc-image-link-card__builtin--partner { transform: translate3d(-25%, 0, 0); }
+.mc-image-link-card__builtin--pet-lover { transform: translate3d(-50%, 0, 0); }
+.mc-image-link-card__builtin--kid-baby { transform: translate3d(-75%, 0, 0); }
+.mc-image-link-card__builtin--mom { transform: translate3d(0, -50%, 0); }
+.mc-image-link-card__builtin--dad { transform: translate3d(-25%, -50%, 0); }
+.mc-image-link-card__builtin--grandparents { transform: translate3d(-50%, -50%, 0); }
+.mc-image-link-card__builtin--yourself { transform: translate3d(-75%, -50%, 0); }
+
+@media (max-width: 749px) {
+  .mc-image-link-grid--mobile-carousel {
+    overflow-y: hidden;
+    margin-right: calc(var(--mc-gutter) * -1);
+    scroll-padding-inline-start: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+    touch-action: pan-x;
+  }
+
+  .mc-image-link-grid--mobile-carousel > * {
+    flex: 0 0 min(var(--mc-mobile-card-width, 70vw), 300px);
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+}
