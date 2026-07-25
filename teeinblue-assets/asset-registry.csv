@@ -1,0 +1,48 @@
+code,teeinblue_asset_type,parent_category,category,catcode,index,item,file,notes,source_product
+CLP-CRK-01,Clipart Categories,Characters,Crayon Kids,CRK,01,kid body,kid-01,transparent; auto-thumbnail,NV984 pajama
+CLP-CRK-02,Clipart Categories,Characters,Crayon Kids,CRK,02,kid body,kid-02,transparent,NV984 pajama
+CLP-CRK-03,Clipart Categories,Characters,Crayon Kids,CRK,03,kid body,kid-03,transparent,NV984 pajama
+CLP-CRK-04,Clipart Categories,Characters,Crayon Kids,CRK,04,kid body,kid-04,transparent,NV984 pajama
+CLP-CRK-05,Clipart Categories,Characters,Crayon Kids,CRK,05,kid body,kid-05,transparent,NV984 pajama
+CLP-CRK-06,Clipart Categories,Characters,Crayon Kids,CRK,06,kid body,kid-06,transparent,NV984 pajama
+CLP-CRK-07,Clipart Categories,Characters,Crayon Kids,CRK,07,kid body,kid-07,transparent,NV984 pajama
+CLP-CRK-08,Clipart Categories,Characters,Crayon Kids,CRK,08,kid body,kid-08,transparent,NV984 pajama
+CLP-CRK-09,Clipart Categories,Characters,Crayon Kids,CRK,09,kid body,kid-09,transparent,NV984 pajama
+CLP-CRK-10,Clipart Categories,Characters,Crayon Kids,CRK,10,kid body,kid-10,transparent,NV984 pajama
+CLP-CRK-11,Clipart Categories,Characters,Crayon Kids,CRK,11,kid body,kid-11,transparent,NV984 pajama
+CLP-CRP-01,Clipart Categories,Characters,Crayon Pets,CRP,01,pet,pet-01,transparent,NV984 pajama
+CLP-CRP-02,Clipart Categories,Characters,Crayon Pets,CRP,02,pet,pet-02,transparent,NV984 pajama
+CLP-CRP-03,Clipart Categories,Characters,Crayon Pets,CRP,03,pet,pet-03,transparent,NV984 pajama
+CLP-CRP-04,Clipart Categories,Characters,Crayon Pets,CRP,04,pet,pet-04,transparent,NV984 pajama
+AO-TTL-01,Additional Options,Titles,Dad & Grandpa,TTL,01,Dad,dad,item thumbnail (white sq); render via conditional Text layer,NV984 pajama
+AO-TTL-02,Additional Options,Titles,Dad & Grandpa,TTL,02,Abuelo,abuelo,item thumbnail,NV984 pajama
+AO-TTL-03,Additional Options,Titles,Dad & Grandpa,TTL,03,Daddy,daddy,item thumbnail,NV984 pajama
+AO-TTL-04,Additional Options,Titles,Dad & Grandpa,TTL,04,Father,father,item thumbnail,NV984 pajama
+AO-TTL-05,Additional Options,Titles,Dad & Grandpa,TTL,05,Grandpa,grandpa,item thumbnail,NV984 pajama
+AO-TTL-06,Additional Options,Titles,Dad & Grandpa,TTL,06,Papa,papa,item thumbnail,NV984 pajama
+AO-TTL-07,Additional Options,Titles,Dad & Grandpa,TTL,07,Pop Pop,pop-pop,item thumbnail,NV984 pajama
+AO-TTL-08,Additional Options,Titles,Dad & Grandpa,TTL,08,Pops,pops,item thumbnail,NV984 pajama
+AO-TTL-09,Additional Options,Titles,Dad & Grandpa,TTL,09,Custom Yours,custom-yours,item thumbnail; actual custom = live Text input (limit 15),NV984 pajama
+AO-KP-01,Additional Options,Number of Kids/Pets,1-15,KP,01,1,01,item thumbnail; drives conditional (no render),NV984 pajama
+AO-KP-02,Additional Options,Number of Kids/Pets,1-15,KP,02,2,02,item thumbnail; drives conditional,NV984 pajama
+AO-KP-03,Additional Options,Number of Kids/Pets,1-15,KP,03,3,03,item thumbnail; drives conditional,NV984 pajama
+AO-KP-04,Additional Options,Number of Kids/Pets,1-15,KP,04,4,04,item thumbnail; drives conditional,NV984 pajama
+AO-KP-05,Additional Options,Number of Kids/Pets,1-15,KP,05,5,05,item thumbnail; drives conditional,NV984 pajama
+AO-KP-06,Additional Options,Number of Kids/Pets,1-15,KP,06,6,06,item thumbnail; drives conditional,NV984 pajama
+AO-KP-07,Additional Options,Number of Kids/Pets,1-15,KP,07,7,07,item thumbnail; drives conditional,NV984 pajama
+AO-KP-08,Additional Options,Number of Kids/Pets,1-15,KP,08,8,08,item thumbnail; drives conditional,NV984 pajama
+AO-KP-09,Additional Options,Number of Kids/Pets,1-15,KP,09,9,09,item thumbnail; drives conditional,NV984 pajama
+AO-KP-10,Additional Options,Number of Kids/Pets,1-15,KP,10,10,10,item thumbnail; drives conditional,NV984 pajama
+AO-KP-11,Additional Options,Number of Kids/Pets,1-15,KP,11,11,11,item thumbnail; drives conditional,NV984 pajama
+AO-KP-12,Additional Options,Number of Kids/Pets,1-15,KP,12,12,12,item thumbnail; drives conditional,NV984 pajama
+AO-KP-13,Additional Options,Number of Kids/Pets,1-15,KP,13,13,13,item thumbnail; drives conditional,NV984 pajama
+AO-KP-14,Additional Options,Number of Kids/Pets,1-15,KP,14,14,14,item thumbnail; drives conditional,NV984 pajama
+AO-KP-15,Additional Options,Number of Kids/Pets,1-15,KP,15,15,15,item thumbnail; drives conditional,NV984 pajama
+CLP-BGP-01,Clipart Categories,Backgrounds,Pajama Basic 6,BGP,01,White,,bg image or base layer; NOT Color Category,NV984 pajama
+CLP-BGP-02,Clipart Categories,Backgrounds,Pajama Basic 6,BGP,02,Black,,bg image or base layer,NV984 pajama
+CLP-BGP-03,Clipart Categories,Backgrounds,Pajama Basic 6,BGP,03,Blue,,bg image or base layer,NV984 pajama
+CLP-BGP-04,Clipart Categories,Backgrounds,Pajama Basic 6,BGP,04,Grey,,bg image or base layer,NV984 pajama
+CLP-BGP-05,Clipart Categories,Backgrounds,Pajama Basic 6,BGP,05,Green,,bg image or base layer,NV984 pajama
+CLP-BGP-06,Clipart Categories,Backgrounds,Pajama Basic 6,BGP,06,Red,,bg image or base layer,NV984 pajama
+FNT-DISP-01,Font Categories,Display,Impact,DISP,01,title font,,Impact - BEST/EVER + rendered title words,NV984 pajama
+PHO-FACE-01,(Layer: Upload photo),Faces,Portrait Cutout,FACE,01,face upload,,not an Asset library; remove-bg + face cutout + min-size,NV984 pajama

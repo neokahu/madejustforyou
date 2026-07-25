@@ -2,3 +2,13 @@ node_modules/
 .DS_Store
 .env
 *.log
+
+# Binary assets live in Google Drive (My Drive/MadeJustForYou-assets/), not git
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.svg
+*.psd
+*.gif
+*.ico
