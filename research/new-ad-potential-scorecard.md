@@ -1,109 +1,90 @@
-# New-Ad Potential Scorecard (competitor-tracking strategy)
+# Ad/Product Replication Methodology & Scorecard (personalized-gift POD)
 
-> ⚠️ **STATUS: thresholds are PROVISIONAL — NOT yet data-validated.** The *logic* (two tracks,
-> template-level saturation, the criteria themselves) is sound. But every **number** below
-> (day-ranges like 8–21d / 6mo+, score cutoffs ≥18 / ≥15, "≥3 brands", the 70/30 split) is a
-> placeholder from general domain judgment — **not** derived from data. Team rule: everything
-> based off data. Do not rely on the cutoffs until calibrated.
->
-> **Calibration plan — do this before trusting the bands:**
-> 1. **Back-test on our 10 tracked brands** (native WinningHunter, next session): pull each
->    brand's ad history; for their *known* scaled winners, record the ACTUAL days-running and
->    1w/1m active-ads growth *at the point they took off*, plus template-copycat counts.
->    Derive the real "rising" (Track B) and "durable" (Track A) thresholds from THEIR data.
-> 2. **Deep-research (cited):** does days-running / active-ad-growth actually predict
->    profitability? real POD saturation heuristics? typical evergreen:trending revenue mix?
-> 3. **Replace every number** below with the data-derived value + its source, then re-score a
->    sample of known winners vs duds to confirm the bands separate them. Log the evidence.
+**Evidence-based system to decide whether a competitor's ad/product concept is worth replicating**, across two tracks — **Evergreen** (durable, proven demand) and **Trending** (perishable, caught early). Inputs come from an ad-intelligence tool (WinningHunter); the *interpretation* of those inputs is grounded in the research cited below.
 
-**Strategy:** don't build blind. Ride proven operators' ads across **two revenue engines —
-run both**:
-
-- **Track A · EVERGREEN** = products/ads they've run **for a long time**. Still running after
-  months = still profitable = durable demand. Lower risk, steady baseline revenue. Saturation
-  is *fine* here — the market is big enough for many operators. This is the **foundation catalog**.
-- **Track B · TRENDING** = **newly-launched** ads caught **early** (rising, few copycats).
-  Higher upside, perishable, act fast. This is **opportunistic growth** on top of the base.
-
-Both beat building with no niche experience (the operators already validated demand, audience,
-price band, fulfillment). Aim for a **portfolio**: evergreen SKUs fund stability, trending tests
-capture spikes. (Rough split to start: ~70% evergreen catalog / ~30% trending bets.)
-
-**Watchlist (proven operators, exclude from "new opportunity" but mine for angles):**
-Macorner · Pawsionate · Wander Prints · Suzitee · OrnamentallyYou · Alma Gems ·
-Personalized Family Gifts · Faith & Love · A Gift Customized · OrnamentallyYou.
-(WinningHunter `list_tracked_brands`.)
+> **Confidence tags:** claims are cited. Thresholds are either cited or marked **[CALIBRATE]** with the method to derive them from your own data. High = multiple independent sources agree; Med = agree directionally, numbers vary; Low = weak/contested. **Overall framework confidence: Medium — the *logic* is well-triangulated; precise numeric cut-scores are NOT validated and must be calibrated against your own outcomes.**
 
 ---
 
-> **Unit of competition = the concept / angle / personalization template, not the exact SKU.**
-> In custom gifts, exact overlap is rare — everyone re-skins winning templates with small tweaks.
-> So (a) measure saturation at the **template level**, and (b) our edge is never a "unique
-> product" — it's a **better personalization mechanic + design + offer** on a proven concept.
-> Copying done right = take the concept, upgrade the execution.
+## PART 1 — METHODOLOGY (principles)
 
-## Track A · EVERGREEN scorecard (long-runners) — score 0–3
+**P1 · Unit of competition = the TEMPLATE (concept/angle/personalization mechanic), not the SKU.** In custom gifts, exact overlap is rare; competitors re-skin winning *concepts*. Judge saturation, demand, differentiation at the template level. Same-template competition is scored *differently per track* (validated demand for Evergreen; late/saturated for Trending); the escape hatch in both is a **better mechanic + design + offer**. Conf: Med. ([flashship](https://flashship.net/en/news/market-and-trends/the-personalized-gift-trend-why-it-continues-to-grow-stronger))
 
-Pick a product/ad a tracked brand has run **a long time**. Here longevity + many operators = GOOD.
+**P2 · Ad run-time is a real but imperfect profit proxy — the most-cited one.** Rational advertisers only keep paying while profitable, so long-lived ads reveal positive ROI ([adintime](https://adintime.com/en/blog/facebook-ads-library-the-ultimate-guide-to-winning-campaigns-n299), [Marpipe](https://www.marpipe.com/blog/mastering-the-facebook-ad-library)). Caveats (Conf Med–High): big brands subsidize losers for LTV; "active" ≠ "spending"; a *single creative* fatigues in ~1–8 weeks ([adlibrary](https://adlibrary.com/posts/facebook-ad-creative-refresh-frequency), [inBeat](https://inbeat.agency/blog/facebook-creative-fatigue)), so 90d+ longevity is really a **concept/template kept alive across refreshes** → template-level longevity > single-creative age. **Rule: runtime is necessary-not-sufficient; require a scaling co-signal before acting.**
 
-| # | Criterion | 0 | 3 (strong) | WH signal |
-|---|---|---|---|---|
-| A1 | **Longevity** (continuous run) | <2mo | **6mo+ still active** | `scan_ad` days-running / brand history |
-| A2 | **Persistence** (stable, reappears seasonally) | spiked then died | consistently on / returns yearly | `analyze_tracked_brand` history |
-| A3 | **Durable demand** (evergreen relationship/occasion) | date-locked fad | Mom/Dad/Grandparent/pet/memorial/wedding — always-on | judgment |
-| A4 | **Market depth** (multiple operators sustain it) | only 1 brand | **several proven brands run it** (proves size) | watchlist / `find_similar_shops` |
-| A5 | **Offer we can match or beat** | can't match | same personalization, better price/quality | product page |
-| A6 | **We-can-make-it** (Teeinblue/POD fit) | exotic sourcing | trivially POD-able | judgment |
-| A7 | **Margin viability** | thin | strong perceived value, $30–60 AOV | judgment |
+**P3 · A scaling/winning ad shows via SPEND-PROXY GROWTH, not one metric.** Operators scale by raising budget on and duplicating winners ([Digital Darts](https://www.digitaldarts.com.au/scale-facebook-ads-shopify), [admetrics](https://www.admetrics.io/en/post/how-to-scale-facebook-ads)). We can't see budgets → **rising active-ads count + creative-variant count over 1w/1m are the spend-growth proxies.** Conf: Med.
 
-**Max 21. Bands:** ≥15 → **BUILD as evergreen SKU** · 10–14 → maybe (differentiate) · <10 → skip.
-*Note: A1 long run and A4 many operators are POSITIVES here — the opposite of Track B.*
+**P4 · Saturation is real but MARGIN + DIFFERENTIATION dominate raw competitor count.** Across a 228-product dataset, competition level had ~zero correlation with margin (r=0.08) — high margins *attract* competitors; judge via a **margin × competition** lens + a **wow-factor shield**, not headcount ([productlair](https://productlair.com/blog/dropshipping-product-saturation)); differentiation beats saturation ([Circana](https://www.circana.com/post/how-do-you-make-your-brand-and-products-stand-out-in-saturated-markets)). Conf: Med–High. **Corollary:** for personalized gifts the mechanic *is* the differentiation, so a crowded-but-proven template is enter-able with a superior mechanic/design/offer.
 
----
+**P5 · Evergreen vs Trending is diagnosed from the SHAPE of the Google Trends curve.** Use **5-yr view for seasonality/durability + 90-day for momentum** ([mydesigns](https://mydesigns.io/blog/google-trends-for-print-on-demand/)); seasonality is inferred from repeated YoY peaks ([Exploding Topics](https://explodingtopics.com/blog/google-trends-ecommerce)); rising/breakout = act before saturation ([Shopify](https://www.shopify.com/blog/how-to-use-google-trends-to-start-and-run-a-retail-business)). Conf: High.
 
-## Track B · TRENDING scorecard — score each NEW ad 0–3 per criterion
+| Trends shape | Track | Meaning |
+|---|---|---|
+| Flat/growing baseline + repeating annual peaks | **Evergreen** | durable; low risk |
+| Steep recent rise, no multi-yr history (breakout) | **Trending** | perishable upside; enter early |
+| Rise plateaued/rolling over | late | likely saturated; skip unless differentiated |
+| Single spike, no repeat | fad | opportunistic only |
 
-| # | Criterion | 0 (skip) | 1 | 2 | 3 (strong) | WH signal source |
-|---|---|---|---|---|---|---|
-| 1 | **Traction velocity** — is the brand *scaling* it? | flat | slight ↑ | clear 1w ↑ | steep 1w & 1m active-ads ↑ | `analyze_tracked_brand` / `find_winning_products` active-ads growth 1w·1m |
-| 2 | **Survival window** — passed their kill-gate but still early | <3d (unproven) or >60d (late) | 30–60d | 4–7d | **8–21d & still active** | `scan_ad` days-running |
-| 3 | **Creative conviction** — multiple variants pushed | 1 static | 2 | 3–4 | 5+ variants/iterations | brand ad count for that product |
-| 4 | **Low template-saturation** — few brands run the same **concept/angle**, not exact SKU (measure at template level — exact copies are rare in custom gifts) | concept on many stores | some | few | concept still fresh | scan ads for the same angle/template across watchlist |
-| 5 | **Demand tailwind** — rising need/occasion | declining | flat evergreen | seasonal peak coming | on an **exploding topic** ↑ | `search_exploding_topics` |
-| 6 | **Angle strength** — hook + emotional gift angle | weak/unclear | ok | good | scroll-stopping, emotional, giftable | `scan_ad` hook/angle + `get_ad_transcript` |
-| 7 | **We-can-make-it** — POD/personalization fit | needs exotic sourcing | hard | doable | trivially POD-able (Teeinblue) | judgment |
-| 8 | **Margin viability** — giftable AOV vs COGS/ship | thin | ok | good | strong perceived value, $30–60 AOV | judgment + product page |
+**P6 · Recurring "winning product" criteria = the base gate.** Cross-source checklist ([Dropified](https://www.dropified.com/blog/how-to-find-winning-dropshipping-products-in-2026-the-ultimate-niche-product-research-guide/), r/dropship): emotion/desire (**replaces "problem-solving" for gifts** — buying "a story, a memory" ([flashship](https://flashship.net/en/news/market-and-trends/the-personalized-gift-trend-why-it-continues-to-grow-stronger))), wow-factor, **margin ≥3× markup** [CALIBRATE to your costs], broad/passionate audience, giftable + visually demoable. Niche levers (Conf High): **occasion timing — start 4–6 wks pre-holiday** ([merchOne](https://merchone.com/blog/mothers-day-marketing/)); AOV bands — mug/apparel impulse tier vs jewelry 2–3× ([mydesigns](https://mydesigns.io/blog/mothers-day-print-on-demand/)) [CALIBRATE].
 
-**Max 24. Decision bands:**
-- **≥18 → TEST** — reverse-engineer (scan_ad + transcript), design brief, build & test.
-- **12–17 → WATCH** — add to watch list, re-score weekly; test if velocity keeps rising.
-- **<12 → SKIP.**
-
-**Hard vetoes (auto-skip regardless of score):** can't fulfill/personalize it; trademark/IP on
-the product; already saturated across ≥3 of our tracked brands (we're late); ad already
-running >60d (peak likely passed).
+**Decision logic:** (1) pass the GATE → (2) classify track via Trends shape → (3) score on the track's card → (4) saturation judged at template level via margin×differentiation → (5) runtime needs a scaling co-signal → (6) differentiation plan mandatory to enter a crowded template.
 
 ---
 
-## Tracking workflow — two cadences
-- **Track A · Evergreen (monthly/quarterly):** scan each tracked brand's **long-running** ads
-  (`analyze_tracked_brand` full history; `scan_ad` days-running) → score with Track A → BUILD
-  the ≥15s into the foundation catalog. Slow-moving, high-certainty.
-- **Track B · Trending (weekly):** the fast loop below.
-1. **Pull new ads** from each tracked brand → `analyze_tracked_brand` (view = newest) or
-   `daily_radar` for fresh signals. Filter to ads **launched in the last ~21 days**.
-2. **Pre-filter:** drop anything already run by ≥3 watchlist brands (saturated), or >60d old.
-3. **Score** each survivor with the scorecard above.
-4. **Shortlist TEST** (≥18) → `scan_ad` + `get_ad_transcript` to capture hook/angle/offer →
-   write a design brief (`research/sprints/briefs/`).
-5. **Log** everything (product · brand · launch date · 1w growth · score · decision) into
-   `research/sprints/competitor-intel-<month>.md` so trends compound over time.
+## PART 2 — SCORECARDS  (each criterion 0–3 × weight)
 
-## Why this beats the alternatives
-- **vs build-new:** the operators already proved demand + audience; we skip the riskiest unknowns.
-- **vs copy-saturated:** we catch the ad on the way *up* (low days-running, few copycats), not after every store runs it.
-- **Compounding:** weekly scoring builds a proprietary dataset of what "rising" looks like in
-  *our* niche — the scorecard gets sharper each cycle.
+### GATE — must pass before scoring
+| Check | Signal | Pass | Basis |
+|---|---|---|---|
+| Emotion/wow | hook/transcript | clear emotional/scroll-stopping angle | flashship, Dropified |
+| Margin ≥3× | your cost vs price | ≥3× markup **[CALIBRATE]** | Dropified |
+| Giftable + demoable | product/creative | personalization visually demonstrable | merchOne, mydesigns |
+| Buildable mechanic | Teeinblue | you can build ≥ parity | P1/P4 |
 
-> Run the WinningHunter pulls with native `mcp__winninghunter__*` tools after a session restart.
-> Ties to: `research/tools/winninghunter-*`, `research/sprints/competitor-intel-*`.
+### SCORECARD A — EVERGREEN  *(long runtime & many competitors = GOOD)*
+| # | Criterion | Signal | Score-3 | Wt | Basis |
+|---|---|---|---|---|---|
+| A1 | Ad longevity (proven ROI) | days-running of best ads | **60–90d+**=3 · 30–60=2 · <30=1 | 3 | adintime, Marpipe (Med–High) |
+| A2 | Template persistence across sellers | store-discovery count | multiple stores, months = 3 | 3 | productlair (Med) |
+| A3 | Evergreen Trends shape | 5-yr Trends | flat/growing + annual peaks = 3 | 3 | mydesigns (High) |
+| A4 | Sustained spend proxy | active-ads over 3m | stable/rising=3 · declining=1 | 2 | admetrics (Med) |
+| A5 | Occasion durability | angle → recurring occasions | multi year-round occasions = 3 | 2 | flashship (High) |
+| A6 | Differentiation headroom | your mechanic/design/offer vs incumbents | clearly superior = 3 | 3 | productlair, Circana (Med–High) |
+| A7 | Margin/AOV band | form vs your costs | high-AOV form or strong mug margin = 3 | 2 | mydesigns, Dropified (Med) |
+
+Red flags (downgrade): only ONE store runs it (A2=0); Trends rolling over (A3=0); no differentiation on a crowded template (A6=0).
+
+### SCORECARD B — TRENDING  *(long runtime & many competitors = BAD/late; inverts A)*
+| # | Criterion | Signal | Score-3 | Wt | Basis |
+|---|---|---|---|---|---|
+| B1 | Earliness/recency (are we early?) | days-running | **young** ads=3 · old=1 *(inverts A1)* | 3 | Marpipe, adlibrary (Med) |
+| B2 | Scaling momentum | active-ads/variant growth 1w & 1m | sharp rise = 3 | 3 | Digital Darts, admetrics (Med) |
+| B3 | Breakout Trends | 90d Trends + Exploding-Topics | steep 90d rise / breakout = 3 | 3 | Shopify, Exploding Topics (High) |
+| B4 | Not-yet-crowded | store-discovery count | **few** stores=3 · many=1 *(inverts A2)* | 2 | Shopify (Med) |
+| B5 | Creative validation | lead advertiser's variant count + hook | iterating variants (committing budget) = 3 | 2 | causalfunnel (Med) |
+| B6 | Occasion timing fit | days to occasion | 4–6 wks runway=3 · past window=0 | 2 | merchOne (High) |
+| B7 | Emotion/wow + differentiation | hook + your mechanic | strong hook you can match/beat = 3 | 2 | flashship, productlair (Med–High) |
+
+Red flags (auto-skip): old ads + many competitors (late); Trends plateauing (B3=0); occasion window passed (B6=0).
+
+### Decision bands — **[CALIBRATE] (no source gives validated cut-scores)**
+Method: score your **last ~20–30 launched concepts** retrospectively, tag each win/breakeven/loss from your own sales data, then set the "Replicate" cut at the score that best separated historical winners (start: winner-precision-maximizing cut; better: logistic regression to re-weight criteria). Until then, provisional:
+- **Replicate now:** top tertile **and** zero auto-flags.
+- **Test small / watchlist:** middle tertile, or high score with one soft flag.
+- **Skip:** bottom tertile or any auto-skip flag.
+
+**Highest-value calibrations:** (1) real margin/3× gate from supplier costs; (2) runtime thresholds A1/B1 — 60–90d is cited but Meta-wide; measure your niche's real longevity curve from concepts observed start-to-finish in WinningHunter.
+
+---
+
+## PART 3 — BIGGEST EVIDENCE GAPS (be honest)
+1. No independent quantification that "still running after N months = profitable" — it's a repeated *revealed-preference* inference (vendors have incentive to promote Ad-Library use). Direction: High; specific day-count: Low → **calibrate A1/B1 from your own data.**
+2. Active-ads count → spend is a **proxy, not a measurement** (WH shows counts, not budgets) → treat B2/A4 as suggestive.
+3. The r=0.08 saturation finding is one vendor's 228-product sample → trust direction (margin > count), not the coefficient.
+4. Thresholds un-validated for this bespoke rubric → **back-testing against your last 20–30 concepts is the #1 upgrade** (turns "evidence-informed" into "evidence-calibrated").
+5. Niche AOV/margin figures are illustrative POD-blog numbers → replace with real supplier costs + store AOV.
+
+## PART 4 — SOURCES (used)
+Longevity/fatigue: adintime, [Marpipe](https://www.marpipe.com/blog/mastering-the-facebook-ad-library), [adlibrary](https://adlibrary.com/posts/facebook-ad-creative-refresh-frequency), [inBeat](https://inbeat.agency/blog/facebook-creative-fatigue), Meta Business Help. Scaling: [Digital Darts](https://www.digitaldarts.com.au/scale-facebook-ads-shopify), [admetrics](https://www.admetrics.io/en/post/how-to-scale-facebook-ads), causalfunnel. Saturation: [productlair](https://productlair.com/blog/dropshipping-product-saturation) *(best single source — real 228-product data)*, [Circana](https://www.circana.com/post/how-do-you-make-your-brand-and-products-stand-out-in-saturated-markets). Trends: [Exploding Topics](https://explodingtopics.com/blog/google-trends), [Shopify](https://www.shopify.com/blog/how-to-use-google-trends-to-start-and-run-a-retail-business), Glimpse, [mydesigns](https://mydesigns.io/blog/google-trends-for-print-on-demand/) *(most on-point for POD)*. Winning-product criteria: [Dropified](https://www.dropified.com/blog/how-to-find-winning-dropshipping-products-in-2026-the-ultimate-niche-product-research-guide/). Niche: [flashship](https://flashship.net/en/news/market-and-trends/the-personalized-gift-trend-why-it-continues-to-grow-stronger), [merchOne](https://merchone.com/blog/mothers-day-marketing/), [mydesigns Mother's Day](https://mydesigns.io/blog/mothers-day-print-on-demand/).
+
+> WinningHunter = the tool that supplies the signals (days-running, active-ads growth, variants, store discovery, exploding topics, hooks). Run pulls with native `mcp__winninghunter__*` after a session restart. Ties to `research/tools/winninghunter-*`.
