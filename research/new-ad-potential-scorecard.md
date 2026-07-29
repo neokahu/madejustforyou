@@ -2,7 +2,49 @@
 
 **Evidence-based system to decide whether a competitor's ad/product concept is worth replicating**, across two tracks — **Evergreen** (durable, proven demand) and **Trending** (perishable, caught early). Inputs come from an ad-intelligence tool (WinningHunter); the *interpretation* of those inputs is grounded in the research cited below.
 
-> **Confidence tags:** claims are cited. Thresholds are either cited or marked **[CALIBRATE]** with the method to derive them from your own data. High = multiple independent sources agree; Med = agree directionally, numbers vary; Low = weak/contested. **Overall framework confidence: Medium — the *logic* is well-triangulated; precise numeric cut-scores are NOT validated and must be calibrated against your own outcomes.**
+> **Confidence tags:** claims are cited. Thresholds are either cited or marked **[CALIBRATE]** with the method to derive them from your own data. High = multiple independent sources agree; Med = agree directionally, numbers vary; Low = weak/contested. **Overall framework confidence: Medium→High — the *logic* is well-triangulated, and as of 2026-07-29 the observable-signal thresholds (A1/A4/A7/B1/B2) are CALIBRATED to real niche data (see PART 0). Still un-validated: the margin GATE and the Decision-band cut-scores, which need your own win/loss outcomes + supplier costs.**
+
+---
+
+## PART 0 — DATA CALIBRATION (signal thresholds)  ·  *added 2026-07-29*
+
+**What this is:** the observable-signal thresholds (A1, A4, A7, B1, B2) are now set from real niche data, not judgment. **Still pending your sales data:** the margin/3× GATE and the Decision-band cut-scores (PART 2) — those need your win/loss outcomes and supplier costs; unchanged here.
+
+**Method:** count-based percentile calibration. Queried WinningHunter `search_facebook_ads` for the exact active-ad population in your competitive set and read the `total` count at each threshold. No sampling — these are full-population counts.
+
+**Sample frame (held constant across all buckets):** niche = `GS` (Gift — the tag WinningHunter puts on tracked brand *Personalized Family Gifts*) · country = US · store tech = Shopify · language = English. **Base population = 414,776 active ads** (as of 2026-07-29).
+
+**① Longevity survival curve** (drives A1 / B1):
+| Days running | Ads reaching it | Share of base | Percentile |
+|---|---|---|---|
+| any (base) | 414,776 | 100% | — |
+| ≥30d | 111,138 | 26.7% | top 27% |
+| ≥60d | 63,788 | 15.3% | top 15% |
+| ≥90d | 40,276 | 9.7% | **top 10%** |
+| ≥180d | 17,319 | 4.1% | top 4% |
+| ≥365d | 4,511 | 1.0% | top 1% |
+
+→ **73% of gift ads die before 30 days.** 90 days = top-decile survivor → the strongest revealed-ROI cut. A1 score-3 set at ≥90d; B1 (trending, inverts) rewards <30d.
+
+**② Price / AOV distribution** (drives A7), USD:
+| Price | Ads ≥ it | Share | Read |
+|---|---|---|---|
+| ≥$25 | 273,924 | 66% | ~34% priced under $25 |
+| ≥$40 | 186,631 | 45% | median ≈ **$38** |
+| ≥$60 | 55,129 | 13% | premium tier = top 13% |
+
+→ A7 score-3 at ≥$60 (premium AOV), 2 at $35–60 (around/above median), 0 at <$25 (thin-margin impulse tier). **Note:** our own brand's ads run **$18.99–$27.99 → at/below niche median**, competing in the low-AOV tier.
+
+**③ Active-ads growth, 1-month** (spend-scaling proxy; drives A4 / B2):
+| Growth ≥ | Ads | Share | Percentile |
+|---|---|---|---|
+| +25%/mo | 81,078 | 19.5% | top 20% |
+| +50%/mo | 53,418 | 12.8% | top 13% |
+| +100%/mo | 28,261 | 6.8% | top 7% |
+
+→ "sharp scaling" = +50–100%/mo (top 13→7%). B2 score-3 at ≥+100%; A4 (evergreen, just needs *sustained*) score-3 at ≥+25%.
+
+**Caveats:** (1) `GS` is WinningHunter's broad Gift tag — includes generic gifts, not only *personalized*; treat as the addressable competitive set, slightly wider than exact-template. (2) Counts are a point-in-time snapshot (2026-07-29); survival curve is cross-sectional (age of currently-live ads), a good proxy for true longevity but not a cohort-tracked one. (3) Growth % is a proxy for spend, not a spend measurement (PART 3 gap #2 stands).
 
 ---
 
@@ -44,21 +86,21 @@
 ### SCORECARD A — EVERGREEN  *(long runtime & many competitors = GOOD)*
 | # | Criterion | Signal | Score-3 | Wt | Basis |
 |---|---|---|---|---|---|
-| A1 | Ad longevity (proven ROI) | days-running of best ads | **60–90d+**=3 · 30–60=2 · <30=1 | 3 | adintime, Marpipe (Med–High) |
+| A1 | Ad longevity (proven ROI) | days-running of best ads | **≥90d=3** · 60–89=2 · 30–59=1 · <30=0 | 3 | **CALIBRATED (PART 0)** · adintime, Marpipe |
 | A2 | Template persistence across sellers | store-discovery count | multiple stores, months = 3 | 3 | productlair (Med) |
 | A3 | Evergreen Trends shape | 5-yr Trends | flat/growing + annual peaks = 3 | 3 | mydesigns (High) |
-| A4 | Sustained spend proxy | active-ads over 3m | stable/rising=3 · declining=1 | 2 | admetrics (Med) |
+| A4 | Sustained spend proxy | active-ads growth 1m | **≥+25%/mo=3** · 0–25%=2 · declining=1 | 2 | **CALIBRATED (PART 0)** · admetrics |
 | A5 | Occasion durability | angle → recurring occasions | multi year-round occasions = 3 | 2 | flashship (High) |
 | A6 | Differentiation headroom | your mechanic/design/offer vs incumbents | clearly superior = 3 | 3 | productlair, Circana (Med–High) |
-| A7 | Margin/AOV band | form vs your costs | high-AOV form or strong mug margin = 3 | 2 | mydesigns, Dropified (Med) |
+| A7 | Margin/AOV band | price vs niche median (~$38) | **≥$60=3** · $35–60=2 · $25–35=1 · <$25=0 | 2 | **CALIBRATED (PART 0)** · mydesigns, Dropified |
 
 Red flags (downgrade): only ONE store runs it (A2=0); Trends rolling over (A3=0); no differentiation on a crowded template (A6=0).
 
 ### SCORECARD B — TRENDING  *(long runtime & many competitors = BAD/late; inverts A)*
 | # | Criterion | Signal | Score-3 | Wt | Basis |
 |---|---|---|---|---|---|
-| B1 | Earliness/recency (are we early?) | days-running | **young** ads=3 · old=1 *(inverts A1)* | 3 | Marpipe, adlibrary (Med) |
-| B2 | Scaling momentum | active-ads/variant growth 1w & 1m | sharp rise = 3 | 3 | Digital Darts, admetrics (Med) |
+| B1 | Earliness/recency (are we early?) | days-running | **<30d=3** · 30–59=2 · 60–89=1 · ≥90=0 *(inverts A1)* | 3 | **CALIBRATED (PART 0)** · Marpipe, adlibrary |
+| B2 | Scaling momentum | active-ads growth 1m | **≥+100%/mo=3** · 50–100%=2 · 25–50%=1 · <25%=0 | 3 | **CALIBRATED (PART 0)** · Digital Darts, admetrics |
 | B3 | Breakout Trends | 90d Trends + Exploding-Topics | steep 90d rise / breakout = 3 | 3 | Shopify, Exploding Topics (High) |
 | B4 | Not-yet-crowded | store-discovery count | **few** stores=3 · many=1 *(inverts A2)* | 2 | Shopify (Med) |
 | B5 | Creative validation | lead advertiser's variant count + hook | iterating variants (committing budget) = 3 | 2 | causalfunnel (Med) |
