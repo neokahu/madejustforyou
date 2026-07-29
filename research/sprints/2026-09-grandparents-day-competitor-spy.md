@@ -12,7 +12,7 @@
 
 | Advertiser | Domain | Concept | Days | Active | Growth 1m | Price | Read |
 |---|---|---|---|---|---|---|---|
-| **Personal Chic** | personalchic.com | **"Grandkids spoiled here" 3D custom doormat** (Grandpa/Grandma) + grandma snowman ornament | **4** | **533** | **+347%** | $15.95 | 🔴 **Direct threat.** Launching + scaling grandparent creative this week. Watch/replicate first. |
+| **Personal Chic** | personalchic.com | **"Grandkids spoiled here" 3D custom doormat** (Grandpa/Grandma) + grandma snowman ornament | **4** | **533** | **+347%** | $15.95 | 🟡 **Watch, don't over-read.** The 533/+347% is **brand-wide** (all their products, mostly memorial/gardening core). The grandparent doormat itself = **1 active creative** = a *test*, not scaled. Signal to watch: does that doormat's creative count climb from 1→many? |
 | Italian Charms | myitaliancharms.com | **Custom Grandma/Grandpa charm** — *explicitly "Grandparents Day" + 20% off* | 249 | 126 | +52% | $12.99 | Only competitor merchandising the occasion by name; low AOV impulse |
 | DoyoGift | doyobest.com | "Grandma & Grandpa's Boo Crew" custom Halloween sign | 1 | 110 | +58% | — | Fresh; Halloween-pivot of the grandparent-house sign |
 | Gifaura | gifaura.com | "Perfect gift from Grandma to her favorite grandson" | 1–5 | 75 | +25–28% | $25.99 | Reverse angle (grandparent→grandkid); mid AOV |

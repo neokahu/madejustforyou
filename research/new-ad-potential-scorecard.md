@@ -35,14 +35,21 @@
 
 → A7 score-3 at ≥$60 (premium AOV), 2 at $35–60 (around/above median), 0 at <$25 (thin-margin impulse tier). **Note:** our own brand's ads run **$18.99–$27.99 → at/below niche median**, competing in the low-AOV tier.
 
-**③ Active-ads growth, 1-month** (spend-scaling proxy; drives A4 / B2):
-| Growth ≥ | Ads | Share | Percentile |
-|---|---|---|---|
-| +25%/mo | 81,078 | 19.5% | top 20% |
-| +50%/mo | 53,418 | 12.8% | top 13% |
-| +100%/mo | 28,261 | 6.8% | top 7% |
+**③ PER-PRODUCT active-creative count** (spend-scaling proxy; drives A4 / B2) — *corrected 2026-07-30.*
 
-→ "sharp scaling" = +50–100%/mo (top 13→7%). B2 score-3 at ≥+100%; A4 (evergreen, just needs *sustained*) score-3 at ≥+25%.
+> **FIX:** A4/B2 previously used `total_active_ads_on_page` / `..._growth_1m` — a **brand/page-level** number (all of an advertiser's live ads, identical on every ad regardless of product). That is **useless for concept scoring** (a brand can be scaling product X while the concept you're judging is a dead 1-ad test — exactly the Personal Chic case: 533 active/+347% brand-wide, but the "Grandkids spoiled here" doormat = **1** creative). **The real signal = how many active creatives that SPECIFIC product runs** = `sum(countActive)` over ads sharing the same `product_url`.
+
+Calibrated on 134 competitor products (PFG + Macorner pulls, 2026-07-30):
+| #active creatives on the product | Share | Read |
+|---|---|---|
+| 1 | 61% | testing / not scaled (default) |
+| ≥2 | 39% (top ~40%) | duplicating = committing budget |
+| ≥4 | ~10% (p90) | clearly scaling this product |
+| ≥8 | ~top 3% | heavy scale — a proven winner (e.g. PFG "always-with-you memorial" =18) |
+
+→ **A4** (evergreen, needs *sustained* scale): ≥4=3 · 2–3=2 · 1=1. **B2** (trending, needs *strong* momentum): ≥8=3 · 4–7=2 · 2–3=1 · 1=0.
+**Momentum/direction** (is it climbing?) isn't in one snapshot → get it from the per-ad `scaling` field (rising/declining) or by re-pulling the product's count over time via Brand Tracker.
+**Brand-level `total_active_ads_on_page` + growth_1m are demoted to context only** (advertiser health / is-the-store-alive), NOT concept scoring.
 
 **Caveats:** (1) `GS` is WinningHunter's broad Gift tag — includes generic gifts, not only *personalized*; treat as the addressable competitive set, slightly wider than exact-template. (2) Counts are a point-in-time snapshot (2026-07-29); survival curve is cross-sectional (age of currently-live ads), a good proxy for true longevity but not a cohort-tracked one. (3) Growth % is a proxy for spend, not a spend measurement (PART 3 gap #2 stands).
 
@@ -54,7 +61,7 @@
 
 **P2 · Ad run-time is a real but imperfect profit proxy — the most-cited one.** Rational advertisers only keep paying while profitable, so long-lived ads reveal positive ROI ([adintime](https://adintime.com/en/blog/facebook-ads-library-the-ultimate-guide-to-winning-campaigns-n299), [Marpipe](https://www.marpipe.com/blog/mastering-the-facebook-ad-library)). Caveats (Conf Med–High): big brands subsidize losers for LTV; "active" ≠ "spending"; a *single creative* fatigues in ~1–8 weeks ([adlibrary](https://adlibrary.com/posts/facebook-ad-creative-refresh-frequency), [inBeat](https://inbeat.agency/blog/facebook-creative-fatigue)), so 90d+ longevity is really a **concept/template kept alive across refreshes** → template-level longevity > single-creative age. **Rule: runtime is necessary-not-sufficient; require a scaling co-signal before acting.**
 
-**P3 · A scaling/winning ad shows via SPEND-PROXY GROWTH, not one metric.** Operators scale by raising budget on and duplicating winners ([Digital Darts](https://www.digitaldarts.com.au/scale-facebook-ads-shopify), [admetrics](https://www.admetrics.io/en/post/how-to-scale-facebook-ads)). We can't see budgets → **rising active-ads count + creative-variant count over 1w/1m are the spend-growth proxies.** Conf: Med.
+**P3 · A scaling/winning ad shows via SPEND-PROXY GROWTH, not one metric.** Operators scale by raising budget on and duplicating winners ([Digital Darts](https://www.digitaldarts.com.au/scale-facebook-ads-shopify), [admetrics](https://www.admetrics.io/en/post/how-to-scale-facebook-ads)). We can't see budgets → **the # of active creatives running for THAT specific product (not the brand's total) is the spend-proxy**; rising over repeated pulls = scaling. Judge per-product (`sum(countActive)` on the product_url), NOT brand-level `total_active_ads_on_page`. Conf: Med.
 
 **P4 · Saturation is real but MARGIN + DIFFERENTIATION dominate raw competitor count.** Across a 228-product dataset, competition level had ~zero correlation with margin (r=0.08) — high margins *attract* competitors; judge via a **margin × competition** lens + a **wow-factor shield**, not headcount ([productlair](https://productlair.com/blog/dropshipping-product-saturation)); differentiation beats saturation ([Circana](https://www.circana.com/post/how-do-you-make-your-brand-and-products-stand-out-in-saturated-markets)). Conf: Med–High. **Corollary:** for personalized gifts the mechanic *is* the differentiation, so a crowded-but-proven template is enter-able with a superior mechanic/design/offer.
 
@@ -89,7 +96,7 @@
 | A1 | Ad longevity (proven ROI) | days-running of best ads | **≥90d=3** · 60–89=2 · 30–59=1 · <30=0 | 3 | **CALIBRATED (PART 0)** · adintime, Marpipe |
 | A2 | Template persistence across sellers | store-discovery count | multiple stores, months = 3 | 3 | productlair (Med) |
 | A3 | Evergreen Trends shape | 5-yr Trends | flat/growing + annual peaks = 3 | 3 | mydesigns (High) |
-| A4 | Sustained spend proxy | active-ads growth 1m | **≥+25%/mo=3** · 0–25%=2 · declining=1 | 2 | **CALIBRATED (PART 0)** · admetrics |
+| A4 | Sustained spend proxy | **# active creatives on THIS product** (sum countActive over ads sharing product_url) | **≥4=3** · 2–3=2 · 1=1 | 2 | **CALIBRATED per-product (PART 0 ③)** · admetrics |
 | A5 | Occasion durability | angle → recurring occasions | multi year-round occasions = 3 | 2 | flashship (High) |
 | A6 | Differentiation headroom | your mechanic/design/offer vs incumbents | clearly superior = 3 | 3 | productlair, Circana (Med–High) |
 | A7 | Margin/AOV band | price vs niche median (~$38) | **≥$60=3** · $35–60=2 · $25–35=1 · <$25=0 | 2 | **CALIBRATED (PART 0)** · mydesigns, Dropified |
@@ -100,7 +107,7 @@ Red flags (downgrade): only ONE store runs it (A2=0); Trends rolling over (A3=0)
 | # | Criterion | Signal | Score-3 | Wt | Basis |
 |---|---|---|---|---|---|
 | B1 | Earliness/recency (are we early?) | days-running | **<30d=3** · 30–59=2 · 60–89=1 · ≥90=0 *(inverts A1)* | 3 | **CALIBRATED (PART 0)** · Marpipe, adlibrary |
-| B2 | Scaling momentum | active-ads growth 1m | **≥+100%/mo=3** · 50–100%=2 · 25–50%=1 · <25%=0 | 3 | **CALIBRATED (PART 0)** · Digital Darts, admetrics |
+| B2 | Scaling momentum | **# active creatives on THIS product** (+ per-ad `scaling` rising/declining for direction) | **≥8=3** · 4–7=2 · 2–3=1 · 1=0 | 3 | **CALIBRATED per-product (PART 0 ③)** · Digital Darts, admetrics |
 | B3 | Breakout Trends | 90d Trends + Exploding-Topics | steep 90d rise / breakout = 3 | 3 | Shopify, Exploding Topics (High) |
 | B4 | Not-yet-crowded | store-discovery count | **few** stores=3 · many=1 *(inverts A2)* | 2 | Shopify (Med) |
 | B5 | Creative validation | lead advertiser's variant count + hook | iterating variants (committing budget) = 3 | 2 | causalfunnel (Med) |
@@ -121,7 +128,7 @@ Method: score your **last ~20–30 launched concepts** retrospectively, tag each
 
 ## PART 3 — BIGGEST EVIDENCE GAPS (be honest)
 1. No independent quantification that "still running after N months = profitable" — it's a repeated *revealed-preference* inference (vendors have incentive to promote Ad-Library use). Direction: High; specific day-count: Low → **calibrate A1/B1 from your own data.**
-2. Active-ads count → spend is a **proxy, not a measurement** (WH shows counts, not budgets) → treat B2/A4 as suggestive.
+2. Per-product active-creative count → spend is a **proxy, not a measurement** (WH shows counts, not budgets) → treat B2/A4 as suggestive. **Do NOT use brand-level `total_active_ads_on_page`/growth for concept scoring — it's page-wide and product-blind (fixed 2026-07-30).**
 3. The r=0.08 saturation finding is one vendor's 228-product sample → trust direction (margin > count), not the coefficient.
 4. Thresholds un-validated for this bespoke rubric → **back-testing against your last 20–30 concepts is the #1 upgrade** (turns "evidence-informed" into "evidence-calibrated").
 5. Niche AOV/margin figures are illustrative POD-blog numbers → replace with real supplier costs + store AOV.

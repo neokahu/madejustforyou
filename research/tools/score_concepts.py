@@ -12,7 +12,7 @@ from collections import defaultdict
 recs = [json.loads(l) for l in open('/tmp/ads_records.jsonl') if l.strip()]
 
 # ---- cluster to concept (cleaned slug) ----
-concepts = defaultdict(lambda: {'days': [], 'price': [], 'fmt': [], 'grw': [], 'copy': '', 'brand': ''})
+concepts = defaultdict(lambda: {'days': [], 'price': [], 'fmt': [], 'active': 0, 'copy': '', 'brand': ''})
 for r in recs:
     c = re.sub(r'-(psnl|pnl)-', '-', r['concept']).strip('-')
     if not c or c in ('tsn', 'collections'):
@@ -26,7 +26,8 @@ for r in recs:
         pv = float(p)
         if pv > 0: d['price'].append(pv)
     except: pass
-    d['fmt'].append(r['fmt']); d['grw'].append(r['grw'])
+    d['fmt'].append(r['fmt'])
+    d['active'] += r.get('active', 1)   # PER-PRODUCT active creatives (sum countActive over its ads)
     if len(r['copy']) > len(d['copy']): d['copy'] = r['copy']
 
 # ---- keyword tag helpers ----
@@ -53,9 +54,9 @@ for (brand, c), d in concepts.items():
     s = c + ' ' + d['copy'].lower()
     days = d['days']; a1,maxd = sc_A1(days)
     p = price_band(d['price'], brand); a7,pv = sc_A7(p)
-    grw = max(d['grw']) if d['grw'] else 0
-    a4 = 3 if grw>=25 else 2 if grw>=0 else 1
-    b2 = 3 if grw>=100 else 2 if grw>=50 else 1 if grw>=25 else 0
+    nact = d['active']                                  # PER-PRODUCT active-creative count (fixed 2026-07-30)
+    a4 = 3 if nact>=4 else 2 if nact>=2 else 1           # evergreen: sustained scale
+    b2 = 3 if nact>=8 else 2 if nact>=4 else 1 if nact>=2 else 0   # trending: strong momentum
     # judgment heuristics
     seasonal = has(s, *SEASON); novel = has(s, *NOVEL); yearround = has(s, *YEARROUND)
     a5 = 3 if yearround else (1 if seasonal else 2)                 # occasion durability
@@ -70,7 +71,7 @@ for (brand, c), d in concepts.items():
     b7 = a6
     trend = b1*3 + b2*3 + b7*2 + a7*2                   # excl B3(pending),B4,B5,B6 needing more data
     trend_max = 3*3+3*3+3*2+3*2                          # =40
-    d.update(track=track, maxd=maxd, price=pv, grw=grw, a1=a1,a5=a5,a6=a6,a7=a7,b1=b1,b2=b2,
+    d.update(track=track, maxd=maxd, price=pv, nact=nact, a1=a1,a4=a4,a5=a5,a6=a6,a7=a7,b1=b1,b2=b2,
              ever=ever, ever_pct=round(100*ever/ever_max), trend=trend, trend_pct=round(100*trend/trend_max),
              seasonal=seasonal, novel=novel)
 
@@ -81,9 +82,9 @@ def key(x):
 rows.sort(key=lambda x:(x[2]['track'], -key(x)))
 
 print(f"# concepts clustered: {len(rows)}\n")
-hdr = ['TRACK','BRAND','SCORE%','maxDays','price','grw%','A1','A5','A6','A7','B1','B2','CONCEPT']
+hdr = ['TRACK','BRAND','SCORE%','maxDays','price','#activeCreatives','A1','A4','A5','A6','A7','B1','B2','CONCEPT']
 print('\t'.join(hdr))
 for brand,c,d in rows:
     pct = d['ever_pct'] if d['track']=='Evergreen' else d['trend_pct']
-    print('\t'.join(str(x) for x in [d['track'],brand,pct,d['maxd'],d['price'],d['grw'],
-          d['a1'],d['a5'],d['a6'],d['a7'],d['b1'],d['b2'], c[:60]]))
+    print('\t'.join(str(x) for x in [d['track'],brand,pct,d['maxd'],d['price'],d['nact'],
+          d['a1'],d['a4'],d['a5'],d['a6'],d['a7'],d['b1'],d['b2'], c[:60]]))
