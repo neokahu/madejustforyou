@@ -25,9 +25,9 @@ workspace. Personalizer app = **Teeinblue**. Fulfillment = POD providers via Tee
 | **`handoffs/`** | older session handoffs (pre-`_SESSION-LOGS` convention) |
 | **`MadeJustForYou_design_system.html`** | exported brand/design-system reference |
 | **`Grandparents-Day-Checklist.md`** | campaign checklist |
-| **`theme_export__…/`** | Shopify theme export (brand colors in `config/settings_data.json`) |
+| **`THEME-REPO.md`** | 👉 pointer — the Shopify **theme code** lives in a **separate repo** (`~/Desktop/projects/madejustforyou-theme/shopify-theme-1/`), not here |
 
-**Brand palette** (from theme export): terracotta `#C15F3C`, gold `#E0A458`, dusty rose `#D98E85`,
+**Brand palette** (from theme repo `config/settings_data.json`): terracotta `#C15F3C`, gold `#E0A458`, dusty rose `#D98E85`,
 cream `#FBF6EE`, sand `#EFE4D4`, espresso `#2E2822`, taupe `#8A7E70`. Fonts: Playfair Display
 (heading), DM Sans (body), Caveat (script).
 
