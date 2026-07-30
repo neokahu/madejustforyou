@@ -40,6 +40,18 @@
 | Snowman grandma+grandkids LED light box | PFG | 78% | 239 | $28 | Roster + light-box mechanic |
 | Grandma-grandkids hugging fridge magnet | PFG | 78% | 94 | ~$24 | Cheap build, multi-name |
 
+### 3b. EXACT census — grandparent finalists ranked by revealed profitability (2026-07-30)
+Pulled each product by `landingurl` (full census). **Two green signals, both bullish:** *lead-seller creatives* = how hard the top competitor is scaling it (revealed profitability, A4/B2); *real sellers* = distinct Shopify backend domains running it (market validation, A2 — page-name counts overstate this ~1.5×; one operator runs many pages). Ranked best-first.
+
+| Concept | Lead seller — creatives (profit signal) | Real sellers (validation) | Longevity | Verdict |
+|---|---|---|---|---|
+| **"Always with you" family memorial** | **PFG — 18** (its hardest-pushed product) | 2 | 286d | 🟢🟢 Scaling hard + proven + strongest emotional angle across all channels |
+| **Legend Husband·Dad·Grandpa family-name** | **Macorner — 18** (5 pages) | **4** (Macorner, Bakven, Joyful Moments, Mepriva) | 309d | 🟢🟢 Both signals max — heavily scaled + 4-seller validated |
+| **Grandma's Garden candle warmer** | PFG — 13 | **~6** (PFG, Macorner, +4) | 107d | 🟢 Most-copied template; premium $49.95 AOV |
+| Personal Chic "Grandkids spoiled here" doormat | Personal Chic — **3** (was 1, ticking up) | 1 | ~4d | 🟡 Fresh test scaling — watch the count climb |
+
+→ **Lead picks for GPD replication (both signals fire + roster mechanic = our Teeinblue core):** the **memorial "always with you"** and the **Legend family-name**. Grandma's Garden candle adds the premium-AOV play.
+
 ---
 
 ## 4. What the ad market confirms (patterns → what to test)
