@@ -105,6 +105,34 @@ Live links to the actual top sellers / viral posts each concept was crafted from
 > Etsy `Tr77mPjhVXXMyjLep` (86 listings) · Pinterest `eAn1JJqoqnxQ93lE9` (180 pins) · TikTok
 > `obrCNbh1kei0EvuFn` (45 videos). Dataset links refresh on each new sprint pull.
 
+## 🔗 Live FB-ad competitor references (WinningHunter spy, 2026-07-30)
+
+Actual paid ads competitors are running *right now* (vs the Etsy/Pinterest listings above). **Ad Library link** = every live creative that page is running, with run-times — best for seeing what's working. Full data + exact profitability census in [`2026-09-grandparents-day-competitor-spy.md`](2026-09-grandparents-day-competitor-spy.md); all links in [`2026-07-29-competitor-links.md`](2026-07-29-competitor-links.md).
+
+**Slot 1 — Grandma + grandkids' names**
+- Family love gift · "Personalized Mimi" tee, all nicknames + names — [product](https://godmerch.com/products/comfort-colors-personalized-mimi-t-shirt-custom-family-names-with-colorful-flower-design-perfect-gift-for-mimi) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=101450688580894)
+- Canvasgiftco · grandkids multi-name + dates wood sign (**902d runner**) — [product](https://www.canvasgiftco.com/products/personalized-grandkids-hanging-decor-sign) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=104123196077662)
+- Newsvips · "Grandma of these little monsters" tee (**1,061d**) — [product](https://www.newsvips.com/products/grandma-of-these-little-monsters-personalized-custom-unisex-t-shirt-gift-for-grandma-gift-for-grandparents-halloween-gift) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=102283975589486)
+
+**Slot 2 — Grandma's Garden birth-flower (sweatshirt)** *(the lane to differentiate from)*
+- Momommy · custom embroidered Grandma & Grandpa sweatshirt (+149%) — [product](https://www.momommy.com/collections/custom-embroidered-sweatshirt/products/custom-embroidered-comfort-colors-grandma-and-grandpa-sweatshirt-gift-for-grandma-grandpa) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=991515027374279)
+- Macorner · "Grandma's Garden love grows here" candle warmer ($49.95, **~6 sellers copy it**) — [product](https://macorner.co/products/grandmas-garden-love-grows-here-personalized-candle-warmer-ma5b329so) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=102971998671051)
+- TikTok · Personalized Grandma/Grammy/Nana sweatshirt (**rising +46%**) — [WH product](https://app.winninghunter.com/tiktok-shop/product/1732270448661271033?period=30)
+
+**Slot 3 — Grandma's Recipe / memorial keepsake**
+- Wavao · "I'm always there" granddaughter ceramic ornament (760d) — [product](https://www.wavao.com/products/gift-for-granddaughter-daughter-im-always-there-ceramic-ornament) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=111282690578976)
+- PFG · **"Always with you" family-members memorial** (PFG's hardest-pushed product, **18 creatives**) — [product](https://trendingcustom.com/products/always-with-you-sky-family-members-grandma-grandpa-dad-mom-kids-dogs-cats-memorial-personalized-acrylic-keychain-1311141) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=1562252470694113)
+- TikTok · "Great Grandma/Grandpa In Heaven" memorial bodysuit (**6M-view video**) — [video](https://media.winninghunter.com/tiktok-shop/videos/7576574104015326519.mp4)
+
+**Slot 4 — First Dad, Now Grandpa / grandpa "legend"**
+- Macorner · **"Legend: Husband·Dad·Grandpa" family-name** shirt/Hawaiian (**18 creatives across 5 pages + 3 other sellers** = both profit & validation signals max) — [product](https://macorner.co/products/legend-husband-dad-and-grandpa-custom-family-name-personalized-hawaiian-shirt-mauftaf9o) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=102971998671051)
+- Macorner viral Hawaiian shirt reference — [TikTok 4.2M plays](https://www.tiktok.com/@macorner_official/video/7581810611122654471)
+
+**Cross-cutting (occasion + AOV references)**
+- 🔴 Personal Chic *(tracked scaler)* · "Grandkids spoiled here" doormat (fresh test, creatives 1→3) — [product](https://personalchic.com/products/3d-printing-effect-grandkids-spoiled-here-custom-shaped-doormat-gifts-for-grandma-grandpa-9110adtyna) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=119529914438788)
+- Italian Charms · custom Grandma/Grandpa charm, *only one merchandising "Grandparents Day" by name* — [product](https://myitaliancharms.com/products/custom-charm) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=154178284438240)
+- **Premium-AOV proof:** Blessed Family Gifts kids-birthdate canvas **$99.99** — [product](https://blessedfamilygifts.com/products/my-street-sign-custom-children-names-personalized-canvas-print) · Inifis granddaughter interlocking-hearts necklace $49.95 — [product](https://inifis.com/products/gd003)
+
 ## What to hand to design (lead concepts → Tier-1)
 1. **2A "Grandma's Garden"** vs **2B "Grandma's Little Birds"** (sweatshirt) — the key head-to-head
 2. **1A "Grandma's Crew"** (mug)
