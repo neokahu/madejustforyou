@@ -9,6 +9,22 @@
 > ✅ **A4/B2 FIXED 2026-07-30 — now per-product, not brand-level.** Prior version scored scaling from `total_active_ads_on_page_growth_1m`, a **page-wide** number identical on every one of a brand's ads (product-blind — useless). Now scored from how many live creatives *that specific product* runs (see scorecard PART 0 ③). The `#activeCreatives` column in `…-concept-scores-full.tsv` is the fixed signal; the "Brand-level signals" table below is **context only** (advertiser health), NOT concept scoring.
 > **Snapshot caveat:** active-creative count is a point-in-time read from the top-ranked ads I paginated (~80/brand) — a floor, not a full census. **PFG price ≈ $24** assumed (WH captured only 2/20). Macorner prices real.
 
+## EXACT per-product counts — Tier-1 finalists (full census, 2026-07-30)
+Queried each product by `landingurl` = every seller + every creative for that product (not the paginated floor). One query yields both **A4/B2** (lead brand's creative count) and **A2** (# sellers running the template).
+
+| Product (★=GPD) | Lead brand creatives (A4/B2) | Market creatives | # sellers (A2) | Read |
+|---|---|---|---|---|
+| ★ Legend Husband·Dad·Grandpa family-name | Macorner Home Decor **18** | 28 | **6** | Heavily-copied proven template |
+| ★ Grandma's Garden candle warmer | Personalized Family Gifts 13 | 26 | **7** | Most-copied of the set |
+| ★ "Always with you" family memorial | PFG **18** | 19 | 2 | PFG's hardest-pushed single product |
+| "Our moon" crystal-ball night light | PFG **21** | 28 | 2 | Highest lead-brand creative count |
+| Pet-portrait phone case | Macorner Pet Lover 8 | 16 | **4** | Multi-seller, year-round |
+| "Best Dad" baseball figure | PFG 14 | 14 | 1 | Single-seller, seasonal (Father's Day) |
+| Y2K couple heart light box | PFG 3 | 3 | 1 | Fewer creatives than longevity implied |
+| ★ Personal Chic "Grandkids spoiled here" doormat | Personal Chic **3** (was 1) | 3 | 1 | Test **ticking up** 1→3 — watch |
+
+> Floor vs census: paginated estimates undercounted several by ~2× (our-moon 12→21, best-dad 7→14, legend 4→18). **Method: to score any concept, run `search_facebook_ads keyword=<product-slug> searchkeyword=landingurl` — the row count + `countActive` sum + distinct `pageName`s give A2/A4/B2 exactly in one call.**
+
 ## Brand-level signals
 | Brand | Domain | Active ads | Growth 1m | Longest runner | Concepts found |
 |---|---|---|---|---|---|
