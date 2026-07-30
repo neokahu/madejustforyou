@@ -68,18 +68,19 @@ These render at **every** count, so low counts never look sparse:
 - **Each bird slot** = layer personalized via **"1 Clipart category" → Birds** (customer picks the bird). Guide §2.
 - **Nickname** drives the title (Additional Option → conditional title text, Route A, Guide §3), or a simple text field.
 
-### Build-cost reduction options (decide before building all 10)
-- **Ship the test at 1–6 first** (covers the vast majority of families) → ~21 bird slots instead of 55. Extend to 10 if it wins.
-- **Accept fixed perches (cheaper, slightly less centered):** define 10 fixed perch coords, show first N, hide rest → ~10 slots total, ONE layout. Trade: N=1 sits off the first perch, not dead-center. The fixed grandma-bird + title mostly hides this. *(Recommend center-balanced for the hero test; fixed-perch as a fast MVP.)*
+*(Build-cost reduction options were considered and declined — see LOCKED decisions below. Full 1–10, center-balanced.)*
 
 ## 5. Test plan
 1. **Design first:** the fixed frame (branch + grandma bird + title) + the **bird library** (start ~8 birds: robin, bluebird, cardinal, owl, chickadee, sparrow, dove, goldfinch — all normalized to the 520×520 feet-anchor box).
-2. Build layouts **N=1,2,3,4,5** (single branch) — validate spacing/centering looks good, then 6–10.
+2. Build layouts **N=1–5** (single branch) first to validate spacing/centering, then **6–10** (two branches) — all 10 ship in this test.
 3. **Validate:** mock each count with real names; check no overlap, tags legible, group optically centered. Compare against the branch competitors in the concepts doc refs (Macorner candle, birth-flower sweatshirts).
 4. Lead test = **2A "Grandma's Garden" vs 2B "Grandma's Little Birds"** (per concepts doc) — this spec is the 2B build.
 
-## Open design decisions (flag before build)
-1. **Fixed Grandma bird + title anchor** — assumed YES (fills low counts). Veto → birds-only, and 1–2 birds will need a bigger title block to fill.
-2. **Branch rows vs tree tiers** — spec uses branch rows (matches the metaphor, easiest to center). A tree/pyramid is possible but harder to keep balanced.
-3. **Center-balanced (110 layers) vs fixed-perch MVP (~10 layers)** — see §4.
-4. **Names on/off** — assumed ON (tags). Off = cleaner but loses roster personalization.
+## Decisions — LOCKED 2026-07-30
+1. ✅ **Center-balanced per-count layouts** (not fixed-perch). Each N 1–10 gets its own centered arrangement → **~110 layers** (55 bird slots + 55 name tags). Best composition at every count.
+2. ✅ **Full 1–10** built now (~55 bird slots) — no 1–6 MVP staging.
+3. ✅ **Fixed Grandma bird + title anchor** ON — larger owl/robin + "{Nickname}'s Little Birds" always on screen; fills low counts.
+4. ✅ **Names ON** (tags under each bird) — roster personalization is the point.
+5. Branch rows (not tree tiers) — matches the metaphor, easiest to center.
+
+→ Build scope is settled; §3 table + §2 rules are the authoritative build target. Designer starts with §5 step 1 (fixed frame + normalized bird library), then all 10 layouts.
