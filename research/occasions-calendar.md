@@ -4,6 +4,28 @@
 
 **Rule:** `start-selling by = occasion − 2 months` (≥2 months of selling runway) · `last-order by = occasion − 14 days` (manufacturing + shipping buffer).
 
+---
+
+## 📊 Ranked by SIZE (US consumer spend, NRF) — added 2026-07-30, manual
+> The table below is chronological; this ranks the same occasions by how big they actually are. *(Manual section — a `build_calendar.py` rerun regenerates the chronological table below but NOT this block.)*
+
+| Rank | Occasion | US spend (NRF, latest) | Personalized-POD relevance |
+|---|---|---|---|
+| 1 | **Winter Holidays / Christmas** | **~$1T** season (~$900/person; gift slice ~$250B) | 🟢🟢 **#1 POD season** — ornaments, light boxes. Buying opens **early Oct** |
+| 2 | **Mother's Day** | **$38B** | 🟢🟢 **#1 single gifting day** — mom **+ grandma** |
+| 3 | **Valentine's Day** | **$29.1B** ($14.6B on partners) | 🟢 Couples — light boxes, plaques |
+| 4 | **Father's Day** | **$28B** | 🟢 Dad **+ grandpa** — Legend family-name |
+| 5 | **Easter** | ~$24B | 🟡 Mostly candy/baskets — thin for personalized |
+| 6 | **Halloween** | **$13.1B** | 🟡 Growing — signs/shirts (boo crew, little monsters) |
+| 7 | **Graduation** (spring) | ~$5–6B | 🟡 Personalized keepsakes |
+| — | Back-to-School/College | $39B + $86B | ⚪ Mostly supplies, not gifts — teacher angle only |
+
+**Evergreen (no date, huge in aggregate):** Birthdays (biggest) · Anniversaries · Weddings · New Baby · Memorial · Retirement — the always-on base load.
+
+**Niche read (personalized family/grandparent gifts):** money moments = **Christmas → Mother's Day → Valentine's → Father's Day**, on an evergreen base of birthdays/anniversary/memorial. **Minor spikes NOT worth building *for* (use as cheap on-ramps only):** Grandparents Day, Parents' Day, Friendship Day, Boss's Day. → Build grandparent/family roster concepts once; launch on the minor day, **monetize hardest at Christmas + Mother's Day.**
+
+---
+
 | Status | Start-sell | Last-order | Occasion | Date | Day | Cat | Notes |
 |--------|-----------|-----------|----------|------|-----|-----|-------|
 | 🔴 BEHIND | 2026-05-26 | 2026-07-12 | **Parents' Day** | 2026-07-26 | Sun | family | 4th Sun of July |
