@@ -12,18 +12,24 @@
 ## EXACT per-product counts — Tier-1 finalists (full census, 2026-07-30)
 Queried each product by `landingurl` = every seller + every creative for that product (not the paginated floor). One query yields both **A4/B2** (lead brand's creative count) and **A2** (# sellers running the template).
 
-| Product (★=GPD) | Lead brand creatives (A4/B2) | Market creatives | # sellers (A2) | Read |
+**The raw page count conflates TWO signals — both bullish. Split them, don't discount them:**
+- **Same seller, many pages/creatives on one product = revealed PROFITABILITY** (they keep spending on a winner) → **A4/B2 scaling**. e.g. Macorner runs Legend across 5 pages / 18 creatives.
+- **Different sellers running it = template/market validation** → **A2**. Dedup by Shopify BACKEND DOMAIN (not page name) to count real sellers: Macorner = Macorner/Macorner Home Decor/Macorner Pet Lover/Macorner Decor/MA Commerce Inc, all → `46338f-fd.myshopify.com`; PFG = Personalized Family Gifts + Perfect Gifts For Loved Ones.
+
+Both are green flags; the correction is only about *attributing* the count to the right criterion, not deflating it.
+
+| Product (★=GPD) | Lead seller creatives (A4/B2) | Market creatives | Real sellers (A2, domain-deduped) | Read |
 |---|---|---|---|---|
-| ★ Legend Husband·Dad·Grandpa family-name | Macorner Home Decor **18** | 28 | **6** | Heavily-copied proven template |
-| ★ Grandma's Garden candle warmer | Personalized Family Gifts 13 | 26 | **7** | Most-copied of the set |
-| ★ "Always with you" family memorial | PFG **18** | 19 | 2 | PFG's hardest-pushed single product |
-| "Our moon" crystal-ball night light | PFG **21** | 28 | 2 | Highest lead-brand creative count |
-| Pet-portrait phone case | Macorner Pet Lover 8 | 16 | **4** | Multi-seller, year-round |
-| "Best Dad" baseball figure | PFG 14 | 14 | 1 | Single-seller, seasonal (Father's Day) |
+| ★ Legend Husband·Dad·Grandpa family-name | Macorner **18** | 28 | **4** (Macorner + Bakven + Joyful Moments + Mepriva) | Proven across 4 sellers |
+| ★ Grandma's Garden candle warmer | PFG 13 | 26 | **~6** (PFG, Macorner, Family love gift, Happy Together, I Love Family, Personal Chic) | Most-copied of the set |
+| ★ "Always with you" family memorial | PFG **18** | 19 | 2 (PFG + 1 copycat) | PFG's hardest-pushed product |
+| "Our moon" crystal-ball night light | PFG **21** | 28 | 2 | Highest lead-seller creative count |
+| Pet-portrait phone case | Macorner 8 | 16 | **3** (Macorner + Cigreds + Pawpowpet) | Multi-seller, year-round |
+| "Best Dad" baseball figure | PFG 14 | 14 | 1 | Single-seller, seasonal |
 | Y2K couple heart light box | PFG 3 | 3 | 1 | Fewer creatives than longevity implied |
 | ★ Personal Chic "Grandkids spoiled here" doormat | Personal Chic **3** (was 1) | 3 | 1 | Test **ticking up** 1→3 — watch |
 
-> Floor vs census: paginated estimates undercounted several by ~2× (our-moon 12→21, best-dad 7→14, legend 4→18). **Method: to score any concept, run `search_facebook_ads keyword=<product-slug> searchkeyword=landingurl` — the row count + `countActive` sum + distinct `pageName`s give A2/A4/B2 exactly in one call.**
+> Floor vs census: paginated estimates undercounted lead-seller creatives ~2× (our-moon 12→21, best-dad 7→14, legend 4→18). **Method to score any concept in one call:** `search_facebook_ads keyword=<product-slug> searchkeyword=landingurl` → sum `countActive` per `shopify_shopifydomain` = A4/B2 lead-seller scale; **distinct `shopify_shopifydomain` = A2 sellers** (NOT distinct `pageName` — one seller runs many pages). Caveat: even domain undercounts merges — one operator can run several myshopify domains (PFG runs ≥2), so A2 is a floor.
 
 ## Brand-level signals
 | Brand | Domain | Active ads | Growth 1m | Longest runner | Concepts found |
