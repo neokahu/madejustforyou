@@ -20,7 +20,7 @@
 | Watch-through / shares (support) | — | leader corroborated | |
 
 *(New account with no median? Judge on the **relative** ranking of the three + absolute buy-intent
-comments. Benchmarks calibrate after the first ~10 posts — see `04-validation-testing.md`.)*
+comments. Benchmarks calibrate after the first ~10 posts — see `../../../method/4-validate.md`.)*
 
 ## Results (after launch)
 | Metric | A · Garden | B · Birds | C · Night Sky |

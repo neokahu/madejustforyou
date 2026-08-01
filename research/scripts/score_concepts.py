@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""First-pass auto-scorer for competitor ad concepts vs new-ad-potential-scorecard.md.
+"""First-pass auto-scorer for competitor ad concepts vs ../method/new-ad-potential-scorecard.md.
 Reads /tmp/ads_records.jsonl (one ad per line), clusters to concept level, scores.
 Objective criteria (A1/A7/A4 · B1/B2) use the PART-0 calibrated thresholds.
 Judgment criteria (A5/A6/B6/B7) use transparent keyword heuristics — flagged for human review.

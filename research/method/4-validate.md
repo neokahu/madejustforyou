@@ -1,7 +1,7 @@
 # Stage 5 — Validation & Testing
 
 Prove demand with the **cheapest test that can kill the idea**, escalating spend only as an
-idea survives. Every test gets an [`experiment-card.md`](templates/experiment-card.md) with
+idea survives. Every test gets an [`experiment-card.md`](../templates/experiment-card.md) with
 **kill/scale thresholds declared before launch**.
 
 > Benchmarks below are **starting heuristics** — replace them with *your own* numbers after the
@@ -79,7 +79,7 @@ only test that proves people pay.
 ## Design vs product — two variables, tested in order (don't blob them)
 
 One design ports to many products (mug / shirt / blanket / rug / tote) — that's the leverage from
-the Roster mechanic ([`05-idea-crafting.md`](05-idea-crafting.md)). But **don't test the design on
+the Roster mechanic ([`2-generate.md`](2-generate.md)). But **don't test the design on
 many products at once** — you'd confound *"is the concept good?"* with *"is the product good?"*,
 split your traffic thin, and multiply SKUs before anything is proven. Run two single-variable
 experiments in sequence:

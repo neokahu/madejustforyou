@@ -45,18 +45,46 @@ Each stage has its own reference doc / template (below).
 
 ---
 
-## Files in this folder
+## Folder map
 
-| File | What it is |
+Stable **playbook** (rarely changes) is separated from **living sprint work** (changes constantly).
+
+```
+research/
+├── method/        the playbook, numbered to the pipeline stages
+├── reference/     stable tool docs (Teeinblue mechanics + verdict)
+├── templates/     reusable schemas (idea-db, brief, experiment card)
+├── scripts/       all code (scorers, calendar builder)
+├── calendar/      the gifting-occasion calendar (generated)
+└── sprints/       living work — one self-contained folder per sprint
+```
+
+**`method/`** — the methodology, filenames = pipeline stage numbers:
+
+| File | Stage | What it is |
+|------|-------|-----------|
+| [`method/0-foundation.md`](method/0-foundation.md) | 0 | controlled vocabularies (products, recipients, occasions, personalization, angles) |
+| [`method/1-discover.md`](method/1-discover.md) | 1 | every demand-signal source + the exact tool/query to pull it |
+| [`method/2-generate.md`](method/2-generate.md) | 2 | the **idea engine** — *craft* a design from a validated slot (mechanic+angle+hook+aesthetic) |
+| [`method/3-score.md`](method/3-score.md) | 3 | the weighted scoring model + worked example |
+| [`method/4-validate.md`](method/4-validate.md) | 5 | test tiers, metrics, benchmark thresholds, decision rules |
+| [`method/new-ad-potential-scorecard.md`](method/new-ad-potential-scorecard.md) | 3 | the competitor-ad opportunity scorecard (PART 0 thresholds) |
+
+**`reference/` · `templates/` · `scripts/` · `calendar/`**
+
+| Path | What it is |
 |------|-----------|
-| [`01-dimension-libraries.md`](01-dimension-libraries.md) | Stage 0 — the controlled vocabularies (products, recipients, occasions, personalization, angles) |
-| [`02-signal-sources.md`](02-signal-sources.md) | Stage 1 — every demand signal source, what it reveals, and the exact tool/query to pull it |
-| [`05-idea-crafting.md`](05-idea-crafting.md) | Stage 2 (deep) — the **idea engine**: how to *craft* a design from a validated slot (mechanic + angle + hook + aesthetic) instead of copying |
-| [`03-scoring-rubric.md`](03-scoring-rubric.md) | Stage 3 — the weighted scoring model + worked example |
-| [`04-validation-testing.md`](04-validation-testing.md) | Stage 5 — test tiers, metrics, benchmark thresholds, decision rules |
-| [`templates/idea-database.csv`](templates/idea-database.csv) | The backlog / knowledge base schema (Stages 2 & 6) |
+| [`reference/teeinblue-assets-guide.md`](reference/teeinblue-assets-guide.md) | **VERIFIED** Teeinblue mechanics — source of truth, don't re-guess |
+| [`reference/teeinblue.md`](reference/teeinblue.md) | Teeinblue tool fit / verdict / pricing |
+| [`templates/idea-database.csv`](templates/idea-database.csv) | the backlog / knowledge-base schema (Stages 2 & 6) |
 | [`templates/design-brief.md`](templates/design-brief.md) | Stage 4 — one-page brief handed to the designer/AI |
 | [`templates/experiment-card.md`](templates/experiment-card.md) | Stage 5 — one card per test, thresholds declared *before* launch |
+| `scripts/` | `score_concepts.py` · `score_ads.jq` · `score_gpd.py` · `build_calendar.py` |
+| [`calendar/occasions-calendar.md`](calendar/occasions-calendar.md) | gifting-occasion calendar (+ `.csv` master, `.ics` import) |
+
+**`sprints/`** — living work; see [`sprints/README.md`](sprints/README.md) for the index. One folder
+per sprint; each greenlit concept is a **self-contained sub-folder** (brief + specs + experiment +
+`_assets/`). Finished reusable component libraries **graduate** to the repo-root `teeinblue-assets/`.
 
 ---
 
@@ -71,7 +99,7 @@ Each stage has its own reference doc / template (below).
 **Lead-time rule:** a seasonal design must clear validation *and* production setup before the
 occasion's buying window opens. Buying windows open earlier than people think — e.g. Christmas
 gift research starts spiking in October, Mother's Day in early April. Work backwards from the
-date (see the occasion calendar in `01-dimension-libraries.md`).
+date (see the occasion calendar in `method/0-foundation.md`).
 
 ---
 

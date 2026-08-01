@@ -119,7 +119,7 @@ rows.sort(key=lambda r: r["start"])
 
 # ---- CSV ----
 import csv
-with open("research/occasions-calendar.csv", "w", newline="") as f:
+with open("research/calendar/occasions-calendar.csv", "w", newline="") as f:
     w = csv.writer(f)
     w.writerow(["occasion", "category", "occasion_date", "weekday",
                 "start_selling_by", "last_order_by", "days_until_start_selling",
@@ -154,7 +154,7 @@ for i, r in enumerate(rows):
               f"DESCRIPTION:Last order by {r['last'].isoformat()} to arrive in time.",
               "END:VEVENT"]
 lines.append("END:VCALENDAR")
-with open("research/occasions-calendar.ics", "w") as f:
+with open("research/calendar/occasions-calendar.ics", "w") as f:
     f.write("\r\n".join(lines) + "\r\n")
 
 # ---- Markdown ----
@@ -199,7 +199,7 @@ for name, notes in EVERGREEN:
 
 md.append("\n---\nData files: [`occasions-calendar.csv`](occasions-calendar.csv) (master) · "
           "[`occasions-calendar.ics`](occasions-calendar.ics) (import into Google/Apple Calendar).")
-with open("research/occasions-calendar.md", "w") as f:
+with open("research/calendar/occasions-calendar.md", "w") as f:
     f.write("\n".join(md) + "\n")
 
 # ---- console summary ----

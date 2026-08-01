@@ -31,6 +31,11 @@
 - **Variants:** 3 shirt colors (cream/sand/sage), S–3XL — keep test SKU count low
 - **Base cost / target retail / margin:** _[fill from supplier]_ (sweatshirt = higher AOV tier)
 
+## Asset briefs (art libraries — matched for the A/B)
+- **2A garden:** [`2A-flower-library.md`](2A-flower-library.md) — 12 birth-flower library, stem-base anchor
+- **2B birds:** [`2B-bird-library.md`](2B-bird-library.md) — 8-bird library, feet anchor + Nano-Banana prompts
+- **2B layouts:** [`2B-bird-layout-spec.md`](2B-bird-layout-spec.md)
+
 ## Deliverables
 - [ ] 2A mockup (garden) + 2B mockup (birds) — front-of-product + one lifestyle
 - [ ] Personalized example render (3-kid family) showing the "made for me" moment

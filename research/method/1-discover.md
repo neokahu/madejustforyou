@@ -5,7 +5,7 @@ Where ideas come *from*. The goal is to blend **leading** signals (predict deman
 it reveals, how often to check it, and the exact tool/query to pull it once automated.
 
 Signal-to-idea flow: a signal becomes one or more rows in
-[`templates/idea-database.csv`](templates/idea-database.csv) (status = `backlog`).
+[`templates/idea-database.csv`](../templates/idea-database.csv) (status = `backlog`).
 
 ---
 
@@ -44,7 +44,7 @@ straight into the Idea Database `demand_*` columns.
 **Reveals:** the shape of the year for each occasion/recipient so you can back-time production.
 **How to use:** pull 12–24 mo volume history for the head terms; mark the month demand starts
 rising and set the "lock design by" date backward from it (see occasion table in
-`01-dimension-libraries.md`).
+`0-foundation.md`).
 **Automate:** Ahrefs `keywords-explorer-volume-history` / `site-explorer-*-history`.
 
 ## 3. Marketplace velocity — Etsy & Amazon (Apify)

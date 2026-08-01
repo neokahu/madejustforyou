@@ -37,15 +37,18 @@ cream `#FBF6EE`, sand `#EFE4D4`, espresso `#2E2822`, taupe `#8A7E70`. Fonts: Pla
 
 The real priority: a systematic engine to find + validate design ideas before building.
 
+Structure: stable **playbook** (`method/ reference/ templates/ scripts/ calendar/`) is separated
+from **living sprint work** (`sprints/`). See `research/README.md` for the folder map.
+
 | Path | Purpose |
 |---|---|
-| `research/README.md` | how the research system works |
-| `01-dimension-libraries.md` … `05-idea-crafting.md` | the methodology (dimensions, signals, scoring, validation, crafting) |
-| `occasions-calendar.{md,csv,ics}` + `build_calendar.py` | gifting-occasion calendar |
-| `sprints/` | live sprints (e.g. `2026-09-grandparents-day*`), `briefs/`, `experiments/`, `mockups/`, `print-files/`, `competitor-intel-2026-07.md` |
-| `templates/` | design-brief, experiment-card, idea-database templates |
-| **`tools/teeinblue.md`** | Teeinblue tool fit / verdict / pricing |
-| **`tools/teeinblue-assets-guide.md`** | **VERIFIED Teeinblue mechanics** (asset types, image-picker→text, upload specs) — the source of truth, do not re-guess |
+| `research/README.md` | how the research system works + folder map |
+| `research/method/0-foundation…4-validate.md` | the methodology, filenames = pipeline stages (0 dimensions · 1 discover · 2 generate/idea-engine · 3 score · 4 validate) + `new-ad-potential-scorecard.md` |
+| `research/reference/` | **VERIFIED Teeinblue mechanics** (`teeinblue-assets-guide.md` — source of truth, don't re-guess) + `teeinblue.md` (fit/verdict) |
+| `research/templates/` | design-brief, experiment-card, idea-database templates |
+| `research/scripts/` | all code: `score_concepts.py`, `score_ads.jq`, `score_gpd.py`, `build_calendar.py` |
+| `research/calendar/` | gifting-occasion calendar (`occasions-calendar.{md,csv,ics}`) |
+| `research/sprints/` | live work, one folder per sprint (see `sprints/README.md`); each greenlit concept is a self-contained sub-folder (e.g. `2026-09-grandparents-day/GPD02-garden-birds/`) |
 
 ---
 
@@ -108,7 +111,7 @@ this repo.
 
 ## Where to start for a task
 - **Resume work** → newest file in `_SESSION-LOGS/`
-- **How Teeinblue works** → `research/tools/teeinblue-assets-guide.md`
+- **How Teeinblue works** → `research/reference/teeinblue-assets-guide.md`
 - **Add/find an asset** → `teeinblue-assets/ASSET-SYSTEM.md` + `asset-registry.csv`
 - **Build the pajama** → `product-clone/NV984-pajama/` + `_SESSION-LOGS/2026-07-20-pajama-clone-handoff.md`
-- **New design idea** → `research/` (README + templates)
+- **New design idea** → `research/` (README + method/ + templates/)

@@ -17,7 +17,7 @@
 | Secondary (e.g. ATC rate) | | | |
 | Gate (e.g. cost per ATC vs margin) | | | |
 
-*(See `04-validation-testing.md` for starting benchmarks by tier — calibrate to your data.)*
+*(See `../method/4-validate.md` for starting benchmarks by tier — calibrate to your data.)*
 
 ## Results (after launch)
 - **Impressions / reach:** ____   ·   **Spend:** $____

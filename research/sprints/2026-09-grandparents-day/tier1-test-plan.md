@@ -8,7 +8,7 @@ the production component library. Cheapest test that can pick the winner.
 - **Channels:** TikTok + Instagram Reels + Pinterest (organic, $0)
 - **Primary metric:** **save rate** (saves ÷ views) — normalizes for uneven reach
 - **Secondary:** buy-intent comments ("where do I get this / do you make it for [nana/mom]"), shares, watch-through
-- **Window:** 48–72h per post · **Experiment card:** [`experiments/GPD02-tier1-metaphor.md`](experiments/GPD02-tier1-metaphor.md)
+- **Window:** 48–72h per post · **Experiment card:** [`GPD02-garden-birds/experiment-tier1-metaphor.md`](GPD02-garden-birds/experiment-tier1-metaphor.md)
 
 ---
 

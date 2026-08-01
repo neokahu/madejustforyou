@@ -1,8 +1,8 @@
 # Competitor Ad Scrape + Scoring — 2026-07-29
 
-**Tool:** WinningHunter MCP (`search_facebook_ads`). **Scored against** `research/new-ad-potential-scorecard.md` (PART 0 thresholds calibrated same day). **Reads only — 1000 credits untouched.** Days-running as of 2026-07-29.
+**Tool:** WinningHunter MCP (`search_facebook_ads`). **Scored against** `research/method/new-ad-potential-scorecard.md` (PART 0 thresholds calibrated same day). **Reads only — 1000 credits untouched.** Days-running as of 2026-07-29.
 
-**Crawl depth:** deep-paginated 3 competitors by top ad-rank and deduped to concept (product URL): **PFG 80 ads → 45 concepts · Macorner 80 ads → 78 concepts · Wander Prints (domain crawl) 18 ads.** Full auto-scored table: `2026-07-29-concept-scores-full.tsv` (133 concepts). Scorer: `research/tools/score_concepts.py`.
+**Crawl depth:** deep-paginated 3 competitors by top ad-rank and deduped to concept (product URL): **PFG 80 ads → 45 concepts · Macorner 80 ads → 78 concepts · Wander Prints (domain crawl) 18 ads.** Full auto-scored table: `concept-scores-full.tsv` (133 concepts). Scorer: `research/scripts/score_concepts.py`.
 
 > **How scored.** Objective criteria auto-scored from real signals against calibrated thresholds — **A1** longevity (max days-running), **A7** price band, **A4/B2** = **# active creatives on THAT product** (sum `countActive` over its ads). Judgment criteria (**A5** occasion durability, **A6/B7** differentiation) use transparent keyword heuristics — *first pass, human-review before spend.* **A3/B3 (Google Trends shape) NOT pulled** → track is a proxy (long-runner/mature-format = Evergreen; young + novel mechanic = Trending). Evergreen % is out of 60 (A1×3,A2×3,A5×2,A6×3,A4×2,A7×2; A2 fixed=3 = multi-seller template; A3 excluded).
 >

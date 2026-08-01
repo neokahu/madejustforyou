@@ -1,6 +1,6 @@
 # Grandparents Day 2026 — Crafted Design Concepts
 
-Idea engine ([`../05-idea-crafting.md`](../05-idea-crafting.md)) run on the 4 greenlit slots.
+Idea engine ([`../../method/2-generate.md`](../../method/2-generate.md)) run on the 4 greenlit slots.
 Each concept = **Mechanic + Angle + Hook + Aesthetic → Product**, crafted from mined vocabulary,
 with a differentiation move applied so it's original, not a copy of the winning listing.
 
@@ -107,7 +107,7 @@ Live links to the actual top sellers / viral posts each concept was crafted from
 
 ## 🔗 Live FB-ad competitor references (WinningHunter spy, 2026-07-30)
 
-Actual paid ads competitors are running *right now* (vs the Etsy/Pinterest listings above). **Ad Library link** = every live creative that page is running, with run-times — best for seeing what's working. Full data + exact profitability census in [`2026-09-grandparents-day-competitor-spy.md`](2026-09-grandparents-day-competitor-spy.md); all links in [`2026-07-29-competitor-links.md`](2026-07-29-competitor-links.md).
+Actual paid ads competitors are running *right now* (vs the Etsy/Pinterest listings above). **Ad Library link** = every live creative that page is running, with run-times — best for seeing what's working. Full data + exact profitability census in [`competitor-spy.md`](competitor-spy.md); all links in [`../2026-07-competitor-ad-scoring/competitor-links.md`](../2026-07-competitor-ad-scoring/competitor-links.md).
 
 **Slot 1 — Grandma + grandkids' names**
 - Family love gift · "Personalized Mimi" tee, all nicknames + names — [product](https://godmerch.com/products/comfort-colors-personalized-mimi-t-shirt-custom-family-names-with-colorful-flower-design-perfect-gift-for-mimi) · [ads](https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&view_all_page_id=101450688580894)
@@ -139,6 +139,6 @@ Actual paid ads competitors are running *right now* (vs the Etsy/Pinterest listi
 3. **3A "Grandma's Recipe"** (tea towel)
 4. **4B "Grandpa's Crew — hobby"** (mug)
 
-Formal brief for the lead is in [`briefs/GPD02-grandmas-garden.md`](briefs/GPD02-grandmas-garden.md); the rest follow the same template.
+Formal brief for the lead is in [`GPD02-garden-birds/brief.md`](GPD02-garden-birds/brief.md); the rest follow the same template.
 
-**Concept mockups for all 5 leads:** [`mockups/`](mockups/README.md) — Tier-1 test visuals (Nano Banana Pro), including the Garden-vs-Birds pair.
+**Concept mockups for all 5 leads:** [`_assets/mockups/`](_assets/mockups/README.md) — Tier-1 test visuals (Nano Banana Pro), including the Garden-vs-Birds pair.

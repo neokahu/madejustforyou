@@ -2,14 +2,14 @@
 
 AI concept mockups (Nano Banana Pro, 2026-07-10) for the lead greenlit concepts. Placeholder
 personalization: **Grandma/Grandpa · grandkids Ava, Liam, Noah**. Brand palette + handmade
-watercolor aesthetic per [`../../05-idea-crafting.md`](../../05-idea-crafting.md).
+watercolor aesthetic per [`../../../../method/2-generate.md`](../../../../method/2-generate.md).
 
 > ⚠️ **These are concept mockups for Tier-1 testing only — not print-ready.** AI text rendering
 > can misspell or vary run-to-run, and personalization must be a real template (customer fills
 > names). A designer builds the production file *after* a concept passes a test. Use these to
 > post/validate, not to print.
 
-## The metaphor head-to-head (same product = sweatshirt, so the only variable is the design — see [`../briefs/GPD02-grandmas-garden.md`](../briefs/GPD02-grandmas-garden.md))
+## The metaphor head-to-head (same product = sweatshirt, so the only variable is the design — see [`../../GPD02-garden-birds/brief.md`](../../GPD02-garden-birds/brief.md))
 
 Post all three the same day; hold product constant so the winner is the *metaphor*, not the item.
 

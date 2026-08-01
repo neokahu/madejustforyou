@@ -8,7 +8,7 @@
   - **Marketplace** — Apify `yumitori/etsy-listings-scraper` (in-cart velocity, US)
   - **Social** — Apify `automation-lab/pinterest-scraper` (saves + theme volume) + `clockworks/tiktok-scraper` (plays/saves/shares)
 
-Scored rows live in [`../templates/idea-database.csv`](../templates/idea-database.csv) (`occasion = grandparents day`); regenerate idempotently with [`score_gpd.py`](score_gpd.py).
+Scored rows live in [`../templates/idea-database.csv`](../../templates/idea-database.csv) (`occasion = grandparents day`); regenerate idempotently with [`score_gpd.py`](../../scripts/score_gpd.py).
 
 ---
 
@@ -61,7 +61,7 @@ Scored rows live in [`../templates/idea-database.csv`](../templates/idea-databas
 
 ## Recommended action — this week
 
-**Brief these four greenlit ideas now** ([`../templates/design-brief.md`](../templates/design-brief.md)):
+**Brief these four greenlit ideas now** ([`../templates/design-brief.md`](../../templates/design-brief.md)):
 
 1. **GPD01 — "Grandma's Crew" mug** (grandkids' names; Grandma/Gigi/Nana/Mimi variants). Cheapest test, biggest demand.
 2. **GPD02 — "Grandma's Garden" sweatshirt** (one birth flower per grandchild + names). Ride the Pinterest-dominant birth-flower theme; highest AOV of the four.
@@ -74,12 +74,12 @@ Scored rows live in [`../templates/idea-database.csv`](../templates/idea-databas
 - Winners must be production-ready before the **Aug 30** last-order date.
 
 ## Competitor intel (from this run)
-Superseded by a **targeted** pull → see [`competitor-intel-2026-07.md`](competitor-intel-2026-07.md). Corrected headline:
+Superseded by a **targeted** pull → see [`competitor-intel-2026-07.md`](../2026-07-competitor-ad-scoring/competitor-intel.md). Corrected headline:
 - Both competitors' engines are **sentimental relationship gifts** (couple / mom / siblings / **memorial** / "to the moon" on suncatchers & ornaments), not grandparent lines. macorner's 4.2M grandpa Hawaiian shirt was a keyhole view — their real top posts are 20–54M and mostly non-grandpa.
 - **Active paid ads (running now):** both fund **memorial** heavily (validates GPD16); macorner actively pushes **grandpa novelty apparel + caps**. Neither actively advertises a **grandma names-mug or recipe keepsake** → those are **white space** for us.
 
 > **Want to see what's selling?** Reference links to the actual top Etsy listings and viral posts,
-> grouped by concept, are in [`2026-09-grandparents-day-concepts.md` → Reference examples](2026-09-grandparents-day-concepts.md#-reference-examples--see-what-the-researched-designs-look-like).
+> grouped by concept, are in [`concepts.md` → Reference examples](concepts.md#-reference-examples--see-what-the-researched-designs-look-like).
 
 ## Suggested next pulls
 - **Etsy review-growth re-pull in ~1 week** to separate *accelerating* items from already-peaked.

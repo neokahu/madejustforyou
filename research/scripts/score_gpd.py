@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Score the Grandparents Day 2026 idea shortlist against the rubric
-(03-scoring-rubric.md) and append rows to the idea database.
+(../method/3-score.md) and append rows to the idea database.
 
 Signals used:
   - search  : Ahrefs Keywords Explorer, US (live pull 2026-07-10)

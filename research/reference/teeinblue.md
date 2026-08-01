@@ -2,7 +2,7 @@
 
 Researched 2026-07-10 (teeinblue.com + Shopify App Store). The personalizer app we'll use to make
 designs **customer-customizable** — see the production model in
-[`../sprints/print-files/README.md`](../sprints/print-files/README.md).
+[`../sprints/print-files/README.md`](../sprints/2026-09-grandparents-day/_assets/print-files/README.md).
 
 ## Verdict for MadeJustForYou
 **Strong fit — it directly supports our two-layer model and the variable-count problem.** The key
@@ -83,7 +83,7 @@ layers assemble the bouquet → live preview → print file to POD. Build once p
   in → garbage print.
 - **AI/Gen-AI effects** may carry extra usage cost/credits — verify if you use them.
 - **Per-order fee** after 100 orders affects unit economics — get the exact tier table and fold it
-  into the margin/CPA gates in [`../04-validation-testing.md`](../04-validation-testing.md).
+  into the margin/CPA gates in [`../method/4-validate.md`](../method/4-validate.md).
 - Confirm your chosen **POD partner** (Printful/Printify/etc.) actually stocks the substrates you
   want (sweatshirt, mug, tea towel) with the print method/area you need.
 

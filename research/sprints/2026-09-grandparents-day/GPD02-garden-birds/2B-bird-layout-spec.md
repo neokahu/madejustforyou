@@ -4,7 +4,7 @@
 
 **The rule that defines this build:** the **bird artwork is NOT hard-coded.** Each grandkid bird is a **customer-picked clipart** from a bird library. What *we* design is the **LAYOUT** — how N birds arrange so the composition looks balanced at every count 1→10. The customer never moves anything; they pick a count, pick a bird + type a name per grandchild, and Teeinblue swaps to the matching layout.
 
-Teeinblue mapping (per `research/tools/teeinblue-assets-guide.md` §7):
+Teeinblue mapping (per `research/reference/teeinblue-assets-guide.md` §7):
 | Customer sees | Teeinblue type | Renders |
 |---|---|---|
 | Bird per grandchild | **Clipart Category** "Birds" (transparent PNGs) | placed into the slot |
@@ -71,6 +71,8 @@ These render at **every** count, so low counts never look sparse:
 *(Build-cost reduction options were considered and declined — see LOCKED decisions below. Full 1–10, center-balanced.)*
 
 ## 5. Test plan
+> **Asset brief (art + Nano-Banana prompts):** [`2B-bird-library.md`](2B-bird-library.md). This spec = layouts; that brief = the reusable art.
+
 1. **Design first:** the fixed frame (branch + grandma bird + title) + the **bird library** (start ~8 birds: robin, bluebird, cardinal, owl, chickadee, sparrow, dove, goldfinch — all normalized to the 520×520 feet-anchor box).
 2. Build layouts **N=1–5** (single branch) first to validate spacing/centering, then **6–10** (two branches) — all 10 ship in this test.
 3. **Validate:** mock each count with real names; check no overlap, tags legible, group optically centered. Compare against the branch competitors in the concepts doc refs (Macorner candle, birth-flower sweatshirts).
