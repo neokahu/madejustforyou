@@ -1,0 +1,6 @@
+row	lead_active	distinct_sellers	seller_domains	variant_note	longest_days	top_ad_started	countries	n_ads_seen
+11	1	1	trendingcustom.com	no variants	122	2026-04-02	US+EU+CA+NZ+AU (33 incl ALL)	1
+12	14	1	macorner.co	11 ads on exact URL; 1 unrelated trendingcustom.com snow-globe-crossword ornament excluded (diff concept)	304	2025-10-02	US (some also EU/NO/BR)	12
+13	6	3	macorner.co; mepriva.com; suzitee.com	exact wine-tumbler URL=6 macorner ads; macorner variants NOT counted: ugly-sweater(1), crewneck-cardigan(1), mug(1), jewelry-dish(1); mepriva+suzitee also sell wine-tumbler concept	288	2025-10-18	US (all incl ALL)	12
+14	1	1	macorner.co	no variants	184	2026-01-30	US+EU+CA+NZ	1
+15	2	1	macorner.co	no variants	314	2025-09-22	US (one also EU)	2

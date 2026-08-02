@@ -1,0 +1,6 @@
+row	lead_active	distinct_sellers	seller_domains	variant_note	longest_days	top_ad_started	countries	n_ads_seen
+16	1	1	macorner.co (46338f-fd.myshopify.com)	no variants; exact URL only	297	2025-10-08	US	1
+17	8	1	macorner.co (46338f-fd.myshopify.com)	1 variant ad (?variant=44700028600476), countActive 1, not in lead sum	205	2025-01-17	US + broad EU (AT AU BE BG BR CA DE DK ES FI FR GB IT NL NO NZ PL SE etc)	7
+18	6	1	macorner.co (46338f-fd.myshopify.com; also pages Macorner / Macorner Decor)	no variants; all exact URL	290	2025-10-16	US + broad EU (AT BE BG CZ DE DK EE ES FI FR GB GR HR HU IE IT NL PL PT RO SE etc)	5
+19	25	2	trendingcustom.com (we1xpn-ya.myshopify.com = lead storefront+backend); dreamgifters.myshopify.com (distinct clone seller, active=4)	no variants; all exact URL. Lead indexed under both we1xpn-ya.myshopify.com (23) + bare trendingcustom.com (2)	193	2026-01-21	US + broad EU + CA/AU on some ads	20
+20	2	1	trendingcustom.com (we1xpn-ya.myshopify.com)	no variants; exact URL only	313	2025-09-21	US + broad EU (AT BE BG CZ DE DK ES FI FR GB GR HR HU IE IT NL PL PT RO SE etc)	2

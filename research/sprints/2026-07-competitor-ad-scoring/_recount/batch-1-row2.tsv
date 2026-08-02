@@ -1,0 +1,2 @@
+row	lead_active	distinct_sellers	seller_domains	variant_note	longest_days	top_ad_started	countries	n_ads_seen
+2	11	1	macorner.co (backend 46338f-fd.myshopify.com)	no hawaiian(mauftaf9o)/hoodie(grd221101nahn) variants present; 1 ad carries ?variant=45027517857948 querystring on same base product (counted in lead_active)	313	2025-09-23	US,CA,AU,NZ,ALL	8

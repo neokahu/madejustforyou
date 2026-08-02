@@ -1,0 +1,6 @@
+row	lead_active	distinct_sellers	seller_domains	variant_note	longest_days	top_ad_started	countries	n_ads_seen
+6	1	2	macorner.co (46338f-fd.myshopify.com); cigreds.com (3dd6c2-58.myshopify.com = clone seller, exact-concept diff URL, active=5)	macorner runs a 2nd variant URL (...ver-2...cam171201vupg, active=1, not in lead sum); cigreds uses no-suffix URL	111	2026-04-13	US + ALL/CA/GB/NZ	7
+7	3	1	trendingcustom.com (we1xpn-ya.myshopify.com)	no variants; both ads exact URL	414	2025-06-14	US + broad EU (AT BE BG CY CZ DE DK EE ES FI FR GB GR HR HU IE IT LT LU LV MT NL PL PT RO SE SI SK)	2
+8	18	2	trendingcustom.com (we1xpn-ya.myshopify.com); weasts.com (weasts.myshopify.com = clone seller, exact-concept diff URL/suffix, active=1)	weasts uses no-suffix URL on own domain	290	2025-10-16	US + broad EU + CA/AU/NZ	2
+9	14	2	trendingcustom.com (we1xpn-ya.myshopify.com); jefgift.com (jefgift.myshopify.com = clone seller, diff URL/concept-name "family league daddys team", active=2)	no lead variants; all 10 lead ads exact URL. jefgift is separate domain	240	2025-12-05	US + broad EU + CA/AU on most ads	12
+10	2	2	macorner.co (46338f-fd.myshopify.com); theredfirst.com (redfirstllc.myshopify.com = clone seller, exact-concept diff URL, active=1)	no lead variants; both lead ads exact URL	333	2025-09-03	US + ALL/CA/AU/NO/BR/NZ	3
