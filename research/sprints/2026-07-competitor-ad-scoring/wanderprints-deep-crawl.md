@@ -74,9 +74,12 @@ Apparel note: unlike Macorner/PFG, Wander Prints leans into **ugly sweaters, fle
 
 ---
 
-## 3. What this does NOT yet cover (before anything merges)
-1. **Full auto-score not run.** A5 (occasion durability) / A6 (differentiation) are judgment criteria; `scripts/score_concepts.py` should be run on the finalists for shortlist-grade scores.
-2. **Prices missing for shortcode products** (`-fbf` redirect URLs had no indexed price).
+## 3. Scoring + tiering (done 2026-08-04)
+All 85 WP products are scored and tiered **in `clone-shortlist-links.csv`** on the same `/45` scale as the original 25 (the earlier all-Tier-3 result was a `/60` scale bug), plus a **bounded longevity bonus** (+2/+4/+6 for ≥180/365/730d), **capped at 90** so the Macorner/PFG heroes (91) stay on top. Result: **24 WP → Tier 1, 32 → Tier 2, 29 → Tier 3.**
+
+Caveats before spend:
+1. **A5/A6 are heuristic auto-scores** — the 24 WP in Tier 1 need human eyeballing before commitment.
+2. **Prices missing for shortcode products** (`-fbf` redirect URLs had no indexed price → conservative A7=1).
 3. **Backends observed:** `great-family-shop.myshopify.com` (primary, 77/96 rows) + `wdp-us.myshopify.com` (secondary) — treat as one seller.
 
 > **Seller-count / A2 validation is deliberately NOT used** (user directive 2026-08-04): an exact-landing-URL search only catches sellers reusing the identical URL (floors near 1); real copycats run a *similar-not-exact* concept, and judging that similarity is unreliable. Validate on **longevity** (a product alive 800+ days is self-validated) + **lead-seller creative scaling**, not copycat counts.
