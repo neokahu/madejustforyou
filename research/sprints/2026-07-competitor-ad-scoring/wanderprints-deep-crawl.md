@@ -38,17 +38,20 @@ This is the real takeaway, and it changes how to read them vs Macorner/PFG.
 
 | Recipient | # products | Read |
 |---|---|---|
-| Parents | 13 | mom/dad keepsakes, apparel, mugs |
+| Couples | 15 | anniversary/bestie-couple, "reasons" mechanic, naughty-couple gags |
+| Parents | 14 | mom/dad keepsakes, apparel, mugs |
 | Grandparents | 13 | grandma/grandpa — direct overlap with our GPD focus |
-| Couples | 11 | anniversary/bestie-couple, "reasons" mechanic |
-| Memorial | 9 | their core always-on lane (extreme longevity) |
+| Memorial | 10 | their core always-on lane (extreme longevity) |
+| Pets | 8 | dog/cat lovers, funny photo |
+| Kids/Grandkids | 7 | huggable pillows/blankets for kids |
 | Friends | 6 | bestie blankets/pillows |
-| Pets | 6 | dog/cat lovers, funny photo |
-| Kids/Grandkids | 6 | huggable pillows/blankets for kids |
-| Occupation/Other | 2 | nurse, retirement |
-| Other/unlabeled | 19 | shortcode/blank-caption URLs — recipient not inferable |
+| Graduate | 3 | graduation stoles / motivational |
+| Occupation | 2 | nurse, retirement |
+| Family | 1 | camping family |
+| Self/Hobby | 1 | book-lover |
+| Other | 5 | blank-caption shortcode/collection URLs — genuinely not inferable |
 
-→ **Parents + Grandparents + Couples + Memorial = 46 of 85 (54%)** — the same emotional lanes we target. Grandparents (13) directly reinforces the GPD pipeline.
+→ **Couples + Parents + Grandparents + Memorial = 52 of 85 (61%)** — the same emotional lanes we target. Grandparents (13) directly reinforces the GPD pipeline.
 
 ---
 
