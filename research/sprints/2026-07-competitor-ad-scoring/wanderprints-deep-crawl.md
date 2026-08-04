@@ -34,31 +34,48 @@ This is the real takeaway, and it changes how to read them vs Macorner/PFG.
 
 **Signals snapshot (85 evergreen products):** longevity min 140d / median 816d / max 1,042d · price min $16.95 / median $25.95 / max $45.95 (low-AOV tier, like PFG) · 18 products ≥4 creatives, 4 products ≥8 · **53 of 85 overlap our Teeinblue angles.**
 
+**By recipient (all 85 evergreen products; recipient tag in `_recount/wanderprints-raw.tsv`):**
+
+| Recipient | # products | Read |
+|---|---|---|
+| Parents | 13 | mom/dad keepsakes, apparel, mugs |
+| Grandparents | 13 | grandma/grandpa — direct overlap with our GPD focus |
+| Couples | 11 | anniversary/bestie-couple, "reasons" mechanic |
+| Memorial | 9 | their core always-on lane (extreme longevity) |
+| Friends | 6 | bestie blankets/pillows |
+| Pets | 6 | dog/cat lovers, funny photo |
+| Kids/Grandkids | 6 | huggable pillows/blankets for kids |
+| Occupation/Other | 2 | nurse, retirement |
+| Other/unlabeled | 19 | shortcode/blank-caption URLs — recipient not inferable |
+
+→ **Parents + Grandparents + Couples + Memorial = 46 of 85 (54%)** — the same emotional lanes we target. Grandparents (13) directly reinforces the GPD pipeline.
+
 ---
 
 ## 2. Top candidate adds (overlap our multi-name/photo core) — for review, NOT yet merged
 Ranked by creative count then longevity. A1 = longevity band (all =3, top-decile+). A4 = creative-scaling band. AOV shown. These are the Wander Prints products worth considering for the clone shortlist.
 
-| Concept | Angle | Creatives (A4) | Days (A1) | AOV | Read |
+| Concept | Recipient | Creatives (A4) | Days (A1) | AOV | Read |
 |---|---|---|---|---|---|
-| **"Beautiful gift for Mom & Grandma"** (multi-name) | grandma/multi-name | **10** | 861 | $22.95 | Their hardest-pushed our-fit product; maps 1:1 to Teeinblue multi-name |
-| **"10 reasons you're my bestie" fleece blanket** | couple/bestie | 9 | 1020 | **$39.95** | Premium AOV + 1,000d; "reasons list" mechanic |
-| **"Best dog mom ever" ugly sweater** | pet | 9 | 1019 | $32.95 | Xmas apparel, premium-ish; cat version ("meowy catmas") = 7 |
-| **"Granddaughter unicorn hug this" pillow** | grandkids | 7 | 1012 | $25.95 | Grandkid keepsake, huggable-object mechanic |
-| **"Besties sitting on the moon"** | couple/bestie | 7 | 749 | $26.95 | Friendship, photo/character |
-| **"Grandma hugged this" soft blanket** | grandma | 5 | 1012 | **$37.95** | Premium AOV, grandma huggable |
-| **"Moms grandmas sweethearts"** (3-gen names) | multi-name family | 3 | 909 | $24.99 | Our exact multi-generation-name strength; premium variant exists at $45.95 |
-| **Memorial cluster** — "I'll carry you" (927d) · "if love could have saved you" (861d) · "Memorial gift for pet parents" (881d, 4 creatives) | memorial | 3–4 | 860–930 | $19–30 | Memorial is their core always-on lane — extreme longevity, year-round, high emotion |
-| **"Birth flower — grow an old friend"** | birth-flower | 2 | 484 | $25.95 | Birth-flower lane (they do journals/dishes; overlaps our birth-flower apparel gap) |
+| **"Beautiful gift for Mom & Grandma"** (multi-name) | Parents/Grandparents | **10** | 861 | $22.95 | Their hardest-pushed our-fit product; maps 1:1 to Teeinblue multi-name |
+| **"10 reasons you're my bestie" fleece blanket** | Friends | 9 | 1020 | **$39.95** | Premium AOV + 1,000d; "reasons list" mechanic |
+| **"Best dog mom ever" ugly sweater** | Pets | 9 | 1019 | $32.95 | Xmas apparel, premium-ish; cat version ("meowy catmas") = 7 |
+| **"Granddaughter unicorn hug this" pillow** | Kids/Grandkids | 7 | 1012 | $25.95 | Grandkid keepsake, huggable-object mechanic |
+| **"Besties sitting on the moon"** | Friends | 7 | 749 | $26.95 | Friendship, photo/character |
+| **"Grandma hugged this" soft blanket** | Grandparents | 5 | 1012 | **$37.95** | Premium AOV, grandma huggable |
+| **"Moms grandmas sweethearts"** (3-gen names) | Parents/Grandparents | 3 | 909 | $24.99 | Our exact multi-generation-name strength; premium variant exists at $45.95 |
+| **Memorial cluster** — "I'll carry you" (927d) · "if love could have saved you" (861d) · "Memorial gift for pet parents" (881d, 4 creatives) | Memorial | 3–4 | 860–930 | $19–30 | Memorial is their core always-on lane — extreme longevity, year-round, high emotion |
+| **"Birth flower — grow an old friend"** | Friends | 2 | 484 | $25.95 | Birth-flower lane (they do journals/dishes; overlaps our birth-flower apparel gap) |
 
 Apparel note: unlike Macorner/PFG, Wander Prints leans into **ugly sweaters, fleece blankets, and soft pillows** at $30–40 — a **higher-AOV format cluster** worth a look given our tier sits ~$24.
 
 ---
 
 ## 3. What this does NOT yet cover (before anything merges)
-1. **A2 (distinct sellers) is unknown per concept.** The crawl searched only `wanderprints.com`, so it shows 1 seller for all — but verification already found a copycat (`whatthegifts.com` on the bestie blanket). A real A2 needs a per-concept multi-seller search (descriptive keyword, like the recount did) for the finalists.
-2. **Full auto-score not run.** A5 (occasion durability) / A6 (differentiation) are judgment criteria; `scripts/score_concepts.py` should be run on the finalists for shortlist-grade scores.
-3. **Prices missing for shortcode products** (`-fbf` redirect URLs had no indexed price).
-4. **Backends observed:** `great-family-shop.myshopify.com` (primary, 77/96 rows) + `wdp-us.myshopify.com` (secondary) — treat as one seller.
+1. **Full auto-score not run.** A5 (occasion durability) / A6 (differentiation) are judgment criteria; `scripts/score_concepts.py` should be run on the finalists for shortlist-grade scores.
+2. **Prices missing for shortcode products** (`-fbf` redirect URLs had no indexed price).
+3. **Backends observed:** `great-family-shop.myshopify.com` (primary, 77/96 rows) + `wdp-us.myshopify.com` (secondary) — treat as one seller.
 
-**Suggested next step:** pick the finalists from §2, run per-concept multi-seller + auto-score, then merge approved rows into `clone-shortlist-links.csv` (as a new tier or tagged `src=wanderprints`).
+> **Seller-count / A2 validation is deliberately NOT used** (user directive 2026-08-04): an exact-landing-URL search only catches sellers reusing the identical URL (floors near 1); real copycats run a *similar-not-exact* concept, and judging that similarity is unreliable. Validate on **longevity** (a product alive 800+ days is self-validated) + **lead-seller creative scaling**, not copycat counts.
+
+**Suggested next step:** pick the finalists from §2, run auto-score on them, then merge approved rows into `clone-shortlist-links.csv` (as a new tier or tagged `src=wanderprints`).
