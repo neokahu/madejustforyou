@@ -56,6 +56,18 @@ The mistake is generating footage before locking the look → "character/product
 
 **Optional talking-avatar UGC** (testimonial hooks with an AI actor): Arcads (most realistic, ~$110/mo) / Creatify (URL→ad, ~$33–49/mo) / HeyGen (localization). Not in our API stack — paid add-ons if we want person-to-camera hooks.
 
+### 3.5 Pipeline: product-direct vs character-first
+**We already have the product image → animate it directly (i2v). Never "build" the product.** You only build a reference image first when introducing a **recurring PERSON** (grandma, giftee) who must look the same across shots. **An ad = 3–6 short clips cut together** — generate per shot type, assemble in CapCut:
+
+| Clip type | Pipeline | Build a character first? |
+|---|---|---|
+| Product ambient (glow / push-in / living still) | product image → i2v (Kling) | No |
+| Product + anonymous hand | product image → i2v, prompt the hand | No (hand isn't a recurring identity) |
+| Personalization reveal (names/photo appearing) | **CapCut motion-graphic in edit**, not AI | No |
+| Human reaction / testimonial (recurring person) | build 1 consistent character ref → i2v, OR AI-UGC avatar | **Yes** |
+
+**Default = product-direct, minimize humans** (dodges the 3 hardest AI problems: faces, hands, text). Add a person only when the concept needs the reaction shot. **Decision rule:** no recurring person → product image → i2v; one recurring person → build ONE character ref image first (nano-banana/flux) then i2v with it as reference (Veo ingredients / Seedance `@image` / Kling ref), or use Arcads/Creatify. **Continuity trick:** chain product clips by using the product image as each clip's first frame (or clip 1's last frame as clip 2's first frame) — no character needed.
+
 ---
 
 ## 4. Prompt formula (cinematic + emotional)
