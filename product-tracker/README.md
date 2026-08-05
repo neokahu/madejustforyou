@@ -9,20 +9,25 @@ One row per product. File: `product-tracker.csv`. Update `last_updated` whenever
 
 Only Claude writes to both (from your verbal updates); you view the Sheet. On every change, update the CSV **and** re-push the Sheet so they stay identical. Don't hand-edit the CSV.
 
-Seeded 2026-08-05 with the 12 validated **Tier-1 clone targets** (from `research/sprints/2026-07-competitor-ad-scoring/clone-shortlist-links.csv`) at `stage=backlog`. Add your existing live products and the Wander-Prints Tier-1 candidates as you go.
+**How Claude re-pushes the Sheet (keeps the same link):** copy the CSV to `/Users/neovh34/.workspace-mcp/attachments/product-tracker.csv`, then `update_drive_file(file_id=1BBO5WRBeBVQLkJI8l6zVBe2Ud1qzl7QOL7g5VS8ZoTE, file_path=…, source_format=csv)` — in-place, preserves the ID/link/sharing.
+
+Seeded 2026-08-05 with **all 110 shortlist products** (Macorner 16, PFG 9, Wander Prints 85), ordered by tier then score, all at `stage=backlog`. Add existing live products as `original` rows.
 
 ## Columns
 | Column | Meaning |
 |---|---|
 | `product_id` | Stable ID, `MJP-001`… — never reuse |
+| `tier` | Build priority from the shortlist (1 = highest) |
 | `product_name` | What the product is |
 | `recipient` | Grandparents / Parents / Couples / Family / Siblings / Friends / Pets / Kids-Grandkids / Self-Hobby / Memorial / Graduate / Occupation |
-| `clone_source` | Competitor concept it's based on, or `original` |
+| `clone_brand` | Competitor it's cloned from (Macorner / PFG / Wander Prints), or `original` |
+| `ref_product_link` | The competitor's product URL (what you're cloning) |
+| `ref_ads_link` | The competitor's live Meta Ad-Library link for this product |
 | `stage` | **Master status** — see vocab below (the one column to glance at) |
 | `design_status` | `not-started` / `in-progress` / `ready` (Teeinblue assets + mockup done) |
 | `sent_to_freelancer` | Date sent to freelancer to upload (`YYYY-MM-DD`), else blank |
 | `live_date` | Date it went live on the store, else blank |
-| `store_url` | Live product URL once uploaded |
+| `store_url` | **Our** live product URL once uploaded |
 | `ad_status` | `none` / `draft` / `in-review` / `active` / `paused` / `killed` |
 | `ad_launch_date` | Date ads first went live |
 | `ad_result` | Spend / ROAS / verdict (manual until a Meta Ads MCP is connected) |
