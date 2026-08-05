@@ -3,6 +3,12 @@
 Tracks each product through the full pipeline: **design → sent to freelancer → live on store → ads → ad status.**
 One row per product. File: `product-tracker.csv`. Update `last_updated` whenever a row changes.
 
+## Where it lives (two copies, one writer)
+- **`product-tracker.csv`** (this repo) — canonical + git history.
+- **Google Sheet** (your dashboard) — ID `1BBO5WRBeBVQLkJI8l6zVBe2Ud1qzl7QOL7g5VS8ZoTE`, in the `nam.vu@firebits.com` Drive, link-shared as editor: https://docs.google.com/spreadsheets/d/1BBO5WRBeBVQLkJI8l6zVBe2Ud1qzl7QOL7g5VS8ZoTE/edit
+
+Only Claude writes to both (from your verbal updates); you view the Sheet. On every change, update the CSV **and** re-push the Sheet so they stay identical. Don't hand-edit the CSV.
+
 Seeded 2026-08-05 with the 12 validated **Tier-1 clone targets** (from `research/sprints/2026-07-competitor-ad-scoring/clone-shortlist-links.csv`) at `stage=backlog`. Add your existing live products and the Wander-Prints Tier-1 candidates as you go.
 
 ## Columns
