@@ -30,6 +30,20 @@
 | **Best-of-N** | Product i2v is probabilistic — batch 3–4 per prompt, pick the cleanest. Plan for *selection*, not one-shot. |
 | **Resolution** | Draft 720p to find the shot cheap, re-run the keeper at 1080p. |
 
+## 2.5 How many product images? (we have multiple shots)
+**Per clip = 1 image. Across the ad = use all of them.** i2v animates ONE start frame — feeding many angles into a single generation does NOT give 3D understanding; it just needs one clean first frame. Since an ad is 3–6 clips, use a **different shot per clip** for variety with zero morph risk (you feed real angles instead of asking the model to invent them).
+
+| Shot | Use this photo |
+|---|---|
+| Glow / hero push-in | clean front beauty shot |
+| Detail — engraved names (living still) | macro / close-up of the engraving |
+| Ambient / lifestyle | staged in-context / angled shot |
+| CTA hero | sharpest straight-on shot |
+
+- **Pro move — first + last frame:** if two shots form a natural motion (wide → close, front → angled), feed them as the two endpoints and let the model interpolate. Most predictable control there is, and the product stays true at BOTH ends because both are your real photos (no mid-drift). Ideal for "pull in to the names."
+- **Optional multi-reference for fidelity:** Kling elements / Seedance `@image1,@image2` / Veo "ingredients" accept a couple of angles to hold the product consistent (most-important first). Nice-to-have, not required.
+- **Caution:** mismatched lighting/backgrounds across shots make the cut feel disjointed — color-grade to match in CapCut.
+
 ## 3. Per-model cheat sheet (our stack)
 | Model | Prompt structure | Camera control | Product fidelity lever | Negatives | Clip |
 |---|---|---|---|---|---|
