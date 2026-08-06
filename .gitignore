@@ -12,3 +12,8 @@ node_modules/
 *.psd
 *.gif
 *.ico
+# Video assets (ad clips + finals) — Drive-synced, not git
+*.mp4
+*.mov
+*.webm
+*.m4v

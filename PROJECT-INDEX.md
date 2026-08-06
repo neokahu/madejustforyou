@@ -19,6 +19,7 @@ workspace. Personalizer app = **Teeinblue**. Fulfillment = POD providers via Tee
 | **`teeinblue-assets/`** | production-ready personalizer assets + the library system (mirrors Teeinblue) |
 | **`product-clone/`** | per-product build pipelines (reference → design → clipart → Teeinblue) |
 | **`product-tracker/`** | ops tracker: each product's pipeline status (design → freelancer → live → ads) |
+| **`live-products/`** | per-live-product work folders (live URL, source-images/, clips/, final/) for ad production |
 | **`sample-products/`** | one-off sample design mockups |
 | **`category-covers/`** | storefront category cover images |
 | **`assets/`** | brand/social assets (e.g. `assets/social/` Facebook cover, welcome post) |
