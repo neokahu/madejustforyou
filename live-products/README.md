@@ -7,6 +7,7 @@ One folder per **live** product (things actually on the store). This is the *wor
 live-products/
   MJP-###-<slug>/
     README.md         <- live URL, IDs, competitor ref, ad-library links, status, notes
+    ad-copy.md        <- ad text: caption/body, headline, CTA, hooks, on-screen text
     source-images/    <- the product photos (source stills for image-to-video)
     clips/            <- generated AI video clips (raw, per shot)
     final/            <- assembled final ad videos
