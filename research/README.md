@@ -84,7 +84,7 @@ research/
 
 **`sprints/`** — living work; see [`sprints/README.md`](sprints/README.md) for the index. One folder
 per sprint; each greenlit concept is a **self-contained sub-folder** (brief + specs + experiment +
-`_assets/`). Finished reusable component libraries **graduate** to the repo-root `teeinblue-assets/`.
+`_assets/`). Finished reusable component libraries **graduate** to the repo-root `library/personalizer/`.
 
 ---
 

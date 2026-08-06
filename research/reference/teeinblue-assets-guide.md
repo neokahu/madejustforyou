@@ -5,7 +5,7 @@ personalization actually work — so builds and SOPs stop guessing. Every claim 
 verified against the official docs (support.teeinblue.com) + the store's own portal, July 2026.
 
 Companion files:
-- Asset library (files + owner index): [`/teeinblue-assets/`](../../teeinblue-assets/ASSET-SYSTEM.md)
+- Asset library (files + owner index): [`/library/personalizer/`](../../library/personalizer/ASSET-SYSTEM.md)
 - Tool fit / verdict: [`teeinblue.md`](teeinblue.md)
 - SOPs (separate `sop-docs` repo): TASK-MKT-007 (prep), TASK-MKT-008 (campaign),
   TASK-MKT-012 (organize/name), TASK-MKT-013 (upload + image-option→text)

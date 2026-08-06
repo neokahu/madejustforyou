@@ -76,7 +76,7 @@ the `.md` inside each type folder (`Text/`, `Colors/`, `Numbers/`, `Photo/`).
 ## Folder mirror (matches Teeinblue)
 
 ```
-teeinblue-assets/
+library/personalizer/
 ├── ASSET-SYSTEM.md         these rules
 ├── asset-registry.csv      owner's private index (all types)
 ├── Clipart/   <Parent>/<Category>/{png,svg}

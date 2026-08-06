@@ -2,7 +2,7 @@
 
 One folder per sprint. Each sprint holds its own research docs; each **greenlit concept** is a
 self-contained sub-folder (brief + specs + experiment card + `_assets/`). Finished reusable
-component libraries **graduate** to the repo-root `teeinblue-assets/` (so a library isn't trapped
+component libraries **graduate** to the repo-root `library/personalizer/` (so a library isn't trapped
 in one sprint).
 
 ## Convention

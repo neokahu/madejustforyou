@@ -11,23 +11,17 @@ workspace. Personalizer app = **Teeinblue**. Fulfillment = POD providers via Tee
 
 ## Top-level map
 
+Four domains: **research** (ideas) · **products** (the catalog) · **library** (shared reusable assets) · **marketing** (go-to-market) — plus logs. New work always has an obvious home; emergent domains (`suppliers/`, `ops/`, `data/`) get created when first needed.
+
 | Path | What it is |
 |---|---|
-| **`PROJECT-INDEX.md`** | this file — the map |
-| **`README.md`** | short repo note |
-| **`research/`** | the core: idea research system, occasion calendar, sprints, tool guides |
-| **`teeinblue-assets/`** | production-ready personalizer assets + the library system (mirrors Teeinblue) |
-| **`product-clone/`** | per-product build pipelines (reference → design → clipart → Teeinblue) |
-| **`product-tracker/`** | ops tracker: each product's pipeline status (design → freelancer → live → ads) |
-| **`live-products/`** | per-live-product work folders (live URL, source-images/, clips/, final/) for ad production |
-| **`sample-products/`** | one-off sample design mockups |
-| **`category-covers/`** | storefront category cover images |
-| **`assets/`** | brand/social assets (e.g. `assets/social/` Facebook cover, welcome post) |
-| **`_SESSION-LOGS/`** | session handoffs (latest working state) — **read before resuming** |
-| **`handoffs/`** | older session handoffs (pre-`_SESSION-LOGS` convention) |
-| **`MadeJustForYou_design_system.html`** | exported brand/design-system reference |
-| **`Grandparents-Day-Checklist.md`** | campaign checklist |
-| **`THEME-REPO.md`** | 👉 pointer — the Shopify **theme code** lives in a **separate repo** (`~/Desktop/projects/madejustforyou-theme/shopify-theme-1/`), not here |
+| **`PROJECT-INDEX.md`** · **`README.md`** · **`THEME-REPO.md`** | the map · repo note · pointer to the separate theme repo (`~/Desktop/projects/madejustforyou-theme/shopify-theme-1/`) |
+| **`research/`** | ideas: idea research system, occasion calendar, sprints, tool guides |
+| **`products/`** | the catalog — one folder per product (`_registry/` = tracker + Sheet; `<ID>/` = `product.md` · `build/` · `ads/` · `listing/`). See `products/README.md` |
+| **`library/`** | shared reusable building blocks: `library/personalizer/` (Teeinblue clipart library) · `library/brand/` (brand/social assets + `design-system.html`) |
+| **`marketing/`** | go-to-market: `marketing/calendar/` (occasion calendar + campaign checklists); `campaigns/`, `performance/` added when needed |
+| **`_SESSION-LOGS/`** | all session handoffs (latest working state) — **read newest before resuming** |
+| _future_ | `suppliers/` (POD providers, SKU↔cost), `ops/` (SOPs, automation), `data/` (sales, margins, LTV) — create when first needed |
 
 **Brand palette** (from theme repo `config/settings_data.json`): terracotta `#C15F3C`, gold `#E0A458`, dusty rose `#D98E85`,
 cream `#FBF6EE`, sand `#EFE4D4`, espresso `#2E2822`, taupe `#8A7E70`. Fonts: Playfair Display
@@ -54,13 +48,13 @@ from **living sprint work** (`sprints/`). See `research/README.md` for the folde
 
 ---
 
-## `teeinblue-assets/` — personalizer asset library
+## `library/personalizer/` — personalizer asset library
 
 Mirrors Teeinblue's Asset structure so uploads are drag-a-folder. See
-[`teeinblue-assets/ASSET-SYSTEM.md`](teeinblue-assets/ASSET-SYSTEM.md) for the rules.
+[`library/personalizer/ASSET-SYSTEM.md`](library/personalizer/ASSET-SYSTEM.md) for the rules.
 
 ```
-teeinblue-assets/
+library/personalizer/
 ├── ASSET-SYSTEM.md              taxonomy + naming rules (top level = Teeinblue Asset Types)
 ├── asset-registry.csv           owner's index of every asset (code → type → category → file)
 ├── Clipart-Categories/          images PLACED on design (transparent PNG + SVG)
@@ -79,7 +73,7 @@ Additional Options (upload thumbnail per item; render via conditional text/clipa
 
 ---
 
-## `product-clone/` — per-product build pipelines
+## `products/` — per-product build pipelines
 
 ### `NV984-pajama/` — "Best Dad/Grandpa Ever" all-over pajama (active build)
 Cut-and-sew, 2 leg panels; **master print size 6335×7057 @300 DPI** (4XL max).
@@ -114,6 +108,6 @@ this repo.
 ## Where to start for a task
 - **Resume work** → newest file in `_SESSION-LOGS/`
 - **How Teeinblue works** → `research/reference/teeinblue-assets-guide.md`
-- **Add/find an asset** → `teeinblue-assets/ASSET-SYSTEM.md` + `asset-registry.csv`
-- **Build the pajama** → `product-clone/NV984-pajama/` + `_SESSION-LOGS/2026-07-20-pajama-clone-handoff.md`
+- **Add/find an asset** → `library/personalizer/ASSET-SYSTEM.md` + `asset-registry.csv`
+- **Build the pajama** → `products/NV984-pajama/build/` + `_SESSION-LOGS/2026-07-20-pajama-clone-handoff.md`
 - **New design idea** → `research/` (README + method/ + templates/)
