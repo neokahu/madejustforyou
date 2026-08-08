@@ -40,7 +40,7 @@ from **living sprint work** (`sprints/`). See `research/README.md` for the folde
 |---|---|
 | `research/README.md` | how the research system works + folder map |
 | `research/method/0-foundation…4-validate.md` | the methodology, filenames = pipeline stages (0 dimensions · 1 discover · 2 generate/idea-engine · 3 score · 4 validate) + `new-ad-potential-scorecard.md` |
-| `research/reference/` | **VERIFIED Teeinblue mechanics** (`teeinblue-assets-guide.md` — source of truth, don't re-guess) + `teeinblue.md` (fit/verdict) |
+| `research/reference/` | **VERIFIED Teeinblue mechanics** (`teeinblue-assets-guide.md`) + `teeinblue.md` · **AI FILM STUDIO** (`ai-film-studio.md` — video-ad pipeline/roles/gates/cost; kit `products/_templates/film-studio/`, crew `.claude/agents/film-*`, run `/film:new`) + video playbooks (`ai-emotional-video-ad-playbook`, `image-to-video-prompt-method`, `ai-product-review-consistency-method`) |
 | `research/templates/` | design-brief, experiment-card, idea-database templates |
 | `research/scripts/` | all code: `score_concepts.py`, `score_ads.jq`, `score_gpd.py`, `build_calendar.py` |
 | `research/calendar/` | gifting-occasion calendar (`occasions-calendar.{md,csv,ics}`) |

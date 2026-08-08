@@ -1,0 +1,11 @@
+# Ephemeral / regenerable — never commit
+build/
+_scratch/
+# Large binaries are Drive-synced, not git (repo convention)
+*.mp4
+*.mov
+refs/**/*.jpg
+refs/**/*.png
+assets/*.png
+assets/*.mp3
+audio/*.mp3

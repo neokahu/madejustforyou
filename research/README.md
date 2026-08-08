@@ -76,6 +76,9 @@ research/
 |------|-----------|
 | [`reference/teeinblue-assets-guide.md`](reference/teeinblue-assets-guide.md) | **VERIFIED** Teeinblue mechanics — source of truth, don't re-guess |
 | [`reference/teeinblue.md`](reference/teeinblue.md) | Teeinblue tool fit / verdict / pricing |
+| [`reference/ai-film-studio.md`](reference/ai-film-studio.md) | **AI FILM STUDIO** — emotional short-film ad pipeline (roles/phases/gates/rules/real cost). Kit: `products/_templates/film-studio/`; crew: `.claude/agents/film-*`; run `/film:new` |
+| video playbooks | `ai-emotional-video-ad-playbook.md` (strategy) · `image-to-video-prompt-method.md` (i2v craft) · `ai-product-review-consistency-method.md` (identity+scale, has pricing correction) |
+| [`templates/film-script-template.md`](templates/film-script-template.md) | shooting-script template for a new film |
 | [`templates/idea-database.csv`](templates/idea-database.csv) | the backlog / knowledge-base schema (Stages 2 & 6) |
 | [`templates/design-brief.md`](templates/design-brief.md) | Stage 4 — one-page brief handed to the designer/AI |
 | [`templates/experiment-card.md`](templates/experiment-card.md) | Stage 5 — one card per test, thresholds declared *before* launch |
