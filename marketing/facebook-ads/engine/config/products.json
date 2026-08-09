@@ -1,0 +1,13 @@
+{
+  "_comment": "Per-product unit economics. break_even_CPA & break_even_ROAS are computed from these (see economics.py). Recompute per product. revenue_per_order = what the customer pays incl. shipping charged; cogs_all_in = POD base + fulfilment + ship (all-in); fee_pct = payment/transaction fee as a fraction of revenue.",
+  "products": {
+    "MJ4U-111": {
+      "name": "Grandma's Garden candle warmer",
+      "revenue_per_order": 59.93,
+      "reported_value_per_order": 49.94,
+      "cogs_all_in": 20.00,
+      "fee_pct": 0.03,
+      "notes": "True revenue = product $49.94 + shipping $9.99 = $59.93. cogs_all_in $20 = full manufacture→ship-to-customer (confirmed). Shopify's standard pixel reports PRODUCT-ONLY ($49.94) to Meta, so break-even ROAS is computed on that reported basis (~1.31x) to match Meta's ROAS. => contribution/break-even CPA ~$38.13. FIX: have the freelancer send order TOTAL (incl shipping) in the pixel, then set reported_value_per_order = 59.93 (break-even ROAS reverts to ~1.57x)."
+    }
+  }
+}

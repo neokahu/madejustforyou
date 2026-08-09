@@ -1,0 +1,15 @@
+{
+  "_comment": "Phase-4 write-execution guardrails. All spend numbers in ACCOUNT CURRENCY (USD). Executor is dry-run unless run with --live AND kill_switch is off.",
+
+  "scale_increase_pct": 20,
+  "max_adset_daily_budget_usd": 300.0,
+  "global_daily_budget_ceiling_usd": 500.0,
+  "scale_cooldown_hours": 48,
+  "max_actions_per_run": 25,
+
+  "kill_switch": false,
+  "_kill_switch_note": "Set true (or export FB_ENGINE_KILL_SWITCH=1) to block ALL live writes even under --live. Dry-run still shows what it would do.",
+
+  "no_scale_after": null,
+  "_no_scale_after_note": "Fulfillment/seasonal cut-off (methodology Part 8): 'YYYY-MM-DD' after which SCALE actions are skipped, so you don't scale spend into a window your POD supplier can't ship in time (refund risk). null = no limit. Kills/pauses still run."
+}

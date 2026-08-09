@@ -1,6 +1,6 @@
-# MJP-111 — Grandma's Garden Candle Warmer
+# MJ4U-111 — Grandma's Garden Candle Warmer
 
-**Working folder for ad production.** Status overview lives in `products/_registry/` (row MJP-111).
+**Working folder for ad production.** Status overview lives in `products/_registry/` (row MJ4U-111).
 
 ## Product
 - **Name:** Grandma's Garden Love Grows Here – Personalized Candle Warmer (49)

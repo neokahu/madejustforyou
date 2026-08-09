@@ -26,7 +26,7 @@ ads/film/                 # one production. Multiple films → film-<slug>/
 ```
 **Rules:** winners live in `shots/`; every reject/verify frame goes to `_scratch/` (never clutter `shots/`). `build/` + `_scratch/` are regenerable → gitignored. Deliverables ONLY in `out/`. Flow reads left-to-right: **refs → shots → build → out**.
 
-**Deprecated ad-hoc folders → where they map** (the old MJP-111 mess): `source-images/`→`refs/product/` · `product-turntable/`→`refs/product/` (+ winners to `shots/`) · `scene-videos/` & `clips/`→`shots/` (winners) + `_scratch/` (rejects) · `scene-stills/`→`_scratch/` · `final/`→`out/` (+ `audio/`).
+**Deprecated ad-hoc folders → where they map** (the old MJ4U-111 mess): `source-images/`→`refs/product/` · `product-turntable/`→`refs/product/` (+ winners to `shots/`) · `scene-videos/` & `clips/`→`shots/` (winners) + `_scratch/` (rejects) · `scene-stills/`→`_scratch/` · `final/`→`out/` (+ `audio/`).
 
 ## Files
 - `production.md` — per-film config + live state/budget (fill this first).

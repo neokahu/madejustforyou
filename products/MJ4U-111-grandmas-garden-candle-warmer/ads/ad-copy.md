@@ -1,4 +1,4 @@
-# MJP-111 — Ad Copy
+# MJ4U-111 — Ad Copy
 
 All written text for the ad: primary text, headline, CTA, hook variants, and the on-screen text in the video. Pairs with the film **"Everyone Is Still in Your Garden"** (`ads/film/script.md`) — this copy shares that film's hook and emotional thesis. Format follows the Meta-ad-fields spec in `research/reference/ai-emotional-video-ad-playbook.md`.
 
@@ -15,14 +15,51 @@ All written text for the ad: primary text, headline, CTA, hook variants, and the
 
 ### Primary text — test these 3 (emotional-complementary default; #3 is the DR split)
 
-1. *(Emotional — the film's thesis, sound-off-safe)*
-   They said she was starting to forget us. So we put everyone back in her garden. 🌸 It's a candle warmer lamp — one birth flower and one name for every grandchild, glowing soft on her nightstand. Now when she touches a bloom, she finds her people again. Personalized just for her → **Shop Now**.
+> **Formatting rule:** write primary text with **line breaks** — short lines, blank line between beats, emoji/✔️ bullets for lists. Never one dense paragraph (unreadable in-feed). Copy below is the exact live format.
 
-2. *(Emotional — "count us all," warm and specific)*
-   Your grandma raised the whole family. This puts the whole family right back beside her — every night. A birth flower and name for each grandchild on one soft-glowing lamp: Sophia's cosmos, Donna's aster, Sharon's rose, Helen's marigold, Sarah's poppy. No flame, no smoke, just her garden lit up where she can always find it. Made just for her → **Shop Now**.
+**1 — Emotional (the film's thesis, sound-off-safe)** · label `emo-thesis`
+```
+They said she was starting to forget us.
 
-3. *(Traditional DR — benefit + offer + urgency, for the funnel split)*
-   The personalized gift grandmas actually cry over. 🌸 Grandma's Garden Candle Warmer — add each grandchild's name + birth flower to the shade, and it doubles as a flameless warmer AND a soft night light (no flame, no smoke). Premium keepsake, $49.95, ships worldwide. Selling fast for gifting season — **Shop Now** before her set sells out.
+So we put everyone back in her garden. 🌸
+
+It's a candle warmer lamp — one birth flower and one name for every grandchild, glowing soft on her nightstand.
+
+Now when she touches a bloom, she finds her people again.
+
+🌸 Personalized just for her — tap Shop Now.
+```
+
+**2 — Emotional ("count us all," warm + specific)** · label `count-us-all`
+```
+Your grandma raised the whole family.
+This puts the whole family right back beside her — every night.
+
+A birth flower + name for each grandchild on one soft-glowing lamp:
+🌸 Sophia — cosmos
+🌸 Donna — aster
+🌸 Sharon — rose
+🌸 Helen — marigold
+🌸 Sarah — poppy
+
+No flame, no smoke — just her garden lit up where she can always find it.
+
+Made just for her 👇
+```
+
+**3 — Traditional DR (benefit + offer + urgency)** · label `dr-benefit`
+```
+The personalized gift grandmas actually cry over. 🌸
+
+Grandma's Garden Candle Warmer — add each grandchild's name + birth flower to the shade.
+
+✔️ Flameless warmer AND soft night light
+✔️ No flame, no smoke
+✔️ Premium keepsake — ships worldwide
+
+$49.95 · selling fast for gifting season.
+Shop now before her set sells out 👇
+```
 
 ### Headline — test these 3 (Macorner pattern: `[emotional one-liner] – Personalized Gift For Grandma`)
 
@@ -36,7 +73,7 @@ Personalized with each grandchild's name and birth flower. Flameless candle warm
 ### CTA button
 Shop Now
 
-**Ad name (internal):** `MJP-111_<hook-label>_v1` (set `<hook-label>` per hook below; bump the version per reword)
+**Ad name (internal):** `MJ4U-111_<hook-label>_v1` (set `<hook-label>` per hook below; bump the version per reword)
 
 ---
 

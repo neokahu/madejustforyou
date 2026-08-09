@@ -1,0 +1,41 @@
+{
+  "_comment": "Methodology thresholds from Facebook-Testing-Scaling-Research.md. Multipliers marked '_mult_of_be_cpa' are relative to THIS product's break-even CPA; '_mult_of_be_roas' relative to break-even ROAS. Benchmark numbers (hook/CTR/CPC/CPM) are US-ecom 2025-26 consensus — recalibrate to your own account after a few weeks.",
+
+  "leading": {
+    "hook_rate_kill_below": 0.20,
+    "hook_rate_healthy_at": 0.25,
+    "ctr_link_kill_below": 0.008,
+    "ctr_link_healthy_at": 0.012,
+    "cpc_link_high_above": 1.75,
+    "cpm_high_above": 20.0,
+    "cost_per_atc_healthy_frac_of_be_cpa": 0.3333
+  },
+
+  "early_kill": {
+    "_comment": "Fast pre-CPA kill of clearly-dead creatives (methodology Part 2). Fires only on the full combination: enough impressions AND bad hook AND bad link-CTR AND zero ATC. CPM/CPC are NOT standalone triggers.",
+    "min_impressions": 1500,
+    "hook_rate_below": 0.20,
+    "ctr_link_below": 0.008
+  },
+
+  "kill": {
+    "no_atc_spend_mult_of_be_cpa": 1.0,
+    "atc_no_purchase_spend_mult_of_be_cpa": 2.5,
+    "underperform_roas_spend_mult_of_be_cpa": 2.0
+  },
+
+  "keep_scale": {
+    "keep_min_purchases": 1,
+    "scale_roas_mult_of_be_roas": 1.4,
+    "scale_min_days": 3
+  },
+
+  "judgement": {
+    "min_days_before_kill_on_lagging": 3,
+    "insufficient_spend_frac_of_be_cpa": 1.0
+  },
+
+  "fatigue": {
+    "frequency_high_above": 2.5
+  }
+}

@@ -81,7 +81,7 @@ Google's own structure, front-load the most important element, change **one vari
 - **Emotion:** name the feeling + a physical tell ("grandmother's eyes welling up, hand to mouth").
 - **Consistency:** repeat an **identity anchor verbatim** every shot ("same 60-yo woman, silver bob, cream cardigan — as previous shot") + reference image; keep a continuity table (character/wardrobe/props/lens/grade/lighting).
 
-**Worked example — candle warmer (MJP-111), memorial-adjacent warmth angle:**
+**Worked example — candle warmer (MJ4U-111), memorial-adjacent warmth angle:**
 > *Slow dolly-in on a personalized "Grandma's Garden" candle-warmer lamp glowing on a windowsill at dusk; warm amber light blooms across engraved grandchildren's names; a grandmother's hand enters frame and rests beside it; soft golden window light, shallow depth of field, cozy nostalgic film grade; gentle piano; 6s.*
 Then compose the **real product still** (with real names via ideogram) as the hero; use the AI clip as the ambient glow/lifestyle wrap.
 

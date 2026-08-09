@@ -1,0 +1,21 @@
+{
+  "_comment": "Native-rule SAFETY-FLOOR thresholds (Phase 3). These are the emergency guardrails you set in Ads Manager. Intentionally LOOSER than the decision engine (engine acts first at 1x/2.5x CPA; the floor is the backstop for runaways / engine-down). Multipliers are relative to each product's break-even (economics.py).",
+
+  "emergency_kill": {
+    "no_purchase_spend_mult_of_be_cpa": 3.0,
+    "roas_floor_frac_of_be_roas": 0.7,
+    "roas_floor_spend_mult_of_be_cpa": 3.0,
+    "min_age_days": 3
+  },
+
+  "notify": {
+    "frequency_high_above": 3.0
+  },
+
+  "optional_interim_scale": {
+    "roas_mult_of_be_roas": 1.5,
+    "increase_pct": 20,
+    "min_days": 3,
+    "cooldown_hours": 48
+  }
+}

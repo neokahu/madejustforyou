@@ -1,6 +1,6 @@
 # AI Film Studio — MadeJustForYou
 
-**Purpose:** a repeatable "small studio" for producing emotional short-film ads (Thai-ad style) with AI, end-to-end. This is the **source of truth** every studio role reads. Built 2026-08-07 from the MJP-111 "Everyone Is Still in Your Garden" production (see that film as the worked example).
+**Purpose:** a repeatable "small studio" for producing emotional short-film ads (Thai-ad style) with AI, end-to-end. This is the **source of truth** every studio role reads. Built 2026-08-07 from the MJ4U-111 "Everyone Is Still in Your Garden" production (see that film as the worked example).
 
 Builds on — does not duplicate — the three method playbooks:
 - [[ai-emotional-video-ad-playbook]] — emotion→angle→hook strategy, testing.
@@ -74,7 +74,7 @@ Export the 15s cut + the hook-variant creatives + ad copy → **hand off to the 
 
 ## 3. Hard rules (the expensive lessons)
 1. **Turntables first, gated.** Never generate scenes before the character + product references are locked and approved. Identity/scale fixes are ~$0.05 at the ref stage vs ~$1/clip as reshoots.
-2. **One character reference per person, fed every shot.** No ref → the model invents a new person each clip (the MJP-111 "memory clip" failure). Multi-angle (¾-L/¾-R) lets you vary camera while identity holds.
+2. **One character reference per person, fed every shot.** No ref → the model invents a new person each clip (the MJ4U-111 "memory clip" failure). Multi-angle (¾-L/¾-R) lets you vary camera while identity holds.
 3. **Product needs a scale-anchored reference** — the product beside a familiar object (a mug) at true size. A bare product crop has no scale cue and the model oversizes it in wide shots. Keep the product in **close/medium** framing.
 4. **Use the REAL product image, animated** — animate the actual store photo (gentle push-in/drift, flame flicker) rather than a static paste or an AI re-render. Match all on-screen names to the real product's names.
 5. **AI garbles printed text → composite real text in post.** Names on the lampshade, the notebook page, the note: render sharp with PIL and composite. Match notebook names to lamp names exactly (match-cut).
@@ -130,4 +130,4 @@ ads/film/  production.md  script.md
 Rules: winners in `shots/`, rejects/verify in `_scratch/`; `build/` + `_scratch/` regenerable → gitignore; binaries Drive-synced, only text/scripts committed. Kit + skeleton: `products/_templates/film-studio/`.
 
 ## Worked example (also the reference implementation of the folder standard)
-`products/MJP-111-grandmas-garden-candle-warmer/ads/film/` — organized in the STANDARD layout: `production.md`, `script.md`, `refs/{cast,product}`, `shots/` (9 winners), `audio/`, `assets/logo.png`, `out/EveryoneStillInYourGarden_v2.mp4` (36s). As-built scripts in `_scratch/as-built/`; pre-standard dirs in `ads/_archive/`. Clean-path cost ≈ $9 / ~8 min parallel.
+`products/MJ4U-111-grandmas-garden-candle-warmer/ads/film/` — organized in the STANDARD layout: `production.md`, `script.md`, `refs/{cast,product}`, `shots/` (9 winners), `audio/`, `assets/logo.png`, `out/EveryoneStillInYourGarden_v2.mp4` (36s). As-built scripts in `_scratch/as-built/`; pre-standard dirs in `ads/_archive/`. Clean-path cost ≈ $9 / ~8 min parallel.

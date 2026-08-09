@@ -12,7 +12,7 @@ products/
     ads/              #   ad-copy.md · source-images/ · clips/ · final/
     listing/          #   store copy, listing images, SEO   [when needed]
 ```
-IDs in use: `MJP-###` (from the shortlist/registry) and legacy `NV984-…` (pajama build).
+IDs in use: `MJ4U-###` (from the shortlist/registry) and legacy `NV984-…` (pajama build).
 
 ## Rules
 - **Lifecycle = status in the registry, never folders.** Don't move a product between backlog/live/retired folders; one folder per product, `stage` lives in `_registry/product-tracker.csv`.

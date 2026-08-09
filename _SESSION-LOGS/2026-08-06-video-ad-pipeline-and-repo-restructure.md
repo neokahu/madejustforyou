@@ -9,7 +9,7 @@ Big session. Read this before resuming.
    - **Deep-crawled Wander Prints** → 85 evergreen products; scored + tiered all into one shortlist (**110 rows**). Finding: WP is a *broad long-tail catalog* archetype (median 816d longevity, low creatives/product) — see `research/sprints/2026-07-competitor-ad-scoring/wanderprints-deep-crawl.md`.
    - Added **recipient** category to every product.
 2. **Product ops tracker** built: `products/_registry/product-tracker.csv` + **Google Sheet mirror** (ID `1BBO5WRBeBVQLkJI8l6zVBe2Ud1qzl7QOL7g5VS8ZoTE`). Claude is sole writer; re-push via `update_drive_file` from the attachments staging copy. See [[product-tracker-and-sheet-sync]] memory.
-3. **First live product tracked: MJP-111** — Grandma's Garden candle warmer. Real live URL = `.../grandmas-garden-love-grows-here-personalized-candle-warmer-49` (the one first given 404s). Clone of Macorner, scored 80% Evergreen T2, $49.95. Competitor ad is LIVE (copy "love growing at home").
+3. **First live product tracked: MJ4U-111** — Grandma's Garden candle warmer. Real live URL = `.../grandmas-garden-love-grows-here-personalized-candle-warmer-49` (the one first given 404s). Clone of Macorner, scored 80% Evergreen T2, $49.95. Competitor ad is LIVE (copy "love growing at home").
 4. **AI video-ad research → 2 playbooks** in `research/reference/`: `ai-emotional-video-ad-playbook.md` (strategy) + `image-to-video-prompt-method.md` (prompt craft). Pipeline = product image → i2v clips (Kling) → HyperFrames assemble → MP4. No CapCut (no MCP; manual only). Per-product, product-direct; character-build only if a recurring person.
 5. **Fixed + extended the Kie.ai MCP** (`~/Desktop/projects/kie-ai-mcp`, pushed to its own GitHub): Kling 2.6 fix (was missing `image_urls[]`+`sound`), added **Kling 3.0 Turbo** (`kling_v3_turbo_video`), **Seedance 2.0** (`seedance_2_video`), **Veo 3.1** (`veo31_video`, flat body /veo/generate). Default model = **Kling 3.0 Turbo**.
 6. **Proof clip generated** via AtlasCloud (Kie.ai MCP was broken at the time) from the store image — confirms pipeline works. Atlas Kling = ~$0.30/clip (pricey at scale → use Kie.ai).
@@ -20,10 +20,10 @@ Big session. Read this before resuming.
 
 ## Next steps
 1. **Restart the session** (loads the fixed Kie.ai MCP tools).
-2. Drop the product image **with the personalized names** into `products/MJP-111-grandmas-garden-candle-warmer/ads/source-images/`.
+2. Drop the product image **with the personalized names** into `products/MJ4U-111-grandmas-garden-candle-warmer/ads/source-images/`.
 3. Generate real clips: `kling_v3_turbo_video` (image → i2v; jpg/png only — use weserv proxy for webp). Save to `ads/clips/`. Ad copy ready in `ads/ad-copy.md`.
 4. Assemble in **HyperFrames** (name-reveal title card + clips + captions + ElevenLabs VO + music) → `ads/final/`.
-5. Update tracker: MJP-111 `ad_status` when ads go live.
+5. Update tracker: MJ4U-111 `ad_status` when ads go live.
 
 ## Key facts / gotchas
 - Video-gen models need **jpg/png**, not webp → `https://images.weserv.nl/?url=ssl:<cdn-url>&output=jpg&w=1080`.

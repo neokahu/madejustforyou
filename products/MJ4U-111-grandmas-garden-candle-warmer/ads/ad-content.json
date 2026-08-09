@@ -1,0 +1,79 @@
+{
+  "_comment": "Machine-readable ad content for the standardized uploader (engine/upload_draft.py). primary_text is authored as an ARRAY OF LINES (joined with newlines) so copy is always scannable — never one paragraph. Empty string = blank line. Video path is relative to repo root.",
+
+  "product_id": "MJ4U-111",
+  "product_name": "Grandma's Garden",
+  "campaign_suffix": "R1 test",
+  "stage": "validate",
+  "test_variable": "primary_text (angle)",
+  "page_id": "1238844842646884",
+  "product_url": "https://madejustforyou.net/products/grandmas-garden-love-grows-here-personalized-candle-warmer-49?variant=50302396957029",
+  "video": "products/MJ4U-111-grandmas-garden-candle-warmer/ads/film/out/EveryoneStillInYourGarden_v2.mp4",
+  "cta": "SHOP_NOW",
+  "description": "Flameless candle warmer + soft night light · personalized · ships worldwide.",
+
+  "campaign": {"objective": "OUTCOME_SALES"},
+  "adset": {
+    "daily_budget_usd": 30,
+    "countries": ["US"],
+    "age_min": 25,
+    "age_max": 65,
+    "optimization_goal": "OFFSITE_CONVERSIONS",
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+    "pixel_id": "1565119432072485",
+    "custom_event_type": "PURCHASE"
+  },
+
+  "ads": [
+    {
+      "label": "emo-thesis",
+      "headline": "Everyone Is Still In Your Garden – Personalized Gift For Grandma",
+      "primary_text": [
+        "They said she was starting to forget us.",
+        "",
+        "So we put everyone back in her garden. 🌸",
+        "",
+        "It's a candle warmer lamp — one birth flower and one name for every grandchild, glowing soft on her nightstand.",
+        "",
+        "Now when she touches a bloom, she finds her people again.",
+        "",
+        "🌸 Personalized just for her — tap Shop Now."
+      ]
+    },
+    {
+      "label": "count-us-all",
+      "headline": "One Bloom For Every Grandchild – Personalized Gift For Grandma",
+      "primary_text": [
+        "Your grandma raised the whole family.",
+        "This puts the whole family right back beside her — every night.",
+        "",
+        "A birth flower + name for each grandchild on one soft-glowing lamp:",
+        "🌸 Sophia — cosmos",
+        "🌸 Donna — aster",
+        "🌸 Sharon — rose",
+        "🌸 Helen — marigold",
+        "🌸 Sarah — poppy",
+        "",
+        "No flame, no smoke — just her garden lit up where she can always find it.",
+        "",
+        "Made just for her 👇"
+      ]
+    },
+    {
+      "label": "dr-benefit",
+      "headline": "So She Can Always Find Her People – Personalized Gift For Grandma",
+      "primary_text": [
+        "The personalized gift grandmas actually cry over. 🌸",
+        "",
+        "Grandma's Garden Candle Warmer — add each grandchild's name + birth flower to the shade.",
+        "",
+        "✔️ Flameless warmer AND soft night light",
+        "✔️ No flame, no smoke",
+        "✔️ Premium keepsake — ships worldwide",
+        "",
+        "$49.95 · selling fast for gifting season.",
+        "Shop now before her set sells out 👇"
+      ]
+    }
+  ]
+}

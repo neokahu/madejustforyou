@@ -1,4 +1,4 @@
-# Production — "Everyone Is Still in Your Garden" (MJP-111)
+# Production — "Everyone Is Still in Your Garden" (MJ4U-111)
 
 **Status:** DELIVERED (v2) · **Cost:** ≈$9 (720p, clean path) · **Res:** 720p · Format: 9:16, ~36s
 Pipeline + rules: `research/reference/ai-film-studio.md`. Script: `script.md`. First film built with the studio; reorganized into the STANDARD layout 2026-08-07.

@@ -16,7 +16,7 @@ Seeded 2026-08-05 with **all 110 shortlist products** (Macorner 16, PFG 9, Wande
 ## Columns
 | Column | Meaning |
 |---|---|
-| `product_id` | Stable ID, `MJP-001`… — never reuse |
+| `product_id` | Stable ID, `MJ4U-001`… — **MJ4U = "Made Just 4 U"**; zero-padded 3-digit, never reuse. Renamed from the old `MJP-` prefix 2026-08-08. |
 | `tier` | Build priority from the shortlist (1 = highest) |
 | `product_name` | What the product is |
 | `recipient` | Grandparents / Parents / Couples / Family / Siblings / Friends / Pets / Kids-Grandkids / Self-Hobby / Memorial / Graduate / Occupation |

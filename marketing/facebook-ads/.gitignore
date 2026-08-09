@@ -1,0 +1,9 @@
+# Secrets (also covered by root .gitignore, belt-and-suspenders)
+.env
+
+# Generated call sheets — regenerable, don't clutter git
+reports/
+
+# Python
+__pycache__/
+*.pyc

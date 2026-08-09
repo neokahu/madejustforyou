@@ -1,4 +1,4 @@
-# MJP-111 — Clip Generation Log
+# MJ4U-111 — Clip Generation Log
 
 Source image (hosted, REAL jpg): https://database.blotato.io/storage/v1/object/public/public_media/c90fc7fd-1d90-479c-ace3-e861dd979111/7a5bf379-9757-4f27-b344-4eb480e71ff5.jpg
 Model: Kling 3.0 Turbo (i2v) · 720p drafts · 5s · best-of-3 per shot

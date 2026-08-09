@@ -1,0 +1,68 @@
+{
+  "_comment": "Synthetic insights in Meta's raw shape, to exercise the engine + executor before real campaigns exist. daily_budget is in cents. Run: python3 run.py --sample / python3 execute.py --sample",
+  "account": {"name": "SAMPLE ACCOUNT", "id": "act_SAMPLE"},
+  "adsets": {
+    "2001": {"name": "US | Broad 25-65", "daily_budget": "6000", "status": "ACTIVE"},
+    "2002": {"name": "US | Lookalike 3%", "daily_budget": "4000", "status": "ACTIVE"},
+    "2003": {"name": "US | Interest: gifts", "daily_budget": "5000", "status": "ACTIVE"},
+    "2004": {"name": "US | Broad 25-65 (UGC)", "daily_budget": "4000", "status": "ACTIVE"},
+    "2005": {"name": "US | Broad 25-65 (new angle)", "daily_budget": "3000", "status": "ACTIVE"},
+    "2006": {"name": "US | Retargeting", "daily_budget": "3000", "status": "ACTIVE"}
+  },
+  "insights": [
+    {
+      "campaign_name": "MJ4U-111 | Garden Film | Linear entry", "adset_name": "US | Broad 25-65", "adset_id": "2001", "ad_name": "Linear-entry v1", "ad_id": "1001", "effective_status": "ACTIVE", "_age_days": 6,
+      "impressions": "42000", "spend": "180.50", "clicks": "900", "ctr": "2.14", "inline_link_clicks": "620", "inline_link_click_ctr": "1.48", "cpc": "0.29", "cpm": "4.30", "frequency": "1.4",
+      "video_3_sec_watched_actions": [{"action_type": "video_view", "value": "12600"}],
+      "actions": [{"action_type": "offsite_conversion.fb_pixel_add_to_cart", "value": "140"}, {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "9"}],
+      "action_values": [{"action_type": "offsite_conversion.fb_pixel_purchase", "value": "560.0"}],
+      "_daily": {"roas": [2.9, 3.0, 3.1, 3.2, 3.0, 3.1], "cpm": [4.3, 4.2, 4.3, 4.4, 4.3, 4.3], "ctr": [0.0148, 0.0150, 0.0147, 0.0149, 0.0148, 0.0150]}
+    },
+    {
+      "campaign_name": "MJ4U-111 | Garden Film | Linear entry", "adset_name": "US | Broad 25-65", "adset_id": "2001", "ad_name": "Linear-entry v2 (young)", "ad_id": "1002", "effective_status": "ACTIVE", "_age_days": 2,
+      "impressions": "20000", "spend": "90.00", "clicks": "410", "ctr": "2.05", "inline_link_clicks": "300", "inline_link_click_ctr": "1.50", "cpc": "0.30", "cpm": "4.50", "frequency": "1.2",
+      "video_3_sec_watched_actions": [{"action_type": "video_view", "value": "6000"}],
+      "actions": [{"action_type": "offsite_conversion.fb_pixel_add_to_cart", "value": "70"}, {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "4"}],
+      "action_values": [{"action_type": "offsite_conversion.fb_pixel_purchase", "value": "250.0"}],
+      "_daily": {"roas": [2.7, 2.8], "cpm": [4.5, 4.5], "ctr": [0.015, 0.015]}
+    },
+    {
+      "campaign_name": "MJ4U-111 | Garden Film | Emotional VO", "adset_name": "US | Lookalike 3%", "adset_id": "2002", "ad_name": "Emotional-VO", "ad_id": "1003", "effective_status": "ACTIVE", "_age_days": 5,
+      "impressions": "34000", "spend": "120.00", "clicks": "560", "ctr": "1.65", "inline_link_clicks": "360", "inline_link_click_ctr": "1.06", "cpc": "0.33", "cpm": "3.53", "frequency": "2.8",
+      "video_3_sec_watched_actions": [{"action_type": "video_view", "value": "10200"}],
+      "actions": [{"action_type": "offsite_conversion.fb_pixel_add_to_cart", "value": "90"}, {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "3"}],
+      "action_values": [{"action_type": "offsite_conversion.fb_pixel_purchase", "value": "220.0"}],
+      "_daily": {"roas": [2.0, 1.9, 1.8, 1.7, 1.6], "cpm": [3.0, 3.2, 3.4, 3.6, 3.8], "ctr": [0.012, 0.011, 0.010, 0.009, 0.008]}
+    },
+    {
+      "campaign_name": "MJ4U-111 | Garden Film | Flash-forward", "adset_name": "US | Broad 25-65", "adset_id": "2001", "ad_name": "Flash-forward hook", "ad_id": "1004", "effective_status": "ACTIVE", "_age_days": 4,
+      "impressions": "16000", "spend": "46.00", "clicks": "120", "ctr": "0.75", "inline_link_clicks": "70", "inline_link_click_ctr": "0.44", "cpc": "0.66", "cpm": "2.88", "frequency": "1.1",
+      "video_3_sec_watched_actions": [{"action_type": "video_view", "value": "2800"}],
+      "actions": []
+    },
+    {
+      "campaign_name": "MJ4U-111 | Static | Testimonial", "adset_name": "US | Interest: gifts", "adset_id": "2003", "ad_name": "Static testimonial", "ad_id": "1005", "effective_status": "ACTIVE", "_age_days": 5,
+      "impressions": "30000", "spend": "100.00", "clicks": "360", "ctr": "1.20", "inline_link_clicks": "300", "inline_link_click_ctr": "1.00", "cpc": "0.33", "cpm": "3.33", "frequency": "1.6",
+      "actions": [{"action_type": "offsite_conversion.fb_pixel_add_to_cart", "value": "34"}]
+    },
+    {
+      "campaign_name": "MJ4U-111 | UGC | Hook A", "adset_name": "US | Broad 25-65 (UGC)", "adset_id": "2004", "ad_name": "UGC unboxing", "ad_id": "1006", "effective_status": "ACTIVE", "_age_days": 4,
+      "impressions": "22000", "spend": "60.00", "clicks": "320", "ctr": "1.45", "inline_link_clicks": "230", "inline_link_click_ctr": "1.05", "cpc": "0.26", "cpm": "2.73", "frequency": "1.3",
+      "video_3_sec_watched_actions": [{"action_type": "video_view", "value": "5100"}],
+      "actions": [{"action_type": "offsite_conversion.fb_pixel_add_to_cart", "value": "20"}, {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "1"}],
+      "action_values": [{"action_type": "offsite_conversion.fb_pixel_purchase", "value": "60.0"}]
+    },
+    {
+      "campaign_name": "MJ4U-111 | New angle | Grandkids POV", "adset_name": "US | Broad 25-65 (new angle)", "adset_id": "2005", "ad_name": "Grandkids-POV test (dud)", "ad_id": "1007", "effective_status": "ACTIVE", "_age_days": 1,
+      "impressions": "6000", "spend": "20.00", "clicks": "40", "ctr": "0.67", "inline_link_clicks": "24", "inline_link_click_ctr": "0.40", "cpc": "0.83", "cpm": "3.33", "frequency": "1.1",
+      "video_3_sec_watched_actions": [{"action_type": "video_view", "value": "600"}],
+      "actions": []
+    },
+    {
+      "campaign_name": "Retargeting | Site visitors 30d", "adset_name": "US | Retargeting", "adset_id": "2006", "ad_name": "Generic retargeting", "ad_id": "1008", "effective_status": "ACTIVE", "_age_days": 7,
+      "impressions": "9000", "spend": "40.00", "clicks": "220", "ctr": "2.44", "inline_link_clicks": "180", "inline_link_click_ctr": "2.00", "cpc": "0.22", "cpm": "4.44", "frequency": "2.1",
+      "actions": [{"action_type": "offsite_conversion.fb_pixel_add_to_cart", "value": "12"}, {"action_type": "offsite_conversion.fb_pixel_purchase", "value": "2"}],
+      "action_values": [{"action_type": "offsite_conversion.fb_pixel_purchase", "value": "130.0"}]
+    }
+  ]
+}

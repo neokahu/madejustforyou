@@ -114,7 +114,7 @@ Our products have printed names/photos — the thing that must survive the motio
 5. Random one-off glitch → **reroll** (new seed, same prompt). Consistent problem (always warps text) → **reduce motion / reprompt.**
 6. Once ~90% right → **lock the seed**, tweak one word, render final at 1080p.
 
-## Worked example — candle warmer (MJP-111), "love growing at home"
+## Worked example — candle warmer (MJ4U-111), "love growing at home"
 Source: the finished candle-warmer photo with engraved grandchildren's names. Angle: warm glow (from §1 of the playbook).
 ```
 Locked-off camera, perfectly still. The lamp rests unchanged on a dusk windowsill.

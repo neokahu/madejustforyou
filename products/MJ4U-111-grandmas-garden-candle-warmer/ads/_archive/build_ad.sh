@@ -49,6 +49,6 @@ ffmpeg -loglevel error -y -i $SV/payoff-refvid.mp4 -t 2.5 \
 
 # ---- concat ----
 printf "file 's1.mp4'\nfile 's2.mp4'\nfile 's3.mp4'\nfile 's4.mp4'\nfile 's5.mp4'\n" > "$BUILD/list.txt"
-ffmpeg -loglevel error -y -f concat -safe 0 -i "$BUILD/list.txt" -c:v libx264 -pix_fmt yuv420p -movflags +faststart "$OUT/MJP-111_ad_silent.mp4"
-echo "SILENT CUT DONE -> $OUT/MJP-111_ad_silent.mp4"
-ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$OUT/MJP-111_ad_silent.mp4"
+ffmpeg -loglevel error -y -f concat -safe 0 -i "$BUILD/list.txt" -c:v libx264 -pix_fmt yuv420p -movflags +faststart "$OUT/MJ4U-111_ad_silent.mp4"
+echo "SILENT CUT DONE -> $OUT/MJ4U-111_ad_silent.mp4"
+ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$OUT/MJ4U-111_ad_silent.mp4"

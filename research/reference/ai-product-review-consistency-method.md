@@ -33,12 +33,12 @@ Kie.ai can't do multi-ref, but AtlasCloud can:
 - Note: "12-ref" from the web research does NOT match Atlas's actual limits (9 video / 10 image). Real ceiling = those.
 - Sources are Feb–Aug 2026 vendor blogs cross-checked against primary docs (Kling docs, ByteDance, Google, arXiv, fal.ai).
 
-## ✅ VERIFIED on our stack (2026-08-06, MJP-111 test)
+## ✅ VERIFIED on our stack (2026-08-06, MJ4U-111 test)
 Ran the pipeline 1-by-1 to confirm before scaling spend:
 1. **Turntable angles** — Seedream v5.0 Pro Edit (Atlas), from the single front lamp photo → clean-background **¾-left** and **¾-right** angles, product on-model (shade/gold arc/base/candle/floral design preserved; ¾-right kept all 5 names legible). ~$0.045/image, ~2 min each (thinking mode on).
 2. **Multi-ref video** — fed front + ¾-left + ¾-right as 3 `reference_images` into **Seedance 2.0 Fast Reference-to-Video** (Atlas) with a slow-orbit prompt → the camera orbits AROUND the lamp and the product stays consistent, sharp, undistorted across all frames (true 3D-consistent motion, not a flat zoom). **$0.09**, ~1 min. This is the capability Kie.ai's first/last-frame i2v cannot do.
 3. **KOL holds product** — fed [grandma face, lamp front, lamp ¾-right] into Seedance 2.0 Fast Ref-to-Video; prompt = she picks up the lamp and turns it to camera. Result: **hands read natural (no obvious extra-finger morph), product stays on-model, face consistent.** The hand-object shot the web research called "unsolved" worked on the first take via multi-ref. $0.09. → `kol-holds.mp4`, `_frames/hold-strip.jpg`.
-Files: `products/MJP-111-.../ads/product-turntable/` (lamp-34left.jpg, lamp-34right.jpg, refvid-orbit.mp4, kol-holds.mp4, _frames/).
+Files: `products/MJ4U-111-.../ads/product-turntable/` (lamp-34left.jpg, lamp-34right.jpg, refvid-orbit.mp4, kol-holds.mp4, _frames/).
 Still true: printed names go soft → overlay in post. Verify hands at full-frame before finalizing any hold shot; holding a lit warmer is slightly unphysical (prefer "hand resting on it" for realism).
 4. **Integrated emotional scene (payoff)** — [grandma face, lamp front, lamp ¾-right] → Seedance 2.0 Fast Ref-to-Video; prompt = seated, gazes at the glowing lamp on the side table, hand to chest. Result: **lamp integrates naturally (realistic tabletop scale, room-matched warm glow, grounded shadow) — solves the earlier "pasted-in" problem** from Nano-Banana-still compositing; grandma tears up, hand to chest = genuine emotional peak. $0.09. → `ads/scene-videos/payoff-refvid.mp4`.
 
