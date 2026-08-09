@@ -40,4 +40,4 @@
 - **Memory:** `fb-ads-automation.md`, `ad-copy-linebreak-format.md`, `product-tracker-and-sheet-sync.md`
 
 ## Commit
-- (recorded below after push)
+- `c23667d` on `product-research` (pushed to `origin` = github.com/neokahu/madejustforyou). Single repo — sop-docs methodology doc was only read, not modified.
