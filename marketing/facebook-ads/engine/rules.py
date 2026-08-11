@@ -27,6 +27,10 @@ PURCHASE_TYPES = {
     "offsite_conversion.fb_pixel_purchase", "onsite_web_purchase",
     "onsite_web_app_purchase", "omni_purchase", "purchase",
 }
+# 3-second video views ("video_view" inside the actions array) — the meaningful
+# hook-rate numerator. NOT video_play_actions, which counts autoplay starts and
+# inflates hook rate to ~90%+ regardless of creative.
+VIDEO_3S_TYPES = {"video_view"}
 
 # Verdicts
 KILL = "KILL"
@@ -112,8 +116,12 @@ def normalize_row(row: dict) -> Metrics:
     impressions = float(row.get("impressions", 0) or 0)
     spend = float(row.get("spend", 0) or 0)
     link_clicks = float(row.get("inline_link_clicks", 0) or 0)
-    # hook-rate numerator: 3-sec views if present (sample), else video plays (v26 live)
-    video_3s = _first_value(row.get("video_3_sec_watched_actions") or row.get("video_play_actions"))
+    # hook-rate numerator = 3-SECOND video views (industry-standard hook).
+    # Prefer the explicit field (sample data), then actions[video_view] (v26 live 3-sec
+    # count), and only as a last resort video_play_actions (autoplay-inflated plays).
+    video_3s = (_first_value(row.get("video_3_sec_watched_actions"))
+                or _sum_actions(row.get("actions"), VIDEO_3S_TYPES)
+                or _first_value(row.get("video_play_actions")))
     atc = _sum_actions(row.get("actions"), ATC_TYPES)
     purchases = _sum_actions(row.get("actions"), PURCHASE_TYPES)
     revenue = _sum_actions(row.get("action_values"), PURCHASE_TYPES)

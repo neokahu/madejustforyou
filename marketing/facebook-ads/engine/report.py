@@ -10,6 +10,8 @@ ORDER = {SCALE: 0, KILL: 1, KEEP: 2, WATCH: 3, INSUFFICIENT: 4, UNMAPPED: 5}
 
 def _metrics_line(m: Metrics) -> str:
     bits = [f"spend ${m.spend:.0f}", f"{m.impressions:,.0f} impr"]
+    if m.hook_rate is not None:
+        bits.append(f"hook {m.hook_rate*100:.0f}% (3s)")
     if m.link_clicks:
         bits.append(f"{m.link_clicks:,.0f} link clicks")
     bits.append(f"{m.atc:.0f} ATC")
