@@ -17,3 +17,6 @@ node_modules/
 *.mov
 *.webm
 *.m4v
+
+# Audio assets — Drive-synced, not git
+*.mp3
