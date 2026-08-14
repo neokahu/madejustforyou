@@ -34,4 +34,4 @@
 - **CRO:** `products/MJ4U-111-grandmas-garden-candle-warmer/mobile-cro-brief.md`, `theme-handoff-01-mobile-speed.md`.
 - **Competitor intel:** `research/sprints/2026-08-competitor-creative-teardown/`.
 - **GA4:** `ga4` MCP, property `546131581` (memory `ga4-mcp-setup`). **Clarity** for mobile session recordings.
-- **Commit:** _recorded below._
+- **Commit:** `189e066` (product-research → main).
