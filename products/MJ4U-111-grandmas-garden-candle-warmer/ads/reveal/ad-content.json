@@ -1,0 +1,97 @@
+{
+  "_comment": "Ad content for the PRODUCT-REVEAL video test (MJ4U-111). primary_text is an ARRAY OF LINES (joined with newlines) so copy stays scannable in-feed. Two video creatives are A/B'd against the SAME copy to isolate the creative: (1) ChatCut-built reveal, (2) auto-from-URL video. Present-tense living-legacy voice, no discount.",
+
+  "product_id": "MJ4U-111",
+  "product_name": "Grandma's Garden",
+  "campaign_suffix": "reveal-video test",
+  "stage": "validate",
+  "test_variable": "video creative (chatcut vs auto-from-url), same copy",
+  "page_id": "1238844842646884",
+  "product_url": "https://madejustforyou.net/products/grandmas-garden-love-grows-here-personalized-candle-warmer-49?variant=50302396957029",
+  "cta": "SHOP_NOW",
+  "description": "Personalized with each grandchild's name + birth-month flower. Flameless candle warmer + soft night light. Premium keepsake — ships worldwide.",
+
+  "video_variants": [
+    {"label": "chatcut-reveal", "note": "9:16 reveal built in ChatCut (hook macro + AI scenes + kinetic serif captions + CTA card). Export: grandmas-garden-reveal-chatcut.mp4"},
+    {"label": "auto-from-url", "note": "auto-generated video from the product URL (user)"}
+  ],
+
+  "campaign": {"objective": "OUTCOME_SALES"},
+  "adset": {
+    "daily_budget_usd": 20,
+    "countries": ["US"],
+    "age_min": 25,
+    "age_max": 65,
+    "optimization_goal": "OFFSITE_CONVERSIONS",
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+    "pixel_id": "1565119432072485",
+    "custom_event_type": "PURCHASE"
+  },
+
+  "shared_copy": {
+    "headline": "One Flower For Every Grandchild – Personalized Candle Warmer",
+    "primary_text": [
+      "A warm glow. A forever garden. 🌸",
+      "",
+      "One birth-month flower for every grandchild she's watched grow — her whole family, blooming on one little lamp.",
+      "",
+      "It's a real candle warmer: no flame, no smoke, just soft light on her nightstand every evening.",
+      "",
+      "Grandma's Garden — Love Grows Here.",
+      "Personalize hers 👇"
+    ]
+  },
+
+  "ads": [
+    {
+      "label": "chatcut-reveal",
+      "video": "products/MJ4U-111-grandmas-garden-candle-warmer/ads/reveal/video/out/grandmas-garden-reveal-chatcut.mp4",
+      "headline": "One Flower For Every Grandchild – Personalized Candle Warmer",
+      "primary_text": [
+        "A warm glow. A forever garden. 🌸",
+        "",
+        "One birth-month flower for every grandchild she's watched grow — her whole family, blooming on one little lamp.",
+        "",
+        "It's a real candle warmer: no flame, no smoke, just soft light on her nightstand every evening.",
+        "",
+        "Grandma's Garden — Love Grows Here.",
+        "Personalize hers 👇"
+      ]
+    },
+    {
+      "label": "auto-from-url",
+      "video": "(user-provided auto-generated video)",
+      "headline": "One Flower For Every Grandchild – Personalized Candle Warmer",
+      "primary_text": [
+        "A warm glow. A forever garden. 🌸",
+        "",
+        "One birth-month flower for every grandchild she's watched grow — her whole family, blooming on one little lamp.",
+        "",
+        "It's a real candle warmer: no flame, no smoke, just soft light on her nightstand every evening.",
+        "",
+        "Grandma's Garden — Love Grows Here.",
+        "Personalize hers 👇"
+      ]
+    }
+  ],
+
+  "alt_primary_text": {
+    "_note": "Round-2 reword option (swap in if the winner needs a fresh angle).",
+    "label": "watch-her-garden-grow",
+    "lines": [
+      "Her garden started with the ones she raised. 🌸",
+      "",
+      "Add every grandchild — a name and their birth-month flower — and watch her whole family bloom across the shade of a real candle-warmer lamp.",
+      "",
+      "Warm glow by night. A keepsake by day.",
+      "No flame. No smoke. Just love, growing at home.",
+      "",
+      "Personalize hers 👇"
+    ]
+  },
+
+  "alt_headlines": [
+    "Grandma's Garden, Love Grows Here – Personalized Gift For Grandma",
+    "Her Whole Family, Blooming On One Lamp – Personalized Gift For Grandma"
+  ]
+}
