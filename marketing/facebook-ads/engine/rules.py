@@ -240,6 +240,26 @@ def decide(m: Metrics, econ: Economics | None, thr: dict) -> Decision:
             leading, flags,
         )
 
+    # 0b) EFFICIENCY kill — link-CPC so high that break-even is impossible even at an
+    #     EXCEPTIONAL conversion rate (identity: CPA = CPC / CVR). Uses LINK-CPC
+    #     (spend / link clicks), not Meta's all-click 'cpc'. Fires only past a spend gate
+    #     and with ≥N real link clicks, and only above a ceiling set by a generous
+    #     best_case_cvr — so learning-phase CPM spikes and 1-click flukes can't false-kill.
+    EFF = thr.get("efficiency_kill")
+    if (EFF and m.link_clicks and m.link_clicks >= EFF["min_link_clicks"]
+            and m.spend >= be_cpa * EFF["min_spend_frac_of_be_cpa"]):
+        link_cpc = m.spend / m.link_clicks
+        abs_max_cpc = be_cpa * EFF["best_case_cvr"] * EFF["safety_multiple"]
+        if link_cpc > abs_max_cpc:
+            implied_best_cpa = link_cpc / EFF["best_case_cvr"]
+            return Decision(
+                KILL,
+                f"Link-CPC ${link_cpc:.2f} can't break even — implies ${implied_best_cpa:.0f} CPA "
+                f"even at an exceptional {EFF['best_case_cvr']*100:.0f}% CVR (break-even ${be_cpa:.0f})",
+                [f"link-CPC ${link_cpc:.2f} > ${abs_max_cpc:.2f} ceiling — no realistic conversion rate recovers it"],
+                leading, flags,
+            )
+
     # 1) Insufficient spend to judge anything yet
     if m.spend < be_cpa * J["insufficient_spend_frac_of_be_cpa"]:
         return Decision(

@@ -18,6 +18,14 @@
     "ctr_link_below": 0.008
   },
 
+  "efficiency_kill": {
+    "_comment": "Cost-efficiency kill grounded in the identity CPA = CPC / CVR. Kills when LINK-CPC (spend / link clicks) is so high that break-even is impossible EVEN AT an exceptional conversion rate. absolute_max_cpc = break_even_cpa * best_case_cvr * safety_multiple; kill when link-CPC exceeds it. Guards against false-kills: (a) spend gate so it can't fire on day-1 CPM noise, (b) min_link_clicks so CPC is real not a 1-click fluke, (c) best_case_cvr is deliberately GENEROUS (5% = 'exceptional' per Triple Whale FY2025 median 1.6%) so it only fires when NO realistic CVR could recover the ad. This is NOT a CPM kill — CPM alone stays a label.",
+    "best_case_cvr": 0.05,
+    "safety_multiple": 2.0,
+    "min_spend_frac_of_be_cpa": 0.5,
+    "min_link_clicks": 2
+  },
+
   "kill": {
     "no_atc_spend_mult_of_be_cpa": 1.0,
     "atc_no_purchase_spend_mult_of_be_cpa": 2.5,
