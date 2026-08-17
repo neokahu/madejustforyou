@@ -5,6 +5,7 @@ This is the FB-advertiser (media-buyer) domain: it owns **break-even economics, 
 > **👉 To operate the agent day to day, read [`HOW-TO-USE.md`](HOW-TO-USE.md).** For one-time setup, see `setup/`. This README is the architecture overview.
 
 - **Methodology source of truth:** sop-docs → `Internal-Guidelines/Kien-thuc-chuyen-mon/Marketing/Facebook-Testing-Scaling-Research.md` (4 Meta-official base laws + consensus playbook: break-even math, leading/lagging metrics, kill/keep rules, ABO-test → CBO-scale pipeline).
+- **Kill/keep decision guide (human-readable):** [`AD-KILL-RULES.md`](AD-KILL-RULES.md) — when to kill vs keep an ad: match the rule to the campaign's optimization event + stage + layer; break-even CPA / fair-shot spend; thresholds + anti-patterns. Read this before pausing anything.
 - **Goal:** automate test→scale as **full unattended execution**, Claude-driven, via the official Meta Ads MCP + Marketing API, with a native-rules safety floor.
 
 ## Architecture (hybrid)
