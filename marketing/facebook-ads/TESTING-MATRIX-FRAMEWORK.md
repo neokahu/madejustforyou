@@ -35,8 +35,8 @@ design is for grandma; you can't retest it as a spouse gift. (To test a differen
 
 ### Matrix 2 — PER-DESIGN TEST AXES (what the staged funnel varies)
 
-**Test-axis codes (things you VARY):** `M` material · `AUD` audience · `A` creative · `CV` creative-ops · `O` offer · `R` on-site · `PZ` personalizer · `F` follow-up.
-*(Delivery settings and first-party signal are **fixed setup**, held constant — NOT test axes. See "Fixed setup" below.)*
+**Test-axis codes (things you VARY):** `M` material · `AUD` audience · `A` creative · `O` offer · `R` on-site · `PZ` personalizer · `F` follow-up.
+*(Creative operating model, delivery settings, and first-party signal are **fixed setup / method**, held constant — NOT test axes. See "Fixed setup" below.)*
 
 > ### ⚠️ 2026 delivery regime (read before testing anything)
 > Meta's delivery AI ("Andromeda") now **rewards consolidation + creative diversity + strong first-party
@@ -44,7 +44,7 @@ design is for grandma; you can't retest it as a spouse gift. (To test a differen
 > Practical consequences baked into this matrix:
 > - **Targeting is mostly the algorithm's job now** → run **broad** (a fixed default); the *creative* selects the
 >   buyer ("creative is the new targeting"). Lookalike/interest matrices are legacy.
-> - **Creative volume + diversity is the dominant lever** (~56% of ad sales-lift) → group **CV**.
+> - **Creative volume + diversity is the dominant lever** (~56% of ad sales-lift) → the operating *method* (Fixed setup); the things you actually vary/test are the **A** creative elements.
 > - **First-party signal (Pixel+CAPI, EMQ 8+) is the highest-ROI fix for a new pixel** → fix it in **Fixed setup**.
 > - **Don't micro-test placement / attribution-window / dayparting / bid-caps** — set them once (Fixed setup).
 >   Reserve OFAT for **hook/angle iteration on an already-winning creative**, not CTA-word/music A/Bs (Part C).
@@ -79,17 +79,6 @@ design is for grandma; you can't retest it as a spouse gift. (To test a differen
 | A8 | CTA | Shop Now · Learn More · Get Offer *(**minor** — small magnitude, often auto-picked by Advantage+; don't burn an early slot on it)* |
 > **Baseline creative spec (test INTO this, don't test it):** vertical 9:16, hook in first 3s, text-overlay,
 > works sound-off (85% watch muted), 4K source. This is the floor for every ad, not an A/B.
-
-#### Group CV — Creative operations *(the dominant 2026 lever — how you RUN the creative program, not one ad)*
-| Code | Factor | Levels to test |
-|---|---|---|
-| CV1 | Creative **volume / velocity** | net-new *concepts* per week (consensus 2–4 fresh concepts / 5–10 ads weekly; run 7 days untouched → kill/scale) |
-| CV2 | Creative **diversity / archetype** | radically different angles·tones·formats (NOT 10 near-identical UGC hooks — Andromeda rewards variety) |
-| CV3 | **Advantage+ Creative** enhancements | on · off · per-enhancement *(Meta-reported +22% ROAS — cheap, real test)* |
-| CV4 | Creatives **per ad set** | few DIVERSE creatives in one set (consolidate — Meta: 1×25 beat 5×5 +17% conv / −16% cost) · vs 2–4 clean cells **only on a brand-new pixel** to read early signal |
-| CV5 | **Fatigue / refresh cadence** | monitor frequency + CPM; refresh on decay (fatigue now hits ~2–3 wks under Andromeda, not 6+) |
-> "Modern paid social is **80% creative operations, 20% media buying**." Creative drives ~56% of ad sales-lift.
-> This group — not audience/placement/bid — is where a small store's growth actually comes from in 2026.
 
 #### Group O — Offer *(the ONLY place price lives)*
 | Code | Factor | Levels to test |
@@ -154,6 +143,14 @@ every test above is clean. (Touching them mid-test resets Meta's learning and po
 - **Event Match Quality (EMQ) 8.0+/10** — pass email/phone/name/IP so Meta can match & optimize.
 - **Climb the event ladder fast** (LPV→VC→ATC→**Purchase** as data allows) — don't camp on soft events.
 > For a new pixel + your cart→checkout leak, **EMQ 8+ and CAPI coverage is likely the single biggest win available.**
+
+**Creative operating model — the working METHOD (not A/B axes; this is how you RUN Stage 1):**
+- **Volume / velocity:** ship **2–4 fresh concepts / week** (5–10 ads); run 7 days untouched → kill/scale.
+- **Diversity:** make concepts **radically different** (angles/tones/formats) — not 10 near-identical UGC hooks. Andromeda rewards variety; the *A-group elements* are what actually differ between concepts.
+- **Advantage+ Creative = ON** (Meta-reported +22% ROAS).
+- **Creatives per ad set = few DIVERSE, consolidated** (Meta: 1×25 beat 5×5 +17% conv / −16% cost). Only keep 2–4 clean cells briefly on a brand-new pixel to read early signal.
+- **Fatigue refresh:** watch frequency + CPM; refresh on decay (~2–3 wks now, not 6+).
+> "Modern paid social is 80% creative operations, 20% media buying." This is *how you generate the ads you test* — the test axes themselves are the **A** (creative) elements you vary across concepts.
 
 **Delivery defaults — set once, hold:**
 - **Audience = broad** + Advantage+ Audience (Meta: ~7% better cost/result). No lookalike/interest stacking.
@@ -222,7 +219,7 @@ everything at once.
 
 | Stage | Optimize event | VARY (test axes this stage) | HOLD constant (baseline) | Advance threshold | Carry to next |
 |---|---|---|---|---|---|
-| **1 Engagement** | Traffic / LPV | **CV1–CV2 many DIVERSE creative concepts** (angles/formats/hooks A1–A7) with the **buyer as message (AUD1)** — let Andromeda sort. | **1 baseline material (M)**; all **R, O, F**; **Fixed setup** (broad · Advantage+ placement · Highest-Volume bid · signal fixed first) | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **concept(s)** |
+| **1 Engagement** | Traffic / LPV | **many DIVERSE creative concepts** — vary **A1–A7** across concepts, with the **buyer as message (AUD1)**; let Andromeda sort. | **1 baseline material (M)**; all **R, O, F**; **Fixed setup** (broad · Advantage+ placement · Highest-Volume bid · Advantage+ Creative ON · signal fixed first) | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **concept(s)** |
 | **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page type (generic) · R2 reviews · R4 note · R6 price presentation · PZ personalizer toggles** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
 | **3 Purchase** | Purchase | **R1 dedicated sales page (unlock for winners) · R3 delivery msg · R5 trust · O5 urgency · PZ ATC-gate toggles · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
 
@@ -266,7 +263,7 @@ induction. Principles for clean causality:
 > page, material, or hook wins*. But it is **wrong for creative DISCOVERY** in 2026: the delivery AI wants a
 > **volume of DIVERSE concepts** and sorts them itself, so testing 10 near-identical ads that differ by one CTA
 > word is legacy busywork that starves the algorithm. Split it:
-> - **Discovery (CV group):** launch many *diverse* concepts, let Andromeda pick winners — do NOT OFAT here.
+> - **Discovery (creative operating model):** launch many *diverse* concepts, let Andromeda pick winners — do NOT OFAT here.
 > - **Induction (OFAT):** once a concept wins, iterate its **hook/angle** one-at-a-time to learn *why*, and use
 >   OFAT for the genuinely separable levers — **material, offer, page, buyer-message**. Reserve the clean
 >   controlled test for decisions the algorithm won't make for you.
