@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Báo cáo tiến độ — Sản phẩm 1 (MJ4U-111)</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#ffffff; --ink:#161a1e; --mut:#667085; --line:#e6e8ec;
+    --accent:#2563eb; --good:#15803d; --warn:#c2410c; --bad:#b91c1c; --amber:#b45309;
+    --chip:#eef2f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;font-size:15px}
+  .wrap{max-width:1040px;margin:0 auto;padding:28px 20px 64px}
+  header.top{border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:8px}
+  h1{font-size:24px;margin:0 0 4px}
+  .sub{color:var(--mut);font-size:14px}
+  h2{font-size:19px;margin:34px 0 12px;padding-top:6px}
+  h2 .n{display:inline-block;background:var(--ink);color:#fff;border-radius:6px;
+    width:26px;height:26px;text-align:center;line-height:26px;font-size:14px;margin-right:8px}
+  h3{font-size:15px;margin:16px 0 8px}
+  p{margin:8px 0}
+  .muted{color:var(--mut)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:12px 0}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr}}
+  ul{margin:6px 0;padding-left:20px}
+  li{margin:5px 0}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:14px 0}
+  @media(max-width:720px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .kpi .v{font-size:26px;font-weight:700;letter-spacing:-.5px}
+  .kpi .l{font-size:12.5px;color:var(--mut);margin-top:2px}
+  .kpi.bad .v{color:var(--bad)}
+  table{width:100%;border-collapse:collapse;font-size:14px;overflow-x:auto;display:block}
+  @media(min-width:721px){table{display:table}}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{font-size:12.5px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .win{color:var(--good);font-weight:600}
+  .callout{border-left:4px solid var(--amber);background:#fff7ed;padding:12px 16px;border-radius:0 10px 10px 0;margin:14px 0}
+  .callout.bad{border-color:var(--bad);background:#fef2f2}
+  .callout.good{border-color:var(--good);background:#f0fdf4}
+  /* funnel */
+  .funnel{margin:8px 0}
+  .frow{display:flex;align-items:center;gap:12px;margin:7px 0}
+  .flabel{flex:0 0 210px;font-size:13.5px}
+  .fbarwrap{flex:1;background:#eef1f5;border-radius:6px;overflow:hidden;height:30px;position:relative}
+  .fbar{height:100%;background:var(--accent);border-radius:6px;display:flex;align-items:center;
+    padding-left:10px;color:#fff;font-size:13px;font-weight:600;min-width:42px}
+  .fbar.g{background:var(--good)} .fbar.w{background:var(--warn)} .fbar.r{background:var(--bad)}
+  .fdrop{flex:0 0 118px;font-size:12.5px;color:var(--bad);text-align:right}
+  .fdrop.ok{color:var(--good)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-size:13px}
+  .bars{margin-top:6px}
+  .bg{display:grid;grid-template-columns:130px 1fr 1fr;gap:10px;align-items:center;margin:8px 0;font-size:13.5px}
+  .bg .lab{color:var(--mut)}
+  .bcell{display:flex;align-items:center;gap:8px}
+  .btrack{flex:1;background:#eef1f5;border-radius:5px;height:20px;overflow:hidden}
+  .bfill{height:100%;border-radius:5px}
+  .steps{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:13.5px;flex:1;min-width:120px}
+  .step .arrow{color:var(--mut)}
+  ol.act{padding-left:20px}
+  ol.act li{margin:9px 0}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;vertical-align:middle}
+  .tag.hot{background:#fee2e2;color:var(--bad)}
+  footer{margin-top:40px;color:var(--mut);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Báo cáo tiến độ — Sản phẩm 1</h1>
+  <div class="sub">MJ4U-111 “Grandma's Garden” — Đèn xông nến cá nhân hóa · Kỳ dữ liệu: 08/08–27/08/2026 · Nguồn: Facebook Ads Manager + Google Analytics 4</div>
+</header>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">$153.6</div><div class="l">Tổng chi tiêu QC (2 chiến dịch)</div></div>
+  <div class="kpi"><div class="v">44</div><div class="l">Add to Cart (Meta) · $2.47/ATC</div></div>
+  <div class="kpi"><div class="v">7</div><div class="l">Bắt đầu thanh toán (Meta)</div></div>
+  <div class="kpi bad"><div class="v">0</div><div class="l">Đơn hàng thật</div></div>
+</div>
+
+<!-- SECTION 1 -->
+<h2><span class="n">1</span>Tóm tắt bài học chính</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>Về Facebook Ads (cách tối ưu)</h3>
+    <ul>
+      <li><b>Không tối ưu “Purchase” ngay từ đầu.</b> Pixel mới chưa có dữ liệu mua hàng → Meta đẩy vào nhóm quá hẹp, <b>CPM $130–250</b>, đốt tiền mà không đủ mẫu. Đã dừng cách này.</li>
+      <li><b>Đi theo “thang sự kiện”:</b> bắt đầu <b>Landing Page View</b> (rẻ, CPM ~$13, để làm ấm pixel + chọn creative thắng) → rồi nâng lên <b>Add to Cart</b> (CPM ~$26, ra 44 ATC giá $2.47).</li>
+      <li><b>Kết quả:</b> đầu phễu tốt (CTR 6.25%, CPC $0.29, tỉ lệ ATC 17%/click) — <b>nhưng chưa ra đơn.</b> Nút thắt đã dịch từ “không có giỏ hàng” sang “giỏ hàng không lên thanh toán/đơn”.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Về nội dung quảng cáo (media)</h3>
+    <ul>
+      <li><b>Phim ngắn cảm xúc (emotional short film) không hiệu quả.</b> Bắt mắt / hook cao nhưng <b>liên quan sản phẩm thấp</b> → thu hút sai đối tượng, lead kém chất lượng, không chuyển đổi.</li>
+      <li><b>Creative “product-reveal” liên quan trực tiếp sản phẩm</b> cho số tốt hơn hẳn: <b>CTR 9.58%</b> so với 4.8–6.0%, CPC <b>$0.11</b> so với $0.24–0.25, và là creative duy nhất kéo được ATC.</li>
+      <li><b>Định hướng:</b> ưu tiên product-reveal, dừng emotional film. “Catchy” không bằng “đúng người có nhu cầu sản phẩm”.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<h2><span class="n">2</span>Hiệu suất quảng cáo theo thời gian (LPV → Add to Cart)</h2>
+<p class="muted">Chỉ gồm 2 chiến dịch còn hiệu lực. Đã loại chiến dịch phim cảm xúc và chiến dịch tối ưu Purchase (thất bại) khỏi báo cáo.</p>
+<p><a href="./facebook.html" style="display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:10px 18px;border-radius:9px;font-size:14px;font-weight:600">📊 Xem bảng hiệu suất Facebook đầy đủ (từng quảng cáo · tất cả cột) →</a></p>
+
+<div class="steps">
+  <div class="step"><b>Giai đoạn 1 — Traffic / Landing Page View</b><br><span class="muted">Giao hàng rẻ, làm ấm pixel, chọn creative thắng.</span></div>
+  <div class="step"><span class="arrow">→</span> <b>Giai đoạn 2 — Sales / Add to Cart</b><br><span class="muted">Bắt đầu ra tín hiệu mua sắm thật (44 ATC).</span></div>
+</div>
+
+<div class="card" style="padding-top:6px">
+<table>
+  <thead><tr>
+    <th>Chỉ số</th>
+    <th class="num">Chiến dịch LPV (Traffic)</th>
+    <th class="num">Chiến dịch ATC (Sales)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>Mục tiêu tối ưu</td><td class="num">Landing Page View</td><td class="num">Add to Cart</td></tr>
+    <tr><td>Chi tiêu</td><td class="num">$44.73</td><td class="num">$108.88</td></tr>
+    <tr><td>Hiển thị (impressions)</td><td class="num">2,964</td><td class="num">4,163</td></tr>
+    <tr><td>Reach</td><td class="num">~2,846</td><td class="num">3,267</td></tr>
+    <tr><td>CPM</td><td class="num">$12–17</td><td class="num">$26.15</td></tr>
+    <tr><td>CTR (link) — creative thắng</td><td class="num"><span class="win">9.58%</span></td><td class="num">6.25%</td></tr>
+    <tr><td>CPC (link) — creative thắng</td><td class="num"><span class="win">$0.11</span></td><td class="num">$0.29</td></tr>
+    <tr><td>Link clicks</td><td class="num">213</td><td class="num">260</td></tr>
+    <tr><td>Add to Cart</td><td class="num">0</td><td class="num"><b>44</b></td></tr>
+    <tr><td>Chi phí / ATC</td><td class="num">—</td><td class="num">$2.47</td></tr>
+    <tr><td>Bắt đầu thanh toán (IC)</td><td class="num">0</td><td class="num">7</td></tr>
+    <tr><td>Đơn hàng (Purchase)</td><td class="num">0</td><td class="num">0</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="callout bad"><b>Đối chiếu (đã loại):</b> khi tối ưu Purchase trên pixel mới, CPM lên <b>$130–250</b> — gấp ~5–10 lần chiến dịch ATC. Đây là lý do không bắt đầu bằng Purchase.</div>
+
+<div class="card">
+  <h3>Bài học từ các con số</h3>
+  <ul>
+    <li><b>LPV cực rẻ nhưng traffic “chỉ xem”:</b> 213 click, <b>0 ATC</b>. Đúng bản chất — dùng để lọc creative + làm ấm pixel, không dùng để đánh giá tỉ lệ mua.</li>
+    <li><b>Chuyển sang ATC:</b> CPM tăng ~2× nhưng đổi lại <b>44 ATC giá $2.47</b> (17% trên click). Chứng minh creative + sản phẩm CÓ sức hút mua sắm khi nhắm đúng đối tượng.</li>
+    <li><b>Chênh lệch chất lượng đối tượng rõ rệt (GA4):</b> traffic tối ưu ATC có tỉ lệ tương tác <b>56%</b> và ATC 18.8%/phiên; traffic LPV chỉ <b>23.5%</b> tương tác và 0.5% ATC.</li>
+    <li><b>Điểm nghẽn hiện tại:</b> 44 ATC → chỉ 7 vào thanh toán → <b>0 đơn</b>. Vấn đề nằm ở <b>bước Giỏ hàng → Thanh toán → Mua</b>, không phải ở đầu phễu.</li>
+  </ul>
+</div>
+
+<!-- SECTION 3: TEST / KILL LOGIC -->
+<h2><span class="n">3</span>Logic kiểm thử &amp; tắt quảng cáo (test / kill)</h2>
+<p class="muted">Nguyên tắc cốt lõi: <b>gắn tiêu chí đánh giá đúng với (1) sự kiện tối ưu, (2) giai đoạn, (3) tầng vấn đề</b> — sai một trong ba là tắt nhầm quảng cáo tốt.</p>
+<div class="grid2">
+  <div class="card">
+    <h3>Cách TEST</h3>
+    <ul>
+      <li><b>Leo thang sự kiện:</b> LPV → ViewContent → Add to Cart → Purchase. Pixel mới bắt đầu ở sự kiện rẻ (nhiều dữ liệu), lên dần khi đủ ~50 sự kiện/tuần.</li>
+      <li><b>Mỗi creative một ad set riêng</b> — nhồi nhiều video vào 1 ad set thì Meta dồn hết tiền vào 1 cái nó “đoán” tốt, không luân phiên → không test được.</li>
+      <li><b>Xét chỉ số dẫn trước</b> (hook/ThruPlay, CTR, CPC, cost/ATC) rồi mới tới đơn — vì đơn cần thời gian &amp; đủ mẫu.</li>
+      <li><b>Số liệu trong ngày là ước tính</b> (phồng lên rồi lắng xuống) — chỉ quyết trên ngày đã chốt.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Cách KILL (tắt)</h3>
+    <ul>
+      <li><b>Tắt creative</b> khi CTR sập &lt;~2% HOẶC cost/ATC vượt ~3–4× mức tốt (vd ATC hiện $2.47 → ngưỡng ~$8–10).</li>
+      <li><b>“0 đơn” chỉ có ý nghĩa khi đã chi ~2–3× break-even CPA.</b> Dưới ngưỡng đó = chưa đủ mẫu, không phải creative kém.</li>
+      <li><b>Không sửa/tắt khi đang “learning phase”</b> — mỗi lần sửa là reset học lại, đốt tiền.</li>
+      <li><b>Đầu phễu tốt nhưng rớt ở on-site</b> (giỏ→checkout) → sửa website, <b>không</b> tắt quảng cáo.</li>
+    </ul>
+  </div>
+</div>
+<div class="callout good"><b>Áp dụng cho MJ4U-111:</b> chưa tắt — đầu phễu đang thắng (44 ATC @ $2.47, CTR 6.25%), điểm rò rỉ nằm ở on-site (giỏ→thanh toán). Tắt quảng cáo sẽ vứt đi creative tốt mà không giải quyết được gốc vấn đề. Quy tắc chi tiết: tài liệu nội bộ <code>AD-KILL-RULES.md</code>.</div>
+
+<!-- SECTION 4 -->
+<h2><span class="n">4</span>Hành trình khách hàng (GA4)</h2>
+<p class="muted">Phễu theo <b>số người dùng</b>, toàn kỳ, tất cả nguồn (chủ yếu là traffic quảng cáo).</p>
+
+<div class="card funnel">
+  <div class="frow"><div class="flabel">Xem sản phẩm (view_item)</div>
+    <div class="fbarwrap"><div class="fbar" style="width:100%">487 người</div></div><div class="fdrop">&nbsp;</div></div>
+  <div class="frow"><div class="flabel">Mở công cụ cá nhân hóa</div>
+    <div class="fbarwrap"><div class="fbar" style="width:23%">110</div></div><div class="fdrop">−77%</div></div>
+  <div class="frow"><div class="flabel">Thêm vào giỏ (add_to_cart)</div>
+    <div class="fbarwrap"><div class="fbar g" style="width:11%">52</div></div><div class="fdrop ok">giữ 47%</div></div>
+  <div class="frow"><div class="flabel">Bắt đầu thanh toán</div>
+    <div class="fbarwrap"><div class="fbar r" style="width:4%">9</div></div><div class="fdrop">−83% ⟵ nút thắt</div></div>
+  <div class="frow"><div class="flabel">Mua hàng (purchase)</div>
+    <div class="fbarwrap"><div class="fbar w" style="width:2%">1*</div></div><div class="fdrop">~0</div></div>
+  <p class="muted" style="font-size:12.5px;margin-top:10px">*1 đơn duy nhất đến từ nguồn nội bộ (admin.shopify.com) — là đơn test, không phải khách thật.</p>
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Chất lượng traffic theo nguồn (GA4)</h3>
+    <table>
+      <thead><tr><th>Nguồn</th><th class="num">Phiên</th><th class="num">Tương tác</th><th class="num">ATC</th></tr></thead>
+      <tbody>
+        <tr><td>facebook / paid <span class="muted">(chiến dịch ATC)</span></td><td class="num">271</td><td class="num"><span class="win">56%</span></td><td class="num">51</td></tr>
+        <tr><td>fb / paid <span class="muted">(chiến dịch LPV)</span></td><td class="num">187</td><td class="num">23.5%</td><td class="num">1</td></tr>
+        <tr><td>google / organic</td><td class="num">18</td><td class="num">83%</td><td class="num">6</td></tr>
+        <tr><td>(direct)</td><td class="num">100</td><td class="num">37%</td><td class="num">1</td></tr>
+      </tbody>
+    </table>
+    <p class="muted" style="font-size:12.5px">Toàn kỳ (mọi nguồn): 700 phiên · 64 ATC · 11 thanh toán · 1 đơn (nội bộ).</p>
+  </div>
+  <div class="card">
+    <h3>Tín hiệu hành vi (Microsoft Clarity)</h3>
+    <div class="chips">
+      <span class="chip">Rage click: <b>3.0%</b></span>
+      <span class="chip">Dead click: <b>6.0%</b></span>
+      <span class="chip">Quick-back: <b>7.0%</b></span>
+      <span class="chip">Cuộn quá mức: <b>0%</b></span>
+    </div>
+    <p class="muted" style="margin-top:10px">Có <b>ma sát nhẹ</b> (dead/rage click hơi cao) nhưng chưa đủ giải thích việc rớt 83% ở bước giỏ→thanh toán. Cần xem video ghi phiên để biết chính xác.</p>
+    <div class="callout good" style="margin-top:12px;font-size:13.5px"><b>Cửa hàng không lỗi kỹ thuật:</b> đã test tay trên mobile — cá nhân hóa → xem trước → thêm giỏ → thanh toán đều chạy tốt. Công cụ cá nhân hóa cũng chuyển đổi tốt (47% người mở → thêm giỏ).</div>
+  </div>
+</div>
+
+<div class="callout"><b>Giả thuyết cho nút thắt Giỏ → Thanh toán:</b> (a) sốc phí ship / tổng tiền / thời gian giao hiển thị ở bước giỏ; hoặc (b) tối ưu ATC hút nhóm “thích bấm thêm giỏ” nhưng chưa phải người mua thật. Hai nguyên nhân này cần cách xử lý khác nhau — chỉ video ghi phiên mới phân định được.</div>
+
+<!-- SECTION 4 -->
+<h2><span class="n">5</span>Kết luận & việc cần làm tiếp</h2>
+<div class="card">
+<ol class="act">
+  <li><b>Xem video ghi phiên (Microsoft Clarity) <span class="tag hot">ƯU TIÊN</span></b> — xem 5–10 phiên có “thêm giỏ” để xác định chính xác khách rớt ở đâu trên hành trình mua và cần tối ưu gì ở bước giỏ → thanh toán (sốc giá/phí ship, hay rời đi vì ít ý định mua).</li>
+  <li><b>Sửa nút thắt Giỏ → Thanh toán</b> — kiểm tra phí ship / tổng tiền / thời gian giao ở bước giỏ; cân nhắc ngưỡng free-ship, cam kết giao rõ ràng, thêm review/social-proof để tăng tin tưởng.</li>
+  <li><b>Giữ chiến dịch ATC tiếp tục chạy</b> để tích lũy dữ liệu pixel và đủ mẫu thanh toán — <b>chưa</b> chuyển sang tối ưu Purchase (mẫu còn quá nhỏ để đánh giá).</li>
+  <li><b>Khi ATC đã “chín” và bắt đầu có đơn</b> → nâng lên tối ưu Purchase (leo tiếp thang sự kiện ATC → Purchase).</li>
+  <li><b>Áp dụng cho sản phẩm tiếp theo:</b> dùng creative <b>product-reveal</b> (không dùng phim cảm xúc); khởi động bằng LPV/ATC, <b>không</b> bắt đầu bằng Purchase.</li>
+</ol>
+</div>
+
+<footer>
+  Báo cáo nội bộ · Dữ liệu Facebook Ads Manager + GA4 (property 546131581) · Kỳ 08/08–27/08/2026.
+  Số liệu Meta (pixel, cửa sổ 7 ngày) và GA4 (theo phiên) có thể lệch nhẹ về con số tuyệt đối; xu hướng và hình dạng phễu là nhất quán.
+</footer>
+
+</div>
+</body>
+</html>

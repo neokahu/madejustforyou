@@ -1,0 +1,70 @@
+{
+  "_comment": "Ad content for MJ4U-112 funny personalized belly-magnet gag gift. Humor-first (NOT emotional). primary_text is an ARRAY OF LINES joined with newlines so it stays scannable in-feed. Video = the ChatCut reveal (out/MJ4U-112-...-v3.mp4). page_id/product_url are PLACEHOLDERS until the product is live on the store.",
+
+  "product_id": "MJ4U-112",
+  "product_name": "Funny Personalized Belly Magnet",
+  "campaign_suffix": "gag-gift reveal test",
+  "stage": "validate",
+  "test_variable": "TBD (single creative to start)",
+  "page_id": "1238844842646884",
+  "product_url": "TBD_ADD_LIVE_PRODUCT_URL",
+  "cta": "SHOP_NOW",
+  "description": "Upload any photo — we turn them into a chubby little legend on a REAL fridge magnet. Ships worldwide. The funniest gift they'll get all year.",
+
+  "campaign": {"objective": "OUTCOME_SALES"},
+  "adset": {
+    "daily_budget_usd": 30,
+    "countries": ["US"],
+    "age_min": 25,
+    "age_max": 60,
+    "optimization_goal": "OFFSITE_CONVERSIONS",
+    "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+    "pixel_id": "1565119432072485",
+    "custom_event_type": "ADD_TO_CART",
+    "_note": "Same cold-start ladder as MJ4U-111: optimize AddToCart first on the new pixel; do NOT start on Purchase."
+  },
+
+  "shared_copy": {
+    "headline": "Turn Anyone Into a Chubby Little Legend 😂",
+    "primary_text": [
+      "Warning: the most cursed gift you'll ever give. 😂",
+      "",
+      "Send us ANY photo of him — we turn him into a chubby little legend on a REAL fridge magnet. 🧲",
+      "",
+      "🍕 Belly out. Pizza in hand.",
+      "🍺 Beer o'clock. Certified couch potato.",
+      "",
+      "He'll laugh… then hang it on the fridge forever.",
+      "",
+      "The perfect gag gift for your husband, dad, brother or best friend.",
+      "Personalize yours 👇"
+    ]
+  },
+
+  "hook_variants": [
+    "POV: your best friend opens your gift 😂",
+    "I turned my husband into a fridge magnet 💀",
+    "The most cursed gift of the year 🧲",
+    "Send us any photo of him…",
+    "Bro I'm crying 😂 this is TOO accurate"
+  ],
+
+  "alt_headlines": [
+    "The Funniest Gift He'll Get All Year — Custom Belly Magnet",
+    "Upload A Photo. We Make The Magnet. 😂",
+    "Certified Couch Potato 🛋️ — Personalized Fridge Magnet"
+  ],
+
+  "onscreen_text_ideas": [
+    "Send us ANY photo of him…",
+    "…and we make THIS 😂",
+    "Yep — a REAL fridge magnet 🧲",
+    "Turn anyone into a legend → upload a photo"
+  ],
+
+  "recipient_targets": ["husband", "dad", "brother", "best friend", "groomsmen / white-elephant", "coworker gift exchange"],
+
+  "video_variants": [
+    {"label": "chatcut-reveal-v3", "note": "hook->belly-inflate reveal->pose montage->fridge proof->CTA, high-contrast Anton captions. out/MJ4U-112-funny-belly-magnet-reveal-v3.mp4"}
+  ]
+}
