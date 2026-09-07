@@ -15,21 +15,46 @@ analyze → find common traits of winners → refine matrix + thresholds → rep
 
 ## PART A — Factor Matrix
 
-Each factor has several **levels** to test. Codes: `P` product/audience, `A` ads, `R` retail,
-`D` delivery, `O` offer, `F` follow-up.
+> **The unit of test is the DESIGN, not the product.**
+> A **DESIGN** = the creative concept / artwork + who it is for (e.g. "Grandma's Garden with the
+> grandkids' names → for grandma"). **One design → many materials** (shirt · sweatshirt · mug · rug ·
+> candle-warmer…). The recipient is fixed by the **design**, not by the material. So there are two
+> matrices: what is **fixed** per design (log it, never A/B it) and what the funnel **varies** per design.
 
-### Group 1 — Product / Audience (P)
+### Matrix 1 — DESIGN PROFILE (fixed per design — LOG, do NOT test)
+
+Chosen once at design-selection. You never A/B these *inside* one design's test — a "Grandma's Garden"
+design is for grandma; you can't retest it as a spouse gift. (To test a different recipient, that's a
+**different design**, logged as its own row.)
+
+| Field | Example | Note |
+|---|---|---|
+| Design concept / artwork | "Grandma's Garden, grandkids' names on flowers" | the creative idea itself |
+| Recipient | grandma | fixed by the design |
+| Core need / emotion | sentimental family-legacy gift | why it lands emotionally |
+
+### Matrix 2 — PER-DESIGN TEST AXES (what the staged funnel varies)
+
+Codes: `M` material, `AUD` audience/buyer, `A` creative, `O` offer, `R` on-site, `D` delivery, `F` follow-up.
+
+#### Group M — Material / product *(NEW axis: same design, different physical product)*
 | Code | Factor | Levels to test |
 |---|---|---|
-| P1 | Product / variant | product variants; different hero features |
-| P2 | Core need / emotion | emotional gift · utility · novelty/gag · collectible |
-| P3 | Recipient (persona) | spouse · parent · grandparent · best friend · pet |
-| P4 | Audience interest angle | by hobby · by occasion · by job · by gift-buying behavior |
-| P5 | Occasion / timing | everyday · holiday (Xmas, Mother's/Father's Day) · birthday |
-| P6 | Market / geo | US · EU · AU · other |
-| P7 | Price tier | low · mid · high |
+| M1 | Material / product | shirt · sweatshirt · hoodie · mug · rug · canvas · candle-warmer · ornament… |
+> Same design, which material converts + sells best. Material drives price, perceived value & margin,
+> so it is a **real test axis** — but it can't move hook/CTR, so hold it constant in Stage 1 (see B.1).
 
-### Group 2 — Ads (A)
+#### Group AUD — Audience / BUYER *(who you target to BUY the gift — NOT the recipient)*
+| Code | Factor | Levels to test |
+|---|---|---|
+| AUD1 | Buyer / gifter segment | grandchild · adult-child · spouse · friend (who purchases the gift) |
+| AUD2 | Targeting type | broad · interest · lookalike · retarget |
+| AUD3 | Occasion / timing | everyday · Christmas · Mother's/Father's Day · birthday |
+| AUD4 | Market / geo | US · EU · AU · other |
+> The recipient (grandma) is fixed by the design; the **buyer** (e.g. the grandchild who buys it for her)
+> is the audience you test. Buyer ≠ recipient.
+
+#### Group A — Creative execution *(how the design is shown in the ad)*
 | Code | Factor | Levels to test |
 |---|---|---|
 | A1 | Text angle | pain-point · benefit · emotional · humor · social-proof · scarcity |
@@ -37,33 +62,11 @@ Each factor has several **levels** to test. Codes: `P` product/audience, `A` ads
 | A3 | 3-sec hook type | question · before/after · POV · surprise reveal · number |
 | A4 | Music / mood | happy · emotional · trending · none |
 | A5 | Imagery / color tone | warm · bright · minimal · messy-fun |
-| A6 | On-screen caption | yes/no · bold-box style · keyword highlight |
+| A6 | On-screen caption | none · bold-box · keyword-highlight |
 | A7 | Length | ≤10s · 15–20s · 30s+ |
-| A8 | Audience targeting | broad · narrow interest · lookalike · retarget |
-| A9 | Optimization event | LPV/Traffic · ViewContent · Add to Cart · Purchase |
-| A10 | CTA | Shop Now · Learn More · Get Offer |
+| A8 | CTA | Shop Now · Learn More · Get Offer |
 
-### Group 3 — Retail / On-site (R)
-| Code | Factor | Levels to test |
-|---|---|---|
-| R1 | Landing UI/UX | layout A/B · static gallery vs personalizer-first |
-| R2 | Price & anchoring | flat · strikethrough anchor · % off |
-| R3 | Reviews / social proof | few vs many · "X sold" badge · customer photos |
-| R4 | Shipping/delivery message | free-ship threshold · clear delivery date |
-| R5 | Sales-lift note | urgency/scarcity · warranty · "perfect gift for…" |
-| R6 | Offer / bundle | single · combo · gift-with-purchase |
-| R7 | Trust | payment badges · prominent return policy |
-
-### Group 4 — Delivery / Media-buying (D) — *how you run it, not the content*
-| Code | Factor | Levels to test |
-|---|---|---|
-| D1 | Placement | Feed · Reels · Stories · Advantage+ (auto) |
-| D2 | Bid strategy | lowest-cost · cost-cap · bid-cap |
-| D3 | Budget per ad set | low · mid · high (affects delivery) |
-| D4 | Attribution window | 1-day click · 7-day click |
-| D5 | Dayparting | hour/day scheduling |
-
-### Group 5 — Offer (O) — *strongest conversion lever; separate from Retail*
+#### Group O — Offer *(the ONLY place price lives)*
 | Code | Factor | Levels to test |
 |---|---|---|
 | O1 | Price point | low · mid · high |
@@ -72,13 +75,38 @@ Each factor has several **levels** to test. Codes: `P` product/audience, `A` ads
 | O4 | Free-ship threshold | none · with threshold |
 | O5 | Deadline urgency | none · flash-sale/deadline |
 | O6 | Payment method | card · COD · installment |
+> Price used to appear 3× (old P7 tier, R2 anchor, O1 point) — **consolidated here**. Price-on-page
+> presentation (strikethrough/anchor) is an on-site execution of the O price, logged under R.
 
-### Group 6 — Follow-up / Retention (F) — *recovers Stage-3 orders*
+#### Group R — On-site / landing page *(the page that converts the click)*
+| Code | Factor | Levels to test |
+|---|---|---|
+| R1 | Landing UI/UX | layout A/B · static gallery vs personalizer-first |
+| R2 | Reviews / social proof | few vs many · "X sold" badge · customer photos |
+| R3 | Shipping/delivery message | free-ship threshold shown · clear delivery date |
+| R4 | Sales-lift note | urgency/scarcity · warranty · "perfect gift for…" |
+| R5 | Trust | payment badges · prominent return policy |
+| R6 | Price presentation | flat · strikethrough anchor · % off *(displays the O price)* |
+
+#### Group D — Delivery / media-buying *(how you run it — hold constant, test sparingly)*
+| Code | Factor | Levels to test |
+|---|---|---|
+| D1 | Placement | Feed · Reels · Stories · Advantage+ (auto) |
+| D2 | Bid strategy | lowest-cost · cost-cap · bid-cap |
+| D3 | Budget per ad set | low · mid · high (affects delivery) |
+| D4 | Attribution window | 1-day click · 7-day click |
+| D5 | Dayparting | hour/day scheduling |
+
+#### Group F — Follow-up / retention *(recovers Stage-3 orders)*
 | Code | Factor | Levels to test |
 |---|---|---|
 | F1 | Abandoned-cart recovery | email · SMS · both |
 | F2 | Retargeting sequence | none · yes (sequence) |
 | F3 | Upsell / cross-sell | none · yes |
+
+### Not an axis — the funnel dimension
+- **Stage / optimization event** (LPV → ViewContent → ATC → Purchase) is the **funnel dimension you move
+  UP as the pixel matures**, *not* a factor you A/B. (It was wrongly listed as an axis before.)
 
 ### Interaction factor
 - **Message match (ad ↔ landing):** does the ad's promise match the landing page? A mismatch kills
@@ -129,24 +157,27 @@ everything at once.
 
 | Stage | Optimize event | VARY (test axes this stage) | HOLD constant (baseline) | Advance threshold | Carry to next |
 |---|---|---|---|---|---|
-| **1 Engagement** | Traffic / LPV | **A1–A7** (angle, media, hook, music, imagery, caption, length) + audience **P3/P4/A8** | all **R, O, F**; one **D** baseline | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **creative(s)** |
-| **2 Intent** | Add to Cart | **R1 page UI/UX · R2/O2 price+anchor/discount · R3 reviews · O3 bundle · O4 free-ship · R5 note** | winning **creative + audience** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × page/offer** |
-| **3 Purchase** | Purchase | **R4 delivery msg · R7 trust · O5 urgency · O6 payment · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
+| **1 Engagement** | Traffic / LPV | **A1–A8** (angle, media, hook, music, imagery, caption, length, CTA) + **AUD1 buyer / AUD2 targeting** | **1 baseline material (M)**; all **R, O, F**; one **D** baseline | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **creative × buyer** |
+| **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page UI/UX · R2 reviews · R4 note · R6 price presentation** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
+| **3 Purchase** | Purchase | **R3 delivery msg · R5 trust · O5 urgency · O6 payment · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
 
 **How to build combos each phase (concrete):**
-- **Phase 1 — creative only.** Fix 1 baseline product/audience/offer/page. Build **N creative variants**
-  that differ by **one creative axis at a time** (e.g., 8 ads: same everything, differ in hook × media ×
-  music). Run ~$5 each on **LPV**. → keep the 3–4 clearing the Stage-1 threshold. *(Landing/offer/checkout
-  are irrelevant here — do NOT vary them.)*
-- **Phase 2 — page/offer on the winning creative.** Take the winning creative(s); build **on-site/offer
-  variants** (e.g., 4 versions: price-anchor on/off × reviews few/many). Run on **ATC** with real budget.
-  → keep the best page/offer.
-- **Phase 3 — checkout/trust/follow-up on the winning creative × page/offer.** Build **variants** (e.g.,
-  urgency on/off × cart-recovery email vs SMS). Run on **Purchase**. → the winner **scales**.
+- **Phase 1 — creative × buyer only.** Fix **1 baseline material** + 1 baseline offer/page. Build **N
+  creative variants** that differ by **one creative axis at a time** (e.g., 8 ads: same everything, differ
+  in hook × media × music), optionally crossed with 1–2 buyer segments. Run ~$5 each on **LPV**. → keep the
+  3–4 clearing the Stage-1 threshold. *(Material/landing/offer/checkout can't move hook/CTR — do NOT vary
+  them here; material is held at ONE baseline product.)*
+- **Phase 2 — material × page/offer on the winning creative.** Take the winning creative × buyer; now
+  **introduce material as an axis** (same design on shirt vs mug vs rug) crossed with **on-site/offer
+  variants** (e.g., price-anchor on/off × reviews few/many). Run on **ATC** with real budget. → keep the
+  material + page/offer that converts with the best economics (price/margin).
+- **Phase 3 — checkout/trust/follow-up on the winning creative × buyer × material × page/offer.** Build
+  **variants** (e.g., urgency on/off × cart-recovery email vs SMS). Run on **Purchase**. → the winner **scales**.
 
-**Why layered, not all-at-once:** if Stage 1 also varied page/offer, you'd burn budget on changes that
-cannot move hook/CTR **and** you couldn't attribute a creative win cleanly. Each stage isolates the one
-factor group that actually moves *that* stage's metric — which is exactly what makes the induction clean.
+**Why layered, not all-at-once:** if Stage 1 also varied material/page/offer, you'd burn budget on changes
+that cannot move hook/CTR **and** you couldn't attribute a creative win cleanly. Material earns its place as
+an axis in Stage 2–3, where it actually moves conversion + economics. Each stage isolates the one factor
+group that actually moves *that* stage's metric — which is exactly what makes the induction clean.
 
 ---
 
@@ -211,10 +242,10 @@ beat threshold X.* Reverse it to act (**induction**): **set $5, if it beats thre
 | 20% | 5.0× | ≥ 6.5× |
 
 ### Which factors drive each stage (so you know what to change when it fails)
-- **Stage 1** ⟵ **creative / 3-sec hook** (dominant). Fails Stage 1 → change media/hook (Group A).
-- **Stage 2** ⟵ **offer, price, reviews/social-proof, landing/product-page quality** (Groups O, R). ATC < 2% → page/price/trust problem.
-- **Stage 3** ⟵ **checkout friction (~76% abandon), price/margin, trust** (Groups O, R). Delivery (Group D) affects all stages.
-- **Audience:** retargeting inflates hook (30–45%) vs cold (18–28%) → judge **cold vs cold**.
+- **Stage 1** ⟵ **creative / 3-sec hook** (dominant) + **buyer** targeting. Fails Stage 1 → change media/hook (Group A) or buyer (AUD). *Material can't move hook — held at baseline.*
+- **Stage 2** ⟵ **material, offer, price, reviews/social-proof, landing/product-page quality** (Groups M, O, R). ATC < 2% → material/page/price/trust problem. This is where shirt-vs-mug-vs-rug is decided.
+- **Stage 3** ⟵ **checkout friction (~76% abandon), price/margin, trust** (Groups O, R, F). Delivery (Group D) affects all stages.
+- **Buyer audience:** retargeting inflates hook (30–45%) vs cold (18–28%) → judge **cold vs cold**.
 
 - **Thresholds are HYPOTHESES, not truth.** After each round, calibrate: look back at real winners'
   Stage-1 metrics → update thresholds for your niche. That IS "getting closer to the truth."
@@ -232,17 +263,20 @@ beat threshold X.* Reverse it to act (**induction**): **set $5, if it beats thre
 
 ## PART E — Pre-launch plan template
 
-Before launch, draw the tree: **Campaign → k media → n ads → each ad = one matrix combo code.**
+Before launch, name the DESIGN (Matrix 1, fixed) then draw the tree:
+**Design → Campaign → k media → n ads → each ad = one Matrix-2 combo code.**
 
-Planning table (each row = 1 ad = 1 combo):
+Design header (fixed, log once): `Design = Grandma's Garden · Recipient = grandma · Emotion = family-legacy`.
 
-| Ad ID | Combo code | Media (A2) | Hook (A3) | Music (A4) | Text angle (A1) | Audience (A8) | Event (A9) | Retail set (R) | Stage | Budget | Pass threshold |
-|---|---|---|---|---|---|---|---|---|---|---|---|
-| C1-01 | P3spouse·A2reveal·A3POV·A4happy | reveal | POV | happy | emotional | broad | LPV | R-base | 1 | $5 | CTR≥4%; hook≥28% |
-| C1-02 | (change EXACTLY 1 axis vs 01) | reveal | before/after | happy | emotional | broad | LPV | R-base | 1 | $5 | … |
+Planning table (each row = 1 ad = 1 combo). Stage 1 holds material at ONE baseline:
 
-→ The table shows how many media, how many ads, which combo each ad tests, and that you **change exactly
-1 axis between rows** so induction stays clean.
+| Ad ID | Combo code | Material (M) | Media (A2) | Hook (A3) | Music (A4) | Text angle (A1) | Buyer (AUD1) | Stage/event | Offer (O) | On-site (R) | Budget | Pass threshold |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| C1-01 | AUD1grandchild·A2reveal·A3POV·A4happy | shirt (base) | reveal | POV | happy | emotional | grandchild | 1 / LPV | O-base | R-base | $5 | CTR≥4%; hook≥28% |
+| C1-02 | (change EXACTLY 1 axis vs 01) | shirt (base) | reveal | before/after | happy | emotional | grandchild | 1 / LPV | O-base | R-base | $5 | … |
+
+→ In Stage 1 the **Material column stays fixed** (one baseline product) and you **change exactly 1 axis
+between rows** so induction stays clean. Material becomes a varying column only from Stage 2 onward.
 
 ---
 

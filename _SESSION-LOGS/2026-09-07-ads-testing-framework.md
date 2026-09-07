@@ -3,20 +3,23 @@
 ## Where we are
 Building a scientific ad-testing framework (factor matrix + multi-stage elimination funnel + research-backed thresholds) for MadeJustForYou.
 
-## ⭐ NEXT ACTION (do this first next session)
-**Rebuild the framework Doc + Sheet from `marketing/facebook-ads/MATRIX-CORRECTION-design-unit.md`.**
-The matrix was corrected: **the test unit is the DESIGN, not the product.** One design → many materials
-(shirt/mug/rug/sweatshirt). See that file for the full corrected model (2 matrices, material as a new
-test axis, buyer≠recipient, price consolidated into Offer, event=stage not axis).
+## ✅ DONE (2026-09-07 rebuild) — design-unit correction applied end-to-end
+The matrix was corrected to **DESIGN as the test unit** and this is now LIVE everywhere:
+1. ✅ **Part A** of `TESTING-MATRIX-FRAMEWORK.md` rewritten: Matrix 1 (Design Profile, fixed/log) +
+   Matrix 2 (test axes M/AUD/A/O/R/D/F). Material=new axis; buyer≠recipient; price only in Offer;
+   stage/event = funnel dimension not an axis.
+2. ✅ **Part B.1 / Part D / Part E** patched to the new codes (P3/P4→AUD; material held in Stage 1,
+   tested Stage 2–3; planner table uses M/AUD columns).
+3. ✅ **Google Doc** re-exported in place (id `1zND10THgf_VohvNRgRl4hGhsOwPaXVt15eNhNaOdh-I`), title now
+   English: "Ad-Testing Framework — Design-Unit Matrix + Staged Funnel".
+4. ✅ **Google Sheet** rebuilt in place (id `1ZNZijKm5PJRkOj91A4DUGhAb-orvDOidyMNP627-k1w`), 6 tabs:
+   Design Profile · Factor Matrix · Campaign Planner · Results Log · Thresholds · Stage Scope; title now
+   English. Builder script: `scratchpad/build_matrix_sheet.py` (openpyxl).
 
-Steps:
-1. Rewrite **Part A** of `marketing/facebook-ads/TESTING-MATRIX-FRAMEWORK.md` per the correction file.
-2. Fix Part B.1 factor-code references (P3/P4 → buyer/AUD; material added).
-3. Re-export to the Google Doc **in place** (id `1zND10THgf_VohvNRgRl4hGhsOwPaXVt15eNhNaOdh-I`) via
-   `update_drive_file` (stage md into `~/.workspace-mcp/attachments/` first — paths are sandboxed).
-4. Rebuild the Google Sheet (id `1ZNZijKm5PJRkOj91A4DUGhAb-orvDOidyMNP627-k1w`): tabs = Design Profile /
-   Factor Matrix (test axes) / Campaign Planner / Results Log / Thresholds / Stage-scope. Build xlsx with
-   openpyxl (installed --user), stage in attachments, `update_drive_file` in place.
+## ⭐ NEXT ACTION (next session)
+Method is documented + live. Next is to **USE it**: pick the first DESIGN (D-001 Grandma's Garden),
+fill the Campaign Planner Stage-1 rows (creative × buyer, material held = shirt), launch on LPV, and log
+into Results Log. Optional deferred: interactive DB + dashboard (Supabase + Cloudflare) once combos scale.
 
 ## Files (source of truth — all in repo, English)
 - `marketing/facebook-ads/MATRIX-CORRECTION-design-unit.md` — the corrected model (apply this)
