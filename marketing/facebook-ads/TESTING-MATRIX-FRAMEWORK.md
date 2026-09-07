@@ -129,9 +129,14 @@ All four **verified verbatim** in Teeinblue → Store Settings → **Product Pag
 #### Group F — Follow-up / retention *(recovers Stage-3 orders)*
 | Code | Factor | Levels to test |
 |---|---|---|
-| F1 | Abandoned-cart recovery | email · SMS · both |
-| F2 | Retargeting sequence | none · yes (sequence) |
+| F1 | Abandoned-**CHECKOUT** recovery | email · SMS · both — **only works once contact info is captured** (customer reached checkout & entered email, or is a known/logged-in customer). **Cannot reach anonymous add-to-cart visitors.** |
+| F2 | **Retargeting (pixel)** | none · yes (sequence) — **the only way to recover anonymous cart-adders** (pixel-based, needs no email/phone). This is the real tool for ATC-abandon. |
 | F3 | Upsell / cross-sell | none · yes |
+| F4 | Email/phone **capture** | none · exit-intent popup · newsletter/discount-for-email — the **precondition** that turns an anonymous visitor into an emailable contact so F1 can fire at all |
+> **Abandonment ≠ one thing.** *Add-to-cart abandon* (anonymous, no PII) → recoverable **only by F2 retargeting**
+> (or F4 capture-then-email). *Checkout abandon* (email entered at checkout) → recoverable by **F1 email/SMS**.
+> Real example: MJ4U-111 had **44 ATC → 0 checkouts**, so **0 emails were captured** → F1 could not fire for any
+> of them; retargeting (F2) was the only available recovery. F1/F2 are set-up-once infrastructure — test sparingly.
 
 ### Not an axis — the funnel dimension
 - **Stage / optimization event** (LPV → ViewContent → ATC → Purchase) is the **funnel dimension you move
