@@ -109,15 +109,22 @@ Preview position is theme-bound (not an in-app setting). CTA button *text* is ed
 strings (high effort). Fragility note: editing the theme's Product Information section can make Teeinblue
 fields vanish (app-embed conflict) → QA any layout change on the live embed.
 
-**The ~5 toggles worth testing (all sit on the ATC gate / mobile — test one-at-a-time at Stage 2–3 on a
-design that already cleared ATC):**
-| Toggle | Levels | Why it can move ATC/purchase |
+**The ~4 toggles worth testing (all sit on the ATC gate / mobile — test one-at-a-time at Stage 2–3 on a
+design that already cleared ATC).** All verified verbatim in Product Page Settings on 2026-09-07:
+| Toggle (Teeinblue setting name) | Levels | Why it can move ATC/purchase |
 |---|---|---|
-| ATC **confirmation checkbox** | on / off | friction vs wrong-personalization safety — cleanest binary on the buy action |
-| Express **"Buy Now"** button | on / off | cuts steps for high-intent gift buyers (can cannibalize cart upsells) |
-| **Mobile sticky ATC + "Personalize" scroll button** | on / off | **highest leverage** — below-fold form/ATC discovery on ~90% mobile |
-| **ATC/Buy-Now inside the Preview popup** | on / off | captures the buy at the emotional peak of seeing the finished gift |
-| **Live-preview gallery load** | immediately / on-interaction | show personalization value-prop on load vs faster first paint |
+| ATC **confirmation checkbox** ("Show 'Confirmation checkbox'") | on / off | friction vs wrong-personalization safety — cleanest binary on the buy action |
+| **Mobile sticky ATC + "Personalize" button** ("Show 'Personalize' button on mobile" + "Show sticky buttons") | on / off | **highest leverage** — below-fold form/ATC discovery on ~90% mobile |
+| **ATC/Buy-Now inside the Preview popup** ("Show ATC/Buy now button on Preview popup") | on / off | captures the buy at the emotional peak of seeing the finished gift |
+| **Live-preview gallery load** ("Load gallery immediately") | immediately / on-interaction | show personalization value-prop on load vs faster first paint |
+
+> **DROPPED — express "Buy Now" button.** The toggle *exists* ("Show 'Buy now' button") but it is **not** a
+> useful axis: it only skips the **cart page**, never the personalization form (there is no personalize-later
+> mode). Worse, Shopify's dynamic checkout is unreliable when a product has **required line-item properties**
+> (personalization) and the cart page is where order-by-date + gift reassurance live. It's a risk, not a lever.
+> **Availability caveat:** the article states some settings are "only compatible with Campaigns by Product Base
+> or SDK v1," and popup Form-type is "only for Campaign by Shopify" — availability is campaign-type-dependent;
+> confirm in-app for our Product-Base campaigns.
 
 **Secondary (only if the above plateau):** block-preview-until-fields-complete · ATC redirect-to-cart vs
 on-page message · preview **watermark** on/off (can cheapen the "my finished gift" feel) · save-badge /

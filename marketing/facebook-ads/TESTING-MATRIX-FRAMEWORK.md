@@ -92,18 +92,21 @@ Codes: `M` material, `AUD` audience/buyer, `A` creative, `O` offer, `R` on-site,
 > 29–33 Lighthouse; speed is not the bottleneck.)
 
 #### Group PZ — Personalizer conversion toggles (Teeinblue) *(tested one-at-a-time at Stage 2–3 on a WINNING design)*
-| Code | Factor | Levels to test |
-|---|---|---|
-| PZ1 | ATC confirmation checkbox | on · off *(friction vs wrong-personalization safety)* |
-| PZ2 | Express "Buy Now" button | on · off *(cut steps for high-intent gift buyers)* |
-| PZ3 | Mobile sticky ATC + "Personalize" scroll button | on · off *(**highest leverage** — below-fold discovery on ~90% mobile)* |
-| PZ4 | ATC/Buy-Now inside the Preview popup | on · off *(capture the buy at the emotional preview peak)* |
-| PZ5 | Live-preview gallery load | immediately (on page load) · on-interaction *(show value-prop instantly vs faster first paint)* |
+All four **verified verbatim** in Teeinblue → Store Settings → **Product Page Settings** (Help Center, fetched 2026-09-07).
+| Code | Factor | Teeinblue setting | Levels to test |
+|---|---|---|---|
+| PZ1 | ATC confirmation checkbox | *"Show 'Confirmation checkbox'"* | on · off *(friction vs wrong-personalization safety)* |
+| PZ2 | Mobile sticky ATC + "Personalize" scroll button | *"Show 'Personalize' button on mobile"* + *"Show sticky buttons"* | on · off *(**highest leverage** — below-fold discovery on ~90% mobile)* |
+| PZ3 | ATC/Buy-Now inside the Preview popup | *"Show ATC/Buy now button on Preview popup"* | on · off *(capture the buy at the emotional preview peak)* |
+| PZ4 | Live-preview gallery load | *"Load gallery immediately"* | on page load · on-interaction *(show value-prop instantly vs faster first paint)* |
 > Teeinblue is **not** a CRO-configurable personalizer — the customization *steps* are fixed and there is **no
-> "add-to-cart-first, personalize-later" mode** (always personalize-before-ATC). Only these ~5 toggles are real
+> "add-to-cart-first, personalize-later" mode** (always personalize-before-ATC). Only these ~4 toggles are real
 > conversion axes; everything else it exposes is cosmetic/operational. Test them **sparingly, one at a time** on a
-> design that already cleared Stage 2 — never fan all of them out at once. *Source:
-> `research/reference/teeinblue.md` → "Conversion-relevant settings" (Teeinblue Help Center, 2026).*
+> design that already cleared Stage 2 — never fan all of them out at once.
+> **Availability caveat:** some settings are Campaign-by-Product-Base vs Campaign-by-Shopify specific — confirm in-app.
+> **Dropped — "Buy Now" (express checkout):** the toggle exists but only skips the *cart page*, not personalization,
+> and Shopify's dynamic checkout is unreliable with required line-item properties (personalization) — it's a risk,
+> not a lever. *Source: `research/reference/teeinblue.md` → "Conversion-relevant settings".*
 > Secondary toggles to try only if the above plateau: block-preview-until-fields-complete · ATC redirect-to-cart
 > vs on-page message · preview watermark on/off · save-badge/compare-at price framing (lives in Offer).
 
