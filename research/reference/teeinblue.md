@@ -92,3 +92,41 @@ Teeinblue can do everything our sprint designs require — **conditional logic +
 "one-per-grandchild" engine**, PSD import means the designer's file drops straight in, and it
 auto-generates print files to 30+ PODs. Order of operations unchanged: **validate the metaphor
 (Tier-1) → designer builds the consistent component set → wire it into Teeinblue → connect POD.**
+
+---
+
+## Conversion-relevant settings (A/B-test candidates)
+*Researched 2026-09-07. Source: Teeinblue Help Center → **Product Page Settings** (Store Settings →
+Product Page Settings, updated 16/04/2025) https://support.teeinblue.com/en/article/product-page-settings-wt2ts2 ,
+plus "Enable sticky gallery on mobile" (29/05/2026) and the official 2026 setup tutorial.*
+
+**Headline reality:** Teeinblue is **NOT a CRO-configurable personalizer.** The customization *steps* are
+fixed; there is **no "add-to-cart-first, personalize-later" mode** (always personalize-before-ATC); and of
+its ~40 toggles only **~5 are real conversion axes** — the rest are cosmetic (colors/skins) or operational.
+The paradigm is a **fixed inline-on-PDP form** (popup form type exists **only** for "Campaign by Shopify",
+not "Campaign by Product Base"). Form is a single scrolling all-fields form — **no wizard/step toggle**.
+Preview position is theme-bound (not an in-app setting). CTA button *text* is editable only via translation
+strings (high effort). Fragility note: editing the theme's Product Information section can make Teeinblue
+fields vanish (app-embed conflict) → QA any layout change on the live embed.
+
+**The ~5 toggles worth testing (all sit on the ATC gate / mobile — test one-at-a-time at Stage 2–3 on a
+design that already cleared ATC):**
+| Toggle | Levels | Why it can move ATC/purchase |
+|---|---|---|
+| ATC **confirmation checkbox** | on / off | friction vs wrong-personalization safety — cleanest binary on the buy action |
+| Express **"Buy Now"** button | on / off | cuts steps for high-intent gift buyers (can cannibalize cart upsells) |
+| **Mobile sticky ATC + "Personalize" scroll button** | on / off | **highest leverage** — below-fold form/ATC discovery on ~90% mobile |
+| **ATC/Buy-Now inside the Preview popup** | on / off | captures the buy at the emotional peak of seeing the finished gift |
+| **Live-preview gallery load** | immediately / on-interaction | show personalization value-prop on load vs faster first paint |
+
+**Secondary (only if the above plateau):** block-preview-until-fields-complete · ATC redirect-to-cart vs
+on-page message · preview **watermark** on/off (can cheapen the "my finished gift" feel) · save-badge /
+compare-at price framing (this is really an **Offer** lever, shown near price).
+
+**Not worth the effort / not exposed:** wizard-vs-all-fields (no toggle), relocatable preview position
+(theme-bound), editable CTA button text (translation strings), cosmetic Classic/Modern/Dark skins, and any
+"add-first-personalize-later" flow (doesn't exist).
+
+> **Implication for the ad-testing framework:** these 5 became **Group PZ** in
+> `marketing/facebook-ads/TESTING-MATRIX-FRAMEWORK.md`. The biggest PDP gains still come from creative,
+> offer/price framing, and theme layout — **not** from Teeinblue's internal settings. Don't over-invest here.

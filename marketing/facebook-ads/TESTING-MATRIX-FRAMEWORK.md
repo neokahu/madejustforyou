@@ -35,7 +35,7 @@ design is for grandma; you can't retest it as a spouse gift. (To test a differen
 
 ### Matrix 2 — PER-DESIGN TEST AXES (what the staged funnel varies)
 
-Codes: `M` material, `AUD` audience/buyer, `A` creative, `O` offer, `R` on-site, `D` delivery, `F` follow-up.
+Codes: `M` material, `AUD` audience/buyer, `A` creative, `O` offer, `R` on-site, `PZ` personalizer, `D` delivery, `F` follow-up.
 
 #### Group M — Material / product *(NEW axis: same design, different physical product)*
 | Code | Factor | Levels to test |
@@ -80,12 +80,32 @@ Codes: `M` material, `AUD` audience/buyer, `A` creative, `O` offer, `R` on-site,
 #### Group R — On-site / landing page *(the page that converts the click)*
 | Code | Factor | Levels to test |
 |---|---|---|
-| R1 | Landing UI/UX | layout A/B · static gallery vs personalizer-first |
+| R1 | **Landing page TYPE** | **generic product-info page** (default; used Stage 2 for every design) → **dedicated sales/advertorial page** (Stage 3 only, unlocked for designs that already cleared the Stage-2 ATC threshold) |
 | R2 | Reviews / social proof | few vs many · "X sold" badge · customer photos |
-| R3 | Shipping/delivery message | free-ship threshold shown · clear delivery date |
-| R4 | Sales-lift note | urgency/scarcity · warranty · "perfect gift for…" |
+| R3 | Shipping/delivery message | free-ship threshold shown · clear delivery date · **order-by-date for holiday delivery** |
+| R4 | Sales-lift note | urgency/scarcity · **remake-free guarantee** (personalized = non-returnable) · "perfect gift for…" |
 | R5 | Trust | payment badges · prominent return policy |
 | R6 | Price presentation | flat · strikethrough anchor · % off *(displays the O price)* |
+> **R1 rule:** page type is *stage-gated, not blindly A/B'd.* A product must **sell itself on the cheap generic
+> page (Stage 2)** before it earns the effort of a dedicated sales page (Stage 3) — the sales page is a
+> **scaling reward for proven designs**, not an early test axis. (Do NOT test page speed — competitors win at
+> 29–33 Lighthouse; speed is not the bottleneck.)
+
+#### Group PZ — Personalizer conversion toggles (Teeinblue) *(tested one-at-a-time at Stage 2–3 on a WINNING design)*
+| Code | Factor | Levels to test |
+|---|---|---|
+| PZ1 | ATC confirmation checkbox | on · off *(friction vs wrong-personalization safety)* |
+| PZ2 | Express "Buy Now" button | on · off *(cut steps for high-intent gift buyers)* |
+| PZ3 | Mobile sticky ATC + "Personalize" scroll button | on · off *(**highest leverage** — below-fold discovery on ~90% mobile)* |
+| PZ4 | ATC/Buy-Now inside the Preview popup | on · off *(capture the buy at the emotional preview peak)* |
+| PZ5 | Live-preview gallery load | immediately (on page load) · on-interaction *(show value-prop instantly vs faster first paint)* |
+> Teeinblue is **not** a CRO-configurable personalizer — the customization *steps* are fixed and there is **no
+> "add-to-cart-first, personalize-later" mode** (always personalize-before-ATC). Only these ~5 toggles are real
+> conversion axes; everything else it exposes is cosmetic/operational. Test them **sparingly, one at a time** on a
+> design that already cleared Stage 2 — never fan all of them out at once. *Source:
+> `research/reference/teeinblue.md` → "Conversion-relevant settings" (Teeinblue Help Center, 2026).*
+> Secondary toggles to try only if the above plateau: block-preview-until-fields-complete · ATC redirect-to-cart
+> vs on-page message · preview watermark on/off · save-badge/compare-at price framing (lives in Offer).
 
 #### Group D — Delivery / media-buying *(how you run it — hold constant, test sparingly)*
 | Code | Factor | Levels to test |
@@ -157,8 +177,8 @@ everything at once.
 | Stage | Optimize event | VARY (test axes this stage) | HOLD constant (baseline) | Advance threshold | Carry to next |
 |---|---|---|---|---|---|
 | **1 Engagement** | Traffic / LPV | **A1–A8** (angle, media, hook, music, imagery, caption, length, CTA) + **AUD1 buyer / AUD2 targeting** | **1 baseline material (M)**; all **R, O, F**; one **D** baseline | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **creative × buyer** |
-| **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page UI/UX · R2 reviews · R4 note · R6 price presentation** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
-| **3 Purchase** | Purchase | **R3 delivery msg · R5 trust · O5 urgency · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
+| **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page type (generic) · R2 reviews · R4 note · R6 price presentation · PZ personalizer toggles** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
+| **3 Purchase** | Purchase | **R1 dedicated sales page (unlock for winners) · R3 delivery msg · R5 trust · O5 urgency · PZ ATC-gate toggles · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
 
 **How to build combos each phase (concrete):**
 - **Phase 1 — creative × buyer only.** Fix **1 baseline material** + 1 baseline offer/page. Build **N
