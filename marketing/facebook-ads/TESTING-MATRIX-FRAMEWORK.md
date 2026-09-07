@@ -114,10 +114,17 @@ All four **verified verbatim** in Teeinblue → Store Settings → **Product Pag
 | Code | Factor | Levels to test |
 |---|---|---|
 | D1 | Placement | Feed · Reels · Stories · Advantage+ (auto) |
-| D2 | Bid strategy | lowest-cost · cost-cap · bid-cap |
+| D2 | Bid strategy | **lowest-cost/highest-volume (DEFAULT, Stages 1–3)** → cost-cap / bid-cap **only when SCALING a proven winner** |
 | D3 | Budget per ad set | low · mid · high (affects delivery) |
 | D4 | Attribution window | 1-day click · 7-day click |
 | D5 | Dayparting | hour/day scheduling |
+> **D2 rule — do NOT set a bid cap during testing/cold-start.** Caps (cost-cap, bid-cap, ROAS-goal) *constrain*
+> delivery and only work once Meta has conversion signal. On a new pixel or in learning phase a cap starves
+> delivery → you never hit ~50 events/week to exit learning. Stay on **Highest Volume / Lowest Cost** through
+> Stages 1–2 (and cold start). Graduate to a **cost cap** only when ALL are true: out of learning · ~50+
+> conversions of history · you know your real CPA + break-even · you're pushing budget up and CPA starts to
+> creep. Its job is holding CPA steady *while you scale* — not an early-test axis. (Note: even "auto"/Advantage+
+> campaigns run lowest-cost by default — the point is you don't touch a cap until scale.)
 
 #### Group F — Follow-up / retention *(recovers Stage-3 orders)*
 | Code | Factor | Levels to test |
