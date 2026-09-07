@@ -74,3 +74,33 @@ Trước khi tắt, soi đúng **(1) sự kiện tối ưu · (2) giai đoạn �
 - Tài liệu nội bộ liên quan: `AD-KILL-RULES.md`, `research/reference/new-pixel-coldstart-methodology.md`.
 
 *Lưu ý: các con số cụ thể (2–3× break-even trước khi xét "0 đơn", 3–4× cho ngưỡng cost-per-event, 20–30% khi scale) là ngưỡng thực hành theo thông lệ — dùng làm khung, hiệu chỉnh theo margin & dữ liệu thật của từng tài khoản.*
+
+---
+
+## 6. Cập nhật 2026 — "2026 audit" (Andromeda / Advantage+ / hậu-ATT)
+
+*Nghiên cứu 2026 (nguồn media-buyer + Meta-official, bài viết 2024–2026). Đây là phần "2026 audit" mà `TESTING-MATRIX-FRAMEWORK.md` trỏ tới.*
+
+**Sự thật cốt lõi:** engine phân phối của Meta ("**Andromeda**") giờ **thưởng cho: gộp chiến dịch + đa dạng creative + tín hiệu first-party mạnh**; và **phạt** kiểu micro-test targeting/placement/bid chi li của 2018–2021.
+
+**BỎ (đã lỗi thời):**
+- **Lookalike** — hết tác dụng hậu-ATT; đưa list khách vào Advantage+ làm "gợi ý", để AI tự model.
+- **Test placement** (Feed vs Reels vs Stories) — dùng **Advantage+ Placements** (Meta: rẻ hơn ~15%/kết quả).
+- **Test khung attribution** — đây là quyết định cài đặt, không phải A/B. Đặt **7-day-click / 1-day-view** (Meta đã bỏ 7-day-VIEW từ 01/2026).
+- **Dayparting** — để thuật toán lo, ở quy mô nhỏ đừng chia giờ.
+
+**HẠ CẤP (default, không phải trục test):**
+- **Interest targeting** → chỉ dùng dò tín hiệu lúc pixel mới toanh; không phải trục test thường trực. **Broad = mặc định.**
+- **CTA** (Shop Now vs Learn More) → tác động nhỏ, Advantage+ thường tự chọn.
+- **"1 creative / ad set"** → nay là **legacy**. Andromeda thích **gộp nhiều creative ĐA DẠNG trong 1 ad set** (Meta: 1×25 thắng 5×5 +17% conv, −16% chi phí). Chỉ giữ 2–4 ô sạch lúc pixel mới để đọc tín hiệu ban đầu.
+
+**GIỮ:** toàn bộ creative, Offer, On-site (nơi rò rỉ giỏ→checkout — ROI cao nhất lúc này), Follow-up, retarget (như 1 tầng phễu), occasion/geo, và **ABO test → CBO scale**. (Advantage+ Sales chỉ là **1 slot** trong tài khoản, KHÔNG thay thế cả cấu trúc — Tinuiti Q1/2026: ASC còn ~20% chi tiêu retail, giảm từ đỉnh 38%.)
+
+**THÊM (đòn bẩy 2026 đang thiếu):**
+1. **Volume/velocity creative** — mỗi tuần ra concept MỚI (2–4 concept / 5–10 ad, chạy 7 ngày rồi kill/scale). "Paid social hiện đại = 80% vận hành creative."
+2. **Đa dạng creative** — góc/tông/format KHÁC HẲN nhau, không phải 10 UGC na ná.
+3. **Advantage+ Creative** (bật/tắt) — Meta báo +22% ROAS.
+4. **Chất lượng tín hiệu first-party** (Pixel+CAPI, EMQ 8+/10) — **"test" ROI cao nhất cho pixel mới**; thiếu CAPI mất ~25–30% dữ liệu chuyển đổi.
+5. **Incrementality** (Meta Conversion Lift) — đánh giá retarget theo lift **thực tăng**, không theo ROAS in-platform.
+
+**Nguồn:** Meta Business Help (Advantage+ Audience/Placements, learning phase, attribution changes 2026); segwise/anchour/flighted/skyhoora/stackmatix/turbamedia/adsuploader (2025–2026, consensus media-buyer); Tinuiti Q1-2026 (ASC share). *Đánh dấu Meta-official vs consensus trong bản audit gốc.*
