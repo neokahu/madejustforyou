@@ -35,19 +35,19 @@ design is for grandma; you can't retest it as a spouse gift. (To test a differen
 
 ### Matrix 2 — PER-DESIGN TEST AXES (what the staged funnel varies)
 
-Codes: `M` material, `AUD` audience/buyer, `A` creative, `CV` creative-ops, `O` offer, `R` on-site, `PZ` personalizer, `D` delivery, `F` follow-up, `SIG` signal.
+**Test-axis codes (things you VARY):** `M` material · `AUD` audience · `A` creative · `CV` creative-ops · `O` offer · `R` on-site · `PZ` personalizer · `F` follow-up.
+*(Delivery settings and first-party signal are **fixed setup**, held constant — NOT test axes. See "Fixed setup" below.)*
 
 > ### ⚠️ 2026 delivery regime (read before testing anything)
 > Meta's delivery AI ("Andromeda") now **rewards consolidation + creative diversity + strong first-party
 > signal**, and **penalizes** the granular audience/placement/bid micro-testing that defined 2018–2021.
 > Practical consequences baked into this matrix:
-> - **Targeting is mostly the algorithm's job now** → run **broad**; the *creative* selects the buyer
->   ("creative is the new targeting"). Lookalike/interest matrices are legacy (see AUD).
-> - **Creative volume + diversity is the dominant lever** (~56% of ad sales-lift) → new group **CV**.
-> - **First-party signal (Pixel+CAPI, EMQ 8+) is the highest-ROI fix for a new pixel** → new group **SIG**.
-> - **Don't micro-test placement / attribution-window / dayparting / bid-caps** on a small/new account — set
->   them once (see D). Reserve OFAT (one-variable-at-a-time) for **hook/angle iteration on an already-winning
->   creative**, not CTA-word or music A/Bs (see Part C).
+> - **Targeting is mostly the algorithm's job now** → run **broad** (a fixed default); the *creative* selects the
+>   buyer ("creative is the new targeting"). Lookalike/interest matrices are legacy.
+> - **Creative volume + diversity is the dominant lever** (~56% of ad sales-lift) → group **CV**.
+> - **First-party signal (Pixel+CAPI, EMQ 8+) is the highest-ROI fix for a new pixel** → fix it in **Fixed setup**.
+> - **Don't micro-test placement / attribution-window / dayparting / bid-caps** — set them once (Fixed setup).
+>   Reserve OFAT for **hook/angle iteration on an already-winning creative**, not CTA-word/music A/Bs (Part C).
 > *Source: `FB-ADS-PLAYBOOK.md` → "2026 audit" (media-buyer + Meta-official, 2025–2026 dated).*
 
 #### Group M — Material / product *(NEW axis: same design, different physical product)*
@@ -57,16 +57,14 @@ Codes: `M` material, `AUD` audience/buyer, `A` creative, `CV` creative-ops, `O` 
 > Same design, which material converts + sells best. Material drives price, perceived value & margin,
 > so it is a **real test axis** — but it can't move hook/CTR, so hold it constant in Stage 1 (see B.1).
 
-#### Group AUD — Audience / BUYER *(mostly the algorithm's job in 2026 — run broad, target via creative)*
+#### Group AUD — Audience / BUYER *(you target via the CREATIVE now — audience itself = broad, see Fixed setup)*
 | Code | Factor | Levels to test |
 |---|---|---|
-| AUD1 | Buyer / gifter as **message target** | grandchild · adult-child · spouse · friend — **expressed in the CREATIVE, not the ad-set audience** ("Grandkids, this one's for Grandma") |
-| AUD2 | Targeting type | **broad = DEFAULT (not a test)** · interest = *cold-start probe only* (brand-new pixel, no signal) · ~~lookalike~~ **REMOVED (dead post-ATT — feed lists to Advantage+ as suggestions)** · retarget = warm funnel → see **F2**, not prospecting |
-| AUD3 | Occasion / timing | everyday · Christmas · Mother's/Father's Day · birthday |
-| AUD4 | Market / geo | US · EU · AU · other |
+| AUD1 | Buyer / gifter as **message target** | grandchild · adult-child · spouse · friend — **expressed in the CREATIVE** ("Grandkids, this one's for Grandma") |
+| AUD2 | Occasion / timing | everyday · Christmas · Mother's/Father's Day · birthday |
+| AUD3 | Market / geo | US · EU · AU · other |
 > **2026:** the recipient is fixed by the design; you no longer *target* the buyer in the ad set — the **creative
-> selects them**. Run **broad + Advantage+ Audience** (Meta: ~7% better cost/result vs manual) and let the ad do
-> the targeting. Lookalike/interest stacking is legacy busywork. Buyer ≠ recipient.
+> selects them**. The audience setting itself is **broad** (a fixed default — Fixed setup). Buyer ≠ recipient.
 
 #### Group A — Creative execution *(how the design is shown in the ad)*
 | Code | Factor | Levels to test |
@@ -131,27 +129,9 @@ All four **verified verbatim** in Teeinblue → Store Settings → **Product Pag
 > conversion axes; everything else it exposes is cosmetic/operational. Test them **sparingly, one at a time** on a
 > design that already cleared Stage 2 — never fan all of them out at once.
 > **Availability caveat:** some settings are Campaign-by-Product-Base vs Campaign-by-Shopify specific — confirm in-app.
-> **Dropped — "Buy Now" (express checkout):** the toggle exists but only skips the *cart page*, not personalization,
-> and Shopify's dynamic checkout is unreliable with required line-item properties (personalization) — it's a risk,
-> not a lever. *Source: `research/reference/teeinblue.md` → "Conversion-relevant settings".*
+> *Source: `research/reference/teeinblue.md` → "Conversion-relevant settings".*
 > Secondary toggles to try only if the above plateau: block-preview-until-fields-complete · ATC redirect-to-cart
 > vs on-page message · preview watermark on/off · save-badge/compare-at price framing (lives in Offer).
-
-#### Group D — Delivery / media-buying *(2026: mostly SET-ONCE defaults, NOT test axes)*
-| Code | Factor | 2026 default (why it's not a test) |
-|---|---|---|
-| D1 | Placement | **Advantage+ Placements (auto) — DEFAULT.** Don't test Feed vs Reels vs Stories (Meta: auto ~15% cheaper/result). |
-| D2 | Bid strategy | **Highest Volume / Lowest Cost (DEFAULT, Stages 1–3)** → cost-cap only when SCALING a proven winner (see rule below). |
-| D3 | Budget per ad set | **Hygiene, not an A/B** — set enough to approach ~50 events/wk; use CBO even at small budgets so a winner isn't under-funded. |
-| D4 | Attribution window | **Set once: 7-day-click / 1-day-view** (Meta removed 7-day-VIEW Jan 2026; only link clicks count since Mar 2026). A reporting decision, NOT an experiment. |
-| ~~D5~~ | ~~Dayparting~~ | **REMOVED** — delivery already optimizes intraday; manual dayparting fragments learning at this scale. |
-> **D2 rule — do NOT set a bid cap during testing/cold-start.** Caps (cost-cap, bid-cap, ROAS-goal) *constrain*
-> delivery and only work once Meta has conversion signal. On a new pixel or in learning phase a cap starves
-> delivery → you never hit ~50 events/week to exit learning. Stay on **Highest Volume / Lowest Cost** through
-> Stages 1–2 (and cold start). Graduate to a **cost cap** only when ALL are true: out of learning · ~50+
-> conversions of history · you know your real CPA + break-even · you're pushing budget up and CPA starts to
-> creep. Its job is holding CPA steady *while you scale* — not an early-test axis. (Note: even "auto"/Advantage+
-> campaigns run lowest-cost by default — the point is you don't touch a cap until scale.)
 
 #### Group F — Follow-up / retention *(recovers Stage-3 orders)*
 | Code | Factor | Levels to test |
@@ -165,15 +145,25 @@ All four **verified verbatim** in Teeinblue → Store Settings → **Product Pag
 > Real example: MJ4U-111 had **44 ATC → 0 checkouts**, so **0 emails were captured** → F1 could not fire for any
 > of them; retargeting (F2) was the only available recovery. F1/F2 are set-up-once infrastructure — test sparingly.
 
-#### Group SIG — First-party signal quality *(FOUNDATION — the highest-ROI "test" for a new pixel; fix this FIRST)*
-| Code | Factor | Target |
-|---|---|---|
-| SIG1 | **Pixel + CAPI** live | both firing; CAPI is not optional — without it you lose ~25–30% of conversion data |
-| SIG2 | **Event Match Quality (EMQ)** | **8.0+/10** — pass email/phone/name/IP so Meta can match & optimize |
-| SIG3 | Event-ladder **climb speed** | move LPV→VC→ATC→**Purchase as fast as data allows**; don't camp on soft events (they attract low-intent traffic) |
-> This isn't a creative/offer A/B — it's the plumbing every other lever depends on. Weak signal makes broad
-> targeting, Advantage+, and the whole event ladder underperform. For a new pixel + your cart→checkout leak,
-> **getting EMQ 8+ and CAPI coverage is likely the single biggest win available.** Fix before optimizing ads.
+### 🔧 Fixed setup / defaults *(hold constant — NOT test axes; set once & verify, then leave alone)*
+These are the **controlled constants** of the experiment. You do **not** A/B them — you set them correctly once so
+every test above is clean. (Touching them mid-test resets Meta's learning and pollutes your reads.)
+
+**Foundation — fix FIRST (highest-ROI for a new pixel):**
+- **Pixel + CAPI** both live — CAPI is not optional; without it you lose ~25–30% of conversion data.
+- **Event Match Quality (EMQ) 8.0+/10** — pass email/phone/name/IP so Meta can match & optimize.
+- **Climb the event ladder fast** (LPV→VC→ATC→**Purchase** as data allows) — don't camp on soft events.
+> For a new pixel + your cart→checkout leak, **EMQ 8+ and CAPI coverage is likely the single biggest win available.**
+
+**Delivery defaults — set once, hold:**
+- **Audience = broad** + Advantage+ Audience (Meta: ~7% better cost/result). No lookalike/interest stacking.
+- **Placement = Advantage+ Placements (auto)** — don't test Feed vs Reels vs Stories (auto ~15% cheaper/result).
+- **Bid = Highest Volume / Lowest Cost** — **no cost-cap/bid-cap during testing or cold-start** (caps starve a
+  cold pixel → never exits learning). Add a **cost cap only when scaling a proven winner** (out of learning · ~50+
+  conversions · known CPA + break-even · budget rising & CPA creeping).
+- **Budget** = enough to approach ~50 events/wk; **CBO** even at small budgets so a winner isn't under-funded.
+- **Attribution = 7-day-click / 1-day-view**, set once (7-day-view unavailable since Jan 2026). A reporting choice.
+- **Campaign structure** = **ABO to test → CBO to scale**; optionally one Advantage+ Sales campaign alongside.
 
 ### Measurement — judge on INCREMENTALITY, not in-platform ROAS
 - Run Meta's free **Conversion Lift** experiment; optimize retargeting/DPA (F2) on **incremental** attribution.
@@ -232,7 +222,7 @@ everything at once.
 
 | Stage | Optimize event | VARY (test axes this stage) | HOLD constant (baseline) | Advance threshold | Carry to next |
 |---|---|---|---|---|---|
-| **1 Engagement** | Traffic / LPV | **CV1–CV2 many DIVERSE creative concepts** (angles/formats/hooks A1–A7) with the **buyer as message (AUD1)** — let Andromeda sort. **Audience = broad (not a test).** | **1 baseline material (M)**; all **R, O, F**; **Advantage+ placement + Highest-Volume bid (D defaults)** | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **concept(s)** |
+| **1 Engagement** | Traffic / LPV | **CV1–CV2 many DIVERSE creative concepts** (angles/formats/hooks A1–A7) with the **buyer as message (AUD1)** — let Andromeda sort. | **1 baseline material (M)**; all **R, O, F**; **Fixed setup** (broad · Advantage+ placement · Highest-Volume bid · signal fixed first) | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **concept(s)** |
 | **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page type (generic) · R2 reviews · R4 note · R6 price presentation · PZ personalizer toggles** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
 | **3 Purchase** | Purchase | **R1 dedicated sales page (unlock for winners) · R3 delivery msg · R5 trust · O5 urgency · PZ ATC-gate toggles · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
 
@@ -242,7 +232,7 @@ everything at once.
   angles/formats/hooks — *not* 8 near-identical ads differing by one CTA word) with the buyer expressed in the
   creative. Consolidate a few per ad set and let delivery sort; run on **LPV**. → keep the concepts clearing the
   Stage-1 threshold. *(2026: creative diversity + broad, NOT OFAT micro-tests. Material/landing/offer can't move
-  hook/CTR — held at baseline. Fix **SIG** signal first or Stage-1 reads lie.)*
+  hook/CTR — held at baseline. Fix **signal** (Pixel+CAPI, EMQ 8+ — Fixed setup) first or Stage-1 reads lie.)*
 - **Phase 2 — material × page/offer on the winning creative.** Take the winning creative × buyer; now
   **introduce material as an axis** (same design on shirt vs mug vs rug) crossed with **on-site/offer
   variants** (e.g., price-anchor on/off × reviews few/many). Run on **ATC** with real budget. → keep the
@@ -330,7 +320,7 @@ beat threshold X.* Reverse it to act (**induction**): **set $5, if it beats thre
 ### Which factors drive each stage (so you know what to change when it fails)
 - **Stage 1** ⟵ **creative / 3-sec hook** (dominant) + **buyer** targeting. Fails Stage 1 → change media/hook (Group A) or buyer (AUD). *Material can't move hook — held at baseline.*
 - **Stage 2** ⟵ **material, offer, price, reviews/social-proof, landing/product-page quality** (Groups M, O, R). ATC < 2% → material/page/price/trust problem. This is where shirt-vs-mug-vs-rug is decided.
-- **Stage 3** ⟵ **checkout friction (~76% abandon), price/margin, trust** (Groups O, R, F). Delivery (Group D) affects all stages.
+- **Stage 3** ⟵ **checkout friction (~76% abandon), price/margin, trust** (Groups O, R, F). Delivery settings (Fixed setup) affect all stages but are held constant.
 - **Buyer audience:** retargeting inflates hook (30–45%) vs cold (18–28%) → judge **cold vs cold**.
 
 - **Thresholds are HYPOTHESES, not truth.** After each round, calibrate: look back at real winners'
