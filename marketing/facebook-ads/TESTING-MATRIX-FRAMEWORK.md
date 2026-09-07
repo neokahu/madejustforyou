@@ -74,7 +74,6 @@ Codes: `M` material, `AUD` audience/buyer, `A` creative, `O` offer, `R` on-site,
 | O3 | Bundle / gift | single · combo · gift-with-purchase |
 | O4 | Free-ship threshold | none · with threshold |
 | O5 | Deadline urgency | none · flash-sale/deadline |
-| O6 | Payment method | card · COD · installment |
 > Price used to appear 3× (old P7 tier, R2 anchor, O1 point) — **consolidated here**. Price-on-page
 > presentation (strikethrough/anchor) is an on-site execution of the O price, logged under R.
 
@@ -159,7 +158,7 @@ everything at once.
 |---|---|---|---|---|---|
 | **1 Engagement** | Traffic / LPV | **A1–A8** (angle, media, hook, music, imagery, caption, length, CTA) + **AUD1 buyer / AUD2 targeting** | **1 baseline material (M)**; all **R, O, F**; one **D** baseline | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **creative × buyer** |
 | **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page UI/UX · R2 reviews · R4 note · R6 price presentation** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
-| **3 Purchase** | Purchase | **R3 delivery msg · R5 trust · O5 urgency · O6 payment · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
+| **3 Purchase** | Purchase | **R3 delivery msg · R5 trust · O5 urgency · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
 
 **How to build combos each phase (concrete):**
 - **Phase 1 — creative × buyer only.** Fix **1 baseline material** + 1 baseline offer/page. Build **N
