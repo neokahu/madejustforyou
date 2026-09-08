@@ -345,11 +345,15 @@ weakest funnel step — you promote on the outcome metric, you're capped by the 
 **STAGE 1 — Engagement** *(weak filter for gifts — cheap attention is the norm):*
 | Metric | **T0 KILL (red-line)** | T1 WEAK (<25th) | T2 PAR (median) | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
 |---|---|---|---|---|---|---|
-| Hook rate 3s (cold) | **< 21% by ~day 4** (< 15% broken) | < 18% | ~22–23% | ~28–30% | 35%+ | ~1–2k impr |
+| Hook rate 3s (cold) | **< 21% by ~day 4** (< 15% broken) | < 18% | ~22–23% | ~28–30% | ~30%+ ¹ | ~1–2k impr |
 | Link CTR | **< 0.5%** (after adequate impr) | < 1.0% | ~1.2–1.7% | ~2.5% | 3.5%+ | ~1k / ~4k A/B |
 | Hold rate (15s÷3s) | < 10% → *fix body (not kill)* | < 10% | 12–25% | ~30% | > 30% | ~1–2k impr |
 | CPC (link, gifts) | 2–3× your norm + CPM rising | > $1.00 | ~$0.57–0.70 | < $0.45 | < $0.34 | ~50–100 clicks |
-| CPM (US cold, ref) | **> $40–50 AND sub-median CTR/CVR** | > $22 | ~$13–16 | < $11 | < $8–9 | ~10k impr |
+| CPM (US cold, ref) | > $40–50 ² AND sub-median CTR/CVR | > $22 | ~$13–16 | < $11 | < $8–9 | ~10k impr |
+
+*¹ For **cold** traffic, hook tops out ~28–30% (AdSights). **35%+ is retargeting/warm** (brand recognition, not
+creative quality) — don't hold cold ads to it. ² CPM **> $40–50 is a practitioner sanity-check, not benchmark
+data** — the CPM sources (Triple Whale, Lebesgue) top out ~$16–22; use it as a "something's wrong" flag, not a hard tier.*
 
 **STAGE 2 — Intent:**
 | Metric | **T0 KILL (red-line)** | T1 WEAK | T2 PAR | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
@@ -434,11 +438,15 @@ Budget is **not arbitrary — it's the spend needed to reach that stage's min-sa
 **×target-CPA** multiple (works at any price point) plus a **$ example** at gift-typical costs
 (CPM ~$15 · CPC ~$0.50 · target CPA ~$30).
 
-| Stage | Reads | Min-sample needed | Budget / variant (×target-CPA) | $ example / variant |
+*Plain-language key: **"one ad" = one version you're testing** ("variant"). **"rough read"** = a quick good/bad
+signal; a **"confident A/B test"** (proving ad A truly beats ad B) needs ~4× more data → more budget. The **$
+column is an example** at gift-typical costs (CPM $15 · CPC $0.50 · target CPA $30) — your real numbers shift it.*
+
+| Stage | Reads | Data needed | Budget per ad (×target-CPA) | $ example per ad |
 |---|---|---|---|---|
-| **1 Engagement** | hook, CTR, CPM | ~1–2k impr (directional); ~4k/variant for a 95% A/B | **~0.5–1× CPA** (dir) · ~2× (A/B) | **~$15–30** (dir) · ~$60 (A/B) |
-| **2 Intent** | ATC rate, cost/ATC | ~300–500 clicks (~20–50 ATC events) | **~5–8× CPA** | **~$150–250** |
-| **3 Purchase** | CVR, CPA, ROAS | spend **≥3× CPA** to call "dead"; ~50 conv/wk to *optimize* | **≥3× CPA to judge · ~5× CPA/day to escape learning** | **≥$90 to judge · ~$150/day** to optimize |
+| **1 Engagement** | hook, CTR, CPM | ~1–2k views (rough read); ~4k per ad for a confident A/B test | **~0.5–1× CPA** (rough) · ~2× (A/B test) | **~$15–30** rough · ~$60 A/B test |
+| **2 Intent** | ATC rate, cost/ATC | ~300–500 clicks (~20–50 add-to-carts) | **~5–8× CPA** | **~$150–250** |
+| **3 Purchase** | CVR, CPA, ROAS | spend **≥3× CPA** to call it "dead"; ~50 sales/wk to *optimize* | **≥3× CPA to judge · ~5× CPA/day to optimize** | **≥$90 to judge · ~$150/day** to optimize |
 
 **How to allocate a campaign budget (the funnel does the concentration):**
 1. **Stage 1 — go wide & cheap.** Many creatives at ~$15–30 each; kill fast on T0/WEAK. *(This is why Stage 1

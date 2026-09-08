@@ -118,6 +118,17 @@ Two robustness rules:
 
 ---
 
+## ✔ Primary-source verification (2026-09-08) — 3 corrections
+Stage-1 numbers re-checked against each publisher's own page. Confirmed verbatim: hook median 22–23% &
+cold range 18–28% (AdSights), hold 12–25%/>30%/<10% (AdSights), gifts CTR 4.13% / CPC $0.34 (LocaliQ),
+CPM $15.06 (Triple Whale), US CPM $16.08 (Lebesgue), Littledata ATC 4.6%/7.5%/9.6%. **Corrections made:**
+1. **Hook ELITE "35%+" is RETARGETING, not cold** — AdSights assigns 35%+ to warm audiences (brand
+   recognition, not creative quality). Cold tops out ~28–30%. Framework tier fixed.
+2. **CPM red-line ">$40–50" is a practitioner rule, NOT in benchmark data** — the CPM sources top out
+   ~$16–22 (Triple Whale/Lebesgue). Keep as a "something's wrong" sanity flag, not a data-backed cutoff.
+3. **AdSights is a secondary COMPILER**, not an original-data publisher — it aggregates Motion 2026,
+   Triple Whale + Common Thread 2025, Foreplay. Cleanest published hook/hold bands, but not raw data.
+
 ## Source reliability
 - **Meta-official:** 3-sec-view definition; learning phase ~50 conv/ad-set/wk; Reels 9:16 sound-on +12% conv/$ (12M ad sets).
 - **Strongest datasets:** Triple Whale (~35k brands 2025–26), WordStream/LocaliQ 2025 (has Gifts cut), Littledata (Shopify funnel), AdSights (funnel-step incl. hook/hold/IC), Baymard (checkout).
@@ -126,13 +137,14 @@ Two robustness rules:
 ### Source links (clickable — click to verify any number)
 | Source | What it backs | Link |
 |---|---|---|
-| AdSights / SuperScale | hook, hold, CTR, CPM, IC-rate benchmarks | https://superscale.ai/learn/meta-ads-benchmarks-by-industry |
-| AdSights glossary | hook-rate · hold-rate · initiate-checkout-rate defs+bands | https://www.adsights.ai/resources/glossary/metrics/hook-rate |
-| Triple Whale | CTR, CPM, CVR, CPA, ROAS (~35k brands) | https://www.triplewhale.com/blog/facebook-ads-benchmarks |
+| **AdSights — hook rate (PRIMARY page)** ✔verified | cold: 18–28%, median ~22–23%, 28%+ strong | https://www.adsights.ai/resources/glossary/metrics/thumbstop-rate-tsr |
+| **AdSights — hold rate (PRIMARY page)** ✔verified | cold 12–25% healthy, >30% strong, <10% = fix body | https://www.adsights.ai/resources/glossary/metrics/hold-rate |
+| **Triple Whale** ✔verified | CTR, **CPM $15.06 median**, CVR, CPA $38.99, ROAS (Aug'25–Jul'26) | https://www.triplewhale.com/blog/facebook-ads-benchmarks |
 | Top Growth Marketing | click→purchase, CPA, ROAS quartiles | https://topgrowthmarketing.com/dtc-ecommerce-benchmarks/meta-ads-benchmarks |
-| WordStream 2025 (via Hawky) | gifts cut: CTR 4.13% / CPC $0.34 | https://hawky.ai/blog/facebook-ads-benchmarks |
+| **WordStream by LocaliQ (PRIMARY)** ✔verified | **gifts: CTR 4.13% / CPC $0.34** (2025, Traffic objective, 20 industries) | https://localiq.com/blog/facebook-advertising-benchmarks/ |
+| Curtis Howland (practitioner) ✔verified | "hook <21% on new creative → kill before day 4" | https://www.linkedin.com/posts/curtishowland_ive-run-20000-ads-and-spent-150m-on-meta-activity-7446549710774923264-L_Jy |
 | Flighted | good link-CTR, ecom CPC | https://www.flighted.co/blog/meta-ads-performance-benchmarks-by-industry |
-| Lebesgue | CPM by country (US $16.08) | https://lebesgue.io/facebook-ads/facebook-cpm-by-country |
+| **Lebesgue** ✔verified | CPM by country (**US $16.08** highest; India $1.36) | https://lebesgue.io/facebook-ads/facebook-cpm-by-country |
 | AdKit | high-CPM causes + Q4 seasonality | https://adkit.so/resources/troubleshooting/facebook-ads-high-cpm |
 | **Littledata (PRIMARY)** | ATC rate 4.6% · top-20% >7.5% · top-10% >9.6% (2,800 Shopify sites, 2023) — verified verbatim | https://www.littledata.io/average-website-performance |
 | **Littledata (PRIMARY)** | ecommerce conversion rate (avg 1.4%) + by-industry | https://www.littledata.io/ecommerce-conversion-rate |
