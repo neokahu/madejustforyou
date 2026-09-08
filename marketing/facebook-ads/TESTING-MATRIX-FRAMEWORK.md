@@ -270,41 +270,62 @@ induction. Principles for clean causality:
 
 ---
 
-## PART D — Thresholds & induction (leading indicators)
+## PART D — 5-Tier grading system (kill / scale by percentile)
 
-Deductive chain: *campaign wins ⟹ ad is compelling ⟹ engagement is good ⟹ at $5 visit-web the metrics
-beat threshold X.* Reverse it to act (**induction**): **set $5, if it beats threshold X → candidate
-"good-engagement ad" → advance.**
+Every metric is graded into **5 tiers** (percentile-anchored, from research). A tier drives an **action + budget**.
+*Cutoffs are seeded from external ecom/gifts benchmarks (`research/reference/fb-ads-benchmarks-2026-sources.md`);
+**recalibrate to your own rolling distribution** after ~20–30 winners.*
 
-### Advance-threshold cheat-sheet — starting point (general e-com benchmarks, then calibrate)
+### D.0 — The tiers
+| Tier | Band | Meaning | Action |
+|---|---|---|---|
+| **T0 · KILL** | absolute red-line (economic) | fires **early, before full sample** — you're bleeding budget with no signal | cut now |
+| **T1 · WEAK** | < ~25th pct (after min-sample) | below standard | cut |
+| **T2 · PAR** | ~25th–50th | median / standard | iterate the weakest layer |
+| **T3 · STRONG** | ~50th–80th (top-20%) | above standard | advance / scale carefully |
+| **T4 · ELITE** | > ~90th (top-10%) | exceptional | scale hard + replicate the winning traits |
 
-> These are **general e-com benchmarks** (sources listed) as a starting point. No niche personalized-POD
-> data yet → judge against these, then **calibrate with your own data**.
+**Two rules that make it robust (do not skip):**
+1. **Grade at the WEAKEST funnel layer that has a valid sample.** A top-5% hook with bottom-quartile ATC is
+   **not** an elite ad — it's a landing-page task. Suppress any tier verdict until that layer hits min-sample (D.3).
+2. **A single leading metric never promotes or kills.** Use the diagnostic tree (D.4): a lone bad number =
+   *diagnose & fix that layer*, not kill. A kill needs the primary weak **and** no redeeming sibling.
 
-**STAGE 1 — Engagement (readable on a $5–$20 micro-budget):**
-| Metric | KILL | Average | ADVANCE | Source / confidence |
-|---|---|---|---|---|
-| Hook rate (3s / impr, cold feed) | < 18% | ~22–23% | > 28% | AdSights/SuperScale — practitioner, **medium** (judge cold-vs-cold; Reels 24–36%, retarget 30–45%) |
-| Link CTR | < 1.7% (all-industry floor) | ~2% | **> 4%** (Gifts-category bar) | WordStream 2025; Shopping/Gifts = **4.13% CTR / $0.34 CPC** — near-niche proxy, **high** |
-| CPM (reference) | — | ~$13–15 | cheaper = better | Top Growth $13.52 · Triple Whale $15.06 |
+> ⚠️ **Gifts niche caveat:** your category has the **cheapest clicks + highest CTR of any vertical** — high
+> hook/CTR is the *norm*, not a win. So **Stage 1 is a weak filter; the real kill/advance decisions live at
+> Stage 2–3** (ATC, checkout, ROAS). Weight budget & attention down-funnel.
 
-*Note: "all-clicks CTR" (~2.4–2.7%) ≠ "link CTR" (~1–1.7%). Grade on **link CTR**.*
+### D.1 — Tier cutoffs per metric (grade on **link CTR**, not all-clicks CTR)
 
-**STAGE 2 — Intent (needs more spend; not readable at $5):**
-| Metric | KILL | Average | ADVANCE | Source / confidence |
-|---|---|---|---|---|
-| ATC rate (session, Shopify) | < 2% | ~4.6% | > 7.5% (top 20%), strong > 9.6% (top 10%) | Littledata, 2,800 Shopify sites 2023, **high** (not POD-validated) |
-| LPV → ATC | < 2% = page/price/trust problem | | | Braze/ClickPost |
-| Cost/ATC | > ~3–4× your good level | — | ≤ your baseline | price-dependent → use **your own baseline** |
+**STAGE 1 — Engagement** *(weak filter for gifts — cheap attention is the norm):*
+| Metric | T1 WEAK (<25th) | T2 PAR (median) | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
+|---|---|---|---|---|---|
+| Hook rate 3s (cold) | < 18% | ~22–23% | ~28–30% | 35%+ | ~1–2k impr |
+| Link CTR | < 1.0% | ~1.2–1.7% | ~2.5% | 3.5%+ | ~1k directional / ~4k A/B |
+| Hold rate (15s÷3s) | < 10% | 12–25% | ~30% | > 30% | ~1–2k impr |
+| CPC (link, gifts) | > $1.00 | ~$0.57–0.70 | < $0.45 | < $0.34 | ~50–100 clicks |
+| CPM (US cold, ref) | > $22 | ~$13–16 | < $11 | < $8–9 | ~10k impr |
 
-**STAGE 3 — Purchase (needs the most spend):**
-| Metric | KILL | Average | ADVANCE | Source / confidence |
-|---|---|---|---|---|
-| Click → Purchase (paid Meta) | < 0.65% | ~1.24–1.53% | > 3.2% | Managed-DTC + Triple Whale, **high** (most portable) |
-| Session → purchase (reference) | | ~2.9% | | Dynamic Yield 2024 |
-| Checkout completion | < 20% (abandon > 80%) | ~24% (abandon ~76%) | | Dynamic Yield 2024 |
-| CPA | AOV-dependent → judge vs break-even | industry median $38.99 | ≤ break-even | Triple Whale 2026 |
-| ROAS | < break-even | industry median ~1.9–2.2× | ≥ target by margin | Varos / Triple Whale |
+**STAGE 2 — Intent:**
+| Metric | T1 WEAK | T2 PAR | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
+|---|---|---|---|---|---|
+| ATC rate (session) | < 3% | 4.6% | 7.5%+ | 9.6%+ | ~300–500 sessions |
+| ATC rate (per LPV) | < 4% | ~5–8% | ~8–10% | 10%+ | ~300–500 LPV |
+| LPV → ATC | < 8% | ~10–20% | ~20%+ | — | ~100+ clicks |
+| Cost/ATC | *no public distribution — derive from break-even; > (break-even CPA × ATC→purchase) = unprofitable* | | | | ~20–50 ATC |
+
+**STAGE 3 — Purchase** *(rare events → coarse; grade vs **break-even**, not median):*
+| Metric | T1 WEAK | T2 PAR | T3 STRONG | T4 ELITE | min-sample |
+|---|---|---|---|---|---|
+| ATC→IC (cart→checkout) | < 25% | ~35% | ~40% | 45%+ | ~50+ ATC |
+| IC→Purchase (mobile) | < 25% | ~34% | ~40% | — | ~50+ IC |
+| IC→Purchase (desktop) | < 40% | ~48% | ~60% | 66%+ | ~50+ IC |
+| Click→Purchase CVR | < 1% | ~1.24–1.53% | ~3% | 4–5%+ | needs conversions (see D.3) |
+| CPA | *vs **break-even**, not median* | | ≤ break-even | ≤ target (break-even ×0.8) | spend ≥1.5–3× target CPA |
+| ROAS | < break-even | ~1.9–3.0× | 3–4× | > 5.3× | — |
+
+> **IC diagnostic (why we track it):** ATC→IC low = **cart-page** problem (shipping shock/UX); IC→Purchase
+> low = **checkout** problem (payment/trust/form). Different fixes — that's the whole reason IC is measured.
 
 **ROAS judged vs BREAK-EVEN = 1 ÷ gross margin, NOT vs industry average:**
 | Gross margin | Break-even ROAS | Profitable target |
@@ -314,23 +335,50 @@ beat threshold X.* Reverse it to act (**induction**): **set $5, if it beats thre
 | 30% | 3.3× | ≥ 4.5× |
 | 20% | 5.0× | ≥ 6.5× |
 
-### Which factors drive each stage (so you know what to change when it fails)
-- **Stage 1** ⟵ **creative / 3-sec hook** (dominant) + **buyer** targeting. Fails Stage 1 → change media/hook (Group A) or buyer (AUD). *Material can't move hook — held at baseline.*
-- **Stage 2** ⟵ **material, offer, price, reviews/social-proof, landing/product-page quality** (Groups M, O, R). ATC < 2% → material/page/price/trust problem. This is where shirt-vs-mug-vs-rug is decided.
-- **Stage 3** ⟵ **checkout friction (~76% abandon), price/margin, trust** (Groups O, R, F). Delivery settings (Fixed setup) affect all stages but are held constant.
-- **Buyer audience:** retargeting inflates hook (30–45%) vs cold (18–28%) → judge **cold vs cold**.
+### D.2 — T0 instant-kill guardrails (hard red lines; kill fast, override tiers)
+These are **economic** red lines — allowed to fire *before* min-sample because they protect budget, not judge quality:
+1. **Spend ≥ 3× target CPA with 0 purchases → kill** (risk-tolerant: 1.5–2×).
+2. **Spend ≥ 3× target CPA with 0 ATC → kill** (funnel broken above cart — worse than 0 purchases).
+3. **CPA > break-even with no downtrend over several days → pause.**
+4. New video **hook < 21% by ~day 4 → kill** (< 15% = broken opening).
+5. **Link CTR < 0.5%** (or all-CTR < 0.9%) after adequate impressions → kill.
+6. **CPM blowout:** US-cold **> $40–50 AND** sub-median CTR/CVR → kill. *(CPM alone is never a kill — a $30 CPM that converts beats a $10 that doesn't.)*
+7. **Frequency > 3.0** cold = fatigue; **> 3.7** on real spend = "paying to annoy" → rotate creative.
+8. Spend past ~2–3× expected CPC with impressions and **zero link clicks** → dead on arrival.
+> Do NOT kill during learning phase **except #1/#2** (structural failure). Never cut on 1 bad day.
 
-- **Thresholds are HYPOTHESES, not truth.** After each round, calibrate: look back at real winners'
-  Stage-1 metrics → update thresholds for your niche. That IS "getting closer to the truth."
+### D.3 — Min-sample gates (never grade on noise — the #1 false-kill cause)
+- Hook/CTR: **~1–2k impressions** directional; **~4k/variant** for a 95% A/B read (2% baseline, 20% lift).
+- ATC rate: **~300–500 clicks/LPV** (~20–50 ATC events).
+- CVR/purchase: Meta learning phase needs **~50 conversions/ad-set/week** *(Meta-official)*.
+- **"0 purchases" means something only after spend ≥ 3× target CPA.** Below = insufficient sample, hold.
+- Escape learning limbo: **≥ 5× target CPA/day/ad-set**; time floor **≥ 3 days**. "$100 for a $50-avg result is a coin flip" → force spend into fewer tests.
 
-### ⚠️ Statistical limits (don't fool yourself)
-- A **$5–$20 micro-budget reliably reads only Stage-1 metrics** (hook/CTR/CPM — impression-level, accrue
-  fast); it **cannot** read ATC/purchase (rare events need far more spend). This validates the staged
-  design: filter cheap on engagement, spend up only on survivors.
-- **"0 orders" only means something after ~2–3× break-even CPA** of spend. Below that = insufficient sample.
+### D.4 — Diagnostic decision tree (anti-false-kill: fix the highest broken layer first)
+Signals arrive leading→lagging; a broken upper layer poisons everything below. Walk top-down:
+- **High CPM + weak CTR** → generic creative / narrow audience → new visual+hook. *Don't kill on CPM.*
+- **Good hook + low CTR** → body/CTA/offer fails → rewrite mid-video + CTA (not the first frame).
+- **Good CTR + few LPV** (click ≠ LPV) → speed / broken link / pixel gap → audit tracking. *Common mis-diagnosis — don't blame creative.*
+- **Good LPV + weak ATC** → landing doesn't continue the ad promise, or offer/price weak → lander/offer/reviews.
+- **High ATC + low ATC→IC** → cart-page friction (shipping shock, cart UX).
+- **Good IC + low IC→Purchase** → checkout UX / trust / payment / price shock.
+- **Funnel healthy + CPA > break-even** → price/margin/scale, not the ad.
+
+### Which group to change when a stage fails
+- **Stage 1** ⟵ creative/hook (Group A) + buyer message (AUD). *Material held at baseline.*
+- **Stage 2** ⟵ material, offer, price, reviews, page quality (M, O, R). Where shirt-vs-mug-vs-rug is decided.
+- **Stage 3** ⟵ checkout friction, price/margin, trust (O, R, F). Delivery = Fixed setup, held constant.
+
+### D.5 — Seasonality, calibration & statistical limits
+- **Seasonality:** gifts Q4 CPMs run **+30–60%** → grade vs **season-matched** baselines and set seasonal
+  exceptions (e.g. "pause if CPA > $120 Nov 15–30" vs "> $80 rest of year"), or you'll false-kill every Q4 winner.
+- **Tiers are HYPOTHESES.** After ~20–30 winners, recompute cutoffs from **your own** rolling distribution — a
+  "STRONG" CTR for your account ≠ the industry's. That IS "getting closer to the truth."
+- A **$5–$20 micro-budget reads only Stage-1 metrics** (impression-level); it **cannot** read ATC/purchase. This
+  validates the staged design — filter cheap on engagement, spend up only on survivors.
 - In-day numbers are estimates → decide on **closed days** only.
 - Good top-funnel but no orders is usually an **on-site (R/O)** problem → fix retail, don't kill a good ad.
-- (Foundations: see `FB-ADS-PLAYBOOK.md`.)
+- *Cutoffs + sources: `research/reference/fb-ads-benchmarks-2026-sources.md`. Foundations: `FB-ADS-PLAYBOOK.md`.*
 
 ---
 
