@@ -305,31 +305,35 @@ Every metric is graded into **5 tiers** (percentile-anchored, from research). A 
 ### D.1 — Tier cutoffs per metric (grade on **link CTR**, not all-clicks CTR)
 
 **STAGE 1 — Engagement** *(weak filter for gifts — cheap attention is the norm):*
-| Metric | T1 WEAK (<25th) | T2 PAR (median) | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
-|---|---|---|---|---|---|
-| Hook rate 3s (cold) | < 18% | ~22–23% | ~28–30% | 35%+ | ~1–2k impr |
-| Link CTR | < 1.0% | ~1.2–1.7% | ~2.5% | 3.5%+ | ~1k directional / ~4k A/B |
-| Hold rate (15s÷3s) | < 10% | 12–25% | ~30% | > 30% | ~1–2k impr |
-| CPC (link, gifts) | > $1.00 | ~$0.57–0.70 | < $0.45 | < $0.34 | ~50–100 clicks |
-| CPM (US cold, ref) | > $22 | ~$13–16 | < $11 | < $8–9 | ~10k impr |
+| Metric | **T0 KILL (red-line)** | T1 WEAK (<25th) | T2 PAR (median) | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
+|---|---|---|---|---|---|---|
+| Hook rate 3s (cold) | **< 21% by ~day 4** (< 15% broken) | < 18% | ~22–23% | ~28–30% | 35%+ | ~1–2k impr |
+| Link CTR | **< 0.5%** (after adequate impr) | < 1.0% | ~1.2–1.7% | ~2.5% | 3.5%+ | ~1k / ~4k A/B |
+| Hold rate (15s÷3s) | < 10% → *fix body (not kill)* | < 10% | 12–25% | ~30% | > 30% | ~1–2k impr |
+| CPC (link, gifts) | 2–3× your norm + CPM rising | > $1.00 | ~$0.57–0.70 | < $0.45 | < $0.34 | ~50–100 clicks |
+| CPM (US cold, ref) | **> $40–50 AND sub-median CTR/CVR** | > $22 | ~$13–16 | < $11 | < $8–9 | ~10k impr |
 
 **STAGE 2 — Intent:**
-| Metric | T1 WEAK | T2 PAR | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
-|---|---|---|---|---|---|
-| ATC rate (session) | < 3% | 4.6% | 7.5%+ | 9.6%+ | ~300–500 sessions |
-| ATC rate (per LPV) | < 4% | ~5–8% | ~8–10% | 10%+ | ~300–500 LPV |
-| LPV → ATC | < 8% | ~10–20% | ~20%+ | — | ~100+ clicks |
-| Cost/ATC | *no public distribution — derive from break-even; > (break-even CPA × ATC→purchase) = unprofitable* | | | | ~20–50 ATC |
+| Metric | **T0 KILL (red-line)** | T1 WEAK | T2 PAR | T3 STRONG (top-20%) | T4 ELITE (top-10%) | min-sample |
+|---|---|---|---|---|---|---|
+| ATC rate (session) | **0 ATC at spend ≥ 3× target CPA** | < 3% | 4.6% | 7.5%+ | 9.6%+ | ~300–500 sessions |
+| ATC rate (per LPV) | (same spend rule) | < 4% | ~5–8% | ~8–10% | 10%+ | ~300–500 LPV |
+| LPV → ATC | *diagnostic (speed/tracking) — not a kill* | < 8% | ~10–20% | ~20%+ | — | ~100+ clicks |
+| Cost/ATC | > (break-even CPA × ATC→purchase) sustained | *derive from break-even (no public distribution)* | | | | ~20–50 ATC |
 
 **STAGE 3 — Purchase** *(rare events → coarse; grade vs **break-even**, not median):*
-| Metric | T1 WEAK | T2 PAR | T3 STRONG | T4 ELITE | min-sample |
-|---|---|---|---|---|---|
-| ATC→IC (cart→checkout) | < 25% | ~35% | ~40% | 45%+ | ~50+ ATC |
-| IC→Purchase (mobile) | < 25% | ~34% | ~40% | — | ~50+ IC |
-| IC→Purchase (desktop) | < 40% | ~48% | ~60% | 66%+ | ~50+ IC |
-| Click→Purchase CVR | < 1% | ~1.24–1.53% | ~3% | 4–5%+ | needs conversions (see D.3) |
-| CPA | *vs **break-even**, not median* | | ≤ break-even | ≤ target (break-even ×0.8) | spend ≥1.5–3× target CPA |
-| ROAS | < break-even | ~1.9–3.0× | 3–4× | > 5.3× | — |
+| Metric | **T0 KILL (red-line)** | T1 WEAK | T2 PAR | T3 STRONG | T4 ELITE | min-sample |
+|---|---|---|---|---|---|---|
+| ATC→IC (cart→checkout) | *diagnostic: <25% = cart-page problem* | < 25% | ~35% | ~40% | 45%+ | ~50+ ATC |
+| IC→Purchase (mobile) | *diagnostic: <25% = checkout problem* | < 25% | ~34% | ~40% | — | ~50+ IC |
+| IC→Purchase (desktop) | *diagnostic: <35% = checkout problem* | < 40% | ~48% | ~60% | 66%+ | ~50+ IC |
+| Click→Purchase CVR | **0 purchases at spend ≥ 3× target CPA** | < 1% | ~1.24–1.53% | ~3% | 4–5%+ | needs conversions (D.3) |
+| CPA | **> break-even, no downtrend → pause** | vs break-even | — | ≤ break-even | ≤ target (be ×0.8) | spend ≥1.5–3× target CPA |
+| ROAS | **< break-even = loss** | < break-even | ~1.9–3.0× | 3–4× | > 5.3× | — |
+
+> **T0 = the kill line for that metric.** Bold cells are hard kills; *italic* cells are diagnostics (fix the
+> layer, don't kill). The two **spend-based** T0 rules (0 ATC / 0 purchases at ≥3× CPA) are the master
+> guardrails — full list in **D.2**.
 
 > **IC diagnostic (why we track it):** ATC→IC low = **cart-page** problem (shipping shock/UX); IC→Purchase
 > low = **checkout** problem (payment/trust/form). Different fixes — that's the whole reason IC is measured.
