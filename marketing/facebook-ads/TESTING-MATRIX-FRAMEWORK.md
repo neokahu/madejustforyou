@@ -1,5 +1,20 @@
 # Scientific Ad-Testing Framework — Factor Matrix + Multi-Stage Funnel
 
+> **⚡ TL;DR** — Test the **DESIGN** (not the product) through a **3-stage elimination funnel**
+> (Engagement → Intent → Purchase). Run **broad + many diverse creatives**, let Meta's AI target. Grade every
+> metric on a **5-tier scale (KILL·WEAK·PAR·STRONG·ELITE)** seeded from published ecom/gifts benchmarks and
+> recalibrated to your own data. **Kill only on a hard red-line (T0) or the weakest valid layer — never on one
+> noisy number.** Spend **cheap on Stage 1, concentrate budget on survivors.**
+>
+> **How the tier numbers were derived (the science):** each tier is a **percentile band** of the metric's
+> real-world distribution — **WEAK < 25th · PAR ≈ median · STRONG ≈ top-20% · ELITE ≈ top-10%** — pulled from
+> large published datasets (Triple Whale ~35k brands · Littledata Shopify · WordStream gifts · AdSights funnel ·
+> Baymard checkout; see Benchmarks doc). They are **starting hypotheses**, made rigorous by three rules:
+> (1) **min-sample gate** — never grade before enough impressions/spend, so you're reading signal not noise;
+> (2) **purchase-stage anchored to YOUR break-even** (= 1 ÷ gross-margin), not the industry median;
+> (3) **self-recalibration** — after ~20–30 winners you recompute the cutoffs from *your own* rolling
+> distribution. External distribution → percentile tiers → sample-gated judgement → converge on your truth.
+
 > **📎 Resources & links**
 > - **Matrix Sheet** (Factors · Planner · Results · **Tiers**): https://docs.google.com/spreadsheets/d/1ZNZijKm5PJRkOj91A4DUGhAb-orvDOidyMNP627-k1w/edit
 > - **All-Factors list**: https://docs.google.com/spreadsheets/d/1MCJdzjexz9Oj3gkIBX8mEdfQ8AaLROn89peQt487n_4/edit
@@ -298,9 +313,32 @@ Every metric is graded into **5 tiers** (percentile-anchored, from research). A 
 2. **A single leading metric never promotes or kills.** Use the diagnostic tree (D.4): a lone bad number =
    *diagnose & fix that layer*, not kill. A kill needs the primary weak **and** no redeeming sibling.
 
+**⟶ How an ad gets ONE tier (aggregation — not "all metrics" and not "any one metric"):**
+Each funnel **layer** has ONE **outcome metric** that sets its tier; the other metrics in that layer are
+**siblings** that only explain *why* (and stop false-kills). The ad's overall tier = its **weakest layer** with valid sample.
+| Layer | Outcome metric (sets the tier) | Sibling/diagnostic metrics |
+|---|---|---|
+| Engagement | **Link CTR** | hook, hold, CPM, CPC |
+| Intent | **ATC rate** | LPV→ATC, cost/ATC |
+| Purchase | **ROAS vs break-even** (+ CPA) | ATC→IC, IC→Purchase, CVR |
+
+Procedure: (a) **any metric at T0 → KILL**, done. (b) Otherwise give each *layer* a tier from its outcome
+metric. (c) The ad's tier = the **lowest layer tier** (weakest link — one ELITE layer never lifts a WEAK one).
+(d) Within a layer, a bad *sibling* with a healthy outcome = **diagnose that sibling, don't downgrade** (e.g.
+low hook but strong CTR → the hook's fine enough, CTR is what matters). *So: an ad is only as good as its
+weakest funnel step — you promote on the outcome metric, you're capped by the weakest layer.*
+
 > ⚠️ **Gifts niche caveat:** your category has the **cheapest clicks + highest CTR of any vertical** — high
 > hook/CTR is the *norm*, not a win. So **Stage 1 is a weak filter; the real kill/advance decisions live at
 > Stage 2–3** (ATC, checkout, ROAS). Weight budget & attention down-funnel.
+
+> 🎯 **What niche these numbers come from** (no provider publishes personalized-gift/POD, so it's a mix):
+> - **Gift-specific** ✅ — **Link CTR & CPC** only (WordStream 2025 "Shopping/Collectibles/Gifts": 4.13% CTR / $0.34 CPC).
+> - **Gift-adjacent proxy** — **ROAS & CVR** (Triple Whale "Toys/Art/Collectibles").
+> - **General US ecom / Shopify** (the majority) — **hook, hold, CPM, ATC, checkout, ATC→IC, IC→Purchase, CPA**
+>   (Triple Whale ~35k brands · Littledata Shopify · AdSights funnel · Baymard checkout).
+> This is exactly why every tier is a **hypothesis to recalibrate to your own data** — your down-funnel numbers
+> are the *least* niche-specific. Full provenance per metric: the Benchmarks & Sources doc.
 
 ### D.1 — Tier cutoffs per metric (grade on **link CTR**, not all-clicks CTR)
 
@@ -390,6 +428,28 @@ Signals arrive leading→lagging; a broken upper layer poisons everything below.
 - In-day numbers are estimates → decide on **closed days** only.
 - Good top-funnel but no orders is usually an **on-site (R/O)** problem → fix retail, don't kill a good ad.
 - *Cutoffs + sources: `research/reference/fb-ads-benchmarks-2026-sources.md`. Foundations: `FB-ADS-PLAYBOOK.md`.*
+
+### D.6 — Target test budget per stage *(derived from the min-sample gates — you can't grade a tier without enough data to fill it)*
+Budget is **not arbitrary — it's the spend needed to reach that stage's min-sample.** Given as a portable
+**×target-CPA** multiple (works at any price point) plus a **$ example** at gift-typical costs
+(CPM ~$15 · CPC ~$0.50 · target CPA ~$30).
+
+| Stage | Reads | Min-sample needed | Budget / variant (×target-CPA) | $ example / variant |
+|---|---|---|---|---|
+| **1 Engagement** | hook, CTR, CPM | ~1–2k impr (directional); ~4k/variant for a 95% A/B | **~0.5–1× CPA** (dir) · ~2× (A/B) | **~$15–30** (dir) · ~$60 (A/B) |
+| **2 Intent** | ATC rate, cost/ATC | ~300–500 clicks (~20–50 ATC events) | **~5–8× CPA** | **~$150–250** |
+| **3 Purchase** | CVR, CPA, ROAS | spend **≥3× CPA** to call "dead"; ~50 conv/wk to *optimize* | **≥3× CPA to judge · ~5× CPA/day to escape learning** | **≥$90 to judge · ~$150/day** to optimize |
+
+**How to allocate a campaign budget (the funnel does the concentration):**
+1. **Stage 1 — go wide & cheap.** Many creatives at ~$15–30 each; kill fast on T0/WEAK. *(This is why Stage 1
+   is a filter, not a decider — it's the only stage a micro-budget can actually read.)*
+2. **Stage 2 — fewer, bigger.** Only survivors get ~$150–250 each to reach a real ATC read.
+3. **Stage 3 — 1–2 finalists only.** Purchase is a rare event; needs ≥3× CPA just to *judge*, and ~5× CPA/day
+   to *optimize* out of learning. Never spread this thin — force spend into the 1–2 best combos.
+
+> **Absolute $ scales with your account** (your CPM/CPC/CPA). The **×target-CPA multiples are the portable
+> rule**; recompute the $ column once you know your real CPM/CPC/CPA. The old "$100 → $40/$35/$25" split was
+> just an illustration — the real budget per stage is **min-sample × your unit cost**, as above.
 
 ---
 
