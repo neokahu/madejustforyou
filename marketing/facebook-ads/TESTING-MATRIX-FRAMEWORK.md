@@ -1,5 +1,12 @@
 # Scientific Ad-Testing Framework — Factor Matrix + Multi-Stage Funnel
 
+> **📎 Resources & links**
+> - **Matrix Sheet** (Factors · Planner · Results · **Tiers**): https://docs.google.com/spreadsheets/d/1ZNZijKm5PJRkOj91A4DUGhAb-orvDOidyMNP627-k1w/edit
+> - **All-Factors list**: https://docs.google.com/spreadsheets/d/1MCJdzjexz9Oj3gkIBX8mEdfQ8AaLROn89peQt487n_4/edit
+> - **Benchmarks & Tier Sources** (every tier number + its citation URL): https://docs.google.com/document/d/1peKFvur7Wt05a765WnYV2qlDKYxGJZMnwesVxoExsMQ/edit
+> - **FB Ads Playbook** (kill/scale/structure + 2026 audit): https://docs.google.com/document/d/1_5MddywFb-MM5KLrpmMoMSKXh6Qzx_RDdKHOZjCmuxw/edit
+> - Repo refs: `research/reference/fb-ads-benchmarks-2026-sources.md` · `FB-ADS-PLAYBOOK.md`
+
 Goal: turn ad testing into a real **inductive experiment** — not just find the winning combo,
 but understand **WHY** it wins, so each round moves closer to the "truth."
 

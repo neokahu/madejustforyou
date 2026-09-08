@@ -123,21 +123,24 @@ Two robustness rules:
 - **Strongest datasets:** Triple Whale (~35k brands 2025–26), WordStream/LocaliQ 2025 (has Gifts cut), Littledata (Shopify funnel), AdSights (funnel-step incl. hook/hold/IC), Baymard (checkout).
 - **Weakest/caveated:** cost-per-ATC (no distribution — price-driven), CPA/cost-per-purchase cross-brand (29× spread), any single "gifts" number (small samples).
 
-### URLs (for citation)
-- superscale.ai/learn/meta-ads-benchmarks-by-industry (AdSights hook/hold/CTR/CPM)
-- adsights.ai/resources/glossary/metrics/ (hook-rate, hold-rate, initiate-checkout-rate)
-- triplewhale.com/blog/facebook-ads-benchmarks
-- topgrowthmarketing.com/dtc-ecommerce-benchmarks/meta-ads-benchmarks
-- hawky.ai/blog/facebook-ads-benchmarks (WordStream 2025, gifts cut)
-- flighted.co/blog/ (meta-ads-performance-benchmarks-by-industry; good-CTR)
-- lebesgue.io/facebook-ads/facebook-cpm-by-country
-- adkit.so/resources/troubleshooting/facebook-ads-high-cpm
-- blendcommerce.com/blogs/shopify/ecommerce-conversion-rate-benchmarks-2026 (Littledata)
-- grow-conversions.com/blog/conversion-rate-benchmarks-by-industry (Littledata session→purchase)
-- owlclaw.com/benchmarks/checkout-conversion-benchmarks (Baymard)
-- coinis.com/blog/when-to-kill-meta-ads-decision-framework
-- adadvisor.ai/blog/how-ai-pauses-losing-and-scales-winning-ads ; adadvisor.ai/blog/roas-meaning
-- adalysis.com/blog/how-much-data-should-you-have-before-examining-an-ad-test-result
-- cleverx.com/blog/ad-testing-complete-guide-to-methods-and-best-practices
-- sellersplash.com/blog/break-even-meta-ads-ecommerce ; skup.net/blog/how-to-calculate-break-even-roas
-- databox.com (CTR link vs all) ; madgicx.com/blog/facebook-ad-spend-optimizer
+### Source links (clickable — click to verify any number)
+| Source | What it backs | Link |
+|---|---|---|
+| AdSights / SuperScale | hook, hold, CTR, CPM, IC-rate benchmarks | https://superscale.ai/learn/meta-ads-benchmarks-by-industry |
+| AdSights glossary | hook-rate · hold-rate · initiate-checkout-rate defs+bands | https://www.adsights.ai/resources/glossary/metrics/hook-rate |
+| Triple Whale | CTR, CPM, CVR, CPA, ROAS (~35k brands) | https://www.triplewhale.com/blog/facebook-ads-benchmarks |
+| Top Growth Marketing | click→purchase, CPA, ROAS quartiles | https://topgrowthmarketing.com/dtc-ecommerce-benchmarks/meta-ads-benchmarks |
+| WordStream 2025 (via Hawky) | gifts cut: CTR 4.13% / CPC $0.34 | https://hawky.ai/blog/facebook-ads-benchmarks |
+| Flighted | good link-CTR, ecom CPC | https://www.flighted.co/blog/meta-ads-performance-benchmarks-by-industry |
+| Lebesgue | CPM by country (US $16.08) | https://lebesgue.io/facebook-ads/facebook-cpm-by-country |
+| AdKit | high-CPM causes + Q4 seasonality | https://adkit.so/resources/troubleshooting/facebook-ads-high-cpm |
+| Littledata (via BlendCommerce) | ATC rate, checkout completion | https://blendcommerce.com/blogs/shopify/ecommerce-conversion-rate-benchmarks-2026 |
+| Littledata (via Grow-Conversions) | session→purchase CVR quartiles | https://grow-conversions.com/blog/conversion-rate-benchmarks-by-industry |
+| Baymard (via OwlClaw) | cart abandonment / checkout | https://owlclaw.com/benchmarks/checkout-conversion-benchmarks |
+| Coinis | when-to-kill decision framework | https://coinis.com/blog/when-to-kill-meta-ads-decision-framework |
+| AdAdvisor | pause/scale rules; ROAS meaning | https://adadvisor.ai/blog/how-ai-pauses-losing-and-scales-winning-ads |
+| Adalysis | min-sample before reading a test | https://adalysis.com/blog/how-much-data-should-you-have-before-examining-an-ad-test-result |
+| CleverX | A/B sample-size (4k/variant) | https://cleverx.com/blog/ad-testing-complete-guide-to-methods-and-best-practices |
+| Seller Splash | break-even Meta ROAS | https://sellersplash.com/blog/break-even-meta-ads-ecommerce |
+| Skup | calculate break-even ROAS | https://skup.net/blog/how-to-calculate-break-even-roas |
+| Madgicx | ad-spend / learning-phase | https://madgicx.com/blog/facebook-ad-spend-optimizer |
