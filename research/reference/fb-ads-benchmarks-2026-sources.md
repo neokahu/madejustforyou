@@ -134,8 +134,9 @@ Two robustness rules:
 | Flighted | good link-CTR, ecom CPC | https://www.flighted.co/blog/meta-ads-performance-benchmarks-by-industry |
 | Lebesgue | CPM by country (US $16.08) | https://lebesgue.io/facebook-ads/facebook-cpm-by-country |
 | AdKit | high-CPM causes + Q4 seasonality | https://adkit.so/resources/troubleshooting/facebook-ads-high-cpm |
-| Littledata (via BlendCommerce) | ATC rate, checkout completion | https://blendcommerce.com/blogs/shopify/ecommerce-conversion-rate-benchmarks-2026 |
-| Littledata (via Grow-Conversions) | session→purchase CVR quartiles | https://grow-conversions.com/blog/conversion-rate-benchmarks-by-industry |
+| **Littledata (PRIMARY)** | ATC rate 4.6% · top-20% >7.5% · top-10% >9.6% (2,800 Shopify sites, 2023) — verified verbatim | https://www.littledata.io/average-website-performance |
+| **Littledata (PRIMARY)** | ecommerce conversion rate (avg 1.4%) + by-industry | https://www.littledata.io/ecommerce-conversion-rate |
+| Littledata (secondary — re-reports the above) | checkout completion · session→purchase CVR | https://blendcommerce.com/blogs/shopify/ecommerce-conversion-rate-benchmarks-2026 · https://grow-conversions.com/blog/conversion-rate-benchmarks-by-industry |
 | Baymard (via OwlClaw) | cart abandonment / checkout | https://owlclaw.com/benchmarks/checkout-conversion-benchmarks |
 | Coinis | when-to-kill decision framework | https://coinis.com/blog/when-to-kill-meta-ads-decision-framework |
 | AdAdvisor | pause/scale rules; ROAS meaning | https://adadvisor.ai/blog/how-ai-pauses-losing-and-scales-winning-ads |
