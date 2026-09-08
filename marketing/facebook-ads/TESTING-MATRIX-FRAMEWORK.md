@@ -402,6 +402,10 @@ These are **economic** red lines — allowed to fire *before* min-sample because
 
 ### D.3 — Min-sample gates (never grade on noise — the #1 false-kill cause)
 - Hook/CTR: **~1–2k impressions** directional; **~4k/variant** for a 95% A/B read (2% baseline, 20% lift).
+  → **Hook rate stabilizes at ~1–2k impressions — the gate is impressions + *settled* delivery, NOT the calendar.**
+  Once you have ~2k impressions on a settled read (not the first unstable hours, not an in-day estimate) and hook
+  is clearly weak, **kill now — no need to wait for day 4.** "By day 4" is just a proxy for "by then you'll have
+  enough stable data"; at a low budget you may need the days only to *reach* 2k impressions.
 - ATC rate: **~300–500 clicks/LPV** (~20–50 ATC events).
 - CVR/purchase: Meta learning phase needs **~50 conversions/ad-set/week** *(Meta-official)*.
 - **"0 purchases" means something only after spend ≥ 3× target CPA.** Below = insufficient sample, hold.
