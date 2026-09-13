@@ -120,10 +120,13 @@ knobs = Hook/Angle/Format/Offer/Body/CTA.
   discovery method is outdated — Andromeda rewards diversity + volume; OFAT is for iterating a proven winner.)*
 - **POD-fit formats (tailored to personalized gifts):** **HIGH** = personalization-reveal · gift-reaction ·
   occasion-urgency · POV-giving · testimonial · UGC · hyper-personalization (handwriting/kid's-drawing/paw-print).
-  ⚠️ **founder-story = LOW · podcast = SKIP** (generic-DTC, wrong for a gift store). A **12-angle library + concrete
-  hook lines** (tailored to grandparent/mom/couple/pet/memorial) is in the video-decomposition ref doc.
-  *(Honesty: no public ad-performance data exists for personalized-gift video specifically — angles are backed by
-  Etsy strategy + gift-reaction culture, quantitative benchmarks are POD-wide/general-DTC.)*
+  ⚠️ **founder-story = LOW · podcast = SKIP** (generic-DTC, wrong for a gift store). The video-decomposition ref
+  doc tailors **every** aspect to the gift niche: 12-angle library + hook lines · gift-native **body/retention**
+  (sentiment-build → **reveal at mid-point** → reaction; reaction = #1 proof; 3 beat-by-beat skeletons) · ranked
+  **gift offers** (order-by-date + free remake + free personalization) · gift **CTA** ("Make it for them") ·
+  **hook tactics** ranked for gifts (reaction/reveal cold-opens).
+  *(Honesty: no public ad-performance data exists for personalized-gift video specifically — these are
+  evidence-informed hypotheses; angles/structure = Etsy strategy + gift-reaction culture, numbers = POD-wide/general-DTC.)*
 
 #### Group O — Offer *(the ONLY place price lives)*
 | Code | Factor | Levels to test |

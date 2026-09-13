@@ -129,6 +129,54 @@ numbers are POD-wide/general-DTC, directional only.*
 - **Quality-proof:** "I was scared it'd look cheap. Then I opened it." · "Custom usually means flimsy. Not this."
 - **Relationship callout:** "For the grandma who says 'don't get me anything.'" · "If you're a dog mom, this one's gonna get you."
 
+### Body / Retention — tailored (a gift ad is NOT a problem→solution ad)
+PAS/AIDA engage rational System-2 (only fires for active shoppers). Emotional creative is ~2× more effective
+long-term (Binet & Field/IPA) and positive-emotion ads show ~6× action lift (System1) `[LAST-RESORT — all-category
+data, but argues for an emotion arc over PAS]`. So the gift-ad engine = **anticipation → escalation → payoff
+(reveal + reaction).** The recipient's emotion is the arc; the product is the plot device that triggers it.
+The category is built on the **reaction moment** (brands literally hire creators for "genuine reaction, tears to
+joy") `[EXACT — creator briefs]`.
+
+**Proof ranking for a personalized gift (what counts as proof here):**
+1. **Recipient's genuine reaction** (tears/gasp) — the #1 proof; it proves the emotional impact that *is* the product. `[EXACT]`
+2. **The personalization detail shown legibly** (their actual name/photo/date) — previews the buyer's own outcome; the name is the strongest attention trigger. `[WIDER]`
+3. **Volume/longevity proof** ("10,000+ sold") — for cold traffic needing legitimacy (Etsy: CVR 1–2% at <10 reviews → 10–15% at 500+). `[WIDER]`
+4. **Print/quality photo-UGC reviews** — kills "will it look cheap?". `[WIDER]`
+5. **Craft close-ups** (engraving/canvas/warmer glow) — lowest emotion, closes quality doubt. `[WIDER]`
+> Cold → lead with legitimacy (volume/reviews); warm/retarget → lead with objection-specific proof (quality, delivery).
+
+**Beat-by-beat body skeletons (15–30s):**
+- **A · Reaction-led (cold, UGC):** 0–2s reaction cold-open ("She didn't expect this") → 2–6s context (who/occasion) → 6–12s **reveal** (names legible, hold) → 12–20s reaction completes (hug, family in frame) → 20–27s proof+offer ("10,000+ · free personalization · order by [date]") → 27–30s CTA.
+- **B · Sentiment build (warm, Thai-ad):** 0–3s hook = the *relationship/stakes* (not product) → 3–10s build (giver ordering it, product teased) → 10–16s reveal + reaction → 16–24s sentiment escalation (personalization line said aloud) → 24–30s payoff + CTA.
+- **C · Personalization-demo hybrid (retargeting):** 0–2s reveal cold-open (blank → name typed on) → 2–8s occasion menu ("For Grandma. For Mom. For your dog's memorial.") → 8–16s quality proof (close-ups + photo review) → 16–24s risk-remover ("Don't love it? We remake it free" + order-by-date) → 24–30s CTA "See it with your names →".
+> **Put the reveal at the MID-point, not the end** — you need post-reveal runtime for the reaction + CTA while retention is highest.
+
+### Offer — tailored (ranked gift-native offers)
+1. **Order-by-date / guaranteed delivery before the occasion** — highest leverage (gifts are deadline-bound + POD adds production time). Holiday urgency/clarity ~30–40% CVR lift. `[WIDER]`
+2. **Remake / satisfaction guarantee on non-returnable personalized items** — removes the "typo/bad print, no recourse" blocker unique to personalized (final-sale) goods. Put it *at the point of doubt*. `[WIDER]`
+3. **Free personalization (framed as a free gift, not a discount)** — free-gift framing raises purchase intent more than an equal discount (which lowers perceived value). Say "free personalization included," not "20% off." `[LAST-RESORT — peer-reviewed, general retail]`
+4. **Multi-recipient / gift-set bundles** — fits gift-list behavior, +25–40% AOV. `[WIDER]`
+5. **Free gift-wrap / gift message / gift-ready shipping** — low-cost, removes "I still have to wrap it." `[WIDER]`
+6. **First-order discount** — works but rank LAST (competes on price, undercuts keepsake value); a *personalized* offer beats a blanket one. `[LAST-RESORT]`
+> Strongest stack: **order-by-date + free remake + free personalization**; discount is the fallback, not the headline.
+
+### CTA — tailored (gift language)
+Meta's *button* is limited to ~17 presets (use **"Order Now"** for deadline/high-intent, "Shop Now" otherwise). Say the **gift CTA in the on-screen text / VO / end-card**:
+- **"Make it for them" / "Make one with their names"** — default emotional CTA (cold, story-led).
+- **"Personalize hers/his/theirs"** — recipient-targeted ad sets (Mom/Grandma/partner).
+- **"See it with your names"** — low-commitment, retargeting / personalization-demo (Skeleton C).
+- **"Create theirs / Design theirs in 60 seconds"** — reduces perceived effort.
+- **"Order by [date] — get it before [occasion]"** — in-season deadline CTA (+ "Order Now" button).
+- **Avoid** bare "Buy Now" for cold gift traffic — too transactional for an emotional keepsake. *(Personalized/first-person CTAs test better than generic — general-DTC data.)* `[LAST-RESORT]`
+
+### Hook tactics — tailored (ranked for gifts)
+**Tier 1 — gift-native (strongest, add these):** ① **reaction cold-open** (start on tears/gasp before context) · ② **personalization-reveal cold-open** (blank → their name appears) · ③ **occasion/deadline hook** ("Mother's Day is in 6 days and this takes 5 to make").
+**Tier 2 — generic tactics that fit emotional buys:** ④ POV/relatable-emotional · ⑤ social-proof ("the gift 10,000 grandmas cried over" — cold) · ⑥ curiosity ("I didn't think a mug could make her cry") · ⑦ character/relationship open.
+**Tier 3 — down-rank (fight the emotion arc):** stat · contrarian/controversy · problem-callout (System-2/functional). Before/after collapses into the reveal hook.
+> **Stack a Tier-1 + Tier-2** (reaction cold-open → then name reveal) — practitioners note "multiple hooks" perform higher.
+
+> ⚠️ **Honesty:** these four tailorings are **evidence-informed hypotheses**, not proven lifts — there is **no A/B data isolating any of them within the personalized-gift category.** EXACT rung = market behavior/creator briefs (qualitative); the quantified figures are WIDER (POD/holiday) or LAST-RESORT (all-category ad science). Test, don't assume.
+
 ### POD tailoring — source rungs
 - **EXACT (qualitative):** Etsy Seller Handbook (occasions, hyper-personalization trends, "recipe plate" +110% YoY) · Marketing Dive (Etsy "feel truly seen" holiday campaign) · Printify Etsy-personalization guide · Sale Samurai · GetNameNecklace (live pet-memorial positioning) · TikTok gift-reaction culture + Kinfold Gifts creator call · Influee gifting-ad angle.
 - **WIDER:** The Performers "10 gifting ad angles" · DesignRush (Ultimate Ears personalization reveal; <15s +38% completion; personalization ≈3× intent — POD-wide) · Printful/Gelato/Prodigi/Justin Cener POD ad mechanics.
