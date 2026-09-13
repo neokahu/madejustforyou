@@ -118,6 +118,12 @@ knobs = Hook/Angle/Format/Offer/Body/CTA.
   the winning body + repurpose the message into **2–3 new formats**; refresh every ~2–3 weeks.
 - Grade Phase-1 on the **tiers (Part D):** hook 25–35%+ · hold 40–50% · link CTR. *(Pure micro-OFAT as your
   discovery method is outdated — Andromeda rewards diversity + volume; OFAT is for iterating a proven winner.)*
+- **POD-fit formats (tailored to personalized gifts):** **HIGH** = personalization-reveal · gift-reaction ·
+  occasion-urgency · POV-giving · testimonial · UGC · hyper-personalization (handwriting/kid's-drawing/paw-print).
+  ⚠️ **founder-story = LOW · podcast = SKIP** (generic-DTC, wrong for a gift store). A **12-angle library + concrete
+  hook lines** (tailored to grandparent/mom/couple/pet/memorial) is in the video-decomposition ref doc.
+  *(Honesty: no public ad-performance data exists for personalized-gift video specifically — angles are backed by
+  Etsy strategy + gift-reaction culture, quantitative benchmarks are POD-wide/general-DTC.)*
 
 #### Group O — Offer *(the ONLY place price lives)*
 | Code | Factor | Levels to test |
