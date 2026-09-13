@@ -19,6 +19,7 @@
 > - **Matrix Sheet** (Factors · Planner · Results · **Tiers**): https://docs.google.com/spreadsheets/d/1ZNZijKm5PJRkOj91A4DUGhAb-orvDOidyMNP627-k1w/edit
 > - **All-Factors list**: https://docs.google.com/spreadsheets/d/1MCJdzjexz9Oj3gkIBX8mEdfQ8AaLROn89peQt487n_4/edit
 > - **Benchmarks & Tier Sources** (every tier number + its citation URL): https://docs.google.com/document/d/1peKFvur7Wt05a765WnYV2qlDKYxGJZMnwesVxoExsMQ/edit
+> - **Video Ad Decomposition & Phase-1 Test Plan** (hook/body/CTA parts + how many videos to test): https://docs.google.com/document/d/1obX8brgMHnwmV1c4rpeZLkmC-ww7NXA-NC99hO84kaQ/edit
 > - **FB Ads Playbook** (kill/scale/structure + 2026 audit): https://docs.google.com/document/d/1_5MddywFb-MM5KLrpmMoMSKXh6Qzx_RDdKHOZjCmuxw/edit
 > - Repo refs: `research/reference/fb-ads-benchmarks-2026-sources.md` · `FB-ADS-PLAYBOOK.md`
 
@@ -101,6 +102,22 @@ design is for grandma; you can't retest it as a spouse gift. (To test a differen
 | A8 | CTA | Shop Now · Learn More · Get Offer *(**minor** — small magnitude, often auto-picked by Advantage+; don't burn an early slot on it)* |
 > **Baseline creative spec (test INTO this, don't test it):** vertical 9:16, hook in first 3s, text-overlay,
 > works sound-off (85% watch muted), 4K source. This is the floor for every ad, not an A/B.
+
+##### 🎬 Video creative — decomposition & Phase-1 test plan *(research-derived; full doc: `research/reference/video-ad-decomposition-2026.md`)*
+A video ad decomposes (per Motion, creads.io, Barry Hott, Meta) into: **Hook · Concept/Angle · Body(Story+Proof) ·
+Offer · CTA · Format · cross-cutting craft (captions/pacing/sound).** Timeline = **Hook → Body → CTA**; the test
+knobs = Hook/Angle/Format/Offer/Body/CTA.
+- **Phase-1 priority (test in this order): Hook ▸ Concept/Angle ▸ Body/hold ▸ CTA.** The **hook is dominant —
+  Meta/Nielsen: ~47% of a video's value is in the first 3s** (65% who watch 3s reach 10s). Same body cut 3 ways
+  swings hook rate 18%→38%. So test hooks *most*.
+- **Hook × Hold 2×2 (route effort):** low/low → replace concept · **high hook/low hold → fix the body only** ·
+  **low hook/high hold → rebuild just the first ~1.5s** (jumps 10–15pt) · high/high → scale.
+- **How many scenarios for ONE product (2026 = diverse concepts to DISCOVER, hook-swaps to OPTIMIZE):**
+  **first batch ≈ 9–12 ads = 3–4 distinct concepts/angles × 3 hooks each.** 3–5 creatives/ad-set (exit learning),
+  ~$20–40/concept before judging, settled days only. **After a winner:** velocity mode = **10–20 hook swaps** on
+  the winning body + repurpose the message into **2–3 new formats**; refresh every ~2–3 weeks.
+- Grade Phase-1 on the **tiers (Part D):** hook 25–35%+ · hold 40–50% · link CTR. *(Pure micro-OFAT as your
+  discovery method is outdated — Andromeda rewards diversity + volume; OFAT is for iterating a proven winner.)*
 
 #### Group O — Offer *(the ONLY place price lives)*
 | Code | Factor | Levels to test |
