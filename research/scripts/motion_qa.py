@@ -15,6 +15,8 @@ Metrics (mean abs luma diff between frames sampled at 8fps, 128px wide, 0-255 sc
     p90         90th-pct frame diff = peak motion
     flat        motion/p90; ~1.0 = perfectly even (drift), lower = has rhythm
     cuts        hard cuts via ffmpeg scdet (NB: crossfades do NOT register - that is the point)
+    onset/s     motion-ONSET events per second: stillness -> sudden movement. More salient than smooth
+                motion at the retinal level (pmcid:PMC3711149), so this matters more than mean level.
     cuts/s      cut rate
     static%     share of frame pairs with diff < 1.0 (essentially frozen)
 
@@ -29,7 +31,8 @@ import subprocess, sys, os, json, statistics
 FPS, W = 8, 128
 # Gate thresholds, derived from the single benchmark above. Deliberately set BELOW the winner
 # (n=1 - do not treat as a distribution) so the gate catches the defect we shipped, not marginal cases.
-GATE = dict(hook3=8.0, motion=6.0, cuts_per_s=0.15, static_pct=10)
+GATE = dict(hook3=8.0, motion=6.0, cuts_per_s=0.15, onsets_per_s=0.25, static_pct=10)
+ONSET_JUMP, ONSET_LEVEL = 6.0, 10.0   # a frame-pair jump of >6 that lands above 10 = an onset event
 
 
 def _frames(path):
@@ -65,7 +68,13 @@ def score(path):
     s = sorted(d)
     p90 = s[int(0.9 * (len(s) - 1))]
     mean = sum(d) / len(d)
+    # Motion ONSET events: a jump from near-stillness into movement. Retinal alert-response research
+    # (pmcid:PMC3711149) finds motion ONSET is more salient than smooth motion, so mean level
+    # over-credits continuous drift - the least salient movement. See ad-science-foundations.md s1.
+    onsets = sum(1 for i in range(1, len(d))
+                 if d[i] - d[i - 1] > ONSET_JUMP and d[i] > ONSET_LEVEL)
     return dict(clip=os.path.basename(path), dur=round(dur, 1),
+                onsets=onsets, onsets_per_s=round(onsets / dur, 2) if dur else 0.0,
                 hook3=round(sum(h3) / len(h3), 2), hook3_peak=round(max(h3), 2),
                 motion=round(mean, 2), p90=round(p90, 2),
                 flat=round(mean / p90, 2) if p90 else 0.0,
@@ -105,15 +114,15 @@ if __name__ == "__main__":
         rows = [r for r in (score(p) for p in args) if r]
         if not rows:
             sys.exit("no clips scored")
-        hdr = (f"{'clip':34}{'dur':>5}{'hook3':>7}{'peak':>7}{'motion':>8}"
-               f"{'p90':>7}{'flat':>6}{'cuts':>6}{'cuts/s':>8}{'static%':>9}")
+        hdr = (f"{'clip':30}{'dur':>5}{'hook3':>7}{'peak':>7}{'motion':>7}"
+               f"{'p90':>7}{'cuts/s':>8}{'onset/s':>9}{'static%':>9}")
         print(hdr); print("-" * len(hdr))
         for r in rows:
-            print(f"{r['clip'][:33]:34}{r['dur']:5}{r['hook3']:7}{r['hook3_peak']:7}"
-                  f"{r['motion']:8}{r['p90']:7}{r['flat']:6}{r['cuts']:6}"
-                  f"{r['cuts_per_s']:8}{r['static_pct']:9}")
+            print(f"{r['clip'][:29]:30}{r['dur']:5}{r['hook3']:7}{r['hook3_peak']:7}"
+                  f"{r['motion']:7}{r['p90']:7}{r['cuts_per_s']:8}"
+                  f"{r['onsets_per_s']:9}{r['static_pct']:9}")
         if len(rows) > 1:
             print("-" * len(hdr))
             m = lambda k: round(statistics.mean(r[k] for r in rows), 2)
-            print(f"{'MEAN':34}{'':5}{m('hook3'):7}{m('hook3_peak'):7}{m('motion'):8}"
-                  f"{m('p90'):7}{m('flat'):6}{'':6}{m('cuts_per_s'):8}{round(m('static_pct')):9}")
+            print(f"{'MEAN':30}{'':5}{m('hook3'):7}{m('hook3_peak'):7}{m('motion'):7}"
+                  f"{m('p90'):7}{m('cuts_per_s'):8}{m('onsets_per_s'):9}{round(m('static_pct')):9}")
