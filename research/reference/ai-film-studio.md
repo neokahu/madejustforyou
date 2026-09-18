@@ -5,6 +5,10 @@
 Builds on — does not duplicate — the three method playbooks:
 - [[ai-emotional-video-ad-playbook]] — emotion→angle→hook strategy, testing.
 - [[image-to-video-prompt-method]] — i2v prompt craft (one move, don't re-describe the product).
+- [[ad-video-director-research]] — ⚠️ **diagnosis of why this studio's output is dull**, and the spec for a
+  separate Ad Video Director skill. Short version: `image-to-video-prompt-method` is **stability-first**
+  (built to stop a product photo warping) and this studio applies it to *every* shot of a narrative ad, so
+  every shot is tuned toward not moving. Read before shooting anything else.
 - [[ai-product-review-consistency-method]] — multi-ref identity + product consistency.
 Related memories: [[ad-style-thai-emotional-film]], [[video-ads-need-full-script]], [[emotional-ad-show-family-connection]].
 
