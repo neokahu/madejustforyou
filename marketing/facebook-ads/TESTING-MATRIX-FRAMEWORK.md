@@ -16,6 +16,7 @@
 > distribution. External distribution → percentile tiers → sample-gated judgement → converge on your truth.
 
 > **📎 Resources & links**
+> - **This framework as a Doc** (re-import after editing the Markdown): https://docs.google.com/document/d/1zND10THgf_VohvNRgRl4hGhsOwPaXVt15eNhNaOdh-I/edit
 > - **Matrix Sheet** (Factors · Planner · Results · **Tiers**): https://docs.google.com/spreadsheets/d/1ZNZijKm5PJRkOj91A4DUGhAb-orvDOidyMNP627-k1w/edit
 > - **All-Factors list**: https://docs.google.com/spreadsheets/d/1MCJdzjexz9Oj3gkIBX8mEdfQ8AaLROn89peQt487n_4/edit
 > - **Benchmarks & Tier Sources** (every tier number + its citation URL): https://docs.google.com/document/d/1peKFvur7Wt05a765WnYV2qlDKYxGJZMnwesVxoExsMQ/edit

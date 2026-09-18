@@ -1,5 +1,8 @@
 # Video Ad Decomposition & Phase-1 Test Plan (Meta DTC/ecom, 2026)
 
+> 📄 **Google Doc mirror:** https://docs.google.com/document/d/1obX8brgMHnwmV1c4rpeZLkmC-ww7NXA-NC99hO84kaQ/edit
+> *(the Markdown file in this repo is the source of truth; re-import after edits)*
+
 Research 2026-09-13. Purpose: break a short-form ecom video ad into testable parts, rank them for Phase-1
 (engagement), and decide **how many video scenarios to test per product.** Feeds Group A (creative) + the
 creative operating model in `TESTING-MATRIX-FRAMEWORK.md`. **[DATA]** = measured; **[OPINION]** = credible consensus.
