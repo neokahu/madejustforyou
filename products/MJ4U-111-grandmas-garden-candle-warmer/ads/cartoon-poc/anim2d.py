@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
-"""anim2d.py — code-driven 2D animation from AI-illustrated layers.
+"""anim2d.py v2 — camera moves through coherent painted plates. NO layer compositing.
 
-Proof of concept for the "illustrated world, real product" format
-(see research/reference/ad-video-director-research.md + ad-science-foundations.md).
+v1 was wrong and looked it: a separately-generated character cut out and pasted onto a
+separately-generated room. Two light directions, no contact shadow, hard alpha edge against
+painterly edges, mismatched paint-grain scale. A collage, not a scene.
 
-The point: consistency comes from REUSING one asset, not from prompting a style per clip.
-Every frame here is the same PNG under a deterministic transform, so identity/scale/text
-cannot drift. Motion is frame-exact, which is what lets us hit the measured targets our
-shipped film missed (hook-window motion, cut rate, motion-ONSET events).
+v2 technique — matte-painting camera work:
+  * Each shot is a crop-and-zoom out of ONE high-res painted plate, so lighting, shadow,
+    edge quality and grain are internally consistent by construction. Nothing is pasted.
+  * Consistency still comes from reuse (the same plate every frame), so identity/scale
+    cannot drift - the v1 property we keep.
+  * The product cut is now a MATCH CUT: a painted lamp close-up framed to align with the
+    real product photograph, so the transition reads as "the drawing becomes real" instead
+    of two unrelated ads spliced together.
 
-Structure (3.0s, 24fps, 720x1280):
-  Shot A  0.00-0.96  illustrated wide.  STILLNESS (8 frames) -> hard ONSET: lamp blooms +
-                     push-in starts. The stillness is deliberate: motion onset is more
-                     salient than smooth motion (pmcid:PMC3711149), and onset needs a
-                     still baseline to read against.
-  Shot B  0.96-1.71  HARD CUT to illustrated close-up (scale jump = salience event).
-  Shot C  1.71-3.00  HARD CUT to the REAL product photograph. The medium change is the
-                     biggest frame-difference event in the piece and it is placed exactly
-                     at the reveal - where our shipped film measured 3.09 (its coldest).
-                     The real photo also carries the "will it look cheap?" objection,
-                     which a drawing cannot answer.
+3.0s / 24fps / 720x1280:
+  A 0.00-1.00  plate-1 wide. 8 frames of stillness, then onset: push-in + the lamp's warm
+               pool intensifies (the lamp is now PAINTED IN the plate, so light has a source)
+  B 1.00-1.63  HARD CUT to her face - a tight crop of the SAME plate (scale jump, coherent)
+  C 1.63-2.25  HARD CUT to the painted lamp plate (still in-style)
+  D 2.25-3.00  MATCH CUT to the REAL product, framed to align with C
 """
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 import os, math, subprocess, sys
 
 W, H, FPS = 720, 1280, 24
@@ -29,115 +29,144 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 L, B, OUT = (os.path.join(HERE, d) for d in ("layers", "build", "out"))
 REAL = os.path.abspath(os.path.join(HERE, "..", "film", "refs", "product", "real-product.jpg"))
 
-# shot boundaries in frames
-A_END, B_END, TOTAL = 23, 41, 72
-ONSET = 8                    # frame where stillness breaks
+A_END, B_END, C_END, TOTAL = 23, 38, 53, 72
+ONSET = 8
+
+# --- framing: (centre_x, centre_y, zoom) in normalised plate coords. Tuned by eye. ---
+# zoom = fraction of the plate's SHORT axis the frame spans; smaller = tighter.
+SCENE_WIDE  = (0.50, 0.55, 1.00)
+SCENE_WIDE2 = (0.52, 0.53, 0.92)   # push-in target
+FACE        = (0.410, 0.390, 0.32) # her face in plate-1
+FACE2       = (0.410, 0.383, 0.29)
+# MATCH CUT pair, solved so the shade lands at screen x 0.50 / y 0.416 at identical size:
+# MATCH CUT — solved from MEASURED shade geometry (grid-read, see solve_match.py):
+#   painted plate 1429x2559: shade centre (0.4825, 0.380), width 0.545 of plate
+#   real photo   2000x2000: shade centre (0.4375, 0.355), width 0.325 of plate
+# The painted shade is large relative to its plate, so it cannot be shown smaller than
+# ~55% of frame width; the real photo is square, so its crop cannot exceed the height.
+# Those two constraints force the shared target: shade at screen (0.48, 0.35), width 0.60.
+LAMP_PAINT_R = (0.0465, 0.0643, 0.9083)  # painted lamp, held static
+LAMP_REAL_R  = (0.1775, 0.0180, 0.5417)  # real photo - shade matched in size AND position
+LAMP_REAL_R2 = (0.2035, 0.0517, 0.4875)  # then push in, holding the shade put
+
 
 def font(sz, bold=True):
     for p in ("/System/Library/Fonts/Supplemental/Georgia Bold.ttf" if bold else
               "/System/Library/Fonts/Supplemental/Georgia.ttf",
-              "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
               "/System/Library/Fonts/Helvetica.ttc"):
         if os.path.exists(p):
             try: return ImageFont.truetype(p, sz)
             except Exception: pass
     return ImageFont.load_default()
 
-def cover(img, w, h):
-    """scale-and-crop to exactly w x h (like CSS object-fit: cover)"""
-    s = max(w / img.width, h / img.height)
-    img = img.resize((max(1, int(img.width * s)), max(1, int(img.height * s))), Image.LANCZOS)
-    return img.crop(((img.width - w) // 2, (img.height - h) // 2,
-                     (img.width - w) // 2 + w, (img.height - h) // 2 + h))
 
-def ease(t):                 # smooth in/out
+def ease(t):
     return t * t * (3 - 2 * t)
 
-def bloom(size, cx, cy, r, strength):
-    """procedural warm radial light - drawn in code, so it is identical every run"""
-    w, h = size
-    g = Image.new("L", (w, h), 0)
-    d = ImageDraw.Draw(g)
-    steps = 26
-    for i in range(steps, 0, -1):
-        rr = r * i / steps
-        v = int(255 * strength * (1 - i / steps) ** 1.7)
-        d.ellipse([cx - rr, cy - rr * 0.92, cx + rr, cy + rr * 0.92], fill=v)
-    g = g.filter(ImageFilter.GaussianBlur(r * 0.13))
-    warm = Image.new("RGB", (w, h), (255, 196, 112))
-    return warm, g
 
-def shot_a(bg, char, i):
-    """illustrated wide: still -> onset (bloom + push-in + parallax)"""
-    t = 0.0 if i < ONSET else ease(min(1.0, (i - ONSET) / (A_END - ONSET)))
-    micro = 0.0015 * math.sin(i * 0.5)               # barely-there breathing before onset
-    z = 1.02 + 0.055 * t + micro
-    frame = cover(bg, int(W * z), int(H * z))
-    # character parallax: moves slightly more than the background
-    cz = 0.62 * z
-    c = char.resize((int(char.width * cz * (W / 1200)), int(char.height * cz * (W / 1200))), Image.LANCZOS)
-    cx = int(W * 0.50 - c.width / 2 + 10 * t)
-    cy = int(H * 0.52 - c.height * 0.40 + 14 * t)
-    off = ((frame.width - W) // 2, (frame.height - H) // 2)
-    frame = frame.crop((off[0], off[1], off[0] + W, off[1] + H)).convert("RGB")
-    frame.paste(c, (cx, cy), c)
-    if t > 0:                                        # the lamp coming on IS the onset
-        warm, mask = bloom((W, H), int(W * 0.70), int(H * 0.44), 330, min(1.0, t * 1.9))
-        frame = Image.composite(Image.blend(frame, warm, 0.55), frame, mask)
+def lerp(a, b, t):
+    return tuple(x + (y - x) * t for x, y in zip(a, b))
+
+
+def camera(plate, framing):
+    """Crop a 720x1280 view out of a plate at (cx, cy, zoom). This is the camera."""
+    cx, cy, z = framing
+    pw, ph = plate.size
+    fh = ph * z
+    fw = fh * (W / H)
+    if fw > pw:
+        fw = pw; fh = fw * (H / W)
+    x0 = max(0, min(pw - fw, cx * pw - fw / 2))
+    y0 = max(0, min(ph - fh, cy * ph - fh / 2))
+    return plate.crop((int(x0), int(y0), int(x0 + fw), int(y0 + fh))).resize((W, H), Image.LANCZOS)
+
+
+def camera_rect(plate, rect):
+    """Explicit crop rect as (x0, y0, width) in plate fractions - height follows 9:16.
+
+    Used for the MATCH CUT: the painted lamp and the real photograph have to put the
+    shade at the SAME screen position and the SAME screen size, which is a solved
+    alignment, not something to eyeball. camera() clamps at plate edges and would
+    silently break that alignment; this does not.
+    """
+    x0f, y0f, wf = rect
+    pw, ph = plate.size
+    fw = wf * pw
+    fh = fw * (H / W)
+    x0, y0 = x0f * pw, y0f * ph
+    return plate.crop((int(x0), int(y0), int(x0 + fw), int(y0 + fh))).resize((W, H), Image.LANCZOS)
+
+
+def warm(img, amount):
+    """Lift the warm pool slightly as the lamp 'comes up'. Grade, not a pasted glow."""
+    if amount <= 0:
+        return img
+    img = ImageEnhance.Brightness(img).enhance(1 + 0.055 * amount)
+    img = ImageEnhance.Color(img).enhance(1 + 0.07 * amount)
+    r, g, b = img.split()
+    r = r.point(lambda v: min(255, int(v * (1 + 0.022 * amount))))
+    b = b.point(lambda v: int(v * (1 - 0.018 * amount)))
+    return Image.merge("RGB", (r, g, b))
+
+
+def titles(frame, t):
+    """Code-composited, so vector-sharp and swappable per recipient."""
+    if t <= 0.20:
+        return frame
+    a = min(1.0, (t - 0.20) / 0.28)
+    scrim = Image.new("L", (W, H), 0)
+    sd = ImageDraw.Draw(scrim)
+    for y in range(int(H * 0.34)):                      # linear falloff, no hard edge
+        sd.line([(0, y), (W, y)], fill=int(150 * a * (1 - y / (H * 0.34))))
+    frame = Image.composite(Image.new("RGB", (W, H), (38, 24, 12)), frame, scrim)
+    d = ImageDraw.Draw(frame)
+    f1, f2 = font(58), font(34, False)
+    for txt, f, y in (("Her garden.", f1, H * 0.068),
+                      ("Their names.", f1, H * 0.068 + 66),
+                      ("Made just for her.", f2, H * 0.068 + 150)):
+        tw = d.textlength(txt, font=f)
+        x = (W - tw) / 2
+        d.text((x + 2, y + 2), txt, font=f, fill=(60, 40, 20))
+        d.text((x, y), txt, font=f, fill=(255, 250, 242))
     return frame
 
-def shot_b(bg, char, i):
-    """HARD CUT to close-up - reuses the SAME layers, just a tighter transform"""
-    t = ease((i - A_END - 1) / max(1, B_END - A_END - 1))
-    z = 2.30 + 0.16 * t
-    frame = cover(bg, int(W * z), int(H * z))
-    cz = 0.62 * z
-    c = char.resize((int(char.width * cz * (W / 1200)), int(char.height * cz * (W / 1200))), Image.LANCZOS)
-    cx = int(W * 0.50 - c.width / 2)
-    cy = int(H * 0.30 - c.height * 0.17 - 26 * t)
-    off = ((frame.width - W) // 2, int((frame.height - H) * 0.42))
-    frame = frame.crop((off[0], off[1], off[0] + W, off[1] + H)).convert("RGB")
-    frame.paste(c, (cx, cy), c)
-    warm, mask = bloom((W, H), int(W * 0.74), int(H * 0.30), 300, 0.9)
-    return Image.composite(Image.blend(frame, warm, 0.42), frame, mask)
-
-def shot_c(real, i):
-    """HARD CUT to the REAL product. Medium change = the largest salience event, at the reveal."""
-    t = ease((i - B_END - 1) / max(1, TOTAL - B_END - 2))
-    z = 1.34 - 0.30 * t                              # push in toward the printed names
-    frame = cover(real, int(W * z), int(H * z))
-    off = ((frame.width - W) // 2, int((frame.height - H) * 0.30))
-    frame = frame.crop((off[0], off[1], off[0] + W, off[1] + H)).convert("RGB")
-    # text composited in code -> vector-sharp, never garbled, swappable per recipient
-    if t > 0.18:
-        d = ImageDraw.Draw(frame)
-        a = min(1.0, (t - 0.18) / 0.3)
-        f1, f2 = font(60), font(38, False)
-        for txt, f, y in (("Her garden.", f1, H * 0.075), ("Their names.", f1, H * 0.075 + 68),
-                          ("Made just for her.", f2, H * 0.075 + 156)):
-            tw = d.textlength(txt, font=f)
-            x = (W - tw) / 2
-            d.text((x + 2, y + 2), txt, font=f, fill=(0, 0, 0, int(90 * a)))
-            d.text((x, y), txt, font=f, fill=(255, 250, 240))
-    return frame
 
 def main():
-    bgp, chp = os.path.join(L, "bg.png"), os.path.join(L, "char.png")
-    for p in (bgp, chp, REAL):
+    p1 = os.path.join(L, "plate-scene.png")
+    p2 = os.path.join(L, "plate-lamp.png")
+    for p in (p1, p2, REAL):
         if not os.path.exists(p):
-            sys.exit(f"missing layer: {p}")
-    bg = Image.open(bgp).convert("RGB")
-    char = Image.open(chp).convert("RGBA")
+            sys.exit(f"missing plate: {p}")
+    scene = Image.open(p1).convert("RGB")
+    lamp = Image.open(p2).convert("RGB")
     real = Image.open(REAL).convert("RGB")
     os.makedirs(B, exist_ok=True); os.makedirs(OUT, exist_ok=True)
+
     for i in range(TOTAL):
-        f = shot_a(bg, char, i) if i <= A_END else shot_b(bg, char, i) if i <= B_END else shot_c(real, i)
+        if i <= A_END:                                   # A — wide, stillness then onset
+            t = 0.0 if i < ONSET else ease((i - ONSET) / (A_END - ONSET))
+            f = camera(scene, lerp(SCENE_WIDE, SCENE_WIDE2, t))
+            f = warm(f, t)
+        elif i <= B_END:                                 # B — cut to her face, same plate
+            t = ease((i - A_END - 1) / max(1, B_END - A_END - 1))
+            f = warm(camera(scene, lerp(FACE, FACE2, t)), 0.45)
+        elif i <= C_END:                                 # C — painted lamp, STATIC
+            # deliberately locked off: a static outgoing frame makes the match cut land,
+            # and gives the incoming real photo a still baseline to move against
+            f = camera_rect(lamp, LAMP_PAINT_R)
+        else:                                            # D — MATCH CUT to the real thing
+            k = i - C_END - 1
+            HOLD = 6                                     # hold the matched frame, THEN move
+            t = 0.0 if k < HOLD else ease((k - HOLD) / max(1, TOTAL - C_END - 2 - HOLD))
+            f = titles(camera_rect(real, lerp(LAMP_REAL_R, LAMP_REAL_R2, t)), t)
         f.save(os.path.join(B, f"f{i:03d}.png"))
+
     mp4 = os.path.join(OUT, "cartoon-poc-3s.mp4")
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-framerate", str(FPS),
                     "-i", os.path.join(B, "f%03d.png"),
                     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "18", mp4], check=True)
     print("wrote", mp4)
+
 
 if __name__ == "__main__":
     main()
