@@ -2,6 +2,8 @@
 
 > 📄 **Google Doc mirror:** https://docs.google.com/document/d/14ox0fF4Cb6rOA6gejRIi8EmXYhMSPMXnVnJN4bAEh8Q/edit
 > *(the Markdown file in this repo is the source of truth; re-import after edits)*
+>
+> 🇻🇳 **Bản tiếng Việt:** https://docs.google.com/document/d/11Tfi-J2pmHQVLE4L0oipcKV3J3LWt0PB4ZCeQNeBvE4/edit
 
 Research 2026-09-18. **Why this exists:** decomposing Macorner/Wander Prints tells us what *they* landed on.
 That is a **local optimum and a ceiling** — copy it and we can at best tie. This doc is the first-principles

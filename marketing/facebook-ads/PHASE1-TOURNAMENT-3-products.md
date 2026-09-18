@@ -2,6 +2,8 @@
 
 > 📄 **Google Doc mirror:** https://docs.google.com/document/d/1AI5wciotbRFLsUSBTmwUfT7Zn61_7YXfA41OX60WH8E/edit
 > *(the Markdown file in this repo is the source of truth; re-import after edits)*
+>
+> 🇻🇳 **Bản tiếng Việt:** https://docs.google.com/document/d/1cO05lrK4zm2xnITi_Kmak82m-DNRAyPqHdetUr1X5_8/edit
 
 **Status:** planned, not launched. **Written 2026-09-18.**
 **Provenance:** decisions and economics were settled in the session of 2026-09-17, which was lost to a power

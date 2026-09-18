@@ -2,6 +2,8 @@
 
 > 📄 **Google Doc mirror:** https://docs.google.com/document/d/1obX8brgMHnwmV1c4rpeZLkmC-ww7NXA-NC99hO84kaQ/edit
 > *(the Markdown file in this repo is the source of truth; re-import after edits)*
+>
+> 🇻🇳 **Bản tiếng Việt:** https://docs.google.com/document/d/1rCt4W2x1f72tYpHIgHyXV-82xNveBTrX4i8RIEJAp70/edit
 
 Research 2026-09-13. Purpose: break a short-form ecom video ad into testable parts, rank them for Phase-1
 (engagement), and decide **how many video scenarios to test per product.** Feeds Group A (creative) + the
