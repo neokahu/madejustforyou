@@ -14,6 +14,67 @@ in the repo, it is aimed at the wrong regime, and nothing enforces the parts tha
 
 ---
 
+---
+
+## 0. TEST RESULTS — measured 2026-09-18 (read this before the analysis below)
+
+The rest of this document was reasoning from sources. This section is **measurement**. Tool:
+`research/scripts/motion_qa.py` (ffmpeg frame-differencing, 8fps @128px, 0–255 luma scale).
+
+**Benchmark obtained:** a longevity-validated winner from our exact niche, pulled from the Meta Ad Library
+(`apify/facebook-ads-scraper`, ~$0.06) off the Macorner Decor page (`479206045473579`) that our own
+`2026-08-competitor-creative-teardown/macorner.md` already identified. Ad `1184144016911830` — *"I Miss You /
+I'm Always With You" personalized wooden car visor*, memorial angle, **started 2025-10-19 and still
+active 2026-09-17 = 333 days running.**
+
+### Head to head — their 333-day winner vs our shipped film
+| | **Macorner winner** | **Our MJ4U-111 film** | Gap |
+|---|---|---|---|
+| Duration | **17.7s** | 36.6s | **2.1× too long** |
+| **Hook-window motion (0–3s)** | **18.05** | **3.59** | **5.0× less** |
+| Hook-window peak | **70.97** | 6.46 | **11× less** |
+| Whole-clip motion | 12.62 | 8.42 | 1.5× less |
+| Peak motion (p90) | 29.81 | 17.99 | 1.7× less |
+| **Hard cuts** | **7** | **1** | — |
+| **Cut rate** | **0.40/s** (one every 2.5s) | **0.03/s** (one every 36.6s) | **15× less** |
+| Frozen frames | 3% | **17%** | 6× more |
+
+### The three findings that matter
+**① Our motion curve is inverted.** The winner is **hottest at second 0** (22.43) — it front-loads. Ours
+**starts at its coldest** (3.09) and does not reach the winner's *opening* level until **second 27**, by
+which point a cold-feed viewer is long gone. Our peak (27.22) lands at 27s. This is our own committed
+research — Meta/Nielsen "~47% of a video's value is in the first 3 seconds" — inverted.
+
+**② The crossfade finding is confirmed empirically, not theoretically.** `scdet` counts **1 hard cut across
+36.6 seconds** of our film. Eight clips were assembled and the joins are so visually mushy that a
+change-detector cannot see them. Crossfades don't just lower energy — they are *invisible as edits*.
+
+**③ We end on three seconds of literal zero.** Seconds 34, 35, 36 measure **0.01, 0.00, 0.00** — a frozen
+logo end card. The winner ends on a **23.08 spike** at 16s.
+
+### Per-clip, our 9 shot generations
+`motion 11.38 mean · p90 17.72 · flatness 0.67 · **0 cuts in 8 of 9 clips** · every clip exactly 5.0s`
+— quantitatively confirms the uniform-beat and zero-intra-clip-cut problems in §3, and that the
+`duration`-from-beat-length rule in the studio bible was never actually applied.
+
+### The gate now exists and it fails what we shipped
+`motion_qa.py --gate` thresholds (hook3 ≥8.0 · motion ≥6.0 · cuts/s ≥0.15 · static ≤10%), set deliberately
+*below* the winner:
+```
+EveryoneStillInYourGarden_v2.mp4: FAIL — hook3=3.59 (need >=8.0);
+                                  cuts_per_s=0.03 (need >=0.15); static_pct=17 (need <=10)
+```
+**3 of 4 criteria failed.** Had this gate existed, the film would not have shipped.
+
+### Honesty about this test
+- **The benchmark is n=1.** One competitor ad is not a distribution, and the thresholds above are provisional
+  until ~20–30 winners are scored. But the effect sizes (**5× hook motion, 15× cut rate**) are far too large
+  to be sampling noise, and the *direction* agrees with every source in §1d.
+- **Motion ≠ quality.** A high score can be achieved with junk shake. The metric detects the *absence* of
+  motion, which is the defect we actually have; it cannot certify that motion is *good*.
+- **Not yet tested:** that fixing this raises hook rate on our ads. Still a hypothesis — see §6.
+- **Still unverified:** Seedance's minimum billable clip duration (§3).
+
 ## 1. Cause one — a stability-first method applied to shots that needed energy
 
 `image-to-video-prompt-method.md` is a good document. Its explicit levers:
