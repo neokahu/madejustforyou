@@ -1,5 +1,8 @@
 # Ad Video Director — research + spec for a separate skill/repo
 
+> 📄 **Google Doc mirror:** https://docs.google.com/document/d/1towZ9nc6KzkJQOVgz229-LUCWr40AqukwC7qKVXMlQQ/edit
+> *(the Markdown file in this repo is the source of truth; re-import after edits)*
+
 Research 2026-09-18. **Question:** why does our AI video come out dull and not eye-catching, and what should
 a separate "ad video director" skill/repo do differently?
 **[DATA]** = measured/primary · **[OPINION]** = practitioner/vendor consensus.

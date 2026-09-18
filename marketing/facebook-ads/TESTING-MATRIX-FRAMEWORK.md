@@ -21,6 +21,9 @@
 > - **Benchmarks & Tier Sources** (every tier number + its citation URL): https://docs.google.com/document/d/1peKFvur7Wt05a765WnYV2qlDKYxGJZMnwesVxoExsMQ/edit
 > - **Video Ad Decomposition & Phase-1 Test Plan** (hook/body/CTA parts + how many videos to test): https://docs.google.com/document/d/1obX8brgMHnwmV1c4rpeZLkmC-ww7NXA-NC99hO84kaQ/edit
 > - **FB Ads Playbook** (kill/scale/structure + 2026 audit): https://docs.google.com/document/d/1_5MddywFb-MM5KLrpmMoMSKXh6Qzx_RDdKHOZjCmuxw/edit
+> - **Ad Science Foundations** (⚠️ psychology + the power ladder that reframes which stage can be tested): https://docs.google.com/document/d/14ox0fF4Cb6rOA6gejRIi8EmXYhMSPMXnVnJN4bAEh8Q/edit
+> - **Ad Video Director** (why our AI video is dull + measured test vs a 333-day winner): https://docs.google.com/document/d/1towZ9nc6KzkJQOVgz229-LUCWr40AqukwC7qKVXMlQQ/edit
+> - **Phase-1 Tournament — suncatcher/blanket/magnet** (locked axes, unit economics, 9 test cases): https://docs.google.com/document/d/1AI5wciotbRFLsUSBTmwUfT7Zn61_7YXfA41OX60WH8E/edit
 > - Repo refs: `research/reference/fb-ads-benchmarks-2026-sources.md` · `FB-ADS-PLAYBOOK.md`
 
 Goal: turn ad testing into a real **inductive experiment** — not just find the winning combo,

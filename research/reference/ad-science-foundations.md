@@ -1,5 +1,8 @@
 # Ad Science Foundations — psychology, marketing science, and a power-aware testing system
 
+> 📄 **Google Doc mirror:** https://docs.google.com/document/d/14ox0fF4Cb6rOA6gejRIi8EmXYhMSPMXnVnJN4bAEh8Q/edit
+> *(the Markdown file in this repo is the source of truth; re-import after edits)*
+
 Research 2026-09-18. **Why this exists:** decomposing Macorner/Wander Prints tells us what *they* landed on.
 That is a **local optimum and a ceiling** — copy it and we can at best tie. This doc is the first-principles
 layer: peer-reviewed psychology of attention, self-relevance and **gift-giving**, the marketing-science

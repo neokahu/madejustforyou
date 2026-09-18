@@ -1,5 +1,8 @@
 # Phase-1 Tournament — 3 new products (suncatcher · blanket · magnet)
 
+> 📄 **Google Doc mirror:** https://docs.google.com/document/d/1AI5wciotbRFLsUSBTmwUfT7Zn61_7YXfA41OX60WH8E/edit
+> *(the Markdown file in this repo is the source of truth; re-import after edits)*
+
 **Status:** planned, not launched. **Written 2026-09-18.**
 **Provenance:** decisions and economics were settled in the session of 2026-09-17, which was lost to a power
 outage before anything was written to disk. Recovered from the session transcript and **re-verified** (every
