@@ -6,6 +6,7 @@ This is the FB-advertiser (media-buyer) domain: it owns **break-even economics, 
 
 - **Methodology source of truth:** sop-docs → `Internal-Guidelines/Kien-thuc-chuyen-mon/Marketing/Facebook-Testing-Scaling-Research.md` (4 Meta-official base laws + consensus playbook: break-even math, leading/lagging metrics, kill/keep rules, ABO-test → CBO-scale pipeline).
 - **Kill/keep decision guide (human-readable):** [`AD-KILL-RULES.md`](AD-KILL-RULES.md) — when to kill vs keep an ad: match the rule to the campaign's optimization event + stage + layer; break-even CPA / fair-shot spend; thresholds + anti-patterns. Read this before pausing anything.
+- **Live test plan:** [`PHASE1-TOURNAMENT-3-products.md`](PHASE1-TOURNAMENT-3-products.md) — the Phase-1 tournament for the dog-memorial suncatcher, granddaughter blanket and grandma-hug magnet: locked axes, per-variant break-even economics, stage gates and the 9 test cases. (MJ4U-111 excluded — separate diagnosis.)
 - **Goal:** automate test→scale as **full unattended execution**, Claude-driven, via the official Meta Ads MCP + Marketing API, with a native-rules safety floor.
 
 ## Architecture (hybrid)

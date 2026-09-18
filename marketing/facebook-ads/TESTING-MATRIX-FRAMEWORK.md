@@ -267,9 +267,15 @@ everything at once.
 
 | Stage | Optimize event | VARY (test axes this stage) | HOLD constant (baseline) | Advance threshold | Carry to next |
 |---|---|---|---|---|---|
-| **1 Engagement** | Traffic / LPV | **many DIVERSE creative concepts** — vary **A1–A7** across concepts, with the **buyer as message (AUD1)**; let Andromeda sort. | **1 baseline material (M)**; all **R, O, F**; **Fixed setup** (broad · Advantage+ placement · Highest-Volume bid · Advantage+ Creative ON · signal fixed first) | hook ≥ 28% **AND** link CTR ≥ 4% (kill < 18% / < 1.7%) | the winning **concept(s)** |
+| **1 Engagement** | Traffic / LPV | **many DIVERSE creative concepts** — vary **A1–A7** across concepts, with the **buyer as message (AUD1)**; let Andromeda sort. | **1 baseline material (M)**; all **R, O, F**; **Fixed setup** (broad · Advantage+ placement · Highest-Volume bid · Advantage+ Creative ON · signal fixed first) | hook ≥ 28% **AND** link CTR ≥ 2.5% (kill < 18% / < 1.0%) ᴬ | the winning **concept(s)** |
 | **2 Intent** | Add to Cart | **M1 material** (shirt vs mug vs rug) · **O1/O2 price+discount · O3 bundle · O4 free-ship · R1 page type (generic) · R2 reviews · R4 note · R6 price presentation · PZ personalizer toggles** | winning **creative × buyer** fixed | ATC rate ≥ 7.5% (session) **or** cost/ATC ≤ baseline (kill < 2%) | winning **creative × buyer × material × page/offer** |
 | **3 Purchase** | Purchase | **R1 dedicated sales page (unlock for winners) · R3 delivery msg · R5 trust · O5 urgency · PZ ATC-gate toggles · F1 cart-recovery · F2 retargeting · F3 upsell** | winning **creative × buyer × material × page/offer** fixed | CPA ≤ break-even **&** ROAS ≥ target-by-margin (click→purchase > ~1.5–3.2%) | winning **full combo → SCALE** |
+
+> ᴬ **Corrected 2026-09-18 — advance on link CTR ≥ 2.5%, not 4%.** The original 4% / 1.7% pair came from an
+> **all-clicks** CTR figure (WordStream Gifts ~4.13%), but D.1 grades on **link** CTR, where 2.5% is already
+> STRONG (top-20%) and 3.5%+ is ELITE. Applying 4% as a *link*-CTR gate would fail nearly every ad we run.
+> **D.1 is authoritative for all tier cutoffs; B.1 now matches it** (advance = T3 STRONG, kill = T1 WEAK,
+> with T0 red-line < 0.5%). Never mix the two denominators in one threshold.
 
 **How to build combos each phase (concrete):**
 - **Phase 1 — diverse creative on broad audience.** Fix **1 baseline material** + 1 baseline offer/page, run

@@ -35,7 +35,8 @@ Every serious source uses one or both of these, and they fit together:
 | **CTA** | **outbound/link CTR**, CVR | explicit next step · urgency/scarcity · restate offer; front-load (many act before end) | **[DATA-ish]** Meta: "high hook+watch, low click → obsess over CTA" | **OFAT** — same ad, swap CTA/end-card | help.motionapp.com metrics · facebook.com/business/help/188534925073536 |
 | **Format / production style** | hook + hold + lifespan | **For personalized-gift POD, use the fit-rated list below** (reveal · gift-reaction · occasion · POV-giving · testimonial · UGC = HIGH). ⚠️ **founder-story = LOW, podcast = SKIP** (generic-DTC, wrong for a gift store). | **[DATA]** native/UGC beats polished on Reels/Stories; repurposing winning *message* into new *formats* = #1 diversity play post-Andromeda | test whole new formats of a proven angle (diversity) | see POD-tailored section below |
 | **Captions / sound-off** (cross-cut) | hook + hold | on-screen text by 0.5s; captions | **[DATA]** ~**80–85% of plays are sound-off** (Meta); captions ↑ view time ~12% | always present; test overlay wording as a hook variant | facebook.com/business |
-| **Pacing / length** (cross-cut) | hold | cut frequency, length | **[DATA]** Meta: **6–15s** best in Feed/Stories; cuts every 1–2s short-form | test length + first-0.5s trim (+2–5pt hook) | facebook.com/business/help/188534925073536 |
+| **Pacing / transitions / length** (cross-cut) | hold | cut frequency, transition style, length | **[DATA]** Meta: **6–15s** best in Feed/Stories; cuts every 1–2s short-form. **[OPINION] Cut-rate is format-specific, not one number:** ~**1.5s/cut** for fast persuasion formats · ~**5s/cut** for UGC/authenticity (fast cutting reads as *produced* and kills the native feel) · beat-matched cuts for unboxing/reaction · progress-paced for BTS | test length + first-0.5s trim (+2–5pt hook); **brief the cut-rate, don't leave it to the editor** | facebook.com/business/help/188534925073536 · VN script-framework table (see brief template below) |
+| **Voice / VO & sound** (cross-cut) | hook + hold (and *believability*) | who speaks (real human vs AI vs none) · tone arc · music bed · SFX/ASMR | **[DATA]** 80–85% sound-off means voice can't carry the ad — but it decides the 15–20% who *do* hear it, and it's the whole mechanism for text-heavy products that can't do a visual reveal. **[OPINION]** prescribe per format: reaction/unboxing = warm bed + genuine emotion · UGC = natural phone voice · compare = analytical + dynamic SFX · BTS = sincere confiding + real ASMR · sentiment-build = **real human VO, never synthetic** | brief it as a field; only test it as an axis when the concept is VO-led | VN script-framework table · our POD proof ranking |
 
 ## Phase-1 priority (engagement: hook rate, hold rate, CTR)
 Test in this order:
@@ -100,6 +101,7 @@ numbers are POD-wide/general-DTC, directional only.*
 | **Listicle** ("5 gifts that'll make grandma cry") | **MEDIUM** | scannable curiosity; warms cold audiences | WIDER |
 | **High-production emotional short film** | **MEDIUM** | story-with-late-payoff wins at brand level but costly/risky — sparingly | EXACT |
 | **Screen-record of the personalizer** | **MEDIUM** | answers "will it really say MY name?" — better for retargeting than cold | WIDER |
+| **BTS / how-it's-made** (production → boxing → shipping) | **MEDIUM** | answers the category's #1 objection ("will it look cheap?") with real craft + ASMR. ⚠️ but craft close-ups are our **lowest-emotion proof (rank #5)** → **Stage-2 / retargeting asset, not a cold Phase-1 concept** | WIDER |
 | **Lifestyle / skit / demo** | **MED-LOW** | connective tissue / scroll-stop, but a static keepsake has little to "demo" | WIDER |
 | **Founder-story** | **LOW** | ⚠️ generic-DTC; a gift buyer cares about the *recipient's* emotion, not your origin story | LAST-RESORT |
 | **Podcast format** | **SKIP** | ⚠️ generic-DTC/info-product; no fit for an impulse, emotion-led gift | LAST-RESORT |
@@ -181,6 +183,77 @@ Meta's *button* is limited to ~17 presets (use **"Order Now"** for deadline/high
 - **EXACT (qualitative):** Etsy Seller Handbook (occasions, hyper-personalization trends, "recipe plate" +110% YoY) · Marketing Dive (Etsy "feel truly seen" holiday campaign) · Printify Etsy-personalization guide · Sale Samurai · GetNameNecklace (live pet-memorial positioning) · TikTok gift-reaction culture + Kinfold Gifts creator call · Influee gifting-ad angle.
 - **WIDER:** The Performers "10 gifting ad angles" · DesignRush (Ultimate Ears personalization reveal; <15s +38% completion; personalization ≈3× intent — POD-wide) · Printful/Gelato/Prodigi/Justin Cener POD ad mechanics.
 - **LAST-RESORT (flagged):** Fraser Cottrell DTC tier list (founder-ad S-tier is a *general-DTC* claim, does NOT transfer) · Promer/Vlad Alexander/Sovran UGC theory.
+
+## 🎬 Creative brief template (12 fields) — merged with an external script-framework table
+
+*Added 2026-09-18. Source of the merge: an external "Kịch bản content phổ biến" table (5 script templates ×
+8 craft columns: Hook · Storyline · Transitions · Visual · Voice · Caption&Text · Social Proof · CTA),
+compared against this document. **It is a production spec; this document is a test system.** Theirs has no
+measurement layer; ours under-specified craft. They compose — the merge below is the result.*
+
+### The brief — every test case gets all 12 fields filled before it is shot
+| # | Field | Who supplies it | Note |
+|---|---|---|---|
+| 1 | **Concept** | strategy | the whole idea, one sentence |
+| 2 | **Angle / Persona** ⭐ | strategy | *ours — the external table has no slot for this.* Buyer ≠ recipient in gifting; a persona swap on an identical product is a real test |
+| 3 | **Hook** (0.5–3s) | strategy | on-screen text + opening shot; Tier-1 gift-native preferred |
+| 4 | **Storyline / Body** | strategy | which beat skeleton (A reaction-led / B sentiment-build / C demo-hybrid) |
+| 5 | **Social-Proof beat** ⭐ | strategy | *promoted to a required field* — which proof type (rank 1–5) and **where it sits** |
+| 6 | **Offer** ⭐ | strategy | *ours — absent from the external table.* Without it a beautiful ad can sell an unprofitable configuration |
+| 7 | **CTA** | strategy | gift-language line + which of Meta's ~17 button presets |
+| 8 | **Transitions / cut rate** | edit | **a number** (1.5s / 5s / beat-matched / progress-paced), not "fast cuts" |
+| 9 | **Visual** | edit | colour temperature, background, camera distance |
+| 10 | **Voice** ⭐ | edit | who speaks, tone arc, music bed, SFX/ASMR |
+| 11 | **Caption & Text** | edit | overlay style, font, what gets highlighted; always sound-off legible |
+| 12 | **Length** ⭐ | edit | *ours* — 6–15s Feed/Stories; 15–30s for the skeletons |
+
+⭐ = field the external table does **not** have. Fields 8–11 are the ones **it** supplies that we previously
+left to the editor's judgement.
+
+### Adopted from the external table
+- **① Voice as its own briefable field.** We had VO/music/sound in a single clause of "cross-cutting craft"
+  and never prescribed it. Now a row in the per-component table above. This bites immediately: a text-heavy
+  product (a printed letter/poem) **cannot do a personalization reveal**, so its concepts must be VO-led —
+  and Voice is exactly the brief field that decision needs.
+- **② Cut-rate as a number, per format.** ~1.5s/cut fast-persuasion vs ~5s/cut UGC. Encodes the real
+  insight that **authenticity formats need slower cuts**. Matters for 60+ recipients, where fast-cut
+  short-form pacing likely hurts.
+- **③ Social Proof promoted to a required field.** Our proof ranking (reaction #1 · personalization detail
+  #2 · volume/longevity #3 · photo-UGC #4 · craft close-ups #5) existed but was buried inside Body, so it
+  was skippable. As a mandatory field it forces every video to answer *"what's the proof beat, and where?"*
+- **④ The "Compare" recipe as a production spec** — split screen, parallel cutting, zoom into the
+  differentiating detail. That is the shooting spec for our existing generic-vs-personalized split-screen
+  hook; adopt verbatim.
+- **⑤ BTS as a new format** (added to the format-fit table above, MEDIUM) — but Stage-2/retargeting only,
+  since craft proof is our rank #5.
+
+### Refused — where the external table conflicts with this research
+| Their prescription | Why refused |
+|---|---|
+| **PAS / Problem-Solver as script #1** | PAS/AIDA engage rational System-2, which only fires for people already shopping for a solution; a gift buy runs the **emotion arc** (anticipation → escalation → reveal + reaction). Their visual spec makes it worse: *dark tones for the problem, red/yellow pain text* — the opposite of how a keepsake should look. "Problem-callout" is already **Tier 3** in our hook ranking. **Drop for gift products.** |
+| **Social proof = order counts + screenshots of praising comments + before/after stats** | Wrong proof for this buyer. Our #1 proof is the **recipient's genuine reaction**; volume proof is #3 and only for cold legitimacy. Comment-screenshot stacking reads as dropship to a US Meta user in their 50s–60s. |
+| **"Trending AI voice"** (offered in their UGC + Compare rows) | Fights the one thing the category runs on — a real human's voice breaking. Use real VO. |
+| **Hard FOMO / urgency CTA** (their UGC row) | Our offer ranking puts **order-by-date deadline urgency** at #1 but *discount/FOMO pressure* last — it undercuts keepsake value. Deadline ≠ FOMO. |
+| **Ordering instructions mid-video** (their Unboxing storyline) | Our skeletons put the **reveal at the midpoint** so there is runtime left for the reaction while retention is highest. |
+| **CTA column as an emotional target** ("hit the emotions") | Not briefable. Ours specifies the actual line + the Meta button preset. |
+
+> ⚠️ Provenance caution: that table is **TikTok / dropship-native**. Our buyer is a US Meta user, frequently
+> 55+, buying an emotional keepsake. Adopt its *craft* fields; do not import its *persuasion* defaults.
+
+### Their 5 scripts, mapped onto our format-fit ratings
+| Their script | Maps to our format | Verdict |
+|---|---|---|
+| **Unboxing Review** | Gift-reaction (HIGH) + Unboxing (MED-HIGH) | **Keep — top format.** ≈ Skeleton A (reaction-led). Take beat-matched transitions + warm tone; drop mid-roll ordering instructions |
+| **UGC** | UGC-raw (HIGH) | **Keep.** Take 5s/cut + word-by-word subtitles + phone-camera look. Drop AI voice, order-count proof, FOMO CTA |
+| **Compare** | Hyper-personalization flex (HIGH) | **Keep.** The split-screen/zoom recipe is directly usable for generic-vs-personalized concepts |
+| **BTS** | *(was absent from ours — now added, MEDIUM)* | **Adopt, Stage-2 / retargeting only** |
+| **Problem-Solver (PAS)** | problem-callout = our **Tier 3** | **Drop** for gift products |
+
+### What the external table cannot do (why this stays the source of truth)
+No offer field · no angle/persona field · no format-fit rating (it presents 5 scripts as equals; we rate 15
+and demote two hard) · no awareness-stage mapping · no length spec · **and no measurement layer at all** —
+no hook rate, hold rate, sample gate, or kill line. It tells you what to *make*; only Part D of
+`TESTING-MATRIX-FRAMEWORK.md` tells you what to *kill*.
 
 ## Honesty notes
 - **Hard data:** Meta/Nielsen 47%-in-3s + 65%/45% watch-through [Meta primary]; sound-off ~80–85% [Meta]; Google creative≈50% ROI.
