@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kế hoạch Test Video — Phase 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap&subset=vietnamese,latin" rel="stylesheet">
+<style>
+  /* Light theme only - cố định, không đổi theo hệ thống */
+  :root{
+    --fg:#14202c; --fg-2:#3c4b5a; --fg-3:#6d7d8c;
+    --bg:#eef2f6; --card:#ffffff; --card-2:#e2e8ee; --line:#c9d3dd;
+    --brass:#96681a; --brass-soft:#f6ecd8;
+    --kill:#9c3838; --pass:#2f6347; --hold:#7a6740;
+    --serif:"Lora","Noto Serif",Georgia,serif;
+    --sans:"Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);line-height:1.55;
+    -webkit-font-smoothing:antialiased;font-size:16px}
+  .wrap{max-width:70rem;margin:0 auto;padding:0 1.25rem 5rem}
+  h1{font-family:var(--serif);font-size:clamp(1.9rem,4.6vw,2.8rem);margin:0;letter-spacing:-.015em;text-wrap:balance}
+  h2{font-family:var(--serif);font-size:1.22rem;margin:0;letter-spacing:-.005em}
+  p{margin:0;max-width:none}
+  .note{font-size:.82rem;color:var(--fg-3)}
+
+  header{padding:3.2rem 0 1.6rem}
+  .phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.6rem;margin-top:1.4rem}
+  .ph{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.8rem .9rem;opacity:.62}
+  .ph.now{opacity:1;border-color:var(--brass);border-width:2px;background:var(--brass-soft)}
+  .ph b{display:block;font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;
+    color:var(--fg-3);margin-bottom:.25rem}
+  .ph.now b{color:var(--brass)}
+  .ph h3{margin:0 0 .2rem;font-family:var(--serif);font-size:1.02rem;font-weight:600}
+  .ph p{font-size:.81rem;color:var(--fg-3)}
+  .ph.now p{color:var(--fg-2)}
+  .ph .tag{display:inline-block;margin-top:.45rem;font-family:var(--mono);font-size:.62rem;
+    text-transform:uppercase;letter-spacing:.08em;padding:.14rem .4rem;border-radius:2px;
+    border:1px solid var(--line);color:var(--fg-3)}
+  .ph.now .tag{border-color:var(--brass);background:var(--brass);color:#fff}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden;margin-top:1.6rem}
+  .stats div{background:var(--card);padding:.85rem 1rem}
+  .stats b{display:block;font-family:var(--mono);font-size:1.5rem;font-variant-numeric:tabular-nums;
+    letter-spacing:-.02em;line-height:1.1}
+  .stats span{font-family:var(--mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-3)}
+
+  section{padding:2.1rem 0;border-top:1px solid var(--line)}
+  .hd{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin-bottom:1.1rem}
+  .hd .n{font-family:var(--mono);font-size:.74rem;color:var(--fg-3);font-variant-numeric:tabular-nums}
+  .count{font-family:var(--mono);font-size:.7rem;color:var(--brass);letter-spacing:.04em}
+
+  .def{background:var(--card-2);border-left:3px solid var(--brass);padding:.6rem .85rem;
+    border-radius:0 3px 3px 0;font-size:.88rem;color:var(--fg-2);margin-bottom:.9rem}
+  .def b{color:var(--fg)}
+  .src{font-family:var(--mono);font-size:.66rem;color:var(--fg-3);margin-top:.6rem}
+  .src a{color:var(--brass);text-decoration:underline;text-underline-offset:2px}
+
+  /* thư viện: liệt kê tất cả, tô sáng cái được chọn */
+  .lib{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.4rem}
+  .lib.c3{grid-template-columns:repeat(auto-fit,minmax(19rem,1fr))}
+  .lib div{padding:.45rem .65rem;border:1px solid var(--line);border-radius:3px;font-size:.81rem;
+    color:var(--fg-3);background:var(--card);display:flex;gap:.55rem;align-items:baseline}
+  .lib div.sel{border-color:var(--brass);background:var(--brass-soft);color:var(--fg);font-weight:600}
+  .lib .i{font-family:var(--mono);font-size:.64rem;color:var(--fg-3);min-width:1.1rem}
+  .lib div.sel .i{color:var(--brass)}
+  .lib .map{margin-left:auto;font-family:var(--mono);font-size:.6rem;white-space:nowrap;color:var(--brass)}
+  .lib div[data-tip]{cursor:help;position:relative}
+  .lib div[data-tip]::after{
+    content:attr(data-tip);position:absolute;left:0;top:calc(100% + 6px);z-index:30;
+    width:max(17rem,100%);background:var(--fg);color:#fff;font-family:var(--sans);
+    font-size:.78rem;font-weight:400;line-height:1.45;padding:.55rem .7rem;border-radius:3px;
+    box-shadow:0 6px 20px rgba(20,32,44,.24);opacity:0;visibility:hidden;transition:opacity .12s;
+    pointer-events:none}
+  .lib div[data-tip]:hover::after,.lib div[data-tip]:focus::after{opacity:1;visibility:visible}
+  .lib div[data-tip]:focus{outline:2px solid var(--brass);outline-offset:1px}
+  @media (prefers-reduced-motion:reduce){.lib div[data-tip]::after{transition:none}}
+
+  .tier{margin-bottom:.55rem}
+  .tier>h3{margin:0 0 .35rem;font-family:var(--mono);font-size:.64rem;text-transform:uppercase;
+    letter-spacing:.1em;color:var(--fg-3);font-weight:600;display:flex;gap:.5rem;align-items:baseline}
+  .tier>h3 em{font-style:normal;font-family:var(--sans);font-size:.74rem;text-transform:none;
+    letter-spacing:0;color:var(--fg-3);font-weight:400}
+  .tier.t1>h3{color:var(--brass)}
+  .steps{display:grid;gap:.5rem;counter-reset:st}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.75rem .9rem;
+    display:grid;grid-template-columns:1.9rem 1fr;gap:.2rem .8rem;align-items:baseline}
+  .step::before{counter-increment:st;content:counter(st,decimal-leading-zero);font-family:var(--mono);
+    font-size:.72rem;color:var(--brass);font-weight:600}
+  .step h4{margin:0;font-family:var(--serif);font-size:1rem;font-weight:600}
+  .step .pick{grid-column:2;font-size:.82rem;color:var(--fg-2);margin-top:.25rem}
+  .step .pick i{font-style:normal;font-family:var(--mono);font-size:.7rem;color:var(--fg-3);
+    text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:.15rem}
+  .step .opt{display:inline-block;font-family:var(--mono);font-size:.72rem;padding:.1rem .38rem;margin:.12rem .2rem .12rem 0;
+    border:1px solid var(--line);border-radius:2px;background:var(--bg)}
+  .step .opt.on{border-color:var(--brass);background:var(--brass-soft);color:var(--brass);font-weight:600}
+  .exh{font-family:var(--serif);font-size:1.02rem;font-weight:600;margin:1.5rem 0 .6rem}
+  table.ex{font-size:.82rem;min-width:46rem}
+  table.ex td.f{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;
+    color:var(--fg-3);white-space:nowrap;background:var(--card-2);width:1%}
+  table.ex td.same{background:var(--brass-soft);color:var(--fg-2)}
+  table.ex td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+  table.ex tbody td{vertical-align:top}
+  a.plink{color:var(--fg-3);text-decoration:none;border-bottom:1px dotted var(--line)}
+  a.plink:hover{color:var(--brass);border-bottom-color:var(--brass)}
+  .matrix .h a.plink,table.ex thead a.plink{color:var(--fg-3)}
+  table.ex .ts{font-family:var(--mono);font-size:.68rem;color:var(--brass);display:block;margin-bottom:.15rem}
+  table.ex td.en{font-style:italic}
+  .rulebox{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brass);
+    border-radius:0 3px 3px 0;padding:.85rem 1rem;margin-top:.9rem}
+  .rulebox p{font-size:.92rem}
+  .rulebox b{font-weight:600}
+  .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.6rem,1fr));gap:.7rem;margin-top:.8rem}
+  .why div{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.75rem .85rem}
+  .why div>b:first-child{display:block;font-family:var(--mono);font-size:.63rem;text-transform:uppercase;
+    letter-spacing:.09em;color:var(--brass);margin-bottom:.3rem}
+  .why.out div>b:first-child{color:var(--fg-3)}
+  .why p{font-size:.82rem;color:var(--fg-2)}
+  .why p b{display:inline;font-family:var(--mono);font-size:.78rem;color:var(--brass);font-weight:600}
+
+  .anat{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .anat div{background:var(--card);padding:.7rem .8rem}
+  .anat div.on{background:var(--brass-soft)}
+  .anat b{display:block;font-size:.92rem;font-family:var(--serif)}
+  .anat span{font-size:.74rem;color:var(--fg-3)}
+  .anat .t{font-family:var(--mono);font-size:.57rem;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--brass);display:block;margin-top:.3rem}
+
+  .combo{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;font-family:var(--mono);font-size:.9rem}
+  .combo .box{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.5rem .75rem;
+    text-align:center;min-width:5.4rem}
+  .combo .box b{display:block;font-size:1.3rem;color:var(--brass);font-variant-numeric:tabular-nums;line-height:1.1}
+  .combo .box span{font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;color:var(--fg-3)}
+  .combo .op{color:var(--fg-3);font-size:1.1rem}
+
+  .matrix{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;
+    overflow:hidden;grid-template-columns:minmax(7.5rem,.9fr) repeat(3,minmax(8rem,1fr))}
+  .matrix>div{background:var(--card);padding:.7rem .8rem;font-size:.85rem}
+  .matrix .h{background:var(--card-2);font-family:var(--mono);font-size:.63rem;text-transform:uppercase;
+    letter-spacing:.09em;color:var(--fg-3)}
+  .matrix .s{font-family:var(--serif);font-size:.95rem}
+  .matrix .s small{display:block;font-family:var(--sans);font-size:.72rem;color:var(--fg-3);margin-top:.15rem}
+  .matrix .span3{grid-column:span 3;color:var(--fg-2)}
+  @media(max-width:700px){.matrix{grid-template-columns:1fr}.matrix .h:first-child{display:none}
+    .matrix .span3{grid-column:span 1}}
+
+  .meters{display:grid;gap:1rem}
+  .meter .top{display:flex;justify-content:space-between;font-size:.84rem;margin-bottom:.35rem;gap:1rem;flex-wrap:wrap}
+  .meter .top b{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  .track{position:relative;height:26px;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .zone{position:absolute;top:0;bottom:0}
+  .zone.k{background:rgba(156,56,56,.16);left:0}
+  .zone.p{background:rgba(47,99,71,.16);right:0}
+  .tick{position:absolute;top:0;bottom:0;width:2px;background:var(--fg)}
+  .tick.t0{background:var(--kill)}
+  .mlabels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.63rem;
+    color:var(--fg-3);margin-top:.25rem}
+
+  .quad{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+    border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .quad div{background:var(--card);padding:.9rem;min-height:5rem}
+  .quad b{font-family:var(--mono);font-size:.63rem;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--fg-3);display:block;margin-bottom:.25rem}
+  .quad .act{font-family:var(--serif);font-size:.98rem}
+  .quad .go{color:var(--pass)} .quad .no{color:var(--kill)}
+
+  .ladder{display:grid;gap:.45rem}
+  .lrow{display:grid;grid-template-columns:minmax(10rem,.9fr) 3.4fr auto;gap:.7rem;align-items:center;font-size:.83rem}
+  .lbar{height:20px;background:var(--card-2);border-radius:2px;overflow:hidden}
+  .lbar i{display:block;height:100%;background:var(--brass)}
+  .lbar i.no{background:var(--kill)} .lbar i.weak{background:var(--hold)}
+  .lval{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;min-width:4.8rem}
+  .budgetline{font-family:var(--mono);font-size:.68rem;color:var(--brass);margin-top:.5rem}
+
+  .funnel{display:flex;flex-direction:column;gap:.5rem}
+  .fstep{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brass);
+    border-radius:3px;padding:.85rem 1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+  .fstep .lab{font-family:var(--serif);font-size:1.05rem;min-width:11rem}
+  .fstep .amt{font-family:var(--mono);font-size:1.15rem;font-variant-numeric:tabular-nums;color:var(--brass);
+    margin-left:auto;white-space:nowrap}
+  .fstep .sub{font-size:.82rem;color:var(--fg-3)}
+  .f1{width:100%}.f2{width:78%}.f3{width:58%}
+  @media(max-width:640px){.f2,.f3{width:100%}}
+
+  .be{display:grid;gap:.5rem}
+  .berow{display:grid;grid-template-columns:8rem 1fr auto;gap:.7rem;align-items:center;font-size:.85rem}
+  .bebar{height:22px;background:var(--card-2);border-radius:2px;overflow:hidden}
+  .bebar i{display:block;height:100%;background:var(--pass)}
+  .bebar i.hard{background:var(--kill)}
+
+  .verd{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .verd div{background:var(--card);padding:.6rem .85rem;display:flex;gap:.8rem;align-items:center;
+    justify-content:space-between;font-size:.86rem;flex-wrap:wrap}
+  .pill{font-family:var(--mono);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+    padding:.18rem .45rem;border-radius:2px;border:1px solid currentColor;white-space:nowrap}
+  .pill.y{color:var(--pass)} .pill.n{color:var(--kill)} .pill.m{color:var(--hold)}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.6rem,1fr));gap:.7rem}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.85rem}
+  .card>b:first-child{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--brass);display:block;margin-bottom:.3rem}
+  .card p b{display:inline;font-weight:600;color:var(--fg)}
+  .card p{font-size:.85rem;color:var(--fg-2);max-width:none}
+
+  .srcbox{background:var(--card);border:1px solid var(--line);border-radius:3px;padding:.9rem 1rem;
+    display:grid;gap:.75rem}
+  .srcbox .row{display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;align-items:baseline}
+  .srcbox .row a{font-family:var(--serif);font-size:1rem;color:var(--brass);text-decoration:none}
+  .srcbox .row a:hover{text-decoration:underline}
+  .srcbox .row p{grid-column:2;font-size:.83rem;color:var(--fg-3);margin:0;max-width:none}
+  .srcbox .tagn{font-family:var(--mono);font-size:.61rem;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--fg-3);padding-top:.2rem}
+
+  ul.ask{margin:0;padding-left:1.1rem;max-width:none}
+  ul.ask li{font-size:.92rem} ul.ask li+li{margin-top:.4rem}
+  a:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  footer{padding:1.6rem 0;border-top:1px solid var(--line);font-size:.78rem;color:var(--fg-3)}
+
+  /* ---------- Mobile ---------- */
+  @media (max-width:700px){
+    body{font-size:15px}
+    .wrap{padding:0 1rem 3.5rem}
+    header{padding:2rem 0 1.2rem}
+    section{padding:1.6rem 0}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .stats b{font-size:1.25rem}
+    .phases{grid-template-columns:1fr}
+    .cards,.why,.lib,.lib.c3,.anat{grid-template-columns:1fr}
+    .quad{grid-template-columns:1fr}
+    .step{grid-template-columns:1fr;gap:.15rem}
+    .step::before{font-size:.66rem}
+    .lrow{grid-template-columns:1fr auto;row-gap:.2rem}
+    .lrow .lbar{grid-column:1/-1;order:3}
+    .berow{grid-template-columns:1fr auto;row-gap:.2rem}
+    .berow .bebar{grid-column:1/-1;order:3}
+    .combo{gap:.35rem}
+    .combo .box{min-width:4.2rem;padding:.4rem .5rem;flex:1 1 4.2rem}
+    .combo .box b{font-size:1.05rem}
+    .combo .op{font-size:.85rem}
+    .fstep{flex-direction:column;align-items:flex-start;gap:.3rem}
+    .fstep .amt{margin-left:0}
+    .verd div{flex-direction:column;align-items:flex-start;gap:.3rem}
+    .srcbox .row{grid-template-columns:1fr}
+    .srcbox .row p,.srcbox .en{grid-column:1}
+    /* tooltip: bám mép màn hình, không tràn */
+    .lib div[data-tip]::after{width:calc(100vw - 3rem);left:0}
+    /* bảng: cuộn ngang trong khung riêng + gợi ý vuốt */
+    .tw{position:relative;-webkit-overflow-scrolling:touch}
+    table{min-width:34rem}
+    table.ex{min-width:40rem}
+    table.ex td.f{white-space:normal}
+    .tw::after{content:"vuốt ngang để xem tiếp →";position:sticky;left:0;display:block;
+      font-family:var(--mono);font-size:.6rem;color:var(--fg-3);padding:.3rem .55rem;
+      border-top:1px solid var(--line);background:var(--card-2)}
+  }
+  @media (max-width:420px){
+    .stats{grid-template-columns:1fr}
+    .combo .box{flex:1 1 100%}
+    .combo .op{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Kế hoạch Test Video — Phase 1</h1>
+  <div class="stats">
+    <div><b>3</b><span>Sản phẩm</span></div>
+    <div><b>18</b><span>Ads Phase 1</span></div>
+    <div><b>2</b><span>Yếu tố test</span></div>
+    <div><b>6</b><span>Mẫu/sản phẩm</span></div>
+    <div><b>$360</b><span>Tổng Phase 1</span></div>
+  </div>
+  <div class="phases">
+    <div class="ph now"><b>Phase 1</b><h3>Tương tác</h3>
+      <p>Test thành phần video: concept × hook. Tiêu chí: hook rate và CTR.</p>
+      <span class="tag">Kế hoạch này</span></div>
+    <div class="ph"><b>Phase 2</b><h3>Ý định mua</h3>
+      <p>Bộ thành phần khác: offer, landing page, giá, upsell. Tiêu chí: add-to-cart.</p>
+      <span class="tag">Để sau</span></div>
+    <div class="ph"><b>Phase 3</b><h3>Mua hàng</h3>
+      <p>Trust, checkout, abandoned-cart recovery. Tiêu chí: purchase và ROAS.</p>
+      <span class="tag">Để sau</span></div>
+  </div>
+</header>
+
+<section>
+  <div class="hd"><span class="n">01</span><h2>Mục tiêu</h2></div>
+  <div class="cards">
+    <div class="card"><b>Tìm combo video hiệu quả nhất</b><p>Concept × hook.</p></div>
+    <div class="card"><b>Biết thành phần nào 'chạy'</b><p>Để lần sau tái hiện lại.</p></div>
+    <div class="card"><b>Dưới $600</b><p>Chốt kết quả trước khi đốt tiền quá nhiều.</p></div>
+  </div>
+  <p class="note" style="margin-top:.8rem">Đây là kế hoạch <b>Phase 1</b>. Không test sản phẩm — chọn sản phẩm là việc khác. Chạy 3 sản phẩm cùng lúc để có kết luận về thành phần chính xác hơn.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">02</span><h2>Một video ads gồm những gì</h2></div>
+  <div class="anat">
+    <div class="on"><b>Hook</b><span>0.5–3 giây đầu</span><span class="t">Test · Phase 1</span></div>
+    <div class="on"><b>Concept</b><span>ý tưởng + bán cho ai</span><span class="t">Test · Phase 1</span></div>
+    <div><b>Body</b><span>đoạn giữa 5–15 giây</span><span class="t" style="color:#6d7d8c">Chỉ sửa, không test</span></div>
+    <div><b>Offer</b><span>khách được gì, khi nào</span><span class="t" style="color:#6d7d8c">Phase 2 — plan riêng</span></div>
+    <div><b>CTA</b><span>Câu chốt</span><span class="t" style="color:#6d7d8c">Giữ nguyên</span></div>
+    <div><b>Format</b><span>Kiểu dựng</span><span class="t" style="color:#6d7d8c">Trong concept luôn</span></div>
+    <div><b>Chế</b><span>9:16, phụ đề, tắt tiếng vẫn rõ</span><span class="t" style="color:#6d7d8c">Tiêu chuẩn</span></div>
+  </div>
+  <p class="src">Nguồn:<a href="https://docs.google.com/document/d/1rCt4W2x1f72tYpHIgHyXV-82xNveBTrX4i8RIEJAp70/edit" target="_blank" rel="noopener">Video Ad Decomposition</a>§ “Components that recur across all sources”.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">03</span><h2>Concept — chọn 3 trong 12</h2><span class="count">12 hướng → 3</span></div>
+  <p class="def"><b>Concept là ý tưởng đi với tệp khách hàng mà nó nhắm tới.</b>Cùng sản phẩm, bán khác nhau. Test concept là test xem lý do mua nào 'ăn' hơn.</p>
+  <div class="lib">
+    <div class="sel" data-tip="Sản phẩm để trống, rồi tên hoặc ảnh của họ hiện lên. Chính khoảnh khắc đó là thứ bán được hàng." tabindex="0"><span class="i">01</span>Làm riêng cho họ — hiện tên lên sản phẩm</div>
+    <div class="sel" data-tip="Mở bằng đúng khoảnh khắc người nhận phản ứng. Không nhất thiết phải khóc — cười phá lên, nghẹn lại, im bặt, che miệng, hay cứ cầm lên ngắm mãi đều được. Chọn phản ứng đúng với món quà đó." tabindex="0"><span class="i">02</span>Phản ứng thật lúc unbox</div>
+    <div data-tip="Món quà là bằng chứng bạn để ý — “bà có đủ thứ rồi, nên cháu tặng thứ không ai tặng được”." tabindex="0"><span class="i">03</span>Cho thấy bạn hiểu họ</div>
+    <div data-tip="Chạy theo deadline — “còn 9 ngày là Ngày của Mẹ, mà hàng làm theo đơn”." tabindex="0"><span class="i">04</span>Chốt đơn theo dịp — đặt trước ngày X</div>
+    <div data-tip="Giữ người đã mất ở bên. Mất thú cưng, tưởng nhớ người thân. Cảm xúc mạnh nhất ngành quà tặng." tabindex="0"><span class="i">05</span>Kỷ vật</div>
+    <div class="sel" data-tip="Quay theo POV người mua. Họ là nhân vật chính đi tặng, không phải người ngoài đứng nhìn." tabindex="0"><span class="i">06</span>POV: bạn là người tặng</div>
+    <div data-tip="Không chỉ in tên: nét chữ tay thật, tranh con nít vẽ, dấu chân thú cưng, công thức nấu ăn." tabindex="0"><span class="i">07</span>Cá nhân hoá sâu hơn tên</div>
+    <div data-tip="“Tưởng nó rẻ tiền lắm. Mở ra mới biết.” Đánh trúng nỗi lo lớn nhất khi mua hàng in theo đơn." tabindex="0"><span class="i">08</span>Mở hộp khoe chất lượng</div>
+    <div data-tip="Gọi thẳng người nhận — “dành cho bà hay bảo đừng mua gì cho bà”." tabindex="0"><span class="i">09</span>Gọi đúng 'quan hệ'</div>
+    <div data-tip="Kể chuyện trước, cuối phim mới ra sản phẩm. Kiểu quảng cáo Thái. Tốn nhất, rủi ro nhất." tabindex="0"><span class="i">10</span>Phim ngắn cảm xúc</div>
+    <div data-tip="Cho phép tự mua cho mình. Người mua khác, tâm lý mua cũng khác." tabindex="0"><span class="i">11</span>Mua cho mình</div>
+    <div data-tip="“5 món quà khiến bà lặng người.” Gom nhiều sản phẩm một lúc để làm ấm tệp lạnh — đổi lời hứa cảm xúc theo món: bật cười, lặng người, hay giữ mãi không rời tay." tabindex="0"><span class="i">12</span>Dạng list gợi ý quà</div>
+  </div>
+  <p class="src">Nguồn:<a href="https://docs.google.com/document/d/1rCt4W2x1f72tYpHIgHyXV-82xNveBTrX4i8RIEJAp70/edit" target="_blank" rel="noopener">Video Ad Decomposition</a>§ “Angle library” — tài liệu nghiên cứu nội bộ, bóc tách video ads quà tặng thành các phần để test (xem mục Nguồn cuối trang).</p>
+  <div class="why">
+    <div><b>Giữ · 01 · 02 · 06</b><p>Ba đòn bẩy khác hẳn:<b>01</b>test món đồ,<b>02</b>test cảm xúc,
+    <b>06</b>test người mua. Trải đều, không phải ba cách nói một ý.</p></div>
+    <div><b>Cả 3 sản phẩm đều chạy được</b><p>Mỗi concept chạy y hệt trên suncatcher, fleece blanket và fridge magnet. Như vậy
+    mới so được kết quả.</p></div>
+  </div>
+  <div class="why out">
+    <div><b>Loại · 04 · 05</b><p>Dính chặt một sản phẩm. Suncatcher không có deadline, còn tưởng nhớ thì chỉ hợp suncatcher. Không cái nào chạy đều ở cả ba.</p></div>
+    <div><b>Loại · 03 · 07</b><p>Cùng cơ chế với 01, chỉ đổi chữ hoặc đẩy mạnh hơn — test nữa là đo lại đúng một thứ. 07 để dành cho vòng biến thể của mẫu thắng.</p></div>
+    <div><b>Loại · 08</b><p>Đây là proof, không phải ham muốn. Để dành Phase 2 và retarget, lúc khách mới thật sự lo chuyện đó.</p></div>
+    <div><b>Loại · 09</b><p>Nó là cách mở đầu chứ không phải một ý tưởng, nên gộp luôn vào hook 2.</p></div>
+    <div><b>Loại · 10 · 11 · 12</b><p>Phim ngắn tốn nhất mà độ hợp chỉ ở mức trung bình; tự mua là tệp khác hẳn; dạng list trải nhiều sản phẩm nên không chạy riêng từng cái được.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="hd"><span class="n">04</span><h2>Một concept dựng được nhiều kiểu</h2></div>
+  <p class="def"><b>Concept là <u>lý do mua</u>; bản dựng là <u>cách kể lý do đó</u>.</b> Mỗi concept có vô số cách dựng — mình chỉ chạy được một. Nên khi một mẫu thua, chưa biết là concept sai hay bản dựng dở.</p>
+  <div class="why">
+    <div><b>Quy tắc · Tắt ad, không tắt concept</b><p>Một mẫu thua thì tắt mẫu đó. Concept chỉ bị loại sau khi <b>2–3 bản dựng khác nhau</b> đều thua.</p></div>
+    <div><b>Giảm nhiễu · Khoá mọi thứ trừ concept</b><p>Ba concept dùng chung khung xương phần thân, thời lượng, chuẩn craft, offer và CTA. Khác nhau đúng một chỗ.</p></div>
+    <div><b>Brief 12 trường là để chốt bản dựng</b><p>Ghi sẵn nhịp cắt, voice, proof, chữ trên màn — để hai người dựng cùng một concept không ra hai phim khác nhau.</p></div>
+    <div><b>Phân biệt ý tưởng mới với bản dựng mới</b><p>Chạm vào <b>lý do mua khác</b> → concept mới. Vẫn lý do đó nhưng kể kiểu khác → chỉ là bản dựng khác.</p></div>
+  </div>
+  <p class="note" style="margin-top:.8rem">Giới hạn phải chấp nhận: ngân sách này không tách được “concept sai” với “dựng dở”. Nên Phase 1 là vòng <b>tìm giả thuyết</b>, không phải vòng kết án concept.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">05</span><h2>Khung dựng nội dung từ một concept</h2></div>
+  <p class="def">Mỗi bước là <b>chọn từ một danh sách đóng</b>, không phải nghĩ ra từ hư không. Nhờ vậy lúc đọc kết quả luôn truy được lựa chọn nào đẻ ra mẫu nào — và hai người cùng dựng một concept thì ra hai phim giống nhau.</p>
+  <div class="steps">
+    <div class="step"><h4>Chốt lý do mua</h4><div class="pick"><i>chọn 1 trong 12 concept</i> Concept quy định <b>vì sao người ta mua</b>. Mọi thứ sau đây phải phục vụ đúng lý do đó.</div></div>
+
+    <div class="step"><h4>Chốt người mua và người nhận</h4><div class="pick"><i>người mua × người nhận</i>
+      <span class="opt">con đã lớn</span><span class="opt">cháu</span><span class="opt">vợ/chồng</span><span class="opt">bạn thân</span><span class="opt">người đến chia buồn</span>
+      × <span class="opt">bà</span><span class="opt">mẹ</span><span class="opt">bố</span><span class="opt">ông</span><span class="opt">thú cưng đã mất</span>
+      <br>Người mua mới là người xem ads. Người nhận là người có tên trên sản phẩm.</div></div>
+
+    <div class="step"><h4>Chọn structure</h4><div class="pick"><i>3 khung dựng sẵn — chọn theo sản phẩm, không theo sở thích</i>
+      <b>A · Dẫn bằng phản ứng</b> — mở ngay bằng cảnh người nhận phản ứng, cảnh hiện tên đặt ở giữa phim.
+      <i style="text-transform:none;letter-spacing:0;font-size:.78rem;margin:.2rem 0 .5rem">Dùng khi sản phẩm in tên lên và nhìn thấy rõ trên video.</i>
+      <b>B · Xây cảm xúc</b> — mở bằng mối quan hệ, sản phẩm xuất hiện muộn, dẫn bằng giọng đọc.
+      <i style="text-transform:none;letter-spacing:0;font-size:.78rem;margin:.2rem 0 .5rem">Dùng khi sản phẩm là một khối chữ, quay lên không đọc được nên không hiện tên bằng hình được.</i>
+      <b>C · Demo cá nhân hoá</b> — quay màn hình lúc khách tự điền tên.
+      <i style="text-transform:none;letter-spacing:0;font-size:.78rem;margin:.2rem 0 0">Chỉ dùng cho retarget, không dùng cho tệp lạnh.</i></div></div>
+
+    <div class="step"><h4>Điền từng nhịp theo mốc giây của khung</h4><div class="pick"><i>ví dụ khung A · 30 giây</i>
+      0–2s mở bằng phản ứng · 2–6s bối cảnh (ai, dịp gì) · 6–12s <b>hiện tên</b>, chữ rõ, giữ lâu ·
+      12–20s phản ứng trọn vẹn · 20–27s bằng chứng + offer · 27–30s CTA.
+      <br><b>Cảnh hiện tên đặt ở giữa</b>, không để cuối — còn thời lượng cho phản ứng lúc người xem đông nhất.</div></div>
+
+    <div class="step"><h4>Chọn proof và đặt vào đâu</h4><div class="pick"><i>chọn 1 trong 5, theo thứ hạng</i>
+      <span class="opt on">1 · phản ứng thật</span><span class="opt">2 · chi tiết cá nhân hoá</span><span class="opt">3 · số lượng đã bán</span><span class="opt">4 · ảnh khách thật</span><span class="opt">5 · cận cảnh tay nghề</span>
+      <br>Tệp lạnh dẫn bằng 1 hoặc 3. Retarget dẫn bằng 4.</div></div>
+
+    <div class="step"><h4>Viết 2 hook trên cùng phần thân</h4><div class="pick"><i>chọn từ 9 chiêu ở mục 06</i>
+      Phase 1 khoá cứng: <span class="opt on">hiện tên</span> đấu <span class="opt on">gọi mối quan hệ</span>.
+      <b>Bắt buộc:</b> 3 giây đầu phải lộ ra đang bán món quà gì.</div></div>
+
+    <div class="step"><h4>Điền craft — toàn số, không cảm tính</h4><div class="pick"><i>4 trường bắt buộc</i>
+      Pacing <span class="opt">1,5s</span><span class="opt on">5s</span><span class="opt">theo nhạc</span><span class="opt">theo tiến trình</span>
+      · Giọng <span class="opt on">người thật</span><span class="opt">nhạc nền ấm</span><span class="opt">ASMR</span>
+      · Thời lượng <span class="opt">6–15s</span><span class="opt on">15–30s</span>
+      · Chữ trên màn: luôn đọc được khi tắt tiếng.</div></div>
+
+    <div class="step"><h4>Offer và CTA lấy bản chuẩn</h4><div class="pick"><i>Phase 1 khoá, không đem test</i>
+      CTA: <span class="opt on">“Làm một cái cho họ”</span> · nút Meta: <span class="opt on">Shop Now</span>.</div></div>
+
+    <div class="step"><h4>Kiểm tra sàng lọc trước khi quay</h4><div class="pick"><i>không qua thì viết lại</i>
+      Tắt tiếng, xem 3 giây đầu: <b>có biết đang bán món quà gì không?</b> Không biết → click về sẽ không được lọc (mục 09).</div></div>
+  </div>
+  <p class="note" style="margin-top:.9rem">Đầu ra là bản brief 12 trường — quay được luôn, và mọi trường đều
+  truy ngược được về một lựa chọn ở trên.</p>
+
+  <h3 class="exh">Kịch bản lên hình · cả ba sản phẩm · cùng concept 01</h3>
+  <div class="tw"><table class="ex">
+    <thead><tr><th>Diễn biến</th><th><a class="plink" href="https://madejustforyou.net/products/personalized-dog-memorial-suncatcher-breed-name" target="_blank" rel="noopener">Suncatcher ↗</a></th><th><a class="plink" href="https://madejustforyou.net/products/personalized-to-my-granddaughter-blanket-from-grandma?variant=50306809659749" target="_blank" rel="noopener">Fleece blanket ↗</a></th><th><a class="plink" href="https://madejustforyou.net/products/personalized-grandma-grandkids-hugging-fridge-magnet" target="_blank" rel="noopener">Fridge magnet ↗</a></th></tr></thead>
+    <tbody>
+      <tr><td class="f">Mở đầu</td>
+        <td><span class="ts">0–2s</span>Close-up mặt ông Max, đứng im bên cửa sổ</td>
+        <td><span class="ts">0–3s</span>Bà ngồi viết thư, giọng bà đọc dòng đầu</td>
+        <td><span class="ts">0–2s</span>Bà mở tủ lạnh rồi dừng lại</td></tr>
+      <tr><td class="f">Dựng cảnh</td>
+        <td><span class="ts">2–6s</span>Nhà trống, bát ăn của Max vẫn để nguyên</td>
+        <td><span class="ts">3–10s</span>Các cột mốc cuộc đời cháu gái: tốt nghiệp, dọn nhà, khóc một mình</td>
+        <td><span class="ts">2–5s</span>Cháu gái đứng sau lưng bà, cười</td></tr>
+      <tr><td class="f">Show sản phẩm</td>
+        <td><span class="ts">6–12s</span>Ánh nắng xuyên qua kính, tên Max và hình chó hiện lên tường</td>
+        <td><span class="ts">10–16s</span>Bà trải chăn ra, đọc to dòng chữ: <b>“This old girl will always have your back”</b></td>
+        <td><span class="ts">5–9s</span>Close-up nam châm, đủ tên bốn người cháu</td></tr>
+      <tr><td class="f">Phản hồi</td>
+        <td><span class="ts">12–17s</span>Ông ngồi xuống, đưa tay chạm vào vệt sáng</td>
+        <td><span class="ts">16–24s</span>Cháu gái đọc đến dòng đó rồi nghẹn lại</td>
+        <td><span class="ts">9–13s</span>Bà sờ từng cái tên trên nam châm</td></tr>
+      <tr><td class="f">Chốt + CTA</td>
+        <td><span class="ts">17–20s</span>Close-up tấm kính treo bên cửa sổ</td>
+        <td><span class="ts">24–30s</span>Cháu gái quấn chăn quanh người</td>
+        <td><span class="ts">13–15s</span>Bà đóng tủ lạnh rồi lại mở ra nhìn</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3 class="exh">Thông số dựng</h3>
+  <div class="tw"><table class="ex">
+    <thead><tr><th>Fields</th><th><a class="plink" href="https://madejustforyou.net/products/personalized-dog-memorial-suncatcher-breed-name" target="_blank" rel="noopener">Suncatcher ↗</a></th><th><a class="plink" href="https://madejustforyou.net/products/personalized-to-my-granddaughter-blanket-from-grandma?variant=50306809659749" target="_blank" rel="noopener">Fleece blanket ↗</a></th><th><a class="plink" href="https://madejustforyou.net/products/personalized-grandma-grandkids-hugging-fridge-magnet" target="_blank" rel="noopener">Fridge magnet ↗</a></th></tr></thead>
+    <tbody>
+      <tr><td class="f">Hook 1 · name shown</td>
+        <td class="en">“That's not a generic dog. That's his actual breed — and his name.”</td>
+        <td class="en">“I'm 74. I wrote her a letter she can wrap herself in.”</td>
+        <td class="en">“Four grandkids. All four names. One magnet.”</td></tr>
+      <tr><td class="f">Hook 2 · relationship</td>
+        <td class="en">“We still leave the window open for him.”</td>
+        <td class="en">“She won't read my texts. She'll read this.”</td>
+        <td class="en">“Grandma opens that fridge 20 times a day.”</td></tr>
+      <tr><td class="f">Proof</td><td>Tên Max và giống chó hiện rõ</td><td>Phản ứng thật, ở giây 16–24</td><td>Đủ tên các cháu hiện rõ</td></tr>
+      <tr><td class="f">Pacing</td><td class="n">Mỗi cảnh ~5 giây</td><td class="n">Mỗi cảnh ~5 giây</td><td class="n">Đổi cảnh theo nhịp nhạc</td></tr>
+      <tr><td class="f">Voice</td><td>Nhạc nền, không lời</td><td>Giọng bà, người thật</td><td>Nhạc nền vui, không lời</td></tr>
+      <tr><td class="f">Length</td><td class="n">20 giây</td><td class="n">30 giây</td><td class="n">15 giây</td></tr>
+      <tr><td class="f">Concept · Offer · CTA</td><td colspan="3" class="same">Cả ba dùng chung: concept 01 · offer bản chuẩn · CTA “Làm một cái cho họ” — đó là điều kiện để so được</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note" style="margin-top:.7rem"><b>Max</b> là tên đặt tạm — thay bằng tên thật lúc quay. Lời thoại và chữ trên sản phẩm để nguyên tiếng Anh vì ads chạy cho người mua Mỹ.</p>
+  <p class="note" style="margin-top:.7rem">Đổi <b>một</b> ô trong bảng này là ra một bản dựng khác của cùng concept. Đổi ô <b>Concept</b> mới là sang concept khác.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">06</span><h2>Hook — chọn 2 trong 9</h2><span class="count">9 cách mở → 2</span></div>
+  <p class="def"><b>Hook là 0.5–3 giây đầu:</b> khung hình mở đầu cộng chữ trên màn hình. Test hook là giữ nguyên cả phim, chỉ đổi mỗi đoạn mở. Hai đoạn mở đem ra đấu: <b>Hook 1 — hiện tên</b> (đối chứng, cách cả thị trường đang làm) đấu với <b>Hook 2 — gọi mối quan hệ</b> (biến thể, giả thuyết của mình).</p>
+  <div class="tier t1">
+    <h3>T1 <em>— hợp hàng quà tặng nhất</em></h3>
+    <div class="lib">
+      <div class="sel" data-tip="Mở bằng sản phẩm còn trống, tên hiện lên ngay giây đầu tiên." tabindex="0">Mở bằng cảnh hiện tên <span class="map">= Hook 1</span></div>
+      <div data-tip="Vào thẳng giọt nước mắt hoặc tiếng nấc, chưa kể gì hết." tabindex="0">Mở thẳng bằng phản ứng</div>
+      <div data-tip="Mở bằng áp lực thời gian — “còn 6 ngày là Ngày của Mẹ mà làm mất 5 ngày”." tabindex="0">Mở bằng dịp / deadline</div>
+    </div>
+  </div>
+  <div class="tier">
+    <h3>T2 <em>— chung chung nhưng vẫn dùng được</em></h3>
+    <div class="lib">
+      <div class="sel" data-tip="Mở bằng cách gợi nhắc mối quan hệ, chứ đừng gọi tên cụ thể — “bà của bạn”." tabindex="0">Mở bằng mối quan hệ <span class="map">= Hook 2</span></div>
+      <div data-tip="Đánh thẳng vào cảm xúc thật của người xem." tabindex="0">POV / cảm xúc đồng cảm</div>
+      <div data-tip="Mở bằng số liệu — “món quà 10.000 người bà đã nhận”. Kèm theo đó là lời hứa về cảm xúc: cười, xúc động, hoặc trân trọng." tabindex="0">Bằng chứng số đông</div>
+      <div data-tip="Mở bằng câu hỏi gây tò mò — “ai ngờ một cái fridge magnet tủ lạnh lại khiến bà đứng đó cả phút”." tabindex="0">Gợi tò mò</div>
+    </div>
+  </div>
+  <div class="tier">
+    <h3>T3 <em>— xếp thấp, ngược mạch cảm xúc</em></h3>
+    <div class="lib">
+      <div data-tip="Mở bằng số liệu hoặc một sự thật bất ngờ. Kéo người xem vào suy nghĩ." tabindex="0">Số liệu / phản biện</div>
+      <div data-tip="Mở bằng vấn đề. Hợp với các sản phẩm chức năng, không hợp với sản phẩm cảm xúc." tabindex="0">Nêu vấn đề</div>
+    </div>
+  </div>
+  <p class="src">Nguồn: <a href="https://docs.google.com/document/d/1rCt4W2x1f72tYpHIgHyXV-82xNveBTrX4i8RIEJAp70/edit" target="_blank" rel="noopener">Video Ad Decomposition</a> § “Hook tactics”.</p>
+  <div class="why">
+    <div><b>Giữ · Hook 1 và Hook 2</b><p>Vì hai cái này ngược nhau. <b>Hook 1</b> hiện tên — cách cả thị
+    trường đang làm, nên lấy làm đối chứng. <b>Hook 2</b> gọi mối quan hệ. Một cái tên hiện lên gần như vô
+    nghĩa nếu người xem không có ai để liên hệ tới — mà người xem ở đây là <b>người đi tặng</b>, không phải
+    người được in tên. Câu hỏi thật, trả lời được.</p></div>
+    <div><b>Chỉ 2 nhánh</b><p>Test hook là đổi đúng một biến. Thêm nhánh nữa là chia nhỏ ngân sách tới mức
+    không nhánh nào đủ số liệu để kết luận.</p></div>
+  </div>
+  <div class="why out">
+    <div><b>Loại · Mở bằng phản ứng</b><p>Đã nằm sẵn trong concept 02. Test thêm ở tầng hook là trộn hook với
+    concept, sau không tách ra được.</p></div>
+    <div><b>Loại · Dịp / deadline</b><p>Suncatcher không có deadline nên không chạy đủ cả ba sản phẩm.</p></div>
+    <div><b>Để dành · POV · Số đông · Tò mò</b><p>Đều dùng được. Để cho vòng đổi hook của mẫu thắng, lúc chạy
+    10–20 đoạn mở trên cùng một phần thân đã được chứng minh.</p></div>
+    <div><b>Loại · Nhóm T3</b><p>Số liệu, phản biện, nêu vấn đề đều kéo người xem vào lý trí — ngược hẳn mạch
+    cảm xúc của một quyết định mua quà.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="hd"><span class="n">07</span><h2>Ráp lại: chạy tất cả bao nhiêu mẫu</h2></div>
+  <div class="combo">
+    <div class="box"><b>12</b><span>Concept</span></div><span class="op">×</span>
+    <div class="box"><b>9</b><span>Hook</span></div><span class="op">=</span>
+    <div class="box"><b>108</b><span>Cách ghép</span></div><span class="op">→</span>
+    <div class="box"><b>3×2</b><span>Chốt lại</span></div><span class="op">=</span>
+    <div class="box"><b>6</b><span>Mẫu/sản phẩm</span></div><span class="op">×</span>
+    <div class="box"><b>3</b><span>Sản phẩm</span></div><span class="op">=</span>
+    <div class="box" style="border-color:var(--brass)"><b>18</b><span>Ads Phase 1</span></div>
+  </div>
+  <p class="note" style="margin-top:.9rem">Ba sản phẩm chạy đúng 6 mẫu giống hệt nhau. Nhờ vậy khi một mẫu
+  thắng, mình biết là <b>vai trò đó thắng</b> chứ không phải sản phẩm đó thắng.</p>
+  <div class="matrix" style="margin-top:.9rem">
+    <div class="h">Vai trò</div><div class="h"><a class="plink" href="https://madejustforyou.net/products/personalized-dog-memorial-suncatcher-breed-name" target="_blank" rel="noopener">Suncatcher ↗</a></div><div class="h"><a class="plink" href="https://madejustforyou.net/products/personalized-to-my-granddaughter-blanket-from-grandma?variant=50306809659749" target="_blank" rel="noopener">Fleece blanket ↗</a></div><div class="h"><a class="plink" href="https://madejustforyou.net/products/personalized-grandma-grandkids-hugging-fridge-magnet" target="_blank" rel="noopener">Fridge magnet ↗</a></div>
+    <div class="s">C1 · Cá nhân hoá<small>concept 01</small></div>
+    <div>Tên Max và hình giống chó hiện lên tường</div><div>Bà đọc to lá thư in kín mặt chăn</div><div>Đủ tên bốn đứa cháu trên một cái nam châm</div>
+    <div class="s">C2 · Phản ứng<small>concept 02</small></div>
+    <div>Anh ngồi lặng khi cả phòng tràn màu nắng</div><div>Cháu gái đọc tới đúng dòng đó rồi nghẹn lại</div><div>Bà đóng tủ lạnh rồi lại mở ra nhìn</div>
+    <div class="s">C3 · Đổi người mua<small>concept 06</small></div>
+    <div>Người đến chia buồn mua tặng, không phải chủ chó tự mua</div><div>Cháu gái mua tặng bà, không phải bà mua tặng cháu</div><div>Cháu mua tặng, không phải con gái bà mua</div>
+    <div class="s">Hook 1 · Hiện tên<small>đối chứng</small></div><div class="span3">Hiện tên lên màn hình ngay giây đầu — đúng cách cả thị trường đang làm</div>
+    <div class="s">Hook 2 · Mối quan hệ<small>biến thể</small></div><div class="span3">Gọi mối quan hệ thay vì hiện tên — “bà của bạn”</div>
+  </div>
+</section>
+
+<section>
+  <div class="hd"><span class="n">08</span><h2>Phase 1 · ngưỡng tắt và đi tiếp</h2></div>
+  <div class="meters">
+    <div class="meter">
+      <div class="top"><span>Hook rate — 3 giây</span><b>tắt <18% · mốc đỏ <21% · đi tiếp ≥28%</b></div>
+      <div class="track">
+        <div class="zone k" style="width:45%"></div><div class="zone p" style="width:30%"></div>
+        <div class="tick t0" style="left:52.5%"></div><div class="tick" style="left:70%"></div>
+      </div>
+      <div class="mlabels"><span>0%</span><span>20%</span><span>40%</span></div>
+    </div>
+    <div class="meter">
+      <div class="top"><span>Link CTR</span><b>tắt <1.0% · mốc đỏ <0.5% · đi tiếp ≥2.5%</b></div>
+      <div class="track">
+        <div class="zone k" style="width:25%"></div><div class="zone p" style="width:37.5%"></div>
+        <div class="tick t0" style="left:12.5%"></div><div class="tick" style="left:62.5%"></div>
+      </div>
+      <div class="mlabels"><span>0%</span><span>2%</span><span>4%</span></div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:.8rem"><b>Mốc đỏ</b> = tắt ngay, không cần chờ đủ mẫu. Hai mốc còn lại chỉ đọc khi đã đủ lượt hiển thị và phân phối đã ổn định — không tính theo ngày. Hold rate
+  chỉ dùng để bắt bệnh, không dùng để tắt ads. <b>Đạt hai ngưỡng trên vẫn chưa đủ để đi tiếp</b> — còn phải qua
+  cổng ý định ở mục 07:</p>
+  <div class="quad" style="margin-top:.7rem">
+    <div><b>Hook cao · hold thấp</b><span class="act">Làm lại đoạn giữa</span></div>
+    <div><b>Hook cao · hold cao</b><span class="act go">Giữ, chạy tiếp</span></div>
+    <div><b>Hook thấp · hold thấp</b><span class="act no">Đổi concept</span></div>
+    <div><b>Hook thấp · hold cao</b><span class="act">Làm lại 1.5 giây đầu</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="hd"><span class="n">09</span><h2>Xem nhiều ≠ sẽ mua</h2></div>
+  <p class="def"><b>Hook rate và CTR đo sự chú ý, không đo ý định mua.</b> Phim ngắn MJ4U-111 chạy chỉ số
+  tương tác rất tốt nhưng không ra add-to-cart nào — người thích xem drama không phải người muốn mua.</p>
+  <div class="cards">
+    <div class="card"><b>Nguyên nhân 1 · Sự kiện tối ưu</b><p>Phase 1 chạy tối ưu landing page view, nên Meta đi
+    tìm người hay bấm chứ không phải người hay mua. Đổi creative không sửa được cái này.</p></div>
+    <div class="card"><b>Nguyên nhân 2 · Hook không sàng lọc</b><p>Gợi tò mò mà không cho biết đang bán gì thì
+    click về không được lọc.</p></div>
+    <div class="card"><b>Nguyên nhân 3 · Phim là giải trí</b><p>Sản phẩm ra ở mốc 60% thì người xem không bao
+    giờ ghi nhận “đây là món mình mua được”.</p></div>
+  </div>
+  <div class="rulebox">
+    <p><b>Hook rate là điều kiện CẦN, không phải điều kiện ĐỦ.</b> Hook thấp là chắc chắn chết. Hook cao thì
+    chưa chứng minh được gì. Dùng để <b>loại</b>, không dùng để <b>chọn</b>.</p>
+  </div>
+  <div class="why" style="margin-top:.9rem">
+    <div><b>Vá 1 · Hook phải sàng lọc</b><p>Trong 3 giây đầu phải lộ ra đang bán món quà gì. Kể cả bản cảm
+    xúc. Đây là ràng buộc bắt buộc trong brief, không tốn thêm tiền.</p></div>
+    <div><b>Vá 2 · Ghi LPV→ATC ngay từ Phase 1</b><p>Miễn phí, lấy từ traffic đang mua sẵn. Không đủ power để so
+    hai mẫu, nhưng đủ để bắt ca “xem đông mà không ai add-to-cart”.</p></div>
+    <div><b>Vá 3 · Cổng kép khi đi tiếp</b><p>Một mẫu chỉ được đi tiếp khi đạt hook + CTR <b>và</b> LPV→ATC
+    không bằng 0. Đạt hook mà ATC bằng 0 thì gắn cờ “hút nhầm người”.</p></div>
+    <div><b>Vá 4 · Vòng Phase 1.5 kiểm chứng ý định</b><p>Gom 2–3 tổ hợp sống sót, chạy <b>tối ưu theo ATC</b> để
+    Meta đi tìm người mua. Chỉ cần kiểm chứng vài cái nên vừa túi tiền — 18 cái thì không.</p></div>
+  </div>
+  <p class="note" style="margin-top:.8rem">Vòng Phase 1.5 không phải test thành phần, nó là một cái cổng. Nó trả lời
+  “tổ hợp này có kéo được người mua không”, chứ không trả lời “tổ hợp nào tốt hơn”.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">10</span><h2>Ngân sách này chứng minh được gì</h2></div>
+  <div class="ladder">
+    <div class="lrow"><span>Hold 12→30%</span><div class="lbar"><i style="width:7%"></i></div><span class="lval">$2</span></div>
+    <div class="lrow"><span><b>Hook 22→28%</b></span><div class="lbar"><i style="width:31%"></i></div><span class="lval">$21</span></div>
+    <div class="lrow"><span>CTR 1.2→2.5%</span><div class="lbar"><i style="width:38%"></i></div><span class="lval">$44</span></div>
+    <div class="lrow"><span>Add-to-cart 4.6→7.5%</span><div class="lbar"><i class="weak" style="width:70%"></i></div><span class="lval">$1.057</span></div>
+    <div class="lrow"><span><b>Purchase rate 1.4→3%</b></span><div class="lbar"><i class="no" style="width:73%"></i></div><span class="lval">$1.315</span></div>
+    <div class="lrow"><span>Purchase rate 2→2.5%</span><div class="lbar"><i class="no" style="width:96%"></i></div><span class="lval">$13.806</span></div>
+  </div>
+  <p class="budgetline">▲ Cả ngân sách Phase 1 chỉ có $360 — mọi thứ phía trên phải nằm dưới mốc này.</p>
+  <p class="note">Đây là số tiền cần để dám khẳng định chênh lệch là thật chứ không phải nhiễu (tin cậy 95%,
+  power 80%). <b>Hook và hold nằm trong tầm; add-to-cart và purchase rate thì không</b> — nên tiêu chí lựa chọn ở Phase 1 chỉ có thể là chỉ số tương tác, và mọi thứ sâu hơn phải tính ngân sách riêng.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">11</span><h2>Mấy quy tắc để số liệu còn đáng tin</h2></div>
+  <div class="cards">
+    <div class="card"><b>Chia tệp cho đúng</b><p>Muốn kết luận nhân quả thì dùng A/B Test của Meta. Nhét
+    nhiều creative vào cùng một nhóm quảng cáo là để Meta tự chọn tệp cho từng cái — đó là chọn lọc, không
+    phải chia ngẫu nhiên. Scale thì được, kết luận thì không.</p></div>
+    <div class="card"><b>Ghi trước rồi mới chạy</b><p>Ghi rõ định chứng minh gì, nhìn chỉ số nào, cần bao
+    nhiêu mẫu, khi nào thì quyết — trước khi bật ads.</p></div>
+    <div class="card"><b>Mỗi lần đổi một thứ</b><p>Loạt concept ở Phase 1 là để tìm giả thuyết, nó không
+    phải thí nghiệm có đối chứng.</p></div>
+    <div class="card"><b>Không xem giữa chừng</b><p>Cứ soi kết quả liên tục là sẽ tự tạo ra kẻ thắng ảo. Mấy
+    mốc tắt nhanh là để chặn lỗ, không phải để kết luận.</p></div>
+    <div class="card"><b>So với một mốc chuẩn</b><p>Đừng so tất cả với tất cả. 18 ads ra 153 cặp; khoảng 8
+    cặp sẽ “thắng” thuần do may rủi.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="hd"><span class="n">12</span><h2>Cuối cùng biết được gì</h2></div>
+  <div class="verd">
+    <div><span>Hook gọi mối quan hệ hay hook hiện tên ăn hơn?</span><span class="pill y">Biết</span></div>
+    <div><span>Concept nào giữ chân người xem?</span><span class="pill y">Biết</span></div>
+    <div><span>Đổi tệp người mua có ăn hơn không?</span><span class="pill y">Biết</span></div>
+    <div><span>Tổ hợp thắng có kéo được người mua thật không?</span><span class="pill m">Chỉ sau vòng Phase 1.5</span></div>
+    <div><span>Creative nào ROAS tốt nhất?</span><span class="pill n">Không — $1.315+ mỗi cặp</span></div>
+  </div>
+  <p class="note" style="margin-top:.8rem">Điểm yếu đã biết: các ô định nghĩa theo <b>vai trò</b>, nên cách
+  làm ở mỗi sản phẩm vẫn khác nhau — fleece blanket không thể hiện tên kiểu lộ dần, nên C1 của nó phải dẫn bằng giọng
+  đọc. Vì vậy so sánh giữa các sản phẩm sẽ yếu hơn so sánh giữa các ô.</p>
+</section>
+
+<section>
+  <div class="hd"><span class="n">13</span><h2>Cần duyệt</h2></div>
+  <ul class="ask">
+    <li>Duyệt <b>Ma trận cố định</b>— 3 concept × 2 hook, y hệt nhau ở cả ba sản phẩm, không ngoại lệ.</li>
+    <li>Chốt<b>phiên bản chủ lực</b>— 6 in · 80×60 · 10 in, hay chọn bản rẻ rồi upsell.</li>
+    <li>Duyệt<b>$360</b>cho Phase 1, cộng ngân sách<b>vòng Phase 1.5</b>để kiểm chứng ý định trên 2–3 tổ hợp sống sót.</li>
+    <li>Chốt rằng<b>Phase 2 sẽ có kế hoạch riêng</b>với bộ thành phần khác.</li>
+  </ul>
+</section>
+
+<section>
+  <div class="hd"><span class="n">14</span><h2>Nguồn</h2></div>
+  <p class="def">Mọi con số và danh sách ở trên đều lấy từ ba tài liệu nghiên cứu nội bộ. Mở ra xem cách tính và
+  nguồn trích dẫn gốc.</p>
+  <div class="srcbox">
+    <div class="row"><span class="tagn">Sáng tạo</span>
+      <a href="https://docs.google.com/document/d/1rCt4W2x1f72tYpHIgHyXV-82xNveBTrX4i8RIEJAp70/edit" target="_blank" rel="noopener">Video Ad Decomposition & Phase-1 Test Plan ↗</a>
+      <p>Bóc tách video ads quà tặng thành bảy phần, mỗi phần liệt kê các lựa chọn đáng test — chính là 12
+      concept, 9 hook và 6 offer ở trên. Dựng từ dữ liệu chú ý của Meta/Nielsen, nghiên cứu ngành hàng trên
+      Etsy và bóc tách ads đối thủ; mỗi luận điểm đều ghi rõ mức độ tin cậy.</p></div>
+    <div class="row"><span class="tagn">Phương pháp</span>
+      <a href="https://docs.google.com/document/d/11Tfi-J2pmHQVLE4L0oipcKV3J3LWt0PB4ZCeQNeBvE4/edit" target="_blank" rel="noopener">Nền tảng khoa học cho quảng cáo ↗</a>
+      <p>Phần tâm lý học và thống kê đứng sau thiết kế này: vì sao hiện tên gần như vô dụng nếu người xem
+      không có ai để liên hệ tới, vì sao cảnh phản ứng chính là thứ đang bán chứ không phải bằng chứng, và
+      phép tính power quyết định mỗi giai đoạn chứng minh được gì.</p></div>
+    <div class="row"><span class="tagn">Lời lỗ</span>
+      <a href="https://docs.google.com/document/d/1cO05lrK4zm2xnITi_Kmak82m-DNRAyPqHdetUr1X5_8/edit" target="_blank" rel="noopener">Giải đấu Phase 1 — Suncatcher, Fleece blanket, Fridge magnet ↗</a>
+      <p>Kinh tế đơn vị từng phiên bản: giá bán, giá vốn, lãi gộp, ROAS hoà vốn và CPA mục tiêu cho cả mười
+      phiên bản đang bán, kèm ngân sách từng giai đoạn.</p></div>
+  </div>
+</section>
+
+<footer>Duyệt xong: 18 bản brief creative, mỗi sản phẩm 6 bản. — <b>Phase 2 test một bộ thành phần khác hẳn (offer, landing page, giá, upsell) và sẽ có kế hoạch riêng.</b></footer>
+</div>
+</body>
+</html>
