@@ -1,246 +1,269 @@
-# Bóc tách Video Ads & Kế hoạch test Giai đoạn 1 (Meta DTC/ecom, 2026)
+# Video Ad Decomposition & Phase-1 Test Plan (Meta DTC/ecom, 2026)
 
-> 🇬🇧 Bản gốc tiếng Anh: [[video-ad-decomposition-2026]] — bản gốc là nguồn chuẩn, bản Việt dịch theo.
+> 📄 **Google Doc mirror:** https://docs.google.com/document/d/1obX8brgMHnwmV1c4rpeZLkmC-ww7NXA-NC99hO84kaQ/edit
+> *(the Markdown file in this repo is the source of truth; re-import after edits)*
+>
+> 🇻🇳 **Bản tiếng Việt:** https://docs.google.com/document/d/1rCt4W2x1f72tYpHIgHyXV-82xNveBTrX4i8RIEJAp70/edit
 
-Nghiên cứu 2026-09-13. Mục đích: bóc một video ads ngắn thành các phần test được, xếp thứ tự ưu tiên cho
-Giai đoạn 1 (tương tác), và chốt **mỗi sản phẩm nên test bao nhiêu kịch bản video.**
-**[DATA]** = có đo đạc · **[OPINION]** = đồng thuận đáng tin.
+Nghiên cứu 13/09/2026. Mục đích: chia nhỏ video quảng cáo ecom dạng ngắn để test, và xếp hạng các thành phần cho Phase 1.
+(Tương tác), và quyết định **test bao nhiêu kịch bản video cho mỗi sản phẩm.** Nhóm Feeds A (creative) + cái
+Mô hình vận hành creative trong `TESTING-MATRIX-FRAMEWORK.md`. **[DATA]** = số liệu đo được; **[OPINION]** = ý kiến đồng thuận đáng tin cậy.
 
-## Bóc tách — rút ra từ các nguồn (hai góc nhìn khớp nhau)
-- **Trục thời gian (cái gì chạy, theo thứ tự):** **Hook → Body (Chuyện + Bằng chứng) → CTA.**
-  Barry Hott chia thời lượng: 3 giây đầu = kéo chú ý · ~10 giây tiếp = bằng chứng · ~5 giây cuối = kêu gọi hành động.
-- **Các núm vặn để test:** cách các tool phân tích gắn tag cho mọi ad — **Motion** (Hook · Thông điệp/Góc ·
-  Visual/Format · Chân dung người mua) và **creads.io** 6 chiều (Hook · Concept/Góc · Cộng hưởng cảm xúc ·
-  Thiên kiến tâm lý · Câu chữ · Bố cục hình).
+## Phân tích — rút ra từ các nguồn (hai góc nhìn thống nhất)
+Bất kỳ nguồn nào nghiêm túc đều sử dụng một trong hai hoặc cả hai cách này, và chúng bổ trợ cho nhau:
+- **Khung thời gian (diễn biến video):** **Hook → Nội dung (Câu chuyện + Bằng chứng) → CTA.** (Sovran, Barry Hott, Meta).
+  Thời điểm lý tưởng của Hott: 3s đầu = thu hút sự chú ý · ~10s tiếp theo = chứng minh · ~5s cuối = kêu gọi hành động.
+- **Các yếu tố tùy chỉnh (thứ bạn thực sự thay đổi để test):** cách các công cụ phân tích gắn thẻ cho mỗi ads — **Motion**
+  (Hook · Messaging/Angle · Visual/Format · Persona) và **creads.io** 6 chiều (Hook · Concept/Angle ·
+  Sự kết nối cảm xúc · Thiên kiến tâm lý · Cách dùng từ · Bố cục hình ảnh).
 
-**Các thành phần LẶP LẠI ở mọi nguồn (đây mới là bóc tách thật):**
-1. **Hook** (0.5–3 giây: hình + chữ trên màn + có thể có giọng đọc/âm thanh)
-2. **Concept / Góc tiếp cận / Chân dung người mua** (ý tưởng cốt lõi + mức độ nhận biết nó nhắm tới)
-3. **Body / Giữ chân** ("Chuyện + Bằng chứng" — cơ chế thuyết phục)
-4. **Offer** ("offer chính là hook")
-5. **CTA / câu chốt**
-6. **Format / kiểu dựng** (UGC · lifestyle · dựng kỹ; skit/listicle/founder/testimonial/demo)
-7. **Phần craft xuyên suốt:** phụ đề/chữ trên màn (xem không tiếng), nhịp cắt, nhạc/âm thanh
+**Các yếu tố LẶP LẠI trên tất cả các nguồn (phân tích thực tế):**
+1. **Hook** (0.5–3s: hình ảnh + chữ trên màn hình + giọng đọc/âm thanh tùy chọn)
+2. **Concept / Angle / Persona** (ý tưởng chính + giai đoạn nhận diện đối tượng mục tiêu)
+3. **Body / Retention** ("Story + Proof" — cơ chế thuyết phục)
+4. **Offer** ("the offer is the hook")
+5. **CTA / close**
+6. **Format / phong cách sản xuất** (UGC · lifestyle · high-production; skit/listicle/founder/testimonial/demo)
+7. **Cross-cutting craft:** captions/on-screen text (thiết kế cho xem không âm thanh), pacing/cut-frequency, music/sound
 
-> Các nguồn thống nhất về bản chất, chỉ khác độ chi tiết. Dân cấu trúc nói Hook/Chuyện-Bằng chứng/CTA; dân
-> phân tích tách thêm Góc/Format/Offer thành núm vặn riêng. Trục thời gian = Hook→Body→CTA; núm vặn để test =
-> Hook/Góc/Format/Offer/Body/CTA.
+> Các nguồn đều đồng ý về nội dung chính, chỉ khác nhau về mức độ chi tiết: người làm cấu trúc nói về Hook/Proof/CTA;
+> team phân tích thêm Angle/Format/Offer là các yếu tố cần test riêng. Timeline = Hook→Body→CTA; các yếu tố cần test =
+> Hook/Angle/Format/Offer/Body/CTA.
 
-## Bảng theo từng thành phần
-| Thành phần | Ảnh hưởng tới | Các kiểu / khung | Benchmark / số liệu | Test kiểu gì | Nguồn |
+## Per-component table
+| Thành phần | Tác động tới | Các loại / khung | Benchmark / dữ liệu | Cách test | Nguồn |
 |---|---|---|---|---|---|
-| **Hook** (0.5–3s) | **Hook rate** — cửa ải cho mọi thứ phía sau | các chiêu: khoảng trống tò mò · phản biện · số liệu cụ thể · lột xác trước-sau · câu hỏi · gọi tên · bằng chứng số đông · phá mạch · mặt người nhìn thẳng camera. Meta gợi 3 kiểu: hứa giá trị · tò mò/nhá hàng · sốc/số liệu | **[DATA]** tốt 25–35%, 30%+ là scale được, 40%+ là đỉnh, <20% phải làm lại. Đòn bẩy: cho thấy kết quả ngay khung hình đầu (+5–12 điểm), có chuyển động trong 0.5s đầu (+3–8), có chữ trước 0.5s (+4–9), quay dọc 9:16 (+5–15) | **Đổi một biến** — cùng phần thân, N đoạn mở. **Tối thiểu 3 đoạn mở/concept**; chế độ tăng tốc 10–20 hook cho góc đang thắng | motionapp.com · adlibrary.com/posts/hook-rate |
-| **Concept / Góc / Chân dung** | hook + hold + CTR + CPA (nó là cả ý tưởng) | khớp mức nhận biết (chưa biết→tò mò/lột xác; biết vấn đề→đồng cảm; biết giải pháp→bằng chứng; biết sản phẩm→offer) | **[DATA-ish]** từ 4 góc khác nhau trở lên → **creative sống lâu hơn 30–50%** trước khi chai (creads.io) | **chạy nguyên concept khác nhau, KHÔNG đổi một biến.** Gắn tag từng góc để đọc được ai thắng | creads.io · help.motionapp.com |
-| **Body / Giữ chân** | **Hold rate** (15s÷3s), thời lượng xem TB, ThruPlay | PAS · AIDA · BAB · Vấn đề-Giải pháp-Bằng chứng; thủ pháp: demo, testimonial, trước/sau, cắt nhanh, vòng lặp mở, listicle | **[DATA]** hold tốt **40–50%**; ổn 30–40%; <25–35% mà hook mạnh = "treo đầu dê bán thịt chó" | sửa đoạn 5–15s **mà không đụng vào đoạn mở** khi hook ổn mà hold thấp; test kiểu bằng chứng | adlibrary.com/posts/hold-rate · sovran.ai |
-| **Offer** | CTR, CPA, CVR | mua 1 tặng 1 · không rủi ro · bảo hành · giảm giá; phải nhìn thấy ngay trong khung hình | **[OPINION]** sửa offer trước khi sửa ad (Hott) | test như một biến thể thông điệp | Motion offer tag |
-| **CTA** | **link CTR**, CVR | nói rõ bước tiếp theo · gấp/khan hiếm · nhắc lại offer; đưa lên sớm (nhiều người hành động trước khi hết video) | **[DATA-ish]** Meta: "hook + thời lượng xem cao mà click thấp → soi lại CTA" | **Đổi một biến** — cùng ad, đổi CTA/end-card | help.motionapp.com · facebook.com/business |
-| **Format / kiểu dựng** | hook + hold + tuổi thọ | **Với POD quà tặng cá nhân hoá, dùng bảng chấm độ hợp bên dưới** (hiện tên · phản ứng nhận quà · theo dịp · POV đi tặng · testimonial · UGC = CAO). ⚠️ **chuyện founder = THẤP, dạng podcast = BỎ** | **[DATA]** kiểu tự nhiên/UGC ăn đứt kiểu dựng bóng bẩy trên Reels/Stories; đem thông điệp đang thắng dựng lại thành format mới = cách tạo đa dạng số 1 thời Andromeda | test nguyên format mới của một góc đã chứng minh | xem mục POD bên dưới |
-| **Phụ đề / xem không tiếng** | hook + hold | chữ trên màn trước 0.5s; phụ đề | **[DATA]** ~**80–85% lượt xem là tắt tiếng** (Meta); có phụ đề thì thời gian xem tăng ~12% | luôn phải có; test câu chữ overlay như một biến thể hook | facebook.com/business |
-| **Nhịp / chuyển cảnh / thời lượng** | hold | tần suất cắt, kiểu chuyển, độ dài | **[DATA]** Meta: **6–15 giây** là tốt nhất ở Feed/Stories; short-form cắt mỗi 1–2s. **[OPINION] Nhịp cắt tuỳ format, không có một con số chung:** ~**1.5s/cắt** cho format thuyết phục nhanh · ~**5s/cắt** cho UGC/chân thật (cắt nhanh làm nó ra vẻ "được dựng" và mất chất tự nhiên) · cắt theo nhịp nhạc cho unboxing/phản ứng · cắt theo tiến trình cho BTS | test độ dài + cắt bớt 0.5s đầu (+2–5 điểm hook); **phải brief nhịp cắt, đừng để editor tự quyết** | facebook.com/business · bảng khung kịch bản VN |
-| **Giọng / VO & âm thanh** | hook + hold (và *độ tin*) | ai nói (người thật vs AI vs không có) · mạch giọng · nhạc nền · SFX/ASMR | **[DATA]** 80–85% tắt tiếng nghĩa là giọng không gánh được cả ad — nhưng nó quyết định 15–20% có bật tiếng, và nó là toàn bộ cơ chế cho sản phẩm nhiều chữ không thể hiện tên bằng hình. **[OPINION]** quy định theo format: phản ứng/unboxing = nhạc ấm + cảm xúc thật · UGC = giọng điện thoại tự nhiên · so sánh = giọng phân tích + SFX · BTS = giọng tâm sự thật + ASMR thật · xây cảm xúc = **giọng người thật, tuyệt đối không dùng giọng máy** | brief nó như một trường bắt buộc; chỉ test như một trục khi concept dẫn bằng giọng | bảng khung kịch bản VN · bảng xếp hạng bằng chứng POD |
+| **Hook** (0.5–3s) | **Hook rate** — yếu tố quyết định mọi thứ phía sau | tactics: tạo sự tò mò · đi ngược lại số đông · số liệu cụ thể · thay đổi/trước-sau · câu hỏi · kêu gọi · bằng chứng xã hội · phá vỡ khuôn mẫu · góc nhìn POV, tập trung vào khuôn mặt+ánh mắt. Meta chia 3 loại: giá trị hứa hẹn · gợi ý/teaser · gây sốc/thống kê | **[DATA]** tốt là 25–35%, trên 30% có thể scale, trên 40% là xuất sắc, dưới 20% cần làm lại (AdLibrary/Triple Whale/hawky thống nhất). Các yếu tố ảnh hưởng: payoff xuất hiện ở khung hình đầu tiên (+5–12pt), chuyển động trong 0.5s đầu (+3–8), text hiển thị trước 0.5s (+4–9), tỷ lệ khung hình 9:16 (+5–15) | **OFAT** — giữ nguyên body, thay đổi opener. **Tối thiểu ≥3 opener/concept**; test nhanh 10–20 hook/angle chiến thắng | motionapp.com/blog/best-dtc-meta-ad-hooks-2025 · adlibrary.com/posts/hook-rate |
+| **Concept / Angle / Persona** | hook + hold + CTR + CPA (toàn bộ ý tưởng) | khớp với giai đoạn nhận diện (chưa biết → tò mò/thay đổi; biết vấn đề → thấu hiểu; biết giải pháp → bằng chứng; biết sản phẩm → ưu đãi) | **[DATA-ish]** 4+ góc độ khác biệt → **tuổi thọ creative dài hơn 30–50%** trước khi bị chai (creads.io) | **toàn bộ các concept đa dạng, KHÔNG OFAT.** Gắn thẻ mỗi concept theo góc độ để dễ dàng xác định concept chiến thắng | creads.io/ad-creative-performance-guide · help.motionapp.com AI-tagging |
+| **Body / Retention** ("Story+Proof") | **Hold rate** (15s÷3s), thời gian xem trung bình, ThruPlay | PAS · AIDA · BAB · Vấn đề-Giải pháp-Bằng chứng; các yếu tố: demo, lời chứng thực, trước/sau, cắt nhanh, mở vòng lặp, danh sách | **[DATA]** hold tốt **40–50%** (Motion); ổn định 30–40%; <25–35% với hook mạnh = "lừa đảo" | sửa phần giữa 5–15s **mà không chạm vào opener** khi hook ổn/hold thấp; test loại bằng chứng | adlibrary.com/posts/hold-rate · sovran.ai |
+| **Offer** | CTR, CPA, CVR | BOGO/quà tặng · không rủi ro · bảo hành · giảm giá; hiển thị rõ trong khung hình | **[OPINION]** xây dựng lại offer trước khi làm ad (Hott) | test dưới dạng biến thể thông điệp | LinkedIn (Elefante-Smith on Hott) · Motion offer tag |
+| **CTA** | **outbound/link CTR**, CVR | bước tiếp theo rõ ràng · tính cấp bách/hiếm có · nhắc lại ưu đãi; đặt lên trước (nhiều người hành động trước khi hết) | **[DATA-ish]** Meta: "hook+watch cao, click thấp → tập trung vào CTA" | **OFAT** — ad giống nhau, thay đổi CTA/end-card | help.motionapp.com metrics · facebook.com/business/help/188534925073536 |
+| **Format / phong cách sản xuất** | hook + hold + thời lượng | **Đối với POD quà tặng cá nhân hóa, hãy sử dụng danh sách đánh giá phù hợp bên dưới** (reveal · gift-reaction · occasion · POV-giving · testimonial · UGC = CAO). ⚠️ **founder-story = THẤP, podcast = BỎ QUA** (chung chung-DTC, không phù hợp với cửa hàng quà tặng). | **[DATA]** native/UGC luôn thắng thiết kế trau chuốt trên Reels/Stories; tái sử dụng *thông điệp* thắng lợi thành *định dạng* mới = chiến lược đa dạng hóa #1 sau Andromeda | test toàn bộ định dạng mới của một angle đã được chứng minh (đa dạng hóa) | xem phần dành riêng cho POD bên dưới |
+| **Caption / không âm thanh** (cắt chéo) | hook + hold | text trên màn hình sau 0.5s; caption | **[DATA]** ~**80–85% số lượt xem là không có âm thanh** (Meta); caption ↑ thời gian xem ~12% | luôn hiển thị; test nội dung overlay như một biến thể hook | facebook.com/business |
+| **Pacing / chuyển cảnh / độ dài** (cắt chéo) | hold | tần suất cắt, phong cách chuyển cảnh, độ dài | **[DATA]** Meta: **6–15s** tốt nhất trên Feed/Stories; cắt mỗi 1–2s cho nội dung ngắn. **[OPINION] Tốc độ cắt phụ thuộc vào định dạng, không có một con số duy nhất:** ~**1.5s/cut** cho các định dạng thuyết phục nhanh · ~**5s/cut** cho UGC/tính xác thực (cắt nhanh khiến nội dung trông *được sản xuất* và giết chết cảm giác tự nhiên) · cắt theo nhịp điệu cho unboxing/reaction · tăng dần tốc độ cho BTS | test độ dài + cắt 0.5s đầu (+2–5pt hook); **hướng dẫn tốc độ cắt, đừng để cho biên tập viên tự quyết** | facebook.com/business/help/188534925073536 · Bảng khung kịch bản tiếng Việt (xem mẫu brief bên dưới) |
+| **Giọng đọc / VO & âm thanh** (cắt chéo) | hook + hold (và *tính chân thực*) | ai nói (người thật vs AI vs không có) · cung bậc cảm xúc · nhạc nền · SFX/ASMR | **[DATA]** 80–85% không âm thanh có nghĩa là giọng đọc không thể mang toàn bộ quảng cáo — nhưng nó quyết định 15–20% những người *có* nghe, và là cơ chế duy nhất cho các sản phẩm phức tạp cần trình bày bằng chữ | **[OPINION]** chỉ định theo định dạng: reaction/unboxing = nhạc nền ấm áp + cảm xúc chân thật · UGC = giọng nói tự nhiên từ điện thoại · so sánh = phân tích + SFX động · BTS = chia sẻ chân thành + ASMR thật · xây dựng cảm xúc = **giọng đọc của người thật, không dùng giọng tổng hợp** | trình bày chi tiết; chỉ test như một trục khi concept dẫn đầu bởi VO | Bảng khung kịch bản tiếng Việt · xếp hạng proof POD của chúng ta |
 
-## Thứ tự ưu tiên Giai đoạn 1 (tương tác: hook rate, hold rate, CTR)
-Test theo thứ tự:
-1. **Hook — quan trọng nhất, test đầu tiên và nhiều nhất.**
-2. **Concept/Góc** — góc yếu thì hook có hay cũng bị chặn trần.
-3. **Body/Giữ chân** (hold) — chỉ tối ưu khi hook đã qua ngưỡng.
-4. **CTA/Offer** (CTR) — cuối cùng ở tầng tương tác; quan trọng hơn ở Giai đoạn 2.
+## Ưu tiên Phase 1 (tương tác: hook rate, hold rate, CTR)
+Test in this order:
+1. **Hook** – quan trọng nhất, test trước và nhiều nhất.
+2. **Concept/Angle** – angle yếu sẽ làm giảm hiệu quả hook (test hook trong một tập angle nhỏ để validate).
+3. **Nội dung/Giữ chân** (hold) – chỉ tối ưu khi hook đã vượt qua ngưỡng đánh giá.
+4. **CTA/Offer** (CTR) — giữ chân người xem là quan trọng nhất; càng về Phase 2 thì càng quan trọng hơn.
 
-**Bằng chứng cho thấy hook là quan trọng nhất:**
-- **[DATA] Meta + Nielsen: tới 47% giá trị của một chiến dịch video nằm ở 3 giây đầu**; 65% người xem hết 3s sẽ xem tới 10s, 45% tới 30s → 3 giây đầu quyết định toàn bộ phần còn lại.
-- **[DATA]** creative sống qua ngày 21 "gần như đều đạt hook 30%+ ngay lúc launch; cái chết trước ngày 7 launch ở mức 15–20%".
-- **[DATA]** hook là thành phần dao động mạnh nhất: "cùng một phần thân cắt 3 kiểu → hook từ 18% lên 38%". Đó là **lý do** ai cũng test hook nhiều nhất.
-- **[DATA] Google/YouTube: creative chiếm ~50% ROI.**
+**Hook dominance — the evidence:**
+- **[DATA] Meta + Nielsen: có tới 47% giá trị của chiến dịch video được hiển thị trong 3 giây đầu tiên**; 65% người xem 3 giây sẽ xem tới 10 giây, 45% xem tới 30 giây → 3 giây đầu tiên quyết định việc người xem có xem hết video hay không. (facebook.com/business/news/updated-features-for-video-ads)
+- **[DATA]** các creative sống sót sau ngày thứ 21 thường có **hook rate** trên 30% ngay khi ra mắt; còn những creative chết sau 7 ngày thì **hook rate** chỉ từ 15–20% (tập dữ liệu saved-ads của AdLibrary).
+- **[DATA]** yếu tố **hook** có độ biến động cao nhất: "cắt một body giống nhau thành 3 phiên bản → **hook rate** từ 18% đến 38%" (AdLibrary). Đó là *lý do* tại sao mọi người lại test **hook** nhiều nhất.
+- **[DATA] Google/YouTube: creative ≈ 50% của ROAS.**
 
-**Ma trận Hook × Hold (để biết phải sửa gì):**
-- hook thấp / hold thấp → sai concept, thay luôn.
-- **hook cao / hold thấp** → chỉ sửa phần thân.
-- **hook thấp / hold cao** → lời nhất: chỉ làm lại ~1.5 giây đầu (chỉ số nhảy 10–15 điểm).
-- hook cao / hold cao → scale.
+**Phân tích Hook × Hold 2×2 (để ưu tiên công việc):**
+- Hook thấp / Hold thấp → Concept sai, cần thay đổi.
+- **Hook cao / Hold thấp** → Chỉ cần chỉnh lại nội dung chính (body).
+- **Hook rate thấp / Hold rate cao** → ROI cao nhất: chỉ cần làm lại ~1.5s đầu (chỉ số tăng 10–15 điểm).
+- high hook / high hold → scale.
 
-## Một sản phẩm thì test bao nhiêu kịch bản
-**Đồng thuận 2026 = LAI (thời Andromeda):** *chạy nhiều concept khác nhau để TÌM ra mẫu thắng; đổi một biến
-hook để TỐI ƯU và scale nó.* Lấy micro-OFAT làm cách khám phá là lỗi thời (sửa hook lặt vặt "không đủ tạo
-khác biệt" — Phó chủ tịch Meta Matt Steiner). Andromeda thưởng cho **đa dạng + số lượng.**
+## Cần test bao nhiêu concept cho MỘT sản phẩm
+**Dự đoán 2026 = HYBRID (kỷ nguyên Andromeda):** *đa dạng các concept toàn diện để KHÁM PHÁ ra chiến thắng; OFAT đổi hook để
+TỐI ƯU/scale.* Phương pháp micro-OFAT thuần túy để tìm kiếm đã lỗi thời (những chỉnh sửa hook nhỏ "không tạo ra
+"needle" — Anh Matt Steiner, VP của Meta chia sẻ qua Caleb Kruse). Andromeda ưu tiên **đa dạng + số lượng.**
 
-**Loạt đầu tiên nên chạy cho một sản phẩm POD/quà tặng:**
-- **3–4 concept/góc khác hẳn nhau** (ví dụ theo chân dung người nhận: ông bà vs đôi lứa vs thú cưng) — đây là những cú đấm lớn.
-- **× 3 hook mỗi cái** → **≈ 9–12 ads** cho loạt đầu.
-- **Cấu trúc:** 3–5 creative mỗi nhóm quảng cáo (để mỗi cái thoát learning); **~$20–40 mỗi concept** tối thiểu trước khi phán; **chỉ đọc số liệu ngày đã chốt.**
-- **Chấm Giai đoạn 1 bằng:** hook rate (25–35%+), hold rate (40–50%), link CTR → rồi phân luồng theo ma trận hook×hold.
-- **Khi đã có mẫu thắng (chế độ tăng tốc):** **10–20 lần đổi hook** trên phần thân đang thắng + **dựng lại thông điệp đó thành 2–3 format mới**; **làm mới mỗi ~2–3 tuần**.
+**Gợi ý batch đầu tiên Phase-1 cho một sản phẩm POD/quà tặng:**
+- **3–4 concept/angle khác biệt** (ví dụ: chân dung người nhận: ông bà vs cặp đôi vs thú cưng; hoặc các góc độ cảm xúc) — những ý tưởng táo bạo.
+- **× 3 hook cho mỗi concept** (ví dụ: hình ảnh/tạo sự chú ý · vấn đề/cảm xúc · tò mò/kêu gọi) → **≈ 9–12 ads** cho batch đầu tiên.
+- **Structure:** 3–5 creatives mỗi ad set (để đảm bảo thoát khỏi giai đoạn learning); **khoảng $20–40 mỗi concept** là tối thiểu trước khi đánh giá (Motion cần ≥$50/ads để có đủ dữ liệu); **chỉ dùng số liệu settled-day.**
+- **Đánh giá Phase-1 dựa trên:** hook rate (25–35%+), hold rate (40–50%), link CTR → đánh giá dựa trên ma trận hook × hold.
+- **Sau khi tìm được creative chiến thắng (chế độ velocity):** **thay đổi 10–20 hook** trên body thắng, đồng thời **tận dụng message đó để tạo thêm 2–3 format mới**; **refresh sau mỗi ~2–3 tuần** (Andromeda dễ bị 'mệt' quảng cáo).
 
-**Số tham chiếu (đồng thuận dân chạy ads):**
-| Hạng mục | Con số | Nguồn |
+**Các con số tham khảo (theo ý kiến chung của media buyer):**
+| Item | Number | Source |
 |---|---|---|
-| Concept mỗi vòng khám phá | 8–12 concept, 2–3 biến thể mỗi cái, làm mới 2–3 tuần | Segwise |
-| Creative mỗi nhóm quảng cáo | 3–5 (20+ thường phản tác dụng) | AdManage.ai |
-| "Hệ điều hành" creative | 3 góc × 3 format; 6–9 concept/tuần | Salman Munir |
-| Sprint hook | 6–8 hook mỗi offer, các góc khác nhau, trong 48h | Salman Munir |
-| Hook cho góc đang thắng | 10–20 lần đổi trên phần thân thắng | Koro / Savannah Sanchez |
-| Tỷ lệ làm mới vs sửa | ~90% làm mới / ~10% sửa; 2–4 biến thể mỗi test | Dara Denney |
-| Số lượng creative cả tài khoản | ~50–100 biến thể/tháng; 2026 cần gấp ~4 lần so với 2024 | Caleb Kruse (dẫn lại Phó chủ tịch Meta) |
-| Tỷ lệ ra mẫu thắng (kỳ vọng) | ~1–3 mẫu thắng trên 10 creative | AdManage.ai |
+| Số concept mỗi vòng tìm kiếm | 8–12 concept, mỗi concept 2–3 biến thể, refresh sau 2–3 tuần | Segwise (growwithsakib.com) |
+| Số creative mỗi ad set | 3–5 (thường trên 20 lại phản tác dụng) | AdManage.ai |
+| Hệ điều hành (OS) cho creative | 3 angle × 3 format; 6–9 concept/tuần | Salman Munir |
+| Sprint hook | 6–8 hook / offer, các góc độ khác nhau, trong vòng 48h | Salman Munir |
+| Số lượng hook trên mỗi concept thắng (tốc độ) | 10–20 biến thể trên body thắng | Koro / Savannah Sanchez |
+| Tỷ lệ new vs iteration | ~90% mới / ~10% lặp lại; 2–4 biến thể/test; ưu tiên những thay đổi lớn | Dara Denney |
+| Khối lượng creative của tài khoản | ~50–100 biến thể ads/tháng; dự kiến tăng ~4x creative năm 2026 so với 2024 | Caleb Kruse (truyền đạt từ VP Meta) |
+| Tỷ lệ trúng thưởng (kỳ vọng) | ~1–3 winners trên 10 creatives | AdManage.ai |
 
-## 🎁 Điều chỉnh cho POD quà tặng cá nhân hoá
-*Nghiên cứu 2026-09-13, thang độ tin: CHÍNH XÁC (POD cá nhân hoá) → RỘNG HƠN (POD/merch nói chung) →
-CHỐNG CHÁY (DTC chung, có gắn cờ). **Nói thẳng: không có bộ dữ liệu HIỆU SUẤT công khai nào cho video ads
-quà tặng cá nhân hoá** — bậc CHÍNH XÁC là định tính (chiến lược Etsy, cách các brand đang định vị, văn hoá
-video phản ứng nhận quà trên TikTok); mọi con số cứng đều ở tầm POD chung hoặc DTC chung, chỉ mang tính định hướng.*
+## 🎁 Thiết kế POD quà tặng cá nhân hóa (format fit + thư viện angle + hook)
+*Nghiên cứu 13/09/2026, phương án dự phòng: EXACT (POD cá nhân hóa) → RỘNG HƠN (POD/hàng hóa tổng quát) → CUỐI CÙNG
+(DTC chung, được đánh dấu). **Thẳng thắn: không có bộ dữ liệu hiệu suất quảng cáo công khai nào cho video ads quà tặng cá nhân hóa** —
+Bậc EXACT mang tính định tính (chiến lược Etsy, định vị thương hiệu trực tiếp, văn hóa phản ứng quà tặng trên TikTok); tất cả đều dựa trên dữ liệu thực tế
+Các con số là chung cho POD/DTC nói chung, chỉ mang tính chất tham khảo thôi ạ.
 
-### Chấm độ hợp của từng format (cho shop quà tặng cá nhân hoá)
-| Format | Độ hợp | Vì sao | Bậc |
+### Định dạng phù hợp (đánh giá cho cửa hàng quà tặng cá nhân hóa)
+| Format | Fit | Why | Rung |
 |---|---|---|---|
-| **Hiện tên/hiện ảnh** (trống → tên/ảnh hiện ra) | **CAO** | chính việc cá nhân hoá *là* sản phẩm; "cá nhân hoá bán chạy nhất khi được nhìn thấy" | gần CHÍNH XÁC |
-| **Phản ứng nhận quà** (người nhận mở quà và phản ứng) | **CAO** | đây là phần thưởng cảm xúc của ngành hàng; dễ lan tự nhiên | gần CHÍNH XÁC |
-| **Theo dịp / montage mùa vụ** (đặt trước ngày X) | **CAO** | mua quà chạy theo deadline; gấp gáp là cái kích hoạt | CHÍNH XÁC |
-| **POV: bạn là người đi tặng** | **CAO** | biến người mua thành nhân vật chính đi tặng | RỘNG/CHÍNH XÁC |
-| **Testimonial / đánh giá** | **CAO** | dập tắt nỗi nghi "nhìn có rẻ tiền không" của hàng POD | RỘNG HƠN |
-| **UGC mộc** ("tôi đặt cái này cho mẹ…") | **CAO** | tự nhiên, rẻ, dễ chế lại | RỘNG HƠN |
-| **Cá nhân hoá sâu** (nét chữ tay · tranh trẻ con · dấu chân thú cưng · công thức) | **CAO** | ăn đứt đối thủ chỉ in tên; là hành vi tăng nhanh nhất trên Etsy | CHÍNH XÁC |
-| **Unboxing / "xem tôi được tặng gì này"** | **KHÁ CAO** | cho thấy chất in/chất liệu thật | RỘNG/CHÍNH XÁC |
-| **Listicle** ("5 món quà làm bà khóc") | **TRUNG BÌNH** | dễ lướt, gợi tò mò; làm ấm tệp lạnh | RỘNG HƠN |
-| **Phim ngắn cảm xúc dựng kỹ** | **TRUNG BÌNH** | kể chuyện rồi chốt muộn thì thắng ở tầng thương hiệu nhưng tốn và rủi ro — dùng dè | CHÍNH XÁC |
-| **Quay màn hình công cụ cá nhân hoá** | **TRUNG BÌNH** | trả lời "nó có in đúng tên TÔI không?" — hợp retarget hơn tệp lạnh | RỘNG HƠN |
-| **BTS / quy trình làm ra sản phẩm** | **TRUNG BÌNH** | trả lời nỗi lo số 1 của ngành ("có rẻ tiền không") bằng tay nghề thật + ASMR. ⚠️ nhưng cận cảnh tay nghề là **bằng chứng ít cảm xúc nhất (hạng 5)** → **để Giai đoạn 2/retarget, không dùng làm concept tệp lạnh** | RỘNG HƠN |
-| **Lifestyle / skit / demo** | **KHÁ THẤP** | làm chất keo, chặn lướt, nhưng một kỷ vật tĩnh thì chẳng có gì để "demo" | RỘNG HƠN |
-| **Chuyện người sáng lập** | **THẤP** | ⚠️ đồ DTC chung; người mua quà quan tâm cảm xúc của *người nhận*, không quan tâm chuyện khởi nghiệp của bạn | CHỐNG CHÁY |
-| **Dạng podcast** | **BỎ** | ⚠️ DTC chung/info-product; không hợp món quà mua theo cảm xúc bốc đồng | CHỐNG CHÁY |
+| **Hiển thị cá nhân hóa/tùy chỉnh** (trống → tên/ảnh xuất hiện) | **CAO** | chính sự tùy chỉnh *là* sản phẩm; "cá nhân hóa bán chạy nhất khi được nhìn thấy" | gần CHÍNH XÁC |
+| **Phản ứng khi nhận quà** (người nhận mở/phản ứng) | **CAO** | phần thưởng cảm xúc của danh mục; lan tỏa tự nhiên | KHÁ CHÍNH XÁC |
+| **Occasion / seasonal montage** (order-by-date) | **HIGH** | gifting là mua theo dịp lễ, tính khẩn cấp là yếu tố kích hoạt | EXACT |
+| **POV: you're giving the gift** | **HIGH** | tạo cảm giác người mua là người trao tặng, biến họ thành nhân vật chính | WIDER/EXACT |
+| **Testimonial / review** | **HIGH** | giải quyết nỗi lo "sản phẩm POD có rẻ tiền không?" | WIDER |
+| **UGC-raw** ("I ordered this for my mom…") | **HIGH** | tự nhiên, chi phí thấp, dễ tái sử dụng | WIDER |
+| **Hyper-personalization flex** (handwriting · kid's drawing · paw print · recipe) | **CAO** | đánh bại đối thủ bằng cách đề cập tên chung chung; hành vi phát triển nhanh nhất trên Etsy | CHÍNH XÁC |
+| **Unboxing / "look what I got"** | **TRUNG BÌNH - CAO** | thể hiện chất lượng in/vật liệu thực tế | RỘNG HƠN/CHÍNH XÁC |
+| **Listicle** ("5 gifts that'll make grandma cry") | **TRUNG BÌNH** | sự tò mò dễ đọc; làm ấm các tệp khách hàng mới | RỘNG HƠN |
+| **Phim ngắn cảm xúc chất lượng cao** | **TRUNG BÌNH** | câu chuyện với kết quả trả chậm hiệu quả với thương hiệu nhưng tốn kém/rủi ro — sử dụng có chọn lọc | CHÍNH XÁC |
+| **Screen-record của công cụ cá nhân hóa** | **MEDIUM** | trả lời câu hỏi "Nó có thực sự ghi TÊN TÔI không?" — phù hợp retarget hơn là tiếp cận khách hàng mới | WIDER |
+| **BTS / quá trình sản xuất** (sản xuất → đóng gói → vận chuyển) | **MEDIUM** | giải quyết nỗi lo #1 của khách hàng trong ngành ("Sản phẩm có rẻ tiền không?") bằng sự tỉ mỉ thực tế + ASMR. ⚠️ Tuy nhiên, cận cảnh quá trình làm sản phẩm là **proof (bằng chứng) ít cảm xúc nhất (xếp hạng #5)** → **Tài sản cho Stage-2 / retargeting, không phải concept Phase-1 để tiếp cận khách hàng mới** | WIDER |
+| **Lifestyle / skit / demo** | **MED-LOW** | kết nối / thu hút sự chú ý khi lướt feed, nhưng một món quà tĩnh tại khó có thể "demo" được | WIDER |
+| **Câu chuyện người sáng lập** | **LOW** | ⚠️ dạng nội dung chung chung của DTC; người mua quà quan tâm đến cảm xúc của *người nhận*, không phải câu chuyện nguồn gốc của bạn | LAST-RESORT |
+| **Podcast format** | **SKIP** | ⚠️ Loại này thường cho DTC/sản phẩm thông tin, không hợp với quà tặng cảm xúc, bốc đồng | PHƯƠNG ÁN CUỐI CÙNG |
 
-### Thư viện 12 góc tiếp cận — cùng sản phẩm, khác cách chào bán
-1. **"Làm riêng cho họ" — hiện tên lên sản phẩm** *(bất kỳ người nhận nào; cá nhân hoá chính là giá trị)* — gần CHÍNH XÁC.
-2. **Phản ứng bật khóc khi nhận quà** *(mẹ/bà/người yêu; phần thưởng là lòng biết ơn)* — gần CHÍNH XÁC.
-3. **"Cho thấy bạn thật sự để ý đến họ"** *(mẹ/ông bà/vợ chồng)* — CHÍNH XÁC (luận điểm của Etsy).
-4. **Gấp theo dịp / "đặt trước ngày X"** *(Ngày của Mẹ/Cha, Giáng sinh, kỷ niệm)* — CHÍNH XÁC.
-5. **Kỷ vật tưởng nhớ ("giữ họ ở bên")** *(mất thú cưng, tưởng nhớ)* — CHÍNH XÁC (cảm xúc mạnh nhất).
-6. **POV: bạn là người đi tặng** *(đôi lứa, con cái → cha mẹ)* — RỘNG/CHÍNH XÁC.
-7. **Cá nhân hoá sâu hơn cái tên** *(nét chữ tay / tranh trẻ con / dấu chân thú cưng / công thức)* — CHÍNH XÁC.
-8. **Unboxing khoe chất lượng ("chất lượng làm tôi bất ngờ")** *(tệp lạnh còn nghi)* — RỘNG HƠN.
-9. **Gọi đúng tên mối quan hệ ("dành cho bà đã có đủ mọi thứ")** *(người nhận ngách)* — RỘNG HƠN.
-10. **Phim ngắn cảm xúc, sản phẩm chốt muộn (kiểu quảng cáo Thái)** *(gia đình/mẹ; dựng kỹ, rủi ro cao)* — cận CHÍNH XÁC.
-11. **Mua cho chính mình** *(chính người đang lướt; góc "cho phép" ít ai dùng)* — RỘNG HƠN.
-12. **Listicle "những món quà làm họ khóc"** *(người đang tìm gợi ý quà/mua theo mùa)* — RỘNG HƠN.
+### Thư viện Angle (12, tùy chỉnh) — cùng sản phẩm, cách tiếp cận khác nhau
+1. **"Made just for them" — personalization reveal** *(bất kỳ người nhận nào; yếu tố tùy chỉnh là giá trị)* — gần như CHÍNH XÁC.
+2. **Tear-jerk gift reaction** *(mẹ/bà/người yêu; phần thưởng là sự biết ơn)* — GẦN CHÍNH XÁC.
+3. **"She'll know you actually thought about her" (feel truly seen)** *(mẹ/bà/vợ)* — EXACT (luận điểm Etsy).
+4. **Tính cấp thiết dịp lễ / "order by [date]"** *(Ngày của Mẹ/Cha, Giáng sinh, kỷ niệm)* — EXACT.
+5. **Kỷ niệm / món quà lưu giữ ("keep them close")** *(mất thú cưng, tưởng nhớ)* — EXACT (cường độ cảm xúc cao nhất).
+6. **POV: bạn là người tặng** *(các cặp đôi, con cái → bố mẹ)* — WIDER/EXACT.
+7. **Độ cá nhân hóa cực cao** *(chữ viết tay / tranh vẽ của bé / dấu chân thú cưng / công thức nấu ăn)* — CHÍNH XÁC.
+8. **Chứng minh chất lượng qua video unboxing ("chất lượng làm tôi bất ngờ")** *(khách hàng hoài nghi)* — MỞ RỘNG.
+9. **Lời kêu gọi đặc biệt dựa trên mối quan hệ ("dành cho bà ngoại người luôn có tất cả")** *(tệp khách hàng niche)* — MỞ RỘNG.
+10. **Phim ngắn cảm xúc, sản phẩm xuất hiện sau (phong cách quảng cáo Thái Lan)** *(gia đình/mẹ; sản xuất công phu/rủi ro cao)* — GẦN CHÍNH XÁC.
+11. **Gift-for-yourself / self-gifting** *(tự thưởng cho bản thân; góc độ 'xin phép' ít được khai thác)* — Mở rộng đối tượng.
+12. **Listicle "gifts that'll make them cry"** *(dạng bài viết tổng hợp quà tặng khiến người nhận xúc động)* — Mở rộng đối tượng.
 
-### Thư viện hook (3 giây đầu cụ thể: chữ trên màn + khung hình mở)
-- **Hiện tên:** "Xem điều gì xảy ra khi thêm tên bà vào…" (cốc trống → tên các cháu nở ra) · "Cùng một cái áo. Khác hẳn khi đó là tên *của họ*." (chia đôi màn hình: hàng thường vs hàng cá nhân hoá).
-- **Phản ứng nhận quà:** "POV: bà mở đúng món quà bà không ngờ mình sẽ khóc." · "Ông lặng đi 10 giây. Rồi thế này." (giữ cận mặt ông).
-- **Được để ý:** "Bà có đủ mọi thứ rồi. Nên tôi tặng thứ không ai khác tặng được." · "Đây không phải món quà. Đây là bằng chứng bạn để tâm."
-- **Gấp theo dịp:** "Còn 9 ngày nữa là Ngày của Mẹ. Hàng làm theo đơn — đừng đợi." (đếm ngược chồng lên cảnh cá nhân hoá).
-- **Tưởng nhớ:** "Nó vẫn ở trên cây thông mỗi Giáng sinh." (treo món đồ tưởng nhớ thú cưng có dấu chân).
-- **POV đi tặng:** "POV: bạn cuối cùng cũng tìm được món quà biến *bạn* thành đứa con được cưng nhất." · "Nhìn mặt bà đi — tôi đợi."
-- **Cá nhân hoá sâu:** "Ai cũng in được tên bà. Chúng tôi in đúng bức tranh cháu bà vẽ." · "Đó không phải font chữ. Đó là nét chữ thật của bố bạn."
-- **Khoe chất lượng:** "Tôi đã sợ nó nhìn rẻ tiền. Rồi tôi mở ra." · "Hàng đặt riêng thường mỏng manh. Cái này thì không."
-- **Gọi tên mối quan hệ:** "Dành cho bà hay bảo 'đừng mua gì cho bà cả'." · "Nếu bạn là một 'dog mom', cái này sẽ chạm tới bạn."
+### Thư viện hook (tập trung vào 3 giây đầu: text trên màn hình + cảnh mở đầu)
+- **Reveal:** "Xem điều gì xảy ra khi bạn nhập tên của cô ấy…" (cốc trắng → tên các cháu hiện lên) · "Cùng một chiếc áo. Hoàn toàn khác khi có *tên của họ*." (so sánh chia đôi màn hình giữa áo trơn và áo cá nhân hóa).
+- **Phản ứng khi nhận quà:** "POV: cô ấy mở món quà duy nhất khiến cô ấy không ngờ lại khóc." · "Ông ấy im lặng suốt 10 giây. Rồi điều này xảy ra." (tập trung vào biểu cảm trên khuôn mặt ông).
+- **Cảm xúc được thấu hiểu:** "Cô ấy đã có mọi thứ. Vì vậy, tôi tặng cô ấy một món quà mà không ai khác có thể tặng." · "Đây không phải là một món quà. Đây là bằng chứng cháu đã để ý đến cô ấy."
+- **Tính cấp thiết dịp lễ:** "Ngày của Mẹ còn 9 ngày nữa. Sản phẩm được làm theo yêu cầu — đừng chần chừ." (hiển thị đếm ngược trên sản phẩm cá nhân hóa).
+- **Tưởng niệm:** "Ông vẫn được treo trên cây thông Noel mỗi năm." (treo vật trang trí tưởng niệm thú cưng với dấu chân).
+- **POV giving:** "POV: you finally found the gift that makes *you* the favorite child." · "Watch her face — I'll wait."
+- **Hyper-personalization:** "Anyone can put her name on it. We put her grandkid's actual drawing on it." · "That's not a font. That's your dad's real handwriting."
+- **Quality-proof:** "I was scared it'd look cheap. Then I opened it." · "Custom thường là dễ hỏng. Không phải cái này."
+- **Relationship callout:** "For the grandma who says 'don't get me anything.'" · "Nếu bà là một 'mẹ chó', món này chắc chắn sẽ khiến bà xúc động."
 
-### Body / Giữ chân — điều chỉnh riêng (ads quà tặng KHÔNG phải ads vấn đề→giải pháp)
-PAS/AIDA kích hoạt tư duy lý trí (chỉ bật với người đang chủ động đi tìm giải pháp). Creative cảm xúc hiệu quả
-dài hạn gấp ~2 lần (Binet & Field/IPA), ads cảm xúc tích cực tạo lực đẩy hành động gấp ~6 lần (System1)
-`[CHỐNG CHÁY — dữ liệu toàn ngành, nhưng ủng hộ mạch cảm xúc thay vì PAS]`. Vậy động cơ của ads quà tặng =
-**chờ đợi → dâng lên → chốt (hiện tên + phản ứng).** Cảm xúc người nhận là mạch chính; sản phẩm chỉ là cái cớ
-kích hoạt nó. Cả ngành hàng dựng trên **khoảnh khắc phản ứng** (các brand thuê creator hẳn hoi để có "phản ứng
-thật, từ nước mắt tới nụ cười") `[CHÍNH XÁC — brief cho creator]`.
+### Nội dung / Giữ chân khách — tùy biến (quảng cáo quà tặng KHÔNG phải là quảng cáo vấn đề → giải pháp)
+PAS/AIDA kích hoạt tư duy logic System-2 (chỉ hoạt động với những người đang tích cực mua sắm). Creative cảm xúc hiệu quả gấp ~2 lần.
+Quảng cáo dài hạn (Binet & Field/IPA) và quảng cáo cảm xúc tích cực cho thấy mức tăng tương tác ~6 lần (System1) `[BIỆN PHÁP CUỐI CÙNG — tất cả các danh mục]
+dữ liệu, nhưng ủng hộ một cung bậc cảm xúc hơn là PAS]. Vì vậy, cỗ máy quảng cáo quà tặng = **mong đợi → leo thang → phần thưởng**
+(reveal + reaction). **Cảm xúc của người nhận là cái 'arc' chính; sản phẩm chỉ là công cụ tạo ra cảm xúc đó.**
+Phân khúc này xây dựng dựa trên **khoảnh khắc phản ứng** (các thương hiệu thực sự thuê creator để có được "phản ứng chân thật, thậm chí là nước mắt").
+joy") `[EXACT — creator briefs]`.
 
-**Xếp hạng bằng chứng cho quà tặng cá nhân hoá (ở đây cái gì mới được tính là bằng chứng):**
-1. **Phản ứng thật của người nhận** (khóc/nghẹn) — bằng chứng số 1; nó chứng minh đúng cái tác động cảm xúc *chính là* sản phẩm. `[CHÍNH XÁC]`
-2. **Chi tiết cá nhân hoá hiện rõ** (đúng tên/ảnh/ngày của họ) — cho người mua thấy trước kết quả của chính mình; cái tên là thứ kéo chú ý mạnh nhất. `[RỘNG HƠN]`
-3. **Bằng chứng số lượng/thâm niên** ("đã bán 10.000+") — cho tệp lạnh cần thấy shop có thật. (Etsy: CVR 1–2% khi dưới 10 đánh giá → 10–15% khi trên 500). `[RỘNG HƠN]`
-4. **Ảnh thật của khách kèm đánh giá** — dập tắt "nhìn có rẻ tiền không". `[RỘNG HƠN]`
-5. **Cận cảnh tay nghề** (khắc/vải canvas/ánh đèn) — ít cảm xúc nhất, chỉ để đóng nghi ngờ chất lượng. `[RỘNG HƠN]`
-> Tệp lạnh → dẫn bằng tính chính danh (số lượng/đánh giá); tệp ấm/retarget → dẫn bằng bằng chứng đúng nỗi lo (chất lượng, giao hàng).
+**Xếp hạng 'proof' cho quà tặng cá nhân hóa (cái gì được tính là 'proof' ở đây):**
+1. **Phản ứng chân thật của người nhận** (khóc/hụt hơi) — #1 'proof'; nó chứng minh tác động cảm xúc, mà đó *chính là* sản phẩm. `[EXACT]`
+2. **Chi tiết cá nhân hóa hiển thị rõ ràng** (tên/ảnh/ngày tháng thực tế của khách) — cho thấy trước kết quả mà người mua sẽ nhận được; tên là yếu tố kích thích sự chú ý mạnh mẽ nhất. `[WIDER]`
+3. **Bằng chứng về số lượng/độ bền** ("Đã bán hơn 10.000 sản phẩm") — dành cho tệp khách hàng mới cần sự xác thực (Etsy: CVR 1–2% với dưới 10 đánh giá → 10–15% với 500+ đánh giá). `[WIDER]`
+4. **Ảnh/video UGC đánh giá về chất lượng in ấn** — giải quyết nỗi lo "sản phẩm có rẻ tiền không?". `[WIDER]`
+5. **Cận cảnh sản phẩm** (khắc/vải canvas/ánh sáng ấm hơn) — ít cảm xúc nhất, giúp khách hàng loại bỏ nghi ngờ về chất lượng. `[WIDER]`
+> Với khách hàng mới (cold), ưu tiên sự đáng tin cậy (số lượng/reviews); với khách hàng ấm (warm) hoặc retarget, tập trung vào bằng chứng giải quyết nỗi đau (chất lượng, giao hàng).
 
-**Khung xương phần thân theo từng nhịp (15–30 giây):**
-- **A · Dẫn bằng phản ứng (tệp lạnh, UGC):** 0–2s mở thẳng bằng phản ứng ("Bà không hề ngờ tới") → 2–6s bối cảnh (ai/dịp gì) → 6–12s **hiện tên** (chữ rõ, giữ lâu) → 12–20s phản ứng trọn vẹn (ôm nhau, cả nhà trong khung) → 20–27s bằng chứng + offer → 27–30s CTA.
-- **B · Xây cảm xúc (tệp ấm, kiểu Thái):** 0–3s hook là *mối quan hệ/điều đang đặt cược* (không phải sản phẩm) → 3–10s dựng lên (người tặng đi đặt hàng, nhá sản phẩm) → 10–16s hiện tên + phản ứng → 16–24s cảm xúc dâng (đọc to dòng chữ cá nhân hoá) → 24–30s chốt + CTA.
-- **C · Lai demo cá nhân hoá (retarget):** 0–2s mở bằng cảnh hiện tên (trống → gõ tên lên) → 2–8s menu các dịp ("Cho Bà. Cho Mẹ. Cho chú chó đã mất.") → 8–16s bằng chứng chất lượng (cận cảnh + ảnh đánh giá) → 16–24s gỡ rủi ro ("Không ưng? Làm lại miễn phí" + đặt trước ngày) → 24–30s CTA "Xem với tên của bạn →".
-> **Đặt cảnh hiện tên ở GIỮA, không để cuối** — cần thời lượng sau đó cho phản ứng + CTA đúng lúc người xem còn đông nhất.
+**Cấu trúc video cơ bản (15–30s):**
+- **A · Dựa vào phản ứng (cold, UGC):** 0–2s mở đầu bằng phản ứng gây chú ý ("She didn't expect this") → 2–6s giới thiệu bối cảnh (ai/dịp gì) → 6–12s **reveal** (hiển thị rõ tên, giữ hình) → 12–20s hoàn thành phản ứng (ôm, cả gia đình trong khung hình) → 20–27s bằng chứng + offer ("10,000+ · free personalization · order by [date]") → 27–30s CTA.
+- **B · Xây dựng cảm xúc (warm, kiểu Thái-ad):** 0–3s hook = mối quan hệ/tầm quan trọng (không phải sản phẩm) → 3–10s xây dựng (người tặng đang đặt hàng, hé lộ sản phẩm) → 10–16s reveal + phản ứng → 16–24s tăng cảm xúc (đọc to dòng cá nhân hóa) → 24–30s kết quả + CTA.
+- **C · Personalization-demo hybrid (retarget):** 0–2s reveal cold-open (màn hình trống → tên được gõ vào) → 2–8s menu dịp lễ ("For Grandma. For Mom. For your dog's memorial.") → 8–16s chứng minh chất lượng (cận cảnh + đánh giá ảnh) → 16–24s giảm thiểu rủi ro ("Không thích? Chúng tôi làm lại miễn phí" + ngày hết hạn đặt hàng) → 24–30s CTA "Xem với tên của bạn →".
+> **Đặt phần reveal vào giữa, không phải cuối** — bạn cần thời lượng sau reveal để ghi lại phản ứng + CTA trong khi mức độ giữ chân người xem cao nhất.
 
-### Offer — điều chỉnh riêng (xếp hạng theo sức nặng)
-1. **Cam kết giao trước ngày diễn ra dịp** — đòn bẩy lớn nhất (quà gắn deadline + POD còn mất thời gian sản xuất). Làm rõ hạn giao mùa lễ giúp CVR tăng ~30–40%. `[RỘNG HƠN]`
-2. **Làm lại / bảo đảm hài lòng cho hàng cá nhân hoá không trả được** — gỡ đúng nút thắt riêng của hàng cá nhân hoá ("sai chữ, in xấu, không đổi được"). Đặt nó *ngay chỗ khách đang phân vân*. `[RỘNG HƠN]`
-3. **Miễn phí cá nhân hoá (gói như một món quà tặng kèm, không phải giảm giá)** — gói kiểu quà tặng đẩy ý định mua mạnh hơn mức giảm giá tương đương (giảm giá làm rớt giá trị cảm nhận). Nói "tặng kèm cá nhân hoá", đừng nói "giảm 20%". `[CHỐNG CHÁY — nghiên cứu bình duyệt, ngành bán lẻ chung]`
-4. **Combo nhiều người nhận / set quà** — khớp hành vi mua theo danh sách, +25–40% giá trị đơn. `[RỘNG HƠN]`
-5. **Miễn phí gói quà / thiệp / giao dạng sẵn tặng** — rẻ, gỡ được "tôi vẫn phải đi gói". `[RỘNG HƠN]`
-6. **Giảm giá đơn đầu** — có tác dụng nhưng xếp CUỐI (đua giá, làm rớt giá trị kỷ vật); một offer *cá nhân hoá* ăn đứt offer đại trà. `[CHỐNG CHÁY]`
-> Bộ mạnh nhất: **đặt trước ngày + làm lại miễn phí + tặng kèm cá nhân hoá**; giảm giá là phương án dự phòng, không phải tiêu đề.
+### Offer — tùy chỉnh (ưu tiên các offer liên quan đến quà tặng)
+1. **Đặt hàng trước ngày/đảm bảo giao hàng trước dịp lễ** — đòn bẩy cao nhất (quà tặng có thời hạn + POD cần thời gian sản xuất). Sự khẩn cấp/rõ ràng dịp lễ ~30–40% tăng CVR. `[WIDER]`
+2. **Chính sách làm lại / đảm bảo hài lòng cho các sản phẩm cá nhân hóa không đổi trả** — loại bỏ rào cản "lỗi chính tả/in ấn kém, không có phương án giải quyết" đặc trưng của hàng cá nhân hóa (hàng thanh lý). Đặt chính sách này *tại điểm nghi ngờ*. `[WIDER]`
+3. **Cá nhân hóa miễn phí (trình bày như một món quà tặng, không phải giảm giá)** — việc trình bày dưới dạng quà tặng làm tăng ý định mua hàng hơn so với mức giảm giá tương đương (vì giảm giá làm giảm giá trị cảm nhận). Hãy nói "tặng kèm cá nhân hóa miễn phí," thay vì "giảm 20%". `[LAST-RESORT — nghiên cứu ngang hàng, bán lẻ nói chung]`
+4. **Gói sản phẩm dành cho nhiều người / bộ quà tặng** — phù hợp với hành vi mua hàng theo danh sách quà tặng, tăng AOV (giá trị đơn hàng trung bình) từ 25–40%. `[WIDER]`
+5. **Dịch vụ gói quà miễn phí / tin nhắn quà tặng / vận chuyển sẵn sàng để tặng** — chi phí thấp, loại bỏ nỗi lo "tôi vẫn phải tự gói quà". `[WIDER]`
+6. **Giảm giá cho lần mua đầu tiên** — vẫn hiệu quả nhưng thường xếp hạng cuối (cạnh tranh về giá, làm giảm giá trị món đồ lưu niệm); một offer *cá nhân hóa* sẽ tốt hơn hẳn offer chung chung. `[LAST-RESORT]`
+> Chiến lược mạnh nhất: **ưu tiên 'đặt hàng theo ngày' + làm lại miễn phí + cá nhân hóa miễn phí**; giảm giá là phương án dự phòng, không nên làm tiêu đề chính.
 
-### CTA — điều chỉnh riêng (dùng ngôn ngữ quà tặng)
-Nút của Meta chỉ có ~17 mẫu có sẵn (dùng **"Order Now"** khi có deadline/ý định cao, còn lại "Shop Now").
-Câu CTA quà tặng thì nói ở **chữ trên màn / giọng đọc / end-card**:
-- **"Làm một cái cho họ" / "Làm cái có tên họ"** — CTA cảm xúc mặc định (tệp lạnh, dẫn bằng chuyện).
-- **"Cá nhân hoá cho bà/mẹ/anh ấy"** — cho nhóm quảng cáo nhắm theo người nhận.
-- **"Xem thử với tên của bạn"** — cam kết thấp, dùng cho retarget / demo cá nhân hoá (khung C).
-- **"Tạo trong 60 giây"** — giảm cảm giác phải làm nhiều việc.
-- **"Đặt trước [ngày] — kịp [dịp]"** — CTA deadline trong mùa (+ nút "Order Now").
-- **Tránh** "Buy Now" trơ trọi cho tệp lạnh mua quà — quá giao dịch với một món kỷ vật cảm xúc. `[CHỐNG CHÁY]`
+### CTA — tailored (gift language)
+Nút *button* của Meta bị giới hạn khoảng 17 mẫu sẵn (dùng **"Order Now"** khi có deadline/khách hàng có ý định mua cao, còn lại dùng "Shop Now" nhé). Nhớ nói **CTA tặng quà** trong text trên màn hình / giọng đọc / end-card luôn ạ:
+- **"Make it for them" / "Make one with their names"** — CTA cảm xúc mặc định (lạnh, dẫn dắt bằng câu chuyện).
+- **"Personalize hers/his/theirs"** — chạy ad set nhắm mục tiêu theo đối tượng nhận (Mẹ/Bà/người yêu).
+- **"See it with your names"** — quảng cáo retarget / demo cá nhân hóa, giảm cam kết (Skeleton C).
+- **"Create theirs / Design theirs in 60 seconds"** — giảm cảm giác tốn công sức.
+- **"Order by [date] — get it before [occasion]"** — CTA thúc đẩy đặt hàng theo mùa (+ nút "Order Now").
+- Tránh dùng thẳng "Buy Now" cho tệp khách hàng lạnh tìm quà — quá giao dịch với một món quà kỷ niệm mang tính cảm xúc. *(CTA cá nhân hóa/gọi bằng người thứ nhất thường test tốt hơn CTA chung chung — dữ liệu chung từ các thương hiệu DTC.)* `[LAST-RESORT]`
 
-### Chiêu hook — xếp hạng riêng cho quà tặng
-**Nhóm 1 — hợp quà tặng nhất (mạnh nhất, nên thêm):** ① **mở thẳng bằng phản ứng** (vào ngay nước mắt/tiếng nghẹn trước khi kể bối cảnh) · ② **mở bằng cảnh hiện tên** (trống → tên họ hiện ra) · ③ **hook dịp/deadline** ("còn 6 ngày là Ngày của Mẹ mà làm mất 5 ngày").
-**Nhóm 2 — chiêu chung nhưng hợp hàng cảm xúc:** ④ POV/cảm xúc đồng cảm · ⑤ bằng chứng số đông ("món quà làm 10.000 bà bật khóc" — tệp lạnh) · ⑥ tò mò ("ai ngờ cái cốc lại làm bà khóc") · ⑦ mở bằng nhân vật/mối quan hệ.
-**Nhóm 3 — xếp thấp (ngược mạch cảm xúc):** số liệu · phản biện/gây tranh cãi · nêu vấn đề (lý trí/chức năng). Trước-sau thì gộp luôn vào hook hiện tên.
-> **Chồng Nhóm 1 + Nhóm 2** (mở bằng phản ứng → rồi hiện tên) — dân chạy ads ghi nhận "nhiều hook chồng lên" cho kết quả cao hơn.
+### Chiến thuật hook — tùy chỉnh (xếp hạng cho quà tặng)
+**Tier 1 — hook chuyên biệt cho quà tặng (mạnh nhất, ưu tiên làm):** ① **Hook mở đầu bằng phản ứng** (bắt đầu bằng cảnh khóc/hụt hơi trước khi cho bối cảnh) · ② **Hook mở đầu bằng cá nhân hóa** (trống → tên của họ xuất hiện) · ③ **Hook dựa trên dịp/thời hạn** ("Mother's Day còn 6 ngày và cần 5 ngày để làm").
+**Tier 2 — chiến thuật chung phù hợp với các sản phẩm mua theo cảm xúc:** ④ POV/cảm xúc dễ đồng cảm · ⑤ Proof xã hội ("món quà khiến 10,000 bà nội khóc" — cold) · ⑥ Sự tò mò ("Tôi không nghĩ một chiếc cốc có thể khiến mẹ khóc") · ⑦ Mở đầu bằng nhân vật/mối quan hệ.
+**Tier 3 — giảm thứ hạng (đối đầu với cảm xúc):** số liệu · đi ngược lại/gây tranh cãi · chỉ ra vấn đề (System-2/chức năng). Trước/sau sụp đổ vào hook chính.
+> **Kết hợp Tier-1 + Tier-2** (mở đầu bằng phản ứng → sau đó mới lộ tên) — người có kinh nghiệm lưu ý "nhiều hook" sẽ hiệu quả hơn.
 
-> ⚠️ **Nói thẳng:** bốn phần điều chỉnh này là **giả thuyết có căn cứ**, không phải mức tăng đã chứng minh — **không có dữ liệu A/B nào tách riêng được từng cái trong ngành quà tặng cá nhân hoá.** Bậc CHÍNH XÁC là hành vi thị trường/brief creator (định tính); các con số định lượng đều ở bậc RỘNG HƠN (POD/mùa lễ) hoặc CHỐNG CHÁY (khoa học quảng cáo toàn ngành). Phải test, đừng mặc định.
+> ⚠️ **Thành thật:** bốn cách tùy chỉnh này là **giả thuyết dựa trên bằng chứng**, không phải là cải thiện đã được chứng minh — **không có dữ liệu A/B test nào tách biệt được chúng trong danh mục quà tặng cá nhân hóa.** Mức độ EXACT = hành vi thị trường/bản tóm tắt của người tạo (định tính); các con số được định lượng là RỘNG HƠN (POD/lễ) hoặc LẦN CUỐI CÙNG (khoa học quảng cáo toàn ngành). Hãy test, đừng giả định.
 
-## 🎬 Mẫu brief creative (12 trường)
-*Thêm 2026-09-18. Gộp từ một bảng "Kịch bản content phổ biến" bên ngoài (5 mẫu kịch bản × 8 cột craft:
-Hook · Storyline · Transitions · Visual · Voice · Caption&Text · Social Proof · CTA), đem so với tài liệu này.
-**Bảng đó là bản mô tả sản xuất; tài liệu này là hệ thống test.** Bên họ không có tầng đo lường; bên mình
-thiếu phần craft. Hai bên bù nhau — kết quả gộp ở dưới.*
+### POD tailoring — source rungs
+- **EXACT (định tính):** Cẩm nang người bán Etsy (dịp lễ, xu hướng cá nhân hóa cao, "đĩa công thức" +110% YoY) · Marketing Dive (chiến dịch lễ hội "cảm thấy được nhìn thấy" của Etsy) · Hướng dẫn cá nhân hóa Etsy của Printify · Sale Samurai · GetNameNecklace (định vị tưởng niệm thú cưng trực tiếp) · Văn hóa phản ứng quà tặng trên TikTok + cuộc gọi của người tạo Kinfold Gifts · Góc độ quảng cáo tặng quà của Influee.
+- **MỞ RỘNG:** Các góc độ quảng cáo quà tặng của The Performers (10 góc) · DesignRush (Ví dụ cá nhân hóa Ultimate Ears; completion >15s +38%; cá nhân hóa ≈ gấp 3 lần intent — áp dụng cho POD nói chung) · Cơ chế quảng cáo POD của Printful/Gelato/Prodigi/Justin Cener.
+- **PHƯƠNG ÁN CUỐI CÙNG (cần lưu ý):** Bảng xếp hạng DTC của Fraser Cottrell (founder-ad S-tier là một tuyên bố *chung chung cho DTC*, không thể áp dụng cho trường hợp khác) · Lý thuyết UGC của Promer/Vlad Alexander/Sovran.
 
-### Bản brief — mỗi mẫu test phải điền đủ 12 trường trước khi quay
-| # | Trường | Ai cấp | Ghi chú |
+## 🎬 Mẫu brief sáng tạo (12 trường) — kết hợp với bảng framework kịch bản bên ngoài
+
+*Thêm ngày 18/09/2026. Nguồn kết hợp: bảng "Kịch bản content phổ biến" bên ngoài (5 mẫu kịch bản ×
+8 yếu tố tạo nên một creative chất lượng: Hook · Cốt truyện · Chuyển cảnh · Hình ảnh · Voice · Caption & Text · Proof · CTA),
+so sánh với tài liệu này. **Đây là spec sản xuất; tài liệu này là hệ thống test.** Của họ thiếu
+lớp đo lường; của mình thì chưa đủ chi tiết về craft. Họ là người tạo ra — phần hợp nhất bên dưới là kết quả.*
+
+### Brief — mỗi test case cần điền đầy đủ 12 trường trước khi quay.
+| # | Field | Who supplies it | Note |
 |---|---|---|---|
-| 1 | **Concept** | chiến lược | cả ý tưởng, gói trong một câu |
-| 2 | **Góc / Chân dung người mua** ⭐ | chiến lược | *của mình — bảng ngoài không có ô này.* Trong quà tặng, người mua ≠ người nhận; đổi chân dung trên cùng một sản phẩm là một phép test thật |
-| 3 | **Hook** (0.5–3s) | chiến lược | chữ trên màn + khung hình mở; ưu tiên Nhóm 1 |
-| 4 | **Storyline / Body** | chiến lược | dùng khung xương nào (A dẫn phản ứng / B xây cảm xúc / C lai demo) |
-| 5 | **Nhịp bằng chứng** ⭐ | chiến lược | *nâng lên thành trường bắt buộc* — dùng loại bằng chứng nào (hạng 1–5) và **đặt ở đâu** |
-| 6 | **Offer** ⭐ | chiến lược | *của mình — bảng ngoài không có.* Thiếu nó, một ad đẹp vẫn có thể bán một cấu hình lỗ |
-| 7 | **CTA** | chiến lược | câu CTA quà tặng + chọn mẫu nút nào trong ~17 mẫu của Meta |
-| 8 | **Chuyển cảnh / nhịp cắt** | dựng | **một con số** (1.5s / 5s / theo nhịp nhạc / theo tiến trình), không phải "cắt nhanh" |
-| 9 | **Visual** | dựng | tông màu, phông nền, khoảng cách máy |
-| 10 | **Giọng** ⭐ | dựng | ai nói, mạch giọng, nhạc nền, SFX/ASMR |
-| 11 | **Phụ đề & chữ** | dựng | kiểu overlay, font, highlight cái gì; luôn đọc được khi tắt tiếng |
-| 12 | **Thời lượng** ⭐ | dựng | *của mình* — 6–15s Feed/Stories; 15–30s cho các khung xương |
+| 1 | **Concept** | chiến lược | ý tưởng tổng thể, một câu |
+| 2 | **Angle / Persona** ⭐ | chiến lược | *của chúng ta — bảng bên ngoài không có ô cho mục này.* Người mua ≠ người nhận quà; thay đổi persona trên cùng một sản phẩm là một bài test thực tế |
+| 3 | **Hook** (0.5–3s) | chiến lược | text trên màn hình + cảnh quay mở đầu; Ưu tiên hook hướng đến gifting (tặng quà) |
+| 4 | **Storyline / Body** | chiến lược | cấu trúc câu chuyện (A dựa trên phản ứng / B xây dựng cảm xúc / C kết hợp demo) |
+| 5 | **Social-Proof beat** ⭐ | chiến lược | *được ưu tiên thành trường bắt buộc* — loại proof nào (xếp hạng 1–5) và **vị trí hiển thị** |
+| 6 | **Offer** ⭐ | chiến lược | *của mình — không có trong bảng đối thủ.* Thiếu nó, một mẫu quảng cáo đẹp cũng có thể bán một cấu hình không có lời |
+| 7 | **CTA** | chiến lược | dòng ngôn ngữ khuyến khích + lựa chọn một trong ~17 tùy chọn nút có sẵn của Meta |
+| 8 | **Transitions / cut rate** | chỉnh sửa | **một con số** (1.5s / 5s / beat-matched / progress-paced), không phải là "cắt nhanh" |
+| 9 | **Visual** | chỉnh sửa | nhiệt độ màu, background, khoảng cách camera |
+| 10 | **Voice** ⭐ | chỉnh sửa | người nói, diễn biến giọng điệu, nhạc nền, hiệu ứng âm thanh/ASMR |
+| 11 | **Caption & Text** | chỉnh sửa | kiểu chữ đè, font chữ, nội dung được làm nổi bật; luôn đảm bảo dễ đọc khi tắt âm thanh |
+| 12 | **Length** ⭐ | chỉnh sửa | *của mình* — 6–15s Feed/Stories; 15–30s cho các concept cơ bản |
 
-⭐ = trường mà bảng ngoài **không có**. Trường 8–11 là phần **họ** cấp, trước đây mình để editor tự quyết.
+⭐ = Trường này không có trên bảng ngoài. Các trường 8–11 là những trường **nó** cung cấp mà trước đây chúng ta chưa có.
+left to the editor's judgement.
 
-### Lấy từ bảng ngoài
-- **① Giọng thành một trường brief riêng.** Trước đây VO/nhạc/âm thanh nằm gọn trong một dòng "craft xuyên suốt" và không bao giờ được quy định. Giờ thành một dòng riêng trong bảng thành phần. Cái này ăn ngay: sản phẩm nhiều chữ (thư/bài thơ in lên) **không thể hiện tên bằng hình**, nên concept của nó bắt buộc phải dẫn bằng giọng — và Giọng chính là trường brief mà quyết định đó cần.
-- **② Nhịp cắt là một con số, theo từng format.** ~1.5s/cắt cho thuyết phục nhanh, ~5s/cắt cho UGC. Nó mã hoá đúng cái insight: **format chân thật cần cắt chậm hơn**. Quan trọng với người nhận trên 60 tuổi, nơi nhịp cắt nhanh nhiều khả năng gây hại.
-- **③ Bằng chứng nâng lên thành trường bắt buộc.** Bảng xếp hạng bằng chứng của mình (phản ứng #1 · chi tiết cá nhân hoá #2 · số lượng #3 · ảnh khách #4 · cận cảnh tay nghề #5) vốn đã có nhưng bị chôn trong phần Body nên rất dễ bỏ qua. Thành trường bắt buộc thì mọi video đều phải trả lời *"nhịp bằng chứng là gì, đặt ở đâu?"*
-- **④ Công thức "Compare" dùng luôn làm bản mô tả quay** — chia đôi màn hình, cắt song song, zoom vào chi tiết khác biệt. Đó đúng là bản quay cho hook chia đôi màn hình hàng-thường-vs-cá-nhân-hoá của mình.
-- **⑤ BTS là format mới** (đã thêm vào bảng độ hợp, TRUNG BÌNH) — nhưng chỉ dùng Giai đoạn 2/retarget, vì bằng chứng tay nghề là hạng 5.
+### Adopted from the external table
+- **① Voice** là một yếu tố brief riêng biệt. Trước đây, chúng ta gộp VO/music/sound vào một mục chung là "cross-cutting craft".
+và chưa từng kê đơn nó. Bây giờ là một dòng trong bảng thành phần ở trên. Cái này dính ngay: một đoạn văn bản quá dài
+Sản phẩm (ví dụ: tranh in chữ/thơ) không làm được reveal cá nhân hóa, nên các **concept** phải tập trung vào giọng đọc (VO) —
+  và Voice chính là yếu tố quyết định cần thiết trong brief.
+- **② Giá rẻ được tính theo số lượng, trên mỗi định dạng.** ~1.5s/cắt cho kiểu thuyết phục nhanh, so với ~5s/cắt cho UGC. Thể hiện rõ
+  insight rằng **các định dạng chân thật cần cắt chậm hơn**. Quan trọng với những đối tượng có 60+ người tiếp cận, nơi mà cắt nhanh
+  short-form pacing likely hurts.
+- **③ Social Proof được ưu tiên lên thành yếu tố bắt buộc.** Thứ hạng proof của chúng tôi (số lượng reaction #1 · chi tiết cá nhân hóa
+ #2 · Khối lượng/Thời lượng #3 · Ảnh UGC #4 · Quay cận cảnh sản phẩm #5) đã tồn tại nhưng bị ẩn trong phần thân video, nên dễ bị bỏ qua. Khi biến thành trường bắt buộc, nó sẽ buộc mọi video phải trả lời câu hỏi *"beat chứng minh là gì, và ở đâu?"
+ - **④ Công thức "So sánh" như một thông số sản xuất** — chia đôi màn hình, cắt song song, zoom vào chi tiết khác biệt. Đây là thông số quay cho video so sánh chung vs. cá nhân hóa hiện tại của mình.
+ 
+ 
+  hook; adopt verbatim.
+- **⑤ BTS như một format mới** (đã thêm vào bảng format-fit ở trên, MEDIUM) — nhưng chỉ dùng cho giai đoạn 2/retargeting thôi.
+  since craft proof is our rank #5.
 
-### Từ chối — chỗ bảng ngoài mâu thuẫn với nghiên cứu này
-| Họ nói | Vì sao từ chối |
+### Loại bỏ — vì bảng bên ngoài mâu thuẫn với nghiên cứu này
+| Their prescription | Why refused |
 |---|---|
-| **PAS / Problem-Solver là kịch bản số 1** | PAS/AIDA kích hoạt tư duy lý trí, chỉ bật với người đã đang đi tìm giải pháp; mua quà chạy theo **mạch cảm xúc** (chờ đợi → dâng lên → hiện tên + phản ứng). Phần hình họ mô tả còn tệ hơn: *tông tối cho phần vấn đề, chữ đỏ/vàng gây đau* — ngược hẳn với cách một món kỷ vật nên trông. "Nêu vấn đề" vốn đã nằm **Nhóm 3** trong bảng xếp hạng hook. **Bỏ với hàng quà tặng.** |
-| **Bằng chứng = số đơn + ảnh chụp bình luận khen + thống kê trước/sau** | Sai loại bằng chứng cho người mua này. Bằng chứng số 1 của mình là **phản ứng thật của người nhận**; bằng chứng số lượng xếp hạng 3 và chỉ dùng cho tệp lạnh. Chồng ảnh chụp bình luận nhìn như dropship với người dùng Meta Mỹ tuổi 50–60. |
-| **"Giọng AI đang trend"** | Đánh thẳng vào thứ ngành hàng này sống nhờ — giọng người thật vỡ ra. Dùng VO thật. |
-| **CTA ép FOMO mạnh** | Bảng offer của mình xếp **deadline đặt trước ngày** hạng 1 nhưng *ép giảm giá/FOMO* hạng chót — nó làm rớt giá trị kỷ vật. Deadline ≠ FOMO. |
-| **Hướng dẫn đặt hàng ở giữa video** | Khung xương của mình đặt **cảnh hiện tên ở giữa** để còn thời lượng cho phản ứng đúng lúc giữ chân cao nhất. |
-| **Cột CTA ghi mục tiêu cảm xúc** ("đánh vào cảm xúc") | Không brief được. Bên mình ghi rõ câu thật + mẫu nút Meta. |
+| **PAS / Problem-Solver như script #1** | PAS/AIDA kích hoạt hệ thống System-2 lý trí, chỉ hoạt động với những người đang tìm giải pháp; mua quà lại đi theo **cung bậc cảm xúc** (mong đợi → leo thang → hé lộ + phản ứng). Thông số hình ảnh càng làm tình hình tệ hơn: *màu tối cho vấn đề, chữ gây đau đớn màu đỏ/vàng* — hoàn toàn ngược lại với vẻ ngoài của một món quà kỷ niệm. "Nhấn mạnh vấn đề" đã là **Tier 3** trong bảng xếp hạng hook của chúng ta. **Bỏ qua cho các sản phẩm quà tặng.** |
+| **Social proof = số đơn hàng + ảnh chụp màn hình bình luận khen ngợi + số liệu trước/sau** | Đây không phải proof phù hợp với khách hàng này. Proof #1 của chúng ta là **phản ứng chân thật của người nhận**; proof về số lượng đơn hàng là #3 và chỉ dùng cho mục đích chứng minh tính hợp pháp ban đầu. Việc chồng chất ảnh chụp màn hình bình luận trông giống như dropship đối với người dùng Meta ở Mỹ trong độ tuổi 50–60. |
+| **"Trending AI voice"** (được đề xuất trong UGC + so sánh các dòng) | Chống lại điểm yếu lớn nhất của ngành — giọng người thật bị méo mó. Ưu tiên sử dụng voice thật. |
+| **CTA tạo FOMO/khẩn cấp mạnh** (trong dòng UGC của họ) | Thứ hạng offer của chúng ta cho thấy **hạn chót đặt hàng** đứng #1 về mức độ khẩn cấp, còn *áp dụng giảm giá/tạo áp lực FOMO* lại xếp cuối — điều này làm giảm giá trị kỷ niệm. Hạn chót ≠ FOMO. |
+| **Hướng dẫn đặt hàng ở giữa video** (trong storyline Unboxing của họ) | Chúng ta đặt **phần reveal vào giữa video** để còn thời lượng cho phản ứng của khách hàng, đồng thời giữ chân người xem ở thời điểm retention cao nhất. |
+| **Cột CTA như một mục tiêu cảm xúc** ("tác động vào cảm xúc") | Không thể giao việc cụ thể. Yêu cầu của chúng ta phải chỉ rõ dòng chữ cụ thể + preset nút Meta. |
 
-> ⚠️ Lưu ý xuất xứ: bảng đó **gốc TikTok/dropship**. Người mua của mình là người dùng Meta ở Mỹ, thường trên
-> 55 tuổi, mua một món kỷ vật cảm xúc. Lấy phần *craft* của họ; đừng bê phần *thuyết phục* mặc định của họ.
+> ⚠️ Chú ý về nguồn gốc: bảng này là của **TikTok / dropship**. Khách hàng của chúng ta là người dùng Meta tại Mỹ, thường xuyên
+> 55 tuổi trở lên, mua những món quà lưu niệm mang ý nghĩa cảm xúc. Cháu nên học hỏi cách họ làm *sản phẩm*; đừng bê nguyên *cách thuyết phục* của họ.
 
-### 5 kịch bản của họ, chiếu sang bảng độ hợp của mình
-| Kịch bản của họ | Ứng với format nào | Kết luận |
+### 5 kịch bản của họ, được ánh xạ vào đánh giá phù hợp với format của mình
+| Kịch bản của họ | Ánh xạ vào format của mình | Đánh giá |
 |---|---|---|
-| **Unboxing Review** | Phản ứng nhận quà (CAO) + Unboxing (KHÁ CAO) | **Giữ — format tốt nhất.** ≈ khung A. Lấy chuyển cảnh theo nhịp nhạc + tông ấm; bỏ phần hướng dẫn đặt hàng giữa video |
-| **UGC** | UGC mộc (CAO) | **Giữ.** Lấy 5s/cắt + phụ đề chạy theo từng từ + kiểu quay điện thoại. Bỏ giọng AI, bằng chứng đếm đơn, CTA FOMO |
-| **Compare** | Cá nhân hoá sâu (CAO) | **Giữ.** Công thức chia đôi màn hình/zoom dùng được ngay cho concept hàng-thường-vs-cá-nhân-hoá |
-| **BTS** | *(trước không có — nay đã thêm, TRUNG BÌNH)* | **Lấy, nhưng chỉ Giai đoạn 2/retarget** |
-| **Problem-Solver (PAS)** | nêu vấn đề = **Nhóm 3** của mình | **Bỏ** với hàng quà tặng |
+| **Unboxing Review** | Phản ứng khi nhận quà (CAO) + Mở hộp (CAO VỪA) | **Giữ lại — định dạng hàng đầu.** ≈ Sử dụng khung A (dẫn dắt bởi phản ứng). Chú trọng chuyển cảnh theo nhạc + tông ấm; chèn hướng dẫn đặt hàng giữa video |
+| **UGC** | UGC thô (CAO) | **Giữ lại.** Cắt 5s/clip + phụ đề từng chữ + quay bằng điện thoại. Loại bỏ giọng AI, thêm proof số lượng đơn hàng, CTA tạo cảm giác FOMO |
+| **Compare** | Thể hiện cá nhân hóa vượt trội (CAO) | **Giữ lại.** Công thức chia đôi màn hình/zoom có thể áp dụng trực tiếp cho các concept so sánh chung vs. cá nhân hóa |
+| **BTS** | *(thiếu trong các video của mình — đã thêm, VỪA)* | **Áp dụng, Giai đoạn 2 / chỉ dùng cho retargeting** |
+| **Problem-Solver (PAS)** | vấn đề cần giải quyết = nhóm **Tier 3** của chúng ta | **Drop** cho các sản phẩm quà tặng |
 
-### Bảng ngoài không làm được gì (vì sao tài liệu này vẫn là nguồn chuẩn)
-Không có trường offer · không có trường góc/chân dung · không chấm độ hợp format (họ để 5 kịch bản ngang nhau;
-mình chấm 15 cái và hạ hẳn hai cái) · không ánh xạ mức nhận biết · không quy định thời lượng · **và hoàn toàn
-không có tầng đo lường** — không hook rate, hold rate, ngưỡng cỡ mẫu hay mốc tắt. Bảng đó nói cho bạn biết
-phải *làm* gì; chỉ có Phần D của `TESTING-MATRIX-FRAMEWORK.md` mới nói cho bạn biết khi nào phải *tắt*.
+### Những hạn chế của bảng bên ngoài (tại sao bảng này vẫn là nguồn dữ liệu chính xác)
+Không có trường offer · không có trường angle/persona · không có đánh giá độ phù hợp với format (hiện tại nó coi 5 script là ngang nhau, trong khi chúng ta đánh giá 15 cái và loại bỏ 2 cái khó) · không có phân loại theo giai đoạn nhận biết · không có quy định về length · **và hoàn toàn không có lớp đo lường** —
 
-## Ghi chú trung thực
-- **Dữ liệu cứng:** Meta/Nielsen 47%-trong-3-giây + tỷ lệ xem tiếp 65%/45% [nguồn gốc Meta]; tắt tiếng ~80–85% [Meta]; Google creative ≈50% ROI.
-- **Benchmark của dân chạy ads (các bên hội tụ nhưng đều tự báo cáo):** hook 25–35% / hold 40–50% — đây là quy ước, không phải chuẩn (mẫu số khác nhau → dải thực tế 20–45%).
-- **Đồng thuận/ý kiến:** việc Andromeda ưu tiên đa dạng hơn OFAT và toàn bộ các con số về số lượng (8–12 concept, 50–100/tháng, 3×3, 10–20 hook, 90/10). Câu "cần gấp 4 lần creative" của Phó chủ tịch Meta là lời thuật lại gián tiếp — chỉ mang tính định hướng.
+Không có hook rate, hold rate, sample gate, hay kill line. Nó chỉ cho bạn biết *cần làm gì*; chỉ có Phần D của
+`TESTING-MATRIX-FRAMEWORK.md` mới nói cho bạn biết *cần loại bỏ gì*.
+
+## Honesty notes
+- **Số liệu thực tế:** Meta/Nielsen 47%-trong-3 giây + 65%/45% tỷ lệ xem hết [Meta chính]; tắt âm ~80–85% [Meta]; creative của Google ≈ 50% ROI.
+- **Chỉ số từ người làm thực tế (các vendor có xu hướng đồng thuận nhưng tự báo cáo):** hook 25–35% / hold 40–50% — đây là quy ước, không phải tiêu chuẩn (mẫu số khác nhau → phạm vi 20–45% tồn tại).
+- **Quan điểm chung:** Sự chuyển đổi từ OFAT sang đa dạng hóa Andromeda và tất cả các con số về volume (8–12 concepts, 50–100/tháng, 3×3, 10–20 hooks, 90/10). Câu nói của Meta-VP về việc "4× sáng tạo hơn" là một paraphrase gián tiếp – mang tính định hướng.
+
+### Source URLs
+motionapp.com/blog/key-creative-performance-metrics · help.motionapp.com/en/articles/8991407 (Hook/Watch/Click/Convert) · help.motionapp.com/en/articles/12461770 (AI-tagging) · creads.io/ad-creative-performance-guide · sovran.ai/blog/hook-body-cta-video-ad-structure · adlibrary.com/posts/hook-rate · adlibrary.com/posts/hold-rate · facebook.com/business/news/updated-features-for-video-ads (47% data) · facebook.com/business/help/188534925073536 · triplewhale.com/blog/facebook-ad-analytics · growwithsakib.com/meta-ads-creative-testing (Segwise/Andromeda) · admanage.ai/blog/how-many-ad-creatives-to-test · motionapp.com/blog/best-dtc-meta-ad-hooks-2025 (Savannah Sanchez) · buildingadswithbarry.com (Barry Hott) · Dara Denney (Point Guard Media, LinkedIn/YouTube)
