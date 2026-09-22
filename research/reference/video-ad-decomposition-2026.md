@@ -169,7 +169,13 @@ joy") `[EXACT — creator briefs]`.
 
 ### CTA — tailored (gift language)
 Meta's *button* is limited to ~17 presets (use **"Order Now"** for deadline/high-intent, "Shop Now" otherwise). Say the **gift CTA in the on-screen text / VO / end-card**:
-- **"Make it for them" / "Make one with their names"** — default emotional CTA (cold, story-led).
+- **"Make one that's only theirs"** — **Phase-1 locked CTA.** Uniqueness-framed: the object is
+  one-of-a-kind, so the CTA says so. Recipient-neutral, which a locked cross-product CTA has to be.
+  Recipient-specific swaps ("only hers" / "only his") are a Phase-2 variant, not a Phase-1 arm.
+- **"Make one no one else can give"** — same idea aimed at the *giver* rather than the object;
+  pairs with the "she has everything" angle (#3). Stronger but longer — end-card/VO, not 3s text.
+- **"Make it for them" / "Make one with their names"** — generic emotional fallback (cold, story-led).
+  ⚠️ Reads as any-POD-store; use only if the uniqueness lines underperform.
 - **"Personalize hers/his/theirs"** — recipient-targeted ad sets (Mom/Grandma/partner).
 - **"See it with your names"** — low-commitment, retargeting / personalization-demo (Skeleton C).
 - **"Create theirs / Design theirs in 60 seconds"** — reduces perceived effort.
