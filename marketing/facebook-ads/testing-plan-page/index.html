@@ -109,6 +109,23 @@
   .matrix .h a.plink,table.ex thead a.plink{color:var(--fg-3)}
   table.ex .ts{font-family:var(--mono);font-size:.68rem;color:var(--brass);display:block;margin-bottom:.15rem}
   table.ex td.en{font-style:italic}
+  .road .ph{display:flex;justify-content:space-between;align-items:baseline;gap:.7rem;
+    margin:1.1rem 0 .1rem;padding-bottom:.32rem;border-bottom:1px solid var(--line)}
+  .road .ph b{font-family:var(--serif);font-size:1rem;font-weight:600}
+  .road .ph i{font-style:normal;font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;
+    color:var(--fg-3);white-space:nowrap}
+  .road .r{display:grid;grid-template-columns:8.2rem 1fr 4.6rem 9.5rem;gap:.2rem .9rem;
+    align-items:baseline;padding:.55rem .1rem;border-bottom:1px dotted var(--line);font-size:.85rem}
+  .road .r:last-of-type{border-bottom:0}
+  .road .r .nm{font-family:var(--mono);font-size:.73rem;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--brass);font-weight:600}
+  .road .r .co{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--fg-2)}
+  .road .r .wh{font-size:.78rem;color:var(--fg-3)}
+  .road .r.now{background:var(--brass-soft)}
+  .road .gate{background:var(--card-2);border-left:3px solid var(--brass);border-radius:0 3px 3px 0;
+    padding:.6rem .85rem;margin:.75rem 0 .2rem;font-size:.85rem}
+  .road .gate b{font-family:var(--mono);font-size:.73rem;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--brass);display:block;margin-bottom:.15rem}
   .rulebox{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--brass);
     border-radius:0 3px 3px 0;padding:.85rem 1rem;margin-top:.9rem}
   .rulebox p{font-size:.92rem}
@@ -248,6 +265,9 @@
     /* bảng: cuộn ngang trong khung riêng + gợi ý vuốt */
     .tw{position:relative;-webkit-overflow-scrolling:touch}
     table{min-width:34rem}
+    .road .r{grid-template-columns:1fr;gap:.1rem;padding:.6rem .1rem}
+    .road .r .co::before{content:"Tiền/nhánh: ";color:var(--fg-3)}
+    .road .ph{flex-direction:column;gap:.1rem}
     table.ex{min-width:40rem}
     table.ex td.f{white-space:normal}
     .tw::after{content:"vuốt ngang để xem tiếp →";position:sticky;left:0;display:block;
@@ -709,37 +729,27 @@
 
 <section>
   <div class="hd"><span class="n">13</span><h2>Sau Phase 1 test gì tiếp</h2></div>
-  <div class="tw"><table class="ex" style="min-width:44rem">
-    <thead><tr><th>Vòng</th><th>Test cái gì</th><th>Đọc chỉ số nào</th><th>Tiền/nhánh</th><th>Trạng thái</th></tr></thead>
-    <tbody>
-      <tr><td class="f" colspan="5"><b>Phase 1 · Chú ý</b> — hook rate · hold rate · link CTR</td></tr>
-      <tr><td class="f">Vòng Concept</td><td>Concept × Hook — 3 concept, 2 hook, 3 sản phẩm</td>
-        <td class="n">hook rate · link CTR</td><td class="n">$21–44</td>
-        <td class="same">Chính là kế hoạch này</td></tr>
-      <tr><td class="f">Vòng Hook</td><td><b>10–20 opener</b> trên đúng phần thân đã thắng.
-        Làm cái này trước mọi thứ khác — cùng một phần thân cắt ba kiểu đã cho hook rate từ 18% lên 38%,
-        biến động mạnh nhất trong cả cái ads</td>
-        <td class="n">hook rate</td><td class="n">$21</td><td>Sau khi có mẫu thắng</td></tr>
-      <tr><td class="f">Vòng Craft</td><td><b>Craft</b> — length 6–15s hay 15–30s · cut rate 1,5s hay 5s ·
-        proof beat nào và đặt ở đâu · voice người thật hay chỉ nhạc nền</td>
-        <td class="n">hold rate</td><td class="n">~$2</td><td>Rẻ nhất, chạy kèm Vòng Hook được</td></tr>
-      <tr><td class="f">Vòng Format</td><td><b>Format</b> — bê message đã thắng sang 2–3 format khác:
-        UGC thô, testimonial, mở hộp, dạng list</td>
-        <td class="n">hook rate · hold rate</td><td class="n">$21–44</td><td>Sau Vòng Hook</td></tr>
-      <tr><td class="f" colspan="5"><b>Cổng Ý định</b> — gom 2–3 tổ hợp sống sót, chạy tối ưu theo ATC.
-        Trả lời “có kéo được người mua không”, không trả lời “cái nào hơn cái nào”</td></tr>
-      <tr><td class="f" colspan="5"><b>Phase 2 · Ý định mua</b> — add-to-cart · purchase rate; phải có ngân sách riêng</td></tr>
-      <tr><td class="f">Vòng Offer</td><td>Offer — hạn đặt hàng · làm lại miễn phí · cá nhân hoá miễn phí</td>
-        <td class="n">add-to-cart</td><td class="n">$1.057</td><td>Phase 2</td></tr>
-      <tr><td class="f">Vòng Store</td><td>Landing page · giá · upsell</td>
-        <td class="n">purchase rate</td><td class="n">$1.315</td><td>Phase 2</td></tr>
-      <tr><td class="f" colspan="5"><b>Phase 3 · Lời lỗ</b> — CPA và ROAS, chỉ dùng làm chốt chặn lỗ,
-        không dùng để so creative: một cặp cần $1.315 trở lên</td></tr>
-    </tbody>
-  </table></div>
+  <div class="road">
+    <div class="ph"><b>Phase 1 · Chú ý</b><i>hook rate · hold rate · link CTR</i></div>
+    <div class="r now"><span class="nm">Vòng Concept</span><span>Concept × Hook — 3 concept × 2 hook × 3 sản phẩm</span><span class="co">$21–44</span><span class="wh">Chính là kế hoạch này</span></div>
+    <div class="r"><span class="nm">Vòng Hook</span><span>10–20 opener mới trên đúng phần thân đã thắng</span><span class="co">$21</span><span class="wh">Chạy đầu tiên</span></div>
+    <div class="r"><span class="nm">Vòng Craft</span><span>length · cut rate · proof beat · voice</span><span class="co">~$2</span><span class="wh">Chạy kèm Vòng Hook</span></div>
+    <div class="r"><span class="nm">Vòng Format</span><span>Bê message đã thắng sang 2–3 format khác</span><span class="co">$21–44</span><span class="wh">Sau Vòng Hook</span></div>
+
+    <div class="gate"><b>Cổng Ý định</b>Gom 2–3 tổ hợp sống sót, chạy tối ưu theo ATC. Trả lời “có kéo được
+    người mua không”, không trả lời “cái nào hơn cái nào”.</div>
+
+    <div class="ph"><b>Phase 2 · Ý định mua</b><i>add-to-cart · purchase rate</i></div>
+    <div class="r"><span class="nm">Vòng Offer</span><span>Hạn đặt hàng · làm lại miễn phí · cá nhân hoá miễn phí</span><span class="co">$1.057</span><span class="wh">Cần ngân sách riêng</span></div>
+    <div class="r"><span class="nm">Vòng Store</span><span>Landing page · giá · upsell</span><span class="co">$1.315</span><span class="wh">Cần ngân sách riêng</span></div>
+
+    <div class="ph"><b>Phase 3 · Lời lỗ</b><i>CPA · ROAS</i></div>
+    <div class="r"><span class="nm">Chặn lỗ</span><span>CPA và ROAS chỉ dùng làm chốt chặn lỗ, không dùng để so creative</span><span class="co">$1.315+</span><span class="wh">Mỗi cặp</span></div>
+  </div>
   <div class="why">
     <div><b>Vì sao Vòng Hook đi trước Vòng Craft dù Craft rẻ hơn</b><p>Cả hai đều cần một phần thân đã thắng mới chạy được.
-    Hook là chỗ biến động mạnh nhất nên đánh vào đó trước; craft rẻ tới mức chạy kèm luôn được.</p></div>
+    Hook là chỗ biến động mạnh nhất trong cả cái ads — cùng một phần thân cắt ba kiểu đã cho hook rate
+    <b>từ 18% lên 38%</b> — nên đánh vào đó trước. Craft rẻ tới mức chạy kèm luôn được.</p></div>
     <div><b>Proof beat là chỗ đáng test nhất</b><p>Thứ hạng proof của mình — phản ứng thật #1 xuống cận cảnh
     tay nghề #5 — trong tài liệu ghi rõ là <b>giả thuyết</b>, chưa có A/B nào trong ngành quà tặng chứng minh.
     Mà đo bằng hold rate nên gần như không tốn tiền.</p></div>
