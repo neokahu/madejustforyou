@@ -135,6 +135,11 @@ decoration**: bundles, size upsell and multi-recipient ordering are the economic
 
 Each gets a full 12-field brief (see the brief template in `video-ad-decomposition-2026.md`) before it is shot.
 
+> ⚠️ **Hooks below are superseded for Phase 1.** This section gives each concept its own hook pair;
+> the approved plan locks **one** pair shared by all three concepts, because per-concept hooks would
+> confound concept with hook. Build from `PHASE1-SUNCATCHER-video-build-plan.md` and the plan page.
+> The unused lines here are material for **Vòng Hook**, after a winner exists.
+
 ### A · Dog memorial suncatcher
 No deadline; breed + name is the visual hook; buyer is either the grieving owner or a sympathy-giver.
 - **A1 "The light still comes in"** — memorial keepsake reveal; sun hits the glass at 4pm and the room fills
