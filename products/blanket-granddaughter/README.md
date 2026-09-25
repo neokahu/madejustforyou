@@ -125,10 +125,38 @@ the blanket, it creates wrinkles that cover the F and you mistook it as C."* Cor
   behind the top edge. Legible, but it is a packshot, not an emotional beat — and this product's whole
   structure is emotional. Re-prompt with the pose as the load-bearing instruction and the text incidental.
 
+## ✅ D5 — pose and scale both solved, by fixing the prompt not the model
+
+Three variants, each **~50 words, pose-led, and describing the product NOT AT ALL**, per
+`image-to-video-prompt-method.md`. Drafted at 2K per the doc, batched 3 per the best-of-N rule.
+
+| Variant | Shot | Result |
+|---|---|---|
+| **D5a · wrapped** | fully wrapped on a sofa, falling past her lap to the floor | ✅ pose fixed, scale reads large — **the emotional beat** |
+| **D5b · arm-span** | held open at full arm span, still reaching the floor | ✅ **strongest scale cue** — the 80×60 claim is finally visible. Hero/packshot |
+| **D5c · two people** | grandma + granddaughter under it together | ✅ scale via two bodies, **and** the relationship the product is about |
+
+Casting correct in all three; D5c matches **both** printed figures (grey bun = ALICIA, curly puffs =
+NICOLE). Text fully legible in all three.
+
+### The finding that matters
+
+**I described the product not at all, and the print came back correct anyway** — because the reference
+image already carries it. Deleting ~140 words of product description is what let the pose instruction
+land. D4's packshot drift was never a model limitation; it was my prompt making the print outrank the pose.
+
+This is THE ONE RULE demonstrated rather than quoted: *"the image already defines the product,
+composition, and text… never re-describe the product."* A `PreToolUse` hook now blocks prompts that
+break it — `research/reference/generation-prompt-guard.md`.
+
+### Shot assignment for the build
+
+- **Emotional beat / reaction** → D5a framing
+- **Product hero + size proof** → D5b framing
+- **Relationship beat (house rule)** → D5c framing
+
 ## Open
 
-- **Scale.** No arm has established 80×60. Held up or draped on a lap it reads as a throw. Needs a human
-  scale cue — fully wrapped around the shoulders, or two people under it — before the size claim is
-  credible.
-- **Pose.** D4 needs a re-run that holds the wrapped pose.
-- **Child vs adult granddaughter** — see the casting note above; blocks nothing but changes the concepts.
+- **Child vs adult granddaughter** — the printed figure is a small child; the concepts (B1 graduation,
+  B3 *"when life knocks her down"*) are written for an adult. D4/D5 cast her as an adult. Blocks nothing,
+  but if the ad should show a child, the concepts need rewriting first.
