@@ -38,7 +38,65 @@ the letterform against the real artwork every time, not just whether it spells t
 this is exactly what **Test D (fleece blanket, a full printed letter)** exists to answer, and nothing here
 should be read as predicting that result.
 
-## Stage 2 — does it survive video? *(running)*
+## Stage 2 — VERDICT: legibility survives video, fidelity does not
+
+Seedance 2.0, doc two-shot recipe, **1080**, start frame = the Nano Banana Pro 4K still, with a
+**push-in** so the lettering must be re-synthesized larger — the hardest case.
+
+```
+                              dur  hook3   peak  motion  cuts/s  static%
+testF2-name-in-video.mp4      4.9  21.61  28.70   24.61    0.21        0
+GATE                            —   ≥8.0      —    ≥6.0   ≥0.15      ≤10
+```
+
+Best motion numbers of any clip in the project.
+
+**✅ "Alex" stays readable** in every sampled frame, including the final close-up. Test C's total collapse
+(small script → body-spanning word) does **not** reproduce when the start frame carries clean, correct
+lettering at 4K. Test C's real fault was a bad start frame plus a bad prompt, not the video model.
+
+**❌ The letterform drifts.** First frame: the delicate thin script of the real product. Final frame: a
+markedly **bolder, heavier typeface**. The model rewrote the name in a different hand as it scaled it up.
+Same word, wrong font, **changing mid-shot**.
+
+### The rule this produces
+
+> A model can write "Alex". It cannot keep writing **our** "Alex".
+
+For a personalization product that distinction is the whole business. A name that changes typeface during
+the reveal misrepresents what ships, exactly as a misspelling would — it is just harder to notice.
+
+**So: PIL owns the name in motion.** Not because models cannot render text — they can, and stage 1 proves
+it — but because they *re-render* it every frame and it drifts. Where the name is the proof, composite it.
+
+Where a model-rendered name **is** acceptable: wide and medium shots where the name is present but not
+being read as proof, and any still. There the drift is invisible and the saving is real.
+
+## Wall-shadow compositing spike — ✅ PASSES on a single frame
+
+Run on `testC3-moving-open.mp4` frame 119, the validated reveal beat.
+
+**The model gets the projection structure right and the lettering wrong.** In the wall shadow, the heart,
+florals and butterflies come through correctly — they are simple shapes. The name comes through as an
+**illegible cursive squiggle**. Confirmed at 100%: `spike-C3-name-zoom2.png`.
+
+Method that worked, all PIL:
+1. Extract the lettering from the real artwork as an alpha mask — source box `(960,1175)-(1125,1248)`,
+   threshold luminance 70→190. Excludes the floral petal below; clean glyphs.
+2. Cover the model's squiggle with the median shadow tone, Gaussian-feathered 7px.
+3. Scale to 118×52, rotate −4°, Gaussian blur 1.6 to match the projection's softness.
+4. **Blend as light, not paint** — sample the 85th percentile of the florals' RGB (`134,97,71`) as the
+   lit colour and composite at α 0.92 over the shadow tone (`76,56,47`).
+
+Result `spike-before-after.png`: legible, correct script, reads as part of the same projection rather
+than a sticker. Tone and softness match the neighbouring florals.
+
+⚠️ **This is one frame. Tracking is not solved and is the remaining work.** The camera pushes in, so the
+shadow grows and moves across all 120 frames; a fixed placement will slide. The anchor to track is the
+**heart cut-out** — a high-contrast isolated blob inside the shadow — from which per-frame scale and
+translation can be derived and applied to the lettering. Template-match the heart, fit scale+offset, warp.
+
+## Stage 2 — original question *(superseded by the verdict above)*
 
 The still is not the deliverable. Test C's failure happened **in video**, so the decisive question is
 whether the name holds through image-to-video re-synthesis. Running Seedance 2.0, doc two-shot recipe,
@@ -47,11 +105,14 @@ re-synthesized larger, the hardest case.
 
 Result to be recorded here.
 
-## What this changes if Stage 2 also passes
+## What this changes in the build
 
-The **compositing spike shrinks**: close-ups of the panel would no longer need a PIL warp, leaving only
-the **wall-shadow shot** (beat A-3), where "Alex" must appear as pale script inside the dark dog shape —
-a projection no model has been asked for yet.
+The compositing spike does **not** shrink. Both jobs stay:
+- **Close-ups where the name is the proof** — composite, because the letterform drifts in motion.
+- **The wall shadow (beat A-3)** — composite, because the model's projected name is illegible squiggle.
+
+What *did* change: **wide and medium shots can use the model's lettering.** It is legible and the drift is
+invisible at that size. That is a real saving on shot count, and it came from the user's question.
 
 ## What it does not change
 
