@@ -191,3 +191,45 @@ cannot be relied on.
 
 **What this removes from the build:** the compositing engine, per-frame shadow tracking, the heart-anchor
 template match, and the wall-shadow name composite. Replaced by one still and six lines of ffmpeg.
+
+
+---
+
+## Test D — the blanket, 2026-09-26. Long text, and a failure the gate cannot see.
+
+Product: **"To My Sweetie Pie"** (`MJ4U-012`) — a ten-line, ~50-word poem in four colours and three
+weights, plus two customizable figures and two names. Full writeup:
+`products/blanket-granddaughter/README.md`.
+
+**Stills: long text reproduces word-perfect, and cloth does not need a mesh warp.**
+Nano Banana Pro at 4K held every line, colour, weight and apostrophe — flat on a bed *and* draped over a
+person, with the print following the folds in correct perspective. This kills two of my recorded rules at
+once: that ~50 words would come back as plausible gibberish, and that *"a flat PIL homography cannot
+follow cloth — likely needs mesh warping."* Neither held.
+
+**Video: the text is corrupted, and every quality gate passed.**
+
+```
+                         dur  hook3   peak  motion  cuts/s  static%
+testD3-video.mp4         4.9  15.60  59.33   18.00    0.21        0    ← all gates PASS
+```
+
+*"So when you're **ceeling** low"* — the `f` in *feeling* became a `c`. Line breaks shifted too.
+
+**This is the single most important quality finding of the project so far.** `motion_qa.py` scored this
+clip above the Macorner benchmark while it misspelled the product. The gate measures motion; it cannot
+read. On the suncatcher the equivalent failure was a *typeface change* — bad, but the word was right.
+Here the word is **wrong**, which on a personalization store is the same class of error as printing the
+customer's name incorrectly.
+
+### Consolidated rule across both products
+
+| Shot | Method | Why |
+|---|---|---|
+| Text is **read** on screen | **Stills + ffmpeg Ken Burns at native res** | video re-synthesis rewrites glyphs |
+| Text present, not read | Seedance 2.0 | drift is invisible at that size |
+| Product geometry must be exact | stills, or pin with constraints | video deforms panels and drapes |
+
+**And a process rule: never let `motion_qa.py` stand in for reading the words.** Add a literal
+read-the-text step to QA for any clip where product text is visible. The gate has now passed two clips
+that misrepresented the product — testC (morphing dog) and testD3 (misspelling).
