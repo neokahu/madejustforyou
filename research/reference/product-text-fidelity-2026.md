@@ -124,3 +124,70 @@ breed and name for every order, so a gallery is per-product where a composite is
 single Phase-1 product that cost is irrelevant; at scale it is not.
 
 Evidence: `products/suncatcher-dog-memorial/tests/testF-*.png`.
+
+---
+
+## ✅ RESOLUTION — the compositor is NOT needed for the suncatcher
+
+Prompted by the user asking whether the compositing engine was necessary at all, or whether Seedance
+could do the job. The answer is neither: a **third option beats both**.
+
+**The letterform drift comes from video re-synthesis. A stills-based camera move has none.** We already
+hold a Nano Banana Pro 4K still where "Alex" is correct. Push on that still in ffmpeg and nothing is
+redrawn — no model, no PIL warp, no tracking.
+
+```
+                              dur  hook3   peak  motion  cuts/s  static%
+kenburns-native.mp4           4.9  11.02  14.14   10.73    0.00        0   ✅ clears the gate
+testF2-name-in-video.mp4      4.9  21.61  28.70   24.61    0.21        0   ✅ gate, ❌ product
+GATE                            —   ≥8.0      —    ≥6.0   ≥0.15      ≤10
+```
+
+**⚠️ Build the zoom on native resolution.** My first attempt did `scale=1080` *before* `zoompan`, which
+upsamples and softens exactly the lettering being protected. Correct order — crop to aspect at native
+size, zoom, and let `zoompan`'s `s=` do the only downscale:
+
+```
+crop=3072:5461:0:0,
+zoompan=z='1+0.45*on/125':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=1:s=1080x1920:fps=25
+```
+
+`0.45` over 125 frames passes the gate; `0.25` passes motion but is marginal, `0.12` fails both.
+
+**Side-by-side verdict** (`compare-kenburns-vs-seedance.png`), same start frame, same final moment:
+
+| | Stills Ken Burns | Seedance video |
+|---|---|---|
+| Letterform | ✅ correct delicate script | ❌ bold, heavy, wrong typeface |
+| Silhouette outline | ✅ true | ❌ wavy, bulging |
+| Ornate black frame | ✅ present | ❌ gone from frame |
+| Glass texture | ✅ crisp | ⚠️ softened, restyled |
+| Gate | ✅ pass | ✅ pass |
+| Cost | ~0.2 cr (the still) | ~4 cr |
+
+Seedance's close-up is worse than "wrong font" — **the panel geometry deforms too.** Cheaper, sharper and
+more faithful all point the same way.
+
+### Settled shot policy for the suncatcher
+
+| Shot | Method |
+|---|---|
+| Wide / medium, name present but not read | **Seedance 2.0** — model lettering is fine, drift invisible |
+| Close-up where the name **is** the proof | **4K still + ffmpeg Ken Burns at native res** |
+| Wall shadow (beat A-3) | **Seedance 2.0**, and the shadow proves the **breed**, not the name |
+
+The shadow already does its real job: Hook 1 claims *"that's his actual breed"*, and the silhouette —
+erect ears, long muzzle, bushy tail, plus heart, florals and butterflies — carries that perfectly. Only
+the name fails there, and the name is read in the close-up instead. This is the fallback the build plan
+already specified; it is now the plan.
+
+### The compositor is deferred, not cancelled
+
+Still possibly needed for the **fleece blanket**, whose text is a long printed line on **cloth** — a mesh
+warp, not a homography, and unproven. That decision waits on the blanket image. **Do not build the engine
+speculatively:** the suncatcher no longer needs it, and the blanket may be answered instead by its
+**Skeleton B (VO-led)** structure, where grandma reads the letter aloud precisely because on-camera text
+cannot be relied on.
+
+**What this removes from the build:** the compositing engine, per-frame shadow tracking, the heart-anchor
+template match, and the wall-shadow name composite. Replaced by one still and six lines of ffmpeg.

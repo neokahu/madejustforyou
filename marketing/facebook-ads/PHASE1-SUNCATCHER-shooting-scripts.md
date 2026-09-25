@@ -222,11 +222,12 @@ No deformation, no morphing. Continuous natural motion, no stutter or flicker.
 Avoid generating any text or lettering, on the panel or on the wall.
 ```
 
-**Post (PIL):** two composites. (1) `REF-PANEL` warped onto the panel face. (2) **"Alex" warped into the
-wall shadow** — pale script inside the dark silhouette, soft-edged and slightly larger than on the glass.
-The wall gives the name more pixels than the glass does; this is where it is read.
+**Post:** none. ⚠️ **Revised 2026-09-26** — the wall shadow proves the **breed**, not the name. The model
+renders the shadow's heart, florals and butterflies correctly but the name as illegible squiggle, and
+compositing it in was proven possible yet made unnecessary: the name is read in the stills close-up
+instead. Do not caption this beat as if the name were readable here.
 
-**Burned caption:** `His breed. His name. On the wall.`
+**Burned caption:** `That shape on the wall is his actual breed.`
 
 **Gate:** `motion_qa.py` — hook3 ≥8.0 · motion ≥6.0 · static ≤10. testC3 scored 14.68 / 14.72 / 0%.
 **Then look at the frames.** A passing number on a misrepresented product is the trap this shot already
@@ -597,7 +598,12 @@ naming the relationship. Do not "fix" Hook 2 by putting the product in it — th
 
 1. ✅ Scripts + copy — this document. **Needs approval.**
 2. ✅ **People test — DONE 2026-09-26.** Seedance 2.0 for every clip. See the model routing table above.
-3. **Compositing spike** ← **now the top risk, and it has never been run** — PIL perspective-warp of `REF-PANEL` onto the panel face and into the wall
+3. ✅ **Compositing — RESOLVED 2026-09-26, and the engine is not needed.** The name-reading close-up
+   becomes a **4K still + ffmpeg Ken Burns at native resolution** (`hook3 11.02 / motion 10.73`, clears
+   the gate, ~0.2 cr). It beats Seedance on letterform, silhouette, frame and sharpness at a twentieth
+   of the cost, because nothing is re-synthesized. The wall shadow keeps Seedance and proves the
+   **breed**, not the name. Full evidence: `research/reference/product-text-fidelity-2026.md`.
+   ⚠️ Zoom on native resolution — scaling to 1080 before `zoompan` softens the lettering. — PIL perspective-warp of `REF-PANEL` onto the panel face and into the wall
    shadow. If the wall-shadow name can't be made convincing, A-3's caption moves to the glass close-up
    and the build still ships.
 4. **Turntables** — REF-OWNER, REF-GIVER, REF-ALEX-PHOTO. Hard gate.
