@@ -102,7 +102,7 @@ feeding everything we own makes feature priority ambiguous.
 | `REF-OWNER` | `img_3` — grey beard, wire glasses, green plaid | character anchoring | A, B | ✅ have |
 | `REF-PANEL-SCENE` | Nano Banana Pro 4K still, panel in a sunlit window | **the stills Ken Burns close-up** | name-reading beat | ✅ have (`img_5`) |
 | `REF-GIVER` | The sympathy-giver — dark bob, green cardigan | character anchoring | C only | ⏩ not a gate |
-| `REF-ALEX-PHOTO` | Framed photo: owner + German Shepherd, alive | prop | A, B beat 2 | 🔨 building |
+| `REF-ALEX-PHOTO` | Owner + German Shepherd, alive — `assets/REF-ALEX-PHOTO.png` 2400×1792 | prop | A, B beat 2 | ✅ have (`img_9`) |
 
 **`REF-GIVER` is no longer a gate item.** It is the same pipeline as `REF-OWNER` — text-to-image person
 reference into Seedance 2.0 — and Tests B and E already validated that path end to end. There is nothing
@@ -113,7 +113,19 @@ Test B held identity across a ¾ turn plus pose and framing change from **one** 
 reference per character is the standard now — which also removes the risk of three references disagreeing
 with each other.
 
-**`REF-ALEX-PHOTO` stays a gate**, for reasons that are not about identity:
+**`REF-ALEX-PHOTO` — ✅ DONE 2026-09-26, gate clear.** Two passes:
+- **v1** (`img_8`): the **German Shepherd came back correct first try** — erect pointed ears, long
+  tapering muzzle, black saddle over tan, deep chest, bushy tail. Breed claim is safe. But the man had
+  **no glasses** and a different beard shape: recognisably similar, not clearly the same person.
+- **v2** (`img_9`): face-swap only, holding the dog, pose, clothing, lawn and light from v1 so the
+  validated breed was never put back at risk. Glasses, beard shape and brow line now match `REF-OWNER`.
+
+⚠️ **Correction to this document's own earlier rule.** It said this prop *"is composited, not generated —
+a generated photo-within-a-photo drifts and the breed has to read."* The breed read correctly on the
+first generation. That was over-cautious. Only the last step — placing the photo inside the picture
+frame in the shot — needs PIL.
+
+It was kept as a gate for reasons that are not about identity:
 - It is a **prop containing a photo**, not a person shot.
 - It carries a hard correctness requirement: the dog must read as the **same German Shepherd** as the
   silhouette. If it reads as a Husky or a shepherd mix, Hook 1's claim — *"that's his actual breed"* —
