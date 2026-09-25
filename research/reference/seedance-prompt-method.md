@@ -151,3 +151,35 @@ Avoid generating any text or subtitles. Do not generate a logo or watermark.
 
 The load-bearing line is *"The shadow's shape does not change"* plus the explicit pose constraint. Motion
 comes from **camera and light** — things allowed to change — while the **product is pinned**.
+
+---
+
+## Verified 2026-09-25 — the corrected prompt, same start frame, same 5s/720
+
+Re-ran the reveal beat on **Seedance 2.0** (`seedance-2.0-style`) with the template above. Only the
+prompt changed.
+
+```
+                                dur  hook3   peak  motion  cuts/s  static%
+testC  (Wan 3.0, bad prompt)    4.9  12.11  18.87   11.83     0.0        0
+testC2 (Seedance, corrected)    4.9   5.87  36.24    9.82    0.21        0
+GATE                              —   ≥8.0      —    ≥6.0   ≥0.15      ≤10
+```
+
+**✅ The morph is fixed.** The dog stays **seated** through all four sampled frames. The first attempt had
+it standing by frame 3. Heart, florals and panel geometry all hold. "Alex" appears at roughly the right
+scale instead of ballooning into a body-spanning word. The load-bearing lines were *"Shadow's outline does
+not change"* and *"The dog stays seated"* — a constraint naming the specific failure mode.
+
+**✅ Shot grammar works, and buys a cut.** `cuts/s 0.21` — Seedance honoured `Shot 1` / `Shot 2` and cut
+between them inside a single 5s generation. That clears the 0.15 cut gate, which a single continuous clip
+normally cannot. Named-shot storyboarding is therefore worth using even within one clip.
+
+**❌ `hook3` dropped to 5.87 and fails — my error, not the method's.** I made Shot 1 a **fixed camera**,
+and `hook3` measures the first three seconds. *One camera movement per shot does not mean no movement.*
+
+**Rule to add: the opening shot must carry its own single camera move.** Reserve `fixed camera` for later
+shots. For the reveal beat, Shot 1 should be a slow push-in or a slow lateral track, with Shot 2 taking a
+different single move — not stillness followed by motion.
+
+Evidence: `products/suncatcher-dog-memorial/tests/testC2-seedance-corrected.mp4`, `testC2-frames.png`.
