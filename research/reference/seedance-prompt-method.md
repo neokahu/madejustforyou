@@ -98,7 +98,10 @@ Per the TopView contract, `auto` / `edit` / `extend` goes in **structured parame
 (`omniReferenceTaskType`), never in prose. Same for aspect ratio, duration, resolution. `edit` and
 `extend` both require a real `reference_video`; a video used only for style/motion/camera stays `auto`.
 
-## ⚠️ Model caveat: people
+## ⚠️ Model caveat: people — ✅ RESOLVED 2026-09-26, see Test E below
+
+**Superseded.** Test E ran people on Seedance 2.0 and identity, faces and hands all held. Use 2.0 for
+people; 2.5 underperformed it. The original concern, kept for provenance:
 
 RunDiffusion's guide states Seedance 2.0 is **restricted with people** and recommends Seedance 1.5 Pro,
 Kling or Veo 3.1 for human subjects, with 2.0 best for scenes and architecture. Our ads are people-heavy
@@ -239,8 +242,9 @@ Written before the run, audited against the rules above. Two deviations found, b
 | Emotion as physical detail | ✅ "shoulders drop as he lets out a long breath" — the guide's own *Relief* row |
 | Constraints naming **our** failure mode | ✅ face/glasses/beard unchanged; five fingers |
 | Symbol grammar | ✅ `（soft piano, sparse, no percussion）` |
-| **I2V — describe only what moves** | ❌ re-described "warm late-afternoon light… shallow depth of field", which the start frame already carries |
+| **I2V — describe only what moves** | ✅ *(I first marked this ❌ — wrong. The doc's own shipped template carries the same short lighting/style line, so keeping it is following the method, not breaking it. The rule bans re-describing the **subject and product**, not a one-line grade cue.)* |
 | **No generic boilerplate** | ❌ "Avoid generating any text or subtitles" — no text exists in this shot; this is the boilerplate the TopView contract bans |
+| **Two named shots, opening shot moving** | ❌ **the real miss.** The settled recipe is two shots with one camera move each. I wrote one shot — which is also why both arms returned `cuts/s 0.0` |
 
 Neither deviation plausibly causes identity drift, and the prompt was **identical across all four arms**,
 so Test E remains a controlled model comparison. But the corrected form is what ships:
@@ -265,3 +269,54 @@ correctly formed. Movements are continuous and natural, no stutter or flicker.
 **The general lesson:** the lighting/style block belongs in the **text-to-image** prompt that makes the
 start frame, not in the image-to-video prompt that animates it. Saying it twice invites a re-render, and
 a re-rendered subject is a new subject — the same mechanism that morphed the dog in Test C.
+
+---
+
+## Verified 2026-09-26 — Test E, people. The recipe holds for human subjects.
+
+Four runs, same start frame (`img_3`, owner reference), varying model and prompt structure.
+
+```
+                                dur  hook3   peak  motion  cuts/s  static%
+testE  2.0, one shot            4.9   8.10  15.10    7.63    0.00        0
+testE  2.5, one shot            4.9   4.64   6.04    4.54    0.00        0
+testE2 2.5, anchored one shot   4.9   6.88   9.85    6.35    0.00        0
+testE3 2.0, doc two-shot        4.9  14.90  43.27   14.96    0.21        0   ✅ ALL GATES
+GATE                              —   ≥8.0      —    ≥6.0   ≥0.15      ≤10
+Macorner (333 days live)       17.7  18.05      —   12.62    0.40        3
+```
+
+**1 · The "Seedance 2.0 is restricted with people" caveat is refuted.** Identity held in every run —
+beard, wire-rimmed glasses, heavy brows, plaid over white tee — and hands came back with five correctly
+formed fingers each. Delete the warning from the model caveat section for 2.0.
+
+**2 · Use Seedance 2.0 for people, not 2.5.** 2.5 is the platform's *preferred* model and lost on both
+measures: roughly half the motion, and it rendered a **lens-flare smear** where 2.0 rendered an actual
+blue-and-gold prism band across the face. Preferred ≠ better for our shot.
+
+**3 · The two-shot recipe is not reveal-specific — it is the recipe.** Switching from one shot to two
+(lateral track → push-in) took hook3 8.10 → 14.90 and motion 7.63 → 14.96 on the same model, and bought
+`cuts/s 0.21` exactly as testC2 did. **One shot leaves `cuts/s` at 0.**
+
+**4 · New rule — locate the action in space, not just on the body.** Rule 4 says actions must be
+body-part specific and quantified. That is not sufficient. *"Raises his right hand into the band of
+light, fingers opening slightly"* produced a **palm held flat toward camera** — a "stop" gesture, with
+eyes closed, in a grief ad. The model has to be told where the limb goes relative to the body and the
+camera. What worked:
+
+> *"raises his right hand beside his own cheek, **palm turned away from camera toward the window on his
+> left**, so the coloured band falls across the back of his hand"*
+
+plus the constraints *"His eyes stay open"* and *"His palm never faces the camera."*
+
+**5 · Name the light source or the model invents one.** *"A band of blue and gold moves across his face"*
+with no source gave a lens flare. *"Sunlight through a stained-glass panel off-screen to his left"* gave a
+correct prism band on cheek and palm.
+
+**⚠️ 6 · The corollary, and it matters more than the rest.** Once told there is a stained-glass panel
+off-screen, Seedance **built one into frame** — a leaded church window it invented. It looks good and it
+is wrong: that is the model rendering the product, the thing our division of labour forbids. Name the
+light source **as off-screen** and keep it off-screen, or put our real panel in the start frame. Never
+let the model draw what we sell.
+
+Evidence: `products/suncatcher-dog-memorial/tests/testE*.mp4`, `testE3-frames.png`.

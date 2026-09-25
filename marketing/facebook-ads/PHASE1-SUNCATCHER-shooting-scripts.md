@@ -74,10 +74,19 @@ Total still 20s. The reveal still lands at ~30–55% — mid-film, per §05.
 | Shot type | Model | Status |
 |---|---|---|
 | Empty room, window, light, product, shadow | **Seedance 2.0** (`seedance-2.0-style`) | ✅ validated — testC3, hook3 14.68 |
-| Any shot with a person | **⚠️ UNVERIFIED** | RunDiffusion reports Seedance 2.0 restricted with people. Fallback: Kling 2.6 / Veo 3.1 / Seedance 1.5 Pro |
+| Any shot with a person | **Seedance 2.0** (`seedance-2.0-style`) | ✅ validated 2026-09-26 — testE3, hook3 14.90 / motion 14.96 / cuts 0.21 |
 
-**10 of the 14 clips contain a person.** Run the people test (NEXT item 2) before committing the human
-shots — it decides the model for two-thirds of this build. Free quota covers it: 4 Wan 3.0, 5 MiniMax-H3.
+**Settled: one model for the whole build.** Test E refuted the "restricted with people" caveat —
+identity, faces and hands all held. Seedance **2.5** lost on both motion (roughly half) and light
+(a lens-flare smear instead of a prism band), despite being the platform's preferred model.
+
+⚠️ **Two prompt rules Test E added, and every person shot below must obey them:**
+1. **Locate the action in space.** "Raises his right hand into the light" gave a palm held flat at
+   camera — a *stop* gesture, eyes closed, in a grief ad. Say where the limb goes relative to body and
+   camera, and add `His palm never faces the camera` / `His eyes stay open`.
+2. **Name the light source as off-screen — and keep it there.** Unsourced light gave a lens flare. But
+   once told about a stained-glass panel, Seedance **invented one in frame**. That is the model drawing
+   what we sell. Our panel comes from the start frame or from PIL, never from the model.
 
 ---
 
@@ -587,9 +596,8 @@ naming the relationship. Do not "fix" Hook 2 by putting the product in it — th
 # Order of work from here
 
 1. ✅ Scripts + copy — this document. **Needs approval.**
-2. ⚠️ **People test** — one 5s human shot on Seedance 2.0 vs a fallback. Decides the model for 7 of 12
-   clips. Free quota covers it.
-3. **Compositing spike** — PIL perspective-warp of `REF-PANEL` onto the panel face and into the wall
+2. ✅ **People test — DONE 2026-09-26.** Seedance 2.0 for every clip. See the model routing table above.
+3. **Compositing spike** ← **now the top risk, and it has never been run** — PIL perspective-warp of `REF-PANEL` onto the panel face and into the wall
    shadow. If the wall-shadow name can't be made convincing, A-3's caption moves to the glass close-up
    and the build still ships.
 4. **Turntables** — REF-OWNER, REF-GIVER, REF-ALEX-PHOTO. Hard gate.
