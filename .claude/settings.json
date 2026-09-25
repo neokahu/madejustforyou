@@ -2,7 +2,7 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": ".*(submit_topview_canvas_generation_task|seedance|kling|veo3|wan_video|hailuo|sora_video|atlas_generate|atlas_quick_generate).*",
+        "matcher": ".*(submit_topview_canvas_generation_task|seedance|kling|veo3|wan_video|wan_image|hailuo|sora_video|atlas_generate|atlas_quick_generate|nano_banana|gpt_image|openai_4o_image|seedream|flux2_image|google_imagen4|ideogram_v3).*",
         "hooks": [
           {
             "type": "command",
