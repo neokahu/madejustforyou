@@ -55,7 +55,7 @@ concepts need rewriting first, because their beats do not fit a small child.
 | **D2 · draped over a woman on a sofa, 4K** | does text survive cloth folds? | ✅ **word-perfect, and the print follows the folds** |
 | **D2 · scale** | does 80×60 read as large? | ❌ reads as a throw, not a blanket that wraps |
 | **D2 · casting** | — | ❌ white woman against Black figures |
-| **D3 · video** | does it survive re-synthesis? | ❌ **CORRUPTS THE TEXT** — *feeling* → *ceeling* |
+| **D3 · video** | does it survive re-synthesis? | ✅ **text holds** — my initial "corruption" finding was wrong, see below |
 | **D4 · casting matched to the artwork** | does a cast-matched shot hold text + figures? | ✅ casting + text · ⚠️ pose became a product display |
 
 ### D1 + D2: I was wrong about long text
@@ -85,7 +85,7 @@ message faster than reading can, not that the words would come out broken. So:
 - Legibility being solved means that one line can genuinely be read on screen, which the old plan assumed
   was impossible.
 
-## ⛔ D3 — video corrupts the text, and every gate passed anyway
+## ✅ D3 — video holds the text. My first reading was wrong.
 
 Seedance 2.0, doc two-shot recipe, 1080, from the D2 still.
 
@@ -95,28 +95,24 @@ testD3-video.mp4         4.9  15.60  59.33   18.00    0.21        0
 GATE                       —   ≥8.0      —    ≥6.0   ≥0.15      ≤10
 ```
 
-**All four gates pass. The clip misspells the product.**
+All gates pass, **and the text is correct.**
 
-At 100% (`d3-text-zoom.png`): *"So when you're **ceeling** low"* — the `f` in *feeling* has become a `c`.
-Line breaks have also shifted and *"and Light"* is displaced from its line.
+### The mistake, recorded because the method error matters more than the call
 
-**This is the failure mode flagged at the start of Test D as the dangerous one** — not obvious garbage,
-which gets caught, but text that reads correctly at thumbnail size and is wrong when you look. It shipped
-past `motion_qa.py` with a hook3 of 15.6. **The gate cannot detect this. Only reading the words can.**
+I inspected **the final frame only**, read *"So when you're ceeling low"*, and concluded the video had
+corrupted the print — writing it up as the project's most important quality finding.
 
-⚠️ One corruption was found by inspection; there may be more. Any video frame where the poem is visible
-must be read, not scanned.
+**It was occlusion, not corruption.** Checked across frames 60 / 80 / 95 / 105 / 115 / 119
+(`d3-f-check.png`): frames 80 and 95 show **"feeling"** with a complete `f`, ascender and crossbar
+intact. In the later frames the word rides up toward the blanket's top edge as she pulls it, and a fold
+crops the ascender — leaving a shape that reads as `c` in a still frame. The apparent line-break shift
+has the same cause: perspective and drape, not re-lettering.
 
-### The rule
+**Rule this produces: never judge printed text from a single frame.** A fold, an edge or a highlight can
+remove a stroke. Sample across the clip and confirm the glyph reappears. One frame is an anecdote.
 
-| Shot | Method |
-|---|---|
-| Text is read on screen | **Stills + ffmpeg Ken Burns at native resolution.** Never video. |
-| Text present but not read (wide, over-shoulder, background) | Seedance 2.0 is fine |
-
-Same conclusion as the suncatcher, but a grade worse. There the name stayed correctly spelled and only
-changed typeface. Here the word is **misspelled** — on a personalization product, indistinguishable from
-printing the customer's name wrong.
+Credit where due — the user caught this: *"the text is fine. the reason is that when the girl pulls up
+the blanket, it creates wrinkles that cover the F and you mistook it as C."* Correct, and verified.
 
 ## D4 — casting matched
 

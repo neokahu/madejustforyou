@@ -207,29 +207,41 @@ person, with the print following the folds in correct perspective. This kills tw
 once: that ~50 words would come back as plausible gibberish, and that *"a flat PIL homography cannot
 follow cloth — likely needs mesh warping."* Neither held.
 
-**Video: the text is corrupted, and every quality gate passed.**
+**Video: the text holds.**
 
 ```
                          dur  hook3   peak  motion  cuts/s  static%
-testD3-video.mp4         4.9  15.60  59.33   18.00    0.21        0    ← all gates PASS
+testD3-video.mp4         4.9  15.60  59.33   18.00    0.21        0    ← all gates pass, text correct
 ```
 
-*"So when you're **ceeling** low"* — the `f` in *feeling* became a `c`. Line breaks shifted too.
+⚠️ **I first reported this clip as corrupting the text** — reading *"ceeling"* for *"feeling"* in the
+final frame and writing it up as the project's most important quality finding. **That was wrong.**
+Sampling frames 60–119 shows a complete `f` at frames 80 and 95; in the later frames the word rides up to
+the blanket's edge and a fold crops the ascender. Occlusion, not re-lettering.
 
-**This is the single most important quality finding of the project so far.** `motion_qa.py` scored this
-clip above the Macorner benchmark while it misspelled the product. The gate measures motion; it cannot
-read. On the suncatcher the equivalent failure was a *typeface change* — bad, but the word was right.
-Here the word is **wrong**, which on a personalization store is the same class of error as printing the
-customer's name incorrectly.
+**Rule: never judge printed text from a single frame.** Folds, edges and highlights remove strokes. Sample
+across the clip and confirm the glyph reappears before calling a defect.
 
-### Consolidated rule across both products
+### What still stands, and what does not
 
-| Shot | Method | Why |
-|---|---|---|
-| Text is **read** on screen | **Stills + ffmpeg Ken Burns at native res** | video re-synthesis rewrites glyphs |
-| Text present, not read | Seedance 2.0 | drift is invisible at that size |
-| Product geometry must be exact | stills, or pin with constraints | video deforms panels and drapes |
+**Does not stand:** "video corrupts long text." The blanket's 50 words survived image-to-video intact.
 
-**And a process rule: never let `motion_qa.py` stand in for reading the words.** Add a literal
-read-the-text step to QA for any clip where product text is visible. The gate has now passed two clips
-that misrepresented the product — testC (morphing dog) and testD3 (misspelling).
+**Still stands, on its own evidence:** the **suncatcher's letterform drift**. There the name stayed
+correctly spelled but was redrawn in a markedly bolder typeface *and the panel geometry deformed* — the
+silhouette went wavy and the ornate frame vanished. Those are visible across the clip, not one frame.
+
+### Revised rule
+
+| Shot | Method |
+|---|---|
+| Text read on screen **and** the product is a rigid object being pushed in on | stills Ken Burns — the suncatcher case, where geometry deforms |
+| Text read on screen on **cloth**, moderate camera move | Seedance 2.0 is acceptable — verified on the blanket |
+| Text present, not read | Seedance 2.0 |
+
+The honest summary is narrower than my earlier one: **video is not a blanket disqualifier for text.**
+Verify per shot, across frames.
+
+### The process rule survives, for a different reason
+**Never let `motion_qa.py` stand in for reading the words** — it measures motion and cannot read. But
+read them **across frames**, which is the part I got wrong. testC (the morphing dog) remains a real case
+of the gate passing a misrepresented product; testD3 does not.
