@@ -1,5 +1,20 @@
 # Handoff — TopView evaluated, Seedance prompt method established (2026-09-25)
 
+## ⏸ IN PROGRESS — RESUME HERE
+
+**TopView testing is NOT finished.** Tests A/B/C passed; two tests are still open:
+
+| Test | State | Unblocked by |
+|---|---|---|
+| **E · people in video** | ▶️ running 2026-09-26 — 4 arms, see the 2026-09-26 log | nothing, it is running |
+| **D · fleece blanket** | ⏸ blocked | the user supplying the product image |
+
+Do **not** move on to scripting, turntables or generation until E returns and D has its image.
+The scripts (`PHASE1-SUNCATCHER-shooting-scripts.md`) were written early, out of order — they are
+done but 7 of their 12 clips are gated on Test E's result.
+
+---
+
 ## Where we are
 Previous session shipped the Phase-1 testing-plan page (approved-pending) and the suncatcher build plan.
 This session answered the tooling question that was blocking production: **how do we actually generate

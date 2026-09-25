@@ -211,3 +211,57 @@ manufactured cut. Only reach for a static→moving contrast when a clip must sta
 **Settled recipe for a product-reveal beat:** two named shots, each with its own single camera move, the
 opening shot moving; describe only light and camera; pin the product with a constraint that names the
 exact failure mode.
+
+---
+
+## ⚠️ Scope of this document — read before reusing these prompts elsewhere
+
+Everything above is **Seedance-specific**, sourced from BytePlus's own guide and the TopView vendor
+contract. MiniMax H3, Wan 3.0, Kling and Veo have their own prompt conventions.
+
+Running a Seedance-grammar prompt on another model is a **confound**: if that model performs worse, you
+cannot tell whether it is worse at the task or worse at this grammar. When comparing models, either
+(a) write each arm in its own grammar and accept that the prompt is no longer controlled, or
+(b) keep the prompt identical, and report the non-Seedance arms as **indicative only**.
+
+Test E (2026-09-26) took option (b) deliberately.
+
+## Prompt audit — Test E, people in video
+
+Written before the run, audited against the rules above. Two deviations found, both mine:
+
+| Rule | Verdict |
+|---|---|
+| One camera movement per shot | ✅ `Slow push-in` only |
+| Define subject by 2–3 stable features, reuse label | ✅ `<Owner>` — grey beard, wire-rimmed glasses, green plaid flannel |
+| Named shots, not timecodes | ✅ `Shot 1` |
+| Actions body-part specific, quantified, gentle | ✅ "slowly raises his right hand", "fingers opening slightly" |
+| Emotion as physical detail | ✅ "shoulders drop as he lets out a long breath" — the guide's own *Relief* row |
+| Constraints naming **our** failure mode | ✅ face/glasses/beard unchanged; five fingers |
+| Symbol grammar | ✅ `（soft piano, sparse, no percussion）` |
+| **I2V — describe only what moves** | ❌ re-described "warm late-afternoon light… shallow depth of field", which the start frame already carries |
+| **No generic boilerplate** | ❌ "Avoid generating any text or subtitles" — no text exists in this shot; this is the boilerplate the TopView contract bans |
+
+Neither deviation plausibly causes identity drift, and the prompt was **identical across all four arms**,
+so Test E remains a controlled model comparison. But the corrected form is what ships:
+
+```
+Use @Image 1 as the first frame.
+Define the man with the grey beard, wire-rimmed glasses and green plaid flannel shirt
+in @Image 1 as <Owner>.
+
+Shot 1: Slow push-in toward <Owner>. A band of blue and gold light moves slowly across
+his face from left to right. <Owner> slowly raises his right hand into the band of light
+and holds it there, fingers opening slightly. His shoulders drop as he lets out a long
+breath. He does not turn his head.
+
+（soft piano, sparse, no percussion）
+
+<Owner>'s face, glasses, beard and body proportions remain exactly as in @Image 1,
+unchanged throughout. His clothing does not change. Hands have five fingers each,
+correctly formed. Movements are continuous and natural, no stutter or flicker.
+```
+
+**The general lesson:** the lighting/style block belongs in the **text-to-image** prompt that makes the
+start frame, not in the image-to-video prompt that animates it. Saying it twice invites a re-render, and
+a re-rendered subject is a new subject — the same mechanism that morphed the dog in Test C.
