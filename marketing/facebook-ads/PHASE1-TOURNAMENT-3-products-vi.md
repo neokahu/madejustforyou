@@ -137,12 +137,34 @@ Không có deadline; giống chó + tên là điểm mạnh về hình; người
 > biết chuyện buồn của người xem sẽ bị từ chối — *"Bạn vừa mất chó phải không?"* là rủi ro bị từ chối,
 > *"Hồi nhà tôi mất Coop…"* thì không. Mọi hook về mất mát phải giữ dạng này.
 
-### B · Chăn bà–cháu gái
+### B · Chăn bà–cháu gái — **"To My Sweetie Pie"** (`MJ4U-012`)
+
+> ⚠️ **Sửa ngày 26/09/2026 theo đúng sản phẩm thật.** Phần này trước đây mô tả một cái chăn in dòng
+> *"This old girl will always have your back."* **Dòng đó không có trên sản phẩm này**, và concept B2
+> được dựng hoàn toàn dựa vào nó. Ảnh sản phẩm thật:
+> `products/blanket-granddaughter/assets/product-sweetie-pie-blanket.png`.
+
+**Chữ in thật trên chăn** — tiêu đề **"To My Sweetie Pie"**, rồi một bài thơ mười dòng: *I hugged this
+SOFT BLANKET / I SQUEEZED IT REALLY TIGHT / I FILLED IT WITH MY WISHES / Hope and Love and Light / So
+when you're feeling low / JUST HOLD IT REALLY TIGHT / You'll feel MY LOVE within it / MORNING, NOON AND
+NIGHT / Love, Grandma*. Khoảng **50 từ, bốn màu, ba độ đậm**, trên nền trời xanh nhạt có mây, voi con,
+bướm và sao vàng.
+
+**Phần cá nhân hoá nhiều hơn tài liệu cũ ghi:** hai nhân vật hoạt hình **chỉnh được** (màu da, kiểu tóc,
+màu tóc, trang phục), **tên riêng dưới mỗi nhân vật**, và **từ xưng hô** ở chữ ký.
+
+⚠️ **Ràng buộc casting.** Vì hai nhân vật in trên chăn là do khách chọn, **người xuất hiện trong phim
+phải khớp với hình in trên chính cái chăn trong cảnh đó.** Mẫu hiện tại in bà và cháu gái da màu. Quay
+một người bà da trắng bên cạnh cái chăn đó là hỏng, không chỉnh màu nào cứu được. Chọn diễn viên theo
+hình in, hoặc làm lại hình in theo diễn viên — nhưng phải quyết trước khi quay.
+
 Sản phẩm là một lá thư → mọi concept đều dẫn bằng giọng hoặc phản ứng, **không bao giờ dùng cảnh hiện tên**. Cắt chậm, giọng người thật.
 - **B1 "Lá thư bà sẽ giữ"** — xây cảm xúc (khung B); giọng bà đọc lá thư trên nền các mốc đời của cháu gái, cái chăn chốt muộn.
   *H1:* "Bà 74 tuổi. Bà viết cho nó một lá thư nó có thể quấn vào người." *H2:* "Nó không đọc tin nhắn của bà. Nhưng nó sẽ đọc cái này."
-- **B2 "Bà già này luôn ở sau lưng con"** — phản ứng nhận quà; đọc tới dòng thứ ba thì nghẹn lại.
-  *H1:* "'Bà già này sẽ luôn ở sau lưng con' — xem nó đọc tới dòng đó." *H2:* "Nó mở ra, đọc được ba dòng, rồi im bặt."
+- **B2 "Lúc nào con thấy chùng xuống"** — phản ứng nhận quà; đọc xuống tới khúc ngoặt của bài thơ thì
+  nghẹn lại. Dựa vào chính câu mạnh nhất của sản phẩm — chỗ bài thơ chuyển từ *bà gửi* sang *lúc con cần*.
+  *H1:* "'So when you're feeling low, just hold it really tight' — xem nó đọc tới dòng đó."
+  *H2:* "Nó mở ra, đọc tới nửa bài, rồi thôi không đọc thành tiếng nữa."
 - **B3 "Cách nhau 800 dặm"** — bà ở xa; cái chăn là cái ôm gửi qua.
   *H1:* "Tôi sống cách nó 800 dặm. Đây là thứ gần nhất với một cái ôm." *H2:* "Tôi không ở đó được lúc đời quật nó ngã. Cái này thì có."
 

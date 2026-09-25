@@ -34,16 +34,19 @@ D.6 budgets) + `research/reference/video-ad-decomposition-2026.md` (components, 
 | Buyer | grieving owner (self-buy) **or** sympathy-giver | grandma, 60+ (buys to give) | adult child / grandkid |
 | Emotion | grief-comfort | reassurance / legacy letter | warmth, togetherness |
 | Occasion | **none** — year-round, no deadline | graduation / birthday / Christmas | Mother's Day / Christmas |
-| Personalization | breed silhouette + name — **visually strong** | 2 names + avatar — **visually weak; the TEXT is the product** | N grandkids + names — strong, **variable count** (Teeinblue conditional) |
+| Personalization | breed silhouette + name — **visually strong** | 2 customizable figures + 2 names + relationship word — **the TEXT is the product**, and it is a ~50-word poem | N grandkids + names — strong, **variable count** (Teeinblue conditional) |
 | AOV | mid | high | low |
 
 **Three consequences that shape the plan:**
 - **The suncatcher has no deadline**, so our #1-ranked gift offer (order-by-date urgency) is unavailable to
   it. Its offer test must be the memorial-specific stack instead.
 - **The blanket cannot do a personalization reveal** — the HIGH-fit format for the other two. The product is
-  a wall of text that is illegible on a phone, and the personalization is just two names. Its concepts must
-  be **VO-led** (grandma reads the letter aloud) or **reaction-led** (granddaughter reads it and breaks).
-  Buyer is 60+, so fast-cut pacing may actively hurt → brief ~5s/cut, real human VO, never synthetic.
+  a ~50-word poem that is illegible on a phone. Its concepts must be **VO-led** (grandma reads the letter
+  aloud) or **reaction-led** (granddaughter reads it and breaks). Buyer is 60+, so fast-cut pacing may
+  actively hurt → brief ~5s/cut, real human VO, never synthetic.
+  ⚠️ The personalization is *not* weak — two fully customizable figures plus two names plus the
+  relationship word. It is **unreadable at phone size**, which is a different problem and is why the
+  structure is VO-led rather than reveal-led.
 - **The magnet's low AOV is a structural risk** → bundle / multi-recipient is its **#1 Stage-2 offer**, not
   an optional one.
 
@@ -167,14 +170,41 @@ No deadline; breed + name is the visual hook; buyer is either the grieving owner
 > knowledge of the viewer's hardship get rejected — *"Did you lose your dog?"* is a rejection risk,
 > *"When we lost Coop…"* is not. Keep every grief hook in this form.
 
-### B · Granddaughter blanket
+### B · Granddaughter blanket — **"To My Sweetie Pie"** (`MJ4U-012`)
+
+> ⚠️ **Corrected 2026-09-26 against the real product.** This section previously described a blanket
+> printed *"This old girl will always have your back."* **That line does not exist on this product** and
+> concept B2 was built entirely on it. Real artwork:
+> `products/blanket-granddaughter/assets/product-sweetie-pie-blanket.png`.
+
+**What is actually printed** — headline **"To My Sweetie Pie"**, then a ten-line poem:
+
+> I hugged this **SOFT BLANKET** / I SQUEEZED IT REALLY TIGHT / I FILLED IT WITH MY WISHES /
+> *Hope and Love and Light* / So when you're feeling low / JUST HOLD IT REALLY TIGHT /
+> You'll feel **MY LOVE** within it / MORNING, NOON AND NIGHT / Love, **Grandma**
+
+Set on a pale blue sky with clouds, small elephants, butterflies and gold stars. Roughly **50 words in
+four colours and three weights.**
+
+**Personalization is richer than this doc previously recorded.** Not "2 names + avatar" but:
+- **two customizable cartoon figures** — skin tone, hair style and colour, outfit, all chosen by the buyer
+- **a name under each** (the sample reads ALICIA and NICOLE)
+- **the relationship word** in the signature ("Grandma")
+
+⚠️ **Casting constraint this creates.** Because the figures are customized, whoever appears on camera
+**must match the figures printed on the blanket in the shot.** The sample artwork shows a Black
+grandmother and a Black granddaughter. Casting a white grandmother against that blanket breaks the ad in
+a way no amount of grading fixes. Either cast to the artwork, or regenerate the artwork to the cast —
+but decide before the shoot, not in QA.
+
 The product is a letter → every concept is VO- or reaction-led, **never a reveal**. Slow cuts, real human VO.
 - **B1 "The letter she'll keep"** — sentiment build (Skeleton B); grandma's voice reads it over the
   granddaughter's life beats, blanket as late payoff.
   *H1:* "I'm 74. I wrote her a letter she can wrap herself in." *H2:* "She won't read my texts. She'll read this."
-- **B2 "This old girl has your back"** — gift-reaction; she gets three lines in and stops talking. Leans on
-  the product's own best line.
-  *H1:* "'This old girl will always have your back' — watch her get to that line." *H2:* "She opened it, got three lines in, and stopped talking."
+- **B2 "When you're feeling low"** — gift-reaction; she reads down the poem and stops at the turn. Leans
+  on the product's own strongest line, which is the poem's pivot from *giving* to *when you need it*.
+  *H1:* "'So when you're feeling low, just hold it really tight' — watch her get to that line."
+  *H2:* "She opened it, got halfway down, and stopped reading out loud."
 - **B3 "800 miles away"** — long-distance grandma; the blanket as a hug by proxy.
   *H1:* "I live 800 miles from her. This is the closest I get to a hug." *H2:* "I can't be there when life knocks her down. This can."
 

@@ -125,7 +125,9 @@ Recorded because the pattern matters more than the individual errors.
    grid-measuring and numerically solving crop rects.
 4. **Test D — the fleece blanket.** ⏸ Blocked: needs the real product image from the user.
    Product: Granddaughter blanket **L 80×60**, $69.95, GP $30.36, BE ROAS 2.30×, printed line
-   *"This old girl will always have your back"*. Harder than the suncatcher on three axes:
+   **"To My Sweetie Pie"** — a ~50-word poem plus two customizable figures and two names.
+   ⚠️ The line recorded here earlier, *"This old girl will always have your back"*, is **not on this
+   product**; corrected 2026-09-26. Harder than the suncatcher on three axes:
    - **Text load** — a full printed letter, not one word. The suncatcher only proved a single word comes
      back illegible. The risk here is *plausible-looking gibberish*, which is worse than blank because it
      can ship unnoticed. Read it at 100%.
