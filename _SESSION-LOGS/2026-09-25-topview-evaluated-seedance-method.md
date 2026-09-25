@@ -133,3 +133,38 @@ Recorded because the pattern matters more than the individual errors.
 - TopView renders: images ~60–120s, Seedance video ~4–6 min. Poll, don't assume.
 - `nativeAudio` is **a decision, not a default** — we set it `false` because the film gets a music bed in
   post and in-shot audio would fight the mix.
+
+---
+
+## Operational state — what the next session needs to resume
+
+**Live testing-plan page (approved-pending):** https://testing-plan-phase-1.namvu47.workers.dev
+Deployed from `marketing/facebook-ads/testing-plan-page/` via `npx wrangler deploy` in the session
+scratchpad `cf/` dir. §05 holds the 9-step content framework the scripts must follow.
+
+**TopView Canvas:** `4ed6f979c13244c9b8ba102ae2d14d91` — "Suncatcher Phase-1 — Alex (German Shepherd)"
+
+| Node | What it is |
+|---|---|
+| `node_1790348874995_7c5b5cea4f95` | **The real product image** (`img_1`) — feed this as reference |
+| `node_gen_4f76bc324cd07aecb890b7d447ee1b76` | Test A plate — the wide living room, used as start frame |
+| `node_gen_47f37218d0da9abb1e03939321d8287e` | Owner character reference (Test B) |
+
+**Budget left:** ~70 of 80 credits, **plus unused free quota — 7 GPT Image 2.5 (1K/medium only),
+4 Wan 3.0 video, 5 MiniMax-H3 video.** Use the free pools first.
+
+**Models used this session** (the contract forbids hardcoding these — always call
+`get_topview_canvas_generation_capabilities` first; listed only so the next session knows what worked):
+`gpt-image-2.5-flare` for stills, `seedance-2.0-style` for the validated video beats,
+`qwen-wan3.0-video` for the free-quota run.
+
+**Call order that works:** capabilities → submit (with `capabilityVersion` + a unique `commandId`) →
+refresh until `status: success` → `download_topview_canvas_nodes` for a signed URL → curl to disk.
+
+**Local test renders** (gitignored, also in the Canvas): `products/suncatcher-dog-memorial/tests/` —
+`testA-wide-scale.png`, `testB-owner-ref.png`, `testB-angle2.png`, `testB-compare.png`,
+`testC-reveal-beat.mp4`, `testC2-seedance-corrected.mp4`, `testC3-moving-open.mp4` (the good one),
+plus `*-frames.png` contact sheets.
+
+**Product source image:** `products/suncatcher-dog-memorial/assets/product-alex-german-shepherd.png`
+(2048×2048) — this is the PIL compositing texture, not just a reference.
