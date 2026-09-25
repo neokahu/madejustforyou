@@ -5,6 +5,17 @@
 >
 > 🇻🇳 **Bản tiếng Việt:** https://docs.google.com/document/d/1cO05lrK4zm2xnITi_Kmak82m-DNRAyPqHdetUr1X5_8/edit
 
+> ## ⚠️ SUPERSEDED ON HOOKS — read this before building from the tables below
+>
+> This document gives **a different hook pair per concept** (A1/A2/A3 each with their own H1/H2).
+> The approved plan page gives **one hook pair shared by all three concepts**, and **the page wins** —
+> per-concept hooks would confound concept with hook and destroy the test.
+>
+> Build from **https://testing-plan-phase-1.namvu47.workers.dev** (§05) and, for the suncatcher, from
+> `PHASE1-SUNCATCHER-video-build-plan.md` + `PHASE1-SUNCATCHER-shooting-scripts.md`.
+>
+> The unused hook lines here are still good material — hold them for **Vòng Hook**, after a concept wins.
+
 **Status:** planned, not launched. **Written 2026-09-18.**
 **Provenance:** decisions and economics were settled in the session of 2026-09-17, which was lost to a power
 outage before anything was written to disk. Recovered from the session transcript and **re-verified** (every
