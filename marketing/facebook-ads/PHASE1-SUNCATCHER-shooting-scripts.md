@@ -95,16 +95,31 @@ identity, faces and hands all held. Seedance **2.5** lost on both motion (roughl
 Nothing shoots until these are locked and approved. Max **4–5 assets per generation, one duty each** —
 feeding everything we own makes feature priority ambiguous.
 
-| Ref | What | Duty | Used by |
-|---|---|---|---|
-| `REF-PANEL` | Real product, 2048×2048 flat artwork | PIL composite texture + scale anchor | every reveal |
-| `REF-ROOM` | The living room plate (testA, already generated) | scene tone-setting | A, B, C beat 5 |
-| `REF-OWNER` | Owner portrait + ¾-left + ¾-right | character anchoring | A, B, C beat 5 |
-| `REF-GIVER` | Sympathy-giver, same treatment | character anchoring | C only |
-| `REF-ALEX-PHOTO` | Framed photo: owner + German Shepherd, alive | prop, PIL-composited | A, B beat 2 |
+| Ref | What | Duty | Used by | State |
+|---|---|---|---|---|
+| `REF-PANEL` | Real product, 2048×2048 flat artwork | scale anchor + stills close-up source | every reveal | ✅ have |
+| `REF-ROOM` | The living room plate (testA) | scene tone-setting | A, B | ✅ have |
+| `REF-OWNER` | `img_3` — grey beard, wire glasses, green plaid | character anchoring | A, B | ✅ have |
+| `REF-PANEL-SCENE` | Nano Banana Pro 4K still, panel in a sunlit window | **the stills Ken Burns close-up** | name-reading beat | ✅ have (`img_5`) |
+| `REF-GIVER` | The sympathy-giver — dark bob, green cardigan | character anchoring | C only | ⏩ not a gate |
+| `REF-ALEX-PHOTO` | Framed photo: owner + German Shepherd, alive | prop | A, B beat 2 | 🔨 building |
 
-`REF-ALEX-PHOTO` is **composited, not generated** — a generated photo-within-a-photo drifts and the breed
-has to read. Build it in PIL from the panel silhouette proportions + a stock-shot German Shepherd.
+**`REF-GIVER` is no longer a gate item.** It is the same pipeline as `REF-OWNER` — text-to-image person
+reference into Seedance 2.0 — and Tests B and E already validated that path end to end. There is nothing
+left to prove, so it is generated routinely alongside Body C's clips rather than blocking the build.
+
+**Single reference is enough.** The original spec called for portrait + ¾-left + ¾-right per character.
+Test B held identity across a ¾ turn plus pose and framing change from **one** image, so one good
+reference per character is the standard now — which also removes the risk of three references disagreeing
+with each other.
+
+**`REF-ALEX-PHOTO` stays a gate**, for reasons that are not about identity:
+- It is a **prop containing a photo**, not a person shot.
+- It carries a hard correctness requirement: the dog must read as the **same German Shepherd** as the
+  silhouette. If it reads as a Husky or a shepherd mix, Hook 1's claim — *"that's his actual breed"* —
+  is contradicted inside our own ad.
+- Two clips depend on it, and it is the element that stops Bodies A and B reading as a man alone in a
+  house.
 
 ---
 
