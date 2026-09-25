@@ -1,5 +1,38 @@
 # TopView.ai — evaluation for our ad-video pipeline (2026-09-25)
 
+> ## ✅ TESTED 2026-09-25 — verdict below is now evidence, not projection
+> Ran on the real product (German Shepherd · "Alex"). Canvas
+> `4ed6f979c13244c9b8ba102ae2d14d91`, renders in `products/suncatcher-dog-memorial/tests/`.
+> **Cost: $0** — OAuth granted free quota (5 MiniMax-H3 video, 5 Wan 3.0 video, 10 GPT Image 2.5),
+> so the 80 plan credits were never touched.
+>
+> | Test | Result |
+> |---|---|
+> | **A · product scale in a wide shot** | **PASS** — stayed hand-sized against the window sash, the exact framing where our rule #3 says models oversize |
+> | **B · identity across a camera change** | **PASS** — same man from ONE reference across a ¾ turn, pose and framing change; room continuity preserved unprompted |
+> | **C · motion gate** | **PASS** — hook3 **12.11** vs gate 8.0, motion **11.83**, static **0%** |
+> | **product fidelity in video** | **FAIL** — the dog shadow morphs sitting → standing across 5s; "Alex" grows from small script to a body-spanning word |
+>
+> **What the tests changed:**
+> - **B is the headline.** Our rule #2 requires a locked turntable because otherwise the model invents
+>   a new person per clip (the MJ4U-111 failure). TopView held identity from a single image. That is a
+>   capability we did not have.
+> - **I was wrong about OFAT.** I argued TopView would break the test because it auto-plans scenes.
+>   Driving `image_edit` / `image_to_video` directly through the MCP gives explicit per-shot control —
+>   no auto-storyboarding involved. OFAT is ours to enforce in prompts, and it is enforceable here.
+> - **I was wrong about the projection.** I claimed an opaque silhouette cannot project a legible name.
+>   The name and florals are printed *pale on the black dog*, making them the panel's most translucent
+>   areas — they read as bright script inside the dark shadow, and the wall gives the name more pixels
+>   than the glass does.
+> - **The image/video split is now measured, not assumed.** Image models held the product; the video
+>   model drifted over 5 seconds. That is precisely the morph our QA rule #10 exists to catch.
+>
+> **Division of labour, settled:** TopView generates plates, camera and motion. **PIL composites the
+> panel, shadow and name.** `motion_qa.py` stays the gate. ffmpeg stays the assembler.
+>
+> ⚠️ **The pretty-but-wrong trap is real.** Test C passed every number and still misrepresented the
+> product. Never let the gate stand in for looking at the frames.
+
 **Verdict: worth buying — but at the Pro tier, and not for the reason the marketing suggests.**
 The headline "365-Day Unlimited Seedance" is explicitly barred from automation. What's actually worth
 paying for is **Product AnyShoot location control**, **Omni Reference**, and model breadth behind one key.
