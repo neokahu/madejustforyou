@@ -108,10 +108,21 @@ Recorded because the pattern matters more than the individual errors.
 3. **Compositing spike** — PIL perspective-warp of the real panel artwork onto the panel face and the wall
    shadow. Start from `solve_match.py` in the MJ4U-111 cartoon POC, which solved placement by
    grid-measuring and numerically solving crop rects.
-4. **Test D — the blanket** (task #7, needs the product image). Harder on three axes: a full printed
-   letter not one word; 80×60in tests *under*-sizing; and **fabric folds break a flat homography**, so it
-   may need mesh warping. Note our research already made the blanket Skeleton B (VO-led) *because* the
-   text can't be read on camera — illegible text there may confirm the structure rather than fail the tool.
+4. **Test D — the fleece blanket.** ⏸ Blocked: needs the real product image from the user.
+   Product: Granddaughter blanket **L 80×60**, $69.95, GP $30.36, BE ROAS 2.30×, printed line
+   *"This old girl will always have your back"*. Harder than the suncatcher on three axes:
+   - **Text load** — a full printed letter, not one word. The suncatcher only proved a single word comes
+     back illegible. The risk here is *plausible-looking gibberish*, which is worse than blank because it
+     can ship unnoticed. Read it at 100%.
+   - **Scale, opposite direction** — the suncatcher tested whether a 6-inch object gets *oversized* in a
+     wide; 80×60in tests whether a large object gets *undersized* or loses bulk when draped.
+   - **Deformation** — fabric folds. **A flat PIL homography cannot follow cloth**, unlike the rigid
+     suncatcher panel. Likely needs mesh warping, or reframe so the readable line sits on a flat section.
+
+   Run the same A/B/C checks plus a legibility read. ⚠️ Judge against what the ad needs, not pixel
+   fidelity: our research already made the blanket **Skeleton B (VO-led)** *because* the text can't be read
+   on camera — grandma reads the letter aloud. Illegible text may **confirm** the structure choice rather
+   than fail the tool.
 5. Then: refs → 18 clips → QA → post → ship.
 
 ## Gotchas for next session
