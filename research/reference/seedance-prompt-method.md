@@ -183,3 +183,31 @@ shots. For the reveal beat, Shot 1 should be a slow push-in or a slow lateral tr
 different single move — not stillness followed by motion.
 
 Evidence: `products/suncatcher-dog-memorial/tests/testC2-seedance-corrected.mp4`, `testC2-frames.png`.
+
+### Third run — the fix, and the trade-off it exposes
+
+Only change from run 2: Shot 1 became a **smooth lateral track** instead of `fixed camera`.
+
+```
+                                dur  hook3   peak  motion  cuts/s  static%
+testC  Wan 3.0, bad prompt      4.9  12.11  18.87   11.83     0.0        0   dog morphed
+testC2 Seedance, fixed open     4.9   5.87  36.24    9.82    0.21        0   hook3 fail
+testC3 Seedance, moving open    4.9  14.68  18.49   14.72     0.0        0   ✅ PASS
+GATE                              —   ≥8.0      —    ≥6.0   ≥0.15      ≤10
+Macorner (333 days live)        17.7  18.05      —   12.62    0.40        3
+```
+
+`hook3` **14.68** clears the gate and is **4× our shipped film's 3.59**; `motion` **14.72** exceeds the
+competitor winner's 12.62; `static 0%`. The dog stays seated in every sampled frame, with heart, florals
+and butterflies consistent and "Alex" legible at true scale.
+
+**Trade-off:** `cuts/s` fell to 0. The cut in run 2 existed *because* Shot 1 was static and Shot 2 moved —
+the frame-differencer reads that contrast as a cut. Two moving shots blend into one continuous move.
+
+**This does not matter, and knowing why is the point:** the cut gate applies to the **assembled** film,
+where cuts come from beat-to-beat editing in ffmpeg. Within a single clip, prefer motion over a
+manufactured cut. Only reach for a static→moving contrast when a clip must stand alone.
+
+**Settled recipe for a product-reveal beat:** two named shots, each with its own single camera move, the
+opening shot moving; describe only light and camera; pin the product with a constraint that names the
+exact failure mode.
