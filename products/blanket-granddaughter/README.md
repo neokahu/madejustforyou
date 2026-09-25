@@ -160,3 +160,41 @@ break it — `research/reference/generation-prompt-guard.md`.
 - **Child vs adult granddaughter** — the printed figure is a small child; the concepts (B1 graduation,
   B3 *"when life knocks her down"*) are written for an adult. D4/D5 cast her as an adult. Blocks nothing,
   but if the ad should show a child, the concepts need rewriting first.
+
+
+## D6 / D7 — the hand, fixed in two passes (2026-09-26)
+
+The user rejected D5a twice: *"the hand looks like it's punching a hole through the blanket"*, then
+*"just keep both of her hands in the blanket."*
+
+| | Prompt | Result |
+|---|---|---|
+| **D5a** | *"Only her face and one hand show"* | ❌ no real hand; an ambiguous shape at the blanket's top edge |
+| **D6** | right hand located — *"rests on the top edge near her collarbone, fingers relaxed and fully visible"* | ⚠️ natural hand, but still read as intrusive |
+| **D7** | *"Both her hands stay wrapped inside the blanket, held against her chest beneath the fabric, so the blanket's printed front face stays smooth and unbroken"* | ✅ **accepted shape** — no hand in frame, front face unbroken |
+
+**The lesson is not "locate the limb" — it is "the simplest correct answer may be to remove it."** D6
+followed the doc and was still wrong for the shot. Stating the *surface* we want protected ("printed
+front face stays smooth and unbroken") did what describing the hand could not.
+
+⚠️ Text is cropped at the left and right edges where the blanket wraps. Inherent to this framing and
+acceptable — the poem is read in the flat D1 / D5b framings, not here.
+
+Assets: `D6-limb-rule.png`, `D7-hands-inside.png` (use **D7**), `compare-D5a-vs-D6.png`.
+
+---
+
+## ▶️ Before production — recommended next step
+
+**One vertical slice, not more component tests.** Build **S-C1-H1 end to end** (5 clips → assemble →
+grade → captions → music → score). Untested today and all exercised at once by that single build:
+
+1. **Identity across multiple clips** — the biggest gap. Test B proved identity in ONE still and ONE
+   camera change. Four clips of the same person have never been compared side by side. This is rule #2's
+   actual risk and the MJ4U-111 failure mode.
+2. **Assembly** — no full 20s cut exists. Grade continuity across separately-generated clips, structure-A
+   timing, caption legibility sound-off, music bed, end card.
+3. **Meta 9:16 safe areas** — feed UI crops top and bottom; CTA/end-card placement unchecked.
+4. **kie.ai cost visibility** — its balance endpoint returns no number; we are spending blind there.
+
+≈$2 on AtlasCloud. A grade mismatch found after one ad costs one ad; after twelve it costs twelve.
