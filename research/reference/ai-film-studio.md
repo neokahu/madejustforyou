@@ -1,5 +1,27 @@
 # AI Film Studio — MadeJustForYou
 
+> ## ⚠️ DEMOTED 2026-09-26 — do not cite this as authority
+>
+> **Its own worked example failed.** The MJ4U-111 film this doc is built from scores `hook3 3.59` against
+> the competitor benchmark of `18.05` — 5× below — with `motion 8.42`, `cuts/s 0.03` and `static 17%`.
+> A methodology document whose reference implementation lost that badly cannot be the source of rules.
+>
+> **Use instead, all three built from official model docs and verified by measurement:**
+> - `research/reference/seedance-prompt-method.md` — video prompt craft
+> - `research/reference/image-to-video-prompt-method.md` — i2v craft (THE ONE RULE)
+> - `research/reference/image-prompt-method.md` — GPT Image / Nano Banana / Seedream
+>
+> **What survives here, because it was independently confirmed:**
+> - the **turntable idea** — multiple angles of a subject, fed to every shot, so the model invents less.
+>   Confirmed by capability (`reference_to_video` accepts up to 9 refs) and by the measured gap that
+>   identity across *multiple* clips was never tested. Kept on its own merits, not on this doc's word.
+> - `motion_qa.py` as a gate — with the caveat that it cannot read text and has passed two clips that
+>   misrepresented the product.
+>
+> Everything else in this file is unvalidated and should be re-derived before use.
+
+
+
 **Purpose:** a repeatable "small studio" for producing emotional short-film ads (Thai-ad style) with AI, end-to-end. This is the **source of truth** every studio role reads. Built 2026-08-07 from the MJ4U-111 "Everyone Is Still in Your Garden" production (see that film as the worked example).
 
 Builds on — does not duplicate — the three method playbooks:

@@ -108,10 +108,16 @@ feeding everything we own makes feature priority ambiguous.
 reference into Seedance 2.0 — and Tests B and E already validated that path end to end. There is nothing
 left to prove, so it is generated routinely alongside Body C's clips rather than blocking the build.
 
-**Single reference is enough.** The original spec called for portrait + ¾-left + ¾-right per character.
-Test B held identity across a ¾ turn plus pose and framing change from **one** image, so one good
-reference per character is the standard now — which also removes the risk of three references disagreeing
-with each other.
+⚠️ **REVERTED 2026-09-26 — multi-angle turntable is back.** I had written *"single reference is enough"*
+on the strength of Test B. That was wrong: **Test B proved one reference survives one camera change inside
+a single generation. It proved nothing about four independent generations**, which is the actual risk.
+
+**Each character gets three views — portrait + ¾-left + ¾-right — and all three are fed to every clip.**
+
+And a second, larger correction: every clip today used **`image_to_video`** (one start frame). The right
+endpoint for scenes is **`reference_to_video`**, which accepts **up to 9 reference images**
+(`bytedance/seedance-2.0/reference-to-video` on AtlasCloud). Feeding one view and asking the model to
+invent every other angle is the drift mechanism itself.
 
 **`REF-ALEX-PHOTO` — ✅ DONE 2026-09-26, gate clear.** Two passes:
 - **v1** (`img_8`): the **German Shepherd came back correct first try** — erect pointed ears, long
