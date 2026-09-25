@@ -25,8 +25,30 @@ GEN_TOOLS = (
     # punched-through hand.
     "nano_banana", "nano_banana_pro_image", "nano_banana_edit",
     "gpt_image", "openai_4o_image", "seedream", "flux2_image",
-    "google_imagen4", "ideogram_v3", "wan_image",
+    "google_imagen4", "ideogram_v3", "wan_image", "recraft",
+    # AtlasCloud routes every image model through one generic tool and passes the
+    # model id as a parameter, so the tool name alone cannot tell us which model.
+    # MODEL_OF() below reads the model/param fields to recover it.
+    "atlas_generate", "atlas_quick_generate",
 )
+
+# The three image models we have documented methods for.
+GPT, NANO, SEED = "gpt-image", "nano-banana", "seedream"
+
+def model_of(tool, ti):
+    """Identify the image model from the tool name OR the model parameter
+    (AtlasCloud/TopView pass it as a param: openai/gpt-image-2.5-flare/edit,
+    bytedance/seedream-v4.7/edit, nano_banana2, gpt-image-2.5-flare ...)."""
+    blob = " ".join(str(x) for x in (
+        tool, ti.get("model", ""), ti.get("modelId", ""),
+        (ti.get("parameters") or {}).get("model", ""))).lower()
+    if "nano_banana" in blob or "nano-banana" in blob:
+        return NANO
+    if "gpt-image" in blob or "gpt_image" in blob or "4o_image" in blob:
+        return GPT
+    if "seedream" in blob:
+        return SEED
+    return None
 DOCS = "research/reference/image-to-video-prompt-method.md · seedance-prompt-method.md · ai-film-studio.md"
 
 CAMERA = r"\b(push[- ]?in|pull[- ]?back|dolly|track(?:ing)?|pan(?:ning)?|tilt(?:ing)?|crane|arc|orbit|zoom|locked[- ]?off|fixed camera|static shot|handheld|wide shot|close[- ]?up|medium shot)\b"
@@ -119,6 +141,32 @@ def main():
             problems.append(fail("LIMB",
                 "a limb is named but never located. THE LIMB RULE: every hand/arm gets a position AND a contact point.",
                 "add where it is and what it touches."))
+        mdl = model_of(tool, ti)
+        has_ref = bool(ti.get("image_input") or ti.get("image_urls") or ti.get("inputs")
+                       or re.search(r"@?\bImage\s*\d|reference image", prompt, re.I))
+        is_edit = "edit" in (task or "").lower() or "edit" in tool.lower() or has_ref
+
+        if mdl == GPT and is_edit and not acked("GPTTERSE"):
+            flowery = re.search(r"\b(beautiful|beautifully|artistically|stunning|please|gorgeous|breathtaking|in order to|so that it (?:looks|feels))\b", prompt, re.I)
+            if flowery:
+                problems.append(fail("GPTTERSE",
+                    f"GPT Image edit prompt contains prose (\"{flowery.group(0)}\"). OpenAI: write DIRECT "
+                    "COMMANDS, be TERSE, no flowery language, no justifications.",
+                    "'Change background to sunset beach. Keep subject unchanged.'"))
+
+        if mdl == NANO and has_ref and not acked("NANOREL"):
+            if not re.search(r"\b(using|use|combine|place|transform|blend|merge|apply|keep|replace|based on)\b", prompt, re.I):
+                problems.append(fail("NANOREL",
+                    "Nano Banana with references needs a RELATIONSHIP instruction. Google's formula is "
+                    "[reference images] + [relationship instruction] + [new scenario].",
+                    "start with a strong verb naming the operation: 'Using Image 1 as the texture, place ...'"))
+
+        if mdl == SEED and re.search(r"\b(text|word|words|headline|caption|title|sign|label)\b", prompt, re.I) \
+           and not re.search(r'"[^"]+"', prompt) and not acked("SEEDQUOTE"):
+            warnings.append(fail("SEEDQUOTE",
+                "Seedream renders text best when the exact string is wrapped in DOUBLE QUOTES.",
+                'quote it, place it, keep it short: Design a poster with the title "ALTITUDE".'))
+
         if re.search(r"@?\bImage\s*\d|reference image", prompt, re.I) and not re.search(r"\bas [^.]{0,40}\b(character|style|pose|composition|background|texture|pattern|structure|colour|color)\b", prompt, re.I) and not acked("REFROLE"):
             warnings.append(fail("REFROLE",
                 "a reference is used but given no role.",

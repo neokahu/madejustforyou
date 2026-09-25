@@ -66,3 +66,47 @@ It is mechanical. It cannot tell whether an action is **located in space** (the 
 his hand into the light"* passes every check and still produced a stop gesture), whether casting matches
 customized artwork, or whether the shot serves the concept. Those remain judgement, and judgement still
 belongs in the doc read before prompting.
+
+
+---
+
+## 2026-09-26 — extended to the image models, both providers
+
+**Coverage hole found by testing, not by reading:** `nano_banana`, `gpt_image`, `seedream`, `flux2_image`,
+`imagen4`, `ideogram_v3` and `wan_image` were never in the tool list, so **every kie.ai image call ran
+unguarded** — including the one that produced the punched-through hand.
+
+**AtlasCloud needed a different fix.** It routes every image model through one generic tool
+(`atlas_generate_image`) and passes the model id as a *parameter*, so the tool name cannot identify the
+model. `model_of()` now recovers it by reading `model` / `modelId` / `parameters.model`, which also covers
+TopView (`nano_banana2`, `gpt-image-2.5-flare`) and AtlasCloud ids like
+`openai/gpt-image-2.5-flare/edit`, `bytedance/seedream-v4.7/edit`.
+
+### Verified coverage — 9 paths, all guarded
+
+```
+kie.ai  nano_banana_pro_image · nano_banana_edit · gpt_image_2 · openai_4o_image · ideogram_v3_edit
+atlas   atlas_generate_image (+gpt-image) · atlas_generate_image (+seedream) · atlas_quick_generate
+topview submit_topview_canvas_generation_task (+nano_banana2, image_edit)
+```
+
+### Generic image rules
+
+| Rule | Check | Source |
+|---|---|---|
+| `NEGFRAME` | exclusionary framing — "only X shows", "no Y visible", "without Z" | Google: *"use positive framing"* |
+| `LIMB` | a hand/arm/palm named but never located | THE LIMB RULE — the punched-hand failure |
+| `REFROLE` | a reference used with no assigned role | OpenAI multi-ref format |
+
+### Model-specific rules — fire only on their own model (cross-checked)
+
+| Rule | Model | Check |
+|---|---|---|
+| `GPTTERSE` | GPT Image, edit | prose in an edit prompt ("beautiful", "artistically", "please"). OpenAI: **direct commands, terse, no flowery language** |
+| `NANOREL` | Nano Banana, with refs | no relationship instruction. Google's formula is *[references] + [relationship] + [new scenario]*, started with a strong verb |
+| `SEEDQUOTE` | Seedream | text requested without double quotes around the exact string (warning) |
+
+Image word cap is **250** (not 100 — that came from the i2v doc, which is about *animating* an existing
+image; generation formulas are structurally longer and Seedream's own limit is ~600 words).
+
+Full method: `research/reference/image-prompt-method.md`.
