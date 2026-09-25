@@ -40,8 +40,8 @@ Beat 1 is the hook and is shot twice. Beats 2–5 are the body and are shot once
 | Beat | | |
 |---|---|---|
 | 1 · hook | 0–2s | *swappable — see above* |
-| 2 · bối cảnh | 2–6s | Empty house, Max's food bowl still in its place |
-| 3 · sản phẩm lộ ra | 6–12s | Sun through the glass — **his name and breed land on the wall** |
+| 2 · bối cảnh | 2–6s | Empty house, Alex's food bowl still in its place |
+| 3 · sản phẩm lộ ra | 6–12s | Sun through the panel — room floods blue-and-gold, **his shadow falls across the wall**; name read in close-up on the glass |
 | 4 · phản ứng | 12–17s | The owner sits down, reaches into the band of light |
 | 5 · chốt + CTA | 17–20s | Close on the suncatcher in the window |
 
@@ -61,21 +61,54 @@ reshoot (~$1/clip) versus ~$0.05 to fix at the reference stage.
 
 1. **Owner** — one locked portrait + ¾-left / ¾-right. Used in Bodies A, B and the last beat of C.
 2. **Sympathy-giver** — second person, same treatment. Body C only.
-3. **Max** — the dog's look must be **one fixed breed**, because the product's selling point is that the
-   silhouette is *his actual breed*. Breed on the glass and dog in any photo prop must match exactly.
+3. **Alex — German Shepherd, fixed.** The product's selling point is that the silhouette is *his actual
+   breed*, so any photo prop or shadow must read as a German Shepherd. The panel art is the reference.
 4. **Product turntable from the REAL store photo** — scale-anchored (suncatcher beside a mug at true
    size) + front/¾. Keep the product in close/medium framing; a bare crop has no scale cue and the model
    oversizes it in wides.
 5. **Text props** — name + breed silhouette rendered sharp in PIL.
 
+### ⚠️ Revision after seeing the real product (2026-09-25)
+
+Product received: `products/suncatcher-dog-memorial/assets/product-alex-german-shepherd.png`
+(2048×2048). **German Shepherd · "Alex".** It is a *printed acrylic panel* in a black ornate frame —
+a stained-glass-style landscape (Van Gogh swirling blue sky, gold sun, mountains, river) with a solid
+black dog silhouette centred, the name **Alex** in small white script *inside* the silhouette, plus
+florals and a heart cut-out.
+
+**This kills beat 3 as originally written.** "Sun through the glass, name and breed land on the wall"
+is not physically plausible: the silhouette is opaque black, and the name is tiny white script on top
+of it. Light through this panel throws *coloured light* and a *dark dog shadow* — it cannot project a
+legible name.
+
+**Replacement beat 3 — better, and true:** sun through the panel floods the room blue-and-gold and
+**the dog's shadow falls across the wall.** The shape is unmistakably a German Shepherd, which is
+exactly what Hook 1 claims ("That's not a generic dog. That's his actual breed").
+
+**Correction after Test A (`products/suncatcher-dog-memorial/tests/`):** I claimed the name could not
+project because the silhouette is opaque. **That was wrong.** The name and florals are printed *pale on
+the black dog*, so they are the most translucent part of the panel — light passes through them and they
+appear as **bright script inside the dark shadow**. The test render shows exactly that, and it is the
+strongest image the test produced. Beat 3 is now: shadow on the wall **with "Alex" glowing inside it**.
+
+Better still, the projection is *larger in frame than the panel*, so the name gets more pixels on the
+wall than it does on the glass. The wall is the right place to read the name, not the close-up.
+
+Two upsides that came with the product:
+- **The breed reads instantly in silhouette** — erect pointed ears, long muzzle, bushy tail. Hook 1
+  lands without a single word of explanation.
+- **The artwork already runs cool→warm** (blue sky → gold sun). The grade rule doesn't have to be
+  imposed on the scene; the product supplies it.
+
 ### The one real production risk
 
-**The money shot is text projected on a wall, and AI cannot render legible text.** Beat 3 of every body
-depends on the name being readable. Do not ask the model for it.
+**AI cannot render legible text — and the name is the thing being sold.** Every body needs the name
+readable at some point. Never ask the model for it.
 
-Generate the plate — sun, window, band of colour on the wall, no lettering — then **composite the name
-and breed silhouette in post with PIL**, warped to the wall's perspective and tracked across the beat.
-Same for the lettering on the glass itself. This is the existing `products/_templates/film-studio/` kit
+Generate the plate — sun, window, coloured light and the dog's shadow, **no lettering** — then
+**composite the panel artwork in post with PIL**, perspective-warped onto the panel face so "Alex" and
+the silhouette are exact rather than approximated. We have the flat 2048×2048 artwork, so this is a
+warp of the real thing, not a re-render. This is the existing `products/_templates/film-studio/` kit
 plus the perspective-warp approach proven in the cartoon POC (`products/MJ4U-111-…/ads/cartoon-poc/`).
 
 If a beat can't be composited convincingly, reframe so the name is read in close-up on the glass rather
