@@ -1,0 +1,13 @@
+{
+  "ad_id": "1260750122119171",
+  "wh_transcript_error": "download_failed (WinningHunter could not download video; no credit charged)",
+  "source": "local whisper.cpp ggml-base.en on fb_video",
+  "transcript": " (upbeat music)",
+  "segments": [
+    {
+      "from": "00:00:00,000",
+      "to": "00:00:02,580",
+      "text": " (upbeat music)"
+    }
+  ]
+}

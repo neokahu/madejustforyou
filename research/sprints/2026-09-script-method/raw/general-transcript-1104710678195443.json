@@ -1,0 +1,18 @@
+{
+  "ad_id": "1104710678195443",
+  "wh_transcript_error": "download_failed (WinningHunter could not download video; no credit charged)",
+  "source": "local whisper.cpp ggml-base.en on fb_video",
+  "transcript": " [MUSIC] (gentle music)",
+  "segments": [
+    {
+      "from": "00:00:00,000",
+      "to": "00:00:10,000",
+      "text": " [MUSIC]"
+    },
+    {
+      "from": "00:00:30,000",
+      "to": "00:00:32,580",
+      "text": " (gentle music)"
+    }
+  ]
+}
