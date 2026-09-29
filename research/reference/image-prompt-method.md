@@ -194,3 +194,62 @@ Two further guard corrections, both surfaced by it blocking correct work:
 
 New image checks the guard now enforces: `NEGFRAME` (exclusionary framing), `LIMB` (a limb named but
 never located), `REFROLE` (a reference with no assigned role).
+
+## Character reference set — template (8 separate images, not one sheet)
+
+**Rule: build a character reference as 8 separate full-resolution images, never as one multi-panel sheet.**
+
+Why not a sheet:
+- **Resolution per face collapses.** A ~50-panel "character sheet" in one 2K–4K frame gives each face roughly
+  200–300px, too small to carry identity into a video model.
+- **The video model takes separate images anyway.** Seedance `reference_to_video` accepts up to **9 separate
+  reference images**, so 8 full-frame views fit with one slot to spare (for example, a scene plate).
+- **Sheets fight themselves.** A sheet needs text labels ("FRONT", "3/4 LEFT"...) to be readable, and that
+  clashes with the "no text" instruction every reference prompt carries.
+- **Negative-prompt blocks do nothing on Nano Banana.** It has no negative-prompt field, so a pasted
+  `Negative: ...` block is just more positive text. State what you want in positive terms.
+
+### The 8 slots
+
+| # | Slot | File (suncatcher owner example) |
+|---|---|---|
+| 1 | Front | `owner-front.png` |
+| 2 | 3/4 left | `owner-34left.png` |
+| 3 | 3/4 right | `owner-34right.png` |
+| 4 | Full body, standing | `owner-fullbody-standing.png` |
+| 5 | Full body, seated | `owner-fullbody-seated.png` |
+| 6 | Hands close-up | `owner-hands.png` |
+| 7 | Expression: quiet relief | `owner-expr-relief.png` |
+| 8 | Expression: gentle closed-mouth smile | `owner-expr-smile.png` |
+
+All in `products/suncatcher-dog-memorial/assets/turntable-owner/`. Contact sheet: `reference-set-qa.png`.
+
+### How it is generated
+
+Views 1–3 come first (the existing turntable). **Views 4–8 each take views 1–3 as their reference images**,
+so every new view is anchored to the same face, not to the previous new view (no drift chaining).
+
+Prompt pattern for views 4–8 (Nano Banana Pro, 2K, one view per call):
+
+> Use Images 1, 2 and 3 as the character reference for this man. Keep **[identity features: wire-rimmed
+> glasses, short grey beard shape, heavy brows, thinning grey hair swept back] + [clothing: grey-green plaid
+> flannel shirt over a white tee, blue jeans, brown leather shoes]** identical. **[View]**, e.g. full body,
+> standing, facing camera. **[Pose with every limb located]**, e.g. arms relaxed at his sides, hands open near
+> his thighs, weight on both feet. **[Light]**, e.g. soft window light from camera left. **[Lens]**, e.g.
+> shot on a 50mm lens, shallow depth of field.
+
+Name every limb and say where it is (see the LIMB check above). An unplaced hand is where the model invents.
+
+### QA result — 2026-09-29 (owner set)
+
+| View | Verdict | Notes |
+|---|---|---|
+| 1–3 front / 3/4 L / 3/4 R | ✅ | Unchanged baseline. |
+| 4 full body standing | ✅ | Same face, glasses, beard, brows, hair; flannel over white tee; jeans + brown loafers. |
+| 5 full body seated | ✅ | Identity holds at small face size; jeans + brown loafers match view 4. Both hands on knees, natural. |
+| 6 hands | ⚠️ usable, flag | No extra or fused fingers, and the aged skin looks natural. But the two hands overlap on one knee, so you can't tell which fingers belong to which hand: one pinky/index is hidden and **you can't count five per hand**. Also adds a **gold wedding band** (left hand) that the other views never establish. Decide whether the band belongs to the character or should be dropped. The sleeve plaid reads a little greener than view 1. |
+| 7 expression: relief | ⚠️ drift | Identity is right, but it reads as a **soft smile, nearly the same as view 8**. The "quiet relief" note (eyes easing, breath out, mouth neutral) isn't clearly there. |
+| 8 expression: smile | ✅ | Gentle closed-mouth smile with slight eye crinkle; identity matches. |
+
+Identity (face, glasses, beard, brows, hair, clothing) is consistent across all 8. Nothing drifts in who he is.
+The weak spots are expression differentiation (7 ≈ 8) and hand legibility (6). Neither was regenerated.

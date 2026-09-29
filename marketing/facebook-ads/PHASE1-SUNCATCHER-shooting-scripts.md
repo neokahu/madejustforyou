@@ -99,7 +99,7 @@ feeding everything we own makes feature priority ambiguous.
 |---|---|---|---|---|
 | `REF-PANEL` | Real product, 2048×2048 flat artwork | scale anchor + stills close-up source | every reveal | ✅ have |
 | `REF-ROOM` | The living room plate (testA) | scene tone-setting | A, B | ✅ have |
-| `REF-OWNER` | **3-view turntable** — `assets/turntable-owner/owner-front.png` + `-34left` + `-34right` | character anchoring, **all three fed to every clip** | A, B | ✅ QA'd 2026-09-26 |
+| `REF-OWNER` | **8-image reference set** in `assets/turntable-owner/`: `owner-front` + `-34left` + `-34right` + `-fullbody-standing` + `-fullbody-seated` + `-hands` + `-expr-relief` + `-expr-smile` (QA sheet `reference-set-qa.png`; method in `research/reference/image-prompt-method.md`) | character anchoring: separate full-res images fed to `reference_to_video` (≤9 slots) | A, B | ✅ QA'd 2026-09-29 (⚠️ hands + relief flagged) |
 | `REF-PANEL-SCENE` | Nano Banana Pro 4K still, panel in a sunlit window | **the stills Ken Burns close-up** | name-reading beat | ✅ have (`img_5`) |
 | `REF-GIVER` | The sympathy-giver — dark bob, green cardigan | character anchoring | C only | ⏩ not a gate |
 | `REF-ALEX-PHOTO` | Owner + German Shepherd, alive — `assets/REF-ALEX-PHOTO.png` 2400×1792 | prop | A, B beat 2 | ✅ have (`img_9`) |
