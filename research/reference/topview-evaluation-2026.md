@@ -1,5 +1,16 @@
 # TopView.ai — evaluation for our ad-video pipeline (2026-09-25)
 
+> ## ⚠️ AMENDED 2026-10-08 — the recommendation below is SUPERSEDED. New verdict: DROP.
+> The "buy Pro annual, $192" recommendation at the bottom of this document was based on an estimated
+> ~$0.80/clip cost (rough parity with our own pipeline). Measured per-model credit costs collected since
+> then show the real cost is **~13× AtlasCloud's price for the identical Seedance 2.0 model**, and a
+> second TopView differentiator (Motion Control) has since been found broken via MCP. Everything from
+> here down to the "Recommendation" section is kept as the historical record of the 2026-09-25 test run —
+> it is still accurate as *what happened that day*. Only the final buy/don't-buy conclusion has changed.
+> See the new **"⚠️ SUPERSEDING VERDICT — 2026-10-08: DROP"** section inserted just above "Sources" at the
+> bottom of this file for the reasoning, or `research/reference/RESEARCH-REPORT-2026-10-ad-production.md`
+> §4a for the consolidated summary.
+
 > ## ✅ TESTED 2026-09-25 — verdict below is now evidence, not projection
 > Ran on the real product (German Shepherd · "Alex"). Canvas
 > `4ed6f979c13244c9b8ba102ae2d14d91`, renders in `products/suncatcher-dog-memorial/tests/`.
@@ -122,7 +133,7 @@ Product AnyShoot hold identity and scale better than our reference images do.
 - **The OFAT discipline.** Whatever generates the footage, the body has to stay fixed while only the hook
   changes — that is a constraint on us, not a feature of theirs.
 
-## Recommendation
+## Recommendation *(historical — see superseding verdict below)*
 
 **Buy Pro annual, $192.** It is the cheapest tier with both MCP and API, and 960 credits is ~12 complete
 suncatcher builds — far more than the trial needs, and unused credits carry over if we upgrade.
@@ -139,6 +150,64 @@ If 1 and 2 pass, TopView takes over generation and we keep PIL + ffmpeg + the ga
 spent $192 to find out, and the answer is still a number rather than an opinion.
 
 **Do not buy Ultra for the unlimited deal.** It cannot be driven from here.
+
+---
+
+## ⚠️ SUPERSEDING VERDICT — 2026-10-08: DROP
+
+The recommendation above was never tested against a real monthly bill, only against a credits-per-build
+estimate. Once per-model credit costs were actually measured, and a second advertised differentiator was
+found non-functional via MCP, the buy case collapses.
+
+**Measured cost, Pro monthly ($29/mo = 80 credits = $0.363/credit):**
+
+| Model | Cost | Credits |
+|---|---|---|
+| Seedance 2.0, 5s @ 720p | **$1.81** | 5 cr |
+| Seedance 2.0, 5s @ 1080p | **$4.53** | 12.5 cr |
+| Seedance 2.5, 5s @ 720p | $2.72 | 7.5 cr |
+| GPT Image 2.5, 4K/max | $2.05 | 5.64 cr |
+| Nano Banana Pro, 2K | $0.29 | 0.8 cr |
+| Nano Banana Pro, 4K | $0.51 | 1.4 cr |
+
+**Against AtlasCloud, same model:** Seedance 2.0 Fast lists at $0.027/s, with a further ~30% volume
+discount observed → **roughly $0.09–0.14 for an identical 5s clip** — call it **~13× cheaper** than
+TopView's measured $1.81 for the same model at 720p. Part of this gap is our own fault, not the
+platform's: we never used TopView's own Fast tier or 720p drafts on first passes, which the earlier
+recommendation's "~$0.80/clip" estimate implicitly assumed we would. Even crediting that mistake, the
+Fast-tier price (once computed) still lands well above AtlasCloud for the same underlying model.
+
+**Motion Control (Kling) is broken via the MCP, not just GUI-gated like Unlimited.** Backend error:
+*"duration must be positive seconds, or -1"*. The MCP's own validator rejects `duration` whether it's
+passed inside `parameters` or at the top level ("duration is not supported by the selected capability").
+Both the `std` and `std-v3` variants fail this way, and both get routed internally as `video-edit`. Four
+attempts, zero credits charged — it never got far enough to bill. This was the **third** advertised
+TopView differentiator found unusable from automation:
+
+| Differentiator | Status |
+|---|---|
+| "365-Day Unlimited Seedance" | GUI-only, confirmed in TopView's own FAQ (documented above, 2026-09-25) |
+| "3D Shot Composer" | No API endpoint exists at all (documented above, 2026-09-25) |
+| **Motion Control (Kling)** | **Broken via MCP — validation error, 4/4 failed attempts, 0 credits charged (new, 2026-10-08)** |
+
+Three for three. Every headline feature that would have justified paying a premium over a plain
+Seedance/image API is either GUI-only or non-functional through the interface we actually use.
+
+**What's left that TopView does do:** Product AnyShoot (location-coordinate product placement) is real
+and API-reachable, but narrow-fit for our products and untested; Seedream 5.0's visual-markers technique
+(draw a box/arrow on the input image, reference it in the prompt — see `image-prompt-method.md` §Seedream)
+gives similar deterministic placement for a fraction of the cost, without needing TopView at all.
+
+**Decision: drop TopView for video generation.** Route video to AtlasCloud (primary) or kie.ai's
+`seedance_2_video` (fallback — also supports first+last-frame, unlike plain i2v). Route images to kie.ai
+(primary) or AtlasCloud (fallback). This does not retroactively undo what TopView *taught* us —
+`seedance-prompt-method.md`'s rules were learned on TopView's `seedance-2.0-style` and transfer directly
+to the same model on AtlasCloud/kie.ai, because it's the same underlying Seedance model either way.
+
+**Not yet decided:** whether TopView is worth keeping for anything else — e.g. its free MCP image-model
+quota (GPT Image 2.5, MiniMax-H3, Wan 3.0), or whether the monthly plan should simply be cancelled given
+this verdict. Worth a quick look before cancelling outright. Canvas `4ed6f979c13244c9b8ba102ae2d14d91` and
+its remaining credits/quota are recorded in the 2026-10-08 handoff doc.
 
 ## Sources
 topview.ai/3d-shot-composer · topview.ai/mcp · topview.ai/pricing · docs.topview.ai/llms.txt ·
