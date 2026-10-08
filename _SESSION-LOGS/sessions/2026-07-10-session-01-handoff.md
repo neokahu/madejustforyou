@@ -2,7 +2,7 @@
 
 > **Inherits from:** _(none — first session)_
 > **The latest handoff is the source of truth.** Each new session copies the still-true state
-> forward into a new dated file (see [`README.md`](README.md)), so no context is lost.
+> forward into a new dated file (see [`INDEX.md`](../INDEX.md)), so no context is lost.
 
 ## What this project is
 MadeJustForYou = Shopify **print-on-demand personalized-gift** store (website handled by a

@@ -52,4 +52,4 @@ Legend: ✅ done · 🟡 in progress / partial · ⬜ not started · ❓ open qu
 - ⬜ **Margin ≥3× GATE + decision-band cut-scores** from real supplier costs + sales — handoff Next #3
 - ✅ Bird-library asset brief + prompts (handoff Next #2) — **this session**
 
-> Full research context: [`../../../_SESSION-LOGS/2026-07-31-research-competitor-ad-scoring-gpd.md`](../../../../_SESSION-LOGS/2026-07-31-research-competitor-ad-scoring-gpd.md)
+> Full research context: [`../../../_SESSION-LOGS/sessions/2026-07-31-research-competitor-ad-scoring-gpd.md`](../../../../_SESSION-LOGS/sessions/2026-07-31-research-competitor-ad-scoring-gpd.md)

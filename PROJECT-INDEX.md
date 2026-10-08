@@ -20,7 +20,7 @@ Four domains: **research** (ideas) · **products** (the catalog) · **library** 
 | **`products/`** | the catalog — one folder per product (`_registry/` = tracker + Sheet; `<ID>/` = `product.md` · `build/` · `ads/` · `listing/`). See `products/README.md` |
 | **`library/`** | shared reusable building blocks: `library/personalizer/` (Teeinblue clipart library) · `library/brand/` (brand/social assets + `design-system.html`) |
 | **`marketing/`** | go-to-market: `marketing/calendar/` (occasion calendar + campaign checklists); `campaigns/`, `performance/` added when needed |
-| **`_SESSION-LOGS/`** | all session handoffs (latest working state) — **read newest before resuming** |
+| **`_SESSION-LOGS/`** | session handoffs, two-tier — **read `_SESSION-LOGS/INDEX.md` first**, then follow paths to `topics/<topic>/README.md` or `sessions/<date>.md` |
 | _future_ | `suppliers/` (POD providers, SKU↔cost), `ops/` (SOPs, automation), `data/` (sales, margins, LTV) — create when first needed |
 
 **Brand palette** (from theme repo `config/settings_data.json`): terracotta `#C15F3C`, gold `#E0A458`, dusty rose `#D98E85`,
@@ -106,8 +106,8 @@ this repo.
 ---
 
 ## Where to start for a task
-- **Resume work** → newest file in `_SESSION-LOGS/`
+- **Resume work** → `_SESSION-LOGS/INDEX.md` (resume block + topic/session map)
 - **How Teeinblue works** → `research/reference/teeinblue-assets-guide.md`
 - **Add/find an asset** → `library/personalizer/ASSET-SYSTEM.md` + `asset-registry.csv`
-- **Build the pajama** → `products/NV984-pajama/build/` + `_SESSION-LOGS/2026-07-20-pajama-clone-handoff.md`
+- **Build the pajama** → `products/NV984-pajama/build/` + `_SESSION-LOGS/sessions/2026-07-20-pajama-clone-handoff.md`
 - **New design idea** → `research/` (README + method/ + templates/)

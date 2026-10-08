@@ -1,0 +1,18 @@
+# Topic — Script method (gift video ads)
+
+**Status:** evidence-graded rules written; suncatcher scripts not yet revised to them.
+
+## Current decisions
+- **Product in frame from second 1.**
+- **Shot lengths varied 2–5s, hard cuts only** — no uniform 5s beats.
+- Write a full scene-by-scene script (visual/camera/dialogue/VO/sound/text) before generating (memory `video-ads-need-full-script`).
+- Gift ad = **emotion arc** (anticipation → escalation → payoff), reveal at the mid-point — see [ad-testing-framework](../ad-testing-framework/README.md).
+- `ai-film-studio.md` pipeline **demoted**: its MJ4U-111 film scored hook3 3.59 vs benchmark 18.05.
+
+## Open items
+- `marketing/facebook-ads/PHASE1-SUNCATCHER-shooting-scripts.md` needs revision per `script-method.md` §4a (fixes specified for Hook 2 and Body C). **Not yet edited.**
+
+## Detail
+- `research/reference/script-method.md`
+- `research/sprints/2026-09-script-method/` — `general-winners.md`, `niche-winners.md`, `published-frameworks.md`, `existing-docs-audit.md`
+- Session: [2026-10-08](../../sessions/2026-10-08-research-consolidated-handoff.md)

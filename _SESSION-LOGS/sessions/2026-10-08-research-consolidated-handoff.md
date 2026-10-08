@@ -33,7 +33,7 @@ session that `assets/` paths survive the gitignore was WRONG** — they do not, 
 `products/suncatcher-dog-memorial/assets/product-alex-german-shepherd.png`,
 `.../REF-ALEX-PHOTO.png`, and `products/blanket-granddaughter/assets/product-sweetie-pie-blanket.png` —
 but those were force-added in an earlier session, as recorded in
-`_SESSION-LOGS/2026-09-26-testing-complete-both-products.md`'s "Committed assets" line. The 8-image
+`_SESSION-LOGS/sessions/2026-09-26-testing-complete-both-products.md`'s "Committed assets" line. The 8-image
 turntable set was never force-added, so it is untracked and would be lost on a fresh clone.)
 
 **Decision needed next session:** whether to `git add -f` the reference images so they're versioned.
@@ -133,7 +133,7 @@ written to any doc) so they survive past this session.
 |---|---|
 | `research/reference/RESEARCH-REPORT-2026-10-ad-production.md` | **New.** Consolidated report, 9 sections, tables throughout |
 | `research/reference/topview-evaluation-2026.md` | **Amended.** Dated note at top pointing to the reversal; new "SUPERSEDING VERDICT — DROP" section before Sources. Original 2026-09-25 record preserved |
-| `_SESSION-LOGS/2026-10-08-research-consolidated-handoff.md` | **New** (this file) |
+| `_SESSION-LOGS/sessions/2026-10-08-research-consolidated-handoff.md` | **New** (this file) |
 | `/Users/neovh34/.claude/projects/-Users-neovh34-Desktop-projects-madejustforyou/memory/topview-for-plates-not-products.md` | **Amended** — DROP verdict, reasons, historical note on what TopView was used for (see memory section below) |
 | `/Users/neovh34/.claude/projects/-Users-neovh34-Desktop-projects-madejustforyou/memory/ai-film-studio.md` | **Amended** — demotion note added near top |
 | `/Users/neovh34/.claude/projects/-Users-neovh34-Desktop-projects-madejustforyou/memory/MEMORY.md` | **Amended** — index line for `topview-for-plates-not-products.md` updated; one-line pointer to the new research report added |
@@ -144,7 +144,7 @@ set, prompt guard extension) — all already committed and pushed before this se
 
 ## Prior session's evidence, still valid
 
-Everything in `_SESSION-LOGS/2026-09-26-testing-complete-both-products.md` and
+Everything in `_SESSION-LOGS/sessions/2026-09-26-testing-complete-both-products.md` and
 `research/sprints/2026-09-script-method/*.md` remains the primary evidence; this session only compiled
 and cross-checked it. See `research/reference/RESEARCH-REPORT-2026-10-ad-production.md` for the
 consolidated view — that report is now the fastest way back into this material, link to it rather than
