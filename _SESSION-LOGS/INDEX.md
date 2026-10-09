@@ -10,34 +10,29 @@ _SESSION-LOGS/
   sessions/<YYYY-MM-DD-slug>.md ← full detailed per-session logs
 ```
 
-## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-10-08)
+## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-10-09)
 
-Nothing is mid-generation, nothing is broken. This is a **decision/approval queue**, in priority order:
-
-1. **Regenerate 2 REF-OWNER views** (~$0.60): `owner-hands` (hands apart, no ring), `owner-expr-relief`
-   (neutral mouth, breath-out, no smile). → [character-references](topics/character-references/README.md)
-2. **Decide: force-add the reference PNGs?** `*.png` is gitignored repo-wide (`.gitignore:7`); the 8-image
-   set is untracked. **Unblocks: user** — do not `git add -f` without explicit go-ahead.
-3. **Awaiting user approval:**
-   - Revise `marketing/facebook-ads/PHASE1-SUNCATCHER-shooting-scripts.md` per `script-method.md` §4a
-     (product in frame from 1s; Hook 2 + Body C fixes; 2–5s shots, hard cuts). Not yet edited.
-     → [script-method](topics/script-method/README.md)
-   - Child vs adult granddaughter for the blanket. **Unblocks: user.** → [blanket-build](topics/blanket-build/README.md)
-4. **Next build (after approvals):** vertical slice S-C1-H1 on AtlasCloud `reference_to_video` with all 8
-   owner refs (~$2) — first test of multi-reference identity. Then blanket Control (hands + poem + grandma
-   VO) and Challenger ("growing up" timelapse) in parallel.
-5. **No reference sets yet** for REF-GIVER (blocks suncatcher clips 6–11) or any blanket character.
-
-Full detail: [sessions/2026-10-08-research-consolidated-handoff.md](sessions/2026-10-08-research-consolidated-handoff.md)
+**Suncatcher Phase-1: 6 plan ads (C1/C2/C3 × H1/H2) re-edited to user decisions** (one shot/beat, readable captions,
+H1 = "His actual breed. / His actual name.", hooks to 3.2s, one dissolve at 6.0). Review https://claude.ai/artifact/QHgZNZfk24WQzCb376NSFz
+1. **In progress:** FEED version (4:5, captions bottom third) of all 6 → `products/suncatcher-dog-memorial/ads/out/phase1/feed/`;
+   ✅ BUILT (FMT=feed). Reels = `out/phase1/reels/`. Feed fails 2: C1-B2 ALEX tag under captions (2–6s), C2-B4 bed light cropped (12–17s) → fix: lift band to ~62–76% for C1/C2 + lower crops. Build: `FMT=feed|reels python3 ads/build_phase1.py`.
+2. Feed research done: `research/reference/feed-video-best-practice.md` + EDIT-CRITERIA F1–F15; feed audit 62 pass / 22 fail.
+   Fix list (pending user OK): C1 beat-2 captions up to ~25–40%; C2 beat-4 vertical pan to bed light; logo ~560–600px wide, bottom ≤ y1200, CTA up.
+   DECIDED 2026-10-09: keep 20s, no 15s cutdown (competitor evidence > Meta generic rule; script-method R10). Open: IG Feed 9:16 test cell?
+2b. Before ANY render: check `marketing/facebook-ads/suncatcher-phase1/EDIT-CRITERIA.md` (49 criteria) + CAPTION-SHEET.md.
+3. Reserve 2nd builds: old S-C6 (C3) / old S-C1 (C1) in `ads/out/` — swap CTA before use (plan §04).
+3b. Open: muted cold-read of 0–3s by a person; plan page still shows old H1 line (redeploy needs user OK); then upload
+   PAUSED (uploader must support 6 ads × 2 placements). Blanket/magnet next. kie.ai out of credits → AtlasCloud.
+State: `marketing/facebook-ads/suncatcher-phase1/BUILD-STATE.md`.
 
 ## Current state by area
 
 | Area | State (1–2 lines) |
 |---|---|
-| Suncatcher "Alex" | Tests A–F passed; build waits on script revision + REF-OWNER fixes + REF-GIVER |
+| Suncatcher "Alex" | ✅ 6 plan ads built + gated; awaiting review + upload |
 | Blanket MJ4U-012 | D1–D5 passed; no scripts, no character sets; child/adult casting open |
-| MJ4U-111 candle warmer | Ads live since 2026-08-09, 0 purchases; cart→checkout cliff; product-reveal creative next |
-| Platforms | Images kie.ai→AtlasCloud; video AtlasCloud→kie.ai. **TopView dropped.** AtlasCloud ~$48.89 |
+| MJ4U-111 candle warmer | Ads live since 2026-08-09; checkout verified working + real orders (2026-10-08) |
+| Platforms | ⚠️ **kie.ai out of credits** (2026-10-08) → images via AtlasCloud `google/nano-banana-pro/edit` ($0.14). Video AtlasCloud. TopView dropped. AtlasCloud ~$41 |
 | Prompt method | Seedance 2.0 two-shot recipe settled; prompt-guard hook enforces it |
 | Testing plan page | Live, approval pending; blanket row fix not redeployed |
 | Ad-testing method | Complete; next = run Phase 1 on new Tier-1 products |
@@ -45,7 +40,8 @@ Full detail: [sessions/2026-10-08-research-consolidated-handoff.md](sessions/202
 | Theme | Home rework live; 3 admin items open |
 
 ## Pending user decisions
-- Force-add reference PNGs? · Child vs adult granddaughter · Approve testing-plan page
+- Suncatcher: watch 6 ads · approve upload
+- Child vs adult granddaughter · Approve testing-plan page
 - Delete stale Workers `testing-plan`, `mj4u-test-protocol`? · Cancel TopView monthly plan?
 - Teeinblue title render Route A vs B · Which new Tier-1 products for Phase 1
 
@@ -76,6 +72,7 @@ Full detail: [sessions/2026-10-08-research-consolidated-handoff.md](sessions/202
 
 | Date | Log | Topics |
 |---|---|---|
+| 2026-10-08 | [suncatcher-ads-built](sessions/2026-10-08b-suncatcher-ads-built.md) | suncatcher, character-refs, script-method |
 | 2026-10-08 | [research-consolidated-handoff](sessions/2026-10-08-research-consolidated-handoff.md) | platforms, character-refs, script-method |
 | 2026-09-26 | [testing-complete-both-products](sessions/2026-09-26-testing-complete-both-products.md) | suncatcher, blanket, text-fidelity, prompt-guard |
 | 2026-09-25 | [topview-evaluated-seedance-method](sessions/2026-09-25-topview-evaluated-seedance-method.md) | video-prompting, platforms |

@@ -253,3 +253,18 @@ Name every limb and say where it is (see the LIMB check above). An unplaced hand
 
 Identity (face, glasses, beard, brows, hair, clothing) is consistent across all 8. Nothing drifts in who he is.
 The weak spots are expression differentiation (7 ≈ 8) and hand legibility (6). Neither was regenerated.
+
+### Fix pass — 2026-10-08 (owner set)
+
+Views 1–3 were re-uploaded as references (old URLs had expired). Nano Banana Pro via kie.ai, 2K, 2 variants per
+view, pick the best. Superseded files are in `turntable-owner/_superseded-2026-09-29/`.
+
+| View | Result | What fixed it |
+|---|---|---|
+| 6 hands | ✅ v1 kept | Each hand located on its own thigh with "a clear gap of denim between them", fingers "slightly spread so all five fingers of each hand are visible", "bare fingers". 5+5 countable, no ring. |
+| 7 relief | ✅ v2 kept (subtle) | Each face part described in positive terms: "lips closed… flat neutral line, mouth corners level", "eyelids lowered halfway", "brows eased", "shoulders dropped low". No longer reads as a smile. v1 copied the front view. Relief is still quiet next to view 1. |
+| 5 seated | ✏️ edited | **The 2026-09-29 QA missed it:** view 5 also had the gold band. Fixed with a short edit ("make the ring finger of his left hand bare skin… keep everything else exactly the same"). |
+
+**Lessons:**
+- The prompt-guard hook blocked "arms hang relaxed at his sides" because the arms had no contact point. Fixed with "palms resting against the sides of his thighs".
+- **QA every hand in every view at full resolution.** A ring is invisible on a contact sheet.

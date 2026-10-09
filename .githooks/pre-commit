@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Block staged files over 5MB — heavy files belong on Drive (scripts/backup-media.sh).
+LIMIT=$((5 * 1024 * 1024))
+fail=0
+while IFS= read -r -d '' f; do
+  [ -f "$f" ] || continue
+  size=$(wc -c < "$f" | tr -d ' ')
+  if [ "$size" -gt "$LIMIT" ]; then
+    echo "pre-commit: $f is $((size / 1024 / 1024))MB (>5MB) — gitignore it and back it up with scripts/backup-media.sh" >&2
+    fail=1
+  fi
+done < <(git diff --cached --name-only --diff-filter=AM -z)
+exit $fail

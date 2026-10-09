@@ -1,645 +1,245 @@
-# Phase-1 Shooting Scripts + Ad Copy — Dog Memorial Suncatcher
+> ⛔ **SUPERSEDED 2026-10-08 — do not build from this file.** It deviated from the approved plan
+> (https://testing-plan-phase-1.namvu47.workers.dev): dropped concept C2 and the hook pair, changed the locked CTA.
+> The plan-conformant scripts are in `marketing/facebook-ads/suncatcher-phase1/` (C1 / C2 / C3 × Hook 1 / Hook 2),
+> written by the screenwriter agent and reviewed by LLM council per case. Kept only as a record of the deviation.
+
+# Phase-1 Shooting Scripts v2 + Ad Copy — Dog Memorial Suncatcher
 
 > Product: **6 IN · German Shepherd · "Alex"** — $26.95 · GP $22.34 · BE ROAS 1.21× · target CPA $15.64
-> Build plan: `PHASE1-SUNCATCHER-video-build-plan.md` · Framework: plan page §05
-> Prompt grammar: `research/reference/seedance-prompt-method.md` (every prompt below obeys it)
-> Nothing generates until this document is approved.
+> Rules: `research/reference/script-method.md` · prompts: `seedance-prompt-method.md`, `image-prompt-method.md`
+> Decision record: LLM council 2026-10-08 — `research/councils/council-transcript-2026-10-08-suncatcher-script.md`
+> v1 (6 ads = 3 bodies × 2 hooks, Hook 2 product-absent) is in git history. **Superseded.**
 
----
+## What changed from v1, and why
 
-## What ships
-
-**6 ads = 3 bodies × 2 hooks.** The hook is the only thing that changes between a pair.
-
-| Ad | Concept | Body | Hook clip |
-|---|---|---|---|
-| S-C1-H1 / S-C1-H2 | 01 · Cá nhân hoá | A | HOOK-1 / HOOK-2 |
-| S-C2-H1 / S-C2-H2 | 02 · Phản ứng | B | HOOK-1 / HOOK-2 |
-| S-C6-H1 / S-C6-H2 | 06 · Đổi người mua | C | HOOK-1 / HOOK-2 |
-
-**Locked across all six:** 20s · structure A · 9:16 · music bed, no voice · proof = name + breed legible ·
-offer bản chuẩn · CTA **"Make one that's only theirs"** · Meta button **Shop Now** · burned captions,
-legible sound-off.
-
----
-
-## Two decisions I made while scripting — flagging both
-
-### 1. The hook pair is shot ONCE and reused across all three bodies — 14 clips, not 18
-
-The build plan budgeted 6 hook clips (2 per body). Shooting the same hook three times means three
-slightly different files, and the hook then differs by concept as well as by hook — which is exactly the
-confound the plan exists to prevent. **One HOOK-1 file and one HOOK-2 file, dropped in front of all three
-bodies,** makes the hook a perfectly controlled variable.
-
-Continuity cost: Body C opens in the owner's window, then cuts to the giver's world. That reads as a cold
-open and **bookends** — Body C's last beat returns to that same window. It works.
-
-Saving: 18 clips → **14**. Budget drops ≈$23 → ≈$19.
-
-*If you want per-body hooks instead, say so — it's 4 extra clips and the shot list below just gets
-duplicated with per-body room continuity.*
-
-### 2. Bodies A and B get a connection cue, or they break the house rule
-
-Our standing rule: a gift ad shows the **relationship**, never a lone recipient — a person alone reads as
-lonely, which is the wrong emotion. Body C satisfies it by construction (a friend gives the gift). Bodies
-A and B are one man alone in a house.
-
-Fix, without adding a beat or changing the structure: **a framed photo of the owner with Alex, alive,
-sits in shot in beat 2 of both bodies.** The connection is present in frame, the man is not alone in the
-story, and it costs nothing — it's a prop in a shot we were already shooting.
-
----
-
-## Re-timed beat sheet — 5s-native
-
-Seedance generates in fixed lengths. Beats of 2 / 4 / 6 / 5 / 3s meant paying for 5s and throwing most of
-it away, or time-stretching the reveal. Re-timed so every clip is generated at 5s and trimmed in ffmpeg:
-
-| Beat | Was | **Now** | Clip |
-|---|---|---|---|
-| 1 · hook | 0–2s | **0–2s** | 5s generated, 2s used |
-| 2 · bối cảnh | 2–6s | **2–6s** | 5s generated, 4s used |
-| 3 · sản phẩm lộ ra | 6–12s | **6–11s** | 5s native, full |
-| 4 · phản ứng | 12–17s | **11–16s** | 5s native, full |
-| 5 · chốt + CTA | 17–20s | **16–20s** | 5s generated, 4s used |
-
-Total still 20s. The reveal still lands at ~30–55% — mid-film, per §05.
-
----
-
-## Model routing
-
-| Shot type | Model | Status |
+| v1 | v2 | Why |
 |---|---|---|
-| Empty room, window, light, product, shadow | **Seedance 2.0** (`seedance-2.0-style`) | ✅ validated — testC3, hook3 14.68 |
-| Any shot with a person | **Seedance 2.0** (`seedance-2.0-style`) | ✅ validated 2026-09-26 — testE3, hook3 14.90 / motion 14.96 / cuts 0.21 |
+| 6 ads (3 bodies × 2 hooks) | **3 ads: 2 videos + 1 static** | At $15.64 CPA, 6 cells need ~$300 before any reads. |
+| Hook 2 opens on an empty window | **Cut.** Every ad shows the panel, name legible, in frame 1 | R1 (STRONG). Council: unanimous. A late-reveal test (T1) waits for a converting control. |
+| Body C one of three | **Body C leads** (S-C6) | Only body that shows the buyer's moment. |
+| Bodies A + B: man alone | A becomes the product-hero cut (S-C1), anchored by the photo of him *with* Alex. B parked. | R17 lonely-giftee rule. |
+| Uniform 5s beats, crossfades | **Varied 1.8–4.6s shots, hard cuts** | R11. MJ4U-111 lost on this. |
+| Frozen end card | CTA + small logo **over a moving panel shot** | R12. |
+| CTA "Make one that's only theirs" | **"Make their dog's suncatcher"** | Names the object (council, Outsider). |
+| Owner in "grey sweater" | **Grey-green plaid flannel over white tee** | Matches the locked REF-OWNER set. |
+| testE3 owner shot | **Reshoot** with our real panel in the start frame | testE3 invented a church window = model drew the product. |
 
-**Settled: one model for the whole build.** Test E refuted the "restricted with people" caveat —
-identity, faces and hands all held. Seedance **2.5** lost on both motion (roughly half) and light
-(a lens-flare smear instead of a prism band), despite being the platform's preferred model.
+Checkout is verified working (real orders, 2026-10-08), so these ads are read on add-to-cart **and** purchase.
 
-⚠️ **Two prompt rules Test E added, and every person shot below must obey them:**
-1. **Locate the action in space.** "Raises his right hand into the light" gave a palm held flat at
-   camera — a *stop* gesture, eyes closed, in a grief ad. Say where the limb goes relative to body and
-   camera, and add `His palm never faces the camera` / `His eyes stay open`.
-2. **Name the light source as off-screen — and keep it there.** Unsourced light gave a lens flare. But
-   once told about a stained-glass panel, Seedance **invented one in frame**. That is the model drawing
-   what we sell. Our panel comes from the start frame or from PIL, never from the model.
-
----
-
-## References — the hard gate
-
-Nothing shoots until these are locked and approved. Max **4–5 assets per generation, one duty each** —
-feeding everything we own makes feature priority ambiguous.
-
-| Ref | What | Duty | Used by | State |
-|---|---|---|---|---|
-| `REF-PANEL` | Real product, 2048×2048 flat artwork | scale anchor + stills close-up source | every reveal | ✅ have |
-| `REF-ROOM` | The living room plate (testA) | scene tone-setting | A, B | ✅ have |
-| `REF-OWNER` | **8-image reference set** in `assets/turntable-owner/`: `owner-front` + `-34left` + `-34right` + `-fullbody-standing` + `-fullbody-seated` + `-hands` + `-expr-relief` + `-expr-smile` (QA sheet `reference-set-qa.png`; method in `research/reference/image-prompt-method.md`) | character anchoring: separate full-res images fed to `reference_to_video` (≤9 slots) | A, B | ✅ QA'd 2026-09-29 (⚠️ hands + relief flagged) |
-| `REF-PANEL-SCENE` | Nano Banana Pro 4K still, panel in a sunlit window | **the stills Ken Burns close-up** | name-reading beat | ✅ have (`img_5`) |
-| `REF-GIVER` | The sympathy-giver — dark bob, green cardigan | character anchoring | C only | ⏩ not a gate |
-| `REF-ALEX-PHOTO` | Owner + German Shepherd, alive — `assets/REF-ALEX-PHOTO.png` 2400×1792 | prop | A, B beat 2 | ✅ have (`img_9`) |
-
-**`REF-GIVER` is no longer a gate item.** It is the same pipeline as `REF-OWNER` — text-to-image person
-reference into Seedance 2.0 — and Tests B and E already validated that path end to end. There is nothing
-left to prove, so it is generated routinely alongside Body C's clips rather than blocking the build.
-
-⚠️ **REVERTED 2026-09-26 — multi-angle turntable is back.** I had written *"single reference is enough"*
-on the strength of Test B. That was wrong: **Test B proved one reference survives one camera change inside
-a single generation. It proved nothing about four independent generations**, which is the actual risk.
-
-**Each character gets three views — portrait + ¾-left + ¾-right — and all three are fed to every clip.**
-
-And a second, larger correction: every clip today used **`image_to_video`** (one start frame). The right
-endpoint for scenes is **`reference_to_video`**, which accepts **up to 9 reference images**
-(`bytedance/seedance-2.0/reference-to-video` on AtlasCloud). Feeding one view and asking the model to
-invent every other angle is the drift mechanism itself.
-
-**`REF-ALEX-PHOTO` — ✅ DONE 2026-09-26, gate clear.** Two passes:
-- **v1** (`img_8`): the **German Shepherd came back correct first try** — erect pointed ears, long
-  tapering muzzle, black saddle over tan, deep chest, bushy tail. Breed claim is safe. But the man had
-  **no glasses** and a different beard shape: recognisably similar, not clearly the same person.
-- **v2** (`img_9`): face-swap only, holding the dog, pose, clothing, lawn and light from v1 so the
-  validated breed was never put back at risk. Glasses, beard shape and brow line now match `REF-OWNER`.
-
-⚠️ **Correction to this document's own earlier rule.** It said this prop *"is composited, not generated —
-a generated photo-within-a-photo drifts and the breed has to read."* The breed read correctly on the
-first generation. That was over-cautious. Only the last step — placing the photo inside the picture
-frame in the shot — needs PIL.
-
-It was kept as a gate for reasons that are not about identity:
-- It is a **prop containing a photo**, not a person shot.
-- It carries a hard correctness requirement: the dog must read as the **same German Shepherd** as the
-  silhouette. If it reads as a Husky or a shepherd mix, Hook 1's claim — *"that's his actual breed"* —
-  is contradicted inside our own ad.
-- Two clips depend on it, and it is the element that stops Bodies A and B reading as a man alone in a
-  house.
+**Locked across both videos:** 20s · 9:16 · music bed, no VO · burned captions (sound-off legible, inside Reels safe zone) · product on screen by 1s · hard cuts · Meta button **Shop Now** · copy states delivery time.
 
 ---
 
-# HOOK CLIPS — shared by all three bodies
+## Assets — what exists, what gets made
 
-## HOOK-1 · name shown
-**0–2s · opens ON THE GLASS · 5s generated, 2s used · Seedance 2.0 (no person) ✅**
+| ID | What | Method | State |
+|---|---|---|---|
+| `PANEL-4K` | Nano Banana Pro 4K still, panel in a sunlit window, "Alex" correct | `tests/testF-nanobananapro.png` | ✅ have |
+| `WALL` | Panel in window → coloured light → German Shepherd shadow on wall, 2 named shots | `tests/testC3-moving-open.mp4` (hook3 14.68) | ✅ have |
+| `REF-OWNER` | 8-image set | `assets/turntable-owner/` | ✅ fixed 2026-10-08 |
+| `REF-ALEX-PHOTO` | Owner + living German Shepherd | `assets/REF-ALEX-PHOTO.png` | ✅ have |
+| `REF-GIVER` | The friend: front + ¾L + ¾R | Nano Banana Pro | 🔨 make |
+| `F-PHONE`, `F-FLORIST`, `F-HANDOFF`, `F-OWNER` | Video start frames | Nano Banana Pro, refs assigned roles | 🔨 make |
+| `F-BOX`, `F-PHOTO` | Stills for Ken Burns (rigid product text = still, R22) | Nano Banana Pro | 🔨 make |
 
-Start frame: close-up plate of the panel in the window, generated **without lettering**.
+**REF-GIVER:** a woman in her early 50s, light olive skin, dark brown chin-length bob, small gold stud
+earrings, moss-green knit cardigan over a cream top. Distinct from the owner at a glance (colour, hair, gender).
 
+---
+
+# AD 1 · S-C6 · "What to send" — the buyer is the friend (LEAD)
+
+| # | Time | Len | Shot | Camera | On-screen text | Sound | Product |
+|---|---|---|---|---|---|---|---|
+| 1 | 0.0–1.8 | 1.8 | `PANEL-4K` Ken Burns, frame 1 = whole panel, "Alex" legible | push-in | **Her dog died on Tuesday.** | piano starts frame 1 | ✅ hero |
+| 2 | 1.8–4.4 | 2.6 | Friend at her kitchen table reads her phone, goes still, lowers it | slow push-in | I didn't know what to send. | piano | — |
+| 3 | 4.4–7.2 | 2.8 | Florist buckets: she reaches toward the flowers, stops, lowers her hand | lateral track | Flowers felt wrong. They die too. | piano | — (1 beat away) |
+| 4 | 7.2–11.0 | 3.8 | `F-BOX` her hands (green cardigan cuffs) hold the panel above tissue in a kraft box | Ken Burns push to the name | So I sent him. His breed. His name. | piano lifts | ✅ name read |
+| 5 | 11.2–14.6 | 3.4 | Over her shoulder at the owner's door: **the grieving owner (a woman, silver hair) hugs the box**; the friend's hand rests on her arm; tears → faint smile | slow push-in | — | piano | box |
+| 6 | 13.4–16.6 | 3.2 | `WALL` shot 2: push to the German Shepherd shadow on the wall | push-in | Now the room goes gold at four o'clock. | swell | ✅ payoff |
+| 7 | 16.6–20.0 | 3.4 | `PANEL-4K` Ken Burns, different crop, moving | push-in | **Make their dog's suncatcher** + small logo | resolve | ✅ CTA |
+
+Shot lengths (rev. 2026-10-08): 1.8 / 2.4 / 2.6 / 3.6 / 3.4 / 2.8 / 3.4. Hand-off payoff at 11.2s = 56%.
+**Owner in S-C6 is a woman** ("her dog"). The plaid-shirt man is S-C1's owner only — an earlier hands-only hand-off used his cuffs and read as "the owner giving a gift to another man" (user, 2026-10-08). Story-film taste lives in beats 4–6, not the open.
+Connection (R17): beat 5 shows giver → receiver. Grandma/age rules N/A. Policy (R6): all third/first person.
+
+### Prompts
+
+**REF-GIVER front** — Nano Banana Pro, 2K, 3:4, text-to-image:
+> Photograph a woman in her early 50s with light olive skin, a dark brown chin-length bob with a side part, and small gold stud earrings. She wears a moss-green knit cardigan over a cream crew-neck top. Head and shoulders, facing camera, eye level, calm neutral expression with lips closed. Her arms rest at her sides, hands below the frame against her hips. Plain warm-grey wall behind her. Soft window light from camera left. Shot on a 50mm lens, shallow depth of field, natural colour, photographic realism.
+
+**REF-GIVER ¾ left / ¾ right** — Image 1 = front as character reference:
+> Use Image 1 as the character reference for this woman. Keep her face, chin-length dark bob, gold stud earrings, moss-green knit cardigan and cream top identical. Three-quarter view, head turned 35 degrees to her [left/right], eyes toward the same direction. Her arms rest at her sides, hands below the frame against her hips. Plain warm-grey wall. Soft window light from camera left. 50mm lens, shallow depth of field, photographic realism.
+
+**F-PHONE** (9:16) — Images 1–3 = character:
+> Use Images 1, 2 and 3 as the character reference for this woman; keep her face, hair, earrings and moss-green cardigan identical. Medium shot: she sits at a small wooden kitchen table in morning light, holding a phone in both hands at chest height, screen facing her and away from camera, elbows resting on the table. A mug of coffee sits by her right elbow. Soft morning window light from camera right, muted cool tones. 35mm lens, shallow depth of field, photographic realism.
+
+**F-PHONE → video** (Seedance 2.0 i2v, 5s, 720p, no audio):
 ```
 Use @Image 1 as the first frame.
-Define the black dog silhouette panel hanging in the window in @Image 1 as <Panel>.
+Define the woman with the dark bob and moss-green cardigan in @Image 1 as <Giver>.
 
-Shot 1: Slow push-in toward <Panel>. Late afternoon light moves across its surface;
-the coloured glass brightens from the left edge inward. <Panel> hangs still.
+Shot 1: Slow push-in toward <Giver>. <Giver> reads the phone held in both hands, then goes still.
+Shot 2: Fixed medium framing. <Giver> slowly lowers the phone flat onto the table, both hands staying
+on it, and her head tilts forward slightly. Her eyes stay open.
 
 （solo piano, single sustained note）
 
-Warm late-afternoon light, natural documentary photography, shallow depth of field.
-<Panel> geometry and the dog silhouette remain exactly as in @Image 1, unchanged throughout.
-The silhouette's outline does not change. No deformation, no morphing.
-Continuous natural motion, no stutter or flicker.
-Avoid generating any text or lettering on the panel.
+<Giver>'s face, hair and body proportions remain exactly as in @Image 1, unchanged throughout.
+Her hands have five fingers each, correctly formed. The phone screen faces away from camera throughout.
+Movements are continuous and natural, no stutter or flicker.
 ```
 
-**Post (PIL):** perspective-warp `REF-PANEL` onto the panel face — "Alex", the silhouette, florals and
-heart all exact. This is the shot where the name is read on the glass; it must be the real artwork.
+**F-FLORIST** (9:16) — Images 1–3 = character:
+> Use Images 1, 2 and 3 as the character reference; keep her face, hair, earrings and moss-green cardigan identical. Medium shot inside a small flower shop: she stands in front of galvanised buckets of mixed flowers, her right hand raised halfway toward a bunch of white lilies, fingers open, not yet touching. Her left hand rests at her side against her thigh. Soft daylight from the shop window behind camera. 35mm lens, shallow depth of field, photographic realism.
 
-**Burned caption:** `That's not a generic dog.` → `That's his actual breed — and his name.`
-
-## HOOK-2 · relationship
-**0–2s · opens on the EMPTY WINDOW, product not visible · 5s generated, 2s used · Seedance 2.0 ✅**
-
-Start frame: the same window, **nothing hanging in it**, sheer curtain, late sun.
-
+**F-FLORIST → video:**
 ```
 Use @Image 1 as the first frame.
-Define the open window with the pale curtain in @Image 1 as <Window>.
+Define the woman with the dark bob and moss-green cardigan in @Image 1 as <Giver>.
 
-Shot 1: Smooth lateral track past <Window>. The curtain lifts and settles in the draught;
-late sun moves slowly across the sill. Nothing else in the room moves.
-
-< distant street sound, very faint >
-（solo piano, single sustained note）
-
-Warm late-afternoon light, natural documentary photography.
-The room's geometry remains exactly as in @Image 1. No objects appear or disappear.
-Continuous natural motion, no stutter or flicker.
-Avoid generating any text or subtitles.
-```
-
-**Post:** none. The product is deliberately absent — that is the hook.
-
-**Burned caption:** `We still leave the window open for him.`
-
-> ⚠️ Meta Personal Attributes: both hooks are first/third person. Never *"Did you lose your dog?"*
-
----
-
-# BODY A · Concept 01 — the name is the point
-
-The §05 worked example. The payoff is that the silhouette is *his* breed and the name is *his*.
-
-## A-2 · bối cảnh
-**2–6s · 5s generated, 4s used · ⚠️ no person, but the photo prop carries the connection · Seedance 2.0**
-
-Start frame: kitchen corner — a dog bowl on the floor, still in its place; a framed photo on the shelf
-above it.
-
-```
-Use @Image 1 as the first frame.
-Define the metal dog bowl on the floor in @Image 1 as <Bowl>.
-Define the framed photograph on the shelf in @Image 1 as <Photo>.
-
-Shot 1: Slow push-in from the floor toward the shelf, rising. <Bowl> passes out of the bottom
-of frame as the camera rises; <Photo> grows in frame. Dust drifts in the light.
-Nothing in the room moves.
+Shot 1: Smooth lateral track past the flower buckets toward <Giver>. <Giver>'s raised right hand
+stops short of the lilies.
+Shot 2: Slow push-in on <Giver>. She lowers her right hand slowly back to her side and shakes her
+head once, very slightly. Her eyes stay on the flowers.
 
 （solo piano, sparse）
 
-Soft indirect afternoon light, natural documentary photography, shallow depth of field.
-<Bowl> and <Photo> remain exactly as in @Image 1, unchanged throughout.
-Their positions and contents do not change. No deformation, no morphing.
-Continuous natural motion, no stutter or flicker.
-Avoid generating any text, lettering or photographs inside the frame.
-```
-
-**Post (PIL):** composite `REF-ALEX-PHOTO` into the picture frame, perspective-warped. The owner and a
-living German Shepherd, together. **This is the connection cue — it is not optional.**
-
-**Burned caption:** `The bowl is still where he left it.`
-
-## A-3 · sản phẩm lộ ra — THE REVEAL
-**6–11s · 5s native · Seedance 2.0 ✅ this is the validated testC3 shot**
-
-Start frame: `REF-ROOM` wide — panel in the window, empty wall camera-right.
-
-```
-Use @Image 1 as the first frame.
-Define the black German Shepherd silhouette panel hanging in the window in @Image 1 as <Panel>.
-
-Shot 1: Smooth lateral track across the room. The low sun moves; the coloured light cast by
-<Panel> travels slowly across the wooden floor, blue and gold. <Panel> hangs still.
-Shot 2: Slow push-in toward the wall. The dog-shaped shadow cast by <Panel> grows larger in
-frame as the camera approaches. The shadow's outline does not change.
-
-< a collar tag chimes faintly, off-screen >
-（solo piano, sparse, no percussion）
-
-Warm late-afternoon light, natural documentary photography, cinematic texture.
-<Panel> geometry, artwork and the seated pose of the dog remain exactly as in @Image 1,
-unchanged throughout. The shadow's outline does not change. The dog stays seated.
-No deformation, no morphing. Continuous natural motion, no stutter or flicker.
-Avoid generating any text or lettering, on the panel or on the wall.
-```
-
-**Post:** none. ⚠️ **Revised 2026-09-26** — the wall shadow proves the **breed**, not the name. The model
-renders the shadow's heart, florals and butterflies correctly but the name as illegible squiggle, and
-compositing it in was proven possible yet made unnecessary: the name is read in the stills close-up
-instead. Do not caption this beat as if the name were readable here.
-
-**Burned caption:** `That shape on the wall is his actual breed.`
-
-**Gate:** `motion_qa.py` — hook3 ≥8.0 · motion ≥6.0 · static ≤10. testC3 scored 14.68 / 14.72 / 0%.
-**Then look at the frames.** A passing number on a misrepresented product is the trap this shot already
-sprung once.
-
-## A-4 · phản ứng
-**11–16s · 5s native · ⚠️ PERSON — model TBD**
-
-Start frame: the owner sitting on the floor, side-on, the band of coloured light falling across him.
-
-```
-Use @Image 1 as the first frame.
-Define the seated man in the grey sweater in @Image 1 as <Owner>.
-
-Shot 1: Slow push-in toward <Owner>. <Owner> slowly raises his right hand into the band of
-coloured light and holds it there; his fingers open slightly. His shoulders drop as he lets
-out a long breath. He does not turn his head.
-
-（solo piano, sparse）
-
-Warm late-afternoon light, natural documentary photography, shallow depth of field.
-<Owner>'s face and body proportions remain stable without deformation.
-His clothing and the room remain exactly as in @Image 1.
-Hands have five fingers, correctly formed.
+<Giver>'s face, hair and body proportions remain exactly as in @Image 1, unchanged throughout.
+Her hands have five fingers each, correctly formed. The flowers stay in their buckets.
 Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text or subtitles.
 ```
 
-Emotion written as physical detail per the guide's table — *long breath out, shoulders dropping* is
-relief, not "sad man". Never write the adjective.
+**F-BOX** (still, 9:16, 4K) — Image 1 = product, Image 2 = character (sleeves only):
+> Using Image 1 as the exact product and Image 2 for the woman's moss-green cardigan sleeves: overhead close-up of an open kraft gift box lined with white tissue paper on a wooden table. Her two hands, in moss-green knit cuffs, hold the product from Image 1 by its left and right edges, lifted slightly above the tissue, front face toward camera and fully visible. Thumbs on the front edge of the black frame, fingers behind it. Soft window light from the top left. 50mm lens, natural colour, photographic realism.
 
-**Burned caption:** *(none — let the shot breathe)*
+**F-HANDOFF** (9:16) — Images 1–3 = the friend (REF-GIVER):
+> Use Images 1, 2 and 3 as the character reference for the woman with the dark chin-length bob and moss-green knit cardigan; keep her hair and cardigan identical. Over-the-shoulder shot from just behind her left shoulder at an open front door: the back of her head and her shoulder fill the left foreground, softly out of focus. Both of her hands hold out a closed kraft gift box tied with twine toward a woman in her mid-60s standing in the doorway, with short silver hair, light skin, a soft dusty-blue cardigan and a pearl stud in each ear. The older woman's two hands are on the sides of the box from below, receiving it, her eyes lowered to the box, lips pressed together, eyes glistening. Warm late-afternoon light falls on the older woman's face from camera left. 50mm lens, shallow depth of field, photographic realism.
 
-## A-5 · chốt + CTA
-**16–20s · 5s generated, 4s used · Seedance 2.0 ✅**
-
-Start frame: medium-close on the panel in the window, sun lower and warmer.
-
+**F-HANDOFF → video:**
 ```
 Use @Image 1 as the first frame.
-Define the black dog silhouette panel hanging in the window in @Image 1 as <Panel>.
+Define the silver-haired woman in the dusty-blue cardigan in the doorway in @Image 1 as <Owner>.
+Define the woman with the dark bob and moss-green cardigan in the foreground in @Image 1 as <Friend>.
+Define the kraft gift box tied with twine in @Image 1 as <Box>.
 
-Shot 1: Slow push-in toward <Panel>. The light behind it deepens from gold to amber as the
-sun drops. <Panel> turns a few degrees on its cord and settles.
-
-（solo piano, resolving）
-
-Warm low-angle light, natural documentary photography.
-<Panel> geometry and the dog silhouette remain exactly as in @Image 1, unchanged throughout.
-The silhouette's outline does not change. No deformation, no morphing.
-Continuous natural motion, no stutter or flicker.
-Avoid generating any text or lettering on the panel.
-```
-
-**Post:** `REF-PANEL` warped on. Then end card: `Make one that's only theirs` + logo.
-
-**Burned caption:** `Make one that's only theirs`
-
----
-
-# BODY B · Concept 02 — the reaction is the point
-
-Same house, same owner, same reveal moment. **The camera stays on the face, not the glass.** The product
-is legible but never the subject. This is the whole difference — do not let it drift into Body A.
-
-## B-2 · bối cảnh
-**2–6s · 5s generated, 4s used · ⚠️ PERSON — model TBD**
-
-Start frame: the owner at the kitchen sink, side-on, ordinary afternoon; the framed photo on the shelf
-behind him, out of focus.
-
-```
-Use @Image 1 as the first frame.
-Define the man in the grey sweater at the sink in @Image 1 as <Owner>.
-Define the framed photograph on the shelf behind him in @Image 1 as <Photo>.
-
-Shot 1: Slow lateral track behind <Owner>. <Owner> washes a single cup, slowly, without
-looking up. <Photo> stays in soft focus behind him and does not move.
-
-（solo piano, sparse）
-
-Soft indirect afternoon light, natural documentary photography, shallow depth of field.
-<Owner>'s face and body proportions remain stable without deformation.
-Hands have five fingers, correctly formed.
-<Photo> remains exactly as in @Image 1; its contents do not change.
-Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text, lettering or photographs inside the frame.
-```
-
-**Post (PIL):** `REF-ALEX-PHOTO` into the frame. Soft-focused, but the breed still reads.
-
-**Burned caption:** `Same cup. Same time every day.`
-
-## B-3 · sản phẩm lộ ra — held on the face
-**6–11s · 5s native · ⚠️ PERSON — model TBD**
-
-Start frame: medium-close on the owner's face, three-quarter, neutral light.
-
-```
-Use @Image 1 as the first frame.
-Define the man in the grey sweater in @Image 1 as <Owner>.
-
-Shot 1: Fixed medium-close framing on <Owner>. A band of blue and gold light moves slowly
-across his face from left to right. <Owner> stops moving. His eyes track the light. His jaw
-loosens; he stops mid-breath.
-Shot 2: Slow push-in on <Owner>. His eyes redden slightly. He does not blink.
-
-（solo piano, sparse, no percussion）
-
-Warm late-afternoon light, natural documentary photography, shallow depth of field.
-<Owner>'s face and body proportions remain stable without deformation.
-His clothing remains exactly as in @Image 1.
-Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text or subtitles.
-```
-
-> ⚠️ **Rule exception, deliberate.** Shot 1 is fixed. The opening-shot-must-move rule exists to protect
-> `hook3` — but this clip starts at second 6, not second 0, so it is not measured by `hook3`. The
-> *light* moves, which the differencer reads. If motion scores below 6.0, change Shot 1 to a very slow
-> push-in — **not** to a bigger performance from the actor.
-
-**Post:** none — the product is out of frame by design.
-
-**Burned caption:** `The room does this at four o'clock.`
-
-## B-4 · phản ứng
-**11–16s · 5s native · ⚠️ PERSON — model TBD**
-
-Start frame: wider — the owner in the room, the panel visible camera-left, small in frame.
-
-```
-Use @Image 1 as the first frame.
-Define the man in the grey sweater in @Image 1 as <Owner>.
-Define the black dog silhouette panel in the window in @Image 1 as <Panel>.
-
-Shot 1: Slow pull-back from <Owner>. <Owner> turns his head toward <Panel> and holds there.
-His shoulders drop as he lets out a long breath. <Panel> hangs still.
-
-（solo piano, sparse）
-
-Warm late-afternoon light, natural documentary photography.
-<Owner>'s face and body proportions remain stable without deformation.
-<Panel> geometry and the dog silhouette remain exactly as in @Image 1, unchanged throughout.
-The silhouette's outline does not change.
-Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text or lettering on the panel.
-```
-
-**Post (PIL):** `REF-PANEL` warped on — small in frame, but it must still be the real artwork.
-
-**Burned caption:** *(none)*
-
-## B-5 · chốt + CTA
-**16–20s · 5s generated, 4s used · Seedance 2.0 ✅**
-
-**Identical setup to A-5.** Reuse the same clip if the grade matches — it is the product close and there
-is no reason for it to differ between bodies. Saves one clip: **14 → 13.**
-
-**Burned caption:** `Make one that's only theirs`
-
----
-
-# BODY C · Concept 06 — the buyer swaps
-
-The person on screen is **the friend who sends it**, not the owner. This is the only body that satisfies
-the giving-relationship rule by construction.
-
-## C-2 · she hears the news
-**2–6s · 5s generated, 4s used · ⚠️ PERSON — model TBD**
-
-Start frame: a woman at a table, phone in hand, in the middle of an ordinary morning.
-
-```
-Use @Image 1 as the first frame.
-Define the woman with the dark bob and the green cardigan in @Image 1 as <Giver>.
-
-Shot 1: Slow push-in toward <Giver>. <Giver> reads her phone, then goes still. She lowers the
-phone slowly to the table. Her head tilts forward slightly.
-
-（solo piano, single note）
-
-Soft morning light, natural documentary photography, shallow depth of field.
-<Giver>'s face and body proportions remain stable without deformation.
-Hands have five fingers, correctly formed. Her clothing remains exactly as in @Image 1.
-Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text, lettering or screen content on the phone.
-```
-
-**Post (PIL):** leave the phone screen dark or composite a plain message bubble. **Never let the model
-write text.**
-
-**Burned caption:** `Her dog died on Tuesday.`
-
-## C-3 · she doesn't know what to send
-**6–11s · 5s native · ⚠️ PERSON — model TBD**
-
-Start frame: the woman standing in front of a florist's bucket display, hand half-raised.
-
-```
-Use @Image 1 as the first frame.
-Define the woman with the dark bob and the green cardigan in @Image 1 as <Giver>.
-
-Shot 1: Slow lateral track past <Giver>. <Giver> reaches toward the flowers, stops, and lowers
-her hand again. She shakes her head once, very slightly.
-
-（solo piano, sparse）
-
-Soft daylight, natural documentary photography, shallow depth of field.
-<Giver>'s face and body proportions remain stable without deformation.
-Hands have five fingers, correctly formed.
-Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text or subtitles.
-```
-
-**Burned caption:** `Flowers felt wrong. They die too.`
-
-## C-4 · she chooses this
-**11–16s · 5s native · ⚠️ PERSON — model TBD**
-
-Start frame: close on her hands at a table, the panel face-down in tissue paper, box open.
-
-```
-Use @Image 1 as the first frame.
-Define the pair of hands in the green cardigan sleeves in @Image 1 as <Hands>.
-Define the panel lying in the tissue paper in @Image 1 as <Panel>.
-
-Shot 1: Slow push-in toward <Panel>. <Hands> turn <Panel> face-up and hold it steady,
-then fold the tissue paper over one edge.
+Shot 1: Slow push-in past <Friend>'s shoulder toward <Owner>. <Owner> takes <Box> into both hands and
+slowly draws it in against her chest. <Friend>'s hands release <Box>.
+Shot 2: Fixed medium-close framing on <Owner>. <Friend>'s right hand rests gently on <Owner>'s forearm.
+<Owner> lets out a long breath, her shoulders relax, and a faint smile appears while her eyes stay wet.
 
 （solo piano, warming）
 
-Soft indirect light, natural documentary photography, shallow depth of field.
-<Hands> have five fingers each, correctly formed, without deformation.
-<Panel> geometry and the dog silhouette remain exactly as in @Image 1, unchanged throughout.
-The silhouette's outline does not change. No deformation, no morphing.
+<Owner>'s and <Friend>'s faces, hair and clothing remain exactly as in @Image 1, unchanged throughout.
+<Box> keeps its shape and twine bow. Hands have five fingers each, correctly formed.
 Movements are continuous and natural, no stutter or flicker.
-Avoid generating any text or lettering on the panel.
 ```
-
-**Post (PIL):** `REF-PANEL` warped onto the panel face — held flat and still, this is the **easiest and
-cleanest composite in the build.** The name is read here, in her hands, at the moment of giving. That is
-the strongest possible placement for concept 06.
-
-**Burned caption:** `His breed. His name. Not a generic sympathy card.`
-
-## C-5 · the owner's window — bookend
-**16–20s · 5s generated, 4s used · Seedance 2.0 ✅**
-
-**Same setup as A-5 / B-5** — and it now closes the loop opened by the hook clip, which was this same
-window. That is why the shared hook works for Body C.
-
-**Burned caption:** `Make one that's only theirs`
 
 ---
 
-# Clip inventory
+# AD 2 · S-C1 · "His breed. His name." — product hero
 
-| # | Clip | Person? | Model | Post |
-|---|---|---|---|---|
-| 1 | HOOK-1 | no | Seedance 2.0 ✅ | panel warp |
-| 2 | HOOK-2 | no | Seedance 2.0 ✅ | — |
-| 3 | A-2 | no | Seedance 2.0 ✅ | photo prop |
-| 4 | A-3 reveal | no | Seedance 2.0 ✅ | panel + **name in shadow** |
-| 5 | A-4 | ⚠️ yes | TBD | — |
-| 6 | B-2 | ⚠️ yes | TBD | photo prop |
-| 7 | B-3 | ⚠️ yes | TBD | — |
-| 8 | B-4 | ⚠️ yes | TBD | panel warp |
-| 9 | C-2 | ⚠️ yes | TBD | phone screen |
-| 10 | C-3 | ⚠️ yes | TBD | — |
-| 11 | C-4 | ⚠️ yes | TBD | panel warp |
-| 12 | SHARED-CLOSE (A-5 = B-5 = C-5) | no | Seedance 2.0 ✅ | panel warp + end card |
+| # | Time | Len | Shot | Camera | On-screen text | Product |
+|---|---|---|---|---|---|---|
+| 1 | 0.0–2.0 | 2.0 | `PANEL-4K` Ken Burns, "Alex" legible frame 1 | push-in | **Made with his breed. And his name.** | ✅ |
+| 2 | 2.0–4.6 | 2.6 | `WALL` shot 1: lateral track, coloured light on the floor | lateral | Hang it where the afternoon sun comes in | ✅ |
+| 3 | 4.6–7.6 | 3.0 | `WALL` shot 2: push to the shadow on the wall | push-in | and his shape lands on the wall. | ✅ |
+| 4 | 7.6–11.2 | 3.6 | `F-PHOTO` the owner with Alex, framed, coloured light across the glass | Ken Burns | Choose the breed. Add the name. | — (prop) |
+| 5 | 11.2–15.8 | 4.6 | `F-OWNER` the owner in the armchair, our panel in the window behind him, hand rising into the band of light | slow push-in | Every afternoon at four. | ✅ in frame |
+| 6 | 15.8–20.0 | 4.2 | `PANEL-4K` Ken Burns, moving | push-in | **Make their dog's suncatcher** + small logo | ✅ CTA |
 
-**12 clips** — down from 18, by sharing the hook pair and the product close. ≈$12 of generation plus a
-30% reshoot allowance ≈ **$16**.
+Connection: beat 4 (him with living Alex) keeps beat 5 from reading as a man alone.
 
-**5 clips are shootable today.** 7 wait on the people test.
+**F-PHOTO** (still, 9:16) — Image 1 = the photograph:
+> Using Image 1 as the exact photograph: place it in a simple oak picture frame standing on a white-painted windowsill. A band of blue and gold light from a coloured-glass panel off-screen above falls diagonally across the frame's glass. Close-up, frame filling two-thirds of the image, slightly angled. Soft late-afternoon light. 50mm lens, shallow depth of field, photographic realism.
+
+**F-OWNER** (9:16) — Images 1–2 = character, Image 3 = product:
+> Use Images 1 and 2 as the character reference for this man; keep his wire-rimmed glasses, short grey beard, thinning grey hair, and grey-green plaid flannel shirt over a white tee identical. Use Image 3 as the exact product: it hangs on a cord in the window behind him at the left of frame, small, front face toward camera. Medium shot: he sits in a beige armchair beside the window, both forearms on the armrests, hands resting on the armrest ends. A band of blue and gold light from the product falls across his left cheek. Late-afternoon sun, wooden floor. 35mm lens, shallow depth of field, photographic realism.
+
+**F-OWNER → video:**
+```
+Use @Image 1 as the first frame.
+Define the man with the grey beard, wire-rimmed glasses and green plaid flannel shirt in @Image 1 as <Owner>.
+Define the coloured-glass panel hanging in the window in @Image 1 as <Panel>.
+
+Shot 1: Slow push-in toward <Owner>. The band of blue and gold light from <Panel> moves slowly
+across his cheek.
+Shot 2: Fixed medium-close framing. <Owner> raises his right hand from the armrest to beside his
+own cheek, palm turned away from camera toward the window, so the coloured band falls across the
+back of his hand. His shoulders drop as he lets out a long breath.
+
+（solo piano, sparse, no percussion）
+
+<Owner>'s face, glasses, beard and body proportions remain exactly as in @Image 1, unchanged
+throughout. <Panel> geometry and artwork remain exactly as in @Image 1; it hangs still. His palm
+never faces the camera. His eyes stay open. Hands have five fingers each, correctly formed.
+Movements are continuous and natural, no stutter or flicker.
+```
+
+---
+
+# AD 3 · S-STATIC — baseline image ad (4:5, 1080×1350)
+
+`PANEL-4K` cropped to the panel + window light, headline set in PIL on a dark band at the bottom:
+**His breed. His name. In the light.** · sub-line *Personalized memorial suncatcher · 6 in* · small logo.
+Zero generation cost. It tells us whether the product sells before the film does any work.
 
 ---
 
 # Ad copy
 
-Primary text and headline differ **by concept** (concept is the variable being tested). Within each hook
-pair they are **identical** — only the video's first 2 seconds change.
+Line breaks and bullets are mandatory (`engine/upload_draft.py` enforces it). Every line first or third person.
+Delivery: **made to order, ships in 3–5 days** — confirm the arrival window on the product page matches before upload.
 
-Line breaks and bullets are mandatory: FB primary text must be scannable, never a paragraph.
-
-## S-C1 · concept 01 · personalization
-
-**Primary text**
-```
-His name is on it. So is his breed.
-
-Not a clipart dog — a German Shepherd, because that's what he was.
-
-We cut the silhouette to the breed you choose and set the name inside it in white script.
-
-Hang it where the afternoon sun comes in:
-
-• the room fills with blue and gold
-• his shape lands on the wall
-• his name sits inside the shadow
-
-6 inches. Ready to hang. Made to order.
-```
-**Headline:** `His breed. His name. In the light.`
-**Description:** `Choose the breed, add the name. Ships in 3–5 days.`
-**Button:** Shop Now
-
-## S-C2 · concept 02 · the reaction
-
-**Primary text**
-```
-The room changes at about four o'clock.
-
-That's when the sun comes through it — everything goes blue and gold, and his shape lands on the wall.
-
-After the first week you stop looking at the glass.
-
-You look at the wall.
-
-• Your dog's breed, in silhouette
-• His name, in the light
-• 6 inches, fits any window
-
-Made just for him.
-```
-**Headline:** `At four o'clock the whole room turns into him.`
-**Description:** `Choose the breed, add the name. Ships in 3–5 days.`
-**Button:** Shop Now
-
-## S-C6 · concept 06 · the buyer swaps
-
+## S-C6 · What to send
 **Primary text**
 ```
 Her dog died on Tuesday. I didn't know what to send.
 
 Flowers felt wrong — they die too.
 
-So I sent her this: his breed in silhouette, his name inside it, cut to hang in her kitchen window.
+So I sent her this:
+• his breed, cut in silhouette
+• his name, inside it
+• made to hang in the window he used to sit by
 
-She told me the room goes gold at four o'clock now.
+She says the room goes gold at four o'clock now.
 
-• Choose the breed and the name
-• 6 inches, ready to hang
-• Made to order, ships in 3–5 days
+Made to order · ships in 3–5 days.
 ```
-**Headline:** `What to send when flowers feel wrong.`
-**Description:** `Choose the breed, add the name. Ships in 3–5 days.`
-**Button:** Shop Now
+**Headline:** `What to send when flowers feel wrong` · **Description:** `Choose the breed, add the name.` · **Button:** Shop Now
 
-> ⚠️ **Meta Personal Attributes.** Every line is first or third person. Never *"Did you lose your dog?"*,
-> never *"Are you grieving?"* — second-person grief gets the ad rejected and can flag the account.
+## S-C1 · His breed. His name.
+**Primary text**
+```
+Not a clipart dog. His breed — and his name.
+
+Hang it where the afternoon sun comes in:
+• the room fills with blue and gold
+• his shape lands on the wall
+• his name sits inside it
+
+6 inches · ready to hang
+Made to order · ships in 3–5 days.
+```
+**Headline:** `His breed. His name. In the light.` · **Description:** `Choose the breed, add the name.` · **Button:** Shop Now
+
+## S-STATIC
+Primary text = S-C1. Headline = `A memorial that catches the light`.
 
 ---
 
-# Pre-flight check — §05 step 9
+# Build + QA
 
-Mute the first 3 seconds of each cut. **Can you tell what gift is being sold?**
+1. REF-GIVER (3 stills) → QA identity across the 3.
+2. Six start frames/stills → QA: identity, hands (count fingers at full res), product = Image 1 exactly, "Alex" legible in F-BOX.
+3. Four Seedance clips (5s, 720p, `generate_audio:false`) → `motion_qa.py` + eyes on ≥5 frames each.
+4. Assemble with hard cuts (`ads/build_v2.py`), captions inside the Reels safe zone, piano bed, CTA over moving shot.
+5. Export 1080×1920 masters + the 4:5 static → `products/suncatcher-dog-memorial/ads/out/`.
 
-- **HOOK-1** → yes, the panel is in frame 1.
-- **HOOK-2** → **no, by design.** The product is not visible until second 6.
+Budget: ~$0.6 stills + ~$2–4 video (best-of-2 on people shots) ≈ **$5**.
 
-That is the test. Hook 2 trades 3-second clarity for emotional pull, and if it loses on link CTR while
-holding on hook rate, we have learnt something specific: on this product, showing the object beats
-naming the relationship. Do not "fix" Hook 2 by putting the product in it — that deletes the experiment.
-
-# Order of work from here
-
-1. ✅ Scripts + copy — this document. **Needs approval.**
-2. ✅ **People test — DONE 2026-09-26.** Seedance 2.0 for every clip. See the model routing table above.
-3. ✅ **Compositing — RESOLVED 2026-09-26, and the engine is not needed.** The name-reading close-up
-   becomes a **4K still + ffmpeg Ken Burns at native resolution** (`hook3 11.02 / motion 10.73`, clears
-   the gate, ~0.2 cr). It beats Seedance on letterform, silhouette, frame and sharpness at a twentieth
-   of the cost, because nothing is re-synthesized. The wall shadow keeps Seedance and proves the
-   **breed**, not the name. Full evidence: `research/reference/product-text-fidelity-2026.md`.
-   ⚠️ Zoom on native resolution — scaling to 1080 before `zoompan` softens the lettering. — PIL perspective-warp of `REF-PANEL` onto the panel face and into the wall
-   shadow. If the wall-shadow name can't be made convincing, A-3's caption moves to the glass close-up
-   and the build still ships.
-4. **Turntables** — REF-OWNER, REF-GIVER, REF-ALEX-PHOTO. Hard gate.
-5. **Batch-generate 12 clips.**
-6. **QA every shot** — `motion_qa.py`, then eyes on frames.
-7. **Post** → 6 ads + copy to the ad account.
+# Parked (not deleted)
+- Body B (reaction on the face) and Hook 2 (empty window) → T1 late-reveal test after a control converts.
+- Breed-swap variants (council, Expansionist) → after a winner.
+- Who buys (owner vs friend) → pull pet-memorial suncatcher ads from the Meta Ad Library before scaling.

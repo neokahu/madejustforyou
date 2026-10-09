@@ -1,0 +1,7 @@
+# Review 5 — C3-buyer-swap
+
+**1. Strongest: D.** It is the only response that first asks what C3 is actually testing: whether a second buyer exists, someone looking for a sympathy gift that isn't flowers. It then judges every frame against that. That framing produces the right fixes. "Flowers felt wrong" moves into beat 2. "My neighbor's dog" fixes C3-a and also tells H2 viewers that Alex is a dog, which C raised. F-BOX is reversed so it reads as the giver packing the box, not someone unboxing it. Beat 4 ends with his look going to *her*, which is the giver's real fantasy. All of this stays inside the locks. B is a close second, and its point about primary text reading as a fake testimonial is sharp.
+
+**2. Biggest blind spot: A.** It is a good production memo that misses the strategy. It never sees that the buying reason doesn't appear until 12.3s, the flaw B, C, D and E all caught. A makes C3 cheaper to build but not better at making the case. A cleanly built version of a hidden concept still gives an unreadable test result.
+
+**3. All five missed what happens after the click.** C3 brings in a *giver*, but the product page and the personalizer are built for the owner. A neighbor may not know the exact breed, may have no photo, and needs to ship straight to the grieving friend with a gift note and a reliable arrival date. Sympathy gifts have to arrive on time. If the page doesn't handle that, C3 can win on CTR and still get zero add-to-carts (LPV->ATC). That would wrongly read as "the concept failed."

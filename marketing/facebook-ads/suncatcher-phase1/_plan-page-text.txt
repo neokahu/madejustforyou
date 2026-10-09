@@ -1,0 +1,422 @@
+ 
+ Kế hoạch Test Video — Phase 1 
+ Kế hoạch Test Video — Phase 1
+ 3 Sản phẩm 
+ 18 Ads Phase 1 
+ 2 Yếu tố đem test 
+ 6 Mẫu/sản phẩm 
+ $360 Tổng Phase 1 
+ Phase 1 Tương tác
+ Test thành phần video: concept × hook. Tiêu chí lựa chọn: hook rate và CTR.
+ Kế hoạch này 
+ Phase 2 Ý định mua
+ Bộ thành phần khác hẳn: offer, landing page, giá, upsell. Tiêu chí lựa chọn: add-to-cart.
+ Để sau 
+ Phase 3 Mua hàng
+ Trust, checkout, abandoned-cart recovery. Tiêu chí lựa chọn: purchase và ROAS.
+ Để sau 
+ 01 Mục tiêu
+ Tìm tổ hợp thành phần video tốt nhất Concept × hook.
+ Biết thành phần nào tạo ra kết quả Để lần sau ráp lại được.
+ Dưới $600 Chốt kết quả trước khi đốt quá nhiều tiền.
+ Đây là kế hoạch Phase 1 . Không test sản phẩm — chọn sản
+ phẩm là việc khác. Ba sản phẩm chạy cùng một ma trận để kết luận về thành phần chắc hơn.
+ 02 Một video ads gồm những gì
+ Hook 0.5–3 giây đầu Test · Phase 1 
+ Concept ý tưởng + bán cho ai Test · Phase 1 
+ Body đoạn giữa 5–15 giây Chỉ sửa, không test 
+ Offer khách được gì, khi nào Phase 2 — kế hoạch riêng 
+ CTA câu chốt Giữ nguyên 
+ Format kiểu dựng Nằm trong concept 
+ Craft 9:16, phụ đề, tắt tiếng vẫn hiểu Tiêu chuẩn 
+ Nguồn: Video Ad Decomposition § “Components that recur across all sources”.
+ 03 Concept — chọn 3 trong 12
+ 12 hướng → 3 
+ Concept là một ý tưởng, gắn với nhóm người mua mà ý tưởng đó nhắm tới. Cùng một sản phẩm, cách bán
+ khác nhau. Test concept là test xem lý do mua nào giữ chân được người xem.
+ 01 Làm riêng cho họ — hiện tên lên sản phẩm
+ 02 Phản ứng thật lúc nhận quà
+ 03 Cho thấy bạn thật sự hiểu họ
+ 04 Gấp theo dịp — đặt trước ngày X
+ 05 Kỷ vật tưởng nhớ
+ 06 POV: bạn là người đi tặng
+ 07 Cá nhân hoá sâu hơn cái tên
+ 08 Mở hộp khoe chất lượng
+ 09 Gọi đúng tên mối quan hệ
+ 10 Phim ngắn cảm xúc
+ 11 Mua cho chính mình
+ 12 Dạng list gợi ý quà
+ Nguồn: Video Ad Decomposition § “Angle library” — tài liệu nghiên cứu nội bộ, bóc tách video ads quà tặng thành các phần test được (xem mục Nguồn cuối trang).
+ Giữ · 01 · 02 · 06 Ba đòn bẩy khác hẳn nhau: 01 test món đồ, 02 test cảm xúc,
+ 06 test người mua. Trải đều ra, không phải ba cách nói của cùng một ý.
+ Cả 3 sản phẩm đều chạy được Mỗi concept chạy y hệt trên suncatcher, fleece blanket và fridge magnet. Có vậy
+ mới so được kết quả.
+ Loại · 04 · 05 Dính chặt một sản phẩm. Suncatcher không có deadline, còn tưởng nhớ thì chỉ
+ hợp suncatcher. Không cái nào chạy đều ở cả ba.
+ Loại · 03 · 07 Cùng cơ chế với 01, chỉ đổi chữ hoặc đẩy mạnh hơn — test nữa là đo lại đúng
+ một thứ. 07 để dành cho vòng biến thể của mẫu thắng.
+ Loại · 08 Đây là thứ trấn an người đang nghi ngại, không phải thứ làm người ta thèm mua. Để dành Phase 2 và retarget, lúc khách
+ mới thật sự lo chuyện đó.
+ Loại · 09 Nó là cách mở đầu chứ không phải một ý tưởng, nên gộp luôn vào Hook 2.
+ Loại · 10 · 11 · 12 Phim ngắn tốn nhất mà độ hợp chỉ ở mức trung bình; tự mua là tệp khác
+ hẳn; dạng list trải nhiều sản phẩm nên không chạy riêng từng cái được.
+ 04 Một concept dựng được nhiều kiểu
+ Concept là lý do mua ; bản dựng là cách kể lý do đó . Mỗi concept có vô số
+ cách dựng — mình chỉ chạy được một. Nên khi một mẫu thua, chưa biết là concept sai hay bản dựng dở.
+ Quy tắc · Tắt ad, không tắt concept Một mẫu thua thì tắt mẫu đó. Concept chỉ bị loại sau khi
+ 2–3 bản dựng khác nhau đều thua.
+ Giảm nhiễu · Khoá mọi thứ trừ concept Ba concept dùng chung khung xương phần thân, thời
+ lượng, chuẩn craft, offer và CTA. Khác nhau đúng một chỗ.
+ Brief 12 trường là để chốt bản dựng Ghi sẵn nhịp cắt, giọng, bằng chứng, chữ trên màn — để
+ hai người dựng cùng một concept không ra hai phim khác nhau.
+ Phân biệt ý tưởng mới với bản dựng mới Chạm vào lý do mua khác → concept mới. Vẫn lý
+ do đó nhưng kể kiểu khác → chỉ là bản dựng khác.
+ Giới hạn phải chấp nhận: $360 chỉ đủ chạy mỗi concept
+ đúng một bản dựng. Nên khi một concept thua, không biết được là lý do mua sai, hay lý do mua đúng
+ mà bản dựng đó làm dở — trên số liệu hai trường hợp này giống hệt nhau. Vì vậy Phase 1 chỉ xếp hạng
+ để biết concept nào đáng dựng tiếp , chưa phải lúc loại concept.
+ Xếp hạng dựa trên gì. Không chấm cảm tính, cũng không
+ lấy con số của cái ad ngon nhất. Ba thứ dưới đây, đọc đúng thứ tự.
+ 1 · Bằng chứng của một concept là 6 ad Mỗi concept chạy 3 sản phẩm × 2 hook .
+ Chấm trên cả 6, không lôi cái tốt nhất ra làm đại diện — một ad ngon có thể chỉ là ăn may.
+ 2 · Đọc theo thứ tự hook → CTR → ATC Hook rate loại trước (mục 08). Đạt rồi mới xét
+ link CTR . Cuối cùng là cổng ý định mục 09 — đạt hook mà LPV→ATC = 0 thì tụt hạng,
+ vì đó là kéo nhầm người xem chứ không phải người mua.
+ 3 · Quan trọng nhất: phải đều ở cả 3 sản phẩm Đạt ngưỡng ở cả ba mới chứng minh
+ được lý do mua đó đúng. Chỉ thắng ở một sản phẩm thì nhiều khả năng là sản phẩm đó hợp,
+ không phải concept đó hay — và cái đó không mang sang sản phẩm khác được.
+ Chạy xong Phase 1, kết luận sẽ ra dạng này: 
+ Đi tiếp Concept 02 — Phản ứng thật lúc nhận quà.
+ Đạt ngưỡng đi tiếp cả hook rate và link CTR ở cả ba sản phẩm , LPV→ATC khác 0.
+ → Được cấp thêm 2 bản dựng nữa.
+ Gác lại Concept 06 — POV: bạn là người đi tặng.
+ Chỉ đạt ngưỡng ở fridge magnet; suncatcher và fleece blanket đều dưới mốc đỏ.
+ → Vòng này không dựng thêm bản nào cho concept này.
+ Chưa concept nào bị loại Muốn loại hẳn Concept 06 thì phải dựng thêm
+ 2–3 bản khác nhau và cả 2–3 bản đó cùng thua.
+ Phase 1 mới chỉ chạy bản dựng thứ nhất .
+ Vậy lúc nào đi tiếp, lúc nào gác lại? Đọc cả 6 ad 
+ của concept đó trên hook × hold , đừng đọc mỗi hook rate. Hold là chỉ số ít tốn tiền nhất để đo — 76 lượt
+ hiển thị là đã đủ tin được — và nó là thứ phân biệt được ý tưởng sai với dựng dở .
+ 6 ad của concept trông thế nào
+ Nghĩa là gì
+ Làm gì
+ hook cao · hold cao
+ở ≥2/3 sản phẩm, ATC ≠ 0
+ Ý tưởng chạy được, và chạy được trên nhiều sản phẩm
+ Đi tiếp — vào Cổng Ý định
+ hook thấp · hold cao
+ Ai xem thì vẫn ở lại. Hỏng đúng cái hook
+ Cắt lại 1.5 giây đầu. Concept còn sống
+ hook cao · hold thấp
+ Vào được, nhưng đoạn giữa làm người xem bỏ đi
+ Dựng lại phần thân 5–15s. Concept còn sống
+ đạt ngưỡng ở 1 sản phẩm
+trượt ở 2 sản phẩm
+ Nhiều khả năng là sản phẩm đó hợp, không phải concept
+ Cần thêm một bản dựng mới biết
+ cả 6 ad
+hook thấp · hold thấp
+ Không giữ được ai, cả ba sản phẩm, cả hai hook
+ Nhiều khả năng lỗi ở concept — gác lại, không dựng thêm
+ Dòng cuối là bằng chứng mạnh nhất Phase 1 đưa ra được để nói một concept
+ sai — mà vẫn chỉ dựa trên một bản dựng. Nên Phase 1 không loại concept nào cả . Nó
+ chỉ trả lời: concept nào đáng được dựng bản thứ hai, và bản thứ hai đó phải sửa chỗ nào.
+ 05 Khung dựng nội dung từ một concept
+ Mỗi bước đều chọn từ một danh sách có sẵn , không ai tự nghĩ ra. Được hai thứ:
+ đọc kết quả thì truy ngược được mẫu này ra từ những lựa chọn nào, và giao cùng một concept cho hai người
+ dựng thì ra hai phim giống nhau. Mẫu này khác mẫu kia là vì mình cố ý đổi, không phải vì người dựng
+ nghĩ khác. 
+ Chốt lý do mua
+ chọn 1 trong 12 concept 
+ Concept quy định vì sao người ta mua . Mọi thứ sau đây phải phục vụ đúng lý do đó.
+ Chốt người mua và người nhận
+ người mua × người nhận 
+ con đã lớn cháu vợ/chồng bạn thân người đến chia buồn 
+ × bà mẹ bố ông thú cưng đã mất 
+Người mua mới là người xem ads. Người nhận là người có tên trên sản phẩm.
+ Chọn structure
+ 3 khung dựng sẵn — chọn theo sản phẩm, không theo sở thích 
+ A · Mở bằng phản ứng — giây đầu là mặt người nhận lúc mở quà. Cảnh hiện tên đặt giữa phim.
+ Dùng khi tên in trên sản phẩm to và rõ, quay lên là đọc được ngay — suncatcher, nam châm. 
+ B · Kể chuyện trước, sản phẩm ra sau — mở bằng mối quan hệ hai người, giọng đọc dẫn cả phim.
+ Dùng khi sản phẩm là một đoạn chữ dài: quay lên không ai đọc kịp, nên phải đọc lên thành tiếng
+ thay vì cho xem — fleece blanket in cả lá thư. 
+ C · Quay màn hình lúc đặt hàng — ghi lại cảnh khách tự gõ tên vào ô cá nhân hoá.
+ Chỉ dùng để retarget người đã vào web, không dùng cho tệp lạnh. 
+ Điền từng nhịp theo mốc giây của khung
+ ví dụ khung A · 30 giây 
+ 0–2s mở bằng phản ứng · 2–6s bối cảnh (ai, dịp gì) · 6–12s hiện tên , chữ rõ, giữ lâu ·
+ 12–20s phản ứng trọn vẹn · 20–27s bằng chứng + offer · 27–30s CTA.
+ Cảnh hiện tên đặt ở giữa , không để cuối — còn thời lượng cho phản ứng lúc người xem đông nhất.
+ Chọn proof và đặt vào đâu
+ chọn 1 trong 5, theo thứ hạng 
+ 1 · phản ứng thật 2 · chi tiết cá nhân hoá 3 · số lượng đã bán 4 · ảnh khách thật 5 · cận cảnh tay nghề 
+Tệp lạnh dẫn bằng 1 hoặc 3. Retarget dẫn bằng 4.
+ Viết 2 hook trên cùng phần thân
+ chọn từ 9 cách mở ở mục 06 
+ Phase 1 khoá cứng: hiện tên đấu gọi mối quan hệ .
+ Bắt buộc: 3 giây đầu phải lộ ra đang bán món quà gì.
+ Điền craft — toàn số, không cảm tính
+ 4 trường bắt buộc 
+ Pacing 1,5s 5s theo nhạc theo tiến trình 
+ · Giọng người thật nhạc nền ấm ASMR 
+ · Thời lượng 6–15s 15–30s 
+ · Chữ trên màn: luôn đọc được khi tắt tiếng.
+ Offer và CTA lấy bản chuẩn
+ Phase 1 khoá, không đem test 
+ CTA: “Make one that's only theirs” · nút Meta: Shop Now .
+ Kiểm tra sàng lọc trước khi quay
+ không qua thì viết lại 
+ Tắt tiếng, xem 3 giây đầu: có biết đang bán món quà gì không? Không biết → click về sẽ không được lọc (mục 09).
+ Đầu ra là bản brief 12 trường — quay được luôn, và mọi trường đều
+ truy ngược được về một lựa chọn ở trên.
+ Kịch bản lên hình · cả ba sản phẩm · cùng concept 01
+ Diễn biến
+ Suncatcher ↗ 
+ Fleece blanket ↗ 
+ Fridge magnet ↗ 
+ Mở đầu
+ 0–2s Cận mặt chủ của Max, đứng lặng bên cửa sổ
+ 0–3s Bà ngồi viết tay, giọng bà đọc dòng đầu lá thư
+ 0–2s Bà mở tủ lạnh rồi khựng lại
+ Dựng bối cảnh
+ 2–6s Nhà trống, bát ăn của Max vẫn để nguyên chỗ cũ
+ 3–10s Các cột mốc cuộc đời cháu gái: tốt nghiệp, dọn nhà, ngồi khóc một mình
+ 2–5s Cháu gái đứng sau lưng bà, cười
+ Sản phẩm lộ ra
+ 6–12s Nắng xuyên tấm kính, tên Max và hình giống chó hiện lên tường
+ 10–16s Bà trải chăn ra, đọc to khúc ngoặt của bài thơ: “So when you’re feeling low, just hold it really tight” 
+ 5–9s Cận nam châm, đủ tên bốn người cháu
+ Phản ứng
+ 12–17s Người chủ ngồi xuống, đưa tay chạm vào vệt sáng
+ 16–24s Cháu gái đọc tới đúng dòng đó rồi nghẹn lại
+ 9–13s Bà sờ từng cái tên trên nam châm
+ Chốt + CTA
+ 17–20s Cận tấm kính treo bên cửa sổ
+ 24–30s Cháu gái quấn chăn quanh người
+ 13–15s Bà đóng tủ lạnh rồi lại mở ra nhìn
+ Thông số dựng
+ Fields
+ Suncatcher ↗ 
+ Fleece blanket ↗ 
+ Fridge magnet ↗ 
+ Hook 1 · name shown
+ “That's not a generic dog. That's his actual breed — and his name.”
+ “I'm 74. I wrote her a letter she can wrap herself in.”
+ “Four grandkids. All four names. One magnet.”
+ Hook 2 · relationship
+ “We still leave the window open for him.”
+ “She won't read my texts. She'll read this.”
+ “Grandma opens that fridge 20 times a day.”
+ Proof
+ Tên Max và giống chó hiện rõ
+ Phản ứng thật, ở giây 16–24
+ Đủ tên các cháu hiện rõ
+ Pacing
+ Mỗi cảnh ~5 giây
+ Mỗi cảnh ~5 giây
+ Đổi cảnh theo nhịp nhạc
+ Voice
+ Nhạc nền, không lời
+ Giọng bà, người thật
+ Nhạc nền vui, không lời
+ Length
+ 20 giây
+ 30 giây
+ 15 giây
+ Concept · Offer · CTA
+ Cả ba dùng chung: concept 01 · offer bản chuẩn · CTA “Make one that's only theirs” — đó là điều kiện để so được
+ Max là tên đặt tạm — thay bằng tên thật lúc quay. Lời thoại
+ và chữ trên sản phẩm để nguyên tiếng Anh vì ads chạy cho người mua Mỹ.
+ Đổi một ô trong bảng này là ra một bản dựng khác của cùng
+ concept. Đổi ô Concept mới là sang concept khác.
+ 06 Hook — chọn 2 trong 9
+ 9 cách mở → 2 
+ Hook là 0.5–3 giây đầu: khung hình mở đầu cộng chữ trên màn hình. Dưới đây là 9 cách mở — đó là nhóm, không phải câu chữ cụ thể; một cách mở viết ra được nhiều hook khác nhau. Test hook là giữ
+ nguyên cả phim, chỉ đổi mỗi cái hook. Hai hook đem ra đấu: Hook 1 — hiện tên (đối chứng, cách cả
+ thị trường đang làm) đấu với Hook 2 — gọi mối quan hệ (biến thể, giả thuyết của mình).
+ T1 — hợp hàng quà tặng nhất 
+ Mở bằng cảnh hiện tên = Hook 1 
+ Mở thẳng bằng phản ứng
+ Mở bằng dịp / deadline
+ T2 — chung chung nhưng vẫn dùng được 
+ Mở bằng mối quan hệ = Hook 2 
+ POV / cảm xúc đồng cảm
+ Bằng chứng số đông
+ Gợi tò mò
+ T3 — xếp thấp, ngược mạch cảm xúc 
+ Số liệu / phản biện
+ Nêu vấn đề
+ Nguồn: Video Ad Decomposition § “Hook tactics”.
+ Giữ · Hook 1 và Hook 2 Vì hai cái này ngược nhau. Hook 1 hiện tên — cách cả thị
+ trường đang làm, nên lấy làm đối chứng. Hook 2 gọi mối quan hệ. Một cái tên hiện lên gần như vô
+ nghĩa nếu người xem không có ai để liên hệ tới — mà người xem ở đây là người đi tặng , không phải
+ người được in tên. Câu hỏi thật, trả lời được.
+ Chỉ 2 nhánh Test hook là đổi đúng một biến. Thêm nhánh nữa là chia nhỏ ngân sách tới mức
+ không nhánh nào đủ số liệu để kết luận.
+ Loại · Mở bằng phản ứng Đã nằm sẵn trong concept 02. Test thêm ở tầng hook là trộn hook với
+ concept, sau không tách ra được.
+ Loại · Dịp / deadline Suncatcher không có deadline nên không chạy đủ cả ba sản phẩm.
+ Để dành · POV · Số đông · Tò mò Đều dùng được. Để cho vòng đổi hook của mẫu thắng, lúc chạy
+ 10–20 hook trên cùng một phần thân đã được chứng minh.
+ Loại · Nhóm T3 Số liệu, phản biện, nêu vấn đề đều kéo người xem vào lý trí — ngược hẳn mạch
+ cảm xúc của một quyết định mua quà.
+ 07 Ráp lại: chạy tất cả bao nhiêu mẫu
+ 12 Concept 
+ × 
+ 9 Hook 
+ = 
+ 108 Cách ghép 
+ → 
+ 3×2 Chốt lại 
+ = 
+ 6 Mẫu/sản phẩm 
+ × 
+ 3 Sản phẩm 
+ = 
+ 18 Ads Phase 1 
+ Ba sản phẩm chạy đúng 6 mẫu giống hệt nhau. Nhờ vậy khi một mẫu
+ thắng, mình biết là vai trò đó thắng chứ không phải sản phẩm đó thắng.
+ Vai trò
+ Suncatcher ↗ 
+ Fleece blanket ↗ 
+ Fridge magnet ↗ 
+ C1 · Cá nhân hoá concept 01 
+ Tên Max và hình giống chó hiện lên tường
+ Bà đọc to lá thư in kín mặt chăn
+ Đủ tên bốn người cháu trên một cái nam châm
+ C2 · Phản ứng concept 02 
+ Người chủ ngồi lặng khi cả phòng tràn màu nắng
+ Cháu gái đọc tới đúng dòng đó rồi nghẹn lại
+ Bà đóng tủ lạnh rồi lại mở ra nhìn
+ C3 · Đổi người mua concept 06 
+ Người đến chia buồn mua tặng, không phải chủ chó tự mua
+ Cháu gái mua tặng bà, không phải bà mua tặng cháu
+ Cháu mua tặng, không phải con gái bà mua
+ Hook 1 · Hiện tên đối chứng 
+ Hiện tên lên màn hình ngay giây đầu — đúng cách cả thị trường đang làm
+ Hook 2 · Mối quan hệ biến thể 
+ Gọi mối quan hệ thay vì hiện tên — “bà của bạn”
+ 08 Phase 1 · ngưỡng tắt và đi tiếp
+ Hook rate — 3 giây tắt <18% · mốc đỏ <21% · đi tiếp ≥28% 
+ 0% 20% 40% 
+ Link CTR tắt <1.0% · mốc đỏ <0.5% · đi tiếp ≥2.5% 
+ 0% 2% 4% 
+ Mốc đỏ = tắt ngay, không cần chờ đủ mẫu. Hai mốc còn lại chỉ đọc khi đã đủ lượt hiển thị và phân phối đã ổn định — không tính theo ngày. Hold rate
+ chỉ dùng để bắt bệnh, không dùng để tắt ads. Đạt hai ngưỡng trên vẫn chưa đủ để đi tiếp — còn phải qua
+ cổng ý định ở mục 09:
+ Hook cao · hold thấp Làm lại đoạn giữa 
+ Hook cao · hold cao Giữ, chạy tiếp 
+ Hook thấp · hold thấp Đổi concept 
+ Hook thấp · hold cao Làm lại 1.5 giây đầu 
+ 09 Xem nhiều ≠ sẽ mua
+ Hook rate và CTR đo sự chú ý, không đo ý định mua. Phim ngắn MJ4U-111 chạy chỉ số
+ tương tác rất tốt nhưng không ra add-to-cart nào — người thích xem drama không phải người muốn mua.
+ Nguyên nhân 1 · Sự kiện tối ưu Phase 1 chạy tối ưu landing page view, nên Meta đi
+ tìm người hay bấm chứ không phải người hay mua. Đổi creative không sửa được cái này.
+ Nguyên nhân 2 · Hook không sàng lọc Gợi tò mò mà không cho biết đang bán gì thì
+ click về không được lọc.
+ Nguyên nhân 3 · Phim là giải trí Sản phẩm ra ở mốc 60% thì người xem không bao
+ giờ ghi nhận “đây là món mình mua được”.
+ Hook rate là điều kiện CẦN, không phải điều kiện ĐỦ. Hook thấp là chắc chắn chết. Hook cao thì
+ chưa chứng minh được gì. Dùng để loại , không dùng để chọn .
+ Vá 1 · Hook phải sàng lọc Trong 3 giây đầu phải lộ ra đang bán món quà gì. Kể cả bản cảm
+ xúc. Đây là ràng buộc bắt buộc trong brief, không tốn thêm tiền.
+ Vá 2 · Ghi LPV→ATC ngay từ Phase 1 Miễn phí, lấy từ traffic đang mua sẵn. Không đủ power để so
+ hai mẫu, nhưng đủ để phát hiện kiểu “xem đông mà không ai add-to-cart”.
+ Vá 3 · Cổng kép khi đi tiếp Một mẫu chỉ được đi tiếp khi đạt hook + CTR và LPV→ATC
+ không bằng 0. Đạt hook mà ATC bằng 0 thì đánh dấu “hút nhầm người”.
+ Vá 4 · Cổng Ý định Gom 2–3 tổ hợp sống sót, chạy tối ưu theo ATC để
+ Meta đi tìm người mua. Chỉ cần kiểm chứng vài cái nên vừa túi tiền — 18 cái thì không.
+ Cổng Ý định không phải test thành phần, nó là một cái cổng (xem mục 13). Nó trả lời
+ “tổ hợp này có kéo được người mua không”, chứ không trả lời “tổ hợp nào tốt hơn”.
+ 10 Ngân sách này chứng minh được gì
+ Hold 12→30% 
+ $2 
+ Hook 22→28% 
+ $21 
+ CTR 1.2→2.5% 
+ $44 
+ Add-to-cart 4.6→7.5% 
+ $1.057 
+ Purchase rate 1.4→3% 
+ $1.315 
+ Purchase rate 2→2.5% 
+ $13.806 
+ ▲ Cả ngân sách Phase 1 chỉ có $360 — mọi thứ phía trên phải nằm dưới mốc này.
+ Đây là số tiền cần để dám khẳng định chênh lệch là thật chứ không phải nhiễu (tin cậy 95%,
+ power 80%). Hook và hold nằm trong tầm; add-to-cart và purchase rate thì không — nên tiêu chí lựa chọn ở Phase 1 chỉ có thể là chỉ số tương tác, và mọi thứ sâu hơn phải tính ngân sách riêng.
+ 11 Mấy quy tắc để số liệu còn đáng tin
+ Chia tệp cho đúng Muốn kết luận nhân quả thì dùng A/B Test của Meta. Nhét
+ nhiều creative vào cùng một nhóm quảng cáo là để Meta tự chọn tệp cho từng cái — đó là chọn lọc, không
+ phải chia ngẫu nhiên. Scale thì được, kết luận thì không.
+ Ghi trước rồi mới chạy Ghi rõ định chứng minh gì, nhìn chỉ số nào, cần bao
+ nhiêu mẫu, khi nào thì quyết — trước khi bật ads.
+ Đổi một thứ mỗi lần — trừ vòng concept Loạt concept ở Phase 1 là để tìm giả thuyết, nó không
+ phải thí nghiệm có đối chứng.
+ Không xem giữa chừng Cứ soi kết quả liên tục là sẽ tự tạo ra kẻ thắng ảo. Mấy
+ mốc tắt nhanh là để chặn lỗ, không phải để kết luận.
+ So với một mốc chuẩn Đừng so tất cả với tất cả. 18 ads ra 153 cặp; khoảng 8
+ cặp sẽ “thắng” thuần do may rủi.
+ 12 Cuối cùng biết được gì
+ Hook gọi mối quan hệ hay hook hiện tên ăn hơn? Biết 
+ Concept nào giữ chân người xem? Biết 
+ Đổi tệp người mua có ăn hơn không? Biết 
+ Tổ hợp thắng có kéo được người mua thật không? Chỉ sau Cổng Ý định 
+ Creative nào ROAS tốt nhất? Không — $1.315+ mỗi cặp 
+ Điểm yếu đã biết: các ô định nghĩa theo vai trò , nên cách
+ làm ở mỗi sản phẩm vẫn khác nhau — fleece blanket không thể hiện tên kiểu lộ dần, nên C1 của nó phải dẫn bằng giọng
+ đọc. Vì vậy so sánh giữa các sản phẩm sẽ yếu hơn so sánh giữa các ô.
+ 13 Sau Phase 1 test gì tiếp
+ Vòng Test cái gì Tiền/nhánh Khi nào 
+ Phase 1 · Chú ý hook rate · hold rate · link CTR 
+ Vòng Concept Concept × Hook — 3 concept × 2 hook × 3 sản phẩm $21–44 Chính là kế hoạch này 
+ Vòng Hook 10–20 hook mới trên đúng phần thân đã thắng — đổi lời, đổi khung hình mở $21 Chạy đầu tiên 
+ Vòng Craft length · cut rate · proof beat · voice ~$2 Chạy kèm Vòng Hook 
+ Vòng Format Bê message đã thắng sang 2–3 format khác $2–21 Sau Vòng Hook 
+ Cổng Ý định Gom 2–3 tổ hợp sống sót, chạy tối ưu theo ATC. Trả lời “có kéo được
+ người mua không”, không trả lời “cái nào hơn cái nào”.
+ Phase 2 · Ý định mua add-to-cart · purchase rate 
+ Vòng Offer Hạn đặt hàng · làm lại miễn phí · cá nhân hoá miễn phí $1.057 Cần ngân sách riêng 
+ Vòng Store Landing page · giá · upsell $1.315 Cần ngân sách riêng 
+ Phase 3 · Lời lỗ CPA · ROAS 
+ Chặn lỗ CPA và ROAS chỉ dùng làm chốt chặn lỗ, không dùng để so creative — Không so nhánh 
+ Cột tiền/nhánh = tiền cho mỗi nhánh đem so , lấy từ mục 10 (tin cậy 95%,
+ power 80%). Mỗi con số đi kèm một mức chênh cụ thể: hold 12→30% = $2 · hook 22→28% = $21 ·
+ link CTR 1,2→2,5% = $44 · add-to-cart 4,6→7,5% = $1.057 · purchase rate 1,4→3% = $1.315.
+ Chênh nhỏ hơn thì đắt hơn nhiều.
+ 10–20 hook lấy đâu ra, khi mục 06 chỉ có 9 cái 9 đó là 9 cách mở — nhóm,
+ không phải câu. Một hook là một câu viết ra cụ thể : chữ trên màn + khung hình mở đầu. Cùng một
+ cách mở viết được nhiều câu. Thư viện hook trong tài liệu nguồn đã có sẵn 16 câu , mỗi cách mở 1–2 câu.
+ Nhân tiếp ra 10–20: 3 cách viết lời × 2 khung hình mở (cận mặt · bàn tay · sản phẩm còn
+ trống · toàn cảnh phòng) × 2 người trong khung (người tặng · người nhận) = 12, cộng các câu
+ của các cách mở khác trong thư viện.
+ Vì sao Vòng Hook đi trước Vòng Craft dù Craft rẻ hơn Cả hai đều cần một phần thân đã thắng mới chạy được.
+ Hook là chỗ biến động mạnh nhất trong cả cái ads — cùng một phần thân cắt ba kiểu đã cho hook rate
+ từ 18% lên 38% — nên đánh vào đó trước. Craft rẻ tới mức chạy kèm luôn được.
+ Proof beat là chỗ đáng test nhất Thứ hạng proof của mình — phản ứng thật #1 xuống cận cảnh
+ tay nghề #5 — trong tài liệu ghi rõ là giả thuyết , chưa có A/B nào trong ngành quà tặng chứng minh.
+ Mà đo bằng hold rate nên gần như không tốn tiền.
+ Vòng Hook không phải test cho vui Creative chai nhanh, khoảng 2–3 tuần phải đổi đợt mới.
+ Nên đổi hook vừa là test vừa là cách giữ cho mẫu thắng sống tiếp.
+ Đã nằm trong Phase 1, không tách ra Đổi tệp người mua là concept 06 rồi. Còn craft chuẩn
+ — 9:16, phụ đề, tắt tiếng vẫn hiểu — là tiêu chuẩn bắt buộc , không phải biến để test.
+ 14 Nguồn
+ Mọi con số và danh sách ở trên đều lấy từ ba tài liệu nghiên cứu nội bộ. Mở ra xem cách tính và
+ nguồn trích dẫn gốc.
+ Sáng tạo 
+ Video Ad Decomposition & Phase-1 Test Plan ↗ 
+ Bóc tách video ads quà tặng thành bảy phần, mỗi phần liệt kê các lựa chọn đáng test — chính là 12
+ concept, 9 hook và 6 offer ở trên. Dựng từ dữ liệu chú ý của Meta/Nielsen, nghiên cứu ngành hàng trên
+ Etsy và bóc tách ads đối thủ; mỗi luận điểm đều ghi rõ mức độ tin cậy.
+ Phương pháp 
+ Nền tảng khoa học cho quảng cáo ↗ 
+ Phần tâm lý học và thống kê đứng sau thiết kế này: vì sao hiện tên gần như vô dụng nếu người xem
+ không có ai để liên hệ tới, vì sao cảnh phản ứng chính là thứ đang bán chứ không phải bằng chứng, và
+ phép tính power quyết định mỗi giai đoạn chứng minh được gì.
+ Lời lỗ 
+ Giải đấu Phase 1 — Suncatcher, Fleece blanket, Fridge magnet ↗ 
+ Kinh tế đơn vị từng phiên bản: giá bán, giá vốn, lãi gộp, ROAS hoà vốn và CPA mục tiêu cho cả mười
+ phiên bản đang bán, kèm ngân sách từng giai đoạn.
+ Duyệt xong: 18 bản brief creative, mỗi sản phẩm 6 bản. — Phase 2 test một bộ thành phần khác hẳn (offer, landing page, giá, upsell) và sẽ có kế hoạch riêng. 

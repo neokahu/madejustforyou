@@ -1,6 +1,6 @@
 # Topic — Script method (gift video ads)
 
-**Status:** evidence-graded rules written; suncatcher scripts not yet revised to them.
+**Status:** rules written; suncatcher script v2 rewritten to them + built (2026-10-08).
 
 ## Current decisions
 - **Product in frame from second 1.**
@@ -10,7 +10,7 @@
 - `ai-film-studio.md` pipeline **demoted**: its MJ4U-111 film scored hook3 3.59 vs benchmark 18.05.
 
 ## Open items
-- `marketing/facebook-ads/PHASE1-SUNCATCHER-shooting-scripts.md` needs revision per `script-method.md` §4a (fixes specified for Hook 2 and Body C). **Not yet edited.**
+- ✅ Suncatcher v2 done (council: `research/councils/`). Blanket scripts next session.
 
 ## Detail
 - `research/reference/script-method.md`

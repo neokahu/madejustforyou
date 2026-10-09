@@ -1,0 +1,122 @@
+<title>Suncatcher Script Council</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,500;0,700;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#F3F4F7;--panel:#FFFFFF;--ink:#1B2233;--muted:#5A6378;--line:#DADDE6;--cobalt:#2F55C4;--amber:#B9770E;--amber-soft:#FBEFD9;--cobalt-soft:#E4EAFB;--cut:#A3332B;--cut-soft:#F8E3E1;
+--serif:"Spectral",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12151D;--panel:#1A1F2B;--ink:#E6E8EE;--muted:#9AA3B7;--line:#2C3345;--cobalt:#86A3FF;--amber:#E3AE4D;--amber-soft:#3A2E17;--cobalt-soft:#1E2A4A;--cut:#F08A80;--cut-soft:#3E2220}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12151D;--panel:#1A1F2B;--ink:#E6E8EE;--muted:#9AA3B7;--line:#2C3345;--cobalt:#86A3FF;--amber:#E3AE4D;--amber-soft:#3A2E17;--cobalt-soft:#1E2A4A;--cut:#F08A80;--cut-soft:#3E2220}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans)}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:40px 64px;display:grid;gap:40px}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(28px,5vw,40px)/1.15 var(--serif);margin:10px 0 14px;text-wrap:balance}
+h2{font:700 22px/1.25 var(--serif);margin:0 0 12px;text-wrap:balance}
+.q{color:var(--muted);max-width:62ch;margin:0}
+.glass{height:6px;border-radius:3px;background:linear-gradient(90deg,var(--cobalt) 0 38%,var(--amber) 38% 70%,var(--cobalt) 70%);opacity:.85}
+.first{background:var(--amber-soft);border:1px solid var(--amber);border-radius:10px;padding:20px 22px}
+.first .eyebrow{color:var(--amber)}
+.first p{font:500 20px/1.4 var(--serif);margin:8px 0 0}
+.prose p,.prose li{max-width:68ch}
+.prose ol,.prose ul{padding-left:1.2em;display:grid;gap:6px}
+.prose p{margin:0 0 12px}
+.prose strong{font-weight:600}
+.verdict{display:grid;gap:32px}
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:14px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child th,tr:last-child td{border-bottom:0}
+thead th{font:500 11px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+tbody th{font-weight:600}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.bar{display:inline-block;width:60px;height:8px;border-radius:4px;background:var(--line);margin-right:8px;position:relative;vertical-align:middle;overflow:hidden}
+.bar::after{content:"";position:absolute;inset:0;width:var(--w);background:var(--cobalt)}
+.chip{display:inline-block;font:500 12px/1 var(--sans);padding:5px 9px;border-radius:999px;white-space:nowrap}
+.chip.in{background:var(--cobalt-soft);color:var(--cobalt)}
+.chip.cut{background:var(--cut-soft);color:var(--cut)}
+.note{color:var(--muted);font-size:14px;margin:10px 0 0}
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;padding:14px 4px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font:500 15px var(--mono);color:var(--cobalt);width:14px}
+details[open] summary::before{content:"−"}
+summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.who{font-weight:600}
+.lens{color:var(--muted);font-size:14px}
+details .prose{padding:0 4px 16px 26px;font-size:15px}
+footer{color:var(--muted);font:500 12px/1.6 var(--mono);border-top:1px solid var(--line);padding-top:16px}
+</style>
+<div class="wrap">
+<header>
+<div class="eyebrow">LLM Council · 2026-10-08 · Dog memorial suncatcher “Alex”</div>
+<h1>Revise the Phase-1 script, and cut the empty-window hook</h1>
+<p class="q">Question: should the Phase-1 shooting script be revised per script-method §4a before anything is generated? In particular, does Hook 2 keep its product-absent opening?</p>
+</header>
+<div class="glass" aria-hidden="true"></div>
+<section class="first" aria-labelledby="first-h"><div class="eyebrow" id="first-h">Do this first</div><div><p>Place a real test order on the live store and confirm checkout completes, before generating a single clip.</p></div></section>
+<section><h2>The recommendation</h2><div class="prose"><p>Revise, and go further than §4a. Cut Hook 2's empty window completely; the late-reveal test (T1) waits until a control has produced sales. Launch two video cells plus a static control:
+1. <strong>Body C, rebuilt.</strong> Open on the panel, close enough that "Alex" is readable. Then the phone, the florist and the gift, ending on the handover.
+2. <strong>A product-hero cut</strong> made from Body A's light-on-wall payoff.
+3. <strong>A static image ad</strong> as the baseline.</p>
+<p>Use hard cuts and varied shot lengths, and end on the moving panel. Name the object in the call to action ("Make their dog's suncatcher") and add delivery time to the copy. Before launch, write down the spend cap per cell, and read on add-to-cart rate until checkout is proven. Body B is parked, not killed. The owner's Thai-film taste goes in the payoff beat, not the opening.</p></div></section>
+<section><h2>Where each advisor landed</h2>
+<div class="tablebox"><table><thead><tr><th>Advisor</th><th>Hook 2</th><th>Cells to launch</th><th>Lead body</th></tr></thead><tbody><tr><th scope="row">The First Principles Thinker</th><td><span class="chip cut">Cut Hook 2</span></td><td class="num"><span class="bar" style="--w:33%"></span>2</td><td>C</td></tr><tr><th scope="row">The Contrarian</th><td><span class="chip in">Product in from 1s</span></td><td class="num"><span class="bar" style="--w:33%"></span>2</td><td>C</td></tr><tr><th scope="row">The Executor</th><td><span class="chip in">Product in from 1s</span></td><td class="num"><span class="bar" style="--w:67%"></span>4</td><td>A + C</td></tr><tr><th scope="row">The Outsider</th><td><span class="chip in">Product in from 1s</span></td><td class="num"><span class="bar" style="--w:100%"></span>6</td><td>C</td></tr><tr><th scope="row">The Expansionist</th><td><span class="chip in">Product in from 1s</span></td><td class="num"><span class="bar" style="--w:100%"></span>6+</td><td>C</td></tr></tbody></table></div>
+<p class="note">All five agree the product is on screen by second 1. They split on how many cells to fund. All 5 peer reviewers judged the First Principles answer strongest and the Expansionist's the biggest blind spot.</p></section>
+<div class="verdict">
+<section><h2>Where the council agrees</h2><div class="prose"><p><strong>Product in frame from second 1 — unanimous.</strong> All five advisors said so; none defended Hook 2's empty window. Reasons that came up more than once: it repeats the MJ4U-111 late-reveal pattern (hook-3s motion 3.59 vs 18.05 for the competitor winner); the experiment can't be read because Meta starves the weak hook within hours; a cold viewer reads "We still leave the window open for him" with no object as a dead person or a funeral-home ad; and putting the caption over a glowing named panel keeps the emotional line and adds the "I could buy that" moment.</p>
+<p><strong>Body C is the strongest body</strong> (4 of 5). It is the only body that shows the buyer's moment; "Flowers felt wrong. They die too." is the purchase trigger. The product still shows up too late (11s) and needs to appear early, on her phone.</p>
+<p><strong>Six cells is too many</strong> (Executor, Contrarian, First Principles). About $45–50 per cell before any cell tells you anything, so roughly $300 just to pick a hook.</p>
+<p><strong>Fix the wardrobe bug</strong> — the script says "grey sweater"; the approved reference set wears plaid flannel. Unanimous.</p></div></section>
+<section><h2>Where it clashes</h2><div class="prose"><p><strong>Keep Body B or cut it.</strong> The Executor keeps B as the one cell that follows the owner's taste; re-opening it on the product would be a rewrite. The Contrarian and First Principles cut both A and B, because an older man alone with a dog bowl is the lonely-giftee image rule R17 bans. The disagreement is whether to keep the owner's taste inside the test or set it aside.</p>
+<p><strong>More cells or fewer.</strong> The Expansionist wants cheap breed-swap variants, a signature loop opener and new channels; everyone else wants fewer. The Expansionist is right about the long-term asset, but variant volume only finds winners once the funnel converts, and this one doesn't yet.</p>
+<p><strong>Where "softly in focus" lands.</strong> The Contrarian says §4a's own fix is a trap: a 6-inch panel softly in focus in a window reads as a coloured smudge at phone size. It passes R1 on paper but fails in the feed. "Alex" has to be readable at scroll speed, which means a close shot.</p></div></section>
+<section><h2>Blind spots caught in peer review</h2><div class="prose"><ul>
+<li><strong>Checkout may be the real problem.</strong> The cart→checkout cliff could zero every cell whatever the creative does. MJ4U-111's 0 purchases are confounded by that cliff, so only its hook-motion gap counts as evidence against late reveal.</li>
+<li><strong>No kill or success criteria.</strong> There is no spend cap per cell, no metric and no read window. Read on add-to-cart rate.</li>
+<li><strong>A near-free static control.</strong> A static product-hero image ad costs about $0 to generate and would show whether the product sells before any film is made.</li>
+<li><strong>Body C needs a new character.</strong> The woman friend (REF-GIVER) has no locked reference set, so the turntable gate adds cost and time, while most of the approved owner set would go unused.</li>
+<li><strong>Delivery time.</strong> "Her dog died on Tuesday" is urgent, but print-on-demand takes 1–2+ weeks. If the copy and product page don't state arrival time, people drop at shipping, and it looks like the existing checkout cliff.</li>
+<li><strong>Who actually buys is unverified.</strong> "The friend buys it" is assumed; pet memorials are often bought by the owner, Meta can't target "friend's dog just died", and the niche evidence comes from grandparent keepsakes, not pet memorials.</li>
+<li><strong>The handover is never shown.</strong> No body shows the friend giving the panel or the owner receiving it, so R17's connection is still not on screen.</li>
+</ul></div></section>
+</div>
+<section><h2>Advisor responses</h2><details><summary><span class="who">The First Principles Thinker</span><span class="lens">What the test is for</span></summary><div class="prose"><p>You're asking how to tune Hook 2. The real question is what this first test is for: finding out whether anyone will pay $26.95 for a breed-and-name memorial panel seen in a Meta feed. Judged that way, the design fails before Hook 2.
+1. You can't afford the experiment. Six cells at a $15.64 target CPA need ~$45–50 each before any cell says anything — ~$300 just to learn which hook won. And the cart→checkout cliff (0 checkouts on MJ4U-111) can zero every cell regardless of creative. Hook 2's product-absent open is an experiment you can't fund or read. Calling it "the experiment" doesn't protect it; it's just a slower ad.
+2. You already ran this test. Late reveal + slow uniform clips = MJ4U-111: 0 purchases in two months, hook motion 3.59 vs 18.05. n=1, but your only n, and it agrees with the 11/11 winners. Product in frame from second 1.
+3. Who actually buys? A memorial gift is bought by someone else — a friend or grown child. Bodies A and B show a grieving man alone with the light: the "lonely giftee" your own R17 bans. Only Body C shows the buyer's real moment — "Flowers felt wrong. They die too." — the purchase trigger. The product's value is "that's HIS breed, HIS name"; hiding it hides the reason to buy.
+What I'd do: cut to 2 cells — Body C rebuilt with panel + name on screen from 0–1s, plus one product-hero cut. Optimise/read on add-to-cart rate, not purchases, until checkout is fixed. Keep the Thai-film taste for the payoff beat, not the opening. Fix the sweater bug.
+Hook 2 doesn't need revising. It needs cutting.</p></div></details><details><summary><span class="who">The Contrarian</span><span class="lens">What will fail</span></summary><div class="prose"><p>Fix the funnel before you argue about the script. MJ4U-111 has 0 checkouts and a known cart→checkout cliff. If that is a site/checkout problem, every cell here shows the same result — no purchases — and you'll wrongly blame the creative, the hook or the product. Place a real test order and confirm checkout works before spending; otherwise the $16 of generation is the smallest thing you lose.
+The Hook-2 "experiment" can't be read. Six ads at a $15.64 target CPA on a small budget = a few dollars and almost no conversions per cell. Meta won't split spend evenly; it will starve the empty-window hook within hours on poor 3s retention, so the cell ends itself before it says anything. Keeping the product out doesn't protect the test, it guarantees that version loses. Product in from frame 1.
+§4a's fix has its own trap: a 6-inch panel "softly in focus" in a window, 9:16 on a phone, reads as a coloured smudge. It meets R1 on paper while the viewer still can't tell what the product is. "Alex" must be readable at scroll speed — a close shot, not a wide one.
+Bodies A and B break your own house rule: an older man alone in his kitchen with a dog bowl is exactly the lonely-giftee image the rule bans. They also speak to the grieving owner, but the payer is the friend. Body C is the only body that shows the buyer — make it the lead, not one of three equal cells.
+The payoff shot is the hardest to fake: artwork is added in post, but the coloured light and dog-shaped shadow must match it exactly. If they drift, the reveal looks fake. Test that composite before generating anything else.
+Recommendation: all of §4a, cut to 2 bodies (C first) with 1 hook, fix the shirt. Run T1 only after a control has produced sales.</p></div></details><details><summary><span class="who">The Executor</span><span class="lens">Fastest path to live ads</span></summary><div class="prose"><p>Revise — but don't spend a day on it. Apply four edits, fix the wardrobe bug, generate this week. The script is 80% there; every day of debate is a day with no spend data.
+Do these Monday:
+1. Hook 2: product in frame from frame 1. The "don't fix Hook 2" note assumes a clean experiment, but it isn't — product timing and caption angle are confounded, so a loss teaches you nothing. Worse: a 2s product-absent hook on a cold audience with a zero-purchase store is the candle-warmer mistake again (3.59 vs 18.05 hook motion). Hang the panel softly in focus, keep the caption. Run the late-reveal test later, once a control is converting — you can't run T1 against nothing.
+2. Body C: product into C-2 — product page on her phone. One prompt change, zero cost, closes the 9-second gap.
+3. Retime: generate at 5s, trim to varied lengths, hard cuts. Pure edit work, no credits.
+4. Shared close: text + logo over moving panel. 10 minutes in the editor.
+5. Wardrobe: "grey sweater" → grey-green plaid flannel. Skip this and you regenerate footage of the wrong man.
+Leave alone: Body B's face-first reaction beat. Re-opening it on the product is a rewrite, and with Hook 2 fixed the product is already on screen at 0s. Body B becomes your one taste-driven story cell — respects the owner's preference without betting the launch on it.
+The real constraint isn't the script. At ~$20 generation, ad spend is the expensive part. Six ads is too many cells for a first test on a small budget. Launch 2 hooks × Body A and C (4 ads), hold B until there's a signal.
+Revisions: one afternoon. Generation: one day. Live by Wednesday.</p></div></details><details><summary><span class="who">The Outsider</span><span class="lens">A cold scroller's eyes</span></summary><div class="prose"><p>I'm scrolling Facebook cold and know nothing about you. Here's what I'd see.
+Hook 2 is the worst case. An empty window and "We still leave the window open for him." Him who? A husband, a son, a soldier? I'd assume a dead person and scroll past feeling vaguely sad — or like a funeral home is advertising at me. Nothing says dog, product, or shop. Emotion with no object is just confusion. Put the panel in frame from second 1; a dog-shaped suncatcher answers "him who?" before it's asked.
+Hook 1's caption argues with nobody. "That's not a generic dog" rebuts a claim I never made, and I don't yet know it's something I can order. Say the plain fact: "Made with your dog's breed and name."
+Most body footage won't register. A bowl and a framed photo look like an ordinary kitchen. A man washing a cup is a man washing a cup. In Body B the coloured light crosses a face with the product out of frame — I can't tell the light comes from a product. To you it's the payoff; to me it's a pretty lighting effect from nowhere. Body C is the only body that plays without inside knowledge — "flowers die too" is a dilemma I recognise — but I don't see what she buys until second 11, and I'm gone by then.
+"Make one that's only theirs." One of what? Name the object: "Make their dog's suncatcher."
+Your candle-warmer ad already ran this experiment — slow, mysterious, late reveal — and got zero purchases. Take §4a in full. Rule of thumb: if a stranger can't say "dog name suncatcher, memorial gift" by second 2, the ad doesn't work.</p></div></details><details><summary><span class="who">The Expansionist</span><span class="lens">Hidden upside</span></summary><div class="prose"><p>Yes, revise — but everyone's arguing about Hook 2 when the bigger opportunity is the matrix. Reframe it.
+Hook 2: product in frame from second 1. The upside of a late reveal is small; the upside of "We still leave the window open for him" over a glowing named panel is large — you get the emotional line AND the instant "I could get that for someone" moment. Evidence says the late reveal is the losing bet; move it to a cheap T1 cell from footage you already have. Don't spend a hook slot on it.
+The undervalued asset is Body C — the only body where the viewer is the buyer. Nobody scrolling just lost a dog today; plenty of people just got "Her dog died on Tuesday" and are standing at the florist. That's the real market: sympathy gifting, not self-memorial. "Flowers felt wrong. They die too." is a headline-grade line that could carry a campaign. Make C the lead body; show the product early on her phone so the "buying for a friend" behaviour is on screen.
+Adjacent upside the script ignores:
+- Breed swaps cost almost nothing: the panel is composited, so one shoot yields German Shepherd, Golden, Lab, Frenchie versions with breed-matched interest targeting. Variant volume finds winners on Meta.
+- Vet clinics and pet-loss communities are a B2B/organic channel for sympathy gifts.
+- Repeat triggers: adoption anniversaries, first Christmas without the pet, cats. Build the template once, clone it.
+- The light-on-wall shot is a signature visual — use it as a loop opener on every body and own the look.
+Spend the $16 on more variants, not on the late-reveal theory.</p></div></details></section>
+<section><h2>Peer reviews</h2><details><summary><span class="who">5 anonymous reviews</span><span class="lens">Responses were labelled A–E: A Executor · B Contrarian · C Outsider · D Expansionist · E First Principles</span></summary><div class="prose"><p><strong>Review 1:</strong> Strongest E — only one that defines the test's purpose; prices six-cell readability (~$300); names checkout cliff; prescribes ATC read; 2 cells, C leads. B close second (smudge, light/shadow composite). Blind spot D — more cells on an unfundable budget, ignores checkout cliff. ALL missed: (a) MJ4U-111 is NOT clean evidence against late reveal — its 0 purchases are confounded by the checkout cliff; only the 3.59 vs 18.05 hook-motion gap is usable. (b) No pre-registered kill/success criteria (spend cap per cell, metric, read window). (c) No check that Meta can reach sympathy buyers — "recent pet loss" is untargetable; C's buyer must be found via broad/interest, unproven.</p>
+<p><strong>Review 2:</strong> Strongest E (same reasons); B close second. Blind spot D — ignores money and checkout; "variant volume finds winners" only true with a converting funnel. ALL missed: (a) a $0 static product-hero image ad as the baseline control; (b) the handover moment — no body shows friend giving / owner receiving; R17 connection still unshown; (c) landing-page match — PDP must show breed+name preview immediately.</p>
+<p><strong>Review 3:</strong> Strongest E; B second. Blind spot D (A smaller version: ignores funnel, still 4 cells). ALL missed: delivery time — Body C's frame is urgency ("died on Tuesday"); POD + shipping is 1–2+ weeks. If ad/PDP doesn't state arrival, sympathy ATCs drop at shipping and masquerade as the existing checkout cliff.</p>
+<p><strong>Review 4:</strong> Strongest E; B second. Blind spot D. ALL missed: (a) Body C needs a NEW character (the woman friend, REF-GIVER) with no locked reference set — Phase-2 turntable gate adds cost/time — while the approved 8-image owner set would go mostly unused if C leads; (b) static image ads as cheapest product-hero control, ~$0 generation, validate product before any film.</p>
+<p><strong>Review 5:</strong> Strongest E; B second. Blind spot D (and A keeps Body B, the man alone). ALL missed: no pet-memorial-specific evidence — niche winners are grandparent keepsakes; "the friend is the buyer" is asserted, unchecked. Pet memorials are often self-purchased by the owner; Meta can't target "friend's dog died". Pull pet-memorial suncatcher winners from Meta Ad Library to settle who the ad speaks to. Also: near-free static control.</p></div></details></section>
+<footer>Counciled: marketing/facebook-ads/PHASE1-SUNCATCHER-shooting-scripts.md against research/reference/script-method.md §4a · 5 advisors, 5 peer reviews, 1 chairman · full transcript: research/councils/council-transcript-2026-10-08-suncatcher-script.md</footer>
+</div>

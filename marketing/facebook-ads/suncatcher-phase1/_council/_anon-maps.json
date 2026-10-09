@@ -1,0 +1,23 @@
+{
+ "C1-personalization": {
+  "A": "executor",
+  "B": "outsider",
+  "C": "first-principles",
+  "D": "contrarian",
+  "E": "expansionist"
+ },
+ "C2-reaction": {
+  "A": "executor",
+  "B": "outsider",
+  "C": "contrarian",
+  "D": "expansionist",
+  "E": "first-principles"
+ },
+ "C3-buyer-swap": {
+  "A": "executor",
+  "B": "contrarian",
+  "C": "outsider",
+  "D": "first-principles",
+  "E": "expansionist"
+ }
+}

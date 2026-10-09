@@ -7,6 +7,11 @@ MadeJustForYou = Shopify print-on-demand **personalized-gift** store. The live s
 by a freelancer; this repo is the **research, design/asset production, and personalizer-build**
 workspace. Personalizer app = **Teeinblue**. Fulfillment = POD providers via Teeinblue.
 
+**Media never goes in git.** All images/video/audio/design/heavy files are gitignored and backed up to
+Google Drive with `scripts/backup-media.sh` (rclone → `gdrive:madejustforyou/repo/<same path>`; copy-only,
+never deletes). Restore a file: `rclone copy gdrive:madejustforyou/repo/<path> <dir>`. A pre-commit hook
+(`.githooks/pre-commit`, enabled via `git config core.hooksPath .githooks`) blocks any staged file >5MB.
+
 ---
 
 ## Top-level map

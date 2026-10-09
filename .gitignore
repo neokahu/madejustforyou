@@ -20,3 +20,47 @@ node_modules/
 
 # Audio assets — Drive-synced, not git
 *.mp3
+*.wav
+*.m4a
+*.aac
+*.ogg
+*.flac
+*.aiff
+
+# More image/design/video formats — Drive-synced, not git
+*.tif
+*.tiff
+*.heic
+*.bmp
+*.avif
+*.ai
+*.eps
+*.sketch
+*.fig
+*.mkv
+*.avi
+*.prores
+*.mxf
+
+# Heavy files — archives, fonts, PDFs, models
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.pdf
+*.otf
+*.ttf
+*.woff
+*.woff2
+*.safetensors
+*.ckpt
+
+# Backup of ALL git-ignored media to Drive: scripts/backup-media.sh (rclone → gdrive:madejustforyou/repo/)
+# Files >5MB of any type are blocked at commit by .githooks/pre-commit
+
+products/suncatcher-dog-memorial/ads/build/
+
+__pycache__/
+*.pyc

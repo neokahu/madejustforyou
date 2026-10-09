@@ -1,0 +1,7 @@
+# Review 1 — C3-buyer-swap
+
+**1. Strongest: D.** It starts by naming what C3 actually tests: whether there is a second buyer, the person who doesn't know what to send. Every fix follows from that. It moves "Flowers felt wrong" into beat 2 and reuses the headline's own language. It points out that F-BOX reads as the *recipient* unboxing, and fixes that with a reverse Ken Burns plus a gift tag. It ends beat 4 on the giver's "I got it right" glance. The C3-a fix comes free with the rewrite. B comes close and adds the best point on measurement: with the reason arriving at 12.3s, you can't tell concept failure from caption timing. Its invented-testimonial warning on the primary text is also good.
+
+**2. Biggest blind spot: A.** It is a sound production memo (one-person swap, no hand choreography, tighter crop). But it never asks whether the buying reason lands, and it leaves the concept's whole payoff at 12.3s. That was the core question. E has a smaller version of this gap: "I didn't know what to send" drops both "dog" and "Alex", and E chooses to live with C3-a.
+
+**3. All five missed what happens after the click.** A sympathy-giver needs to ship to someone else's address, add a gift note, and know when it arrives. If the product page can't promise that, C3's clicks die at checkout. Nobody checked it. Nobody used price against flowers either ($26.95 against a ~$60 arrangement, and this one lasts).

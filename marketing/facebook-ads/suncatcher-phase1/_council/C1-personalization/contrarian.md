@@ -1,0 +1,9 @@
+The fatal flaw: C1's concept slot doesn't carry the concept. Personalization lives only in the shared beats (H1, B3b, B5), and those are identical in C2 and C3. C1's own beats, the bowl (B2) and the hand (B4), are grief beats. So the "Personalization" cell can't win or lose on personalization. If C1 beats C2, you won't know why. Spend the slot on proof. In B2, a 4s rapid flip of the same panel in three or four breeds and names (Lab "Daisy", Dachshund "Pepper", Golden "Murphy") that lands on the GSD "Alex". That proves "not a generic dog" and backs up "Choose the breed. Add the name." Right now the viewer only ever sees a GSD, so it reads as a GSD product. Move the bowl to B4, or cut it.
+
+Second risk, and the one most likely to hurt you: the physics. B3b shows "Alex glowing inside" a crisp, wall-sized GSD shadow. A 6-inch panel with a painted black silhouette throws a small, soft, dark blob with coloured fringes. It won't project a glowing name. The headline "His Breed. His Name. In the Light." and "his shape lands on the wall" promise exactly that. Expect "fake/AI" comments that drag CTR, then refunds from buyers who got what physics allows. Either verify it with a real photo of the real product in sun, or rewrite B3b's caption and the headline so they stop claiming the name projects.
+
+Conflicts:
+- **C1-c** is understated. It's the same honesty problem, so QA'ing for a "believable result" won't fix it.
+- **C1-b** matters. A man alone patting a wall is the saddest frame in the set and gives a cold scroller nothing to click on. Use F-PHOTO as a framed photo in the B4 shot (inside the slot, no lock broken).
+- **C1-a** and **C1-d** are fine and don't matter.
+- **S5** matters, but the hook line is locked. Hold it to 3.0s as written, and make sure B2's first second (2.0–3.0) doesn't fight it for the eye. The fast breed flip should start at 3.0.
