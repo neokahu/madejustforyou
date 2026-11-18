@@ -34,7 +34,7 @@ The 20s ad totals ≤45 caption words and ≤40 VO words. For the 15s cut, use �
 ## Hard rules
 - H1: the hook is verbatim.
 - H2: the product is identifiable by 1s and present in every beat (at most one beat absent). No logo-card opening.
-- H3: **never describe the viewer**; no "you/your" tied to age, health or grief, family status, or money.
+- H3: **never describe the viewer**; no "you/your" tied to age, health or grief, or money. Relationship lines ("Your granddaughter…") are allowed (user ruling 2026-11-18, R3).
 - H4: no invented facts, stats, counts, reviews or testimonials; a dramatized story is never presented as a real customer.
 - H5: names and text match the real sample.
 - H6: show connection, never a lonely giftee.

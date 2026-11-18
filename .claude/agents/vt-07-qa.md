@@ -45,7 +45,7 @@ Then **real-time playback on a phone-sized screen, muted, then unmuted.**
   - P2 product as shipped
   - P3 **music licence evidence covers paid Meta ads**
   - P4 no dramatization presented as a real testimonial
-  - P5 **AI-performer disclosure as the user ruled** (NY GBL §396-b)
+  - P5 AI-performer disclosure: **user ruled 2026-11-18 = no disclosure** → PASS unless the ruling changes (see README §6)
   - P6 no flashing or shock imagery
 - **I test integrity:**
   - I1 zero frame diff outside the tested window

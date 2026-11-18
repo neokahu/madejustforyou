@@ -47,8 +47,8 @@ description: >
 6. **Safe zones.** 9:16: keep the top 14%, bottom 35% and 6% each side clear, and avoid the lower-right rail. 4:5: keep ≥10% bottom and ≥6% sides clear.
 7. **Audio.** Music bed from frame 1; duck only under VO. −16 LUFS integrated (−18 when VO leads), true peak ≤ −1 dBTP, **measured on the encoded file**.
 8. **CTA / end card.** One locked CTA, ≥2s, inside the safe zone. Logo legible at phone size over **moving** picture.
-9. **Disclosure.** Add the AI-performer disclosure only as the user has ruled, and identically in every variant.
-10. **Render → probe → self-check** (spec · duration ±1 frame · LUFS/peak · black/freeze · detected cuts = planned cuts · motion gate · captions vs sheet · name on ≥5 frames · **zero diff outside the tested window**) → back up media → commit the recipe and log → hand to 07.
+9. **Disclosure.** User ruled 2026-11-18: no AI-performer disclosure. If that ruling changes, apply it identically in every variant.
+10. **Render → probe → self-check** (spec · duration ±1 frame · LUFS/peak · black/freeze · detected cuts = planned cuts · motion gate · captions vs sheet · name on ≥5 frames · **zero diff outside the tested window**) → back up media → commit the recipe and log → log a row in `products/_registry/ad-creatives.csv` and re-push its Sheet → hand to 07.
 
 ## Hard rules
 Never change locked copy, beats, length, CTA or test structure. No music without licence evidence, and nothing from a consumer in-app music library. Nothing random (covers, takes). Versions are immutable. Never mark your own work PASS. Never `git add` media.

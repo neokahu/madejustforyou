@@ -169,7 +169,7 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 | Media (refs, takes, renders) | `products/<product>/ads/<test-id>/…` (gitignored; `scripts/backup-media.sh`) |
 | Hook ledger | `marketing/facebook-ads/_ledgers/hook-ledger.csv`: every shipped hook + mechanism + hook/hold rate |
 | Scene ledger | `marketing/facebook-ads/_ledgers/scene-ledger.csv`: one row per shipped shot (§3 05) |
-| Ad-creative log | **pending user decision** (`products/_registry/ad-creatives.csv` + Sheet tab) |
+| Ad-creative log | `products/_registry/ad-creatives.csv` + Sheet `1gUb0PNN_My3vPlXJI2uR1cCJf6vBC79CMV4ulsZHFw0` (one row per ad × format) |
 | Tool adapters | `research/reference/video-team/adapters/` |
 
 ## 5. What changed from the source pipeline (and why)
@@ -193,10 +193,10 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 
 ## 6. Open decisions (user)
 
-1. **AI-performer disclosure, New York.** GBL §396-b, in effect 2026-06-09, verified with Cooley, Reed Smith and Honigman: an AI-generated person in an ad that could reach New York needs a conspicuous in-ad disclosure. Options: disclose on all ads, exclude NY, or get a legal review. 07 treats it as S1 until you rule.
+1. ~~**AI-performer disclosure, New York.**~~ **Ruled 2026-11-18: no disclosure.** User decision, made knowing NY GBL §396-b (in effect 2026-06-09; $1k/$5k penalties) applies to AI-generated people in ads reaching NY. QA P5 = PASS by this ruling. Revisit if Meta starts requiring it or a complaint arrives.
 2. ~~**Music licence.**~~ **Resolved 2026-11-18:** user says the suncatcher bed is AI-generated ("voicelabs"), no third-party IP. Licence evidence for AI music = service + plan tier (must be a paid/commercial plan) + generation date + terms URL, recorded in the build recipe. Still to confirm: generated on a paid plan.
-3. **Ad-creative log.** Should there be a separate per-ad CSV + Sheet tab?
-4. **"Your granddaughter…" hooks.** They may imply the viewer's age. Policy check, or keep hooks in the third person until verified.
+3. ~~**Ad-creative log.**~~ **Done 2026-11-18:** `products/_registry/ad-creatives.csv` (canonical, git) mirrored to its own Google Sheet **`1gUb0PNN_My3vPlXJI2uR1cCJf6vBC79CMV4ulsZHFw0`** ("MJ4U Ad Creatives Log"). It is a separate spreadsheet because re-pushing the product tracker replaces that whole Sheet and would wipe an extra tab. Same sync rule: Claude is the only writer; update the CSV, then `update_drive_file` from `~/.workspace-mcp/attachments/ad-creatives.csv`.
+4. ~~**"Your granddaughter…" hooks.**~~ **Ruled 2026-11-18: keep as is.** `script-method.md` R3 stands; second-person *relationship* hooks are allowed. Viewer-attribute rule still bans age, health, grief, money and the other listed attributes.
 5. **Open tests** carried from the research (not decided by argument): VO vs captions-only (T4), story vs product-hero (T1), the cut-rate target (n=1), the 30-day ledger window.
 
 ## 7. Supersedes

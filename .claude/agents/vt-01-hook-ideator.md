@@ -25,7 +25,7 @@ A table of Hook Cards with these fields: `id · arm · mechanism (one of M1–M1
 3. Write ≥15 cards across **≥6 mechanisms**. Write the **frame first**, then the caption.
 4. Self-reject:
    - clichés ("wait for it", "you won't believe", "perfect gift for…", "stop scrolling", "forever in my heart", "this made me cry")
-   - any line implying the *viewer's* attributes (loss, age, health, family status)
+   - any line implying the *viewer's* attributes (grief/loss, age, health, money). Relationship hooks ("Your granddaughter…") are allowed (user ruling 2026-11-18)
    - any card where the gift isn't identifiable muted by 3s
    - promises the body can't pay
    - near-duplicates (same frame + same mechanism)
