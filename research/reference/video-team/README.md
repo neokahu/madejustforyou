@@ -60,7 +60,8 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 
 ### 01 · Hook Ideator → `role-research/01-03-hooks.md` §2
 - **A hook is a card, not a line.** Its fields: `id · arm · mechanism · cep (relationship × occasion) · frame1_visual · onset_0_5s · caption (≤10 words) · audio_cue (never needed to understand) · promise · paid_by (second) · asset_source · policy · rationale`. A caption with no frame is not a hook.
-- At least 15 cards across **≥6 mechanisms** from the gift library (M1–M11: personalization reveal, relationship callout, reaction cold-open, private ritual, light/transformation onset, concrete curiosity gap, generic-vs-theirs contrast, giver POV, occasion, thought made visible, quiet social proof).
+- **Built on the hook framework** (`hook-framework.md`): every card is tagged with one **FORMAT** (F1–F15: onset/interrupt, text-led, question, fake reality, reveal, transformation, comparison, POV, in-medias-res, reaction, hands/process, sound-led, talking head, native-UI mimic, social-proof opener) and one **TRIGGER** (T1–T10: curiosity, surprise, recognition, joy/tenderness, nostalgia, social proof, desire, urgency, humor, contrarian), plus attention primitives (onset, face, animal, legible text). The gift recipes M1–M11 are ready-made format × trigger combinations. Separate tags are what let results show *which part* of a hook won.
+- At least 15 cards: ≥6 formats and ≥5 triggers, caps per format and trigger, ≥8 in gift-core cells, ≥3 exploration cards. Fake reality: ≤2 cards, under rules FR1–FR11 (a surreal *setting* is fine; a surreal *product capability* is not).
 - **Self-reject:** clichés, lines about the viewer's attributes, a gift not identifiable muted by 3s, promises the body can't pay, near-duplicates (same frame + mechanism). Keep 8–10, at least 2 per arm.
 - If a model ideates, run ≥2 independent passes and merge (this guards against monoculture).
 
@@ -167,7 +168,8 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 | Test cell docs | `marketing/facebook-ads/<test-id>/<cell>/` → `hooks/01-candidates.md`, `hooks/02-scores.md`, `hooks/03-selection.md`, `script.md`, `shotlist.md`, `briefs/`, `recipe.md`, `qa/` |
 | Criteria sheet (locked per batch) | `marketing/facebook-ads/<test-id>/CRITERIA.md` |
 | Media (refs, takes, renders) | `products/<product>/ads/<test-id>/…` (gitignored; `scripts/backup-media.sh`) |
-| Hook ledger | `marketing/facebook-ads/_ledgers/hook-ledger.csv`: every shipped hook + mechanism + hook/hold rate |
+| Hook registry | `marketing/facebook-ads/_ledgers/hooks.csv` (every card + format/trigger tags), with `tests.csv` and `cells.csv` beside it |
+| Ads database | Supabase `mj4u-ads` (ref `bjplojqovxetmbchzzms`): the CSVs + daily Meta metrics per ad; view `ad_performance` joins results to hook tags. Sync: `marketing/facebook-ads/engine/db_sync.py` |
 | Scene ledger | `marketing/facebook-ads/_ledgers/scene-ledger.csv`: one row per shipped shot (§3 05) |
 | Ad-creative log | `products/_registry/ad-creatives.csv` + Sheet `1gUb0PNN_My3vPlXJI2uR1cCJf6vBC79CMV4ulsZHFw0` (one row per ad × format) |
 | Tool adapters | `research/reference/video-team/adapters/` |

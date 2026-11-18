@@ -31,7 +31,10 @@ Test authority: the plan page section for this product (memory: follow-plan-page
 6. **vt-06-editor** → control first, then variants, both formats, recipe, self-check, media backup, log row.
 7. **vt-07-qa** (final mode, a fresh agent) → **GATE D: PASS = zero S1/S2.** On FAIL, route each defect to its fix owner and re-check.
 8. **Upload prep.** Asset customization by ratio; Advantage+ creative enhancements that alter the video OFF for test cells. Record the settings.
-9. **Close.** Append the hooks to `_ledgers/hook-ledger.csv` and the shipped shots to `_ledgers/scene-ledger.csv`, update the product tracker + Sheet, commit the docs (never media).
+9. **Close.** Write every hook card (with format/trigger/primitives tags) to `_ledgers/hooks.csv`, the test and cells to `tests.csv` / `cells.csv`, each delivered file to `products/_registry/ad-creatives.csv` (+ re-push its Sheet), and the shipped shots to `_ledgers/scene-ledger.csv`.
+   Then `python3 marketing/facebook-ads/engine/db_sync.py seed`. **Name every Meta ad with its ad_key** (`{PRODUCT}_{CONCEPT}-{HOOK}_{VAR}_v{NN}`) so daily metrics map back automatically, and record the Meta ad ID in the creative log after upload.
+   Update the product tracker + Sheet, and commit the docs (never media).
+10. **Learn.** `db_sync.py pull` runs daily. Read results from the `ad_performance` view by format, trigger, mechanism, concept and length, always with sample sizes; feed measured hook rates back as the critic's calibration set.
 </process>
 
 <rules>
