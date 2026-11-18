@@ -1,0 +1,9 @@
+{
+  // Hook Lab dashboard: static page + data.json snapshot, deployed daily by engine/daily_sync.sh.
+  // Private via Cloudflare Access on the workers.dev hostname (enable in dashboard: Workers > mj4u-hook-lab > Settings > Domains & Routes).
+  "name": "mj4u-hook-lab",
+  "compatibility_date": "2026-11-18",
+  "assets": { "directory": "./public" },
+  "workers_dev": true,
+  "preview_urls": false
+}
