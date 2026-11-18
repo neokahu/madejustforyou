@@ -6,6 +6,7 @@ Canonical build data = git CSVs (`products/_registry/*.csv`, `marketing/facebook
 Sync: `engine/db_sync.py seed|pull|all`. Migrations: `migrations/` (001–005).
 **Dashboard (Hook Lab):** https://claude.ai/artifact/Xi39PdXEDMPLk1VmDQxnNt, page `dashboard/index.html` + snapshot `dashboard/data.json` (gitignored).
 The artifact sandbox blocks calls to Supabase, so refresh = `engine/db_sync.py pull` → `engine/export_dashboard.py` → Claude republishes the page with `files: {data.json}` (same file path or the URL).
+**Daily job:** launchd `~/Library/LaunchAgents/com.mj4u.ads-daily-sync.plist` runs `engine/daily_sync.sh` at 15:00 Mac time (UTC+7) = 00:00 PST, after the ad account's day closes. It re-pulls the last 7 days (Meta revises recent days) and re-exports data.json. Log: `reports/daily-sync.log` (gitignored). It runs from this worktree path; move the plist if the repo moves.
 **Meta action aliases:** one event is reported under several names (add_to_cart / offsite_conversion.fb_pixel_add_to_cart / omni_add_to_cart…). Take the first present; never sum (fixed 2026-11-18).
 
 <!-- DATABASE_ARCHITECTURE:START -->

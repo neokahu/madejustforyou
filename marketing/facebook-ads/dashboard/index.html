@@ -61,6 +61,10 @@ button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outlin
 .chip{display:inline-block;font:500 11px/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap}
 .c-good{background:var(--good-soft);color:var(--good)} .c-warn{background:var(--warn-soft);color:var(--warn)}
 .c-bad{background:var(--bad-soft);color:var(--bad)} .c-na{background:var(--neutral-soft);color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.filters label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+input[type=date]{font:13px var(--mono);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
+input[type=date]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .compare label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
 select{font:14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px;width:100%;max-width:100%}
@@ -92,10 +96,17 @@ tr:last-child td{border-bottom:0}
     <div>
       <div class="eyebrow">MadeJustForYou · paid video tests</div>
       <h1>Hook Lab</h1>
-      <p class="lede">Which hooks, concepts and formats stop the scroll and sell. Every number is pooled from Meta's daily results and linked back to how the ad was built.</p>
+      <p class="lede">Which hooks, concepts and formats stop the scroll and sell. Every number is pooled from Meta's daily results and linked back to how the ad was built. Dates are the ad account's day (Pacific time).</p>
     </div>
     <div class="synced" id="synced">Loading…</div>
   </header>
+
+  <div class="filters" role="group" aria-label="Date range">
+    <div class="tabs" id="presets"></div>
+    <label for="dFrom">From <input type="date" id="dFrom"></label>
+    <label for="dTo">To <input type="date" id="dTo"></label>
+    <span class="synced" id="rangeinfo"></span>
+  </div>
 
   <div class="strip" id="strip"></div>
 
@@ -153,7 +164,35 @@ function phi(x){ const t=1/(1+0.2316419*x), d=0.3989423*Math.exp(-x*x/2);
 function needN(p1,p2){ const d=Math.abs(p2-p1); if(!d) return null; // per arm, 95% / 80% power
   return Math.ceil(Math.pow(1.96+0.8416,2)*(p1*(1-p1)+p2*(1-p2))/(d*d)); }
 
-let DATA=null, groupBy="format", sortKey="impressions", sortDir=-1;
+let DATA=null, ADS=[], groupBy="format", sortKey="impressions", sortDir=-1, preset="all";
+const SUMS=["impressions","spend","video_3s","thruplays","link_clicks","add_to_cart","purchases","purchase_value"];
+
+// Rebuild every ad's metrics from the daily rows inside the chosen date range.
+function applyRange(){
+  const from=$("#dFrom").value, to=$("#dTo").value, by={};
+  DATA.daily.forEach(d=>{ if((from && d.date<from) || (to && d.date>to) || !d.ad_key) return;
+    const r=by[d.ad_key]||(by[d.ad_key]={days:0}); r.days++; SUMS.forEach(k=>r[k]=(r[k]||0)+num(d[k])); });
+  ADS = DATA.ads.map(a=>{ const r=by[a.ad_key]||{}; const o={...a,days:r.days||0};
+    SUMS.forEach(k=>o[k]=r[k]||0);
+    o.hook_rate=o.impressions?o.video_3s/o.impressions:null; o.hold_rate=o.video_3s?o.thruplays/o.video_3s:null;
+    o.link_ctr=o.impressions?o.link_clicks/o.impressions:null; o.cost_per_atc=o.add_to_cart?o.spend/o.add_to_cart:null;
+    o.roas=o.spend?o.purchase_value/o.spend:null; return o; });
+  const days=new Set(DATA.daily.filter(d=>(!from||d.date>=from)&&(!to||d.date<=to)).map(d=>d.date)).size;
+  $("#rangeinfo").textContent = days ? `${days} day${days>1?"s":""} with ad delivery in range` : "No ad delivery in this range";
+  renderStrip(); renderGroups(); renderCompare(); renderTable();
+}
+const PRESETS=[["all","All time",null],["7","Last 7 days",7],["14","Last 14 days",14],["30","Last 30 days",30],["90","Last 90 days",90]];
+function iso(d){ return d.toISOString().slice(0,10); }
+function setPreset(k){ preset=k; const p=PRESETS.find(x=>x[0]===k);
+  const dates=DATA.daily.map(d=>d.date).sort(); const first=dates[0]||"", last=dates[dates.length-1]||"";
+  if(!p || !p[2]){ $("#dFrom").value=first; $("#dTo").value=last; }
+  else { const end=new Date(); end.setUTCDate(end.getUTCDate()-1); const start=new Date(end); start.setUTCDate(end.getUTCDate()-p[2]+1);
+    $("#dFrom").value=iso(start); $("#dTo").value=iso(end); }
+  renderPresets(); applyRange(); }
+function renderPresets(){
+  $("#presets").innerHTML=PRESETS.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${k===preset}">${l}</button>`).join("");
+  $("#presets").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>setPreset(b.dataset.k)));
+}
 
 function gateChip(rate,n){
   if(!n || n<300) return '<span class="chip c-na">too few views</span>';
@@ -178,7 +217,7 @@ function renderTabs(){
 }
 
 function renderGroups(){
-  const live = DATA.ads.filter(a=>num(a.impressions)>0);
+  const live = ADS.filter(a=>num(a.impressions)>0);
   const g = {};
   live.forEach(a=>{ const key=dimLabel(a,groupBy); const r=g[key]||(g[key]={ads:0,imp:0,v3:0,thru:0,lc:0,atc:0,pur:0,spend:0,val:0});
     r.ads++; r.imp+=num(a.impressions); r.v3+=num(a.video_3s); r.thru+=num(a.thruplays); r.lc+=num(a.link_clicks);
@@ -207,7 +246,7 @@ function renderGroups(){
 
 function adLabel(a){ return `${a.ad_key} · ${int(a.impressions)} imp`; }
 function renderCompare(){
-  const live = DATA.ads.filter(a=>num(a.impressions)>0).sort((a,b)=>num(b.impressions)-num(a.impressions));
+  const live = ADS.filter(a=>num(a.impressions)>0).sort((a,b)=>num(b.impressions)-num(a.impressions));
   const opts = live.map((a,i)=>`<option value="${i}">${esc(adLabel(a))}</option>`).join("");
   $("#selA").innerHTML=opts; $("#selB").innerHTML=opts; if(live.length>1) $("#selB").value="1";
   const run=()=>{
@@ -235,7 +274,7 @@ const COLS=[["ad_key","Ad"],["test_id","Test"],["format","Format"],["trigger","T
 function renderTable(){
   const t=$("#adtable");
   t.querySelector("thead").innerHTML="<tr>"+COLS.map(([k,l,n])=>`<th class="${n?"n":""}" data-k="${k}" aria-sort="${k===sortKey?(sortDir>0?"ascending":"descending"):"none"}">${l}${k===sortKey?(sortDir>0?" ↑":" ↓"):""}</th>`).join("")+"</tr>";
-  const rows=[...DATA.ads].sort((a,b)=>{ const va=a[sortKey], vb=b[sortKey];
+  const rows=[...ADS].sort((a,b)=>{ const va=a[sortKey], vb=b[sortKey];
     if(va==null) return 1; if(vb==null) return -1; return (isNaN(va)||isNaN(vb)? String(va).localeCompare(String(vb)) : va-vb)*sortDir; });
   t.querySelector("tbody").innerHTML = rows.map(a=>`<tr>
     <td class="key">${esc(a.ad_key)}</td><td>${esc(a.test_id||"—")}</td><td>${esc(a.format||"—")}</td><td>${esc(a.trigger||"—")}</td>
@@ -248,7 +287,7 @@ function renderTable(){
 }
 
 function renderStrip(){
-  const a=DATA.ads, s=k=>a.reduce((t,x)=>t+num(x[k]),0);
+  const a=ADS, s=k=>a.reduce((t,x)=>t+num(x[k]),0);
   const live=a.filter(x=>num(x.impressions)>0).length, imp=s("impressions"), v3=s("video_3s");
   const cards=[[live+" / "+a.length,"ads with results / built"],[money(s("spend")),"total spend"],[int(imp),"impressions"],
     [pct(imp?v3/imp:null),"pooled hook rate"],[int(s("add_to_cart")),"add-to-carts"],[int(s("purchases")),"purchases"]];
@@ -262,7 +301,8 @@ fetch("data.json").then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(
   try{ const g=localStorage.getItem("hl-group"); if(g && DIMS.some(x=>x[0]===g)) groupBy=g; }catch(e){}
   const when=new Date(d.generated_at);
   $("#synced").textContent="Synced from Meta "+when.toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
-  renderStrip(); renderTabs(); renderGroups(); renderCompare(); renderTable();
+  renderTabs(); $("#dFrom").onchange=$("#dTo").onchange=()=>{ preset="custom"; renderPresets(); applyRange(); };
+  setPreset("all");
 }).catch(()=>{ $("#synced").textContent="Data file missing: run export_dashboard.py and republish."; });
 })();
 </script>

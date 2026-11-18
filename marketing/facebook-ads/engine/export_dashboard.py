@@ -17,7 +17,7 @@ def main():
     env = load_env(ENV_PATH)
     db = DB(env["SUPABASE_URL"], env["SUPABASE_SERVICE_ROLE_KEY"])
     ads = db.select("ad_performance", "select=*")
-    daily = db.select("ad_metrics_daily", "select=ad_key,date,impressions,spend,video_3s,thruplays,link_clicks,add_to_cart,purchases&order=date")
+    daily = db.select("ad_metrics_daily", "select=ad_key,date,impressions,spend,video_3s,thruplays,link_clicks,add_to_cart,purchases,purchase_value&order=date")
     tests = db.select("tests", "select=test_id,product_id,name,status,primary_metric,started_on,ended_on")
     products = db.select("products", "select=product_id,name,break_even_cpa,break_even_roas&product_id=in.("
                          + ",".join(sorted({a["product_id"] for a in ads})) + ")")
