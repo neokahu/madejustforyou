@@ -10,7 +10,7 @@ Needs in ../.env: META_SYSTEM_USER_TOKEN, META_AD_ACCOUNT_ID, META_API_VERSION, 
 Stdlib only, like the rest of the engine.
 """
 from __future__ import annotations
-import argparse, csv, datetime as dt, json, re, sys, urllib.parse, urllib.request
+import argparse, csv, datetime as dt, json, re, sys, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 from upload_draft import load_env, ENV_PATH
 
@@ -19,9 +19,11 @@ REPO = HERE.parents[2]
 REG = REPO / "products/_registry"
 LED = REPO / "marketing/facebook-ads/_ledgers"
 AD_KEY_RE = re.compile(r"\b([A-Za-z0-9-]+_[A-Za-z0-9]+-[A-Za-z0-9]+_[A-Za-z0-9]+)_(?:916|45)?_?v(\d{2})\b")
-ATC = ("add_to_cart", "offsite_conversion.fb_pixel_add_to_cart", "onsite_web_add_to_cart")
-CHK = ("initiate_checkout", "offsite_conversion.fb_pixel_initiate_checkout", "onsite_web_initiate_checkout")
-PUR = ("purchase", "offsite_conversion.fb_pixel_purchase", "onsite_web_purchase")
+# Meta reports ONE event under several aliases (add_to_cart, offsite_conversion.fb_pixel_add_to_cart, onsite_web_add_to_cart,
+# omni_add_to_cart...). Never sum them (that triple-counted ATC on 2026-11-18): take the first alias present, in this order.
+ATC = ("omni_add_to_cart", "add_to_cart", "offsite_conversion.fb_pixel_add_to_cart")
+CHK = ("omni_initiated_checkout", "initiate_checkout", "offsite_conversion.fb_pixel_initiate_checkout")
+PUR = ("omni_purchase", "purchase", "offsite_conversion.fb_pixel_purchase")
 
 
 # ---------- Supabase (PostgREST) ----------
@@ -33,12 +35,17 @@ class DB:
             self.h["Authorization"] = f"Bearer {key}"   # new sb_secret_ keys are sent in the apikey header only
 
     def upsert(self, table: str, rows: list[dict], on_conflict: str):
+        cols = sorted({k for r in rows for k in r})          # PostgREST bulk insert needs identical keys per row
+        rows = [{k: r.get(k) for k in cols} for r in rows]
         for i in range(0, len(rows), 500):
             req = urllib.request.Request(
                 self.base + table + "?on_conflict=" + on_conflict, method="POST",
                 data=json.dumps(rows[i:i + 500]).encode(),
                 headers={**self.h, "Prefer": "resolution=merge-duplicates,return=minimal"})
-            urllib.request.urlopen(req, timeout=60).read()
+            try:
+                urllib.request.urlopen(req, timeout=60).read()
+            except urllib.error.HTTPError as e:
+                sys.exit(f"{table}: HTTP {e.code} {e.read().decode(errors='replace')[:500]}")
         print(f"  {table}: {len(rows)} upserted")
 
     def select(self, table: str, q: str) -> list[dict]:
@@ -110,13 +117,19 @@ def seed(db: DB):
                    "drive_path": clean(r["drive_path"]), "sha256": clean(r["sha256"]), "recipe": clean(r["recipe"]),
                    "qa_status": clean(r["qa_status"]), "qa_report": clean(r["qa_report"]), "waivers": clean(r["waivers"]),
                    "notes": clean(r["notes"])})
+    for r in rows(LED / "ads-legacy.csv"):            # ads launched before the ad_key naming rule
+        ads[r["ad_key"]] = {"ad_key": r["ad_key"], "product_id": r["product_id"], "test_id": clean(r["test_id"]),
+                            "concept_code": clean(r["concept_code"]), "variant": clean(r["variant"]),
+                            "version": clean(r["version"], int), "meta_ad_id": clean(r["meta_ad_id"]),
+                            "notes": clean(r["notes"])}
     db.upsert("ads", list(ads.values()), "ad_key")
     db.upsert("creatives", cr, "creative_id")
 
 
 # ---------- pull ----------
 def acts(row, key, types) -> float:
-    return sum(float(a.get("value", 0)) for a in row.get(key, []) or [] if a.get("action_type") in types)
+    vals = {a.get("action_type"): float(a.get("value", 0)) for a in row.get(key, []) or []}
+    return next((vals[t] for t in types if t in vals), 0.0)   # first alias present; aliases are the same event
 
 
 def first(row, key) -> float:
@@ -130,7 +143,7 @@ def pull(db: DB, env: dict, days: int):
     since = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     until = dt.date.today().isoformat()
     fields = ("ad_id,ad_name,adset_id,campaign_id,impressions,reach,spend,inline_link_clicks,video_play_actions,"
-              "video_3_sec_watched_actions,video_p25_watched_actions,video_p50_watched_actions,video_p75_watched_actions,"
+              "video_p25_watched_actions,video_p50_watched_actions,video_p75_watched_actions,"
               "video_p95_watched_actions,video_p100_watched_actions,video_thruplay_watched_actions,"
               "video_avg_time_watched_actions,actions,action_values")
     q = {"level": "ad", "time_increment": 1, "fields": fields, "limit": 500,
@@ -141,7 +154,11 @@ def pull(db: DB, env: dict, days: int):
     by_id = {a["meta_ad_id"]: a["ad_key"] for a in known if a["meta_ad_id"]}
     out = []
     while url:
-        page = json.loads(urllib.request.urlopen(url, timeout=120).read())
+        try:
+            page = json.loads(urllib.request.urlopen(url, timeout=120).read())
+        except urllib.error.HTTPError as e:
+            err = json.loads(e.read().decode(errors="replace")).get("error", {})
+            sys.exit(f"Meta insights: HTTP {e.code} {err.get('message')} (code {err.get('code')}, subcode {err.get('error_subcode')})")
         for d in page.get("data", []):
             m = AD_KEY_RE.search(d.get("ad_name", ""))
             out.append({
@@ -151,7 +168,7 @@ def pull(db: DB, env: dict, days: int):
                 "adset_id": d.get("adset_id"), "campaign_id": d.get("campaign_id"),
                 "impressions": int(float(d.get("impressions", 0))), "reach": int(float(d.get("reach", 0))),
                 "spend": float(d.get("spend", 0)), "link_clicks": int(float(d.get("inline_link_clicks", 0))),
-                "video_plays": int(first(d, "video_play_actions")), "video_3s": int(first(d, "video_3_sec_watched_actions")),
+                "video_plays": int(first(d, "video_play_actions")), "video_3s": int(acts(d, "actions", ("video_view",))),   # Meta's 3-second video view (v26 dropped video_3_sec_watched_actions)
                 **{f"video_p{p}": int(first(d, f"video_p{p}_watched_actions")) for p in (25, 50, 75, 95, 100)},
                 "thruplays": int(first(d, "video_thruplay_watched_actions")),
                 "avg_watch_s": first(d, "video_avg_time_watched_actions") or None,

@@ -1,0 +1,11 @@
+ad_key,meta_ad_id,product_id,test_id,concept_code,variant,version,notes
+MJ4U-111_count-us-all_v1,120251797792950556,MJ4U-111,mj4u-111-aug,count-us-all,E0,1,video test campaign
+MJ4U-111_dr-benefit_v1,120251797793390556,MJ4U-111,mj4u-111-aug,dr-benefit,E0,1,video test campaign
+MJ4U-111_emo-thesis_v1,120251797792880556,MJ4U-111,mj4u-111-aug,emo-thesis,E0,1,video test campaign (first launch)
+MJ4U-111_emo-thesis_v1-r2,120251846683330556,MJ4U-111,mj4u-111-aug,emo-thesis,E0,1,relaunch of emo-thesis 2026-08-11
+MJ4U-111_traffic_auto-meadowlark-1080p,120251953456870556,MJ4U-111,mj4u-111-aug,auto-meadowlark,1080p,1,traffic test
+MJ4U-111_traffic_auto-meadowlark-720p,120251953454280556,MJ4U-111,mj4u-111-aug,auto-meadowlark,720p,1,traffic test
+MJ4U-111_traffic_chatcut-reveal,120251953450660556,MJ4U-111,mj4u-111-aug,chatcut-reveal,E0,1,traffic test
+MJ4U-111_video-test_auto-meadowlark,120251945422590556,MJ4U-111,mj4u-111-aug,auto-meadowlark,E0,1,video test campaign
+MJ4U-111_video-test_chatcut-reveal,120251945410790556,MJ4U-111,mj4u-111-aug,chatcut-reveal,E0,1,video test campaign
+MJ4U-111_sales-ATC_chatcut-reveal,120251963480660556,MJ4U-111,mj4u-111-aug,chatcut-reveal,E0,1,sales campaign optimised for add-to-cart

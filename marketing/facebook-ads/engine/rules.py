@@ -18,15 +18,12 @@ from economics import Economics
 
 PRODUCT_CODE_RE = re.compile(r"\bMJ4U-\d{3}\b")
 
-# Meta action_type aliases we treat as add-to-cart / purchase.
-ATC_TYPES = {
-    "offsite_conversion.fb_pixel_add_to_cart", "onsite_web_add_to_cart",
-    "onsite_web_app_add_to_cart", "omni_add_to_cart", "add_to_cart",
-}
-PURCHASE_TYPES = {
-    "offsite_conversion.fb_pixel_purchase", "onsite_web_purchase",
-    "onsite_web_app_purchase", "omni_purchase", "purchase",
-}
+# Meta action_type aliases for add-to-cart / purchase. They are the SAME event reported under several names,
+# so take the first alias present (in this priority order) — never sum them (summing over-counted ~5x; fixed 2026-11-18).
+ATC_TYPES = ("omni_add_to_cart", "add_to_cart", "offsite_conversion.fb_pixel_add_to_cart",
+             "onsite_web_add_to_cart", "onsite_web_app_add_to_cart")
+PURCHASE_TYPES = ("omni_purchase", "purchase", "offsite_conversion.fb_pixel_purchase",
+                  "onsite_web_purchase", "onsite_web_app_purchase")
 # 3-second video views ("video_view" inside the actions array) — the meaningful
 # hook-rate numerator. NOT video_play_actions, which counts autoplay starts and
 # inflates hook rate to ~90%+ regardless of creative.
@@ -52,10 +49,12 @@ def product_code(campaign_name: str | None) -> str | None:
     return m.group(0) if m else None
 
 
-def _sum_actions(actions, wanted: set[str]) -> float:
+def _sum_actions(actions, wanted) -> float:
+    """Value of the first alias in `wanted` that is present. Aliases are one event; summing them over-counts."""
     if not actions:
         return 0.0
-    return sum(float(a.get("value", 0)) for a in actions if a.get("action_type") in wanted)
+    vals = {a.get("action_type"): float(a.get("value", 0)) for a in actions}
+    return next((vals[t] for t in wanted if t in vals), 0.0)
 
 
 def _first_value(items) -> float:
