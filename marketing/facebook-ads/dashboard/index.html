@@ -1,0 +1,268 @@
+<title>MJ4U Hook Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --sunk:#e9edf2; --ink:#18202b; --muted:#5b6676; --line:#d6dce4;
+  --accent:#2f56c9; --accent-soft:#dfe7fb; --good:#17803d; --good-soft:#dcf2e3; --warn:#a85c06; --warn-soft:#fbeedb;
+  --bad:#b42323; --bad-soft:#f8e0e0; --neutral-soft:#e7ebf0;
+  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif; --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  color-scheme:dark; --bg:#11151b; --surface:#181e26; --sunk:#202834; --ink:#e5e9ef; --muted:#9aa5b4; --line:#2c3644;
+  --accent:#86a2ff; --accent-soft:#25335a; --good:#5fcf86; --good-soft:#163524; --warn:#f0b259; --warn-soft:#3b2b13;
+  --bad:#f08a8a; --bad-soft:#3e1d1d; --neutral-soft:#262f3b;}}
+:root[data-theme="dark"]{
+  color-scheme:dark; --bg:#11151b; --surface:#181e26; --sunk:#202834; --ink:#e5e9ef; --muted:#9aa5b4; --line:#2c3644;
+  --accent:#86a2ff; --accent-soft:#25335a; --good:#5fcf86; --good-soft:#163524; --warn:#f0b259; --warn-soft:#3b2b13;
+  --bad:#f08a8a; --bad-soft:#3e1d1d; --neutral-soft:#262f3b;}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-inline:16px;padding-block:24px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:28px}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(26px,4vw,36px);font-weight:700}
+h2{font-size:20px;font-weight:700}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
+header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.synced{font:13px var(--mono);color:var(--muted)}
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat b{display:block;font:600 22px/1.2 var(--mono);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--muted)}
+section{display:grid;gap:12px}
+.sechead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px}
+.tabs button,.seg button{font:500 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  padding:6px 12px;border-radius:999px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .tabs button[aria-pressed="true"]{color:#0d1220}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-pressed="true"]{color:#0d1220}}
+button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);align-items:center}
+.legend i{display:inline-block;width:14px;height:0;border-top:2px dashed currentColor;vertical-align:middle;margin-right:4px}
+.rows{display:grid;gap:10px}
+.row{display:grid;grid-template-columns:minmax(150px,220px) 1fr minmax(210px,auto);gap:8px 16px;align-items:center;
+  padding:10px 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.row .name{font-weight:600}
+.row .name small{display:block;font:400 12px var(--mono);color:var(--muted)}
+.bar{position:relative;height:26px;background:var(--sunk);border-radius:6px}
+.bar .ci{position:absolute;top:9px;height:8px;background:var(--accent-soft);border-radius:4px}
+.bar .pt{position:absolute;top:4px;width:4px;height:18px;margin-left:-2px;background:var(--accent);border-radius:2px}
+.bar .gate{position:absolute;top:0;bottom:0;border-left:2px dashed var(--muted);opacity:.55}
+.bar .gate.adv{border-color:var(--good);opacity:.8}
+.bar .gate.kill{border-color:var(--bad);opacity:.8}
+.bar .val{position:absolute;right:8px;top:4px;font:500 12px var(--mono);color:var(--muted)}
+.nums{display:flex;flex-wrap:wrap;gap:4px 14px;font:13px var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
+.nums b{color:var(--ink);font-weight:500}
+.chip{display:inline-block;font:500 11px/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap}
+.c-good{background:var(--good-soft);color:var(--good)} .c-warn{background:var(--warn-soft);color:var(--warn)}
+.c-bad{background:var(--bad-soft);color:var(--bad)} .c-na{background:var(--neutral-soft);color:var(--muted)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.compare label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
+select{font:14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px;width:100%;max-width:100%}
+.verdicts{display:grid;gap:8px;margin-top:12px}
+.verdict{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:8px;background:var(--sunk)}
+.verdict b{font-weight:600}
+.verdict p{margin:0;font-size:14px}
+.note{font-size:13px;color:var(--muted);margin:8px 0 0;max-width:80ch}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:980px;font-size:13px}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);cursor:pointer;position:sticky;top:0;background:var(--surface)}
+th[aria-sort] ::after{content:""}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+th.n{text-align:right}
+tr:last-child td{border-bottom:0}
+.key{font-family:var(--mono);font-size:12px}
+.empty{color:var(--muted);padding:24px;text-align:center}
+@media (max-width:720px){
+  .row{grid-template-columns:1fr}
+  .compare{grid-template-columns:1fr}
+  .verdict{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){.bar .pt,.bar .ci{transition:left .25s ease,width .25s ease}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">MadeJustForYou · paid video tests</div>
+      <h1>Hook Lab</h1>
+      <p class="lede">Which hooks, concepts and formats stop the scroll and sell. Every number is pooled from Meta's daily results and linked back to how the ad was built.</p>
+    </div>
+    <div class="synced" id="synced">Loading…</div>
+  </header>
+
+  <div class="strip" id="strip"></div>
+
+  <section aria-labelledby="h-groups">
+    <div class="sechead">
+      <h2 id="h-groups">What's working, by ingredient</h2>
+      <div class="tabs" role="group" aria-label="Group by" id="tabs"></div>
+    </div>
+    <div class="panel">
+      <div class="legend">
+        <span>Hook rate = 3-second views ÷ impressions. The bar is the 95% range the true rate is likely in.</span>
+        <span><i style="color:var(--bad)"></i>kill 18%</span>
+        <span><i></i>red 21%</span>
+        <span><i style="color:var(--good)"></i>advance 28%</span>
+      </div>
+      <div class="rows" id="groups" style="margin-top:8px"></div>
+      <p class="note" id="groupnote"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-compare">
+    <div class="sechead"><h2 id="h-compare">Is the difference real?</h2></div>
+    <div class="panel">
+      <div class="compare">
+        <label for="selA">Ad A (control)<select id="selA"></select></label>
+        <label for="selB">Ad B (challenger)<select id="selB"></select></label>
+      </div>
+      <div class="verdicts" id="verdicts"></div>
+      <p class="note" id="cmpnote"></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-ads">
+    <div class="sechead"><h2 id="h-ads">Every ad</h2><span class="synced">Tap a column to sort</span></div>
+    <div class="tablewrap"><table id="adtable"><thead></thead><tbody></tbody></table></div>
+  </section>
+</div>
+
+<script>
+(function(){
+const $ = s => document.querySelector(s);
+const pct = (x,d=1) => x==null||isNaN(x) ? "—" : (x*100).toFixed(d)+"%";
+const money = x => x==null||isNaN(x) ? "—" : "$"+Number(x).toFixed(2);
+const int = x => x==null ? "—" : Math.round(x).toLocaleString("en-US");
+const num = v => v==null ? 0 : Number(v);
+const Z = 1.959964;
+
+function wilson(k,n){ if(!n) return [null,null,null]; const p=k/n, z2=Z*Z, den=1+z2/n;
+  const c=(p+z2/(2*n))/den, h=Z*Math.sqrt(p*(1-p)/n+z2/(4*n*n))/den; return [p,Math.max(0,c-h),Math.min(1,c+h)]; }
+function ztest(k1,n1,k2,n2){ if(!n1||!n2) return null; const p1=k1/n1,p2=k2/n2,p=(k1+k2)/(n1+n2);
+  const se=Math.sqrt(p*(1-p)*(1/n1+1/n2)); if(!se) return null; const z=(p2-p1)/se;
+  return {p1,p2,diff:p2-p1,pval:2*(1-phi(Math.abs(z)))}; }
+function phi(x){ const t=1/(1+0.2316419*x), d=0.3989423*Math.exp(-x*x/2);
+  return 1-d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.821256+t*1.330274)))); }
+function needN(p1,p2){ const d=Math.abs(p2-p1); if(!d) return null; // per arm, 95% / 80% power
+  return Math.ceil(Math.pow(1.96+0.8416,2)*(p1*(1-p1)+p2*(1-p2))/(d*d)); }
+
+let DATA=null, groupBy="format", sortKey="impressions", sortDir=-1;
+
+function gateChip(rate,n){
+  if(!n || n<300) return '<span class="chip c-na">too few views</span>';
+  const g=DATA.gates; if(rate<g.hook_kill) return '<span class="chip c-bad">below kill</span>';
+  if(rate<g.hook_red) return '<span class="chip c-warn">red zone</span>';
+  if(rate>=g.hook_advance) return '<span class="chip c-good">advance</span>';
+  return '<span class="chip c-na">hold</span>';
+}
+
+const DIMS = [
+  ["format","Hook format"],["trigger","Hook trigger"],["mechanism","Gift mechanism"],
+  ["concept_code","Concept"],["test_id","Test"],["has_vo","Voiceover"],["length_s","Length"]];
+function dimLabel(a,k){ const v=a[k];
+  if(k==="has_vo") return v==null?"not recorded":(v?"with voiceover":"music only");
+  if(k==="length_s") return v==null?"not recorded":v+"s";
+  return v==null||v===""?"untagged":String(v); }
+
+function renderTabs(){
+  $("#tabs").innerHTML = DIMS.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${k===groupBy}">${l}</button>`).join("");
+  $("#tabs").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{groupBy=b.dataset.k;
+    try{localStorage.setItem("hl-group",groupBy)}catch(e){} renderTabs(); renderGroups();}));
+}
+
+function renderGroups(){
+  const live = DATA.ads.filter(a=>num(a.impressions)>0);
+  const g = {};
+  live.forEach(a=>{ const key=dimLabel(a,groupBy); const r=g[key]||(g[key]={ads:0,imp:0,v3:0,thru:0,lc:0,atc:0,pur:0,spend:0,val:0});
+    r.ads++; r.imp+=num(a.impressions); r.v3+=num(a.video_3s); r.thru+=num(a.thruplays); r.lc+=num(a.link_clicks);
+    r.atc+=num(a.add_to_cart); r.pur+=num(a.purchases); r.spend+=num(a.spend); r.val+=num(a.purchase_value); });
+  const rows = Object.entries(g).sort((a,b)=>b[1].imp-a[1].imp);
+  const max = Math.max(0.6, ...rows.map(([,r])=>wilson(r.v3,r.imp)[2]||0));
+  const x = v => (v/max*100).toFixed(2)+"%";
+  const gates = DATA.gates;
+  $("#groups").innerHTML = rows.length ? rows.map(([k,r])=>{
+    const [p,lo,hi]=wilson(r.v3,r.imp);
+    return `<div class="row">
+      <div class="name">${esc(k)}<small>${r.ads} ad${r.ads>1?"s":""} · ${int(r.imp)} impressions</small></div>
+      <div class="bar" role="img" aria-label="hook rate ${pct(p)}, likely between ${pct(lo)} and ${pct(hi)}">
+        <span class="gate kill" style="left:${x(gates.hook_kill)}"></span><span class="gate" style="left:${x(gates.hook_red)}"></span>
+        <span class="gate adv" style="left:${x(gates.hook_advance)}"></span>
+        <span class="ci" style="left:${x(lo)};width:calc(${x(hi)} - ${x(lo)})"></span><span class="pt" style="left:${x(p)}"></span>
+        <span class="val">${pct(p)}</span></div>
+      <div class="nums"><span>hold <b>${pct(r.v3?r.thru/r.v3:null)}</b></span><span>CTR <b>${pct(r.imp?r.lc/r.imp:null,2)}</b></span>
+        <span>$/ATC <b>${r.atc?money(r.spend/r.atc):"—"}</b></span><span>buys <b>${int(r.pur)}</b></span>${gateChip(p,r.imp)}</div>
+    </div>`;}).join("") : '<div class="empty">No ads with impressions yet.</div>';
+  const untagged = g["untagged"]?.ads||0;
+  $("#groupnote").textContent = (untagged && ["format","trigger","mechanism"].includes(groupBy))
+    ? `${untagged} ad${untagged>1?"s were":" was"} launched before hooks were tagged, so they sit in "untagged". New tests tag every hook.`
+    : "Groups pool every ad that shares the ingredient. Ads from different campaign objectives (traffic vs sales) are mixed here; use the comparison below for a fair read.";
+}
+
+function adLabel(a){ return `${a.ad_key} · ${int(a.impressions)} imp`; }
+function renderCompare(){
+  const live = DATA.ads.filter(a=>num(a.impressions)>0).sort((a,b)=>num(b.impressions)-num(a.impressions));
+  const opts = live.map((a,i)=>`<option value="${i}">${esc(adLabel(a))}</option>`).join("");
+  $("#selA").innerHTML=opts; $("#selB").innerHTML=opts; if(live.length>1) $("#selB").value="1";
+  const run=()=>{
+    const A=live[+$("#selA").value], B=live[+$("#selB").value];
+    if(!A||!B){ $("#verdicts").innerHTML='<div class="empty">Needs two ads with impressions.</div>'; return; }
+    const metrics=[["Hook rate","video_3s","impressions"],["Hold rate","thruplays","video_3s"],["Link CTR","link_clicks","impressions"],["Add-to-cart per click","add_to_cart","link_clicks"]];
+    $("#verdicts").innerHTML = metrics.map(([name,k,n])=>{
+      const t=ztest(num(A[k]),num(A[n]),num(B[k]),num(B[n]));
+      if(!t) return `<div class="verdict"><b>${name}</b><p>Not enough data on one side.</p></div>`;
+      const need=needN(t.p1,t.p2), have=Math.min(num(A[n]),num(B[n]));
+      let chip, text;
+      if(t.pval<0.05){ chip=`<span class="chip ${t.diff>0?"c-good":"c-bad"}">real difference</span>`;
+        text=`B is ${t.diff>0?"higher":"lower"}: ${pct(t.p2)} vs ${pct(t.p1)} (p = ${t.pval.toFixed(3)}).`; }
+      else { chip='<span class="chip c-warn">could be noise</span>';
+        text=`${pct(t.p2)} vs ${pct(t.p1)} (p = ${t.pval.toFixed(2)}). `+(need?`To confirm a gap this size, each ad needs about ${int(need)} ${n==="impressions"?"impressions":n==="video_3s"?"3-second views":"clicks"}; the smaller side has ${int(have)}.`:"No measurable gap."); }
+      return `<div class="verdict"><b>${name}</b><p>${chip} ${text}</p></div>`; }).join("");
+    $("#cmpnote").textContent = (A.test_id!==B.test_id) ? "These two ads come from different tests, so audience, budget or objective may differ. Treat the comparison as a hint, not a result."
+      : "Same test. Read hook rate first: it's the only metric our budgets can confirm quickly. Purchases need far more data.";
+  };
+  $("#selA").onchange=run; $("#selB").onchange=run; run();
+}
+
+const COLS=[["ad_key","Ad"],["test_id","Test"],["format","Format"],["trigger","Trigger"],["impressions","Impr.",1],["spend","Spend",1],
+  ["hook_rate","Hook",1],["hold_rate","Hold",1],["link_ctr","CTR",1],["add_to_cart","ATC",1],["cost_per_atc","$/ATC",1],["purchases","Buys",1],["roas","ROAS",1],["gate","Gate"]];
+function renderTable(){
+  const t=$("#adtable");
+  t.querySelector("thead").innerHTML="<tr>"+COLS.map(([k,l,n])=>`<th class="${n?"n":""}" data-k="${k}" aria-sort="${k===sortKey?(sortDir>0?"ascending":"descending"):"none"}">${l}${k===sortKey?(sortDir>0?" ↑":" ↓"):""}</th>`).join("")+"</tr>";
+  const rows=[...DATA.ads].sort((a,b)=>{ const va=a[sortKey], vb=b[sortKey];
+    if(va==null) return 1; if(vb==null) return -1; return (isNaN(va)||isNaN(vb)? String(va).localeCompare(String(vb)) : va-vb)*sortDir; });
+  t.querySelector("tbody").innerHTML = rows.map(a=>`<tr>
+    <td class="key">${esc(a.ad_key)}</td><td>${esc(a.test_id||"—")}</td><td>${esc(a.format||"—")}</td><td>${esc(a.trigger||"—")}</td>
+    <td class="n">${int(num(a.impressions))}</td><td class="n">${money(num(a.spend))}</td><td class="n">${pct(a.hook_rate)}</td>
+    <td class="n">${pct(a.hold_rate)}</td><td class="n">${pct(a.link_ctr,2)}</td><td class="n">${int(num(a.add_to_cart))}</td>
+    <td class="n">${money(a.cost_per_atc)}</td><td class="n">${int(num(a.purchases))}</td><td class="n">${a.roas==null?"—":Number(a.roas).toFixed(2)+"×"}</td>
+    <td>${num(a.impressions)?gateChip(num(a.hook_rate),num(a.impressions)):'<span class="chip c-na">not live</span>'}</td></tr>`).join("");
+  t.querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{ const k=th.dataset.k; if(k==="gate") return;
+    sortDir = (k===sortKey)? -sortDir : -1; sortKey=k; renderTable(); }));
+}
+
+function renderStrip(){
+  const a=DATA.ads, s=k=>a.reduce((t,x)=>t+num(x[k]),0);
+  const live=a.filter(x=>num(x.impressions)>0).length, imp=s("impressions"), v3=s("video_3s");
+  const cards=[[live+" / "+a.length,"ads with results / built"],[money(s("spend")),"total spend"],[int(imp),"impressions"],
+    [pct(imp?v3/imp:null),"pooled hook rate"],[int(s("add_to_cart")),"add-to-carts"],[int(s("purchases")),"purchases"]];
+  $("#strip").innerHTML=cards.map(([b,l])=>`<div class="stat"><b>${b}</b><span>${l}</span></div>`).join("");
+}
+
+function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+fetch("data.json").then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }).then(d=>{
+  DATA=d; d.ads.forEach(a=>["hook_rate","hold_rate","link_ctr","cost_per_atc","roas"].forEach(k=>{ if(a[k]!=null) a[k]=Number(a[k]); }));
+  try{ const g=localStorage.getItem("hl-group"); if(g && DIMS.some(x=>x[0]===g)) groupBy=g; }catch(e){}
+  const when=new Date(d.generated_at);
+  $("#synced").textContent="Synced from Meta "+when.toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+  renderStrip(); renderTabs(); renderGroups(); renderCompare(); renderTable();
+}).catch(()=>{ $("#synced").textContent="Data file missing: run export_dashboard.py and republish."; });
+})();
+</script>

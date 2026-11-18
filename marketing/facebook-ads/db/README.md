@@ -4,6 +4,9 @@ Supabase project **mj4u-ads** (ref `bjplojqovxetmbchzzms`, ap-southeast-1, **Pos
 Purpose: link every Meta ad's results to how it was built (hook format/trigger/mechanism, concept, script, length) to find the winning formula.
 Canonical build data = git CSVs (`products/_registry/*.csv`, `marketing/facebook-ads/_ledgers/*.csv`); the DB adds daily Meta metrics.
 Sync: `engine/db_sync.py seed|pull|all`. Migrations: `migrations/` (001–005).
+**Dashboard (Hook Lab):** https://claude.ai/artifact/Xi39PdXEDMPLk1VmDQxnNt, page `dashboard/index.html` + snapshot `dashboard/data.json` (gitignored).
+The artifact sandbox blocks calls to Supabase, so refresh = `engine/db_sync.py pull` → `engine/export_dashboard.py` → Claude republishes the page with `files: {data.json}` (same file path or the URL).
+**Meta action aliases:** one event is reported under several names (add_to_cart / offsite_conversion.fb_pixel_add_to_cart / omni_add_to_cart…). Take the first present; never sum (fixed 2026-11-18).
 
 <!-- DATABASE_ARCHITECTURE:START -->
 ## Database Architecture Summary (verified 2026-11-18)
