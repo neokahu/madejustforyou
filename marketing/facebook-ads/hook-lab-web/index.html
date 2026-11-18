@@ -4,127 +4,11 @@
 <title>MJ4U Hook Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>
-:root{
-  --bg:#f3f5f8; --surface:#ffffff; --sunk:#e9edf2; --ink:#18202b; --muted:#5b6676; --line:#d6dce4;
-  --accent:#2f56c9; --accent-soft:#dfe7fb; --good:#17803d; --good-soft:#dcf2e3; --warn:#a85c06; --warn-soft:#fbeedb;
-  --bad:#b42323; --bad-soft:#f8e0e0; --neutral-soft:#e7ebf0;
-  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif; --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  color-scheme:dark; --bg:#11151b; --surface:#181e26; --sunk:#202834; --ink:#e5e9ef; --muted:#9aa5b4; --line:#2c3644;
-  --accent:#86a2ff; --accent-soft:#25335a; --good:#5fcf86; --good-soft:#163524; --warn:#f0b259; --warn-soft:#3b2b13;
-  --bad:#f08a8a; --bad-soft:#3e1d1d; --neutral-soft:#262f3b;}}
-:root[data-theme="dark"]{
-  color-scheme:dark; --bg:#11151b; --surface:#181e26; --sunk:#202834; --ink:#e5e9ef; --muted:#9aa5b4; --line:#2c3644;
-  --accent:#86a2ff; --accent-soft:#25335a; --good:#5fcf86; --good-soft:#163524; --warn:#f0b259; --warn-soft:#3b2b13;
-  --bad:#f08a8a; --bad-soft:#3e1d1d; --neutral-soft:#262f3b;}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);padding-inline:16px;padding-block:24px 64px}
-.wrap{max-width:1180px;margin:0 auto;display:grid;gap:28px}
-h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
-h1{font-size:clamp(26px,4vw,36px);font-weight:700}
-h2{font-size:20px;font-weight:700}
-.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
-header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
-.synced{font:13px var(--mono);color:var(--muted)}
-.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.stat b{display:block;font:600 22px/1.2 var(--mono);font-variant-numeric:tabular-nums}
-.stat span{font-size:12px;color:var(--muted)}
-section{display:grid;gap:12px}
-.sechead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 16px}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
-.tabs{display:flex;flex-wrap:wrap;gap:6px}
-.tabs button,.seg button{font:500 13px var(--body);border:1px solid var(--line);background:var(--surface);color:var(--ink);
-  padding:6px 12px;border-radius:999px;cursor:pointer}
-.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
-:root[data-theme="dark"] .tabs button[aria-pressed="true"]{color:#0d1220}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tabs button[aria-pressed="true"]{color:#0d1220}}
-button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);align-items:center}
-.legend i{display:inline-block;width:14px;height:0;border-top:2px dashed currentColor;vertical-align:middle;margin-right:4px}
-.rows{display:grid;gap:10px}
-.row{display:grid;grid-template-columns:minmax(150px,220px) 1fr minmax(210px,auto);gap:8px 16px;align-items:center;
-  padding:10px 0;border-top:1px solid var(--line)}
-.row:first-child{border-top:0}
-.row .name{font-weight:600}
-.row .name small{display:block;font:400 12px var(--mono);color:var(--muted)}
-.bar{position:relative;height:26px;background:var(--sunk);border-radius:6px}
-.bar .ci{position:absolute;top:9px;height:8px;background:var(--accent-soft);border-radius:4px}
-.bar .pt{position:absolute;top:4px;width:4px;height:18px;margin-left:-2px;background:var(--accent);border-radius:2px}
-.bar .gate{position:absolute;top:0;bottom:0;border-left:2px dashed var(--muted);opacity:.55}
-.bar .gate.adv{border-color:var(--good);opacity:.8}
-.bar .gate.kill{border-color:var(--bad);opacity:.8}
-.bar .val{position:absolute;right:8px;top:4px;font:500 12px var(--mono);color:var(--muted)}
-.nums{display:flex;flex-wrap:wrap;gap:4px 14px;font:13px var(--mono);font-variant-numeric:tabular-nums;color:var(--muted)}
-.nums b{color:var(--ink);font-weight:500}
-.chip{display:inline-block;font:500 11px/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap}
-.c-good{background:var(--good-soft);color:var(--good)} .c-warn{background:var(--warn-soft);color:var(--warn)}
-.c-bad{background:var(--bad-soft);color:var(--bad)} .c-na{background:var(--neutral-soft);color:var(--muted)}
-.filters{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
-.filters label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
-input[type=date]{font:13px var(--mono);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:6px 8px}
-input[type=date]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.compare label{display:grid;gap:4px;font-size:12px;color:var(--muted)}
-select{font:14px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:8px;width:100%;max-width:100%}
-.verdicts{display:grid;gap:8px;margin-top:12px}
-.verdict{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;padding:10px 12px;border-radius:8px;background:var(--sunk)}
-.verdict b{font-weight:600}
-.verdict p{margin:0;font-size:14px}
-.note{font-size:13px;color:var(--muted);margin:8px 0 0;max-width:80ch}
-.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-table{border-collapse:collapse;width:100%;min-width:980px;font-size:13px}
-th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
-th{font:600 11px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);cursor:pointer;position:sticky;top:0;background:var(--surface)}
-th[aria-sort] ::after{content:""}
-td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
-th.n{text-align:right}
-tr:last-child td{border-bottom:0}
-.key{font-family:var(--mono);font-size:12px}
-.empty{color:var(--muted);padding:24px;text-align:center}
-@media (max-width:720px){
-  .row{grid-template-columns:1fr}
-  .compare{grid-template-columns:1fr}
-  .verdict{grid-template-columns:1fr}
-}
-@media (prefers-reduced-motion:no-preference){.bar .pt,.bar .ci{transition:left .25s ease,width .25s ease}}
-.login{max-width:420px;margin:12vh auto 0;display:grid;gap:14px}
-.login .panel{display:grid;gap:12px}
-.login input{font:16px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%}
-.login input.code{font:600 24px var(--mono);letter-spacing:.3em;text-align:center}
-.login input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.btn{font:600 14px var(--body);background:var(--accent);color:#fff;border:0;border-radius:8px;padding:11px 14px;cursor:pointer}
-.btn:disabled{opacity:.6;cursor:default}
-.linkbtn{font:13px var(--body);background:none;border:0;color:var(--accent);cursor:pointer;padding:0;justify-self:start}
-.msg{font-size:13px;color:var(--muted);margin:0}.msg.err{color:var(--bad)}
-.who{display:flex;gap:10px;align-items:center;font:12px var(--mono);color:var(--muted)}
-:root[data-theme="dark"] .btn{color:#0d1220}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{color:#0d1220}}
-html,body{min-height:100%}
-</style>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
-</head><body>
+<link rel="stylesheet" href="/styles.css">
 
-<div class="login" id="login" hidden>
-  <div><div class="eyebrow">MadeJustForYou · paid video tests</div><h1>Hook Lab</h1></div>
-  <form class="panel" id="emailForm" novalidate>
-    <label for="email" class="msg">Your email. We'll send a 6-digit code.</label>
-    <input id="email" type="email" autocomplete="email" required placeholder="you@example.com">
-    <button class="btn" id="sendBtn" type="submit">Send code</button>
-    <p class="msg" id="emailMsg"></p>
-  </form>
-  <form class="panel" id="codeForm" hidden novalidate>
-    <label for="code" class="msg" id="codeLabel">Enter the 6-digit code from your email.</label>
-    <input id="code" class="code" inputmode="numeric" autocomplete="one-time-code" maxlength="8" pattern="[0-9]{6,8}" required>
-    <button class="btn" id="verifyBtn" type="submit">Sign in</button>
-    <button class="linkbtn" id="backBtn" type="button">Use a different email</button>
-    <p class="msg" id="codeMsg"></p>
-  </form>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+<script src="/sb.js"></script>
+</head><body>
 
 <div class="wrap" id="app" hidden>
   <header>
@@ -169,6 +53,7 @@ html,body{min-height:100%}
         <label for="selA">Ad A (control)<select id="selA"></select></label>
         <label for="selB">Ad B (challenger)<select id="selB"></select></label>
       </div>
+      <div class="adcards" id="adcards"></div>
       <div class="verdicts" id="verdicts"></div>
       <p class="note" id="cmpnote"></p>
     </div>
@@ -279,6 +164,14 @@ function renderGroups(){
     : "Groups pool every ad that shares the ingredient. Ads from different campaign objectives (traffic vs sales) are mixed here; use the comparison below for a fair read.";
 }
 
+function mediaLinks(a){
+  const l=[]; if(a.preview_url) l.push(`<a href="${esc(a.preview_url)}" target="_blank" rel="noopener">Ad preview</a>`);
+  if(a.video_url) l.push(`<a href="${esc(a.video_url)}" target="_blank" rel="noopener">Video${a.video_length_s?" "+Math.round(a.video_length_s)+"s":""}</a>`);
+  if(a.post_url) l.push(`<a href="${esc(a.post_url)}" target="_blank" rel="noopener">Post</a>`);
+  return l.length?`<div class="links">${l.join("")}</div>`:'<span style="color:var(--muted);font-size:12px">not uploaded</span>'; }
+function adCard(a,label){ return `<div class="adcard">${a.thumbnail_url?`<img src="${esc(a.thumbnail_url)}" alt="" referrerpolicy="no-referrer">`:'<img alt="">'}
+  <div><div class="eyebrow">${label}</div><div class="key">${esc(a.ad_key)}</div>
+  <div class="meta">${esc([a.format,a.trigger].filter(Boolean).join(" · ")||"hook untagged")} · ${int(num(a.impressions))} impressions · hook ${pct(a.hook_rate)}</div>${mediaLinks(a)}</div></div>`; }
 function adLabel(a){ return `${a.ad_key} · ${int(a.impressions)} imp`; }
 function renderCompare(){
   const live = ADS.filter(a=>num(a.impressions)>0).sort((a,b)=>num(b.impressions)-num(a.impressions));
@@ -287,6 +180,7 @@ function renderCompare(){
   const run=()=>{
     const A=live[+$("#selA").value], B=live[+$("#selB").value];
     if(!A||!B){ $("#verdicts").innerHTML='<div class="empty">Needs two ads with impressions.</div>'; return; }
+    $("#adcards").innerHTML=adCard(A,"Ad A")+adCard(B,"Ad B");
     const metrics=[["Hook rate","video_3s","impressions"],["Hold rate","thruplays","video_3s"],["Link CTR","link_clicks","impressions"],["Add-to-cart per click","add_to_cart","link_clicks"]];
     $("#verdicts").innerHTML = metrics.map(([name,k,n])=>{
       const t=ztest(num(A[k]),num(A[n]),num(B[k]),num(B[n]));
@@ -304,7 +198,7 @@ function renderCompare(){
   $("#selA").onchange=run; $("#selB").onchange=run; run();
 }
 
-const COLS=[["ad_key","Ad"],["test_id","Test"],["format","Format"],["trigger","Trigger"],["impressions","Impr.",1],["spend","Spend",1],
+const COLS=[["thumb","",0],["ad_key","Ad"],["links","Watch"],["test_id","Test"],["format","Format"],["trigger","Trigger"],["impressions","Impr.",1],["spend","Spend",1],
   ["hook_rate","Hook",1],["hold_rate","Hold",1],["link_ctr","CTR",1],["add_to_cart","ATC",1],["cost_per_atc","$/ATC",1],["purchases","Buys",1],["roas","ROAS",1],["gate","Gate"]];
 function renderTable(){
   const t=$("#adtable");
@@ -312,12 +206,14 @@ function renderTable(){
   const rows=[...ADS].sort((a,b)=>{ const va=a[sortKey], vb=b[sortKey];
     if(va==null) return 1; if(vb==null) return -1; return (isNaN(va)||isNaN(vb)? String(va).localeCompare(String(vb)) : va-vb)*sortDir; });
   t.querySelector("tbody").innerHTML = rows.map(a=>`<tr>
-    <td class="key">${esc(a.ad_key)}</td><td>${esc(a.test_id||"—")}</td><td>${esc(a.format||"—")}</td><td>${esc(a.trigger||"—")}</td>
+    <td>${a.thumbnail_url?`<img class="thumb" src="${esc(a.thumbnail_url)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:'<div class="thumb"></div>'}</td>
+    <td class="key">${esc(a.ad_key)}${a.meta_status?`<br><small style="color:var(--muted)">${esc(a.meta_status.toLowerCase().replace(/_/g," "))}</small>`:""}</td>
+    <td>${mediaLinks(a)}</td><td>${esc(a.test_id||"—")}</td><td>${esc(a.format||"—")}</td><td>${esc(a.trigger||"—")}</td>
     <td class="n">${int(num(a.impressions))}</td><td class="n">${money(num(a.spend))}</td><td class="n">${pct(a.hook_rate)}</td>
     <td class="n">${pct(a.hold_rate)}</td><td class="n">${pct(a.link_ctr,2)}</td><td class="n">${int(num(a.add_to_cart))}</td>
     <td class="n">${money(a.cost_per_atc)}</td><td class="n">${int(num(a.purchases))}</td><td class="n">${a.roas==null?"—":Number(a.roas).toFixed(2)+"×"}</td>
     <td>${num(a.impressions)?gateChip(num(a.hook_rate),num(a.impressions)):'<span class="chip c-na">not live</span>'}</td></tr>`).join("");
-  t.querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{ const k=th.dataset.k; if(k==="gate") return;
+  t.querySelectorAll("th").forEach(th=>th.addEventListener("click",()=>{ const k=th.dataset.k; if(["gate","thumb","links"].includes(k)) return;
     sortDir = (k===sortKey)? -sortDir : -1; sortKey=k; renderTable(); }));
 }
 
@@ -331,10 +227,7 @@ function renderStrip(){
 
 function esc(s){ return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 
-const SB_URL="https://bjplojqovxetmbchzzms.supabase.co";
-const SB_KEY="sb_publishable_nDRL2Boaf59NDxVd85BvHQ_3m0EzrRI";   // publishable: safe in the browser; RLS allowlist guards the data
-const sb = supabase.createClient(SB_URL, SB_KEY, {auth:{persistSession:true,autoRefreshToken:true}});
-let pendingEmail="";
+const sb = window.HL_SB;
 
 async function fetchAll(table, cols, order){            // PostgREST returns ≤1000 rows per request: page through
   const out=[]; for(let from=0;;from+=1000){
@@ -355,33 +248,12 @@ async function loadData(){
   setPreset("all");
 }
 function showApp(session){
-  $("#login").hidden=true; $("#app").hidden=false; $("#whoami").textContent=session.user.email;
+  $("#app").hidden=false; $("#whoami").textContent=session.user.email;
   loadData().catch(err=>{ $("#synced").textContent="Couldn't load data: "+(err.message||err); });
 }
-function showLogin(){ $("#app").hidden=true; $("#login").hidden=false; $("#emailForm").hidden=false; $("#codeForm").hidden=true; $("#email").focus(); }
-
-$("#emailForm").addEventListener("submit",async e=>{ e.preventDefault();
-  const email=$("#email").value.trim().toLowerCase(); if(!email){ $("#emailMsg").textContent="Enter your email."; return; }
-  $("#sendBtn").disabled=true; $("#emailMsg").className="msg"; $("#emailMsg").textContent="Sending…";
-  const {error}=await sb.auth.signInWithOtp({email,options:{shouldCreateUser:false}});
-  $("#sendBtn").disabled=false;
-  if(error){ $("#emailMsg").className="msg err";
-    $("#emailMsg").textContent = /signup|not allowed|not found/i.test(error.message) ? "This email doesn't have access to Hook Lab."
-      : /rate|security purposes/i.test(error.message) ? "Too many codes requested. Wait a minute and try again." : error.message; return; }
-  pendingEmail=email; $("#emailForm").hidden=true; $("#codeForm").hidden=false;
-  $("#codeLabel").textContent=`Enter the 6-digit code sent to ${email}.`; $("#code").value=""; $("#code").focus();
-});
-$("#codeForm").addEventListener("submit",async e=>{ e.preventDefault();
-  const token=$("#code").value.replace(/\s/g,""); if(!/^\d{6,8}$/.test(token)){ $("#codeMsg").className="msg err"; $("#codeMsg").textContent="Enter the code from the email (6 digits)."; return; }
-  $("#verifyBtn").disabled=true; $("#codeMsg").className="msg"; $("#codeMsg").textContent="Checking…";
-  const {data,error}=await sb.auth.verifyOtp({email:pendingEmail,token,type:"email"});
-  $("#verifyBtn").disabled=false;
-  if(error){ $("#codeMsg").className="msg err"; $("#codeMsg").textContent="That code is wrong or expired. Request a new one."; return; }
-  showApp(data.session);
-});
-$("#backBtn").addEventListener("click",()=>{ $("#codeForm").hidden=true; $("#emailForm").hidden=false; $("#codeMsg").textContent=""; });
-$("#signout").addEventListener("click",async()=>{ await sb.auth.signOut(); showLogin(); });
-sb.auth.getSession().then(({data})=> data.session ? showApp(data.session) : showLogin());
+$("#signout").addEventListener("click",async()=>{ await sb.auth.signOut(); location.replace("/login"); });
+sb.auth.getSession().then(({data})=> data.session ? showApp(data.session) : location.replace("/login"));
+sb.auth.onAuthStateChange((ev)=>{ if(ev==="SIGNED_OUT") location.replace("/login"); });
 })();
 </script>
 </body></html>

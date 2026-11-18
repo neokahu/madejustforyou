@@ -1,0 +1,3 @@
+-- 006/007 (2026-11-18): Hook Lab access. Table dashboard_viewers(email) (RLS on, no policies = service role only);
+-- private.is_dashboard_viewer() security definer (private schema, not exposed via the API);
+-- every data table: select policy `<table>_viewer_read` to authenticated using ((select private.is_dashboard_viewer())). Anon reads nothing.

@@ -3,7 +3,8 @@
 
   python3 db_sync.py seed            # upsert products/tests/cells/hooks/creatives from the git CSVs (canonical)
   python3 db_sync.py pull --days 7   # pull daily ad-level Meta insights into ad_metrics_daily (read-only on Meta)
-  python3 db_sync.py all  --days 7   # both
+  python3 db_sync.py media           # ad preview link, post, video, thumbnail (+ links new ads to their Meta id by name)
+  python3 db_sync.py all  --days 7   # seed + media + pull
 
 The git CSVs stay the source of truth for what we BUILT; the database adds what Meta MEASURED.
 Needs in ../.env: META_SYSTEM_USER_TOKEN, META_AD_ACCOUNT_ID, META_API_VERSION, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
@@ -35,8 +36,14 @@ class DB:
             self.h["Authorization"] = f"Bearer {key}"   # new sb_secret_ keys are sent in the apikey header only
 
     def upsert(self, table: str, rows: list[dict], on_conflict: str):
-        cols = sorted({k for r in rows for k in r})          # PostgREST bulk insert needs identical keys per row
-        rows = [{k: r.get(k) for k in cols} for r in rows]
+        groups = {}                                       # PostgREST bulk insert needs identical keys per request;
+        for r in rows:                                    # group by key set so an omitted column is left untouched
+            groups.setdefault(tuple(sorted(r)), []).append(r)
+        for batch in groups.values():
+            self._post(table, batch, on_conflict)
+        print(f"  {table}: {len(rows)} upserted")
+
+    def _post(self, table: str, rows: list[dict], on_conflict: str):
         for i in range(0, len(rows), 500):
             req = urllib.request.Request(
                 self.base + table + "?on_conflict=" + on_conflict, method="POST",
@@ -46,7 +53,11 @@ class DB:
                 urllib.request.urlopen(req, timeout=60).read()
             except urllib.error.HTTPError as e:
                 sys.exit(f"{table}: HTTP {e.code} {e.read().decode(errors='replace')[:500]}")
-        print(f"  {table}: {len(rows)} upserted")
+
+    def patch(self, table: str, match: str, values: dict):
+        req = urllib.request.Request(self.base + table + "?" + match, method="PATCH", data=json.dumps(values).encode(),
+                                     headers={**self.h, "Prefer": "return=minimal"})
+        urllib.request.urlopen(req, timeout=60).read()
 
     def select(self, table: str, q: str) -> list[dict]:
         req = urllib.request.Request(self.base + table + "?" + q, headers=self.h)
@@ -122,6 +133,9 @@ def seed(db: DB):
                             "concept_code": clean(r["concept_code"]), "variant": clean(r["variant"]),
                             "version": clean(r["version"], int), "meta_ad_id": clean(r["meta_ad_id"]),
                             "notes": clean(r["notes"])}
+    for a in ads.values():
+        if not a.get("meta_ad_id"):
+            a.pop("meta_ad_id", None)      # keep the id `media` found on Meta; the CSV may not know it yet
     db.upsert("ads", list(ads.values()), "ad_key")
     db.upsert("creatives", cr, "creative_id")
 
@@ -184,9 +198,58 @@ def pull(db: DB, env: dict, days: int):
         print("   -", n)
 
 
+# ---------- media (ad preview links, post, video, thumbnail) ----------
+def graph(env: dict, path: str, params: dict) -> dict:
+    q = {**params, "access_token": env["META_SYSTEM_USER_TOKEN"]}
+    url = f"https://graph.facebook.com/{env.get('META_API_VERSION', 'v26.0')}/{path}?" + urllib.parse.urlencode(q)
+    try:
+        return json.loads(urllib.request.urlopen(url, timeout=120).read())
+    except urllib.error.HTTPError as e:
+        err = json.loads(e.read().decode(errors="replace")).get("error", {})
+        sys.exit(f"Meta {path}: HTTP {e.code} {err.get('message')}")
+
+
+def media(db: DB, env: dict):
+    acct = env["META_AD_ACCOUNT_ID"]
+    acct = acct if acct.startswith("act_") else f"act_{acct}"
+    known = db.select("ads", "select=ad_key,meta_ad_id")
+    keys = {a["ad_key"] for a in known}
+    by_id = {a["meta_ad_id"]: a["ad_key"] for a in known if a["meta_ad_id"]}
+    fields = ("id,name,effective_status,preview_shareable_link,creative{thumbnail_url,video_id,effective_object_story_id,"
+              "object_story_spec{video_data{video_id}},asset_feed_spec{videos{video_id}}}")
+    page = graph(env, f"{acct}/ads", {"fields": fields, "limit": 200})
+    n, now = 0, dt.datetime.now(dt.timezone.utc).isoformat()
+    while True:
+        for a in page.get("data", []):
+            m = AD_KEY_RE.search(a.get("name", ""))
+            key = by_id.get(a["id"]) or (f"{m.group(1)}_v{m.group(2)}" if m and f"{m.group(1)}_v{m.group(2)}" in keys else None)
+            if not key:
+                continue
+            c = a.get("creative") or {}
+            vid = c.get("video_id") or ((c.get("object_story_spec") or {}).get("video_data") or {}).get("video_id") \
+                or next((v.get("video_id") for v in (c.get("asset_feed_spec") or {}).get("videos", [])), None)
+            row = {"meta_ad_id": a["id"], "meta_ad_name": a.get("name"), "meta_status": a.get("effective_status"),
+                   "preview_url": a.get("preview_shareable_link"), "thumbnail_url": c.get("thumbnail_url"),
+                   "post_url": ("https://www.facebook.com/{}/posts/{}".format(*c["effective_object_story_id"].split("_", 1))
+                                if "_" in (c.get("effective_object_story_id") or "") else None),
+                   "media_refreshed_at": now}
+            if vid:
+                v = graph(env, vid, {"fields": "permalink_url,picture,length"})
+                row["video_url"] = "https://www.facebook.com" + v["permalink_url"] if v.get("permalink_url", "").startswith("/") else v.get("permalink_url")
+                row["video_length_s"] = float(v["length"]) if v.get("length") else None
+                row["thumbnail_url"] = row["thumbnail_url"] or v.get("picture")
+            db.patch("ads", "ad_key=eq." + urllib.parse.quote(key), row)
+            n += 1
+        nxt = page.get("paging", {}).get("next")
+        if not nxt:
+            break
+        page = json.loads(urllib.request.urlopen(nxt, timeout=120).read())
+    print(f"  ads media: {n} ads updated (preview/post/video/thumbnail)")
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["seed", "pull", "all"])
+    ap.add_argument("cmd", choices=["seed", "media", "pull", "all"])
     ap.add_argument("--days", type=int, default=7)
     a = ap.parse_args()
     env = load_env(ENV_PATH)
@@ -196,6 +259,8 @@ def main():
     db = DB(env["SUPABASE_URL"], env["SUPABASE_SERVICE_ROLE_KEY"])
     if a.cmd in ("seed", "all"):
         seed(db)
+    if a.cmd in ("media", "all"):
+        media(db, env)
     if a.cmd in ("pull", "all"):
         pull(db, env, a.days)
 

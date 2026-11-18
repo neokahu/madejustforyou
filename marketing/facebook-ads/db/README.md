@@ -3,8 +3,8 @@
 Supabase project **mj4u-ads** (ref `bjplojqovxetmbchzzms`, ap-southeast-1, **PostgreSQL 17.12**).
 Purpose: link every Meta ad's results to how it was built (hook format/trigger/mechanism, concept, script, length) to find the winning formula.
 Canonical build data = git CSVs (`products/_registry/*.csv`, `marketing/facebook-ads/_ledgers/*.csv`); the DB adds daily Meta metrics.
-Sync: `engine/db_sync.py seed|pull|all`. Migrations: `migrations/` (001–005).
-**Dashboard (Hook Lab):** https://mj4u-hook-lab.vercel.app (Vercel project `mj4u-hook-lab`, account neokahu). Source `hook-lab-web/` (static `index.html` + `vercel.json`); deploy with `cd hook-lab-web && vercel deploy --prod`.
+Sync: `engine/db_sync.py seed|media|pull|all` (`media` = Meta preview link, post, reel, thumbnail per ad; thumbnails are signed URLs that expire, so the daily job refreshes them; it also links newly launched ads to their Meta id via the ad_key in the ad name). Migrations: `migrations/` (001–005).
+**Dashboard (Hook Lab):** https://mj4u-hook-lab.vercel.app (Vercel project `mj4u-hook-lab`, account neokahu). Source `hook-lab-web/`: `login.html` (/login, email code) → `index.html` (/, dashboard; redirects to /login when signed out), shared `styles.css` + `sb.js`, `vercel.json`; deploy with `cd hook-lab-web && vercel deploy --prod`.
 It reads Supabase **live** with the publishable key. Login = Supabase email one-time code (`signInWithOtp` with `shouldCreateUser:false`, then `verifyOtp`).
 **Access:** RLS on every table allows `select` only to signed-in users whose email is in `dashboard_viewers` (checked by `private.is_dashboard_viewer()`). Anonymous reads return nothing.
 Auth config (set 2026-11-18 via the Management API, token `SUPABASE_ACCESS_TOKEN` in `~/.global-keys.env`): Magic-link template shows `{{ .Token }}`, 6-digit codes valid 1h, Site URL = the Vercel URL, custom SMTP = Gmail (namvu47@gmail.com) with a 50 emails/hour limit.
