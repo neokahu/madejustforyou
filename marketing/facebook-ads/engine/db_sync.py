@@ -28,7 +28,9 @@ PUR = ("purchase", "offsite_conversion.fb_pixel_purchase", "onsite_web_purchase"
 class DB:
     def __init__(self, url: str, key: str):
         self.base = url.rstrip("/") + "/rest/v1/"
-        self.h = {"apikey": key, "Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+        self.h = {"apikey": key, "Content-Type": "application/json"}
+        if not key.startswith("sb_"):            # legacy JWT service_role key also goes in Authorization;
+            self.h["Authorization"] = f"Bearer {key}"   # new sb_secret_ keys are sent in the apikey header only
 
     def upsert(self, table: str, rows: list[dict], on_conflict: str):
         for i in range(0, len(rows), 500):
