@@ -1,0 +1,4 @@
+-- 005 (2026-11-18), after auditing against the database-architecture skill:
+-- every FK recreated with explicit ON DELETE RESTRICT (test history is audit data — never cascade-delete);
+-- constraints renamed {table}_{purpose}_check / {table}_{column}_fkey; indexes renamed idx_{table}_{columns};
+-- a DO-block verifies no non-RESTRICT FK and no unindexed FK column remains. Full DDL as applied in Supabase.
