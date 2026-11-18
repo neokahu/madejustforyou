@@ -89,20 +89,26 @@ def seed(db: DB):
     db.upsert("hooks", [{**{k: clean(v) for k, v in r.items()}, "paid_by_s": clean(r["paid_by_s"], float),
                          "critic_score": clean(r["critic_score"], float), "critic_spread": clean(r["critic_spread"], float)}
                         for r in rows(LED / "hooks.csv")], "hook_id")
-    cr = []
+    ads, cr = {}, []
     for r in rows(REG / "ad-creatives.csv"):
         cid = r["creative_id"]
         m = AD_KEY_RE.search(cid)
-        cr.append({"creative_id": cid, "ad_key": f"{m.group(1)}_v{m.group(2)}" if m else cid,
-                   "product_id": r["product_id"], "test_id": clean(r["test_id"]), "cell_id": clean(r["cell_id"]),
-                   "hook_id": clean(r["hook_id"]), "concept_code": clean(r["concept"]), "variant": clean(r["variant"]),
-                   "ratio": clean(r["ratio"]), "version": clean(r["version"], int), "length_s": clean(r["length_s"], float),
-                   "has_vo": clean(r["has_vo"], bool), "caption_style": clean(r["caption_style"]),
-                   "structure": clean(r["structure"]), "music_source": clean(r["music_source"]),
+        key = f"{m.group(1)}_v{m.group(2)}" if m else cid
+        ad = ads.setdefault(key, {"ad_key": key, "product_id": r["product_id"], "test_id": clean(r["test_id"]),
+                                  "cell_id": clean(r["cell_id"]), "hook_id": clean(r["hook_id"]),
+                                  "concept_code": clean(r["concept"]), "variant": clean(r["variant"]),
+                                  "version": clean(r["version"], int), "length_s": clean(r["length_s"], float),
+                                  "has_vo": clean(r["has_vo"], bool), "caption_style": clean(r["caption_style"]),
+                                  "structure": clean(r["structure"]), "ai_people": clean(r["ai_people"], bool),
+                                  "meta_ad_id": None})
+        ad["meta_ad_id"] = ad["meta_ad_id"] or clean(r["meta_ad_id"])   # one Meta ad carries both ratios
+        cr.append({"creative_id": cid, "ad_key": key, "product_id": r["product_id"], "test_id": clean(r["test_id"]),
+                   "ratio": clean(r["ratio"]), "music_source": clean(r["music_source"]),
                    "ai_people": clean(r["ai_people"], bool), "local_path": clean(r["local_path"]),
                    "drive_path": clean(r["drive_path"]), "sha256": clean(r["sha256"]), "recipe": clean(r["recipe"]),
                    "qa_status": clean(r["qa_status"]), "qa_report": clean(r["qa_report"]), "waivers": clean(r["waivers"]),
-                   "meta_ad_id": clean(r["meta_ad_id"]), "notes": clean(r["notes"])})
+                   "notes": clean(r["notes"])})
+    db.upsert("ads", list(ads.values()), "ad_key")
     db.upsert("creatives", cr, "creative_id")
 
 
@@ -128,7 +134,9 @@ def pull(db: DB, env: dict, days: int):
     q = {"level": "ad", "time_increment": 1, "fields": fields, "limit": 500,
          "time_range": json.dumps({"since": since, "until": until}), "access_token": env["META_SYSTEM_USER_TOKEN"]}
     url = f"https://graph.facebook.com/{env.get('META_API_VERSION', 'v26.0')}/{acct}/insights?" + urllib.parse.urlencode(q)
-    by_id = {c["meta_ad_id"]: c["ad_key"] for c in db.select("creatives", "select=meta_ad_id,ad_key&meta_ad_id=not.is.null")}
+    known = db.select("ads", "select=ad_key,meta_ad_id")
+    keys = {a["ad_key"] for a in known}
+    by_id = {a["meta_ad_id"]: a["ad_key"] for a in known if a["meta_ad_id"]}
     out = []
     while url:
         page = json.loads(urllib.request.urlopen(url, timeout=120).read())
@@ -136,7 +144,8 @@ def pull(db: DB, env: dict, days: int):
             m = AD_KEY_RE.search(d.get("ad_name", ""))
             out.append({
                 "meta_ad_id": d["ad_id"], "date": d["date_start"], "ad_name": d.get("ad_name"),
-                "ad_key": by_id.get(d["ad_id"]) or (f"{m.group(1)}_v{m.group(2)}" if m else None),
+                "ad_key": by_id.get(d["ad_id"]) or ((f"{m.group(1)}_v{m.group(2)}" if m else None)
+                                                    if m and f"{m.group(1)}_v{m.group(2)}" in keys else None),
                 "adset_id": d.get("adset_id"), "campaign_id": d.get("campaign_id"),
                 "impressions": int(float(d.get("impressions", 0))), "reach": int(float(d.get("reach", 0))),
                 "spend": float(d.get("spend", 0)), "link_clicks": int(float(d.get("inline_link_clicks", 0))),

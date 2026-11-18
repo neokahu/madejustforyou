@@ -1,0 +1,5 @@
+-- 004 (2026-11-18), after auditing against the database-design skill (wshobson/agents):
+-- 1) `ads` is a real table (ad_key PK, one Meta ad id each); creatives keep file-level facts and FK to ads;
+--    ad_metrics_daily.ad_key FKs to ads (null = unmapped). 2) check constraints (non-negative metrics, status/ratio/axis values).
+-- 3) created_at/updated_at on every entity table, updated_at via trigger set_updated_at(). 4) (ad_key, date) index.
+-- 5) view ad_performance rebuilt on ads + hooks + metrics. Full DDL as applied in Supabase migration 004_ads_table_timestamps_checks.
