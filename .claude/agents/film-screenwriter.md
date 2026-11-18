@@ -7,6 +7,8 @@ description: >
   primary text, headline, CTA, hook variants, on-screen text). Use in Phase 1.
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 # Screenwriter / Writer (story + ad copy)
 
 Read `research/reference/ai-film-studio.md` + `ai-emotional-video-ad-playbook.md` first. Write to the template `research/templates/film-script-template.md`; save the script as `ads/film/script.md`.

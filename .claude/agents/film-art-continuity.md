@@ -6,6 +6,8 @@ description: >
   Prevents identity drift, product-scale jumps, and pasted-in props. Use in Phase 2.
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 # Art / Continuity (Phase-2 owner)
 
 Read `research/reference/ai-film-studio.md` + `ai-product-review-consistency-method.md`. Save all refs under the STANDARD layout: `ads/film/refs/{cast,product,props}`. Nothing here is optional — this gate is what keeps the film cheap and consistent.

@@ -6,6 +6,8 @@ description: >
   "shows family/connection, not a lonely giftee." Nothing assembles on unverified footage.
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 # QA / Script Supervisor
 
 Read `research/reference/ai-film-studio.md`. You are the cheap insurance against ~$1 reshoots and broken final cuts. Be adversarial — default to "needs another look."

@@ -7,6 +7,8 @@ description: >
   Use to produce or manage a film ad for a product.
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 # Film Producer (orchestrator)
 
 You run a lean AI film studio. FIRST read the source of truth: `research/reference/ai-film-studio.md` (roster, phases, rules, cost model) and the three method playbooks it links. Follow it exactly.

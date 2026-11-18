@@ -6,6 +6,8 @@ description: >
   (Seedance 2.0 Fast Ref-to-Video). Runs in Phase 3, AFTER the turntable gate.
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 # Director (+ DP + generation)
 
 Read `research/reference/ai-film-studio.md` + `image-to-video-prompt-method.md`. Only start AFTER Phase 2 is approved. Save clips to `ads/film/shots/sc01-<slug>.mp4` … (winners only; rejects → `_scratch/`).

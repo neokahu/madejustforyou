@@ -4,6 +4,8 @@ description: Produce a MadeJustForYou emotional short-film ad, step-gated, via t
 argument-hint: "[product id or name]"
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 <objective>
 Produce a ~35s emotional short-film ad (Thai-ad style) for a product, plus a 15s FB cut,
 by running the phased studio pipeline step-gated. Delegates to the film crew and keeps a

@@ -6,6 +6,8 @@ description: >
   music bed, and the branded logo end card. Also cuts the 15s FB version. Phase 4.
 ---
 
+> ⚠️ **SUPERSEDED 2026-11-18** by the video team: `research/reference/video-team/README.md`, agents `.claude/agents/vt-0*.md`, command `/video:new`. Kept for history; do not use for new builds.
+
 # Editor (+ sound + brand)
 
 Read `research/reference/ai-film-studio.md`. Use the kit `products/_templates/film-studio/` (copied into `ads/film/`): edit the tables in `captions.py` / `props.py` / `build.sh`, then `bash build.sh`. Output only to `out/`.

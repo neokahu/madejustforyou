@@ -1,3 +1,5 @@
+> ⚠️ **SUPERSEDED 2026-11-18** by `research/reference/video-team/README.md` (video team). The ideas that survive here (turntable/reference gate, scale anchor, composited text) live on in roles 05 and 07.
+
 # AI Film Studio — MadeJustForYou
 
 > ## ⚠️ DEMOTED 2026-09-26 — do not cite this as authority
