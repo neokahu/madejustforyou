@@ -55,3 +55,6 @@ Re-fetch any with: products/suncatcher-dog-memorial/ads/tools/atlas_fetch.sh <id
 | C3-B4a | shots/phase1/C3-B4a-t1.mp4 | 0.0–3.0 |
 | C3-B4b | KB on frames/phase1/C3-B4b.png (real "Alex" centre ≈ 1619,3670, ~118px wide in 4K → push so ≥100px at 1080 out) | 2.0s |
 Music: products/suncatcher-dog-memorial/ads/shots/music.mp3 (approved).
+
+## Feed cut fixes (2026-10-11)
+All 6 `out/phase1/feed/` rebuilt: C1-B2 + C2-B4 now use eased crop pans; C1/C2 captions at 62–76%; feed logo 580px at y1115. Re-audit is in EDIT-CRITERIA.md.

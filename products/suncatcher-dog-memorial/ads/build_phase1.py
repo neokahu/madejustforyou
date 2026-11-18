@@ -19,7 +19,10 @@ W, H, FPS = 1080, (1350 if FMT == "feed" else 1920), 25
 # FEED re-aim: KB centre y per shot (start, end), "Alex" ~42% of the 4:5 frame (C3-B2 ends higher so the card stays in);
 # clip crop = 720x900 window of the 720x1280 source at this y-offset (faces / panel / bed kept in frame).
 KB_FEED_CY = {"HOOK-H1": (3212, 3310), "C3-B2": (3133, 2850), "B3b": (3313, 3268), "C3-B4b": (3826, 3790), "B5": (3375, 3300)}
-CLIP_FEED_OFF = {"H2": 60, "C1-B2": 190, "C1-B4-t1": 190, "C2-B2": 150, "C2-B4-t2": 150, "C3-B4a-t1": 120, "testC3-moving-open": 190}
+CLIP_FEED_OFF = {"H2": 60, "C1-B2": (280, 150, 0.4, 2.0), "C1-B4-t1": 190, "C2-B2": 150, "C2-B4-t2": (150, 360, 1.0, 4.5),
+                 "C3-B4a-t1": 120, "testC3-moving-open": 190}
+# tuple = eased vertical pan (off_start, off_end, t0, t1) in clip seconds. C1-B2 starts low so the ALEX tag (src y~1020-1170)
+# is whole, then rises with the camera's own tilt to the panel; C2-B4 drifts down so it ends on the Alex light on the bed.
 LOGO = os.path.normpath(os.path.join(ROOT, "../../library/brand/logo/lockup-horizontal.png"))
 MUSIC = f"{HERE}/shots/music.mp3"
 SANS_B = "/System/Library/Fonts/Supplemental/Arial Bold.ttf"
@@ -54,8 +57,9 @@ B2_CAP = {"C1": "His bowl hasn't|moved since spring.",
           "C3": "My neighbor lost Alex.|Flowers felt wrong."}
 B4_CAP = {"C1": "Only one Alex.|Only one of these.", "C2": "Alex is back|in his spot.", "C3": "This felt like Alex."}
 BAND = (1000, 1210) if FMT == "reels" else (1010, 1210)  # feed: bottom third (75-90%); no Reels UI on Feed
+FEED_BAND_HI = {"C1": (840, 1030), "C2": (840, 1030)}   # feed 62-76%: the C1 ALEX tag / C2 bed light sit below 1100
 BAND_R = (1000, 1210)          # one fixed body band (52-63%) in all 6: 36-47% covered the C1-B4 photo/shadow head and the hook dog head; "Alex" re-aimed above it
-CTA_Y = 300 if FMT == "reels" else 1010
+CTA_Y = 300 if FMT == "reels" else 900   # feed: CTA 900-1100, logo below it, all above y1200 (F9)
 ADS = [f"S-{c}-{h}" for c in ("C1", "C2", "C3") for h in ("H1", "H2")]
 
 
@@ -99,11 +103,19 @@ def kb_segment(key, dur, out):
 
 def clip_segment(src, start, dur, out):
     run(["ffmpeg", "-v", "error", "-y", "-ss", f"{start:.3f}", "-i", src, "-vf",
-         (f"crop=720:900:0:{CLIP_FEED_OFF[os.path.basename(src)[:-4]]}," if FMT == "feed" else "") + f"fps={FPS},scale={W}:{H}:flags=lanczos,setsar=1", "-an", "-frames:v", str(nframes(dur)),
+         (f"crop=720:900:0:{feed_off(CLIP_FEED_OFF[os.path.basename(src)[:-4]])}," if FMT == "feed" else "") + f"fps={FPS},scale={W}:{H}:flags=lanczos,setsar=1", "-an", "-frames:v", str(nframes(dur)),
          "-c:v", "libx264", "-crf", "15", "-pix_fmt", "yuv420p", out])
 
 
-def caption_png(text, pos, path):
+def feed_off(o):
+    if not isinstance(o, tuple):
+        return o
+    a, b, t0, t1 = o
+    u = f"clip((t-{t0})/{t1 - t0},0,1)"
+    return f"'{a}+({b - a})*{u}*{u}*(3-2*{u})'"
+
+
+def caption_png(text, pos, path, band=None):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     font = ImageFont.truetype(SANS_B, 84)                # ~60px cap height, fixed size
     lines = text.split("|")
@@ -112,7 +124,8 @@ def caption_png(text, pos, path):
         assert d.textlength(ln, font=font) + 20 <= 950, (ln, d.textlength(ln, font=font))
     lh = 100
     block = lh * len(lines)
-    y0 = CTA_Y if pos == "cta" else BAND[0] + (BAND[1] - BAND[0] - block) // 2
+    band = band or BAND
+    y0 = CTA_Y if pos == "cta" else band[0] + (band[1] - band[0] - block) // 2
     txt = Image.new("RGBA", (W, H), (0, 0, 0, 0)); td = ImageDraw.Draw(txt)
     for i, ln in enumerate(lines):
         td.text(((W - td.textlength(ln, font=font)) / 2, y0 + i * lh), ln, font=font, fill=(255, 255, 255, 255),
@@ -121,12 +134,12 @@ def caption_png(text, pos, path):
     soft = Image.new("RGBA", (W, H), (0, 0, 0, 0)); soft.putalpha(a.filter(ImageFilter.GaussianBlur(12)).point(lambda v: int(v * 0.3)))
     img = Image.alpha_composite(Image.alpha_composite(img, soft), txt)
     if pos == "cta":
-        logo = Image.open(LOGO).convert("RGBA"); lw = 340
+        logo = Image.open(LOGO).convert("RGBA"); lw = 340 if FMT == "reels" else 580   # feed: wordmark >=40px (F13)
         logo = logo.resize((lw, int(logo.height * lw / logo.width)), Image.LANCZOS)
         la = logo.split()[3]
         white = Image.merge("RGBA", (la.point(lambda v: 255),) * 3 + (la,))
         sh = Image.new("RGBA", white.size, (0, 0, 0, 0)); sh.putalpha(la.filter(ImageFilter.GaussianBlur(4)).point(lambda v: int(v * 0.6)))
-        ly = int(H * 0.745) if FMT == "reels" else 1250
+        ly = int(H * 0.745) if FMT == "reels" else 1115   # feed: bottom ~1186 <= 1200
         img.alpha_composite(sh, ((W - lw) // 2 + 2, ly + 3)); img.alpha_composite(white, ((W - lw) // 2, ly))
     img.save(path)
     return y0, y0 + block
@@ -156,7 +169,7 @@ def build(ad):
     chain = [pre, post, f"[pa][pb]xfade=transition=fade:duration={DISSOLVE}:offset={DISSOLVE_AT - DISSOLVE / 2}[v0]"]
     last = "v0"
     for j, (a, b, text, pos) in enumerate(captions(c, h)):
-        png = f"{d}/cap{j}.png"; caption_png(text, pos, png)
+        png = f"{d}/cap{j}.png"; caption_png(text, pos, png, FEED_BAND_HI.get(c) if FMT == "feed" else None)
         inputs += ["-loop", "1", "-framerate", str(FPS), "-t", "20", "-i", png]
         chain.append(f"[{last}][{na + 1 + j}:v]overlay=0:0:enable='gte(t,{a - 0.001})*lt(t,{b - 0.001})'[c{j}]")
         last = f"c{j}"

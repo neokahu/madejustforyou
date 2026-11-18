@@ -81,6 +81,23 @@ not boilerplate.
 | Dialogue | `{}` | `{I still leave the window open}` |
 | Subtitle | `【】` | `【Made just for them】` |
 
+## Naming the move — Motion Prompt library (added 2026-10-22)
+
+Skill `motion-prompt` (`~/.claude/skills/motion-prompt/`, catalog at showheyohtaki.github.io/motion-prompt) is a numbered
+library of 144 moves, each with a spec (order, duration, easing, amounts). Use it to **name the one camera move per shot
+precisely** instead of improvising wording. It does not replace any rule above. The prompt is still 20–50 words, one move
+per shot, with the product never re-described.
+
+- **Camera pack (#025–#048)** for shots: Pan #025, Tilt #026, Dolly in #027 (our "slow push-in"), Zoom in #028, Tracking #029,
+  Orbit #030, Crane up #031, Rack focus #033, Handheld #034, Slow motion #037. Run `node ~/.claude/skills/motion-prompt/scripts/motion-prompt.mjs get <id>`,
+  then write the move as one sentence built from its spec: what moves, the direction, slow or fast, the ease, and where it ends.
+  Do **not** paste the spec's numbers verbatim, because Seedance treats timings as guidance only.
+- **Transitions (#041–#048)** belong in the edit, not the prompt: Match cut #042, Cross dissolve #044 (our one 6.0s dissolve), J/L-cut #047/#048.
+- **Photo pack (#097–#120)** gives lighting words for stills (`nano-banana-pro/edit`): Golden hour #103, Rim light #098, Silhouette #099.
+- **Motion / motion2 packs** are caption, title and end-card moves. Each element is a pure function of time,
+  so it can be ported straight into our PIL/ffmpeg editor (`ads/build_phase1.py`). Keep each element's MIT header line.
+- If the user wants to choose the moves by eye, run `motion-prompt.mjs pick --pack camera`. It opens the gallery and they tick moves.
+
 ## Asset strategy
 
 Four functional roles: **character anchoring · scene tone-setting · camera-movement reference · rhythmic

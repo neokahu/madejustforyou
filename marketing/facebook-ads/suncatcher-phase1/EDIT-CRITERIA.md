@@ -336,3 +336,10 @@ The logo wordmark sits at y≈1250–1295, only 55px (4%) above the bottom, and 
 4. **Length (all 6):** keep the 20s cuts as the control and add a ≤15s Feed cutdown. Candidate trims: B3a+B3b 6.0→3.5s, B4 5.0→3.5s, CTA 2.5→2.0s.
 5. **Upload:** use asset customization with 4:5 → FB Feed/IG Feed and 9:16 → Stories/Reels, plus one IG-Feed-9:16 test cell.
 6. Optional: render at 1440×1800 only if the clips are regenerated above 720p.
+
+### Re-audit after fixes 1–3 (2026-10-11)
+Applied in `ads/build_phase1.py` (FMT=feed only; Reels untouched):
+- **Fix 1, C1-B2:** the crop is now an eased pan (`CLIP_FEED_OFF` tuple, offset 280→150 over clip 0.4–2.0s), so the ALEX tag is whole at 2.0–~2.8s. C1 and C2 Feed captions are lifted to a 62–76% band (y 840–1030, `FEED_BAND_HI`), which leaves the tag clear. C3 keeps 75–90%.
+- **Fix 2, C2-B4:** pan 150→360 over clip 1.0–4.5s. The light on the dog bed is whole from ~15.5s and sits left of the centred caption. Trade-off: the tilt ends with his forehead cropped, while his eyes stay in frame.
+- **Fix 3, all 6:** the CTA is at y 900–1100 and the logo is 580px wide at y 1115–1186. That is inside the 135px bottom safe zone and 250px from each side.
+Boards checked at 12 timestamps per ad. **F9, F10 and F13 now pass in all 6, and F11 passes for C2.** Totals: 78 pass, 6 fail. The 6 remaining fails are all F4 (20s against ≤15s), which was accepted on 2026-10-09 (keep 20s, no cutdown). Fix 4 was dropped by the same decision.

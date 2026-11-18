@@ -9,6 +9,7 @@
 - **Locate action in space**, not just on the body ("beside his own cheek, palm turned away from camera…" + `His palm never faces the camera`).
 - **Name the light source as off-screen** and keep it there (unsourced light → lens flare; named panel → model draws it into frame).
 - 4–5 assets max, one duty each. Emotion as physical detail, never an adjective.
+- **Name each camera move from the Motion Prompt library** (camera pack #025–#048, e.g. Dolly in #027). See the seedance-prompt-method § "Naming the move".
 - Text-sensitive close-ups: **4K still + ffmpeg Ken Burns at native resolution** beats video re-synthesis (no letterform drift; ~0.2 vs ~4 credits).
 
 ## Key evidence
