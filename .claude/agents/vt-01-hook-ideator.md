@@ -14,10 +14,10 @@ description: >
 Produce a pool of hooks for the arms in the plan that a separate person could build. A hook is a **card**, not a line. A caption with no frame is not a hook.
 
 ## Inputs (missing any → stop and ask the Producer)
-Plan cell (concept, arms + hypotheses, shared-hook rule) · 12-field brief · body beat sheet with seconds · product truth sheet (what the real product can show, personalization fields) · cast sheet · recipient × buyer pair + occasion (CEP) list · **hook ledger** (every prior hook + measured rates) · banned list.
+Plan cell (concept card + execution from 00A/Gate 0, arms + hypotheses, shared-hook rule) · 12-field brief · body beat sheet with seconds · product truth sheet (what the real product can show, personalization fields) · cast sheet · recipient × buyer pair + occasion (CEP) list · **hook ledger** (every prior hook + measured rates) · banned list.
 
 ## Output → `<cell>/hooks/01-candidates.md`
-A table of Hook Cards with these fields: `id · arm + axis (format|trigger|mechanism) · format (F1–F15 + sub-variant) · trigger (T1–T10) · trigger_2 (optional) · primitives (P1 onset / P2 face / P3 animal / P4 text; ≥1) · truth_frame (second; required for F4/F6/F7) · mechanism (M-code or —) · cep · frame1_visual · onset_0_5s · caption (≤10 words) · audio_cue · promise · paid_by (a second) · asset_source · policy · rationale`. Add a **self-rejected** table: id, line, reason.
+A table of Hook Cards with these fields: `id · concept_id + execution_id · arm + axis (format|trigger|mechanism) · format (F1–F15 + sub-variant) · trigger (T1–T10) · trigger_2 (optional) · primitives (P1 onset / P2 face / P3 animal / P4 text; ≥1) · truth_frame (second; required for F4/F6/F7) · mechanism (M-code or —) · cep · frame1_visual · onset_0_5s · caption (≤10 words) · audio_cue · promise · paid_by (a second) · asset_source · policy · rationale`. **Hook element tags** (concept-framework §4a, codes in `_ledgers/codebook.csv`): `f1_subject (SU) · shot_size (SZ) · onset (ON) + onset_s · caption_type (CT) · caption_words · caption_on_s · audio_cue_type (AU) · product_vis (VS) · people_f1 (PC)`. Tag all nine on every card; they are what lets results say which element of a hook worked. Add a **self-rejected** table: id, line, reason.
 
 ## Procedure
 1. Restate each arm's hypothesis in one line. Every hook in an arm must express that arm's contrast.

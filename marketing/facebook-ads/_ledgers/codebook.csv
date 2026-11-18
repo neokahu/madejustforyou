@@ -1,0 +1,138 @@
+dimension,code,label,layer,source
+angle,AN1,Only theirs,concept,concept-framework.md §1
+angle,AN2,Proof you paid attention,concept,concept-framework.md §1
+angle,AN3,Keep them close,concept,concept-framework.md §1
+angle,AN4,The moment it lands,concept,concept-framework.md §1
+angle,AN5,"All of them, together",concept,concept-framework.md §1
+angle,AN6,Right on time,concept,concept-framework.md §1
+angle,AN7,Built to last,concept,concept-framework.md §1
+angle,AN8,"For yourself, too",concept,concept-framework.md §1
+buyer_role,BY1,Close giver,concept,concept-framework.md §1
+buyer_role,BY2,Sympathy / outer-circle giver,concept,concept-framework.md §1
+buyer_role,BY3,Self-buyer,concept,concept-framework.md §1
+buyer_role,BY4,Group giver,concept,concept-framework.md §1
+recipient,RC1,Grandparent,concept,concept-framework.md §1
+recipient,RC2,Parent,concept,concept-framework.md §1
+recipient,RC3,Partner,concept,concept-framework.md §1
+recipient,RC4,Child / new baby,concept,concept-framework.md §1
+recipient,RC5,Pet (memorial),concept,concept-framework.md §1
+recipient,RC6,Pet (living),concept,concept-framework.md §1
+recipient,RC7,Friend / sibling,concept,concept-framework.md §1
+occasion,OC1,Winter holidays,concept,concept-framework.md §1
+occasion,OC2,Birthday / milestone age,concept,concept-framework.md §1
+occasion,OC3,Mother's / Father's / Grandparents' Day,concept,concept-framework.md §1
+occasion,OC4,Loss / anniversary of a loss,concept,concept-framework.md §1
+occasion,OC5,Just because,concept,concept-framework.md §1
+occasion,OC6,New arrival / new home,concept,concept-framework.md §1
+occasion,OC7,Wedding / anniversary,concept,concept-framework.md §1
+structure,ST1,Reveal,execution,concept-framework.md §1
+structure,ST2,Sentiment build (mini-film),execution,concept-framework.md §1
+structure,ST3,Absence → presence,execution,concept-framework.md §1
+structure,ST4,Gift exchange,execution,concept-framework.md §1
+structure,ST5,Vignettes,execution,concept-framework.md §1
+structure,ST6,Process / thought made visible,execution,concept-framework.md §1
+structure,ST7,Comic turn,execution,concept-framework.md §1
+pov,PV1,Giver,execution,concept-framework.md §1
+pov,PV2,Recipient / user,execution,concept-framework.md §1
+pov,PV3,Ensemble / family,execution,concept-framework.md §1
+pov,PV4,Object-led,execution,concept-framework.md §1
+proof,PF1,Personalization legible on the real product,execution,concept-framework.md §1
+proof,PF2,Recipient response (dramatized),execution,concept-framework.md §1
+proof,PF3,Source-to-product match,execution,concept-framework.md §1
+proof,PF4,Craft / material close-up,execution,concept-framework.md §1
+proof,PF5,Real customer photos / reviews,execution,concept-framework.md §1
+proof,PF6,Volume / longevity,execution,concept-framework.md §1
+prod_format,PX1,Cinematic mini-film,execution,concept-framework.md §1
+prod_format,PX2,Creator-style (character to camera),execution,concept-framework.md §1
+prod_format,PX3,Hands / demo / process,execution,concept-framework.md §1
+prod_format,PX4,Product-hero motion,execution,concept-framework.md §1
+prod_format,PX5,Native artefact,execution,concept-framework.md §1
+prod_format,PX6,Montage / list,execution,concept-framework.md §1
+reveal,RV1,Personalization in the hook (0–1s),execution,concept-framework.md §1
+reveal,RV2,"Pulsed: cue by ~3s, full at PROOF",execution,concept-framework.md §1
+reveal,RV3,PROOF beat only,execution,concept-framework.md §1
+register,EM1,Tender / warm,execution,concept-framework.md §1
+register,EM2,Bittersweet (sad → warm),execution,concept-framework.md §1
+register,EM3,Joyful / celebratory,execution,concept-framework.md §1
+register,EM4,Humorous / affectionate,execution,concept-framework.md §1
+register,EM5,Awe / wonder,execution,concept-framework.md §1
+format,F1,Onset / pattern interrupt,hook,hook-framework.md
+format,F2,Text-led statement,hook,hook-framework.md
+format,F3,Question / direct address,hook,hook-framework.md
+format,F4,Fake reality / impossible,hook,hook-framework.md
+format,F5,Reveal (hidden → shown),hook,hook-framework.md
+format,F6,Transformation / before-after,hook,hook-framework.md
+format,F7,Comparison / split,hook,hook-framework.md
+format,F8,POV / first-person,hook,hook-framework.md
+format,F9,In-medias-res / storytime,hook,hook-framework.md
+format,F10,Reaction cold-open,hook,hook-framework.md
+format,F11,Hands / process / unboxing,hook,hook-framework.md
+format,F12,Sound-led / ASMR,hook,hook-framework.md
+format,F13,Talking head / UGC-style,hook,hook-framework.md
+format,F14,Native-UI mimic,hook,hook-framework.md
+format,F15,Social-proof opener,hook,hook-framework.md
+trigger,T1,Curiosity / information gap,hook,hook-framework.md
+trigger,T2,Surprise / novelty,hook,hook-framework.md
+trigger,T3,Recognition / close-other relevance,hook,hook-framework.md
+trigger,T4,Joy / tenderness / awe,hook,hook-framework.md
+trigger,T5,Nostalgia / bittersweet,hook,hook-framework.md
+trigger,T6,Social proof,hook,hook-framework.md
+trigger,T7,Desire / anticipated outcome,hook,hook-framework.md
+trigger,T8,Urgency / occasion,hook,hook-framework.md
+trigger,T9,Humor,hook,hook-framework.md
+trigger,T10,Contrarian,hook,hook-framework.md
+mechanism,M1,Personalization reveal,hook,01-03-hooks.md §4
+mechanism,M2,Relationship callout,hook,01-03-hooks.md §4
+mechanism,M3,Reaction cold-open,hook,01-03-hooks.md §4
+mechanism,M4,Private-ritual recognition,hook,01-03-hooks.md §4
+mechanism,M5,Light / transformation onset,hook,01-03-hooks.md §4
+mechanism,M6,Concrete curiosity gap,hook,01-03-hooks.md §4
+mechanism,M7,Generic vs theirs,hook,01-03-hooks.md §4
+mechanism,M8,Giver POV / hand-off,hook,01-03-hooks.md §4
+mechanism,M9,Occasion / CEP,hook,01-03-hooks.md §4
+mechanism,M10,Thought made visible,hook,01-03-hooks.md §4
+mechanism,M11,Quiet social proof,hook,01-03-hooks.md §4
+f1_subject,SU1,Product hero,hook_element,concept-framework.md §4a
+f1_subject,SU2,Human face,hook_element,concept-framework.md §4a
+f1_subject,SU3,Animal / pet,hook_element,concept-framework.md §4a
+f1_subject,SU4,Hands + product,hook_element,concept-framework.md §4a
+f1_subject,SU5,Text / artefact,hook_element,concept-framework.md §4a
+f1_subject,SU6,"Scene, product small",hook_element,concept-framework.md §4a
+f1_subject,SU7,Impossible / composited,hook_element,concept-framework.md §4a
+shot_size,SZ1,ECU / detail,hook_element,concept-framework.md §4a
+shot_size,SZ2,Close,hook_element,concept-framework.md §4a
+shot_size,SZ3,Medium,hook_element,concept-framework.md §4a
+shot_size,SZ4,Wide,hook_element,concept-framework.md §4a
+onset,ON0,Static,hook_element,concept-framework.md §4a
+onset,ON1,Camera drift / push only,hook_element,concept-framework.md §4a
+onset,ON2,Subject action onset,hook_element,concept-framework.md §4a
+onset,ON3,Light / colour change,hook_element,concept-framework.md §4a
+onset,ON4,Hard cut / scale jump,hook_element,concept-framework.md §4a
+onset,ON5,Text pop-on,hook_element,concept-framework.md §4a
+caption_type,CT0,None,hook_element,concept-framework.md §4a
+caption_type,CT1,Statement about a character,hook_element,concept-framework.md §4a
+caption_type,CT2,Question to the giver role,hook_element,concept-framework.md §4a
+caption_type,CT3,Relationship callout,hook_element,concept-framework.md §4a
+caption_type,CT4,Number / specific,hook_element,concept-framework.md §4a
+caption_type,CT5,Dialogue / quoted line,hook_element,concept-framework.md §4a
+caption_type,CT6,"Label (POV:, Day 1)",hook_element,concept-framework.md §4a
+caption_band,LB0,No caption,hook_element,concept-framework.md §4a
+caption_band,LB1,1–4 words,hook_element,concept-framework.md §4a
+caption_band,LB2,5–7 words,hook_element,concept-framework.md §4a
+caption_band,LB3,8–10 words,hook_element,concept-framework.md §4a
+caption_band,LB4,>10 words (legacy only),hook_element,concept-framework.md §4a
+caption_time,TM1,Frame 1,hook_element,concept-framework.md §4a
+caption_time,TM2,≤0.5s,hook_element,concept-framework.md §4a
+caption_time,TM3,>0.5s,hook_element,concept-framework.md §4a
+audio_cue,AU0,Bed only,hook_element,concept-framework.md §4a
+audio_cue,AU1,Sync hit on onset,hook_element,concept-framework.md §4a
+audio_cue,AU2,Diegetic room / tactile,hook_element,concept-framework.md §4a
+audio_cue,AU3,Voice (VO / dialogue),hook_element,concept-framework.md §4a
+audio_cue,AU4,Silence → sound,hook_element,concept-framework.md §4a
+product_vis,VS0,Absent at 0s (logged exception),hook_element,concept-framework.md §4a
+product_vis,VS1,"Present, <1/3 width",hook_element,concept-framework.md §4a
+product_vis,VS2,Prominent ≥1/3 width,hook_element,concept-framework.md §4a
+product_vis,VS3,Personalization legible,hook_element,concept-framework.md §4a
+people_f1,PC0,None,hook_element,concept-framework.md §4a
+people_f1,PC1,One person,hook_element,concept-framework.md §4a
+people_f1,PC2,Two+ with visible relation,hook_element,concept-framework.md §4a

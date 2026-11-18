@@ -31,7 +31,7 @@
 
   <section aria-labelledby="h-groups">
     <div class="sechead">
-      <h2 id="h-groups">What's working, by ingredient</h2>
+      <h2 id="h-groups">What's working, by building block</h2>
       <div class="tabs" role="group" aria-label="Group by" id="tabs"></div>
     </div>
     <div class="panel">
@@ -123,17 +123,25 @@ function gateChip(rate,n){
 }
 
 const DIMS = [
+  ["angle","Angle"],["buyer_role","Buyer role"],["cep","Recipient × occasion"],["concept_id","Concept"],
+  ["structure","Story structure"],["pov","Point of view"],["proof","Proof"],["prod_format","Production format"],["reveal","Reveal timing"],["register","Register"],
   ["format","Hook format"],["trigger","Hook trigger"],["mechanism","Gift mechanism"],
-  ["concept_code","Concept"],["test_id","Test"],["has_vo","Voiceover"],["length_s","Length"]];
+  ["f1_subject","Frame-1 subject"],["shot_size","Shot size"],["onset","Onset by 0.5s"],["caption_type","Caption type"],["caption_band","Caption length"],
+  ["product_vis","Product at 0s"],["people_f1","People in frame 1"],["audio_cue_type","Audio cue"],
+  ["test_id","Test"],["has_vo","Voiceover"],["length_s","Length"]];
+const ALIAS_DIMS=["angle","buyer_role","cep","structure","pov","proof","prod_format","reveal","register","format","trigger","f1_subject","onset","caption_type","product_vis"];
+let LABELS={};
+function codeLabel(v){ if(v==null) return v; const parts=String(v).split("×"); return parts.map(c=>LABELS[c]?`${c} · ${LABELS[c]}`:c).join(" × "); }
 function dimLabel(a,k){ const v=a[k];
   if(k==="has_vo") return v==null?"not recorded":(v?"with voiceover":"music only");
   if(k==="length_s") return v==null?"not recorded":v+"s";
-  return v==null||v===""?"untagged":String(v); }
+  return v==null||v===""?"untagged":codeLabel(String(v)); }
 
 function renderTabs(){
-  $("#tabs").innerHTML = DIMS.map(([k,l])=>`<button type="button" data-k="${k}" aria-pressed="${k===groupBy}">${l}</button>`).join("");
-  $("#tabs").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{groupBy=b.dataset.k;
-    try{localStorage.setItem("hl-group",groupBy)}catch(e){} renderTabs(); renderGroups();}));
+  const grp=[["Concept",0,4],["Execution",4,10],["Hook",10,13],["Hook elements",13,21],["Other",21,24]];
+  $("#tabs").innerHTML = `<label for="dimsel" class="synced">Group by </label><select id="dimsel">`+grp.map(([g,a,b])=>`<optgroup label="${g}">`+
+    DIMS.slice(a,b).map(([k,l])=>`<option value="${k}"${k===groupBy?" selected":""}>${l}</option>`).join("")+`</optgroup>`).join("")+`</select>`;
+  $("#dimsel").addEventListener("change",e=>{groupBy=e.target.value; try{localStorage.setItem("hl-group",groupBy)}catch(x){} renderGroups();});
 }
 
 function renderGroups(){
@@ -158,6 +166,12 @@ function renderGroups(){
       <div class="nums"><span>hold <b>${pct(r.v3?r.thru/r.v3:null)}</b></span><span>CTR <b>${pct(r.imp?r.lc/r.imp:null,2)}</b></span>
         <span>$/ATC <b>${r.atc?money(r.spend/r.atc):"—"}</b></span><span>buys <b>${int(r.pur)}</b></span>${gateChip(p,r.imp)}</div>
     </div>`;}).join("") : '<div class="empty">No ads with impressions yet.</div>';
+  const keys=Object.keys(g).filter(k=>k!=="untagged");
+  if(keys.length>1){ const byKey={}; live.forEach(a=>{ const k=dimLabel(a,groupBy); (byKey[k]=byKey[k]||[]).push(a); });
+    const aliased=ALIAS_DIMS.filter(d=>d!==groupBy && (groupBy!=="cep"||!["recipient","occasion"].includes(d))).filter(d=>{
+      const vals=keys.map(k=>{ const set=new Set(byKey[k].map(a=>a[d])); return set.size===1?[...set][0]:null; });
+      return vals.every(v=>v!=null) && new Set(vals).size===keys.length; });
+    const lbl=Object.fromEntries(DIMS); if(aliased.length){ $("#groupnote").textContent=`Caution: in these ads, "${lbl[groupBy]}" always changes together with ${aliased.map(d=>`"${lbl[d]||d}"`).join(", ")}. A difference here can't be pinned on "${lbl[groupBy]}" alone; read it as a bundle.`; return; } }
   const untagged = g["untagged"]?.ads||0;
   $("#groupnote").textContent = (untagged && ["format","trigger","mechanism"].includes(groupBy))
     ? `${untagged} ad${untagged>1?"s were":" was"} launched before hooks were tagged, so they sit in "untagged". New tests tag every hook.`
@@ -236,13 +250,16 @@ async function fetchAll(table, cols, order){            // PostgREST returns ≤
 }
 async function loadData(){
   $("#synced").textContent="Loading live data…";
-  const [ads,daily,last]=await Promise.all([
+  const [ads,daily,last,codes]=await Promise.all([
     fetchAll("ad_performance","*"),
     fetchAll("ad_metrics_daily","ad_key,date,impressions,spend,video_3s,thruplays,link_clicks,add_to_cart,purchases,purchase_value","date"),
-    sb.from("ad_metrics_daily").select("pulled_at").order("pulled_at",{ascending:false}).limit(1)]);
+    sb.from("ad_metrics_daily").select("pulled_at").order("pulled_at",{ascending:false}).limit(1),
+    fetchAll("codebook","code,label")]);
+  LABELS=Object.fromEntries(codes.map(c=>[c.code,c.label]));
   if(!ads.length){ $("#synced").textContent="Signed in, but this email has no access to the data."; return; }
   DATA={generated_at:last.data?.[0]?.pulled_at||new Date().toISOString(), gates:{hook_kill:0.18,hook_red:0.21,hook_advance:0.28}, ads, daily};
   try{ const g=localStorage.getItem("hl-group"); if(g && DIMS.some(x=>x[0]===g)) groupBy=g; }catch(e){}
+  if(!DIMS.some(x=>x[0]===groupBy)) groupBy="format";
   $("#synced").textContent="Last pulled from Meta "+new Date(DATA.generated_at).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
   renderTabs(); $("#dFrom").onchange=$("#dTo").onchange=()=>{ preset="custom"; renderPresets(); applyRange(); };
   setPreset("all");

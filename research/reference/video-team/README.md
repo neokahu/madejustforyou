@@ -12,6 +12,8 @@
 ## 1. The pipeline at a glance
 
 ```
+ PRODUCT ──► 00A CONCEPTS ──► 00B CRITIQUE ──► GATE 0: user approves the concept slate (→ plan page + cells)
+                                                   │
  PLAN CELL ──► 01 IDEATE ──► 02 CRITIQUE ──► 03 SELECT ──► 04 SCRIPT ──► 05 DIRECT ──► 06 ASSEMBLE ──► 07 QA ──► UPLOAD
  (concept ×      15+ hook      gates + blind    1 hook per     timed beat     shot list,      control first,    PASS/FAIL,
   hook arms)     cards         3-judge score    test arm       table + copy   refs, assets    variants derived  timestamped
@@ -21,9 +23,19 @@
                                                                                      └──────────── GATE D: final 07 PASS ┘
 ```
 
+**Two frameworks are the team's shared rulebook.** Concepts and hooks are *built* from closed codes, never invented free-form,
+so every test result can say which choice won (user, 2026-11-18: "not just create out of thin air then we never know why this concept works").
+- `concept-framework.md`: a concept = **core** (angle AN · buyer role BY · recipient×occasion RC×OC = the reason to buy) built as an **execution**
+  (structure ST · point of view PV · proof PF · production format PX · reveal timing RV · register EM); validity rules; the testing ladder R0–R4.
+- `hook-framework.md`: a hook = **format** F × **trigger** T, plus nine **element** tags (concept-framework §4: frame-1 subject, shot size, onset,
+  caption type/length/timing, audio, product visibility, people).
+- `../../../marketing/facebook-ads/_ledgers/codebook.csv`: every valid code (137). The database rejects any code not in it.
+
 | # | Role | One-line mission | Main output |
 |---|---|---|---|
-| 00 | **Producer** (the run command / main session) | Runs the pipeline for one plan cell. Holds the budget, enforces the gates, and takes structural questions to the user. | run log |
+| 00 | **Producer** (the run command / main session) | Runs the pipeline. Holds the budget, enforces the gates, proposes the concept slate (framework §5d) and takes structural questions to the user. | run log, `concepts/00C-slate.md` |
+| 00A | **Concept Ideator** | ≥12 concept cards built from the concept codes with coverage rules | `concepts/00A-candidates.md` |
+| 00B | **Concept Critic** | Blind 3-judge panel: gates CG1–CG8 + /100 rubric. Filter, not picker | `concepts/00B-scores.md` |
 | 01 | **Hook Ideator** | A wide pool of producible hooks across many mechanisms, built as *cards* (frame-1 visual + caption) | `hooks/01-candidates.md` |
 | 02 | **Hook Critic** | Removes defective hooks and scores the rest on an anchored rubric. It is a **filter**, not a fortune-teller | `hooks/02-scores.md` |
 | 03 | **Hook Selector** | **One hook per pre-registered test arm** (≥2 arms per concept). Arms must be visibly distinct; each has one reserve | `hooks/03-selection.md` |
@@ -168,8 +180,8 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 | Test cell docs | `marketing/facebook-ads/<test-id>/<cell>/` → `hooks/01-candidates.md`, `hooks/02-scores.md`, `hooks/03-selection.md`, `script.md`, `shotlist.md`, `briefs/`, `recipe.md`, `qa/` |
 | Criteria sheet (locked per batch) | `marketing/facebook-ads/<test-id>/CRITERIA.md` |
 | Media (refs, takes, renders) | `products/<product>/ads/<test-id>/…` (gitignored; `scripts/backup-media.sh`) |
-| Hook registry | `marketing/facebook-ads/_ledgers/hooks.csv` (every card + format/trigger tags), with `tests.csv` and `cells.csv` beside it |
-| Ads database | Supabase `mj4u-ads` (ref `bjplojqovxetmbchzzms`): the CSVs + daily Meta metrics per ad; view `ad_performance` joins results to hook tags. Sync: `marketing/facebook-ads/engine/db_sync.py` |
+| Registries (git, canonical) | `marketing/facebook-ads/_ledgers/`: `codebook.csv`, `concepts.csv`, `executions.csv`, `tests.csv`, `cells.csv` (concept, execution, round type, axis), `hooks.csv` (format/trigger + 9 element tags), `ads-legacy.csv`, `scene-ledger.csv` |
+| Ads database | Supabase `mj4u-ads` (ref `bjplojqovxetmbchzzms`): the CSVs + daily Meta metrics per ad; view `ad_performance` carries every concept, execution and hook code per ad; `ad_dimension_long` groups by any code; `code_cooccurrence` flags codes that always appear together. Sync: `marketing/facebook-ads/engine/db_sync.py` |
 | Scene ledger | `marketing/facebook-ads/_ledgers/scene-ledger.csv`: one row per shipped shot (§3 05) |
 | Ad-creative log | `products/_registry/ad-creatives.csv` + Sheet `1gUb0PNN_My3vPlXJI2uR1cCJf6vBC79CMV4ulsZHFw0` (one row per ad × format) |
 | Tool adapters | `research/reference/video-team/adapters/` |

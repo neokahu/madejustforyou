@@ -27,7 +27,7 @@ Hook Cards minus rationale · a frame-1 still or a labelled MOCK for each · bod
 | G6 | The card expresses its arm's manipulation |
 | G7 | **Truth frame** (F4, F6, F7, or anything impossible/composited): FR1–FR3. Product and its output shown as they truly are by `truth_frame` ≤1.5s; nothing impossible attributable to what the product does |
 | G8 | **Format policy:** F12 sound-led passes G1 muted · F13 talking head = a story character, never an implied real customer · F14 UI-mimic is a physical object in scene, no interactive UI or system notification · F15 social proof uses a true number or real quote from the fact sheet · F4 in memorial obeys FR5 (no deceased returning in the present) |
-| G9 | **Tag validity:** the card does what its format and trigger tags say. A mis-tag goes back to 01 for re-tagging (not a quality fail), because wrong tags poison the ledger |
+| G9 | **Tag validity:** the card does what its format, trigger and nine hook-element tags (SU, SZ, ON, CT, caption words, TM, AU, VS, PC) say. A mis-tag goes back to 01 for re-tagging (not a quality fail), because wrong tags poison the ledger |
 
 ## Stage B: anchored scores (1 / 3 / 5; points = weight × score/5)
 - **Stop power, muted (25)**

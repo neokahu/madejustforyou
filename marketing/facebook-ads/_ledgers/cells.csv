@@ -1,7 +1,7 @@
-cell_id,test_id,concept_code,concept_name,hook_arm,hypothesis,is_control
-suncatcher-phase1:C1-H1,suncatcher-phase1,C1,01 Personalization,H1,"H1 name shown (control) vs H2 relationship: showing the name in 1s raises hook rate",true
-suncatcher-phase1:C1-H2,suncatcher-phase1,C1,01 Personalization,H2,"H2 relationship line beats H1 name shown on hook rate",false
-suncatcher-phase1:C2-H1,suncatcher-phase1,C2,02 Reaction,H1,"H1 name shown (control)",true
-suncatcher-phase1:C2-H2,suncatcher-phase1,C2,02 Reaction,H2,"H2 relationship vs H1",false
-suncatcher-phase1:C3-H1,suncatcher-phase1,C3,06 Buyer swap,H1,"H1 name shown (control)",true
-suncatcher-phase1:C3-H2,suncatcher-phase1,C3,06 Buyer swap,H2,"H2 relationship vs H1",false
+cell_id,test_id,concept_code,concept_name,hook_arm,concept_id,execution_id,round_type,axis,hypothesis,is_control
+suncatcher-phase1:C1-H1,suncatcher-phase1,C1,01 Personalization,H1,SUN-K01,SUN-K01-X1,R0,bundle concept × hook trigger-arm (H1 F5×T7 vs H2 F2×T3),H1 name shown (control) vs H2 relationship: showing the name in 1s raises hook rate,true
+suncatcher-phase1:C1-H2,suncatcher-phase1,C1,01 Personalization,H2,SUN-K01,SUN-K01-X1,R0,bundle concept × hook trigger-arm (H1 F5×T7 vs H2 F2×T3),H2 relationship line beats H1 name shown on hook rate,false
+suncatcher-phase1:C2-H1,suncatcher-phase1,C2,02 Reaction,H1,SUN-K02,SUN-K02-X1,R0,bundle concept × hook trigger-arm (H1 F5×T7 vs H2 F2×T3),H1 name shown (control),true
+suncatcher-phase1:C2-H2,suncatcher-phase1,C2,02 Reaction,H2,SUN-K02,SUN-K02-X1,R0,bundle concept × hook trigger-arm (H1 F5×T7 vs H2 F2×T3),H2 relationship vs H1,false
+suncatcher-phase1:C3-H1,suncatcher-phase1,C3,06 Buyer swap,H1,SUN-K03,SUN-K03-X1,R0,bundle concept × hook trigger-arm (H1 F5×T7 vs H2 F2×T3),H1 name shown (control),true
+suncatcher-phase1:C3-H2,suncatcher-phase1,C3,06 Buyer swap,H2,SUN-K03,SUN-K03-X1,R0,bundle concept × hook trigger-arm (H1 F5×T7 vs H2 F2×T3),H2 relationship vs H1,false

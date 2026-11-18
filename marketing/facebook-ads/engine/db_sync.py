@@ -103,12 +103,21 @@ def seed(db: DB):
             p["break_even_roas"] = round(e["reported_value_per_order"] / contrib, 3) if contrib > 0 else None
     db.upsert("products", prods, "product_id")
 
+    db.upsert("codebook", [{k: clean(v) for k, v in r.items()} for r in rows(LED / "codebook.csv")], "dimension,code")
     db.upsert("tests", [{k: clean(v) for k, v in r.items()} for r in rows(LED / "tests.csv")], "test_id")
+    db.upsert("concepts", [{**{k: clean(v) for k, v in r.items()}, "critic_score": clean(r["critic_score"], float),
+                            "critic_spread": clean(r["critic_spread"], float)} for r in rows(LED / "concepts.csv")], "concept_id")
+    db.upsert("executions", [{**{k: clean(v) for k, v in r.items()}, "is_bundle": clean(r["is_bundle"], bool) or False,
+                              "critic_score": clean(r["critic_score"], float), "critic_spread": clean(r["critic_spread"], float)}
+                             for r in rows(LED / "executions.csv")], "execution_id")
     db.upsert("cells", [{**{k: clean(v) for k, v in r.items()}, "is_control": clean(r["is_control"], bool)}
                         for r in rows(LED / "cells.csv")], "cell_id")
     db.upsert("hooks", [{**{k: clean(v) for k, v in r.items()}, "paid_by_s": clean(r["paid_by_s"], float),
-                         "critic_score": clean(r["critic_score"], float), "critic_spread": clean(r["critic_spread"], float)}
+                         "critic_score": clean(r["critic_score"], float), "critic_spread": clean(r["critic_spread"], float),
+                         "onset_s": clean(r.get("onset_s"), float), "caption_on_s": clean(r.get("caption_on_s"), float),
+                         "caption_words": clean(r.get("caption_words"), int), "truth_frame_s": clean(r.get("truth_frame_s"), float)}
                         for r in rows(LED / "hooks.csv")], "hook_id")
+    cell_map = {r["cell_id"]: r for r in rows(LED / "cells.csv")}
     ads, cr = {}, []
     for r in rows(REG / "ad-creatives.csv"):
         cid = r["creative_id"]
@@ -119,7 +128,9 @@ def seed(db: DB):
                                   "concept_code": clean(r["concept"]), "variant": clean(r["variant"]),
                                   "version": clean(r["version"], int), "length_s": clean(r["length_s"], float),
                                   "has_vo": clean(r["has_vo"], bool), "caption_style": clean(r["caption_style"]),
-                                  "structure": clean(r["structure"]), "ai_people": clean(r["ai_people"], bool),
+                                  "structure_desc": clean(r["structure"]), "ai_people": clean(r["ai_people"], bool),
+                                  "concept_id": clean(cell_map.get(r["cell_id"], {}).get("concept_id")),
+                                  "execution_id": clean(cell_map.get(r["cell_id"], {}).get("execution_id")),
                                   "meta_ad_id": None})
         ad["meta_ad_id"] = ad["meta_ad_id"] or clean(r["meta_ad_id"])   # one Meta ad carries both ratios
         cr.append({"creative_id": cid, "ad_key": key, "product_id": r["product_id"], "test_id": clean(r["test_id"]),
