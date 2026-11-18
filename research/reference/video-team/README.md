@@ -194,7 +194,7 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 ## 6. Open decisions (user)
 
 1. **AI-performer disclosure, New York.** GBL §396-b, in effect 2026-06-09, verified with Cooley, Reed Smith and Honigman: an AI-generated person in an ad that could reach New York needs a conspicuous in-ad disclosure. Options: disclose on all ads, exclude NY, or get a legal review. 07 treats it as S1 until you rule.
-2. **Music licence.** The suncatcher bed (`products/suncatcher-dog-memorial/ads/shots/music.mp3`) has no licence record. Meta says Reels ads should not use licensed music.
+2. ~~**Music licence.**~~ **Resolved 2026-11-18:** user says the suncatcher bed is AI-generated ("voicelabs"), no third-party IP. Licence evidence for AI music = service + plan tier (must be a paid/commercial plan) + generation date + terms URL, recorded in the build recipe. Still to confirm: generated on a paid plan.
 3. **Ad-creative log.** Should there be a separate per-ad CSV + Sheet tab?
 4. **"Your granddaughter…" hooks.** They may imply the viewer's age. Policy check, or keep hooks in the third person until verified.
 5. **Open tests** carried from the research (not decided by argument): VO vs captions-only (T4), story vs product-hero (T1), the cut-rate target (n=1), the 30-day ledger window.
