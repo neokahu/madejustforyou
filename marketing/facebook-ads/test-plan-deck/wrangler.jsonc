@@ -1,0 +1,8 @@
+{
+  // MJ4U creative test plan deck (static). Source slides in ./source (same files as the claude.ai deck).
+  "name": "mj4u-test-plan",
+  "compatibility_date": "2026-11-19",
+  "assets": { "directory": "./public" },
+  "workers_dev": true,
+  "preview_urls": false
+}
