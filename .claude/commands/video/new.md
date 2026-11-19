@@ -21,8 +21,8 @@ Test authority: the plan page section for this product (memory: follow-plan-page
    Compile and LOCK `marketing/facebook-ads/<test-id>/CRITERIA.md` from every relevant doc (template: suncatcher-phase1/EDIT-CRITERIA.md).
    Collect: the product truth pack + fact sheet, cast sheet, music + licence evidence, the open user rulings (AI disclosure).
 0b. **Concepts (new product or new round).** vt-00a-concept-ideator → `concepts/00A-candidates.md`; vt-00b-concept-critic × 3 blind runs → `00B-scores.md`.
-   Declare the round's axis (concept-framework §6: R0 discovery, R1 one core code, R2 one execution code, R3 hook elements, R4 velocity),
-   apply the slate procedure (§5d) and write `concepts/00C-slate.md`. **GATE 0: the user approves the slate**; only then update the plan page,
+   **vt-00c-concept-selector** (a fresh agent) recommends the slate: round axis (concept-framework §6), one pick + reserve per level,
+   declared bundles, budget check → `concepts/00C-slate.md`. **GATE 0: the user approves or changes the slate**; only then update the plan page,
    `concepts.csv`, `executions.csv` and `cells.csv` (concept_id, execution_id, round_type, axis). Skip when the plan already fixes the concepts.
 1. **vt-01-hook-ideator** → `hooks/01-candidates.md` (format, trigger and the nine element tags on every card).
 2. **vt-02-hook-critic** × 3 independent runs. Strip `rationale` and author, and shuffle the card order per run. Use different models where available, or include the user as one judge. Take the median, flag spreads ≥2, apply the calibration rule.
@@ -42,7 +42,7 @@ Test authority: the plan page section for this product (memory: follow-plan-page
 </process>
 
 <rules>
-- Never let one agent make and grade the same work (00A≠00B, 01≠02/03, 05≠07, 06≠07). Concept selection is the user's (Gate 0).
+- Never let one agent make and grade the same work (00A≠00B/00C, 01≠02/03, 05≠07, 06≠07). Concept selection is the user's (Gate 0).
 - Only codes in `_ledgers/codebook.csv`; add a code there (with a reason) before using it.
 - Structural changes (concepts, arms, length, CTA, offer) → ask the user. Craft fixes inside a cell are fine.
 - Tool-agnostic: role outputs never name a generator. Tool choice + prompt craft = adapter docs + the prompt guard.

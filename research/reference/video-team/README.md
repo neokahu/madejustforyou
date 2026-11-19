@@ -12,7 +12,7 @@
 ## 1. The pipeline at a glance
 
 ```
- PRODUCT ──► 00A CONCEPTS ──► 00B CRITIQUE ──► GATE 0: user approves the concept slate (→ plan page + cells)
+ PRODUCT ──► 00A CONCEPTS ──► 00B CRITIQUE ──► 00C SELECT ──► GATE 0: user approves the slate (→ plan page + cells)
                                                    │
  PLAN CELL ──► 01 IDEATE ──► 02 CRITIQUE ──► 03 SELECT ──► 04 SCRIPT ──► 05 DIRECT ──► 06 ASSEMBLE ──► 07 QA ──► UPLOAD
  (concept ×      15+ hook      gates + blind    1 hook per     timed beat     shot list,      control first,    PASS/FAIL,
@@ -33,9 +33,10 @@ so every test result can say which choice won (user, 2026-11-18: "not just creat
 
 | # | Role | One-line mission | Main output |
 |---|---|---|---|
-| 00 | **Producer** (the run command / main session) | Runs the pipeline. Holds the budget, enforces the gates, proposes the concept slate (framework §5d) and takes structural questions to the user. | run log, `concepts/00C-slate.md` |
+| 00 | **Producer** (the run command / main session) | Runs the pipeline. Holds the budget, enforces the gates and takes structural questions to the user. | run log |
 | 00A | **Concept Ideator** | ≥12 concept cards built from the concept codes with coverage rules | `concepts/00A-candidates.md` |
 | 00B | **Concept Critic** | Blind 3-judge panel: gates CG1–CG8 + /100 rubric. Filter, not picker | `concepts/00B-scores.md` |
+| 00C | **Concept Selector** | Recommends the round's slate: declares the axis, varies only it, one pick + reserve per level, declared bundles, budget check. The user approves at Gate 0 | `concepts/00C-slate.md` |
 | 01 | **Hook Ideator** | A wide pool of producible hooks across many mechanisms, built as *cards* (frame-1 visual + caption) | `hooks/01-candidates.md` |
 | 02 | **Hook Critic** | Removes defective hooks and scores the rest on an anchored rubric. It is a **filter**, not a fortune-teller | `hooks/02-scores.md` |
 | 03 | **Hook Selector** | **One hook per pre-registered test arm** (≥2 arms per concept). Arms must be visibly distinct; each has one reserve | `hooks/03-selection.md` |
