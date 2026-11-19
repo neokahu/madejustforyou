@@ -151,7 +151,7 @@ html,body{margin:0;height:100%;background:#0d141b;overflow:hidden}
 </div>
 </section>
 </div>
-<div id="nav"><button id="prev" aria-label="Previous slide">◀</button><span id="pos"></span><button id="next" aria-label="Next slide">▶</button></div>
+<div id="nav"><a href="/codes" style="color:#f3f1ec;margin-right:8px">Codebook</a><button id="prev" aria-label="Previous slide">◀</button><span id="pos"></span><button id="next" aria-label="Next slide">▶</button></div>
 <script>
 const S=[...document.querySelectorAll('#stage>section')];let i=Math.max(0,Math.min(S.length-1,(parseInt(location.hash.slice(1))||1)-1));
 function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('cur',k===i));document.getElementById('pos').textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1));}

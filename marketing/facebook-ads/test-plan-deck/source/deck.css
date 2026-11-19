@@ -25,3 +25,9 @@ tr.total td{font-weight:600;border-bottom:none;border-top:2px solid var(--ink)}
 .grid8 td{font-size:24px;padding:10px 16px;text-align:center}
 .grid8 th{text-align:center;font-size:22px}
 .on{color:var(--amber);font-weight:600}
+
+.codes{display:grid;gap:20px 40px;align-content:start}
+.codes .grp{display:flex;flex-direction:column;gap:2px}
+.codes .grp h3{font-size:26px;color:var(--amber);margin:0 0 6px}
+.codes .grp p{font-size:24px;line-height:1.3}
+.codes .grp b{font-family:"Space Grotesk",sans-serif;display:inline-block;min-width:64px}
