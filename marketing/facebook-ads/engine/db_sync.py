@@ -139,11 +139,6 @@ def seed(db: DB):
                    "drive_path": clean(r["drive_path"]), "sha256": clean(r["sha256"]), "recipe": clean(r["recipe"]),
                    "qa_status": clean(r["qa_status"]), "qa_report": clean(r["qa_report"]), "waivers": clean(r["waivers"]),
                    "notes": clean(r["notes"])})
-    for r in rows(LED / "ads-legacy.csv"):            # ads launched before the ad_key naming rule
-        ads[r["ad_key"]] = {"ad_key": r["ad_key"], "product_id": r["product_id"], "test_id": clean(r["test_id"]),
-                            "concept_code": clean(r["concept_code"]), "variant": clean(r["variant"]),
-                            "version": clean(r["version"], int), "meta_ad_id": clean(r["meta_ad_id"]),
-                            "notes": clean(r["notes"])}
     for a in ads.values():
         if not a.get("meta_ad_id"):
             a.pop("meta_ad_id", None)      # keep the id `media` found on Meta; the CSV may not know it yet
@@ -162,51 +157,79 @@ def first(row, key) -> float:
     return float(a[0].get("value", 0)) if isinstance(a, list) and a else 0.0
 
 
+# Every ad-level Ads Insights field we know of. Fields the API version rejects are dropped automatically (and logged),
+# so nothing Meta offers is silently missed. The FULL response row is stored in ad_metrics_daily.raw.
+INSIGHT_FIELDS_ALL = (
+    "account_currency,account_id,account_name,ad_id,ad_name,adset_id,adset_name,campaign_id,campaign_name,objective,optimization_goal,"
+    "buying_type,attribution_setting,date_start,date_stop,impressions,reach,frequency,spend,social_spend,cpm,cpp,clicks,ctr,cpc,"
+    "unique_clicks,unique_ctr,cost_per_unique_click,inline_link_clicks,inline_link_click_ctr,cost_per_inline_link_click,"
+    "unique_inline_link_clicks,unique_inline_link_click_ctr,cost_per_unique_inline_link_click,unique_link_clicks_ctr,"
+    "outbound_clicks,outbound_clicks_ctr,cost_per_outbound_click,unique_outbound_clicks,unique_outbound_clicks_ctr,"
+    "cost_per_unique_outbound_click,website_ctr,inline_post_engagement,cost_per_inline_post_engagement,"
+    "actions,unique_actions,action_values,cost_per_action_type,cost_per_unique_action_type,conversions,conversion_values,"
+    "cost_per_conversion,purchase_roas,website_purchase_roas,mobile_app_purchase_roas,converted_product_quantity,"
+    "converted_product_value,catalog_segment_value,video_play_actions,video_continuous_2_sec_watched_actions,"
+    "video_30_sec_watched_actions,video_p25_watched_actions,video_p50_watched_actions,video_p75_watched_actions,"
+    "video_p95_watched_actions,video_p100_watched_actions,video_thruplay_watched_actions,cost_per_thruplay,"
+    "video_avg_time_watched_actions,video_time_watched_actions,video_play_curve_actions,full_view_impressions,full_view_reach,"
+    "estimated_ad_recallers,estimated_ad_recall_rate,cost_per_estimated_ad_recallers,quality_ranking,engagement_rate_ranking,"
+    "conversion_rate_ranking,instant_experience_clicks_to_open,instant_experience_clicks_to_start,"
+    "instant_experience_outbound_clicks,canvas_avg_view_percent,canvas_avg_view_time")
+INVALID_FIELD_RE = re.compile(r"\(#100\)\s*([a-z0-9_]+) is not valid for fields param")
+
+
 def pull(db: DB, env: dict, days: int):
     acct = env["META_AD_ACCOUNT_ID"]
     acct = acct if acct.startswith("act_") else f"act_{acct}"
     since = (dt.date.today() - dt.timedelta(days=days)).isoformat()
     until = dt.date.today().isoformat()
-    fields = ("ad_id,ad_name,adset_id,campaign_id,impressions,reach,spend,inline_link_clicks,video_play_actions,"
-              "video_p25_watched_actions,video_p50_watched_actions,video_p75_watched_actions,"
-              "video_p95_watched_actions,video_p100_watched_actions,video_thruplay_watched_actions,"
-              "video_avg_time_watched_actions,actions,action_values")
-    q = {"level": "ad", "time_increment": 1, "fields": fields, "limit": 500,
-         "time_range": json.dumps({"since": since, "until": until}), "access_token": env["META_SYSTEM_USER_TOKEN"]}
-    url = f"https://graph.facebook.com/{env.get('META_API_VERSION', 'v26.0')}/{acct}/insights?" + urllib.parse.urlencode(q)
+    fields = INSIGHT_FIELDS_ALL.split(",")
     known = db.select("ads", "select=ad_key,meta_ad_id")
     keys = {a["ad_key"] for a in known}
     by_id = {a["meta_ad_id"]: a["ad_key"] for a in known if a["meta_ad_id"]}
-    out = []
-    while url:
+    base = f"https://graph.facebook.com/{env.get('META_API_VERSION', 'v26.0')}/{acct}/insights?"
+    dropped, out, skipped = [], [], set()
+    while True:                                     # drop any field this API version rejects, then retry
+        q = {"level": "ad", "time_increment": 1, "fields": ",".join(fields), "limit": 200,
+             "time_range": json.dumps({"since": since, "until": until}), "access_token": env["META_SYSTEM_USER_TOKEN"]}
         try:
-            page = json.loads(urllib.request.urlopen(url, timeout=120).read())
+            page = json.loads(urllib.request.urlopen(base + urllib.parse.urlencode(q), timeout=120).read())
+            break
         except urllib.error.HTTPError as e:
-            err = json.loads(e.read().decode(errors="replace")).get("error", {})
-            sys.exit(f"Meta insights: HTTP {e.code} {err.get('message')} (code {err.get('code')}, subcode {err.get('error_subcode')})")
+            msg = json.loads(e.read().decode(errors="replace")).get("error", {}).get("message", "")
+            m = INVALID_FIELD_RE.search(msg)
+            if not m or m.group(1) not in fields:
+                sys.exit(f"Meta insights: HTTP {e.code} {msg}")
+            fields.remove(m.group(1)); dropped.append(m.group(1))
+    fields_used = ",".join(fields)
+    now = dt.datetime.now(dt.timezone.utc).isoformat()
+    while True:
         for d in page.get("data", []):
             m = AD_KEY_RE.search(d.get("ad_name", ""))
+            key = by_id.get(d["ad_id"]) or (f"{m.group(1)}_v{m.group(2)}" if m and f"{m.group(1)}_v{m.group(2)}" in keys else None)
+            if not key:                              # not built under the framework (not registered): don't store
+                skipped.add(d.get("ad_name")); continue
             out.append({
-                "meta_ad_id": d["ad_id"], "date": d["date_start"], "ad_name": d.get("ad_name"),
-                "ad_key": by_id.get(d["ad_id"]) or ((f"{m.group(1)}_v{m.group(2)}" if m else None)
-                                                    if m and f"{m.group(1)}_v{m.group(2)}" in keys else None),
+                "meta_ad_id": d["ad_id"], "date": d["date_start"], "ad_name": d.get("ad_name"), "ad_key": key,
                 "adset_id": d.get("adset_id"), "campaign_id": d.get("campaign_id"),
                 "impressions": int(float(d.get("impressions", 0))), "reach": int(float(d.get("reach", 0))),
                 "spend": float(d.get("spend", 0)), "link_clicks": int(float(d.get("inline_link_clicks", 0))),
-                "video_plays": int(first(d, "video_play_actions")), "video_3s": int(acts(d, "actions", ("video_view",))),   # Meta's 3-second video view (v26 dropped video_3_sec_watched_actions)
+                "video_plays": int(first(d, "video_play_actions")), "video_3s": int(acts(d, "actions", ("video_view",))),
                 **{f"video_p{p}": int(first(d, f"video_p{p}_watched_actions")) for p in (25, 50, 75, 95, 100)},
                 "thruplays": int(first(d, "video_thruplay_watched_actions")),
                 "avg_watch_s": first(d, "video_avg_time_watched_actions") or None,
                 "add_to_cart": int(acts(d, "actions", ATC)), "checkouts": int(acts(d, "actions", CHK)),
                 "purchases": int(acts(d, "actions", PUR)), "purchase_value": acts(d, "action_values", PUR),
-                "pulled_at": dt.datetime.now(dt.timezone.utc).isoformat()})
-        url = page.get("paging", {}).get("next")
+                "raw": d, "fields_requested": fields_used, "pulled_at": now})
+        nxt = page.get("paging", {}).get("next")
+        if not nxt:
+            break
+        page = json.loads(urllib.request.urlopen(nxt, timeout=120).read())
     if out:
         db.upsert("ad_metrics_daily", out, "meta_ad_id,date")
-    unmapped = sorted({r["ad_name"] for r in out if not r["ad_key"]})
-    print(f"  {len(out)} ad-days {since}..{until}; unmapped ads (no ad_key): {len(unmapped)}")
-    for n in unmapped[:20]:
-        print("   -", n)
+    print(f"  {len(out)} ad-days stored {since}..{until} ({len(fields)} insight fields; dropped by API: {', '.join(dropped) or 'none'})")
+    if skipped:
+        print(f"  skipped {len(skipped)} unregistered ads (not in the creative log): " + "; ".join(sorted(skipped)[:10]))
 
 
 # ---------- media (ad preview links, post, video, thumbnail) ----------
@@ -226,8 +249,10 @@ def media(db: DB, env: dict):
     known = db.select("ads", "select=ad_key,meta_ad_id")
     keys = {a["ad_key"] for a in known}
     by_id = {a["meta_ad_id"]: a["ad_key"] for a in known if a["meta_ad_id"]}
-    fields = ("id,name,effective_status,preview_shareable_link,creative{thumbnail_url,video_id,effective_object_story_id,"
-              "object_story_spec{video_data{video_id}},asset_feed_spec{videos{video_id}}}")
+    fields = ("id,name,status,effective_status,configured_status,created_time,updated_time,campaign_id,adset_id,bid_amount,"
+              "tracking_specs,conversion_specs,preview_shareable_link,"
+              "creative{id,name,title,body,call_to_action_type,thumbnail_url,image_url,video_id,effective_object_story_id,"
+              "object_story_spec,asset_feed_spec,url_tags}")
     page = graph(env, f"{acct}/ads", {"fields": fields, "limit": 200})
     n, now = 0, dt.datetime.now(dt.timezone.utc).isoformat()
     while True:
@@ -243,7 +268,7 @@ def media(db: DB, env: dict):
                    "preview_url": a.get("preview_shareable_link"), "thumbnail_url": c.get("thumbnail_url"),
                    "post_url": ("https://www.facebook.com/{}/posts/{}".format(*c["effective_object_story_id"].split("_", 1))
                                 if "_" in (c.get("effective_object_story_id") or "") else None),
-                   "media_refreshed_at": now}
+                   "media_refreshed_at": now, "meta_raw": a}
             if vid:
                 v = graph(env, vid, {"fields": "permalink_url,picture,length"})
                 row["video_url"] = "https://www.facebook.com" + v["permalink_url"] if v.get("permalink_url", "").startswith("/") else v.get("permalink_url")
