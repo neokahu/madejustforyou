@@ -250,17 +250,23 @@ async function fetchAll(table, cols, order){            // PostgREST returns ≤
 }
 async function loadData(){
   $("#synced").textContent="Loading live data…";
-  const [ads,daily,last,codes]=await Promise.all([
+  const [ads,daily,last,codes,runs]=await Promise.all([
     fetchAll("ad_performance","*"),
     fetchAll("ad_metrics_daily","ad_key,date,impressions,spend,video_3s,thruplays,link_clicks,add_to_cart,purchases,purchase_value","date"),
     sb.from("ad_metrics_daily").select("pulled_at").order("pulled_at",{ascending:false}).limit(1),
-    fetchAll("codebook","code,label")]);
+    fetchAll("codebook","code,label"),
+    sb.from("sync_runs").select("finished_at,ok,message,command").order("run_id",{ascending:false}).limit(1)]);
   LABELS=Object.fromEntries(codes.map(c=>[c.code,c.label]));
   if(!ads.length){ $("#synced").textContent="Signed in, but this email has no access to the data."; return; }
   DATA={generated_at:last.data?.[0]?.pulled_at||new Date().toISOString(), gates:{hook_kill:0.18,hook_red:0.21,hook_advance:0.28}, ads, daily};
   try{ const g=localStorage.getItem("hl-group"); if(g && DIMS.some(x=>x[0]===g)) groupBy=g; }catch(e){}
   if(!DIMS.some(x=>x[0]===groupBy)) groupBy="format";
-  $("#synced").textContent="Last pulled from Meta "+new Date(DATA.generated_at).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+  const run=runs.data?.[0], fmt=t=>new Date(t).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+  if(!run){ $("#synced").textContent="No sync has run yet."; }
+  else if(!run.ok){ $("#synced").innerHTML=`<span class="chip c-bad">Last sync failed</span> ${esc(fmt(run.finished_at))}: ${esc(run.message||"")}`; }
+  else { const hrs=(Date.now()-new Date(run.finished_at))/36e5;
+    $("#synced").innerHTML = hrs>36 ? `<span class="chip c-warn">Data is ${Math.round(hrs/24*10)/10} days old</span> Last sync ${esc(fmt(run.finished_at))}. The 3pm job may not be running (Mac off or asleep?).`
+      : `Synced with Meta ${esc(fmt(run.finished_at))}`; }
   renderTabs(); $("#dFrom").onchange=$("#dTo").onchange=()=>{ preset="custom"; renderPresets(); applyRange(); };
   setPreset("all");
 }

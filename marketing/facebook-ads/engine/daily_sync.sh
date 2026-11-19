@@ -4,6 +4,9 @@
 # Re-pulls the last 7 days: Meta keeps revising recent days (in-day numbers settle down), upserts overwrite them.
 set -euo pipefail
 cd "$(dirname "$0")"
+# On failure: macOS notification (the run is also recorded as failed in sync_runs, and Hook Lab shows a warning).
+notify_fail() { /usr/bin/osascript -e 'display notification "Daily Meta pull failed: see marketing/facebook-ads/reports/daily-sync.log" with title "MJ4U Hook Lab" sound name "Basso"' || true; }
+trap notify_fail ERR
 mkdir -p ../reports
 {
   echo "=== $(date '+%Y-%m-%d %H:%M %Z') ==="

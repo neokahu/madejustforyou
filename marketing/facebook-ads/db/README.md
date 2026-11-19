@@ -11,6 +11,10 @@ Auth config (set 2026-11-18 via the Management API, token `SUPABASE_ACCESS_TOKEN
 To add a viewer: insert the email into `dashboard_viewers` AND create the auth user (admin API, `email_confirm: true`) — strangers can't request codes.
 Superseded: the claude.ai artifact snapshot (`dashboard/`, `engine/export_dashboard.py`) and the Cloudflare worker `mj4u-hook-lab.namvu47.workers.dev` (empty page).
 **Daily job:** launchd `~/Library/LaunchAgents/com.mj4u.ads-daily-sync.plist` runs `engine/daily_sync.sh` at 15:00 Mac time (UTC+7) = 00:00 PST, after the ad account's day closes. It re-pulls the last 7 days (Meta revises recent days); the dashboard reads the result live. Log: `reports/daily-sync.log` (gitignored). It runs from this worktree path; move the plist if the repo moves.
+**Pipeline:** extract (3pm launchd, last 7 days) → load raw (`ad_metrics_daily.raw` = all 84 insight fields, `ads.meta_raw` = full ad object) → transform on load (`typed_from_raw()` in db_sync.py, the ONE place counting rules live) → model (views) → serve (Hook Lab).
+Change a counting rule: edit `typed_from_raw()`, then `db_sync.py rebuild` re-derives every stored day from `raw` (no Meta calls; Meta only keeps ~37 months).
+**Monitoring:** every run writes `sync_runs` (ok/failed + message). Hook Lab shows "Last sync failed" or "Data is N days old" (>36h); a failed 3pm run also pops a macOS notification.
+Only ads registered in the creative log are stored; others are skipped and listed in the log.
 **Meta action aliases:** one event is reported under several names (add_to_cart / offsite_conversion.fb_pixel_add_to_cart / omni_add_to_cart…). Take the first present; never sum (fixed 2026-11-18).
 
 <!-- DATABASE_ARCHITECTURE:START -->

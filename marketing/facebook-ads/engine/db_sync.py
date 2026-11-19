@@ -5,6 +5,7 @@
   python3 db_sync.py pull --days 7   # pull daily ad-level Meta insights into ad_metrics_daily (read-only on Meta)
   python3 db_sync.py media           # ad preview link, post, video, thumbnail (+ links new ads to their Meta id by name)
   python3 db_sync.py all  --days 7   # seed + media + pull
+  python3 db_sync.py rebuild         # re-derive typed metric columns from stored raw rows (after changing typed_from_raw)
 
 The git CSVs stay the source of truth for what we BUILT; the database adds what Meta MEASURED.
 Needs in ../.env: META_SYSTEM_USER_TOKEN, META_AD_ACCOUNT_ID, META_API_VERSION, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
@@ -178,6 +179,36 @@ INSIGHT_FIELDS_ALL = (
 INVALID_FIELD_RE = re.compile(r"\(#100\)\s*([a-z0-9_]+) is not valid for fields param")
 
 
+def typed_from_raw(d: dict) -> dict:
+    """The ONE transform from a raw Meta insights row to the typed columns the dashboard reads.
+    Change counting rules here, then run `db_sync.py rebuild` to re-derive every stored day from `raw`."""
+    return {
+        "meta_ad_id": d["ad_id"], "date": d["date_start"], "ad_name": d.get("ad_name"),
+        "adset_id": d.get("adset_id"), "campaign_id": d.get("campaign_id"),
+        "impressions": int(float(d.get("impressions", 0))), "reach": int(float(d.get("reach", 0))),
+        "spend": float(d.get("spend", 0)), "link_clicks": int(float(d.get("inline_link_clicks", 0))),
+        "video_plays": int(first(d, "video_play_actions")), "video_3s": int(acts(d, "actions", ("video_view",))),
+        **{f"video_p{p}": int(first(d, f"video_p{p}_watched_actions")) for p in (25, 50, 75, 95, 100)},
+        "thruplays": int(first(d, "video_thruplay_watched_actions")),
+        "avg_watch_s": first(d, "video_avg_time_watched_actions") or None,
+        "add_to_cart": int(acts(d, "actions", ATC)), "checkouts": int(acts(d, "actions", CHK)),
+        "purchases": int(acts(d, "actions", PUR)), "purchase_value": acts(d, "action_values", PUR)}
+
+
+def rebuild(db: DB):
+    """Re-derive every typed metric column from the stored raw Meta rows. No Meta calls."""
+    rows, n = [], 0
+    while True:
+        page = db.select("ad_metrics_daily", f"select=meta_ad_id,date,ad_key,raw&raw=not.is.null&order=meta_ad_id,date&limit=1000&offset={n}")
+        rows += page; n += len(page)
+        if len(page) < 1000:
+            break
+    out = [{**typed_from_raw(r["raw"]), "ad_key": r["ad_key"]} for r in rows]
+    if out:
+        db.upsert("ad_metrics_daily", out, "meta_ad_id,date")
+    print(f"  rebuild: {len(out)} ad-days re-derived from stored raw rows")
+
+
 def pull(db: DB, env: dict, days: int):
     acct = env["META_AD_ACCOUNT_ID"]
     acct = acct if acct.startswith("act_") else f"act_{acct}"
@@ -209,24 +240,14 @@ def pull(db: DB, env: dict, days: int):
             key = by_id.get(d["ad_id"]) or (f"{m.group(1)}_v{m.group(2)}" if m and f"{m.group(1)}_v{m.group(2)}" in keys else None)
             if not key:                              # not built under the framework (not registered): don't store
                 skipped.add(d.get("ad_name")); continue
-            out.append({
-                "meta_ad_id": d["ad_id"], "date": d["date_start"], "ad_name": d.get("ad_name"), "ad_key": key,
-                "adset_id": d.get("adset_id"), "campaign_id": d.get("campaign_id"),
-                "impressions": int(float(d.get("impressions", 0))), "reach": int(float(d.get("reach", 0))),
-                "spend": float(d.get("spend", 0)), "link_clicks": int(float(d.get("inline_link_clicks", 0))),
-                "video_plays": int(first(d, "video_play_actions")), "video_3s": int(acts(d, "actions", ("video_view",))),
-                **{f"video_p{p}": int(first(d, f"video_p{p}_watched_actions")) for p in (25, 50, 75, 95, 100)},
-                "thruplays": int(first(d, "video_thruplay_watched_actions")),
-                "avg_watch_s": first(d, "video_avg_time_watched_actions") or None,
-                "add_to_cart": int(acts(d, "actions", ATC)), "checkouts": int(acts(d, "actions", CHK)),
-                "purchases": int(acts(d, "actions", PUR)), "purchase_value": acts(d, "action_values", PUR),
-                "raw": d, "fields_requested": fields_used, "pulled_at": now})
+            out.append({**typed_from_raw(d), "ad_key": key, "raw": d, "fields_requested": fields_used, "pulled_at": now})
         nxt = page.get("paging", {}).get("next")
         if not nxt:
             break
         page = json.loads(urllib.request.urlopen(nxt, timeout=120).read())
     if out:
         db.upsert("ad_metrics_daily", out, "meta_ad_id,date")
+    db.ad_days = len(out)
     print(f"  {len(out)} ad-days stored {since}..{until} ({len(fields)} insight fields; dropped by API: {', '.join(dropped) or 'none'})")
     if skipped:
         print(f"  skipped {len(skipped)} unregistered ads (not in the creative log): " + "; ".join(sorted(skipped)[:10]))
@@ -285,7 +306,7 @@ def media(db: DB, env: dict):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["seed", "media", "pull", "all"])
+    ap.add_argument("cmd", choices=["seed", "media", "pull", "all", "rebuild"])
     ap.add_argument("--days", type=int, default=7)
     a = ap.parse_args()
     env = load_env(ENV_PATH)
@@ -293,6 +314,28 @@ def main():
     if missing:
         sys.exit(f"missing in {ENV_PATH}: {', '.join(missing)}")
     db = DB(env["SUPABASE_URL"], env["SUPABASE_SERVICE_ROLE_KEY"])
+    started = dt.datetime.now(dt.timezone.utc).isoformat()
+    try:
+        run(db, env, a)
+    except BaseException as e:                       # record the failure (incl. sys.exit messages), then fail loudly
+        if not isinstance(e, SystemExit) or e.code not in (0, None):
+            heartbeat(db, a.cmd, started, False, getattr(db, "ad_days", None), str(e)[:500])
+        raise
+    heartbeat(db, a.cmd, started, True, getattr(db, "ad_days", None), "ok")
+
+
+def heartbeat(db, cmd, started, ok, ad_days, message):
+    import socket
+    try:
+        db._post("sync_runs", [{"started_at": started, "finished_at": dt.datetime.now(dt.timezone.utc).isoformat(), "command": cmd,
+                                "ok": ok, "ad_days": ad_days, "message": message, "host": socket.gethostname()}], "run_id")
+    except BaseException as e:                       # a failed heartbeat must not hide the real error
+        print(f"  (heartbeat not recorded: {e})")
+
+
+def run(db, env, a):
+    if a.cmd == "rebuild":
+        return rebuild(db)
     if a.cmd in ("seed", "all"):
         seed(db)
     if a.cmd in ("media", "all"):
