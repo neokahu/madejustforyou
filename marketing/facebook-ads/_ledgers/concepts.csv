@@ -1,4 +1,1 @@
 concept_id,product_id,name,angle,buyer_role,recipient,occasion,reason_line,insight,critic_score,critic_spread,status,notes
-SUN-K01,suncatcher-dog-memorial,01 Personalization,AN1,BY3,RC5,OC4,"His real breed and name, glowing in his window: a memorial only he could have.","Givers buy uniqueness and thoughtfulness (pmid:15901395, 28914152)",,,shipped,"Phase-1 C1; pre-framework, no critic panel"
-SUN-K02,suncatcher-dog-memorial,02 Reaction,AN3,BY3,RC5,OC4,His light comes back to his spot every sunny afternoon.,Personal-nostalgia ads lift ad/brand attitudes (Muehling & Pascal 2011),,,shipped,"Phase-1 C2; 'Reaction' is an execution (PV2+PF2), coded honestly as AN3"
-SUN-K03,suncatcher-dog-memorial,06 Buyer swap,AN2,BY2,RC5,OC4,"When a friend's dog dies, give something that shows you knew him.",Thought counts only when the receiver is cued to it (pmid:22774790),,,shipped,Phase-1 C3

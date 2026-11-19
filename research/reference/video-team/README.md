@@ -187,6 +187,21 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 | Ad-creative log | `products/_registry/ad-creatives.csv` + Sheet `1gUb0PNN_My3vPlXJI2uR1cCJf6vBC79CMV4ulsZHFw0` (one row per ad × format) |
 | Tool adapters | `research/reference/video-team/adapters/` |
 
+## 4a. Naming convention (adopted 2026-11-19; every part maps to a registry row)
+
+| Thing | Pattern | Example |
+|---|---|---|
+| Test | `{PRODUCT}-{ROUND}` (+ `-n` if repeated) | `MJ4U-003-R0` |
+| Concept | `{PRODUCT}-K{nn}` | `MJ4U-003-K01` |
+| Execution | `{CONCEPT}-X{n}` | `MJ4U-003-K01-X1` |
+| Hook card | `{PRODUCT}-H{nn}` (numbered across the product, never reused) | `MJ4U-003-H07` |
+| **Ad key** (in the Meta ad name) | `{PRODUCT}_{ROUND}_K{nn}X{n}-H{nn}_{VAR}_v{NN}` | `MJ4U-003_R0_K01X1-H07_E0_v01` |
+| File / creative | ad key + ratio before the version | `MJ4U-003_R0_K01X1-H07_E0_916_v01`, `…_45_v01` |
+
+`ROUND` = R0 discovery … R4 velocity. `VAR` = level of the tested edit change; **E0 = control**, E1, E2… = variants. `vNN` = re-render
+counter (never overwrite a delivered version). **A live ad's name never changes**: the daily sync matches Meta ads by the ad key in the name,
+and `db_sync.py` rejects creative IDs that don't follow this pattern.
+
 ## 5. What changed from the source pipeline (and why)
 
 | Source pipeline | Ours | Why |

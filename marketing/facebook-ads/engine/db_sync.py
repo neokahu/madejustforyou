@@ -20,7 +20,15 @@ HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 REG = REPO / "products/_registry"
 LED = REPO / "marketing/facebook-ads/_ledgers"
-AD_KEY_RE = re.compile(r"\b([A-Za-z0-9-]+_[A-Za-z0-9]+-[A-Za-z0-9]+_[A-Za-z0-9]+)_(?:916|45)?_?v(\d{2})\b")
+# Naming convention (research/reference/video-team/README.md §4a):
+#   ad key   {PRODUCT}_{ROUND}_{CONCEPT}{EXEC}-{HOOK}_{VAR}_v{NN}      e.g. MJ4U-003_R0_K01X1-H07_E0_v01   (goes in the Meta ad name)
+#   file     {PRODUCT}_{ROUND}_{CONCEPT}{EXEC}-{HOOK}_{VAR}_{RATIO}_v{NN}   e.g. MJ4U-003_R0_K01X1-H07_E0_916_v01
+AD_KEY_RE = re.compile(r"\b(?P<base>[A-Z0-9]+-\d{3}_R[0-4]_K\d{2}X\d+-H\d{2}_[A-Z]\d+)_(?:(?:916|45)_)?v(?P<v>\d{2})\b")
+
+
+def ad_key_of(name: str):
+    m = AD_KEY_RE.search(name or "")
+    return f"{m['base']}_v{m['v']}" if m else None
 # Meta reports ONE event under several aliases (add_to_cart, offsite_conversion.fb_pixel_add_to_cart, onsite_web_add_to_cart,
 # omni_add_to_cart...). Never sum them (that triple-counted ATC on 2026-11-18): take the first alias present, in this order.
 ATC = ("omni_add_to_cart", "add_to_cart", "offsite_conversion.fb_pixel_add_to_cart")
@@ -122,8 +130,9 @@ def seed(db: DB):
     ads, cr = {}, []
     for r in rows(REG / "ad-creatives.csv"):
         cid = r["creative_id"]
-        m = AD_KEY_RE.search(cid)
-        key = f"{m.group(1)}_v{m.group(2)}" if m else cid
+        key = ad_key_of(cid)
+        if not key:
+            sys.exit(f"ad-creatives.csv: creative_id {cid!r} doesn't follow the naming convention (README §4a)")
         ad = ads.setdefault(key, {"ad_key": key, "product_id": r["product_id"], "test_id": clean(r["test_id"]),
                                   "cell_id": clean(r["cell_id"]), "hook_id": clean(r["hook_id"]),
                                   "concept_code": clean(r["concept"]), "variant": clean(r["variant"]),
@@ -236,8 +245,7 @@ def pull(db: DB, env: dict, days: int):
     now = dt.datetime.now(dt.timezone.utc).isoformat()
     while True:
         for d in page.get("data", []):
-            m = AD_KEY_RE.search(d.get("ad_name", ""))
-            key = by_id.get(d["ad_id"]) or (f"{m.group(1)}_v{m.group(2)}" if m and f"{m.group(1)}_v{m.group(2)}" in keys else None)
+            key = by_id.get(d["ad_id"]) or (ad_key_of(d.get("ad_name")) if ad_key_of(d.get("ad_name")) in keys else None)
             if not key:                              # not built under the framework (not registered): don't store
                 skipped.add(d.get("ad_name")); continue
             out.append({**typed_from_raw(d), "ad_key": key, "raw": d, "fields_requested": fields_used, "pulled_at": now})
@@ -278,8 +286,7 @@ def media(db: DB, env: dict):
     n, now = 0, dt.datetime.now(dt.timezone.utc).isoformat()
     while True:
         for a in page.get("data", []):
-            m = AD_KEY_RE.search(a.get("name", ""))
-            key = by_id.get(a["id"]) or (f"{m.group(1)}_v{m.group(2)}" if m and f"{m.group(1)}_v{m.group(2)}" in keys else None)
+            key = by_id.get(a["id"]) or (ad_key_of(a.get("name")) if ad_key_of(a.get("name")) in keys else None)
             if not key:
                 continue
             c = a.get("creative") or {}

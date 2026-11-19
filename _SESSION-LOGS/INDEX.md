@@ -10,19 +10,11 @@ _SESSION-LOGS/
   sessions/<YYYY-MM-DD-slug>.md ← full detailed per-session logs
 ```
 
-## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-10-11)
+## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-19)
 
-**Suncatcher Phase-1: 6 plan ads (C1/C2/C3 × H1/H2) re-edited to user decisions** (one shot/beat, readable captions,
-H1 = "His actual breed. / His actual name.", hooks to 3.2s, one dissolve at 6.0). Review https://claude.ai/artifact/QHgZNZfk24WQzCb376NSFz
-1. ✅ **FEED (4:5) fixed + rebuilt 2026-10-11** → `products/suncatcher-dog-memorial/ads/out/phase1/feed/`. C1 tag + C2 bed light are now whole (eased crop pans),
-   C1/C2 captions moved to 62–76%, logo enlarged into the safe zone. Re-audit: 78/84 pass; the only fails are F4 (20s, accepted). Reels = `out/phase1/reels/`. Build: `FMT=feed|reels python3 ads/build_phase1.py`.
-2. Feed research done: `research/reference/feed-video-best-practice.md` + EDIT-CRITERIA F1–F15; feed audit 62/84 → 78/84 after fixes (see EDIT-CRITERIA re-audit).
-   DECIDED 2026-10-09: keep 20s, no 15s cutdown (competitor evidence > Meta generic rule; script-method R10). Open: IG Feed 9:16 test cell?
-2b. Before ANY render: check `marketing/facebook-ads/suncatcher-phase1/EDIT-CRITERIA.md` (49 criteria) + CAPTION-SHEET.md.
-3. Reserve 2nd builds: old S-C6 (C3) / old S-C1 (C1) in `ads/out/` — swap CTA before use (plan §04).
-3b. Open: muted cold-read of 0–3s by a person; plan page still shows old H1 line (redeploy needs user OK); then upload
-   PAUSED (uploader must support 6 ads × 2 placements). Blanket/magnet next. kie.ai out of credits → AtlasCloud.
-State: `marketing/facebook-ads/suncatcher-phase1/BUILD-STATE.md`.
+**Rerun the suncatcher (MJ4U-003) through the new video-team pipeline from 00A concepts** (`/video:new MJ4U-003`, fresh session).
+Everything it needs, plus the plan-page conflict to raise at GATE 0: `sessions/2026-11-19-video-team-ads-db.md`.
+Team: `research/reference/video-team/README.md` · Ads DB + Hook Lab: `marketing/facebook-ads/db/README.md` (https://mj4u-hook-lab.vercel.app).
 
 ## Current state by area
 

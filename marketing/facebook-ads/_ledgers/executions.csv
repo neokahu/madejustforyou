@@ -1,4 +1,1 @@
 execution_id,concept_id,structure,pov,proof,proof_2,prod_format,reveal,register,logline,hypothesis,is_bundle,bundle_note,critic_score,critic_spread,status,notes
-SUN-K01-X1,SUN-K01,ST3,PV4,PF1,,PX1,RV2,EM2,An empty dog bed; the real panel's ALEX tag; sun hits the glass and his breed and name land on the wall; the owner's family by the window.,R0 discovery control concept,false,,,,shipped,
-SUN-K02-X1,SUN-K02,ST3,PV2,PF1,PF2,PX1,RV2,EM2,"The owner's quiet ritual by the window; the light lands back in the dog's spot; his face, then family.",R0 discovery vs SUN-K01,true,differs from K01 on AN + PV + proof emphasis: report as a bundle,,,shipped,
-SUN-K03-X1,SUN-K03,ST4,PV1,PF1,,PX1,RV2,EM2,A neighbour can't find the right words; she gives the panel; the friend reads the name; they sit together in its light.,R0 discovery vs SUN-K01,true,BY + AN + ST + PV change together: report as a bundle,,,shipped,register moves EM1→EM2 inside the film; coded EM2
