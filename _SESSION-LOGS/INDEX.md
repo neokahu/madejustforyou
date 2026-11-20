@@ -10,11 +10,11 @@ _SESSION-LOGS/
   sessions/<YYYY-MM-DD-slug>.md ← full detailed per-session logs
 ```
 
-## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-19)
+## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-20)
 
-**Rerun the suncatcher (MJ4U-003) through the new video-team pipeline from 00A concepts** (`/video:new MJ4U-003`, fresh session).
-Everything it needs, plus the plan-page conflict to raise at GATE 0: `sessions/2026-11-19-video-team-ads-db.md`.
-Team: `research/reference/video-team/README.md` · Ads DB + Hook Lab: `marketing/facebook-ads/db/README.md` (https://mj4u-hook-lab.vercel.app).
+1. Rebuild the test plan + deck from `research/reference/video-team/impact-ranking.md` (fix the R3 cost inconsistency).
+2. Align framework/DB round codes/`/video:new` with it. 3. Run `/video:new MJ4U-003` from 00A.
+Full detail + links: `sessions/2026-11-19-video-team-ads-db.md` (section "RESUME HERE").
 
 ## Current state by area
 

@@ -22,3 +22,22 @@ Run `/video:new MJ4U-003` starting at **0b Concepts (00A)**. Product = MJ4U-003 
 - **Plan-page conflict to raise at GATE 0**: the plan page (test authority) still locks concepts 01/02/06 × hooks H1/H2. The new slate is
   approved by the user at Gate 0, then the plan page is updated. Do not restructure silently.
 - Budget numbers: hook-rate read ≈ $11 (big diff) – $44 (small diff) per arm at CPM $13 (ad-science §5b).
+
+## Later 2026-11-19/20 — test plan, impact research
+- **Test plan deck**: Claude https://claude.ai/artifact/DnSw4H317gkQqnZHGHqhet · Cloudflare (public, noindex) https://mj4u-test-plan.namvu47.workers.dev
+  (+ `/codes`, strong-for-gifts codes highlighted). Source: `marketing/facebook-ads/test-plan-deck/` (source slides + public/index.html).
+  Deck currently shows the "focused plan" (R0 5×2, R1 hook grid, R2 reason, R3 storyline, ~$965/product, ~$4.8k for 5) — SUPERSEDED by the impact ranking below.
+- **Impact ranking (final)**: `research/reference/video-team/impact-ranking.md` (20 docs read in full, 24 searches, 21 primary sources).
+  Test first: concept/angle → hook (first 1–3s) → person/relationship in frame 1 → personalization timing. Fix: product visible from 0s,
+  length 15–25s, 9:16 + 4:5, captions, sound, CTA/end card, **offer (identical in every cell)**. Late-reveal house style contradicts evidence.
+- User directives (2026-11-19, strongly stated): test only what has the most impact; caption length/timing, sound, music are minor → FIXED,
+  never tested. Concepts get breadth (R0 = 5 concepts × 2 hooks). Read ALL research before changing the plan.
+
+## RESUME HERE (in order)
+1. **Rebuild the test plan + deck from impact-ranking.md**: rounds R0 concepts 5×2 ($200) · R1 opening 2×2 (person in frame 1 × personalization
+   timing, $170) · R2 reason-to-buy 4 proof types ($170) · R3 break-even check top-2 ads (~$425; stop at 3× break-even CPA with 0 purchases).
+   **Check R3 costs: the ranking shows $317 at $30 < $425 at $25 ("capped") — inconsistent, recompute.** Update both deck copies
+   (claude.ai artifact via its url + Cloudflare `npx wrangler@4 deploy` in test-plan-deck/).
+2. **Align the system**: concept-framework.md §6 ladder + README; DB `cells.round_type` check (currently R0–R4; new rounds must fit);
+   codebook/house standards for FIX items; `/video:new` + vt-00c selector (R0 size 5×2, axes); coverage tracker in Hook Lab (tested dims only).
+3. **Run `/video:new MJ4U-003`** from 00A (concepts) → Gate 0 (user; plan page then updated). Naming: `MJ4U-003_R0_K01X1-H07_E0_v01`.
