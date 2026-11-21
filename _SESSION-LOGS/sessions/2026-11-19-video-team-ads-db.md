@@ -41,3 +41,23 @@ Run `/video:new MJ4U-003` starting at **0b Concepts (00A)**. Product = MJ4U-003 
 2. **Align the system**: concept-framework.md §6 ladder + README; DB `cells.round_type` check (currently R0–R4; new rounds must fit);
    codebook/house standards for FIX items; `/video:new` + vt-00c selector (R0 size 5×2, axes); coverage tracker in Hook Lab (tested dims only).
 3. **Run `/video:new MJ4U-003`** from 00A (concepts) → Gate 0 (user; plan page then updated). Naming: `MJ4U-003_R0_K01X1-H07_E0_v01`.
+
+## DECIDED 2026-11-21 — DEEP PLAN (replaces the 4-round impact plan as the plan to build)
+User: "I need more detail test, with more elements in hooks and concepts, since those are 2 most influential factors."
+Everything except hooks + concepts stays FIXED (captions, sound/music, length, VO, CTA/end card, offer identical in every cell).
+| Round | Breaks down | Design | Ads | Max @$25 |
+|---|---|---|---|---|
+| C0 Concept discovery | whole concepts | 6 concepts × 2 hooks, ~800 imp/ad (large gaps) | 12 | $240 |
+| C1 Concept core | angle × buyer role × occasion | 8-ad grid, 2 levels each, ~1,700 imp/ad | 8 | $340 |
+| C2 Concept execution | structure, POV, tone, reveal timing | 8-ad fractional grid | 8 | $340 |
+| H1 Hook opening | person in frame 1, personalization timing, frame-1 subject, onset | 8-ad fractional grid | 8 | $340 |
+| H2 Hook type | hook format × trigger (best 2 of each from C0) | 4-ad grid | 4 | $170 |
+| B Break-even check | top 2 ads vs break-even CPA (not a creative test) | stop at 3× break-even CPA with 0 purchases | 2 | ~$425 |
+Per product: 42 ads, 13 hook+concept elements, ≈ $1,855 max @$25 ($1,485 @$20, $2,225 @$30); typical ≈ 80%. 5 products ≈ $9,300 max (~$7,500 typical).
+**Run order**: C0 alone → (H1 ∥ C1) → (C2 ∥ H2) → B. Rounds in parallel only if they change different parts of the ad (H1 and H2 never together);
+own ad sets, equal budgets, same launch day. ~3–5 days/round (~$14/ad/day) → ~3–4 weeks/product; products overlap → 5 products in ~2–3 months.
+Production: C0 builds 6 concepts; H1/H2 are hook swaps on existing footage; C1/C2 need new scenes (start once C0 decides).
+Grids measure main effects only (follow-up test if an interaction is suspected); keep ~1,700 imp per grid ad; sales = guardrail only.
+
+**RESUME step 1 now means**: rebuild the deck + testing plan around THIS deep plan (keep impact-ranking.md as the evidence base);
+step 2: framework §6 ladder, DB round codes (C0/C1/C2/H1/H2/B instead of R0–R4), vt-00c selector, `/video:new`, coverage tracker; step 3: `/video:new MJ4U-003`.

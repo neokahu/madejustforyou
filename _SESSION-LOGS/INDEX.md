@@ -12,7 +12,7 @@ _SESSION-LOGS/
 
 ## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-20)
 
-1. Rebuild the test plan + deck from `research/reference/video-team/impact-ranking.md` (fix the R3 cost inconsistency).
+1. Rebuild the test plan + deck around the **DEEP PLAN decided 2026-11-21** (C0 6×2 → H1∥C1 → C2∥H2 → B; 42 ads, ≈$1,855/product @$25), evidence base `research/reference/video-team/impact-ranking.md`.
 2. Align framework/DB round codes/`/video:new` with it. 3. Run `/video:new MJ4U-003` from 00A.
 Full detail + links: `sessions/2026-11-19-video-team-ads-db.md` (section "RESUME HERE").
 
