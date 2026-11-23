@@ -5,7 +5,8 @@ argument-hint: "[test-id / plan cell, e.g. suncatcher-phase2 C1]"
 ---
 
 <objective>
-Run the video-team pipeline for one plan cell and deliver ads that pass QA: 2+ hook arms per concept, a 9:16 and a 4:5 cut each.
+Run the video-team pipeline for one round of one product and deliver ads that pass QA, a 9:16 and a 4:5 cut each.
+Rounds (concept-framework §6): C0 → (H1 ∥ C1) → (C2 ∥ H2) → B. C0 = 6 concepts × 2 hooks; H1/C1/C2 = 8-ad grids; H2 = 4-ad grid.
 You are the PRODUCER (role 00). You orchestrate, hold the budget, enforce the gates and take structural questions
 to the user. You do not write hooks, scripts or briefs yourself; the role agents do.
 </objective>
@@ -17,13 +18,24 @@ Test authority: the plan page section for this product (memory: follow-plan-page
 </context>
 
 <process>
+**Which steps run in which round** (the plan page names the round; ask if it doesn't):
+| Round | 0b concepts | 1–3 hooks | 4 script | 5 visuals |
+|---|---|---|---|---|
+| C0 | 00A pool → 00C picks 6 | 2 hooks per concept | new | new |
+| C1 | 00A one card per grid cell → 00B → 00C fills the grid | locked hook spec per ad | new per cell | new scenes |
+| C2 | 00A one execution per grid cell → 00B → 00C fills the grid | H1 recipe per ad | new per cell | new scenes |
+| H1 | skip | 01 one card per grid ad → 02 → 03 | unchanged | opening only, on existing footage |
+| H2 | skip | 01 one card per grid ad → 02 → 03 | unchanged | opening only |
+| B | skip | skip | skip | skip: relaunch the top 2 ads (step 8–9 only) |
+Everything in the FIXED list is identical in every ad of a round: product visible from 0s, length 15–25s, captions, sound/music, VO, CTA + end card, one offer.
+
 0. **Brief + budget.** Read the plan cell. Confirm the arms, length, CTA and budget cap with the user. Set up `marketing/facebook-ads/<test-id>/<cell>/`.
    Compile and LOCK `marketing/facebook-ads/<test-id>/CRITERIA.md` from every relevant doc (template: suncatcher-phase1/EDIT-CRITERIA.md).
    Collect: the product truth pack + fact sheet, cast sheet, music + licence evidence, the open user rulings (AI disclosure).
 0b. **Concepts (new product or new round).** vt-00a-concept-ideator → `concepts/00A-candidates.md`; vt-00b-concept-critic × 3 blind runs → `00B-scores.md`.
-   **vt-00c-concept-selector** (a fresh agent) recommends the slate: round axis (concept-framework §6), one pick + reserve per level,
+   **vt-00c-concept-selector** (a fresh agent) recommends the slate: C0's 6 concepts, or the C1/C2 grid (factors, levels, one card per cell; §6b), with reserves,
    declared bundles, budget check → `concepts/00C-slate.md`. **GATE 0: the user approves or changes the slate**; only then update the plan page,
-   `concepts.csv`, `executions.csv` and `cells.csv` (concept_id, execution_id, round_type, axis). Skip when the plan already fixes the concepts.
+   `concepts.csv`, `executions.csv` and `cells.csv` (concept_id, execution_id, round_type C0/C1/C2/H1/H2/B, axis = grid cell). Skip when the plan already fixes the concepts.
 1. **vt-01-hook-ideator** → `hooks/01-candidates.md` (format, trigger and the nine element tags on every card).
 2. **vt-02-hook-critic** × 3 independent runs. Strip `rationale` and author, and shuffle the card order per run. Use different models where available, or include the user as one judge. Take the median, flag spreads ≥2, apply the calibration rule.
 3. **vt-03-hook-selector** (a fresh agent; did not write the hooks) → `hooks/03-selection.md` + pre-registration lines.

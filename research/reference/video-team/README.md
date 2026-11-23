@@ -26,7 +26,7 @@
 **Two frameworks are the team's shared rulebook.** Concepts and hooks are *built* from closed codes, never invented free-form,
 so every test result can say which choice won (user, 2026-11-18: "not just create out of thin air then we never know why this concept works").
 - `concept-framework.md`: a concept = **core** (angle AN · buyer role BY · recipient×occasion RC×OC = the reason to buy) built as an **execution**
-  (structure ST · point of view PV · proof PF · production format PX · reveal timing RV · register EM); validity rules; the testing ladder R0–R4.
+  (structure ST · point of view PV · proof PF · production format PX · reveal timing RV · register EM); validity rules; the testing ladder (§6: rounds C0 → H1+C1 → C2+H2 → B, grid layouts, stops).
 - `hook-framework.md`: a hook = **format** F × **trigger** T, plus nine **element** tags (concept-framework §4: frame-1 subject, shot size, onset,
   caption type/length/timing, audio, product visibility, people).
 - `../../../marketing/facebook-ads/_ledgers/codebook.csv`: every valid code (137). The database rejects any code not in it.
@@ -191,14 +191,15 @@ Each role's agent is `.claude/agents/vt-0N-*.md`. The full spec (procedure, rubr
 
 | Thing | Pattern | Example |
 |---|---|---|
-| Test | `{PRODUCT}-{ROUND}` (+ `-n` if repeated) | `MJ4U-003-R0` |
+| Test | `{PRODUCT}-{ROUND}` (+ `-n` if repeated) | `MJ4U-003-C0` |
 | Concept | `{PRODUCT}-K{nn}` | `MJ4U-003-K01` |
 | Execution | `{CONCEPT}-X{n}` | `MJ4U-003-K01-X1` |
 | Hook card | `{PRODUCT}-H{nn}` (numbered across the product, never reused) | `MJ4U-003-H07` |
-| **Ad key** (in the Meta ad name) | `{PRODUCT}_{ROUND}_K{nn}X{n}-H{nn}_{VAR}_v{NN}` | `MJ4U-003_R0_K01X1-H07_E0_v01` |
-| File / creative | ad key + ratio before the version | `MJ4U-003_R0_K01X1-H07_E0_916_v01`, `…_45_v01` |
+| **Ad key** (in the Meta ad name) | `{PRODUCT}_{ROUND}_K{nn}X{n}-H{nn}_{VAR}_v{NN}` | `MJ4U-003_C0_K01X1-H07_E0_v01` |
+| File / creative | ad key + ratio before the version | `MJ4U-003_C0_K01X1-H07_E0_916_v01`, `…_45_v01` |
 
-`ROUND` = R0 discovery … R4 velocity. `VAR` = level of the tested edit change; **E0 = control**, E1, E2… = variants. `vNN` = re-render
+`ROUND` = C0 concept discovery · H1 hook opening · C1 concept core · C2 concept execution · H2 hook type · B break-even check · S scaling refreshes
+(concept-framework §6; the database rejects any other value). `VAR` = level of the tested edit change; **E0 = control**, E1, E2… = variants. `vNN` = re-render
 counter (never overwrite a delivered version). **A live ad's name never changes**: the daily sync matches Meta ads by the ad key in the name,
 and `db_sync.py` rejects creative IDs that don't follow this pattern.
 

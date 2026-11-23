@@ -14,6 +14,7 @@ from pathlib import Path
 ENGINE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ENGINE))
 
+import db_sync  # noqa: E402
 import economics  # noqa: E402
 import rules  # noqa: E402
 
@@ -77,6 +78,24 @@ class TestVerdictsOnSample(unittest.TestCase):
             code = rules.product_code(m.campaign_name)
             got[m.ad_name] = rules.decide(m, products.get(code) if code else None, thr).verdict
         self.assertEqual(got, self.EXPECTED)
+
+
+class TestAdKey(unittest.TestCase):
+    """Ad keys in Meta ad names carry the deep-plan round (concept-framework §6; DB check cells_round_type_check)."""
+
+    def test_new_rounds_parse(self):
+        for name, key in [
+            ("MJ4U-003_C0_K01X1-H07_E0_v01", "MJ4U-003_C0_K01X1-H07_E0_v01"),
+            ("Prospecting | MJ4U-003_H1_K01X1-H12_E3_916_v02", "MJ4U-003_H1_K01X1-H12_E3_v02"),
+            ("MJ4U-003_C2_K01X4-H07_E0_45_v01", "MJ4U-003_C2_K01X4-H07_E0_v01"),
+            ("MJ4U-003_B_K02X1-H12_E0_v01", "MJ4U-003_B_K02X1-H12_E0_v01"),
+            ("MJ4U-003_S_K02X1-H31_E0_v01", "MJ4U-003_S_K02X1-H31_E0_v01"),
+        ]:
+            self.assertEqual(db_sync.ad_key_of(name), key, name)
+
+    def test_old_or_unknown_rounds_rejected(self):
+        for name in ["MJ4U-003_R0_K01X1-H07_E0_v01", "MJ4U-003_C3_K01X1-H07_E0_v01", "MJ4U-003_H3_K01X1-H07_E0_v01", "MJ4U-003 C0 ad"]:
+            self.assertIsNone(db_sync.ad_key_of(name), name)
 
 
 if __name__ == "__main__":

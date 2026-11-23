@@ -20,7 +20,7 @@ description: >
 7. Brand assets + real personalization artwork
 
 ## Deliverables per ad
-- `{PRODUCT}_{ROUND}_K{nn}X{n}-H{nn}_{VAR}_916_v{NN}` (README §4a, e.g. `MJ4U-003_R0_K01X1-H07_E0_916_v01`): target 1440×2560, floor 1080×1920.
+- `{PRODUCT}_{ROUND}_K{nn}X{n}-H{nn}_{VAR}_916_v{NN}` (README §4a, e.g. `MJ4U-003_C0_K01X1-H07_E0_916_v01`): target 1440×2560, floor 1080×1920.
 - `…_45_v{NN}`: target 1440×1800, floor 1080×1350, **re-framed per shot** (no letterbox, no blind centre crop).
 - Both: H.264, progressive, constant fps = source fps, square pixels, stereo AAC ≥128 kbps, no edit lists.
 - **Never upscale a sub-1080 source and call it 1440.**

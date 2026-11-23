@@ -294,6 +294,9 @@ CTR. Varying the offer between cells would swamp the creative signal on exactly 
 
 ## 2. Per-product round plan (about $965), ordered by impact
 
+> **Superseded 2026-11-21** by the deep plan (rounds C0 → H1+C1 → C2+H2 → B, 42 ads, ≈ $1,855/product): see
+> `concept-framework.md` §6. This section stays as the evidence behind it; its R0–R3 names are historical.
+
 ### Assumptions and what we can detect
 
 **Delivery setup**

@@ -67,3 +67,10 @@ timing) is tested only in H1; C2 tests structure · POV · tone · **proof type 
 B = fixed 17,000 imp → $340/$425/$510 (the old $317 came from the old $965 cap). AI production cost is NOT in the budget (not yet estimated).
 Next: step 2 (align the system), then step 3.
 Also 2026-11-22: added 2 glossary slides (terms-ads, terms-test) after 'goal' + a Terms link in the deck nav; deployed.
+
+**2026-11-23 — step 2 (align the system) done, except the Hook Lab deploy:**
+- concept-framework §6 rewritten: rounds C0/H1/C1/C2/H2/B (+S scaling), grid layouts (8-ad 4 factors D=A·B·C, 8-ad 3 factors full, 4-ad 2 factors), level rule (control = winner's code), stops. §4b: H1 factors SU/ON/PC/RV; captions/audio fixed. §7 SQL comment updated.
+- DB: migration `013_deep_plan_rounds.sql` applied to mj4u-ads (cells.round_type ∈ C0,C1,C2,H1,H2,B,S; tables were empty). db_sync.py AD_KEY_RE accepts only the new rounds (tested).
+- README §4a naming (`MJ4U-003_C0_K01X1-H07_E0_v01`), vt-00a/00c/01/03/06 round modes, `/video:new` round→steps table. impact-ranking §2 marked superseded.
+- Hook Lab: new "Which tested elements can we read yet?" coverage panel (13 elements, ≥4 ads on ≥2 products = readable); "no access" now judged by codebook, so an empty DB no longer reads as no access. Verified locally with stub data. **NOT deployed** (Vercel deploy blocked by permission check): `cd marketing/facebook-ads/hook-lab-web && vercel deploy --prod`.
+- Next: step 3, `/video:new MJ4U-003` from C0.

@@ -21,9 +21,10 @@ REPO = HERE.parents[2]
 REG = REPO / "products/_registry"
 LED = REPO / "marketing/facebook-ads/_ledgers"
 # Naming convention (research/reference/video-team/README.md §4a):
-#   ad key   {PRODUCT}_{ROUND}_{CONCEPT}{EXEC}-{HOOK}_{VAR}_v{NN}      e.g. MJ4U-003_R0_K01X1-H07_E0_v01   (goes in the Meta ad name)
-#   file     {PRODUCT}_{ROUND}_{CONCEPT}{EXEC}-{HOOK}_{VAR}_{RATIO}_v{NN}   e.g. MJ4U-003_R0_K01X1-H07_E0_916_v01
-AD_KEY_RE = re.compile(r"\b(?P<base>[A-Z0-9]+-\d{3}_R[0-4]_K\d{2}X\d+-H\d{2}_[A-Z]\d+)_(?:(?:916|45)_)?v(?P<v>\d{2})\b")
+#   ad key   {PRODUCT}_{ROUND}_{CONCEPT}{EXEC}-{HOOK}_{VAR}_v{NN}      e.g. MJ4U-003_C0_K01X1-H07_E0_v01   (goes in the Meta ad name)
+#   file     {PRODUCT}_{ROUND}_{CONCEPT}{EXEC}-{HOOK}_{VAR}_{RATIO}_v{NN}   e.g. MJ4U-003_C0_K01X1-H07_E0_916_v01
+#   ROUND    C0 | C1 | C2 | H1 | H2 | B | S   (deep plan; must match cells.round_type)
+AD_KEY_RE = re.compile(r"\b(?P<base>[A-Z0-9]+-\d{3}_(?:C[0-2]|H[12]|B|S)_K\d{2}X\d+-H\d{2}_[A-Z]\d+)_(?:(?:916|45)_)?v(?P<v>\d{2})\b")
 
 
 def ad_key_of(name: str):

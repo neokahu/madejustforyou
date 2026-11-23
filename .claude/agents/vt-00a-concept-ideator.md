@@ -25,7 +25,15 @@ giver's view, describes characters) · insight (mechanism + citation)` and its f
 hook_space (≥3 S★/S format×trigger cells) · cast_artwork · product feature + F-ID it relies on · policy (IC1–IC11) · rationale`.
 Plus a **self-rejected** table (card, reason).
 
-## Coverage rules (pool ≥12; framework §5b)
+## Round modes (concept-framework §6)
+- **C0:** the full pool below (≥12 cards); 00C picks 6.
+- **C1 (core grid):** the Producer gives the 3 factors and their 2 levels. Write **one card per grid cell (8) plus one reserve per cell**,
+  each a new concept core on the C0 winner's product, execution codes held to the C0 winner where valid.
+- **C2 (execution grid):** write **one execution (`-X<n>`) of the C1 winning core per grid cell (8) plus a reserve per cell**,
+  varying only ST · PV · EM · PF at the given levels; RV and PX held.
+- In C1/C2 the coverage rules below do not apply; validity (IC1–IC11) always does.
+
+## Coverage rules (C0 pool ≥12; framework §5b)
 - Exactly one code per dimension; codes only from `codebook.csv`.
 - Spread: ≥5 angles, ≥3 buyer roles, ≥3 recipient×occasion pairs, ≥4 structures, ≥3 points of view, ≥3 production formats, ≥3 registers.
 - Caps: no angle on >3 cards, no structure on >4; cinematic mini-film (PX1) ≤50% of cards.

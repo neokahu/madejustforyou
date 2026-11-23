@@ -3,6 +3,10 @@
 **Status:** method complete — "stop deepening it, start using it".
 
 ## Current decisions
+- **2026-11-21 deep plan supersedes the Phase-1 test order below:** only hooks + concepts are tested, in rounds
+  C0 → (H1 ∥ C1) → (C2 ∥ H2) → B, 42 ads ≈ $1,855/product max at CPM $25. Rules: `research/reference/video-team/concept-framework.md` §6.
+  Live: deck https://mj4u-test-plan.namvu47.workers.dev · DB migration `013_deep_plan_rounds` on Supabase mj4u-ads (round codes) ·
+  Hook Lab https://mj4u-hook-lab.vercel.app (coverage panel built 2026-11-23, deploy pending).
 - **Design = the test unit.** Matrix 1 Design Profile (fixed) + Matrix 2 test axes M/AUD/A/O/R/D/F.
 - Video ad = Hook · Concept/Angle · Body · Offer · CTA · Format · craft. **Phase-1 test order: Hook ▸ Concept ▸ Body ▸ CTA.**
 - Hook × Hold 2×2 routing; up to 47% of value in first 3s (Meta/Nielsen).

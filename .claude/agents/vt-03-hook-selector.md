@@ -22,6 +22,11 @@ description: >
 5. **Shared-hook rule.** If the plan uses one hook clip across concepts, re-run step 3 for every concept body.
 6. **Freeze.** Write the pre-registration line and lock it.
 
+## Grid rounds (H1, H2; concept-framework §6b)
+Pick **one card per grid ad plus its reserve**, not one per arm. Replace step 4: each card must differ from the others **only** on its cell's
+factor levels; every element outside the grid (caption, audio, shot size, body) is identical across the 8 (or 4) ads. A card that changes
+anything else goes to its reserve. Freeze one pre-registration line for the whole grid (factors, levels, cell map, checkpoints).
+
 ## Output → `<cell>/hooks/03-selection.md`
 Per arm: winner card, reserve card (a *different* card, not a reword), a 2-line reason, and the pre-registration line (axis, e.g. "format-arm: F4 vs F1, T4 held" · hypothesis · primary metric = hook rate · gate per plan · named control; F4 arms add hold rate as a secondary gate). Also a "parked for velocity" list: cards cut for the test, not for quality.
 

@@ -19,6 +19,17 @@ Plan cell (concept card + execution from 00A/Gate 0, arms + hypotheses, shared-h
 ## Output → `<cell>/hooks/01-candidates.md`
 A table of Hook Cards with these fields: `id (`{PRODUCT}-H{nn}`, numbered across the product, never reused) · concept_id + execution_id · arm + axis (format|trigger|mechanism) · format (F1–F15 + sub-variant) · trigger (T1–T10) · trigger_2 (optional) · primitives (P1 onset / P2 face / P3 animal / P4 text; ≥1) · truth_frame (second; required for F4/F6/F7) · mechanism (M-code or —) · cep · frame1_visual · onset_0_5s · caption (≤10 words) · audio_cue · promise · paid_by (a second) · asset_source · policy · rationale`. **Hook element tags** (concept-framework §4a, codes in `_ledgers/codebook.csv`): `f1_subject (SU) · shot_size (SZ) · onset (ON) + onset_s · caption_type (CT) · caption_words · caption_on_s · audio_cue_type (AU) · product_vis (VS) · people_f1 (PC)`. Tag all nine on every card; they are what lets results say which element of a hook worked. Add a **self-rejected** table: id, line, reason.
 
+## Round modes (concept-framework §6)
+- **C0:** the full procedure below (≥2 arms per concept).
+- **C1 / C2:** no new hook pool. Build one hook per grid ad to the **locked hook spec** (C0 winner's format, trigger and element codes;
+  H1's opening recipe once it is locked), adapted truthfully to each cell's concept. Tag every card.
+- **H1 (opening grid):** one card per grid ad (8) **plus a reserve per ad**, each built to its cell's levels of frame-1 subject (SU),
+  onset (ON), people in frame 1 (PC) and personalization timing (RV1 → VS3 at 0s, RV2 → VS2). Format, trigger, caption and audio are held;
+  the body is the C0 winner's, unchanged.
+- **H2 (hook-type grid):** one card per grid ad (4) plus a reserve, at its cell's format (F) and trigger (T); the opening elements are held
+  at the H1 recipe.
+- In H1/H2, skip the coverage rules in step 3; the self-reject rules in step 4 still apply.
+
 ## Procedure
 1. Restate each arm's hypothesis in one line. Every hook in an arm must express that arm's contrast.
 2. List what the body can pay. A promise outside that list is invalid.

@@ -108,3 +108,10 @@ html,body{min-height:100%}
 .adcard .key{word-break:break-all}
 .adcard .meta{font-size:12px;color:var(--muted);margin:4px 0 8px}
 @media (max-width:720px){.adcards{grid-template-columns:1fr}}
+.covgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.cov{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:grid;gap:4px;align-content:start}
+.covhead{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-bottom:2px}
+.covhead b{margin-right:auto}
+.covrow{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.covrow span:last-child{font:12px var(--mono);color:var(--muted);white-space:nowrap}
+.covrow .ok{color:var(--good)!important;font-weight:500}

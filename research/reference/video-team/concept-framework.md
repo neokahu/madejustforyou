@@ -250,11 +250,14 @@ A hook card already has F, T, P, frame1_visual, onset_0_5s, caption, audio_cue. 
 | HE8 | **Product visibility at 0s** | VS1 present, <1/3 width · VS2 prominent ≥1/3 · VS3 personalization legible (name/breed readable) | R1 / G1; payoff in frame 1 vendor +5–12 pts [MODERATE]; VS0 (absent) = invalid unless product by 1.0s and logged |
 | HE9 | **People / relation in frame 1** | PC0 none · PC1 one person · PC2 two+ with visible relation | connection rule; relational processing (PMC6368470) |
 
-### 4b. Tag everything; test only four
+### 4b. Tag everything; test only four (deep plan, 2026-11-21)
 - **Tag (always, by 01; verified by 02 under G9):** all nine slots. Tagging costs seconds and it is the only way the ledger ever answers "does ON3 beat ON1".
-- **Test as factors** (each changes the frame or the main stop mechanism, and each has a mechanism hypothesis): **HE1 subject**, **HE3 onset**, **HE8 product visibility** (H1/H2 is already VS3 vs VS2), **HE4 caption type**.
-- **Fix by rule, don't test** (craft defaults with enough evidence or no budget): HE2 (tight by default), HE5 (≤LB2 preferred), HE6 (TM1/TM2), HE7 (AU0/AU1). HE9 is a policy floor more than a factor (PC2 preferred for connection).
-- Caption-only factors (HE4) over an identical frame are "iteration" to Meta and will share delivery; test them only with a randomized split (`ad-science` §5d).
+- **Test as factors in round H1** (§6): **HE1 subject (SU)**, **HE3 onset (ON)**, **HE9 people in frame 1 (PC)** and **personalization timing (RV1 vs RV2,
+  carried at 0s by HE8: VS3 when RV1, VS2 when RV2)**. Each changes the frame or the main stop mechanism and has a mechanism hypothesis.
+  Hook format (F) × trigger (T) are tested in round H2.
+- **Fix by rule, don't test** (user directive 2026-11-19: captions, sound and music are minor): HE2 (tight by default), HE4 caption type,
+  HE5 (≤LB2 preferred), HE6 (TM1/TM2), HE7 (AU0/AU1). Tag them anyway.
+- Caption-only changes over an identical frame are "iteration" to Meta and share delivery; another reason they are not a factor.
 
 ### 4c. 2×2 factorial example (one body, four hooks)
 Factor A = **HE8** VS3 (name "Alex" legible at 0.0s) vs VS2 (panel prominent, name not yet legible). Factor B = **HE3** ON3 (sun hits the panel at 0.4s) vs ON1 (slow push-in only). Held: F5 reveal family, T7, caption CT1 LB2 TM2, AU0, SZ1, same 2–20s body (byte-identical), same CTA.
@@ -322,25 +325,65 @@ Kill: total <70, any criterion at 1, or proof payability ≤2. Panel = 3 blind j
 
 ---
 
-## 6. Testing ladder and attribution
+## 6. Testing ladder and attribution (deep plan, decided 2026-11-21; replaces R0–R4)
 
-### 6a. Which dimension per round (power from `ad-science` §5b: hook 6-pt diff ≈ $21, hold ≈ $2, coarse CTR ≈ $44, CVR ≈ $1,315 per comparison)
-| Round | Varies | Holds | Size | Read on | Decides |
-|---|---|---|---|---|---|
-| R0 Discovery (Phase-1 as built) | several dims per concept (bundles) | offer, CTA, length, hook arms | 3 concepts × 2 hooks × 3 products = 18 ads | hook, hold, CTR; ATC≠0 | which *bundles* earn a 2nd build; hypotheses only |
-| R1 Core axis | **one** core dim (AN *or* BY *or* CEP) | execution codes ST/PV/PF/PX/RV/EM where possible | 3 cores × 2 hooks × ≥2 products | hook + hold + CTR, concept = mean of its ads | which reason to buy holds across products |
-| R2 Execution axis | one execution dim on a surviving core (e.g. ST3 vs ST4; EM1 vs EM2) | core + hooks | 2–3 executions × 2 hooks | **hold** first (cheap), then hook | how to tell the winning reason; a core is retired only after 2–3 executions lose (plan rule) |
-| R3 Hook elements | HE factors (§4c factorial) | concept + execution + body | 4 hooks, 1 body | hook rate (randomized split) | frame-1 rules |
-| R4 Velocity | hook swaps on the winner | everything else | 10–20 hooks | hook, CTR | scale |
-Order: R0 → R3 (cheapest, already powered) and R1 in parallel where budget allows → R2 → R4. Never run R1 and R2 on the same ads.
+Only hooks and concepts are tested (the two largest levers, `impact-ranking.md`). Everything else is FIXED and identical in every ad:
+product visible from 0s (VS1+), length 15–25s, 9:16 + 4:5, captions (type, length, timing), sound and music, voiceover, CTA + end card,
+**one offer**. Deck: https://mj4u-test-plan.namvu47.workers.dev.
 
-### 6b. How many concepts per round
-Budget split decides it, not ambition. With ~$20/ad (Phase 1: $360 / 18 ads), a 3-concept × 2-hook round per product gives each concept 2 ads per product and ~6 ads across 3 products. Two concepts per round only when the hook arm is also being tested and ads must reach ≥814 impressions each; four+ only in R0-style discovery, never as a test.
+### 6a. Rounds (power from `ad-science` §5b; budgets at CPM $25, maximum)
+| Round | Varies (2 levels each) | Holds | Design | Ads × imp | Read on | Decides |
+|---|---|---|---|---|---|---|
+| **C0** Concept discovery | whole concepts (bundles, declared) | the fixed list | 6 concepts × 2 hooks, large gaps only | 12 × 800 · $240 | hook rate, CTR; concept = mean of its 2 ads | keep the best 1–2; all <21% hook → new concepts |
+| **H1** Hook opening | people in frame 1 (PC) · personalization timing (RV1/RV2) · frame-1 subject (SU) · onset (ON) | C0 winner's concept + body | 8-ad grid, 4 factors | 8 × 1,700 · $340 | hook rate | the opening recipe |
+| **C1** Concept core | angle (AN) · buyer role (BY) · occasion (OC) | recipient, execution codes where possible, C0 winner's hook style | 8-ad grid, 3 factors (full) | 8 × 1,700 · $340 | hook + hold + CTR | the reason to buy |
+| **C2** Concept execution | structure (ST) · point of view (PV) · tone (EM) · proof type (PF) | C1 winning core, H1 opening, PX from C0 | 8-ad grid, 4 factors | 8 × 1,700 · $340 | **hold** + CTR, then hook | the story template |
+| **H2** Hook type | hook format (F) · trigger (T): best 2 of each from C0 | the final concept + body | 4-ad grid, 2 factors (full) | 4 × 1,700 · $170 | hook rate | hook rules for refreshes |
+| **B** Break-even check | nothing (not a creative test) | the top 2 ads | consolidated | 2 ads, 17,000 imp · $425 | cost per sale vs break-even | scale / fix site / stop |
+| S Scaling | hook swaps on the winner | everything else | — | scaling budget | hook, CTR, CPA | refresh or stop |
+
+Per product: 42 test ads, 13 elements, ≈ $1,855 max ($1,485 @$20, $2,225 @$30); typical ≈ 80%. 5 products ≈ $9,300 max.
+**RV is tested only in H1** and **proof type only in C2** (user ruling 2026-11-21: RV was in both H1 and C2, which would alias them).
+Production format (PX) is decided inside C0's bundles, then held. Recipient comes with the product.
+
+**Run order:** C0 alone → (H1 ∥ C1) → (C2 ∥ H2) → B. Two rounds run together only when they change different parts of the ad
+(H1 and H2 never together), each in its own ad sets, equal budgets, launched the same day. ~3–5 days per round (~$14/ad/day),
+~3–4 weeks per product; products overlap. Production: C0 builds 6 concepts; H1/H2 are hook swaps on existing footage; C1/C2 need new scenes.
+
+**Picking the 2 levels of a factor:** the current winner's code is level 1 (control); level 2 is the strongest-for-gifts challenger
+(`codebook.csv` + §2 validity), chosen so every grid cell is still a valid card. Levels are pre-registered before production.
+
+### 6b. Grid layouts (balanced; each level sits in exactly half the ads)
+Factors coded −/+ (− = control level). **8-ad, 4 factors** (H1, C2): A, B, C full, **D = A·B·C** (resolution IV: main effects are clean;
+two-factor interactions are confounded in pairs, AB=CD, AC=BD, AD=BC).
+| Ad | A | B | C | D |
+|---|---|---|---|---|
+| 1 | − | − | − | − |
+| 2 | − | − | + | + |
+| 3 | − | + | − | + |
+| 4 | − | + | + | − |
+| 5 | + | − | − | + |
+| 6 | + | − | + | − |
+| 7 | + | + | − | − |
+| 8 | + | + | + | + |
+**8-ad, 3 factors** (C1): drop column D (full factorial; all interactions estimable, under-powered). **4-ad, 2 factors** (H2): ads 1, 3, 5, 7 on A, B.
+- Each main effect = 4 ads vs 4 ads ≈ 6,800 impressions per side → detects ≈ 2 points of hook rate (80% power).
+- A cell that would be an invalid card (§2c) or cannot be built truthfully: swap which factor is D, or change a level; never drop a cell.
+- The grid runs as a whole: stop at a pre-registered 50% or 75% checkpoint, never ad by ad (that breaks the balance). C0 ads can be stopped singly.
+- Record the cell in `hooks.factor_design` (hook rounds) or `cells.axis` (concept rounds), e.g. `H1 grid ad 5: SU+ ON− PC− RV+`.
+
+### Stops
+C0: hook rate <18% after ~800 impressions → kill that ad. Grids: whole-grid checkpoints only. B: spend ≥ 3× break-even cost per sale
+(~$75) with 0 purchases → stop; CPA ≤ break-even over ≥3 purchases → scale; CPA 1–2× with CTR ≥2.5% and many ATCs but few checkouts → fix the site.
+Settled days only.
 
 ### 6c. Reading results by dimension
 - **Unit = ad**, metrics with their denominators (the DB view already exposes them). A concept's result = all its ads, never its best ad (plan page rule).
 - **Minimum before reading any ad:** settled days only; ≥814 impressions for a hook comparison, ≥76 3-second plays for hold (`ad-science` §5b), ≥1,700 impressions for coarse CTR.
 - **Minimum before reading a code** (e.g. "EM2 vs EM1"): ≥4 ads per code, spread over ≥2 concepts *or* ≥2 products, and the two codes must not be aliased.
+  A grid gives each level 4 ads per product, so a grid factor is readable within one product and confirmed on a second (Hook Lab coverage panel).
+- **Grid reads:** main effect = pooled rate of the 4 "+" ads vs the 4 "−" ads; report it with its interval. A suspected interaction (the
+  effect flips between halves) is a hint only: confirm with a small follow-up test, never read cells as winners.
 - **Aliasing check:** before reading code X, the dashboard shows its co-occurrence table; if X always appears with Y (e.g. in Phase 1, BY2 always with PV1 and ST4), report "X+Y", not X.
 - **Report effect + interval, vs a pre-named control**, never all-vs-all (`ad-science` §5e). Concept-level conversion comparisons are guardrails only (Tier C).
 - **Hook × hold routing** (decomposition 2×2) per concept: low/low → core suspect; high hook/low hold → execution/body; low hook/high hold → hook only.
@@ -395,7 +438,7 @@ create table executions (                     -- one build ("bản dựng") of a
 
 alter table cells add column concept_id text references concepts,
                   add column execution_id text references executions,
-                  add column round_type text check (round_type in ('R0','R1','R2','R3','R4')),
+                  add column round_type text check (round_type in ('C0','C1','C2','H1','H2','B','S')),  -- 013 (was R0–R4 in 009)
                   add column axis text;          -- e.g. 'core-BY', 'exec-EM', 'hook-VS×ON'
 alter table ads   add column concept_id text references concepts,
                   add column execution_id text references executions;
