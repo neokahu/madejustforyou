@@ -37,11 +37,14 @@ html,body{margin:0;height:100%;background:#0d141b;overflow:hidden}
 #nav button{background:#22303d;color:#f3f1ec;border:0;border-radius:6px;padding:6px 12px;font:inherit;cursor:pointer}
 
 .codes .grp p.strong{background:#f6dcc3}
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:18px 56px;align-content:start}
+.terms p{font-size:24px;line-height:1.35}
+.terms b{display:block;font-family:"Space Grotesk",sans-serif;font-size:26px;color:var(--amber)}
 </style></head><body><div id="stage"><section id="cover" class="dark" style="justify-content:flex-end">
 <p class="kicker">MadeJustForYou · Paid video testing</p>
 <h1>Finding the hook + concept formula</h1>
-<p class="lede">A test plan that builds every ad from tagged building blocks, tests many elements at once, and turns 5 products into a model of what makes gift ads work.</p>
-
+<p class="lede">A deep test plan: hooks and concepts are the two biggest levers, so each product breaks them into 13 elements across 6 rounds. Everything else stays fixed.</p>
+<aside>Budget figures assume a cost per 1,000 impressions (CPM) of $20–30 on purchase-optimized campaigns, $25 as the midpoint.</aside>
 </section>
 
 <section id="goal">
@@ -55,58 +58,99 @@ html,body{margin:0;height:100%;background:#0d141b;overflow:hidden}
 <p class="note">Judged on attention (hook rate, hold rate, CTR). Purchases are a guardrail against break-even, never the way to pick a winner: a fair purchase comparison costs $1,300+ each.</p>
 </section>
 
-<section id="ladder">
-<p class="kicker">Per product · focused plan</p>
-<h2>Four test rounds, 28 ads: concepts first, then hooks, then why</h2>
+<section id="terms-ads" style="gap:28px">
+<p class="kicker">Terms · the ad</p>
+<h2 style="font-size:52px">What an ad is made of</h2>
+<div class="terms">
+<p><b>Concept</b>The whole idea of the ad: what it says, to whom, and how the story is told.</p>
+<p><b>Hook</b>The first 1–3 seconds, which decide whether someone stops scrolling.</p>
+<p><b>Frame 1</b>The very first image of the video, before anything moves.</p>
+<p><b>Onset</b>The first movement or change on screen within 0.5s (camera push, light change, a hand reaching…).</p>
+<p><b>Personalization timing</b>When the custom detail (the pet's name, the grandkids' names) first shows: in the first second, or by ~3s.</p>
+<p><b>Angle</b>The reason to buy the ad leads with, e.g. "keep them close" or "proof you paid attention".</p>
+<p><b>Buyer role</b>Who the ad speaks to: a close family member, a sympathy giver, someone buying for themselves, a group.</p>
+<p><b>Proof type</b>How the ad shows the gift is good: the name readable on the real product, a reaction, real reviews.</p>
+<p><b>Code</b>A short tag for one option, e.g. ON3 = light change at the start. Every ad is tagged so results can be read by code.</p>
+<p><b>Strong for gifts</b>Codes the research expects to work best for gifts; they are tested first.</p>
+</div>
+</section>
+
+<section id="terms-test" style="gap:28px">
+<p class="kicker">Terms · the test</p>
+<h2 style="font-size:52px">How results are measured and read</h2>
+<div class="terms">
+<p><b>Impressions</b>How many times the ad was shown.</p>
+<p><b>CPM</b>Cost per 1,000 impressions. The plan assumes $20–30, $25 in the middle.</p>
+<p><b>Hook rate</b>Share of impressions where someone watched at least 3 seconds. Main score for openings: below 18% = stop, 28%+ = strong.</p>
+<p><b>Hold rate</b>Of those who watched 3s, the share who reach 15s. Shows whether the rest of the ad keeps them.</p>
+<p><b>CTR</b>Click-through rate: share of impressions that led to a click through to the store.</p>
+<p><b>Break-even cost per sale</b>The most we can pay in ads for one order without losing money (~$23–27 today).</p>
+<p><b>Round</b>One batch of ads launched together to answer one question (C0, H1, C1, C2, H2, B).</p>
+<p><b>Ad grid</b>8 (or 4) ads that mix two options of several elements so each option sits in half the ads; one batch measures every element.</p>
+<p><b>Ad set</b>Meta's budget container. Tests use one ad per ad set with equal budgets, so every ad gets a fair share.</p>
+<p><b>Settled day</b>A day whose numbers Meta has finished counting; same-day numbers run high and drop later.</p>
+</div>
+</section>
+
+<section id="ladder" style="gap:28px">
+<p class="kicker">Per product · deep plan</p>
+<h2 style="font-size:56px">Six rounds, 42 ads: whole concepts first, then their parts</h2>
 <table>
-<tr><th>Round</th><th>Design</th><th class="num">Ads</th><th>What it varies</th></tr>
-<tr><td>R0 Discovery</td><td>5 concepts × 2 hooks (large gaps only)</td><td class="num">10</td><td>whole concepts, chosen to differ as much as possible</td></tr>
-<tr><td>R1 Hook</td><td>8-ad grid on the winning concept</td><td class="num">8</td><td>hook format, trigger, frame-1 subject, onset by 0.5s</td></tr>
-<tr><td>R2 Reason to buy</td><td>3 cores × 2 hooks</td><td class="num">6</td><td>angle / buyer role / occasion</td></tr>
-<tr><td>R3 Storyline</td><td>4-ad grid</td><td class="num">4</td><td>story structure, point of view, tone, reveal timing</td></tr>
-<tr class="total"><td>Total</td><td></td><td class="num">28</td><td>≈ 10 dimensions</td></tr>
+<tr><th>Round</th><th>Breaks down</th><th>Design</th><th class="num">Ads</th><th class="num">Max at $25</th></tr>
+<tr><td>C0 Concept discovery</td><td>whole concepts</td><td>6 concepts × 2 hooks, large gaps only</td><td class="num">12</td><td class="num">$240</td></tr>
+<tr><td>H1 Hook opening</td><td>people in frame 1 · personalization timing · frame-1 subject · onset</td><td>8-ad grid (4 elements)</td><td class="num">8</td><td class="num">$340</td></tr>
+<tr><td>C1 Concept core</td><td>angle · buyer role · occasion</td><td>8-ad grid (3 elements)</td><td class="num">8</td><td class="num">$340</td></tr>
+<tr><td>C2 Concept execution</td><td>structure · point of view · tone · proof type</td><td>8-ad grid (4 elements)</td><td class="num">8</td><td class="num">$340</td></tr>
+<tr><td>H2 Hook type</td><td>hook format · trigger (best 2 of each from C0)</td><td>4-ad grid (2 elements)</td><td class="num">4</td><td class="num">$170</td></tr>
+<tr><td>B Break-even check</td><td>not a creative test</td><td>top 2 ads against break-even cost per sale</td><td class="num">2</td><td class="num">$425</td></tr>
+<tr class="total"><td>Total</td><td>13 elements</td><td></td><td class="num">42</td><td class="num">≈ $1,855</td></tr>
 </table>
-<p class="note">Not tested (fixed house standards): sound and music (feeds are watched muted), caption style, length 20s, voiceover, CTA, end card. S = scaling the winner afterwards, paid from the scaling budget.</p>
+<p class="note">Listed in run order. Grid ads get ~1,700 impressions each; C0 ads ~800. Grids measure each element on its own (main effects); a suspected interaction gets a small follow-up test.</p>
 </section>
 
 <section id="purpose" style="gap:28px">
 <p class="kicker">What each round tells us</p>
 <h2 style="font-size:52px">Each round answers one question and ends in one decision</h2>
 <table>
-<tr><th>Round</th><th>Purpose</th><th>What we can conclude</th><th>Decision</th></tr>
-<tr><td>R0 Discovery</td><td>Find concepts worth building on</td><td>Which of 5 concepts stop and hold the right buyers (bundles: not yet <i>why</i>)</td><td>Keep the best 1–2</td></tr>
-<tr><td>R1 Hook</td><td>Learn what opening stops the scroll</td><td>Effect of hook format, trigger, frame-1 subject and onset, each alone</td><td>Lock the hook rules</td></tr>
-<tr><td>R2 Reason to buy</td><td>Find <i>why</i> the winner works</td><td>Whether angle, buyer role or occasion carries the result</td><td>The reason to buy going forward</td></tr>
-<tr><td>R3 Storyline</td><td>Find the best way to tell it</td><td>Effect of structure, point of view, tone, reveal timing</td><td>The story template to produce</td></tr>
-<tr><td>S Scaling</td><td>Earn on the winner</td><td>Not a test: cost per sale and ROAS against break-even</td><td>Scale, refresh hooks, or stop</td></tr>
+<tr><th>Round</th><th>Question</th><th>What we can conclude</th><th>Decision</th></tr>
+<tr><td>C0 Concepts</td><td>Which ideas are worth building on?</td><td>Which of 6 concepts stop and hold the right buyers (whole concepts: not yet <i>why</i>)</td><td>Keep the best 1–2. All below 21% hook rate: new concepts</td></tr>
+<tr><td>H1 Opening</td><td>What should the first second show?</td><td>Effect of people in frame 1, personalization timing, frame-1 subject and onset, each alone</td><td>Lock the opening recipe</td></tr>
+<tr><td>C1 Core</td><td>Why does the winning concept work?</td><td>Whether angle, buyer role or occasion carries the result</td><td>The reason to buy going forward</td></tr>
+<tr><td>C2 Execution</td><td>What is the best way to tell it?</td><td>Effect of structure, point of view, tone and proof type</td><td>The story template to produce</td></tr>
+<tr><td>H2 Hook type</td><td>Which kind of hook fits?</td><td>Effect of hook format and trigger on the final concept</td><td>Hook rules for future refreshes</td></tr>
+<tr><td>B Break-even</td><td>Does it make money?</td><td>Not a test: cost per sale against break-even</td><td>Scale, fix the site, or stop</td></tr>
 </table>
 </section>
 
 <section id="focus" style="gap:28px">
-<p class="kicker">The focused plan</p>
-<h2 style="font-size:52px">Test the big levers, fix the rest</h2>
+<p class="kicker">Tested vs fixed</p>
+<h2 style="font-size:52px">Test 13 hook and concept elements, fix everything else</h2>
 <div class="row" style="gap:40px">
-<div style="flex:1.2"><table>
-<tr><th>Dimension (tested)</th><th class="num">Options</th><th class="num">Strong for gifts</th></tr>
-<tr><td>Angle, buyer role</td><td class="num">8 + 4</td><td class="num">5 + 3</td></tr>
-<tr><td>Structure, POV, tone, reveal</td><td class="num">7+4+5+3</td><td class="num">4+3+3+3</td></tr>
-<tr><td>Hook format, trigger</td><td class="num">15 + 10</td><td class="num">7 + 5</td></tr>
-<tr><td>Frame-1 subject, onset</td><td class="num">7 + 6</td><td class="num">4 + 4</td></tr>
-<tr class="total"><td>Total</td><td class="num">69</td><td class="num">≈ 41</td></tr>
-</table>
-<p class="note" style="margin-top:16px">Fixed, not tested: music, caption style, 20s length, voiceover, CTA, end card (house standards). Recipient and occasion come with the product choice.</p></div>
-<div style="flex:1"><table>
-<tr><th>Round</th><th class="num">Ads</th><th class="num">Max at $25</th></tr>
-<tr><td>R0 Discovery: 5 concepts × 2 hooks</td><td class="num">10</td><td class="num">$200</td></tr>
-<tr><td>R1 Hook grid</td><td class="num">8</td><td class="num">$340</td></tr>
-<tr><td>R2 Reason to buy</td><td class="num">6</td><td class="num">$255</td></tr>
-<tr><td>R3 Storyline grid</td><td class="num">4</td><td class="num">$170</td></tr>
-<tr class="total"><td>Per product</td><td class="num">28</td><td class="num">≈ $965</td></tr>
-<tr><td>5 products</td><td class="num">140</td><td class="num">≈ $4,800</td></tr>
-</table>
-<p class="note" style="margin-top:16px">Each ad carries about 10 codes, so R0's 10 ads already try 20–25 of the ≈41 options. Rotating options across 5 products brings most to ≥4 ads on ≥2 products.</p></div>
+<div style="flex:1.3"><table>
+<tr><th>Round</th><th>Elements tested (codes)</th></tr>
+<tr><td>C0</td><td>whole concepts: production format and every concept code, bundled</td></tr>
+<tr><td>C1</td><td>angle (AN) · buyer role (BY) · occasion (OC)</td></tr>
+<tr><td>C2</td><td>structure (ST) · point of view (PV) · tone (EM) · proof type (PF)</td></tr>
+<tr><td>H1</td><td>people in frame 1 (PC) · personalization timing (RV) · frame-1 subject (SU) · onset (ON)</td></tr>
+<tr><td>H2</td><td>hook format (F) · trigger (T)</td></tr>
+</table></div>
+<div class="card" style="flex:1"><h3>Fixed in every ad</h3><p>Product visible from 0s · length 15–25s · 9:16 + 4:5 · caption style, length and timing · sound and music · voiceover · CTA and end card · <b>one offer, identical in every ad</b></p><p class="note">The evidence ranks these as minor or already settled. Recipient comes with the product.</p></div>
 </div>
+<p class="note">Each element is tested at 2 levels, picked from the "strong for gifts" codes. Production format (PX) is decided in C0 and then held.</p>
 </section>
+
+<section id="order" style="gap:32px">
+<p class="kicker">Run order</p>
+<h2 style="font-size:56px">Four stages, about 3–4 weeks per product</h2>
+<div class="row" style="gap:24px">
+<div class="card"><h3>1 · C0 alone</h3><p>6 concepts × 2 hooks. Every later round builds on its winner.</p><p class="note">Production: 6 concepts.</p></div>
+<div class="card"><h3>2 · H1 + C1 together</h3><p>New openings on the winner, and new versions of its core, side by side.</p><p class="note">H1: hook swaps on existing footage. C1: new scenes.</p></div>
+<div class="card"><h3>3 · C2 + H2 together</h3><p>Execution grid on the winning core and opening, plus hook types.</p><p class="note">C2: new scenes. H2: hook swaps.</p></div>
+<div class="card"><h3>4 · B</h3><p>Top 2 ads against break-even cost per sale.</p><p class="note">No new production.</p></div>
+</div>
+<p class="note">Two rounds run together only when they change different parts of the ad (H1 and H2 never together), each in its own ad sets with equal budgets, launched the same day. Each round takes ~3–5 days at ~$14 per ad per day. Products overlap, so 5 products take about 2–3 months.</p>
+</section>
+
 <section id="giftfit" style="gap:28px">
 <p class="kicker">What "strong for gifts" means</p>
 <h2 style="font-size:52px">A code is strong for gifts when it shows what the giver is really buying</h2>
@@ -117,13 +161,14 @@ html,body{margin:0;height:100%;background:#0d141b;overflow:hidden}
 </div>
 <p class="note">Ranks come from the research behind the frameworks (gift psychology, attention studies, our own ad audits). They are the starting hypothesis: test results can promote or demote any code.</p>
 </section>
+
 <section id="grid">
-<p class="kicker">Why grids</p>
-<h2>8 ads measure the 4 highest-impact hook elements at once</h2>
+<p class="kicker">Why grids · H1 example</p>
+<h2>8 ads measure 4 opening elements at once</h2>
 <div class="row" style="align-items:flex-start">
 <div style="flex:1.3">
 <table class="grid8">
-<tr><th>Ad</th><th>Frame 1</th><th>Onset</th><th>Name at 0s</th><th>People in frame 1</th></tr>
+<tr><th>Ad</th><th>Frame-1 subject</th><th>Onset</th><th>Name at 0s</th><th>People in frame 1</th></tr>
 <tr><td>1</td><td>dog</td><td>push</td><td>no</td><td>none</td></tr>
 <tr><td>2</td><td>dog</td><td>push</td><td class="on">yes</td><td class="on">giver + recipient</td></tr>
 <tr><td>3</td><td>dog</td><td class="on">light</td><td>no</td><td class="on">giver + recipient</td></tr>
@@ -134,30 +179,32 @@ html,body{margin:0;height:100%;background:#0d141b;overflow:hidden}
 <tr><td>8</td><td class="on">product</td><td class="on">light</td><td class="on">yes</td><td class="on">giver + recipient</td></tr>
 </table>
 </div>
-<div class="card" style="flex:1"><h3>How it reads</h3><p>Each element is compared 4 ads vs 4 ads, about 6,800 impressions per side.</p><p>That detects gaps of about 2 points of hook rate, for all 4 elements at once.</p><p>Trade-off: it measures each element alone. If two only work together, a small follow-up confirms it.</p></div>
+<div class="card" style="flex:1"><h3>How it reads</h3><p>Each element is compared 4 ads vs 4 ads, about 6,800 impressions per side.</p><p>That detects gaps of about 2 points of hook rate, for all 4 elements at once.</p><p>Trade-off: it measures each element alone. If two only work together, a small follow-up confirms it. C1 and C2 use the same layout.</p></div>
 </div>
 </section>
 
 <section id="budget">
 <p class="kicker">Budget per product</p>
-<h2>At most ≈ $965 per product at $25 per 1,000 impressions</h2>
+<h2>At most ≈ $1,855 per product at $25 per 1,000 impressions</h2>
 <table>
 <tr><th>Round</th><th class="num">Ads</th><th class="num">Impressions</th><th class="num">At $20</th><th class="num">At $25</th><th class="num">At $30</th></tr>
-<tr><td>R0 Discovery (800 per ad)</td><td class="num">10</td><td class="num">8,000</td><td class="num">$160</td><td class="num">$200</td><td class="num">$240</td></tr>
-<tr><td>R1 Hook grid</td><td class="num">8</td><td class="num">13,600</td><td class="num">$272</td><td class="num">$340</td><td class="num">$408</td></tr>
-<tr><td>R2 Reason to buy</td><td class="num">6</td><td class="num">10,200</td><td class="num">$204</td><td class="num">$255</td><td class="num">$306</td></tr>
-<tr><td>R3 Storyline grid</td><td class="num">4</td><td class="num">6,800</td><td class="num">$136</td><td class="num">$170</td><td class="num">$204</td></tr>
-<tr class="total"><td>Maximum</td><td class="num">28</td><td class="num">38,600</td><td class="num">$772</td><td class="num">$965</td><td class="num">$1,158</td></tr>
+<tr><td>C0 Concept discovery (800 per ad)</td><td class="num">12</td><td class="num">9,600</td><td class="num">$192</td><td class="num">$240</td><td class="num">$288</td></tr>
+<tr><td>H1 Hook opening grid</td><td class="num">8</td><td class="num">13,600</td><td class="num">$272</td><td class="num">$340</td><td class="num">$408</td></tr>
+<tr><td>C1 Concept core grid</td><td class="num">8</td><td class="num">13,600</td><td class="num">$272</td><td class="num">$340</td><td class="num">$408</td></tr>
+<tr><td>C2 Concept execution grid</td><td class="num">8</td><td class="num">13,600</td><td class="num">$272</td><td class="num">$340</td><td class="num">$408</td></tr>
+<tr><td>H2 Hook type grid</td><td class="num">4</td><td class="num">6,800</td><td class="num">$136</td><td class="num">$170</td><td class="num">$204</td></tr>
+<tr><td>B Break-even check (top 2 ads)</td><td class="num">2</td><td class="num">17,000</td><td class="num">$340</td><td class="num">$425</td><td class="num">$510</td></tr>
+<tr class="total"><td>Maximum</td><td class="num">42</td><td class="num">74,200</td><td class="num">$1,484</td><td class="num">$1,855</td><td class="num">$2,226</td></tr>
 </table>
-<p class="note">This is the ceiling. Failing R0/R2 ads stop after ~800 impressions; grid rounds stop as a whole at a 50% or 75% checkpoint once results are clear. Typical spend ≈ $750–850 at $25. Production adds about $50–100.</p>
+<p class="note">This is the ceiling. Failing C0 ads stop after ~800 impressions, grids stop as a whole at a 50% or 75% checkpoint once results are clear, and B stops at 3× break-even cost per sale with 0 purchases. Typical spend ≈ 80%, about $1,500 at $25. AI production costs are not included.</p>
 </section>
 
 <section id="products" class="dark">
 <p class="kicker">How many products</p>
-<h2>5 products, about 140 ads, gives a formula you can trust</h2>
+<h2>5 products, 210 ads, gives a formula you can trust</h2>
 <div class="row">
-<div class="card"><div class="big">120–150</div><p>tagged ads are needed before one model can separate about 10 dimensions without mistaking chance for a pattern.</p></div>
-<div class="card"><div class="big">≥4 ads</div><p>per code, spread over ≥2 products, before reading any single code. A lesson seen on one product could just be that product.</p></div>
+<div class="card"><div class="big">210</div><p>tagged ads, well above the 120–150 one model needs to separate 13 elements without mistaking chance for a pattern.</p></div>
+<div class="card"><div class="big">≥4 ads</div><p>per code, spread over ≥2 products, before reading any single code. Each grid level gets 4 ads per product, so 2 products already reach 8.</p></div>
 <div class="card"><div class="big">3 groups</div><p>of recipients so the formula carries across the catalog: pet memorial, grandparents, couples or parents.</p></div>
 </div>
 <p class="lede">Suggested set: 2 pet memorial (incl. MJ4U-003 suncatcher), 2 grandparent gifts, 1 couple or parent gift. Fewer than 4 products: the results describe those products, not the formula.</p>
@@ -165,38 +212,38 @@ html,body{margin:0;height:100%;background:#0d141b;overflow:hidden}
 
 <section id="roadmap">
 <p class="kicker">Roadmap and total</p>
-<h2>Two phases, at most ≈ $4,800 in media at $25</h2>
+<h2>Two phases, at most ≈ $9,300 in media at $25</h2>
 <table>
 <tr><th>Phase</th><th>Products</th><th class="num">Ads</th><th class="num">At $20</th><th class="num">At $25</th><th class="num">At $30</th></tr>
-<tr><td>A</td><td>2 (suncatcher + 1 grandparent)</td><td class="num">56</td><td class="num">$1,544</td><td class="num">$1,930</td><td class="num">$2,316</td></tr>
-<tr><td>B</td><td>3 more</td><td class="num">84</td><td class="num">$2,316</td><td class="num">$2,895</td><td class="num">$3,474</td></tr>
-<tr class="total"><td>Total (maximum)</td><td>5</td><td class="num">140</td><td class="num">$3,860</td><td class="num">$4,825</td><td class="num">$5,790</td></tr>
+<tr><td>A</td><td>2 (suncatcher + 1 grandparent)</td><td class="num">84</td><td class="num">$2,968</td><td class="num">$3,710</td><td class="num">$4,452</td></tr>
+<tr><td>B</td><td>3 more</td><td class="num">126</td><td class="num">$4,452</td><td class="num">$5,565</td><td class="num">$6,678</td></tr>
+<tr class="total"><td>Total (maximum)</td><td>5</td><td class="num">210</td><td class="num">$7,420</td><td class="num">$9,275</td><td class="num">$11,130</td></tr>
 </table>
-<p class="note">Typical spend ≈ $3,800–4,300 at $25. After the model exists, a new product needs only R0 + scaling. Budgets are recalculated from real costs after the first round.</p>
+<p class="note">Typical spend ≈ $7,500 at $25. Products overlap, so all 5 take about 2–3 months. Once the formula exists, a new product needs only C0 + B. Budgets are recalculated from real costs after the first round.</p>
 </section>
 
 <section id="rules">
 <p class="kicker">Rules that keep the results true</p>
 <h2>Setup, stops and checks</h2>
 <div class="row">
-<div class="card"><h3>Setup</h3><p>One ad per ad set, equal daily budgets, same audience and placements, launched together. Purchase campaigns otherwise starve some ads. CBO only for scaling.</p></div>
-<div class="card"><h3>Stops</h3><p>Hook rate below 18% after ~800 impressions: kill. A concept spending 2.5× break-even cost per sale with 0 purchases: stop. Settled days only.</p></div>
-<div class="card"><h3>Checks</h3><p>A concept's result is all its ads. Correct for chance when ~20 elements are read at once. Codes that always change together are read as a bundle.</p></div>
+<div class="card"><h3>Setup</h3><p>One ad per ad set, equal daily budgets, same audience and placements, launched together. Parallel rounds get their own ad sets. Advantage+ creative off. CBO only for scaling.</p></div>
+<div class="card"><h3>Stops</h3><p>C0: hook rate below 18% after ~800 impressions, kill. Grids: stop as a whole at a checkpoint. B: 3× break-even cost per sale with 0 purchases, stop. Settled days only.</p></div>
+<div class="card"><h3>Checks</h3><p>A concept's result is all its ads. Judge on hook rate, hold rate and CTR; sales are a guardrail only. Correct for chance when many elements are read at once.</p></div>
 </div>
-<p class="note">Every ad is named with its key (e.g. MJ4U-003_R0_K01X1-H07_E0_v01) so Meta results link back to its codes automatically in Hook Lab.</p>
+<p class="note">Every ad is named with its key (e.g. MJ4U-003_C0_K01X1-H07_E0_v01) so Meta results link back to its codes automatically in Hook Lab.</p>
 </section>
 
 <section id="decide" class="accent">
 <p class="kicker" style="color:var(--ink)">Decisions</p>
 <h2>Three choices to start</h2>
 <div class="row">
-<div class="card" style="background:#f3f1ec"><h3>1 · Scope</h3><p>5 products, at most ≈ $4,800 at $25 (typically $3,800–4,300).</p></div>
+<div class="card" style="background:#f3f1ec"><h3>1 · Scope</h3><p>5 products, at most ≈ $9,300 at $25 (typically ≈ $7,500), over about 2–3 months.</p></div>
 <div class="card" style="background:#f3f1ec"><h3>2 · Products</h3><p>Suncatcher (MJ4U-003) plus which grandparent, second pet, and couple or parent products.</p></div>
-<div class="card" style="background:#f3f1ec"><h3>3 · First round</h3><p>Start MJ4U-003 at R0: 5 concepts × 2 hooks from the pipeline, approved at Gate 0, about $200 at $25.</p></div>
+<div class="card" style="background:#f3f1ec"><h3>3 · First round</h3><p>Start MJ4U-003 at C0: 6 concepts × 2 hooks from the pipeline, approved at Gate 0, at most $240 at $25.</p></div>
 </div>
 </section>
 </div>
-<div id="nav"><a href="/codes" style="color:#f3f1ec;margin-right:8px">Codebook</a><button id="prev" aria-label="Previous slide">◀</button><span id="pos"></span><button id="next" aria-label="Next slide">▶</button></div>
+<div id="nav"><a href="#3" onclick="show(2);return false" style="color:#f3f1ec;margin-right:8px">Terms</a><a href="/codes" style="color:#f3f1ec;margin-right:8px">Codebook</a><button id="prev" aria-label="Previous slide">◀</button><span id="pos"></span><button id="next" aria-label="Next slide">▶</button></div>
 <script>
 const S=[...document.querySelectorAll('#stage>section')];let i=Math.max(0,Math.min(S.length-1,(parseInt(location.hash.slice(1))||1)-1));
 function show(n){i=Math.max(0,Math.min(S.length-1,n));S.forEach((s,k)=>s.classList.toggle('cur',k===i));document.getElementById('pos').textContent=(i+1)+' / '+S.length;history.replaceState(null,'','#'+(i+1));}

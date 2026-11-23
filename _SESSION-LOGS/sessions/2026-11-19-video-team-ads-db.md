@@ -24,7 +24,7 @@ Run `/video:new MJ4U-003` starting at **0b Concepts (00A)**. Product = MJ4U-003 
 - Budget numbers: hook-rate read ≈ $11 (big diff) – $44 (small diff) per arm at CPM $13 (ad-science §5b).
 
 ## Later 2026-11-19/20 — test plan, impact research
-- **Test plan deck**: Claude https://claude.ai/artifact/DnSw4H317gkQqnZHGHqhet · Cloudflare (public, noindex) https://mj4u-test-plan.namvu47.workers.dev
+- **Test plan deck**: Cloudflare (public, noindex) https://mj4u-test-plan.namvu47.workers.dev — the ONLY copy (claude.ai artifact deleted 2026-11-21 at user's request)
   (+ `/codes`, strong-for-gifts codes highlighted). Source: `marketing/facebook-ads/test-plan-deck/` (source slides + public/index.html).
   Deck currently shows the "focused plan" (R0 5×2, R1 hook grid, R2 reason, R3 storyline, ~$965/product, ~$4.8k for 5) — SUPERSEDED by the impact ranking below.
 - **Impact ranking (final)**: `research/reference/video-team/impact-ranking.md` (20 docs read in full, 24 searches, 21 primary sources).
@@ -36,8 +36,8 @@ Run `/video:new MJ4U-003` starting at **0b Concepts (00A)**. Product = MJ4U-003 
 ## RESUME HERE (in order)
 1. **Rebuild the test plan + deck from impact-ranking.md**: rounds R0 concepts 5×2 ($200) · R1 opening 2×2 (person in frame 1 × personalization
    timing, $170) · R2 reason-to-buy 4 proof types ($170) · R3 break-even check top-2 ads (~$425; stop at 3× break-even CPA with 0 purchases).
-   **Check R3 costs: the ranking shows $317 at $30 < $425 at $25 ("capped") — inconsistent, recompute.** Update both deck copies
-   (claude.ai artifact via its url + Cloudflare `npx wrangler@4 deploy` in test-plan-deck/).
+   **Check R3 costs: the ranking shows $317 at $30 < $425 at $25 ("capped") — inconsistent, recompute.** Deploy: edit `source/slides/`, rebuild `public/index.html`,
+   `npx wrangler@4 deploy` in test-plan-deck/.
 2. **Align the system**: concept-framework.md §6 ladder + README; DB `cells.round_type` check (currently R0–R4; new rounds must fit);
    codebook/house standards for FIX items; `/video:new` + vt-00c selector (R0 size 5×2, axes); coverage tracker in Hook Lab (tested dims only).
 3. **Run `/video:new MJ4U-003`** from 00A (concepts) → Gate 0 (user; plan page then updated). Naming: `MJ4U-003_R0_K01X1-H07_E0_v01`.
@@ -61,3 +61,9 @@ Grids measure main effects only (follow-up test if an interaction is suspected);
 
 **RESUME step 1 now means**: rebuild the deck + testing plan around THIS deep plan (keep impact-ranking.md as the evidence base);
 step 2: framework §6 ladder, DB round codes (C0/C1/C2/H1/H2/B instead of R0–R4), vt-00c selector, `/video:new`, coverage tracker; step 3: `/video:new MJ4U-003`.
+
+**DONE 2026-11-21 — step 1**: Cloudflare deck rebuilt on the deep plan (13 slides; new `order` slide = run order). User ruling: RV (personalization
+timing) is tested only in H1; C2 tests structure · POV · tone · **proof type (PF)** instead of reveal timing (RV was in both rounds = same code).
+B = fixed 17,000 imp → $340/$425/$510 (the old $317 came from the old $965 cap). AI production cost is NOT in the budget (not yet estimated).
+Next: step 2 (align the system), then step 3.
+Also 2026-11-22: added 2 glossary slides (terms-ads, terms-test) after 'goal' + a Terms link in the deck nav; deployed.

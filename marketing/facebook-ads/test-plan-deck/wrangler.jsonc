@@ -1,5 +1,5 @@
 {
-  // MJ4U creative test plan deck (static). Source slides in ./source (same files as the claude.ai deck).
+  // MJ4U creative test plan deck (static). Source slides in ./source; public/index.html is built from them (no other copy).
   "name": "mj4u-test-plan",
   "compatibility_date": "2026-11-19",
   "assets": { "directory": "./public" },
