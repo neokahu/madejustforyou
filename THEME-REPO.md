@@ -14,7 +14,8 @@ The Shopify **theme code** for MadeJustForYou is **NOT in this repo**. It lives 
 
 ## Rules
 - **Session logs, handoffs, research, specs → always here** (`_SESSION-LOGS/`, `research/`, etc.), even when the work was a theme code change.
-- In the theme repo, touch **theme files only**. No READMEs, notes, or context files over there.
+- In the theme repo, touch **theme files only**. No READMEs, notes, or context files over there. The one exception: its root `CLAUDE.md`, a short pointer back to this repo so agents opened there find the context (added 2026-11-23).
+- Work in the theme repo on `nam-dev`; merging or pushing to `main` publishes to the live store, so do it only when the user asks.
 - When a task spans both, keep both folders open: **strategy/specs/assets here → Liquid/JS there.** Context lives here.
 
 _History: the old `theme_export__…16JUL2026` snapshot (482 files) was removed 2026-07-30 — redundant now that the theme repo is the source of truth (it's a superset of the snapshot)._
