@@ -1,0 +1,12 @@
+{
+  "rules": [
+    {
+      "id": "ad-copy-lines",
+      "description": "FB ad primary_text is authored as an array of lines, never one paragraph string",
+      "why": "Wall-of-text copy is hard to read in-feed; user flagged it on the MJ4U-111 draft (2026-08-09)",
+      "paths": ["products/**/ads/ad-content.json"],
+      "pattern": "\"primary_text\"\\s*:\\s*\"",
+      "fix": "Write \"primary_text\": [\"line 1\", \"\", \"line 2\"] and check with engine/upload_draft.py --validate-only"
+    }
+  ]
+}
