@@ -1,6 +1,6 @@
 # MadeJustForYou (MJ4U)
 
-Shopify print-on-demand **personalized-gift** store. This repo is the research, ad production, FB-ads automation, Teeinblue asset and session-log workspace. The storefront theme is a separate repo (`THEME-REPO.md`). Product IDs are `MJ4U-NNN`.
+Shopify print-on-demand **personalized-gift** store. This repo is the research, ad production, FB-ads automation, Teeinblue asset and session-log workspace. The storefront theme is a separate repo: `~/Desktop/projects/madejustforyou-theme/shopify-theme-1/` (details in `THEME-REPO.md`). Product IDs are `MJ4U-NNN`.
 
 ## Start of every session
 
@@ -13,7 +13,7 @@ Shopify print-on-demand **personalized-gift** store. This repo is the research, 
 
 Each rule comes from a real incident; the detail is in the linked doc or session log.
 
-- **Theme repo: code only, and `main` is the live store.** Merging or pushing to `main` in `madejustforyou-theme/shopify-theme-1` publishes to production; there is no separate publish step. Never write notes, logs or READMEs there; they live here. Why: Shopify syncs that repo.
+- **Theme repo: code only, and `main` is the live store.** Merging or pushing to `main` in `madejustforyou-theme/shopify-theme-1` publishes to production; there is no separate publish step. Work there on `nam-dev`; merge to `main` only when the user asks. Never write notes, logs or READMEs there; they live here. The one exception is its root `CLAUDE.md`, a pointer back to this repo. Why: Shopify syncs that repo.
 - **Follow the plan page.** The Phase-1 testing plan (`marketing/facebook-ads/testing-plan-page/`) decides what gets tested. Scripts are written by the screenwriter agent and reviewed per case, never by hand, and the plan is never restructured. Why: ~$5 of assets built on an off-plan restructure (2026-10-08).
 - **Read the prompt doc before any image/video generation.** The PreToolUse guard (`research/scripts/generation-prompt-guard.py`) blocks prompts that break `research/reference/seedance-prompt-method.md` and `image-to-video-prompt-method.md`. Why: three failed generations in one session from ignoring the documented method (2026-09-26).
 - **Casting matches the caption.** Check every person shot's gender, age and role against the caption pronouns; avoid hands-only hand-offs when identity matters. Why: S-C6 read as "giving the gift to some other man" (2026-10-08).
@@ -41,6 +41,7 @@ Each rule comes from a real incident; the detail is in the linked doc or session
 |---|---|
 | Current state, decisions, open threads | `_SESSION-LOGS/INDEX.md` → `topics/` → `sessions/` |
 | Map of the repo | `PROJECT-INDEX.md` |
+| Shopify theme code (separate repo, `main` = live store) | `~/Desktop/projects/madejustforyou-theme/shopify-theme-1/` (GitHub `Minh-Quy-K/shopify-theme-1`); state in `_SESSION-LOGS/topics/shopify-theme/README.md` |
 | Video ad pipeline (7-role team, `/video:new`) | `research/reference/video-team/README.md`, `.claude/agents/vt-*` |
 | FB-ads engine (read-only `run.py`, dry-run-by-default `execute.py`) | `marketing/facebook-ads/engine/`, `marketing/facebook-ads/README.md` |
 | Ads database (Supabase `mj4u-ads`) | `marketing/facebook-ads/db/`, `engine/db_sync.py` |
