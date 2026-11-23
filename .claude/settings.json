@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$HOME/.claude/hooks/generation-prompt-guard.py\"",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/research/scripts/generation-prompt-guard.py\"",
             "timeout": 5,
             "statusMessage": "Checking prompt against the documented method..."
           }
