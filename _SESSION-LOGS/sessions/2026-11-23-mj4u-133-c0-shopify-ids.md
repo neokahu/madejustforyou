@@ -19,7 +19,7 @@
     Method: page JS helper (`__mj`) sets the family; `__mj.save()` downloads the SVG; scratchpad script renders it with headless Chrome + Google fonts (Chewy).
   - Hooks: 01 (60 kept) → 02 three blind judges (`hooks/02-scores.md`; judge B re-run after an output-limit crash; packets still leaked ideators' self-verdicts — strip next time)
     → **03 selection** `hooks/03-selection.md` (12 hooks + reserves; 8 fixes for 04/05).
-  - **04 scripts launched 2026-11-24** (3 agents) → `MJ4U-133-C0/<K>/script.md`.
+  - **04 scripts done 2026-11-24**: `MJ4U-133-C0/{K10,K13,K04,K06,K02,K01}/script.md` (20s; hook 0–2.0s, hook caption to 3.2s; end card 17.5–20.0s; one ad copy per concept). Open for the user before Gate A: shared end-card plate; K13 H17 10-word caption vs 2.5 words/s; K13 ending reuses the bed; K01 seven-person shot must read.
 
 ## RESUME HERE
 1. Collect the 6 scripts; `/llm-council` per script (craft only); then **GATE A** (user approves hooks + scripts).
