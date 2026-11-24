@@ -1,0 +1,857 @@
+{
+  "store": "madejustforyou-store.myshopify.com",
+  "count": 43,
+  "products": [
+    {
+      "shopify_product_id": "9723602108773",
+      "title": "Legend Husband Dad Papa Shirt & Hoodie, Personalized with Titles & Years - Gift for Dad",
+      "handle": "legend-husband-dad-papa-personalized-shirt",
+      "status": "ACTIVE",
+      "product_type": "T-Shirt",
+      "created_at": "2026-07-21T08:39:33Z",
+      "url": "https://madejustforyou.net/products/legend-husband-dad-papa-personalized-shirt",
+      "tags": [
+        "cat-apparel",
+        "custom-name",
+        "MJ4U-002",
+        "occasion-birthday",
+        "occasion-fathersday",
+        "occasion-grandparentsday",
+        "recipient-dad",
+        "recipient-grandpa",
+        "recipient-male",
+        "sizechart-hoodie-g18500",
+        "sizechart-sweatshirt-g18000",
+        "sizechart-tee-g5000"
+      ]
+    },
+    {
+      "shopify_product_id": "9725384229221",
+      "title": "Grandma's Garden Birth Flower Candle Warmer, Personalized with Names - Gift for Grandma",
+      "handle": "grandmas-garden-love-grows-here-personalized-candle-warmer-49",
+      "status": "ACTIVE",
+      "product_type": "Candle Warmer",
+      "created_at": "2026-08-03T02:47:39Z",
+      "url": "https://madejustforyou.net/products/grandmas-garden-love-grows-here-personalized-candle-warmer-49",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-111",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9726010032485",
+      "title": "Snowman Light Box, Personalized with Grandkids' Names - Christmas Gift for Grandparents",
+      "handle": "personalized-snowman-family-light-box-grandkids-names",
+      "status": "ACTIVE",
+      "product_type": "Light Box",
+      "created_at": "2026-08-06T06:51:40Z",
+      "url": "https://madejustforyou.net/products/personalized-snowman-family-light-box-grandkids-names",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-052",
+        "occasion-christmas",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-grandpa",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9726101651813",
+      "title": "Christmas Squishy Dad Bod Magnet, Personalized with Photo & Name - Stocking Stuffer for Dad",
+      "handle": "squishy-dad-bod-belly-fridge-magnet-custom-photo",
+      "status": "ACTIVE",
+      "product_type": "Fridge Magnet",
+      "created_at": "2026-08-07T04:01:33Z",
+      "url": "https://madejustforyou.net/products/squishy-dad-bod-belly-fridge-magnet-custom-photo",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "custom-photo",
+        "MJ4U-112",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-dad",
+        "recipient-grandpa",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9726664212837",
+      "title": "Best Dad Ever Pajama Pants, Personalized with Kids' Photos - Christmas Gift for Dad",
+      "handle": "personalized-best-dad-ever-photo-pajama-pants",
+      "status": "ACTIVE",
+      "product_type": "Pajama Pants",
+      "created_at": "2026-08-11T03:20:54Z",
+      "url": "https://madejustforyou.net/products/personalized-best-dad-ever-photo-pajama-pants",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-photo",
+        "MJ4U-113",
+        "new-arrivals",
+        "occasion-christmas",
+        "occasion-grandparentsday",
+        "recipient-dad",
+        "recipient-grandpa",
+        "recipient-male",
+        "sizechart-pants"
+      ]
+    },
+    {
+      "shopify_product_id": "9726695211365",
+      "title": "Floral Best Mom Ever Pajama Pants, Personalized with Kids' Photos - Gift for Mom",
+      "handle": "personalized-best-mom-ever-photo-pajama-pants",
+      "status": "ACTIVE",
+      "product_type": "Pajama Pants",
+      "created_at": "2026-08-11T08:18:01Z",
+      "url": "https://madejustforyou.net/products/personalized-best-mom-ever-photo-pajama-pants",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-photo",
+        "MJ4U-114",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom",
+        "sizechart-pants-apps-pjpa"
+      ]
+    },
+    {
+      "shopify_product_id": "9726795284837",
+      "title": "Personalized To My Granddaughter Blanket from Grandma",
+      "handle": "personalized-to-my-granddaughter-blanket-from-grandma",
+      "status": "ARCHIVED",
+      "product_type": "Blanket",
+      "created_at": "2026-08-11T12:36:23Z",
+      "url": null,
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-012",
+        "new-arrivals",
+        "occasion-christmas",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-kids"
+      ]
+    },
+    {
+      "shopify_product_id": "9726940709221",
+      "title": "Sweethearts Leather Handbag, Personalized with Kids' Names - Gift for Mom & Grandma",
+      "handle": "personalized-sweethearts-leather-handbag-mom-grandma",
+      "status": "ACTIVE",
+      "product_type": "Handbag",
+      "created_at": "2026-08-12T08:26:21Z",
+      "url": "https://madejustforyou.net/products/personalized-sweethearts-leather-handbag-mom-grandma",
+      "tags": [
+        "cat-apparel",
+        "custom-name",
+        "MJ4U-115",
+        "new-arrivals",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9727542821221",
+      "title": "Mom & Grandma Shirt, Sweatshirt & Hoodie, Personalized with Kids' Names - Gift for Her",
+      "handle": "mom-grandma-sweethearts-gift-for-mothers-day-personalized-shirt",
+      "status": "ACTIVE",
+      "product_type": "T-Shirt",
+      "created_at": "2026-08-15T04:07:00Z",
+      "url": "https://madejustforyou.net/products/mom-grandma-sweethearts-gift-for-mothers-day-personalized-shirt",
+      "tags": [
+        "cat-apparel",
+        "custom-name",
+        "MJ4U-116",
+        "occasion-mothersday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom",
+        "sizechart-hoodie-g18500",
+        "sizechart-sweatshirt-g18000",
+        "sizechart-tee-g5000",
+        "sizechart-womens-tee-g5000l"
+      ]
+    },
+    {
+      "shopify_product_id": "9727766364517",
+      "title": "Not Retired Professional Grandma Shirt, Personalized with Grandkids - Gift for Grandma",
+      "handle": "im-not-retired-professional-grandma-shirt-personalized",
+      "status": "ACTIVE",
+      "product_type": "T-Shirt",
+      "created_at": "2026-08-16T15:49:07Z",
+      "url": "https://madejustforyou.net/products/im-not-retired-professional-grandma-shirt-personalized",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "MJ4U-051",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom",
+        "sizechart-hoodie-g18500",
+        "sizechart-sweatshirt-g18000",
+        "sizechart-tee-g5000",
+        "sizechart-womens-tee-g5000l"
+      ]
+    },
+    {
+      "shopify_product_id": "9728857997669",
+      "title": "Vintage Map Papa Shirt, Sweatshirt & Hoodie, Personalized with Kids' Names - Gift for Dad",
+      "handle": "personalized-vintage-map-papa-shirt-kids-names",
+      "status": "ACTIVE",
+      "product_type": "T-Shirt",
+      "created_at": "2026-08-18T10:47:50Z",
+      "url": "https://madejustforyou.net/products/personalized-vintage-map-papa-shirt-kids-names",
+      "tags": [
+        "cat-apparel",
+        "custom-name",
+        "MJ4U-105",
+        "new-arrivals",
+        "occasion-birthday",
+        "occasion-fathersday",
+        "occasion-grandparentsday",
+        "recipient-dad",
+        "recipient-grandpa",
+        "recipient-male",
+        "sizechart-hoodie-g18500",
+        "sizechart-sweatshirt-g18000",
+        "sizechart-tee-g5000"
+      ]
+    },
+    {
+      "shopify_product_id": "9729822196069",
+      "title": "First Mom Now Grandma Wooden Plaque, Personalized with Kids' & Grandkids' Names - Gift for Grandma",
+      "handle": "first-mom-now-grandma-wooden-plaque-personalized",
+      "status": "ACTIVE",
+      "product_type": "Wooden Plaque",
+      "created_at": "2026-08-19T07:53:06Z",
+      "url": "https://madejustforyou.net/products/first-mom-now-grandma-wooden-plaque-personalized",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-117",
+        "occasion-grandparentsday",
+        "occasion-mothersday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9733272502629",
+      "title": "Grandma Hugging Grandkids Fridge Magnet, Personalized with Names - Gift for Grandma",
+      "handle": "personalized-grandma-grandkids-hugging-fridge-magnet",
+      "status": "ACTIVE",
+      "product_type": "Fridge Magnet",
+      "created_at": "2026-08-24T10:38:51Z",
+      "url": "https://madejustforyou.net/products/personalized-grandma-grandkids-hugging-fridge-magnet",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-079",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9733584159077",
+      "title": "Grandma Leopard Butterfly Nightgown, Personalized with Kids' Names - Gift for Grandma",
+      "handle": "personalized-grandma-leopard-butterfly-nightgown-with-kids-names",
+      "status": "ACTIVE",
+      "product_type": "Nightgown",
+      "created_at": "2026-08-25T09:40:17Z",
+      "url": "https://madejustforyou.net/products/personalized-grandma-leopard-butterfly-nightgown-with-kids-names",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "MJ4U-118",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9734390743397",
+      "title": "Sunflower Suncatcher, Personalized with Family Names - Gift for Mom & Grandma",
+      "handle": "personalized-sunflower-suncatcher-family-names",
+      "status": "ACTIVE",
+      "product_type": "Suncatcher",
+      "created_at": "2026-08-27T06:27:58Z",
+      "url": "https://madejustforyou.net/products/personalized-sunflower-suncatcher-family-names",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-119",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9743516074341",
+      "title": "Family LED Night Light, Personalized with Up to 15 Names - Christmas Gift for Family",
+      "handle": "personalized-family-acrylic-led-night-light-names",
+      "status": "ACTIVE",
+      "product_type": "Light Box",
+      "created_at": "2026-09-04T05:01:44Z",
+      "url": "https://madejustforyou.net/products/personalized-family-acrylic-led-night-light-names",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-120",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-dad",
+        "recipient-family",
+        "recipient-female",
+        "recipient-male",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9743524921701",
+      "title": "Dog Memorial Suncatcher, Personalized with Breed & Name - Pet Loss Gift",
+      "handle": "personalized-dog-memorial-suncatcher-breed-name",
+      "status": "ACTIVE",
+      "product_type": "Suncatcher",
+      "created_at": "2026-09-04T06:29:46Z",
+      "url": "https://madejustforyou.net/products/personalized-dog-memorial-suncatcher-breed-name",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "interest-pets",
+        "MJ4U-003",
+        "new-arrivals",
+        "occasion-memorial",
+        "recipient-female",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9744105668965",
+      "title": "Best Grandma Ever Nightgown, Personalized with Kids & Pets - Gift for Grandma",
+      "handle": "personalized-best-grandma-ever-nightgown",
+      "status": "ACTIVE",
+      "product_type": "Nightgown",
+      "created_at": "2026-09-08T06:39:05Z",
+      "url": "https://madejustforyou.net/products/personalized-best-grandma-ever-nightgown",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "MJ4U-121",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom",
+        "sizechart-nightgown"
+      ]
+    },
+    {
+      "shopify_product_id": "9745329488229",
+      "title": "Dog Mom & Cat Mom Nightgown, Personalized with Pet Breeds & Names - Gift for Pet Moms",
+      "handle": "personalized-dog-mom-cat-mom-nightgown",
+      "status": "ACTIVE",
+      "product_type": "Nightgown",
+      "created_at": "2026-09-11T08:19:43Z",
+      "url": "https://madejustforyou.net/products/personalized-dog-mom-cat-mom-nightgown",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "interest-pets",
+        "MJ4U-122",
+        "new-arrivals",
+        "recipient-female",
+        "recipient-mom",
+        "sizechart-nightgown"
+      ]
+    },
+    {
+      "shopify_product_id": "9747496075621",
+      "title": "Personalized Best Dad Ever Pajama Pants with Kids' Photos",
+      "handle": "tiểu-my-personalized-best-dad-ever-pajama-pants-with-kids-photos",
+      "status": "DRAFT",
+      "product_type": "",
+      "created_at": "2026-09-17T05:02:17Z",
+      "url": null,
+      "tags": [
+        "MJ4U-123"
+      ]
+    },
+    {
+      "shopify_product_id": "9747564233061",
+      "title": "It's a boy - cups",
+      "handle": "its-a-boy-cups",
+      "status": "DRAFT",
+      "product_type": "",
+      "created_at": "2026-09-17T10:05:57Z",
+      "url": null,
+      "tags": [
+        "MJ4U-124"
+      ]
+    },
+    {
+      "shopify_product_id": "9748123484517",
+      "title": "First Mom Now Grandma Crossword Poster, Personalized with Family Names - Gift for Grandma",
+      "handle": "personalized-first-mom-now-grandma-crossword-puzzle-poster",
+      "status": "ACTIVE",
+      "product_type": "Poster",
+      "created_at": "2026-09-18T08:49:08Z",
+      "url": "https://madejustforyou.net/products/personalized-first-mom-now-grandma-crossword-puzzle-poster",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-125",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9748475674981",
+      "title": "Mom Stained Glass Suncatcher, Personalized with Family Names - Gift for Mom",
+      "handle": "personalized-mom-suncatcher-family-names",
+      "status": "ACTIVE",
+      "product_type": "Suncatcher",
+      "created_at": "2026-09-19T09:16:59Z",
+      "url": "https://madejustforyou.net/products/personalized-mom-suncatcher-family-names",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-126",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "occasion-mothersday",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9749239038309",
+      "title": "Pet Memorial Car Visor Clip, Personalized with Dog & Cat Breeds - Pet Loss Gift",
+      "handle": "personalized-pet-memorial-car-visor-clip",
+      "status": "ACTIVE",
+      "product_type": "Car Clip",
+      "created_at": "2026-09-21T07:31:45Z",
+      "url": "https://madejustforyou.net/products/personalized-pet-memorial-car-visor-clip",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "interest-pets",
+        "MJ4U-025",
+        "new-arrivals",
+        "occasion-memorial",
+        "recipient-female",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9753207734629",
+      "title": "Hug Blanket for Granddaughter or Grandson, Personalized with Names - Gift for Grandkids",
+      "handle": "personalized-hug-blanket-granddaughter-grandson-customily-cu",
+      "status": "ARCHIVED",
+      "product_type": "Blanket",
+      "created_at": "2026-09-28T01:42:56Z",
+      "url": null,
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-127",
+        "recipient-female",
+        "recipient-kids",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9756848718181",
+      "title": "Personalized Dog Memorial Suncatcher with Breed and Name",
+      "handle": "loss-of-dog-in-loving-memory-personalized-window-hanging-suncatcher-ornament",
+      "status": "DRAFT",
+      "product_type": "Suncatcher",
+      "created_at": "2026-10-04T04:12:01Z",
+      "url": null,
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-139",
+        "new-arrivals",
+        "occasion-memorial",
+        "recipient-female",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9762304360805",
+      "title": "3D Effect Family Couple Sibling Dog Cat - Personalized Rectangle LED Light",
+      "handle": "3d-effect-family-couple-sibling-dog-cat-personalized-rectangle-led-light",
+      "status": "DRAFT",
+      "product_type": "Light Box",
+      "created_at": "2026-10-18T08:38:45Z",
+      "url": null,
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-128",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-dad",
+        "recipient-family",
+        "recipient-female",
+        "recipient-male",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9762515288421",
+      "title": "Best Witches Moon Suncatcher, Personalized with Names - Halloween Gift for Friends",
+      "handle": "personalized-best-witches-suncatcher-halloween-moon-window-hanging",
+      "status": "ACTIVE",
+      "product_type": "Suncatcher",
+      "created_at": "2026-10-19T04:00:52Z",
+      "url": "https://madejustforyou.net/products/personalized-best-witches-suncatcher-halloween-moon-window-hanging",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-016",
+        "new-arrivals",
+        "occasion-halloween",
+        "recipient-female"
+      ]
+    },
+    {
+      "shopify_product_id": "9762627289445",
+      "title": "Mother of Meownsters Cat Mom Shirt, Personalized with Cat Names - Halloween Gift",
+      "handle": "personalized-cat-mom-halloween-shirt-mother-of-meownsters",
+      "status": "ACTIVE",
+      "product_type": "T-Shirt",
+      "created_at": "2026-10-19T07:38:42Z",
+      "url": "https://madejustforyou.net/products/personalized-cat-mom-halloween-shirt-mother-of-meownsters",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "interest-pets",
+        "MJ4U-129",
+        "new-arrivals",
+        "occasion-halloween",
+        "recipient-dad",
+        "recipient-female",
+        "recipient-male",
+        "recipient-mom",
+        "sizechart-hoodie-g18500",
+        "sizechart-sweatshirt-g18000",
+        "sizechart-tee-g5000",
+        "sizechart-womens-tee-g5000l"
+      ]
+    },
+    {
+      "shopify_product_id": "9763289891173",
+      "title": "Santa Hat Initial Ornament, Personalized with Name & Year - Christmas Gift for Family",
+      "handle": "personalized-initial-christmas-ornament-santa-hat-letter-with-name",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-10-20T06:13:34Z",
+      "url": "https://madejustforyou.net/products/personalized-initial-christmas-ornament-santa-hat-letter-with-name",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-130",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-family"
+      ]
+    },
+    {
+      "shopify_product_id": "9766190580069",
+      "title": "3D Cartoon Family Night Light, Personalized with Names & Pets - Christmas Gift for Family",
+      "handle": "personalized-3d-cartoon-family-led-night-light-with-pets",
+      "status": "ACTIVE",
+      "product_type": "Light Box",
+      "created_at": "2026-10-22T03:31:17Z",
+      "url": "https://madejustforyou.net/products/personalized-3d-cartoon-family-led-night-light-with-pets",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-131",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-dad",
+        "recipient-family",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-grandpa",
+        "recipient-kids",
+        "recipient-male",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9766851084645",
+      "title": "This Grandma Belongs To Nightgown, Personalized with Kids & Pets - Gift for Grandma",
+      "handle": "this-grandma-belongs-to-nightgown",
+      "status": "ACTIVE",
+      "product_type": "Nightgown",
+      "created_at": "2026-10-23T03:56:35Z",
+      "url": "https://madejustforyou.net/products/this-grandma-belongs-to-nightgown",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "MJ4U-096",
+        "new-arrivals",
+        "recipient-female",
+        "recipient-grandma",
+        "sizechart-nightgown"
+      ]
+    },
+    {
+      "shopify_product_id": "9766858064229",
+      "title": "My Favorite Peeps Nightgown, Personalized with Bunny Names - Gift for Grandma",
+      "handle": "my-favorite-peeps-grandma-nightgown",
+      "status": "ACTIVE",
+      "product_type": "Nightgown",
+      "created_at": "2026-10-23T06:50:27Z",
+      "url": "https://madejustforyou.net/products/my-favorite-peeps-grandma-nightgown",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "MJ4U-094",
+        "new-arrivals",
+        "occasion-easter",
+        "recipient-female",
+        "recipient-grandma",
+        "recipient-mom",
+        "sizechart-nightgown"
+      ]
+    },
+    {
+      "shopify_product_id": "9768616231269",
+      "title": "Palm Tree Best Dad Ever Pajama Pants, Personalized with Kids & Pet Photos - Gift for Dad",
+      "handle": "palm-tree-best-dad-ever-photo-pajama-pants",
+      "status": "ACTIVE",
+      "product_type": "Pajama Pants",
+      "created_at": "2026-10-28T04:57:03Z",
+      "url": "https://madejustforyou.net/products/palm-tree-best-dad-ever-photo-pajama-pants",
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-photo",
+        "MJ4U-036",
+        "new-arrivals",
+        "occasion-grandparentsday",
+        "recipient-dad",
+        "recipient-grandpa",
+        "recipient-male",
+        "sizechart-pants-pjpa-swpt"
+      ]
+    },
+    {
+      "shopify_product_id": "9772963299685",
+      "title": "Hug Blanket for Granddaughter or Grandson, Personalized with Names - Gift for Grandkids",
+      "handle": "personalized-hug-blanket-granddaughter-grandson",
+      "status": "ACTIVE",
+      "product_type": "Blanket",
+      "created_at": "2026-11-04T07:14:41Z",
+      "url": "https://madejustforyou.net/products/personalized-hug-blanket-granddaughter-grandson",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-132",
+        "recipient-female",
+        "recipient-kids",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9776113090917",
+      "title": "Couple Heart Glass Ornament, Personalized with Names & Year - Christmas Gift for Couples",
+      "handle": "couple-heart-glass-ornament-missing-piece",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-11-11T03:46:16Z",
+      "url": "https://madejustforyou.net/products/couple-heart-glass-ornament-missing-piece",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-100",
+        "occasion-christmas",
+        "recipient-couple",
+        "recipient-female",
+        "recipient-male"
+      ]
+    },
+    {
+      "shopify_product_id": "9776266740069",
+      "title": "Memorial Photo Ornament, Personalized with Photo, Name & Dates - Christmas Sympathy Gift",
+      "handle": "memorial-photo-ornament-i-am-always-with-you",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-11-11T05:12:18Z",
+      "url": "https://madejustforyou.net/products/memorial-photo-ornament-i-am-always-with-you",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "custom-photo",
+        "MJ4U-047",
+        "new-arrivals",
+        "occasion-christmas",
+        "occasion-memorial",
+        "recipient-family"
+      ]
+    },
+    {
+      "shopify_product_id": "9776740696421",
+      "title": "3D Family Wood Ornament, Personalized with Pets, Names & Year - Christmas Gift for Family",
+      "handle": "3d-family-pets-christmas-wood-ornament",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-11-11T09:04:09Z",
+      "url": "https://madejustforyou.net/products/3d-family-pets-christmas-wood-ornament",
+      "tags": [
+        "cat-homeliving",
+        "custom-character",
+        "custom-name",
+        "MJ4U-133",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-dad",
+        "recipient-family",
+        "recipient-female",
+        "recipient-kids",
+        "recipient-male",
+        "recipient-mom"
+      ]
+    },
+    {
+      "shopify_product_id": "9780381942117",
+      "title": "Long Distance Family Ornament, Personalized with States & Names - Christmas Family Gift",
+      "handle": "long-distance-family-state-ornament",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-11-13T05:52:37Z",
+      "url": "https://madejustforyou.net/products/long-distance-family-state-ornament",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-134",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-family"
+      ]
+    },
+    {
+      "shopify_product_id": "9781908767077",
+      "title": "America 250 Snowman Family Ornament, Personalized with Names - Christmas Family Gift",
+      "handle": "america-250-snowman-family-christmas-ornament",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-11-16T07:20:20Z",
+      "url": "https://madejustforyou.net/products/america-250-snowman-family-christmas-ornament",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-135",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-family"
+      ]
+    },
+    {
+      "shopify_product_id": "9781957886309",
+      "title": "First Christmas Married Ceramic Photo Ornament, Personalized Names & Year - Couple Gift",
+      "handle": "first-christmas-married-photo-heart-ceramic-ornament",
+      "status": "ACTIVE",
+      "product_type": "Ornament",
+      "created_at": "2026-11-16T08:10:43Z",
+      "url": "https://madejustforyou.net/products/first-christmas-married-photo-heart-ceramic-ornament",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "custom-photo",
+        "MJ4U-136",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-couple"
+      ]
+    },
+    {
+      "shopify_product_id": "9784410898789",
+      "title": "Birth Flower Name Christmas Stocking, Personalized with Name & Flower - Gift for Family",
+      "handle": "birth-flower-name-velvet-christmas-stocking",
+      "status": "ACTIVE",
+      "product_type": "Christmas Stocking",
+      "created_at": "2026-11-18T10:59:16Z",
+      "url": "https://madejustforyou.net/products/birth-flower-name-velvet-christmas-stocking",
+      "tags": [
+        "cat-homeliving",
+        "custom-name",
+        "MJ4U-137",
+        "new-arrivals",
+        "occasion-christmas",
+        "recipient-family",
+        "recipient-kids"
+      ]
+    },
+    {
+      "shopify_product_id": "9787634516325",
+      "title": "Cartoon Family Ugly Sweater, Personalized with Names & Pets - Christmas Gift for Family",
+      "handle": "family-ugly-christmas-sweater-personalized-names-pets",
+      "status": "DRAFT",
+      "product_type": "Sweatshirt",
+      "created_at": "2026-11-19T17:03:05Z",
+      "url": null,
+      "tags": [
+        "cat-apparel",
+        "custom-character",
+        "custom-name",
+        "MJ4U-138",
+        "occasion-christmas",
+        "recipient-couple",
+        "recipient-family",
+        "recipient-kids"
+      ]
+    }
+  ]
+}

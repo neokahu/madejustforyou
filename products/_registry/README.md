@@ -11,6 +11,8 @@ Only Claude writes to both (from your verbal updates); you view the Sheet. On ev
 
 **How Claude re-pushes the Sheet (keeps the same link):** copy the CSV to `/Users/neovh34/.workspace-mcp/attachments/product-tracker.csv`, then `update_drive_file(file_id=1BBO5WRBeBVQLkJI8l6zVBe2Ud1qzl7QOL7g5VS8ZoTE, file_path=…, source_format=csv)` — in-place, preserves the ID/link/sharing.
 
+**Store sync (2026-11-23):** every Shopify product has one MJ4U code: approved map `product-ids.json`, raw store pull `shopify-products.json`, tags written by `python3 scripts/shopify_catalog.py tag --apply` (app `mj4u-catalog`, creds in `~/.global-keys.env`). New store products: `pull`, add the next number to the map, then `tag --apply`.
+
 Seeded 2026-08-05 with **all 110 shortlist products** (Macorner 16, PFG 9, Wander Prints 85), ordered by tier then score, all at `stage=backlog`. Add existing live products as `original` rows.
 
 ## Columns
@@ -33,6 +35,7 @@ Seeded 2026-08-05 with **all 110 shortlist products** (Macorner 16, PFG 9, Wande
 | `ad_result` | Spend / ROAS / verdict (manual until a Meta Ads MCP is connected) |
 | `last_updated` | `YYYY-MM-DD` of last change to the row |
 | `notes` | Anything else |
+| `shopify_product_id` | Our Shopify product ID. The store product also carries the `MJ4U-NNN` code as a tag (`scripts/shopify_catalog.py`; map in `product-ids.json`). Added 2026-11-23 |
 
 ## `stage` vocabulary (the pipeline, in order)
 1. `backlog` — chosen to build, not started

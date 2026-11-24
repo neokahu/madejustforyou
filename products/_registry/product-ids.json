@@ -1,0 +1,393 @@
+{
+  "status": "APPROVED 2026-11-23 by the user; tags written to Shopify by scripts/shopify_catalog.py tag --apply",
+  "rule": "One MJ4U-NNN per Shopify listing (duplicates get their own number); Shopify products carry it as a tag. New numbers continue after MJ4U-112.",
+  "products": [
+    {
+      "product_id": "MJ4U-002",
+      "name": "Legend Husband Dad Papa Shirt & Hoodie, Personalized with Titles & Years - Gift for Dad",
+      "shopify_product_id": "9723602108773",
+      "handle": "legend-husband-dad-papa-personalized-shirt",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker idea \"Legend: Husband-Dad-Grandpa\" shirt"
+    },
+    {
+      "product_id": "MJ4U-111",
+      "name": "Grandma's Garden Birth Flower Candle Warmer, Personalized with Names - Gift for Grandma",
+      "shopify_product_id": "9725384229221",
+      "handle": "grandmas-garden-love-grows-here-personalized-candle-warmer-49",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker store_url + products/MJ4U-111 folder"
+    },
+    {
+      "product_id": "MJ4U-052",
+      "name": "Snowman Light Box, Personalized with Grandkids' Names - Christmas Gift for Grandparents",
+      "shopify_product_id": "9726010032485",
+      "handle": "personalized-snowman-family-light-box-grandkids-names",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker store_url"
+    },
+    {
+      "product_id": "MJ4U-112",
+      "name": "Christmas Squishy Dad Bod Magnet, Personalized with Photo & Name - Stocking Stuffer for Dad",
+      "shopify_product_id": "9726101651813",
+      "handle": "squishy-dad-bod-belly-fridge-magnet-custom-photo",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "folder products/MJ4U-112-funny-belly-magnet"
+    },
+    {
+      "product_id": "MJ4U-113",
+      "name": "Best Dad Ever Pajama Pants, Personalized with Kids' Photos - Christmas Gift for Dad",
+      "shopify_product_id": "9726664212837",
+      "handle": "personalized-best-dad-ever-photo-pajama-pants",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-114",
+      "name": "Floral Best Mom Ever Pajama Pants, Personalized with Kids' Photos - Gift for Mom",
+      "shopify_product_id": "9726695211365",
+      "handle": "personalized-best-mom-ever-photo-pajama-pants",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-012",
+      "name": "Personalized To My Granddaughter Blanket from Grandma",
+      "shopify_product_id": "9726795284837",
+      "handle": "personalized-to-my-granddaughter-blanket-from-grandma",
+      "status": "ARCHIVED",
+      "id_source": "match",
+      "note": "products/blanket-granddaughter README says MJ4U-012 = this page (archived); archived"
+    },
+    {
+      "product_id": "MJ4U-115",
+      "name": "Sweethearts Leather Handbag, Personalized with Kids' Names - Gift for Mom & Grandma",
+      "shopify_product_id": "9726940709221",
+      "handle": "personalized-sweethearts-leather-handbag-mom-grandma",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-116",
+      "name": "Mom & Grandma Shirt, Sweatshirt & Hoodie, Personalized with Kids' Names - Gift for Her",
+      "shopify_product_id": "9727542821221",
+      "handle": "mom-grandma-sweethearts-gift-for-mothers-day-personalized-shirt",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-051",
+      "name": "Not Retired Professional Grandma Shirt, Personalized with Grandkids - Gift for Grandma",
+      "shopify_product_id": "9727766364517",
+      "handle": "im-not-retired-professional-grandma-shirt-personalized",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"Professional grandma of grandkids\" shirt"
+    },
+    {
+      "product_id": "MJ4U-105",
+      "name": "Vintage Map Papa Shirt, Sweatshirt & Hoodie, Personalized with Kids' Names - Gift for Dad",
+      "shopify_product_id": "9728857997669",
+      "handle": "personalized-vintage-map-papa-shirt-kids-names",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"vintage map papa\""
+    },
+    {
+      "product_id": "MJ4U-117",
+      "name": "First Mom Now Grandma Wooden Plaque, Personalized with Kids' & Grandkids' Names - Gift for Grandma",
+      "shopify_product_id": "9729822196069",
+      "handle": "first-mom-now-grandma-wooden-plaque-personalized",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-079",
+      "name": "Grandma Hugging Grandkids Fridge Magnet, Personalized with Names - Gift for Grandma",
+      "shopify_product_id": "9733272502629",
+      "handle": "personalized-grandma-grandkids-hugging-fridge-magnet",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"Grandma-grandkids hugging fridge magnet\""
+    },
+    {
+      "product_id": "MJ4U-118",
+      "name": "Grandma Leopard Butterfly Nightgown, Personalized with Kids' Names - Gift for Grandma",
+      "shopify_product_id": "9733584159077",
+      "handle": "personalized-grandma-leopard-butterfly-nightgown-with-kids-names",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-119",
+      "name": "Sunflower Suncatcher, Personalized with Family Names - Gift for Mom & Grandma",
+      "shopify_product_id": "9734390743397",
+      "handle": "personalized-sunflower-suncatcher-family-names",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-120",
+      "name": "Family LED Night Light, Personalized with Up to 15 Names - Christmas Gift for Family",
+      "shopify_product_id": "9743516074341",
+      "handle": "personalized-family-acrylic-led-night-light-names",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-003",
+      "name": "Dog Memorial Suncatcher, Personalized with Breed & Name - Pet Loss Gift",
+      "shopify_product_id": "9743524921701",
+      "handle": "personalized-dog-memorial-suncatcher-breed-name",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "dog memorial suncatcher (suncatcher-dog-memorial folder, Phase-1 tests)"
+    },
+    {
+      "product_id": "MJ4U-121",
+      "name": "Best Grandma Ever Nightgown, Personalized with Kids & Pets - Gift for Grandma",
+      "shopify_product_id": "9744105668965",
+      "handle": "personalized-best-grandma-ever-nightgown",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-122",
+      "name": "Dog Mom & Cat Mom Nightgown, Personalized with Pet Breeds & Names - Gift for Pet Moms",
+      "shopify_product_id": "9745329488229",
+      "handle": "personalized-dog-mom-cat-mom-nightgown",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-123",
+      "name": "Personalized Best Dad Ever Pajama Pants with Kids' Photos",
+      "shopify_product_id": "9747496075621",
+      "handle": "tiểu-my-personalized-best-dad-ever-pajama-pants-with-kids-photos",
+      "status": "DRAFT",
+      "id_source": "new",
+      "note": "draft"
+    },
+    {
+      "product_id": "MJ4U-124",
+      "name": "It's a boy - cups",
+      "shopify_product_id": "9747564233061",
+      "handle": "its-a-boy-cups",
+      "status": "DRAFT",
+      "id_source": "new",
+      "note": "draft"
+    },
+    {
+      "product_id": "MJ4U-125",
+      "name": "First Mom Now Grandma Crossword Poster, Personalized with Family Names - Gift for Grandma",
+      "shopify_product_id": "9748123484517",
+      "handle": "personalized-first-mom-now-grandma-crossword-puzzle-poster",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-126",
+      "name": "Mom Stained Glass Suncatcher, Personalized with Family Names - Gift for Mom",
+      "shopify_product_id": "9748475674981",
+      "handle": "personalized-mom-suncatcher-family-names",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-025",
+      "name": "Pet Memorial Car Visor Clip, Personalized with Dog & Cat Breeds - Pet Loss Gift",
+      "shopify_product_id": "9749239038309",
+      "handle": "personalized-pet-memorial-car-visor-clip",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"Dog/cat memorial wooden car-visor clip\""
+    },
+    {
+      "product_id": "MJ4U-127",
+      "name": "Hug Blanket for Granddaughter or Grandson, Personalized with Names - Gift for Grandkids",
+      "shopify_product_id": "9753207734629",
+      "handle": "personalized-hug-blanket-granddaughter-grandson-customily-cu",
+      "status": "ARCHIVED",
+      "id_source": "new",
+      "note": "archived"
+    },
+    {
+      "product_id": "MJ4U-139",
+      "name": "Personalized Dog Memorial Suncatcher with Breed and Name",
+      "shopify_product_id": "9756848718181",
+      "handle": "loss-of-dog-in-loving-memory-personalized-window-hanging-suncatcher-ornament",
+      "status": "DRAFT",
+      "id_source": "new",
+      "note": "draft; early version of the live MJ4U-003 listing (same competitor ref); own number, one ID per listing"
+    },
+    {
+      "product_id": "MJ4U-128",
+      "name": "3D Effect Family Couple Sibling Dog Cat - Personalized Rectangle LED Light",
+      "shopify_product_id": "9762304360805",
+      "handle": "3d-effect-family-couple-sibling-dog-cat-personalized-rectangle-led-light",
+      "status": "DRAFT",
+      "id_source": "new",
+      "note": "draft"
+    },
+    {
+      "product_id": "MJ4U-016",
+      "name": "Best Witches Moon Suncatcher, Personalized with Names - Halloween Gift for Friends",
+      "shopify_product_id": "9762515288421",
+      "handle": "personalized-best-witches-suncatcher-halloween-moon-window-hanging",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"besties sitting on the moon\" suncatcher; store version is witches (approved 2026-11-23)"
+    },
+    {
+      "product_id": "MJ4U-129",
+      "name": "Mother of Meownsters Cat Mom Shirt, Personalized with Cat Names - Halloween Gift",
+      "shopify_product_id": "9762627289445",
+      "handle": "personalized-cat-mom-halloween-shirt-mother-of-meownsters",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-130",
+      "name": "Santa Hat Initial Ornament, Personalized with Name & Year - Christmas Gift for Family",
+      "shopify_product_id": "9763289891173",
+      "handle": "personalized-initial-christmas-ornament-santa-hat-letter-with-name",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-131",
+      "name": "3D Cartoon Family Night Light, Personalized with Names & Pets - Christmas Gift for Family",
+      "shopify_product_id": "9766190580069",
+      "handle": "personalized-3d-cartoon-family-led-night-light-with-pets",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-096",
+      "name": "This Grandma Belongs To Nightgown, Personalized with Kids & Pets - Gift for Grandma",
+      "shopify_product_id": "9766851084645",
+      "handle": "this-grandma-belongs-to-nightgown",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"this grandma belongs to\""
+    },
+    {
+      "product_id": "MJ4U-094",
+      "name": "My Favorite Peeps Nightgown, Personalized with Bunny Names - Gift for Grandma",
+      "shopify_product_id": "9766858064229",
+      "handle": "my-favorite-peeps-grandma-nightgown",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"my favorite peeps call me grandma\""
+    },
+    {
+      "product_id": "MJ4U-036",
+      "name": "Palm Tree Best Dad Ever Pajama Pants, Personalized with Kids & Pet Photos - Gift for Dad",
+      "shopify_product_id": "9768616231269",
+      "handle": "palm-tree-best-dad-ever-photo-pajama-pants",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"custom photo best dad ever coconut palm\""
+    },
+    {
+      "product_id": "MJ4U-132",
+      "name": "Hug Blanket for Granddaughter or Grandson, Personalized with Names - Gift for Grandkids",
+      "shopify_product_id": "9772963299685",
+      "handle": "personalized-hug-blanket-granddaughter-grandson",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-100",
+      "name": "Couple Heart Glass Ornament, Personalized with Names & Year - Christmas Gift for Couples",
+      "shopify_product_id": "9776113090917",
+      "handle": "couple-heart-glass-ornament-missing-piece",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"a piece of my heart is at the\" (missing-piece heart?) (approved 2026-11-23)"
+    },
+    {
+      "product_id": "MJ4U-047",
+      "name": "Memorial Photo Ornament, Personalized with Photo, Name & Dates - Christmas Sympathy Gift",
+      "shopify_product_id": "9776266740069",
+      "handle": "memorial-photo-ornament-i-am-always-with-you",
+      "status": "ACTIVE",
+      "id_source": "match",
+      "note": "tracker \"custom photo im always with you memorial\" (approved 2026-11-23)"
+    },
+    {
+      "product_id": "MJ4U-133",
+      "name": "3D Family Wood Ornament, Personalized with Pets, Names & Year - Christmas Gift for Family",
+      "shopify_product_id": "9776740696421",
+      "handle": "3d-family-pets-christmas-wood-ornament",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-134",
+      "name": "Long Distance Family Ornament, Personalized with States & Names - Christmas Family Gift",
+      "shopify_product_id": "9780381942117",
+      "handle": "long-distance-family-state-ornament",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-135",
+      "name": "America 250 Snowman Family Ornament, Personalized with Names - Christmas Family Gift",
+      "shopify_product_id": "9781908767077",
+      "handle": "america-250-snowman-family-christmas-ornament",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-136",
+      "name": "First Christmas Married Ceramic Photo Ornament, Personalized Names & Year - Couple Gift",
+      "shopify_product_id": "9781957886309",
+      "handle": "first-christmas-married-photo-heart-ceramic-ornament",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-137",
+      "name": "Birth Flower Name Christmas Stocking, Personalized with Name & Flower - Gift for Family",
+      "shopify_product_id": "9784410898789",
+      "handle": "birth-flower-name-velvet-christmas-stocking",
+      "status": "ACTIVE",
+      "id_source": "new",
+      "note": ""
+    },
+    {
+      "product_id": "MJ4U-138",
+      "name": "Cartoon Family Ugly Sweater, Personalized with Names & Pets - Christmas Gift for Family",
+      "shopify_product_id": "9787634516325",
+      "handle": "family-ugly-christmas-sweater-personalized-names-pets",
+      "status": "DRAFT",
+      "id_source": "new",
+      "note": "draft"
+    }
+  ]
+}

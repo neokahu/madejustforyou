@@ -10,11 +10,12 @@ _SESSION-LOGS/
   sessions/<YYYY-MM-DD-slug>.md ← full detailed per-session logs
 ```
 
-## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-20)
+## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-24)
 
-1. Rebuild the test plan + deck around the **DEEP PLAN decided 2026-11-21** (C0 6×2 → H1∥C1 → C2∥H2 → B; 42 ads, ≈$1,855/product @$25), evidence base `research/reference/video-team/impact-ranking.md`.
-2. Align framework/DB round codes/`/video:new` with it. 3. Run `/video:new MJ4U-003` from 00A.
-Full detail + links: `sessions/2026-11-19-video-team-ads-db.md` (section "RESUME HERE").
+1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate 0 approved, renders done, 12 hooks selected; scripts (04) in progress →
+   council → **GATE A (user)** → 05 visuals → build → QA → launch ≈ Nov 30 (Christmas cutoff Dec 11).
+2. User items: Hook Lab deploy (`vercel deploy --prod`); `mj4u-orders` install + customer-data access + Freshdesk key.
+Full detail: `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md` (RESUME HERE). Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
 
 ## Current state by area
 
@@ -26,7 +27,8 @@ Full detail + links: `sessions/2026-11-19-video-team-ads-db.md` (section "RESUME
 | Platforms | ⚠️ **kie.ai out of credits** (2026-10-08) → images via AtlasCloud `google/nano-banana-pro/edit` ($0.14). Video AtlasCloud. TopView dropped. AtlasCloud ~$41 |
 | Prompt method | Seedance 2.0 two-shot recipe settled; prompt-guard hook enforces it |
 | Testing plan page | Live, approval pending; blanket row fix not redeployed |
-| Ad-testing method | Complete; next = run Phase 1 on new Tier-1 products |
+| Ad-testing method | Deep plan (C0→H1+C1→C2+H2→B) built into the system 2026-11-23; first run = MJ4U-133 C0 |
+| Shopify catalog | All 43 products tagged MJ4U-NNN (2026-11-23); apps mj4u-catalog + mj4u-orders |
 | Teeinblue / pajama | Base PSD done; campaign build + anchors + Route A/B open |
 | Theme | Home rework live; 3 admin items open |
 

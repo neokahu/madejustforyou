@@ -1,0 +1,70 @@
+{
+  "product_id": "MJ4U-133",
+  "name": "3D Family Wood Ornament, Personalized with Pets, Names & Year - Christmas Gift for Family",
+  "shopify_product_id": "9776740696421",
+  "handle": "3d-family-pets-christmas-wood-ornament",
+  "url": "https://madejustforyou.net/products/3d-family-pets-christmas-wood-ornament",
+  "status": "live",
+  "live_date": "2026-11-11",
+  "product_type": "Ornament",
+  "recipient": "Family",
+  "occasion": "Christmas",
+  "store_tags": [
+    "cat-homeliving",
+    "custom-character",
+    "custom-name",
+    "MJ4U-133",
+    "new-arrivals",
+    "occasion-christmas",
+    "recipient-dad",
+    "recipient-family",
+    "recipient-female",
+    "recipient-kids",
+    "recipient-male",
+    "recipient-mom"
+  ],
+  "variants": [
+    {
+      "size": "4 inch",
+      "price_usd": 16.95,
+      "sku": "fqc_1079250_9217223"
+    },
+    {
+      "size": "5 inch",
+      "price_usd": 19.95,
+      "sku": "fqc_1079250_9217224"
+    },
+    {
+      "size": "7 inch",
+      "price_usd": 25.95,
+      "sku": "fqc_1079250_9217226"
+    }
+  ],
+  "facts": {
+    "F1": "3 mm plywood, laser cut to the outline of the design, with a hanging hole",
+    "F2": "Printed in full color on one side",
+    "F3": "Sizes 4 in, 5 in, 7 in; hanging string included",
+    "F4": "2 to 10 family members, pets included",
+    "F5": "Characters: man, woman, kid boy, kid girl, baby, dog, cat",
+    "F6": "Per person: skin tone, hairstyle, hair color, eyes, glasses, Christmas sweater or T-shirt, accessories, a drink",
+    "F7": "Dog by breed (100+ breeds); cat by breed and coat color",
+    "F8": "A name under each member, up to 15 characters",
+    "F9": "The year in big 3D-look wooden numbers (4 digits); design shows everyone on a snowy ledge with Santa hats",
+    "F10": "Made to order"
+  },
+  "description": "The whole family on one wooden ornament: every person and pet sitting on a snowy ledge, their names below them and your year in big 3D wooden numbers. Printed in full color on wood and cut to the shape of your family. Ready for Christmas Hang this family ornament on the tree this December and bring it out again every year. It makes an easy gift for parents, grandparents and anyone who counts the dog and the cat as family. Personalization Choose 2 to 10 family members, pets included Pick a character for each: man, woman, kid boy, kid girl, baby, dog or cat Style each person: skin tone, hairstyle, hair color, eyes, glasses, Christmas sweater or T-shirt, accessories and a drink Find your dog by breed (over 100 breeds) or choose your cat's breed and coat color Add a name for each member, up to 15 characters Type the year, 4 digits Details 3 mm plywood, laser cut to the shape of the design, with a hanging hole Printed on one side Sizes: 4 in, 5 in or 7 in Ready to hang, hanging string included Made to order just for you Care Wipe gently with a soft, dry cloth Keep away from water and direct heat",
+  "media": [
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/6af42ec7f3e31_large_8e7e4c14-51f6-4824-9d12-b31cfa03c4f3.webp?v=1794552737",
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/6af42cf2151fd.webp?v=1794552737",
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/6af42f955d9e6.webp?v=1794396302",
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/261111_rvuoZVruGufesW5W_large_458ae32e-383e-495f-9425-12eb08dafd68.webp?v=1794552737",
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/261111_NHq4Nj4c0dVaADdb_large_2972b056-3cee-46fa-a6bf-d0469a1021b3.webp?v=1794552737",
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/261111_q9vxi1mGy61HZigf_large_b3e9bca6-bd8c-469d-9d10-95220bc96204.webp?v=1794552737",
+    "https://cdn.shopify.com/s/files/1/0885/3271/3829/files/6af42cf1e94d9.webp?v=1794552737"
+  ],
+  "local_media": {
+    "hero": "ads/source-images/hero-family-2026-tree.png (gitignored; Drive backup via scripts/backup-media.sh)"
+  },
+  "registry": "products/_registry/product-ids.json · product-tracker.csv",
+  "updated": "2026-11-23"
+}
