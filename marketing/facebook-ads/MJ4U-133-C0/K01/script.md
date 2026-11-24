@@ -121,6 +121,7 @@ Not done by 04: council review and the user gate are still owed by the Producer.
 | 1 · Beat 2: first frame as an image from the locked cast refs, seven in two clear rows, minimal motion; Leo looks and points at the box (no shush); prove first | Beat 2 visual intent rewritten; gate condition in the header and conflict 3. |
 | 2 · Beat 2 caption "Cooper the dog / is on it too." | Replaced (7 w, 3.2–6.9, 3.7s, 1.89 w/s); H79 promise line updated. |
 | 3 · Beat 4: ornament steady in both hands, front-lit; Grandpa leans in, no glasses push; caption "Grandpa needed / a closer look." | Beat 4 picture and caption replaced (5 w, 2.1s, 2.38 w/s); "quiet glasses match" note removed. |
+| Gate A (user 2026-11-24) · conflict 8 | Caption kept; 05 stages 2–3 soft background faces turning toward the ornament (heads only, ≤3 sharp faces). 07 checks at the shot gate. |
 | 4 · Beat 6a: over Grandma's shoulder, ornament sharp; Leo points at his printed figure, then himself; caption "Everyone found / their spot." | Beat 6a picture and caption replaced (4 w, 12.7–14.8, 2.1s, 1.90 w/s); conflict 7 closed; conflict 8 added. |
 | 5 · Beat 6b: hand-release on the high branch (post sway), Grandpa's hand on hers | Beat 6b visual intent rewritten; caption unchanged. |
 | 6 · Copy: F9 wording; bullet "Hair, glasses, sweater and a drink for each person"; `button` → `cta` | Applied in O3 and the fact trace. |

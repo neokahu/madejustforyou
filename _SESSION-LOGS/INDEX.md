@@ -14,8 +14,8 @@ _SESSION-LOGS/
 
 _Scope of this worktree: products + ads only. Support tickets live in the `customer-support` worktree._
 
-1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate 0 approved, renders done, 12 hooks selected; 6 scripts (04) done · council done + scripts revised 2026-11-24 (owner took all council recommendations; K04 arm B → H35) →
-   **GATE A (user)** → 05 visuals → build → QA → launch ≈ Nov 30 (Christmas cutoff Dec 11).
+1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate 0 approved, renders done, 12 hooks selected; 6 scripts (04) done · council done + scripts revised 2026-11-24 (owner took all council recommendations; K04 arm B → H35) → **GATE A approved 2026-11-24** →
+   real personalizer assets (K02 transparent, K04 screen rec) + K01 b2 still proof → 05 visuals → build → QA → launch ≈ Nov 30 (Christmas cutoff Dec 11).
 Full detail: `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md` (RESUME HERE). Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
 
 ## Current state by area

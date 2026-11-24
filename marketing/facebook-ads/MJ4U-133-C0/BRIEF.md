@@ -28,3 +28,10 @@ Source: `council/verdict.md` § Questions for the owner. All seven answered as t
 5. **Music:** one shared bed (E6); choose a track whose first ~6s are sparse (for K13).
 6. **"BISCUIT" on the collar tag:** yes, composited (never generated).
 7. **K02's family without a mother:** kept (GATE0).
+
+## GATE A — approved by the user 2026-11-24 ("do what u recommend")
+Hooks + the six revised scripts approved, with:
+1. **K13 C7:** beat 6 opening on the collar already on the bed (Lily's hand withdrawing) counts as the kept ending.
+2. **K02 conflict 7:** "his idea" plays as one 2.9s shot with an in-camera push (no cut, E32).
+3. **K01 conflict 8:** caption stays "Everyone found / their spot."; 05 stages 2–3 soft background faces turning toward the ornament (heads only, ≤3 sharp faces) so "everyone" is true; 07 checks it at the shot gate.
+Open before generation (not Gate A items): 03 re-freezes K04 as H33/H35 + H35 3s muted cold read; real personalizer assets (K02 transparent re-export, K04 screen recording "Circle" glasses, optional neutral end-card render); K01 beat-2 still proof first.
