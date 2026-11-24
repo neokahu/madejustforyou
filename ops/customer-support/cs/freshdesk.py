@@ -1,7 +1,7 @@
 """Freshdesk API v2 client (stdlib only).
 
 Secrets: FRESHDESK_DOMAIN (e.g. madejustforyou, or madejustforyou.freshdesk.com) and FRESHDESK_API_KEY.
-Reads are free to run. reply() and note() write to the ticket; the CLI only calls them after an explicit --yes.
+Reads are free to run. reply(), note() and set_status() write to the ticket; the CLI only calls them after an explicit --yes.
 """
 from __future__ import annotations
 import base64, html, json, os, re, urllib.error, urllib.parse, urllib.request
@@ -47,6 +47,9 @@ class Freshdesk:
 
     def reply(self, tid: int, text: str) -> dict:
         return self._req("POST", f"/tickets/{tid}/reply", body={"body": to_html(text)})
+
+    def set_status(self, tid: int, status: int) -> dict:
+        return self._req("PUT", f"/tickets/{tid}", body={"status": status})
 
     def note(self, tid: int, text: str) -> dict:
         return self._req("POST", f"/tickets/{tid}/notes", body={"body": to_html(text), "private": True})

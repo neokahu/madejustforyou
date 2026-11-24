@@ -1,11 +1,12 @@
 """Customer-support CLI. Run from ops/customer-support:
 
   python3 -m cs.run demo                  # offline walk-through on fixtures (no keys needed)
-  python3 -m cs.run inbox                 # open + pending Freshdesk tickets, each with its order stage
+  python3 -m cs.run inbox                 # Open Freshdesk tickets (statuses in config), each with its order stage
   python3 -m cs.run ticket 123            # one ticket: thread, orders, stage, KB hits, draft, flags
   python3 -m cs.run ticket 123 --json
   python3 -m cs.run send 123 --file reply.txt            # shows what would be sent; sends nothing
-  python3 -m cs.run send 123 --file reply.txt --yes      # posts the public reply to the customer
+  python3 -m cs.run send 123 --file reply.txt --yes      # posts the public reply, then sets the ticket Resolved
+  python3 -m cs.run send 123 --file reply.txt --yes --status pending   # reply asks the customer something
   python3 -m cs.run send 123 --file reply.txt --note --yes   # private note instead (customer never sees it)
   python3 -m cs.run kb [missing|list|show <id>]
 
@@ -112,22 +113,32 @@ def cmd_ticket(a):
     show(D.build(a.id, _first_name(t), text, orders), a.json)
 
 
+# Status after a public reply. Resolved: answered, nothing more needed. Pending: the reply asks the customer
+# something (order number, photo). Either way it drops out of `inbox`; Freshdesk reopens it when the customer writes back.
+SEND_STATUS = {"pending": 3, "resolved": 4}
+
+
 def cmd_send(a):
     text = Path(a.file).read_text(encoding="utf-8").strip()
     kind = "PRIVATE NOTE" if a.note else "PUBLIC REPLY to the customer"
     print(f"{kind} on ticket #{a.id}:\n" + "-" * 60 + f"\n{text}\n" + "-" * 60)
+    if not a.note and a.status != "keep":
+        print(f"After sending, the ticket is set to {a.status.capitalize()}.")
     if not a.yes:
         print("Not sent. Add --yes to send.")
         return
     from .freshdesk import Freshdesk
     fd = Freshdesk()
     (fd.note if a.note else fd.reply)(a.id, text)
+    status = None if a.note or a.status == "keep" else SEND_STATUS[a.status]
+    if status:
+        fd.set_status(a.id, status)
     LOG_DIR.mkdir(exist_ok=True)
-    rec = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "ticket": a.id, "kind": "note" if a.note else "reply",
+    rec = {"at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "ticket": a.id, "kind": "note" if a.note else "reply", "status": a.status,
            "draft_sha": a.draft_sha, "final_sha": hashlib.sha1(text.encode()).hexdigest()[:12], "final": text}
     with open(LOG_DIR / "sent.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
-    print("Sent.")
+    print("Sent." + (f" Ticket set to {a.status.capitalize()}." if status else ""))
 
 
 def cmd_kb(a):
@@ -155,6 +166,8 @@ def main(argv=None):
     t.add_argument("--no-shopify", action="store_true")
     s = sub.add_parser("send"); s.add_argument("id", type=int); s.add_argument("--file", required=True)
     s.add_argument("--note", action="store_true"); s.add_argument("--yes", action="store_true")
+    s.add_argument("--status", choices=["resolved", "pending", "keep"], default="resolved",
+                   help="ticket status after a public reply (default resolved; notes never change status)")
     s.add_argument("--draft-sha", default=None, help="sha of the original draft, to log whether it was edited")
     k = sub.add_parser("kb"); k.add_argument("action", nargs="?", default="missing", choices=["missing", "list", "show"])
     k.add_argument("id", nargs="?")

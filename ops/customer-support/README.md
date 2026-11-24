@@ -8,10 +8,12 @@ Nothing reaches a customer until you say so.
 
 ```
 you: "check support"
-  1. python3 -m cs.run inbox           -> open/pending tickets, each with its order stage
+  1. python3 -m cs.run inbox           -> Open tickets only, each with its order stage
   2. python3 -m cs.run ticket <id>     -> thread + orders + stage + KB hits + draft + flags
   3. you: approve / "change X" / give the answer      (Claude rewrites; loop until you OK it)
-  4. python3 -m cs.run send <id> --file <draft> --yes  -> posts the reply, logs it to log/
+  4. python3 -m cs.run send <id> --file <draft> --yes  -> posts the reply, sets the ticket Resolved, logs it to log/
+     (add --status pending when the reply asks the customer something; either way Freshdesk reopens it
+      when the customer writes back, so it shows up in the next inbox)
   5. new answer worth keeping -> added to kb/faq.json as approved
 ```
 

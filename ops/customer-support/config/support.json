@@ -1,6 +1,6 @@
 {
   "_note": "Edit thresholds and store facts here. A fact with confirmed=false is a placeholder: drafts that use it are flagged until the owner confirms it.",
-  "signature": "Warmly,\nThe MadeJustForYou Team",
+  "signature": "Warmly,\nEmma\nMadeJustForYou Customer Care",
   "day_count": "calendar",
   "stage_thresholds_days": {
     "just_placed_max": 2,
@@ -15,6 +15,7 @@
     "support_hours": {"value": "Monday to Friday, 9am-5pm EST", "confirmed": false}
   },
   "order_name_prefix": "MJ4U",
+  "tracking_page_url": "https://madejustforyou.net/tools/tracking?nums={tracking_number}",
   "shopify_api_version": "2026-10",
-  "freshdesk_open_statuses": [2, 3]
+  "freshdesk_open_statuses": [2]
 }

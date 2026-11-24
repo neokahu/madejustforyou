@@ -3,7 +3,7 @@
 Input is one Shopify GraphQL order node as returned by shopify.ORDER_FIELDS.
 """
 from __future__ import annotations
-import re
+import re, urllib.parse
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
@@ -66,7 +66,11 @@ def classify(order: dict, cfg: dict, now: datetime | None = None) -> Stage:
         ti = (latest.get("trackingInfo") or [{}])[0] or {}
         st.carrier = ti.get("company") or "the carrier"
         st.tracking_number = ti.get("number") or "(not available yet)"
-        st.tracking_url = ti.get("url") or "(not available yet)"
+        page = cfg.get("tracking_page_url")  # our own tracking page, never the carrier/17track link Shopify stores
+        if ti.get("number") and page:
+            st.tracking_url = page.format(tracking_number=urllib.parse.quote(ti["number"]))
+        else:
+            st.tracking_url = "(not available yet)"
 
     if ful in ("FULFILLED", "PARTIALLY_FULFILLED") and latest:
         shipped = parse_ts(latest.get("inTransitAt")) or parse_ts(latest.get("createdAt"))

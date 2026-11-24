@@ -44,6 +44,7 @@ class Stages(unittest.TestCase):
         o = ORDERS["by_email"]["cara@example.com"][0]
         st = stages.classify(o, CFG, NOW)
         self.assertEqual((st.code, st.carrier, st.days), ("SHIPPED", "USPS", 5))
+        self.assertEqual(st.tracking_url, "https://madejustforyou.net/tools/tracking?nums=" + st.tracking_number)
         f = dict(o["fulfillments"][0], displayStatus="DELIVERED")
         self.assertEqual(self.code(dict(o, fulfillments=[f])), "DELIVERED")
         f = dict(o["fulfillments"][0], displayStatus="FAILURE")
