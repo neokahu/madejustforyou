@@ -1,6 +1,8 @@
 # MJ4U-133-K10 · "Their first Christmas as two (and the dog)" · script (role 04)
 
-> Status: **DRAFT for council (craft only) → user gate.** Written 2026-11-24 by role 04.
+> Status: REVISED after council 2026-11-24 → Gate A (user).
+> Written 2026-11-24 by role 04; revised the same day from `council/verdict.md` (K10 must-fixes 1–5) and BRIEF.md § User rulings 2026-11-24.
+> Production: the round-wide rules for 05 in `council/verdict.md` § "Round-wide rules for 05" apply to this script (not copied here).
 > Ads: `MJ4U-133_C0_K10X1-H01_E0_v01` (arm A) and `MJ4U-133_C0_K10X1-H15_E0_v01` (arm B). **The body (2.0–20.0s) is identical in both ads**, and the hook window (picture 0–2.0s, hook caption 0–3.2s) is the only difference (CRITERIA E13, E14).
 > Inputs: BRIEF.md · CRITERIA.md (locked) · RENDERS.md · `concepts/00A-candidates.md` K10 card · `concepts/GATE0.md` · `hooks/03-selection.md` §1, §4.4 · hook cards H01, H15 (`hooks/01-candidates-K10-K13.md`) · product facts `products/MJ4U-133-family-wood-ornament/product.json` F1–F10 · render `ads/renders/MJ4U-133-K10-render.png` (viewed).
 > Fixed by the brief: 20.00s · no VO, no dialogue (E7) · music bed only · no offer (E10) · end card "Personalize yours" + store name · button Shop Now.
@@ -17,7 +19,7 @@
 | Promise paid, H15 | **Paid at 2.0–4.3s by beats 2–3** (hard reset to the unpacking; she lifts out those childhood ornaments) → **fully at 9.0s by beat 5** (whose family it is) → 12.2s beat 6 (she hangs it first). |
 | Caption words | H01 ad: 8 + 28 body = 36, + end card 2 = **38 / 45**. H15 ad: 6 + 28 + 2 = **36 / 45**. |
 | VO words | 0 (no VO, no dialogue) |
-| Pivot | "She hung it up first." at 12.7s (63%) |
+| Pivot | "She hung theirs first." at 12.7s (63%) |
 
 ## Cast (I5, matched to the printed render)
 
@@ -35,15 +37,15 @@ Captions: house style (E4), one fixed band (E58), never over the names/year/face
 
 | # | Beat / purpose | Picture | Dur | Visual intent (what the viewer must understand) | Product presence | Caption (on–off) | VO / dialogue | Other on-screen text | Sound | Words vs budget | Traces to |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1A | **HOOK, ad H01** (verbatim card) | 0.0–2.0 | 2.0 | Close, slightly high: Daniel's hands (green cuffs) hold a small open kraft gift box, the ornament face-up in red tissue (hats, figures, the wooden 2026 readable; names below the rim). 0.3s: his hands lower it into an open moving box marked DECORATIONS, between wrapped bundles; ornament face visible to 1.5s. He is hiding a gift for her. | **hero** (≈1/3 width, VS2) | "He hid one ornament in her decorations box." **0.0–3.2** | — | "DECORATIONS" on the flap (composited, real lettering); ornament = real artwork | bed from frame 1; soft thud on the box settling at 0.4s | 8 / 8 (hook ≤10, E12) · 2.50 w/s | H01; F9; R1 R4 R6; E3 E5 E12 |
-| 1B | **HOOK, ad H15** (verbatim card) | 0.0–2.0 | 2.0 | Close: the ornament already hanging on their tiny tree in the foreground (figures, hats, the Corgi, 2026 read; names soft). Next branch: one of Grace's old childhood baubles (no text). 0.3s rack focus from the new ornament to the old bauble. Behind, soft: a half-open moving box, Grace leaning into Daniel. This is later that evening (flash-forward). | **hero** (≈1/3 width, VS2) | "Her childhood ornaments finally have company." **0.2–3.2** | — | ornament = real artwork; bauble text-free | bed only | 6 / 8 · 2.0 w/s | H15; F9; R1 R4; E3 E5 |
-| 2 | **STAKES**, part 1: reset + her box | 2.0–4.3 | 2.3 | **Hard visual reset** (needed by H15, harmless after H01): wide, daylight, the same tiny tree **bare**, moving boxes stacked, nothing unpacked yet. Grace kneels and opens the flap of the DECORATIONS box (the one from H01). | **in frame** (the open kraft box sits in the tissue near the top of the DECORATIONS box, ornament edge and a hat visible to the viewer; she has not seen it) | "Every ornament in there was only hers." **3.2–6.4** | — | "DECORATIONS" flap | bed | 7 / 7 · 2.19 w/s | 00A STAKES; 03 §4.4 (H01 paid only if STAKES opens on her opening that box at 2.0s; H15 needs a visual reset); R11 |
-| 3 | **STAKES**, part 2: only hers | 4.3–6.4 | 2.1 | Close on her hands lifting out her old single childhood baubles one by one (text-free, worn, clearly from her own childhood). At the bottom of frame, the kraft box with the ornament face-up in red tissue, in soft focus. Dramatic irony: we see it, she doesn't yet. | **in frame** (soft, bottom third, VS1) | (same card as beat 2) | — | — | bed | — | 00A STAKES; H15 promise; R2 |
-| 4 | **TURN**: she finds it | 6.4–9.0 | 2.6 | Over her shoulder: her hand stops on the kraft box and lifts it out of the tissue. Behind her, soft but readable, Daniel leans in the doorway, watching. One camera idea: slow push toward the box. | **in frame → hero** (the box in her hands, ornament face up, names still soft per RV3) | "She found the box. He watched." **6.4–9.0** | — | — | bed lifts slightly | 6 / 7 · 2.31 w/s | 00A TURN; H01 promise; RV3 |
+| 1A | **HOOK, ad H01** (verbatim card) | 0.0–2.0 | 2.0 | Close, slightly high: Daniel's hands (green cuffs) hold a small open kraft gift box, the ornament face-up in red tissue (hats, figures, the wooden 2026 readable; names below the rim). 0.3s: his hands lower it into an open moving box marked DECORATIONS, between wrapped bundles; ornament face visible to 1.5s. He is hiding a gift for her. *(Production note, composition unchanged: the DECORATIONS flap is static and its lettering composited; only the hands move.)* | **hero** (≈1/3 width, VS2) | "He hid one ornament in her decorations box." **0.0–3.2** | — | "DECORATIONS" on the flap (composited, real lettering); ornament = real artwork | bed from frame 1; soft thud on the box settling at 0.4s | 8 / 8 (hook ≤10, E12) · 2.50 w/s | H01; F9; R1 R4 R6; E3 E5 E12 |
+| 1B | **HOOK, ad H15** (verbatim card) | 0.0–2.0 | 2.0 | Close: the ornament already hanging on their tiny tree in the foreground (figures, hats, the Corgi, 2026 read; names soft). Next branch: one of Grace's old childhood baubles (no text). 0.3s rack focus from the new ornament to the old bauble. Behind, soft: a half-open moving box, Grace leaning into Daniel. This is later that evening (flash-forward). *(Production note, composition unchanged: locked-off plate, rack focus done in post.)* | **hero** (≈1/3 width, VS2) | "Her childhood ornaments finally have company." **0.2–3.2** | — | ornament = real artwork; bauble text-free | bed only | 6 / 8 · 2.0 w/s | H15; F9; R1 R4; E3 E5 |
+| 2 | **STAKES**, part 1: reset + her box | 2.0–4.3 | 2.3 | **Hard visual reset** (needed by H15, harmless after H01): wide, daylight, the same tiny tree **bare**, moving boxes stacked, nothing unpacked yet. Grace kneels and opens the flap of the DECORATIONS box (the one from H01). The kraft box is tucked under one fold of red tissue near the top; only one printed Santa hat and the box edge show. | **in frame** (VS1: one printed Santa hat + the kraft box edge peeking from under a fold of red tissue; she has not seen it) |  "Every ornament in there was only hers." **3.2–6.4** | — | "DECORATIONS" flap (static, composited real lettering) | bed | 7 / 7 · 2.19 w/s | 00A STAKES; 03 §4.4 (H01 paid only if STAKES opens on her opening that box at 2.0s; H15 needs a visual reset); R11 |
+| 3 | **STAKES**, part 2: only hers | 4.3–6.4 | 2.1 | Close on her hands lifting out her old single childhood baubles one by one (text-free, worn, clearly from her own childhood). At the bottom of frame, the kraft box still tucked under its fold of red tissue: only the Santa hat and the box edge show, soft. Dramatic irony: we see it, she doesn't yet. | **in frame** (soft, bottom third, VS1: hat + box edge) | (same card as beat 2) | — | — | bed | — | 00A STAKES; H15 promise; R2 |
+| 4 | **TURN**: she finds it | 6.4–9.0 | 2.6 | Over her shoulder: her hand stops on the fold of red tissue, lifts the tissue first, then lifts the kraft box out. Daniel leans in the doorway behind her, watching; for the last ~0.8s (≈8.2–9.0) his face reads clearly (focus shift box → Daniel done in post on a deep-focus plate), so "He watched" is shown (E50). One camera idea: slow push toward the box. | **in frame → hero** (the box in her hands, ornament face up, names still soft per RV3) | "She found the box. He watched." **6.4–9.0** | — | — | bed lifts slightly | 6 / 7 · 2.31 w/s | 00A TURN; H01 promise; RV3 |
 | 5 | **PROOF**: their names (pays both hooks) | 9.0–12.2 | 3.2 | The ornament flat in her open palm, filling most of the frame. **Still of the real artwork + a slow pan added in the edit** from Daniel to Grace to Mochi, settling on the full ornament with 2026. Every name legible (≥100 px wide at 1080w while it is the read, E39). | **hero** (VS3, names + year legible) | "Daniel, Grace and Mochi. 2026." **9.0–12.2** | — | **Real artwork: "Daniel", "Grace", "Mochi", "2026"** (exact; read by eye on ≥5 frames, R23) | bed | 5 / 8 · 1.56 w/s | F4 F8 F9 F7; R2 R21 R22 R23; E38 E39; H01/H15 promise |
 | — | gap | 12.2–12.7 | — | — | — | none (0.5s clean gap, E56) | — | — | — | — | E56 |
-| 6 | **CONNECTION**, part 1: first on the tree (pivot) | 12.2–14.8 | 2.6 | Grace hangs the ornament by its string on the bare tiny tree: the first and only ornament on it. Daniel steps in from the doorway behind her. | **hero** (hanging by its string through the hole, F1/F3, plausible 5 in scale) | "She hung it up first." **12.7–15.0** | — | — | bed swells (pivot) | 5 / 9 · 2.17 w/s | 00A CONNECTION; R15 (63%); F1 F3 |
-| 7 | **CONNECTION**, part 2: the three of them | 14.8–17.5 | 2.7 | She turns into Daniel's arms by the tree; Mochi (live Corgi) jumps up between them; both laugh. The ornament hangs sharp in the foreground. Relatives together with the ornament (E48). | **in frame** (foreground, sharp) | "Their first Christmas as three." **15.0–17.5** | — | — | bed | 5 / 9 · 2.0 w/s | 00A CONNECTION; R17; E48; one message |
+| 6 | **CONNECTION**, part 1: first on the tree (pivot) | 12.2–14.8 | 2.6 | The ornament already hangs on the bare tiny tree, the first and only ornament on it; Grace's hand lets go of it and it sways (sway added in post on the 2D layer; never hung by the string on camera). Daniel steps in from the doorway behind her. | **hero** (hanging by its string through the hole, F1/F3, plausible 5 in scale) | "She hung theirs first." **12.7–15.0** | — | — | bed swells (pivot) | 4 / 9 · 1.74 w/s | 00A CONNECTION; R15 (63%); F1 F3 |
+| 7 | **CONNECTION**, part 2: the three of them | 14.8–17.5 | 2.7 | She turns into Daniel's arms by the tree; Mochi (live Corgi) already sits at their feet, looks up and wags (no jump); both smile down at him. The ornament hangs sharp in the foreground to 17.5s (this is K10's own-ornament shot at 17.0–17.5, round-wide rule 7). Relatives together with the ornament (E48). | **in frame** (foreground, sharp, to 17.5) | "First Christmas as two. / Plus Mochi." **15.0–17.5** | — | — | bed | 6 / 9 · 2.40 w/s | 00A CONNECTION; R17; E48; one message |
 | 8 | **CTA**: end card | 17.5–20.0 | 2.5 | Round-wide end card (E9): **"Personalize yours"** + store name lockup over the moving plate of the real ornament; small logo over moving picture; last frame moves. Plate content is set round-wide by 06 (see O4 conflict C3). | **hero** (moving plate, real artwork) | end card "Personalize yours" **17.5–20.0** | — | store name lockup | bed resolves | 2 / 6 | BRIEF; R8 R12; E8 E9 E64 |
 
 Shot lengths in order: 2.0 / 2.3 / 2.1 / 2.6 / 3.2 / 2.6 / 2.7 / 2.5 s. No two consecutive equal (E32); every non-hook shot 2–5 s.
@@ -51,7 +53,7 @@ Product present in all 8 beats; never absent.
 
 ## Muted paper test
 
-From the visual intent and captions only: by 1s (H01: a family ornament in a gift box, being hidden; H15: a family ornament on a tree beside an old bauble) a stranger knows the gift is a personalized family ornament. Retell: "A husband hid an ornament in his wife's decorations box. She was unpacking ornaments that were only hers, found the box while he watched, and it had their names and their dog's on it with 2026. She hung it first; first Christmas as three." Pass.
+From the visual intent and captions only: by 1s (H01: a family ornament in a gift box, being hidden; H15: a family ornament on a tree beside an old bauble) a stranger knows the gift is a personalized family ornament. Retell: "A husband hid an ornament in his wife's decorations box. She was unpacking ornaments that were only hers, found the box while he watched, and it had their names and their dog's on it with 2026. She hung theirs first; their first Christmas as a couple, plus the dog." Pass.
 
 ## O3 · Ad copy (same for both K10 ads, so only the hook differs)
 
@@ -65,7 +67,7 @@ From the visual intent and captions only: by 1s (H01: a family ornament in a gif
     "• 2 to 10 family members, pets included",
     "• Choose each person's hair, sweater, glasses and drink",
     "• Dogs by breed (100+ breeds), cats by breed and coat",
-    "• A name under each member, and the year in big 3D-look numbers",
+    "• A name under each member, and the year in big 3D-look wooden numbers",
     "• Printed in full color on 3 mm wood, cut to your family's shape",
     "• 4, 5 or 7 inches, hanging string included",
     "",
@@ -73,7 +75,7 @@ From the visual intent and captions only: by 1s (H01: a family ornament in a gif
   ],
   "headline": "Him, Her and the Dog on One Ornament – Personalized Gift For Couples",
   "description": "Made to order with your names and year.",
-  "call_to_action": "SHOP_NOW"
+  "cta": "SHOP_NOW"
 }
 ```
 
@@ -83,7 +85,7 @@ From the visual intent and captions only: by 1s (H01: a family ornament in a gif
 | 2 to 10 members, pets included | F4 |
 | hair, sweater, glasses, drink | F6 |
 | dogs by breed 100+, cats by breed and coat | F7 |
-| name under each member; year in big 3D-look numbers | F8, F9 |
+| name under each member; year in big 3D-look wooden numbers | F8, F9 (F9 wording) |
 | full color, 3 mm wood, cut to shape | F1, F2 |
 | 4/5/7 in, hanging string | F3 |
 | "Made to order" | F10 |
@@ -100,21 +102,34 @@ Line breaks per the house format; goes into `ads/ad-content.json` at upload and 
 | Q3 | Promise paid | PASS | Both paid at 2.0s (within 3s of hook end, E28) and fully at 9.0s (≤12s). |
 | Q4 | One message | PASS | 12 words, one idea. |
 | Q5 | Product presence | PASS | 8/8 beats; never absent. |
-| Q6 | Budgets | PASS | Every card ≤2.5 w/s, ≥2.0s, ≤2 lines; totals 38 and 36 ≤45. |
+| Q6 | Budgets | PASS | Re-checked after revision: every card ≤2.5 w/s (max 2.50, H01 hook; body max 2.40, beat 7), ≥2.0s, ≤2 lines; body 7+6+5+4+6 = 28; totals 38 and 36 ≤45 (match verdict). |
 | Q7 | Grounding | PASS | Every copy bullet cites an F-ID; captions carry no fact claims beyond the render. |
 | Q8 | Policy | PASS | No viewer attributes on any surface. "your whole family" / "your family's shape" are relationship/product lines (allowed, R3 ruling 2026-11-18). |
 | Q9 | Cast/pronouns | PASS | He = Daniel (man), she/her = Grace (woman), Mochi = live Corgi; traits match the print. |
-| Q10 | Connection | PASS | Beats 6–7: the couple and the dog together with the ornament. |
+| Q10 | Connection | PASS | Beats 6–7: the couple and the dog together with the ornament. Beat 7 caption no longer reads as a pregnancy announcement ("as three" removed). |
 | Q11 | Clichés / swap test | PASS | No banned phrases; captions name the decorations box, the names and the year. |
-| Q12 | Shot rhythm | PASS | No equal neighbours; hard cuts only. |
+| Q12 | Shot rhythm | PASS | Re-checked, timings unchanged by the revision: 2.0 / 2.3 / 2.1 / 2.6 / 3.2 / 2.6 / 2.7 / 2.5; no equal neighbours; every non-hook shot 2–5s (E32); the own-ornament moment is inside beat 7 to 17.5, no separate 0.5s shot; hard cuts only. |
 | Q13 | CTA | PASS | "Personalize yours" + store name on screen 17.5–20.0; Shop Now. |
-| Q14 | Copy alignment | PASS | Same story and names; line-broken array. |
+| Q14 | Copy alignment | PASS | Same story and names; line-broken array; CTA key `cta` (read by `engine/upload_draft.py`); F9 wording exact. |
 | Q15 | Trace | PASS | Every row traced; conflicts below. |
 
 ### Conflicts and questions for the user (not resolved here)
 
 - **C1 · H15 is a flash-forward.** Its frame 1 shows the ornament already hung beside an old bauble, while the body starts at unpacking. E30 forbids a dissolve at the hook boundary, so the jump back is carried by a hard cut to a wide, daylight, **bare** tree with unopened boxes (beat 2). In the body she hangs it "first"; her childhood baubles join it later that evening, which is the state H15 shows. No caption says "earlier", because that word would be wrong after H01.
 - **C2 · H01 caption timing.** The card says caption on at 0.2s, but 8 words in 0.2–3.2s is 2.67 w/s and breaks E55 (≤2.5 w/s). I start it at 0.0s (still meets E5). It is a timing tag, not a wording change. 03 or the user can veto this.
-- **C3 · End-card plate (round-wide).** E9 requires identical end-card frames in all 12 ads, so beat 8 can't show K10's own family. The concept's last story shot ends at 17.5s, and the end card starts at 17.5s. **That start time must match the other five scripts.** The user or 06 picks the shared plate.
+- **C3 · End-card plate (round-wide). Resolved by the user 2026-11-24:** shared plate = the hero ornament on the tree (or a neutral two-parent render if the personalizer makes one at no cost). K10's own ornament is in frame to 17.5s inside beat 7.
 - **C4 · Caption over the names (beat 5).** The caption repeats the printed names. 05/06 must keep the band clear of the ornament's names and year (E60).
 - **C5 · Pivot** at 63%, inside R15/E52 (report only).
+- **C6 · Beat 6 caption vs picture.** "She hung theirs first." sits over a hand-release of an already-hung ornament (round-wide rule 1). The release reads as the end of hanging it; 07 should confirm on the cold read that E50 holds.
+
+## Council revision log (2026-11-24)
+
+| Must-fix (verdict K10) | What changed |
+|---|---|
+| 1 · Beats 2–3: box under one fold of red tissue, only a Santa hat + box edge; beat 4 lifts the tissue first | Beats 2 and 3 visual intent and product presence rewritten (still VS1); beat 4 opens with her lifting the tissue. |
+| 2 · Beat 4: Daniel's face reads for the last ~0.8s, focus shift in post on a deep-focus plate | Beat 4 visual intent: ≈8.2–9.0 Daniel's face reads; focus shift done in post. |
+| 3 · Beat 6: hand-release of an already-hung ornament; caption "She hung theirs first." | Beat 6 picture and caption replaced (4 w, 12.7–15.0, 2.3s, 1.74 w/s); pivot line updated. |
+| 4 · Beat 7: Mochi sits and wags, no jump; caption "First Christmas as two. / Plus Mochi." | Beat 7 picture and caption replaced (6 w, 15.0–17.5, 2.5s, 2.40 w/s); ornament in frame to 17.5; muted retell updated. |
+| 5 · DECORATIONS composited on a static flap; 1B rack focus in post on a locked-off plate | Production notes added to 1A, 1B and beat 2; hook composition and captions unchanged. |
+| Owner-approved / round-wide | Header pointer to the round-wide 05 rules; ad copy: F9 wording "big 3D-look wooden numbers", `call_to_action` → `cta`; C3 marked resolved. Timings unchanged; body total stays 28 (ads 38 / 36). Optionals not applied. |
+
