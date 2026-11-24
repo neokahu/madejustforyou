@@ -14,7 +14,7 @@ _SESSION-LOGS/
 
 1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate 0 approved, renders done, 12 hooks selected; scripts (04) in progress →
    council → **GATE A (user)** → 05 visuals → build → QA → launch ≈ Nov 30 (Christmas cutoff Dec 11).
-2. User items: Hook Lab deploy (`vercel deploy --prod`); `mj4u-orders` install + customer-data access + Freshdesk key.
+2. User items: `mj4u-orders` install + customer-data access + Freshdesk key.
 Full detail: `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md` (RESUME HERE). Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
 
 ## Current state by area

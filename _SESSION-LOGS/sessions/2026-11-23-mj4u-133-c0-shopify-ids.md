@@ -3,8 +3,7 @@
 ## Done
 - **Step 1 — deck** rebuilt on the deep plan (Cloudflare only; claude.ai artifact deleted by user) + run-order + 2 glossary slides. User ruling: RV only in H1, proof type in C2.
 - **Step 2 — system aligned** (commit 4474156): framework §6 rounds C0/H1/C1/C2/H2/B(+S), grid layouts; DB migration 013 (applied); ad-key parser + tests;
-  agent round modes; `/video:new` round table; Hook Lab coverage panel **built but NOT deployed** (Vercel deploy blocked → user runs
-  `cd marketing/facebook-ads/hook-lab-web && vercel deploy --prod`).
+  agent round modes; `/video:new` round table; Hook Lab coverage panel **deployed 2026-11-24** by the user (https://mj4u-hook-lab.vercel.app).
 - **Shopify IDs:** app `mj4u-catalog` (read/write products, project `~/Desktop/projects/mj4u-catalog`, creds in `~/.global-keys.env`, client-credentials token).
   All 43 store products tagged `MJ4U-NNN` (user-approved map `products/_registry/product-ids.json`; raw pull `shopify-products.json`;
   script `scripts/shopify_catalog.py pull|tag [--apply]`). Tracker CSV + Sheet updated (+ `shopify_product_id` column). New numbers MJ4U-113…139.
@@ -24,4 +23,4 @@
 ## RESUME HERE
 1. Collect the 6 scripts; `/llm-council` per script (craft only); then **GATE A** (user approves hooks + scripts).
 2. 05 visual director per concept (shot list + reference sheet) → GATE B (07 shot mode + user) → generation within the $300 cap → GATE C → 06 edit → 07 → GATE D → upload by ~Nov 30.
-3. User items: Hook Lab deploy; orders-app install + data access + Freshdesk key; music paid-plan evidence (CRITERIA E65 is S1 without it).
+3. User items: orders-app install + data access + Freshdesk key; music paid-plan evidence (CRITERIA E65 is S1 without it).
