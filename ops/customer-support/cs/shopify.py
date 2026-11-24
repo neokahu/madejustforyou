@@ -44,13 +44,17 @@ class Shopify:
     def orders_by_email(self, email: str) -> list[dict]:
         return self.gql(Q, {"q": f'email:"{email}"'})["orders"]["nodes"]
 
-    def order_by_name(self, name: str) -> list[dict]:
-        return self.gql(Q, {"q": f"name:#{name.lstrip('#')}"})["orders"]["nodes"]
+    def order_by_name(self, number: str) -> list[dict]:
+        """number = digits only (from find_order_number); store names look like #MJ4U1014."""
+        prefix = support_cfg().get("order_name_prefix", "")
+        return self.gql(Q, {"q": f"name:#{prefix}{number}"})["orders"]["nodes"]
 
 
-ORDER_NO = re.compile(r"(?:#|order\s*(?:no\.?|number|num)?\s*:?\s*#?)\s*(\d{4,6})\b", re.I)
+# "#MJ4U1014", "MJ4U-1014", "MJ4U 1014", "#1014", "order 1014", "order number: 1014", "ID - 1014"
+ORDER_NO = re.compile(r"(?:MJ4U[\s-]?#?|#|order\s*(?:no\.?|number|num)?\s*:?\s*#?|\bid\s*[-:#]?)\s*(\d{4,7})\b", re.I)
 
 
 def find_order_number(text: str) -> str | None:
+    """Digits of the first order number in the text, without the store prefix."""
     m = ORDER_NO.search(text or "")
     return m.group(1) if m else None

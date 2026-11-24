@@ -3,6 +3,7 @@
 Input is one Shopify GraphQL order node as returned by shopify.ORDER_FIELDS.
 """
 from __future__ import annotations
+import re
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 
@@ -105,9 +106,9 @@ def classify(order: dict, cfg: dict, now: datetime | None = None) -> Stage:
 def pick_order(orders: list[dict], wanted_name: str | None) -> tuple[dict | None, str | None]:
     """Choose the order a ticket is about. Returns (order, problem_stage_code)."""
     if wanted_name:
-        want = wanted_name.lstrip("#")
+        want = re.sub(r"\D", "", wanted_name)
         for o in orders:
-            if o.get("name", "").lstrip("#") == want:
+            if re.sub(r"\D", "", o.get("name", "").replace("MJ4U", "")) == want:
                 return o, None
     open_orders = [o for o in orders if not o.get("cancelledAt") and o.get("displayFulfillmentStatus") != "FULFILLED"]
     if not orders:

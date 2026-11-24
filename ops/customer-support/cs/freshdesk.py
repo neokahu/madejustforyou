@@ -4,14 +4,16 @@ Secrets: FRESHDESK_DOMAIN (e.g. madejustforyou, or madejustforyou.freshdesk.com)
 Reads are free to run. reply() and note() write to the ticket; the CLI only calls them after an explicit --yes.
 """
 from __future__ import annotations
-import base64, html, json, re, urllib.error, urllib.parse, urllib.request
-from .config import require
+import base64, html, json, os, re, urllib.error, urllib.parse, urllib.request
+from .config import require, secret
 
 STATUS = {2: "Open", 3: "Pending", 4: "Resolved", 5: "Closed"}
 
 
 class Freshdesk:
     def __init__(self):
+        if not secret("FRESHDESK_API_KEY") and secret("FRESKDESK_API_KEYS"):  # name as saved in the keys file
+            os.environ["FRESHDESK_API_KEY"] = secret("FRESKDESK_API_KEYS")
         s = require("FRESHDESK_DOMAIN", "FRESHDESK_API_KEY")
         dom = s["FRESHDESK_DOMAIN"].removeprefix("https://").rstrip("/")
         self.base = f"https://{dom if '.' in dom else dom + '.freshdesk.com'}/api/v2"

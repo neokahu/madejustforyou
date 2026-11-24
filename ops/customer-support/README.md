@@ -35,9 +35,10 @@ Checked in this order; the first match wins. Days are calendar days by default (
 | IN_PRODUCTION | unshipped, 3–4 days | "in production now" | no |
 | SHIPPING_SOON | unshipped, 5–9 days | "in production, ships soon" | no |
 | OVERDUE | unshipped, ≥ 10 days | "checking with production team" | yes: check the POD supplier first |
+| ORDER_NUMBER_NOT_FOUND | the number in the ticket matches no order | ask them to double-check it (ours start #MJ4U) | no |
 | NO_ORDER_FOUND / MULTIPLE_ORDERS | no match / can't tell which | ask for the order number | no |
 
-The order is found by an order number in the ticket text (`#1234`), else by the requester's email.
+The order is found by an order number in the ticket text (`#MJ4U1014`, `MJ4U-1014`, `#1014`, `ID - 1014`), else by the requester's email.
 Reply wording is in `config/stage-replies.json`. Edit it there, not in code.
 
 **Store facts** (`config/support.json → facts`): production time, shipping time, edit window and support hours are
@@ -61,8 +62,8 @@ same if the KB later moves to Supabase with embeddings.
 
 | What | Secret names in `~/.global-keys.env` | State |
 |---|---|---|
-| Freshdesk | `FRESHDESK_DOMAIN`, `FRESHDESK_API_KEY` (Profile settings → API key) | **not set up yet** |
-| Shopify | `SHOPIFY_STORE_DOMAIN`, `SHOPIFY_ORDERS_CLIENT_ID`, `SHOPIFY_ORDERS_CLIENT_SECRET` (app `mj4u-orders`, read_orders + read_customers) | keys present; **app not installed on the store yet** (token request returns 400) |
+| Freshdesk | `FRESHDESK_DOMAIN`, `FRESHDESK_API_KEY` (also read as `FRESKDESK_API_KEYS`, the name in the keys file) | live, verified 2026-11-24 |
+| Shopify | `SHOPIFY_STORE_DOMAIN`, `SHOPIFY_ORDERS_CLIENT_ID`, `SHOPIFY_ORDERS_CLIENT_SECRET` (app `mj4u-orders`, read_orders + read_customers) | live, verified 2026-11-24 (order + fulfillment reads) |
 
 Shopify notes: the code asks only for order, fulfillment and tracking fields, not customer name, email or
 address, so it doesn't depend on Protected Customer Data approval. The email is used only as a search filter.

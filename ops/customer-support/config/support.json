@@ -14,6 +14,7 @@
     "edit_window": {"value": "within 12 hours of placing the order", "confirmed": false},
     "support_hours": {"value": "Monday to Friday, 9am-5pm EST", "confirmed": false}
   },
+  "order_name_prefix": "MJ4U",
   "shopify_api_version": "2026-10",
   "freshdesk_open_statuses": [2, 3]
 }

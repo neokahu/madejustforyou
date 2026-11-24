@@ -58,18 +58,21 @@ def build(ticket_id, first_name: str, text: str, orders: list[dict] | None,
 
     stage_code, body = None, ""
     if orders is not None:
-        order, problem = stages.pick_order(orders, stages_order_hint(text))
+        hint = stages_order_hint(text)
+        order, problem = stages.pick_order(orders, hint)
+        if problem == "NO_ORDER_FOUND" and hint:
+            problem = "ORDER_NUMBER_NOT_FOUND"
         if problem:
             stage_code = problem
         else:
             st = stages.classify(order, cfg, now)
             stage_code = st.code
             flags += st.notes
-        if is_status or stage_code in ("NO_ORDER_FOUND", "MULTIPLE_ORDERS"):
+        if is_status or stage_code in ("NO_ORDER_FOUND", "ORDER_NUMBER_NOT_FOUND", "MULTIPLE_ORDERS"):
             r = replies[stage_code]
             if r["escalate"]:
                 flags.append(f"stage {stage_code} needs your decision")
-            vals = {"first_name": first}
+            vals = {"first_name": first, "order_name": f"#{hint}" if hint else ""}
             if not problem:
                 vals.update(order_name=st.order_name, days=st.days, days_ago=days_ago(st.days), carrier=st.carrier,
                             tracking_number=st.tracking_number, tracking_url=st.tracking_url)

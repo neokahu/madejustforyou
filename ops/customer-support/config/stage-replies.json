@@ -4,6 +4,10 @@
     "escalate": false,
     "reply": "Hi {first_name},\n\nThank you for reaching out! I'd love to help, but I couldn't find an order under this email address.\n\nCould you reply with your order number (it starts with #) or the email address you used at checkout? As soon as I have it, I'll look into everything for you."
   },
+  "ORDER_NUMBER_NOT_FOUND": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you for reaching out! I looked up order {order_name}, but I couldn't find it in our system.\n\nCould you double-check the order number? Ours start with #MJ4U (for example #MJ4U1014) and you'll find it in your order confirmation email. If it's easier, just reply with the email address you used at checkout and I'll find it for you."
+  },
   "MULTIPLE_ORDERS": {
     "escalate": false,
     "reply": "Hi {first_name},\n\nThank you for reaching out! I can see more than one order under your email address.\n\nCould you let me know which order number you're asking about? Then I'll get you a full update right away."

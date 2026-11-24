@@ -62,6 +62,8 @@ class Stages(unittest.TestCase):
         self.assertEqual(stages.pick_order([], None), (None, "NO_ORDER_FOUND"))
         self.assertEqual(stages.pick_order([a, b], None), (None, "MULTIPLE_ORDERS"))
         self.assertEqual(stages.pick_order([a, b], "1002")[0]["name"], "#1002")
+        c = unf("2026-11-20T00:00:00Z", name="#MJ4U1014")
+        self.assertEqual(stages.pick_order([a, c], "1014")[0]["name"], "#MJ4U1014")
         b_done = dict(b, displayFulfillmentStatus="FULFILLED")
         self.assertEqual(stages.pick_order([a, b_done], None)[0]["name"], "#1001")
 
@@ -86,6 +88,9 @@ class KbAndDraft(unittest.TestCase):
         self.assertEqual(find_order_number("Order #1234 is late"), "1234")
         self.assertEqual(find_order_number("my order number: 10234"), "10234")
         self.assertIsNone(find_order_number("I ordered 2 items"))
+        self.assertEqual(find_order_number("about #MJ4U1014 please"), "1014")
+        self.assertEqual(find_order_number("order MJ4U-1013"), "1013")
+        self.assertEqual(find_order_number("my last order, ID - 2005678"), "2005678")
 
     def test_draft_flags_and_text(self):
         d = D.build(1, "Amy Tran", "when will my order ship?", ORDERS["by_email"]["amy@example.com"], now=NOW)
@@ -99,10 +104,13 @@ class KbAndDraft(unittest.TestCase):
         self.assertIn("Hi there,", d.text)
         d = D.build(3, "Dan", "where is my order", None, now=NOW)
         self.assertIn("Shopify not checked", d.flags)
+        d = D.build(4, "Emily", "where is my order #123456?", [], now=NOW)
+        self.assertEqual(d.stage, "ORDER_NUMBER_NOT_FOUND")
+        self.assertIn("order #123456", d.text)
 
     def test_every_stage_has_a_reply(self):
         from cs.config import stage_replies
-        codes = {"NO_ORDER_FOUND", "MULTIPLE_ORDERS", "JUST_PLACED", "IN_PRODUCTION", "SHIPPING_SOON", "OVERDUE",
+        codes = {"NO_ORDER_FOUND", "ORDER_NUMBER_NOT_FOUND", "MULTIPLE_ORDERS", "JUST_PLACED", "IN_PRODUCTION", "SHIPPING_SOON", "OVERDUE",
                  "ON_HOLD", "SHIPPED", "PARTIALLY_SHIPPED", "SHIPPED_DELAYED", "DELIVERY_ISSUE", "DELIVERED",
                  "CANCELLED", "REFUNDED", "PAYMENT_PENDING"}
         self.assertEqual(set(stage_replies()), codes)
