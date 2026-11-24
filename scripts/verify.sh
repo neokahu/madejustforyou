@@ -39,6 +39,10 @@ step "Layer 2: FB-ads engine (economics, kill/keep/scale verdicts)"
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s marketing/facebook-ads/engine/tests 2>&1 | tail -3
 PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s marketing/facebook-ads/engine/tests >/dev/null 2>&1 || fail "engine tests"
 
+step "Layer 2: customer support (order stages, KB, drafts; offline)"
+(cd ops/customer-support && PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -t . 2>&1 | tail -3)
+(cd ops/customer-support && PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests -t . >/dev/null 2>&1) || fail "customer-support tests"
+
 step "Layer 2: generation prompt guard still blocks a known-bad prompt"
 guard=research/scripts/generation-prompt-guard.py
 bad='{"tool_name":"mcp__kie-ai__seedance_2_video","tool_input":{"prompt":"a woman holds the gift and smiles and turns and the camera zooms and pans while flowers bloom"}}'

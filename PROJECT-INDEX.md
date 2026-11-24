@@ -26,7 +26,8 @@ Four domains: **research** (ideas) · **products** (the catalog) · **library** 
 | **`library/`** | shared reusable building blocks: `library/personalizer/` (Teeinblue clipart library) · `library/brand/` (brand/social assets + `design-system.html`) |
 | **`marketing/`** | go-to-market: `marketing/calendar/` (occasion calendar + campaign checklists); `campaigns/`, `performance/` added when needed |
 | **`_SESSION-LOGS/`** | session handoffs, two-tier — **read `_SESSION-LOGS/INDEX.md` first**, then follow paths to `topics/<topic>/README.md` or `sessions/<date>.md` |
-| _future_ | `suppliers/` (POD providers, SKU↔cost), `ops/` (SOPs, automation), `data/` (sales, margins, LTV) — create when first needed |
+| **`ops/customer-support/`** | Freshdesk tickets → Shopify order stage → drafted reply, approved in chat; FAQ knowledge base `kb/faq.json`. See its `README.md` |
+| _future_ | `suppliers/` (POD providers, SKU↔cost), `data/` (sales, margins, LTV) — create when first needed |
 
 **Brand palette** (from theme repo `config/settings_data.json`): terracotta `#C15F3C`, gold `#E0A458`, dusty rose `#D98E85`,
 cream `#FBF6EE`, sand `#EFE4D4`, espresso `#2E2822`, taupe `#8A7E70`. Fonts: Playfair Display

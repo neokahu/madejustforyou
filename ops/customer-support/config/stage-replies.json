@@ -1,0 +1,63 @@
+{
+  "_note": "One reply per order stage. Placeholders: {first_name} {order_name} {days} {days_ago} {carrier} {tracking_number} {tracking_url} {fact:<name>} from support.json. escalate=true means the owner decides; the draft is only a starting point.",
+  "NO_ORDER_FOUND": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you for reaching out! I'd love to help, but I couldn't find an order under this email address.\n\nCould you reply with your order number (it starts with #) or the email address you used at checkout? As soon as I have it, I'll look into everything for you."
+  },
+  "MULTIPLE_ORDERS": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you for reaching out! I can see more than one order under your email address.\n\nCould you let me know which order number you're asking about? Then I'll get you a full update right away."
+  },
+  "JUST_PLACED": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you so much for your order {order_name}!\n\nYour order was placed {days_ago} and it's now being processed. Because every piece is made just for you, our team first reviews your personalization details carefully before it moves into production.\n\nProduction usually takes {fact:production_time}. You'll receive an email with your tracking number as soon as it ships."
+  },
+  "IN_PRODUCTION": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you for checking in on order {order_name}!\n\nGood news: your personalized gift is in production right now. Each item is made to order, which usually takes {fact:production_time}.\n\nYou'll receive an email with your tracking number the moment it ships."
+  },
+  "SHIPPING_SOON": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you for your patience with order {order_name}!\n\nYour gift has been in production and is in its final stages. It will be shipped very soon. As soon as it leaves our facility, you'll get an email with your tracking number so you can follow it all the way to your door.\n\nWe really appreciate you waiting while we make it just right."
+  },
+  "OVERDUE": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out about order {order_name}, and I'm sorry it's taking longer than expected.\n\nI've contacted our production team to check on your order directly, and I'll get back to you with an update as soon as I hear from them."
+  },
+  "ON_HOLD": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out about order {order_name}.\n\nYour order is currently paused while we check a detail with our team. I'll follow up with you shortly with an update."
+  },
+  "SHIPPED": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nGreat news: order {order_name} has shipped and is on its way to you!\n\nCarrier: {carrier}\nTracking number: {tracking_number}\nTrack it here: {tracking_url}\n\nTracking can take 24-48 hours to show the first update after shipping."
+  },
+  "PARTIALLY_SHIPPED": {
+    "escalate": false,
+    "reply": "Hi {first_name},\n\nThank you for checking in on order {order_name}!\n\nPart of your order has already shipped:\nCarrier: {carrier}\nTracking number: {tracking_number}\nTrack it here: {tracking_url}\n\nThe remaining item(s) are still being made and will ship separately. You'll get a second tracking email as soon as they're on their way."
+  },
+  "SHIPPED_DELAYED": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out about order {order_name}, and I'm sorry it hasn't arrived yet.\n\nYour package shipped {days_ago} with {carrier} (tracking {tracking_number}). I'm checking with the carrier now and will get back to you with an update."
+  },
+  "DELIVERY_ISSUE": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out about order {order_name}.\n\nThe carrier reported a problem delivering your package (tracking {tracking_number}). I'm looking into it now and will update you shortly with next steps."
+  },
+  "DELIVERED": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out about order {order_name}.\n\nOur tracking shows your package was delivered by {carrier}. Could you tell me a bit more about how I can help? If anything isn't right with your gift, a photo would help us fix it quickly."
+  },
+  "CANCELLED": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out. Order {order_name} has been cancelled. Is there anything I can help you with?"
+  },
+  "REFUNDED": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for reaching out. A refund for order {order_name} has been issued. Depending on your bank, it can take 5-10 business days to appear on your statement."
+  },
+  "PAYMENT_PENDING": {
+    "escalate": true,
+    "reply": "Hi {first_name},\n\nThank you for your order {order_name}. The payment hasn't completed yet, so production hasn't started. I'll look into it and follow up with you shortly."
+  }
+}

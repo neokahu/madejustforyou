@@ -1,0 +1,19 @@
+{
+  "_note": "Edit thresholds and store facts here. A fact with confirmed=false is a placeholder: drafts that use it are flagged until the owner confirms it.",
+  "signature": "Warmly,\nThe MadeJustForYou Team",
+  "day_count": "calendar",
+  "stage_thresholds_days": {
+    "just_placed_max": 2,
+    "in_production_max": 4,
+    "overdue_from": 10,
+    "shipped_delayed_from": 14
+  },
+  "facts": {
+    "production_time": {"value": "3-5 business days", "confirmed": false},
+    "shipping_time_us": {"value": "5-8 business days", "confirmed": false},
+    "edit_window": {"value": "within 12 hours of placing the order", "confirmed": false},
+    "support_hours": {"value": "Monday to Friday, 9am-5pm EST", "confirmed": false}
+  },
+  "shopify_api_version": "2026-10",
+  "freshdesk_open_statuses": [2, 3]
+}

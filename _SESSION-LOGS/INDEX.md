@@ -58,6 +58,7 @@ Full detail + links: `sessions/2026-11-19-video-team-ads-db.md` (section "RESUME
 | Idea research + GPD | [topics/idea-research-gpd](topics/idea-research-gpd/README.md) |
 | Teeinblue + pajama | [topics/teeinblue-and-pajama](topics/teeinblue-and-pajama/README.md) |
 | Shopify theme | [topics/shopify-theme](topics/shopify-theme/README.md) |
+| Customer support | [topics/customer-support](topics/customer-support/README.md) |
 
 ## Session map (newest first)
 

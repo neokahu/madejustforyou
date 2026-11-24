@@ -1,0 +1,56 @@
+[
+ {
+  "id": 101,
+  "subject": "Order status",
+  "description_text": "Hi, I just ordered yesterday, when will it ship?",
+  "requester": {
+   "name": "Amy Tran",
+   "email": "amy@example.com"
+  }
+ },
+ {
+  "id": 102,
+  "subject": "Where is my order?",
+  "description_text": "It's been almost a week and I haven't received any shipping email.",
+  "requester": {
+   "name": "Ben Ortiz",
+   "email": "ben@example.com"
+  }
+ },
+ {
+  "id": 103,
+  "subject": "Tracking",
+  "description_text": "Can you send me the tracking for my blanket?",
+  "requester": {
+   "name": "Cara Lee",
+   "email": "cara@example.com"
+  }
+ },
+ {
+  "id": 104,
+  "subject": "my order",
+  "description_text": "Where is my order? I paid already.",
+  "requester": {
+   "name": "Dan",
+   "email": "dan@example.com"
+  }
+ },
+ {
+  "id": 105,
+  "subject": "Still waiting",
+  "description_text": "Order #0990 still not shipped after 12 days. Will it arrive before Christmas?",
+  "requester": {
+   "name": "Eve Park",
+   "email": "eve@example.com"
+  }
+ },
+ {
+  "id": 106,
+  "subject": "Typo in my order",
+  "description_text": "I made a typo, can I change the name to Olivia instead of Olivai?",
+  "requester": {
+   "name": "Fay",
+   "email": "fay@example.com"
+  }
+ }
+]

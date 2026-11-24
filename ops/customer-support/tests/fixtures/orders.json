@@ -1,0 +1,117 @@
+{
+ "_now": "2026-11-24T12:00:00+00:00",
+ "by_email": {
+  "amy@example.com": [
+   {
+    "name": "#1001",
+    "createdAt": "2026-11-22T18:00:00Z",
+    "processedAt": "2026-11-22T18:00:00Z",
+    "cancelledAt": null,
+    "displayFinancialStatus": "PAID",
+    "displayFulfillmentStatus": "UNFULFILLED",
+    "lineItems": {
+     "nodes": [
+      {
+       "title": "Personalized Family Ornament",
+       "quantity": 1
+      }
+     ]
+    },
+    "fulfillments": []
+   }
+  ],
+  "ben@example.com": [
+   {
+    "name": "#1002",
+    "createdAt": "2026-11-18T09:00:00Z",
+    "processedAt": "2026-11-18T09:00:00Z",
+    "cancelledAt": null,
+    "displayFinancialStatus": "PAID",
+    "displayFulfillmentStatus": "UNFULFILLED",
+    "lineItems": {
+     "nodes": [
+      {
+       "title": "Personalized Family Ornament",
+       "quantity": 1
+      }
+     ]
+    },
+    "fulfillments": []
+   }
+  ],
+  "cara@example.com": [
+   {
+    "name": "#1003",
+    "createdAt": "2026-11-10T15:00:00Z",
+    "processedAt": "2026-11-10T15:00:00Z",
+    "cancelledAt": null,
+    "displayFinancialStatus": "PAID",
+    "displayFulfillmentStatus": "FULFILLED",
+    "lineItems": {
+     "nodes": [
+      {
+       "title": "Custom Name Blanket",
+       "quantity": 1
+      }
+     ]
+    },
+    "fulfillments": [
+     {
+      "status": "SUCCESS",
+      "displayStatus": "IN_TRANSIT",
+      "createdAt": "2026-11-18T10:00:00Z",
+      "inTransitAt": "2026-11-19T08:00:00Z",
+      "deliveredAt": null,
+      "estimatedDeliveryAt": null,
+      "trackingInfo": [
+       {
+        "company": "USPS",
+        "number": "9400100000000000000000",
+        "url": "https://tools.usps.com/go/TrackConfirmAction?tLabels=9400100000000000000000"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "dan@example.com": [],
+  "eve@example.com": [
+   {
+    "name": "#0990",
+    "createdAt": "2026-11-12T09:00:00Z",
+    "processedAt": "2026-11-12T09:00:00Z",
+    "cancelledAt": null,
+    "displayFinancialStatus": "PAID",
+    "displayFulfillmentStatus": "UNFULFILLED",
+    "lineItems": {
+     "nodes": [
+      {
+       "title": "Personalized Family Ornament",
+       "quantity": 1
+      }
+     ]
+    },
+    "fulfillments": []
+   }
+  ],
+  "fay@example.com": [
+   {
+    "name": "#1005",
+    "createdAt": "2026-11-24T02:00:00Z",
+    "processedAt": "2026-11-24T02:00:00Z",
+    "cancelledAt": null,
+    "displayFinancialStatus": "PAID",
+    "displayFulfillmentStatus": "UNFULFILLED",
+    "lineItems": {
+     "nodes": [
+      {
+       "title": "Personalized Family Ornament",
+       "quantity": 1
+      }
+     ]
+    },
+    "fulfillments": []
+   }
+  ]
+ }
+}

@@ -1,0 +1,547 @@
+{
+  "_note": "FAQ knowledge base. answer_raw = the owner's answer as given; answer = the customer-facing rewrite (may use {first_name} and {fact:<name>}). status: needs_answer -> draft (rewritten, awaiting owner OK) -> approved. Only approved answers are used without a flag.",
+  "entries": [
+    {
+      "id": "order-status",
+      "category": "Orders & status",
+      "question": "Where is my order? / What's the status of my order?",
+      "keywords": [
+        "where is my order",
+        "order status",
+        "track my order",
+        "tracking",
+        "when will",
+        "shipped yet",
+        "arrive",
+        "haven't received",
+        "have not received",
+        "not received",
+        "still waiting",
+        "update on my order",
+        "delivery date",
+        "hasn't arrived",
+        "has not arrived"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "approved",
+      "updated": null,
+      "note": "Answered by the order-stage replies (config/stage-replies.json), not by this entry."
+    },
+    {
+      "id": "confirmation-missing",
+      "category": "Orders & status",
+      "question": "I didn't get an order confirmation email.",
+      "keywords": [
+        "confirmation email",
+        "no confirmation",
+        "didn't get an email",
+        "did not receive an email",
+        "didn't receive an email"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "cancel-order",
+      "category": "Orders & status",
+      "question": "Can I cancel my order?",
+      "keywords": [
+        "cancel"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "add-to-order",
+      "category": "Orders & status",
+      "question": "Can I add an item to my existing order?",
+      "keywords": [
+        "add to my order",
+        "add another",
+        "combine orders",
+        "add an item"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "change-personalization",
+      "category": "Personalization",
+      "question": "Can I change the name, text or photo after ordering?",
+      "keywords": [
+        "change the name",
+        "typo",
+        "misspelled",
+        "change my order",
+        "edit my order",
+        "update the name",
+        "change the photo",
+        "change the text",
+        "made a mistake on my order"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "preview-proof",
+      "category": "Personalization",
+      "question": "Will I see a preview or proof before it's made?",
+      "keywords": [
+        "preview",
+        "proof",
+        "mockup",
+        "see it before"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "photo-quality",
+      "category": "Personalization",
+      "question": "Which photo works best? Is my photo good enough?",
+      "keywords": [
+        "photo quality",
+        "blurry",
+        "resolution",
+        "which photo",
+        "upload photo",
+        "upload a photo"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "production-time",
+      "category": "Production & shipping",
+      "question": "How long does it take to make my order?",
+      "keywords": [
+        "production time",
+        "processing time",
+        "how long to make",
+        "how long does it take"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "holiday-deadline",
+      "category": "Production & shipping",
+      "question": "Will it arrive in time for Christmas / a birthday / a date?",
+      "keywords": [
+        "christmas",
+        "in time",
+        "deadline",
+        "birthday",
+        "holiday",
+        "mother's day",
+        "father's day",
+        "valentine"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "shipping-time",
+      "category": "Production & shipping",
+      "question": "How long does shipping take?",
+      "keywords": [
+        "shipping time",
+        "how long shipping",
+        "how long is shipping",
+        "delivery time"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "shipping-cost",
+      "category": "Production & shipping",
+      "question": "How much is shipping? Do you offer free shipping?",
+      "keywords": [
+        "shipping cost",
+        "free shipping",
+        "shipping fee",
+        "cost of shipping"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "international-shipping",
+      "category": "Production & shipping",
+      "question": "Do you ship internationally?",
+      "keywords": [
+        "international",
+        "canada",
+        "united kingdom",
+        "australia",
+        "ship to",
+        "outside the us"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "expedited-shipping",
+      "category": "Production & shipping",
+      "question": "Can I get faster or express shipping?",
+      "keywords": [
+        "express",
+        "expedite",
+        "faster shipping",
+        "rush"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "change-address",
+      "category": "Production & shipping",
+      "question": "Can I change my shipping address?",
+      "keywords": [
+        "change address",
+        "change my address",
+        "wrong address",
+        "shipping address",
+        "update address",
+        "update my address"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "ship-to-recipient",
+      "category": "Production & shipping",
+      "question": "Can I ship directly to the gift recipient?",
+      "keywords": [
+        "ship directly",
+        "send it to",
+        "send to recipient",
+        "different address",
+        "ship to someone"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "tracking-not-updating",
+      "category": "Delivery problems",
+      "question": "My tracking hasn't updated.",
+      "keywords": [
+        "tracking not updating",
+        "tracking hasn't updated",
+        "no update",
+        "stuck",
+        "label created"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "delivered-not-received",
+      "category": "Delivery problems",
+      "question": "Tracking says delivered but I don't have it.",
+      "keywords": [
+        "says delivered",
+        "marked delivered",
+        "shows delivered",
+        "never arrived",
+        "stolen",
+        "missing package"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "damaged-item",
+      "category": "Delivery problems",
+      "question": "My item arrived damaged.",
+      "keywords": [
+        "damaged",
+        "broken",
+        "cracked",
+        "scratched",
+        "dented"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "wrong-item-or-error",
+      "category": "Delivery problems",
+      "question": "I received the wrong item, or the personalization is wrong.",
+      "keywords": [
+        "wrong item",
+        "wrong name",
+        "misprint",
+        "not what i ordered",
+        "spelled wrong",
+        "wrong photo",
+        "wrong color"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "quality-issue",
+      "category": "Delivery problems",
+      "question": "The quality or colors aren't what I expected.",
+      "keywords": [
+        "quality",
+        "colors look",
+        "colour",
+        "faded",
+        "looks different",
+        "poor quality",
+        "not happy"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "return-policy",
+      "category": "Returns & refunds",
+      "question": "What is your return policy?",
+      "keywords": [
+        "return policy",
+        "return it",
+        "send it back",
+        "send back",
+        "can i return"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "refund-status",
+      "category": "Returns & refunds",
+      "question": "Where is my refund?",
+      "keywords": [
+        "refund"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "exchange",
+      "category": "Returns & refunds",
+      "question": "Can I exchange for a different size or color?",
+      "keywords": [
+        "exchange",
+        "different size",
+        "swap"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "size-guide",
+      "category": "Product",
+      "question": "What size should I choose? What are the dimensions?",
+      "keywords": [
+        "size chart",
+        "sizing",
+        "measurements",
+        "dimensions",
+        "what size",
+        "how big"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "materials-care",
+      "category": "Product",
+      "question": "What is it made of, and how do I care for it?",
+      "keywords": [
+        "material",
+        "made of",
+        "wash",
+        "care for",
+        "durable",
+        "outdoor",
+        "dishwasher"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "payment-methods",
+      "category": "Payment & pricing",
+      "question": "What payment methods do you accept?",
+      "keywords": [
+        "payment method",
+        "paypal",
+        "afterpay",
+        "klarna",
+        "apple pay",
+        "credit card"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "charged-twice",
+      "category": "Payment & pricing",
+      "question": "I was charged twice or charged the wrong amount.",
+      "keywords": [
+        "charged twice",
+        "double charged",
+        "charged more",
+        "overcharged",
+        "unauthorized charge"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "discount-code",
+      "category": "Payment & pricing",
+      "question": "My discount code doesn't work.",
+      "keywords": [
+        "discount",
+        "coupon",
+        "promo code",
+        "code doesn't work",
+        "code not working"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "price-adjustment",
+      "category": "Payment & pricing",
+      "question": "The item went on sale right after I bought it.",
+      "keywords": [
+        "on sale",
+        "price drop",
+        "price match",
+        "price adjustment"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "gift-message-packaging",
+      "category": "Gifting",
+      "question": "Can I add a gift message or gift wrap, and hide the price?",
+      "keywords": [
+        "gift message",
+        "gift wrap",
+        "gift note",
+        "gift receipt",
+        "hide the price",
+        "price on the"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "bulk-custom-order",
+      "category": "Other",
+      "question": "Do you take bulk orders or custom requests?",
+      "keywords": [
+        "bulk",
+        "wholesale",
+        "custom request",
+        "large order",
+        "for my team"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "contact-hours",
+      "category": "Other",
+      "question": "How can I reach you? What are your support hours?",
+      "keywords": [
+        "phone number",
+        "call you",
+        "contact you",
+        "support hours",
+        "business hours"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    },
+    {
+      "id": "unsubscribe-privacy",
+      "category": "Other",
+      "question": "Please unsubscribe me / delete my data.",
+      "keywords": [
+        "unsubscribe",
+        "stop emails",
+        "stop sending",
+        "delete my account",
+        "delete my data"
+      ],
+      "answer_raw": "",
+      "answer": "",
+      "status": "needs_answer",
+      "updated": null
+    }
+  ]
+}
