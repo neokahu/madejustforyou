@@ -17,3 +17,14 @@ Files (media, gitignored → Drive): `products/MJ4U-133-family-wood-ornament/ads
 Personalizer facts confirmed while building (feed 04/05): age ranges Young/Aged for adults; hair colors incl. Grey and Salt & Pepper; glasses
 No/Sunglasses/Square/Circle; kid, baby, dog (100+ breeds, 8 groups) and cat characters; accessories No/Santa/Reindeer/Tree(/Bow); drinks by
 category (coffee/tea/cocoa, juice, soft drink, beer, wine…; baby bottle/milk for babies); up to 10 members. Site banner: "Order by Dec 11 for Christmas delivery".
+
+## K04 personalizer screen recording (user, 2026-11-24)
+`products/MJ4U-133-family-wood-ornament/ads/screen-recordings/K04-personalizer-circle-glasses.mov` (402×812, 60 fps, 10.4s; Drive-backed).
+Live store UI in a phone viewport with the K04 family set; Grandpa's glasses go No Glasses → Square Glasses → **Circle Glasses** (the real option label; the script's "Circle" = "Circle Glasses").
+Use for the K04 phone insert: **clean before frame 0–1s** (No Glasses, no cursor) and **clean after frame ~8–10s** (Circle Glasses selected). The middle (~1.5–7.5s) shows a desktop cursor and hover tooltips: do not use it. Build the tap in post (before → composited fingertip tap → after, ~1.5s).
+
+## Turntable pipeline test, K01 (2026-11-24) — E37 amendment
+Files: `products/MJ4U-133-family-wood-ornament/ads/turntable/K01/` (Drive-backed). Seedream v5.0 Pro Edit (Atlas) from the flat render: `K01-34left.jpg` (v2 + cord-colour edit), `K01-34right.jpg` (v3). Rejected takes in `_rejected/`.
+- Prompt lessons: say **"ONE single flat sheet… printed on that one flat front surface… one continuous edge around the outer outline only"**, or figures come out as stacked layers (breaks E40). The cord is **thin gold metallic** (the listing photos), not red. Back view invented wrong interior holes: not needed, skip.
+- Listing photos are all mockups (flat art on a tree): there is no real physical-sample photo.
+- Test clip `K01-test-hang-seedance.mp4` (Seedance 2.0 Fast ref-to-video, refs = front + both ¾ views, 9:16, 5s, $0.36): **shot 1 PASS** (hangs by gold cord from a branch, natural hand with a green cuff lowering away, physical scale, room light). **Shot 2 FAIL**: free-hanging ornament spun 360°, showing an invented back and thicker edge. Fix: the ornament faces camera throughout (no free-hang shot on its own; any sway is added in post on the real artwork), one shot per clip.

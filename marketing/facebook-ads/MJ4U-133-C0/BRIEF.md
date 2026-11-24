@@ -35,3 +35,7 @@ Hooks + the six revised scripts approved, with:
 2. **K02 conflict 7:** "his idea" plays as one 2.9s shot with an in-camera push (no cut, E32).
 3. **K01 conflict 8:** caption stays "Everyone found / their spot."; 05 stages 2–3 soft background faces turning toward the ornament (heads only, ≤3 sharp faces) so "everyone" is true; 07 checks it at the shot gate.
 Open before generation (not Gate A items): 03 re-freezes K04 as H33/H35 + H35 3s muted cold read; real personalizer assets (K02 transparent re-export, K04 screen recording "Circle" glasses, optional neutral end-card render); K01 beat-2 still proof first.
+
+## User ruling 2026-11-24 — product pipeline (E37 amended)
+Build the ornament like the MJ4U-111 lamp: per-concept **turntable** from the one flat render (front, ¾-left, ¾-right, edge-on, blank back) → multi-reference video (cast refs + turntable) so holds, hanging, scale and light are physical → **real artwork composited and tracked over the face in post**. E37 amended accordingly (CRITERIA.md). Validate on K01 first (~$1–2, AtlasCloud) before scaling. Council round-wide rule 1 ("never hung by the string on camera") is to be revisited after the validation.
+K04 personalizer insert = one tap (Glasses → Circle), ~1.5–2s on screen; raw recording ~10s on the user's phone.
