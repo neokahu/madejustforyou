@@ -13,3 +13,8 @@
 - **Naming:** test `MJ4U-133-C0`; concepts `MJ4U-133-K01…`; hooks `MJ4U-133-H01…`; ad key `MJ4U-133_C0_K01X1-H01_E0_v01`.
 - **Rules carried:** show family connection (never a lonely giftee); casting matches the printed artwork and caption pronouns; the product and its
   printed names/year are never invented by a generator (real artwork, composited); no invented facts, counts or reviews; describe characters, never the viewer.
+
+## User rulings 2026-11-24 (before Gate A)
+- **Shared end card (all 12 ads, 17.5–20.0s):** the hero ornament on the tree (`products/MJ4U-133-family-wood-ornament/ads/source-images/hero-family-2026-tree.png`) with a slow push-in, "Personalize yours" + store name over it. Each ad shows its own ornament at 17.0–17.5s.
+- **K13 H17 caption** ("His bed is empty. His spot on the tree isn't.", 10 words): reading-speed rule (≤2.5 w/s, CRITERIA) **waived for this one card** (≈3.1 w/s, caption 0.0–3.2s). Not a precedent.
+- **K13 ending kept:** Lily lays Biscuit's collar on his bed under the hung ornament (one return to the bed, at the close).
