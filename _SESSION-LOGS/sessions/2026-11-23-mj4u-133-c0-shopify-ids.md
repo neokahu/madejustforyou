@@ -23,4 +23,4 @@
 ## RESUME HERE
 1. Collect the 6 scripts; `/llm-council` per script (craft only); then **GATE A** (user approves hooks + scripts).
 2. 05 visual director per concept (shot list + reference sheet) → GATE B (07 shot mode + user) → generation within the $300 cap → GATE C → 06 edit → 07 → GATE D → upload by ~Nov 30.
-3. Support tooling ready 2026-11-24: orders app + customer-data access verified (orders/fulfillment/email readable), Freshdesk API 200 (`FRESHDESK_DOMAIN`, key saved as `FRESKDESK_API_KEYS`); music paid-plan evidence (CRITERIA E65 is S1 without it).
+3. Music paid-plan evidence (CRITERIA E65 is S1 without it). (Support tooling moved to the `customer-support` worktree.)
