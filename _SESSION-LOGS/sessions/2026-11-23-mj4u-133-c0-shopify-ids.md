@@ -23,4 +23,4 @@
 ## RESUME HERE
 1. Collect the 6 scripts; `/llm-council` per script (craft only); then **GATE A** (user approves hooks + scripts).
 2. 05 visual director per concept (shot list + reference sheet) → GATE B (07 shot mode + user) → generation within the $300 cap → GATE C → 06 edit → 07 → GATE D → upload by ~Nov 30.
-3. User items: orders-app install + data access + Freshdesk key; music paid-plan evidence (CRITERIA E65 is S1 without it).
+3. User items: orders app installed 2026-11-24 (token OK); still customer-data access + Freshdesk key; music paid-plan evidence (CRITERIA E65 is S1 without it).
