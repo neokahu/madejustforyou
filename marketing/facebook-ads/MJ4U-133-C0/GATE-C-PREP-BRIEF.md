@@ -13,3 +13,6 @@ Rules: prompt-method docs + guard; download only via `scripts/atlas_poll.sh` wit
 3. **Trousers** match the cast table (tartan where printed); no default jeans/khakis.
 4. ≤3 sharp faces; ornament outline = the turntable (no plank, bauble or plaque); casting/skin tone vs the approved refs.
 Read `<K>/first-frames/07-SHOT.md` and `first-frames-07-SUMMARY.md` and re-take only what 07 lists.
+
+## Ornament-free plate method (2026-11-26)
+For a shot where the model will not hold the ornament's size: prompt the same scene with the ornament absent (the branch tip empty with the gold cord's hook point visible, or the hands cupped/posed around an empty 5 in (K01: 7 in) gap at the right height), keep everything else identical. 06 composites the real render at the scale anchored by the hand/branch, adds a contact shadow and (if hanging) a gentle sway on the 2D layer. Video is generated from the ornament-free plate; the composite is tracked per shot (`scripts/track_composite_test.py` method).

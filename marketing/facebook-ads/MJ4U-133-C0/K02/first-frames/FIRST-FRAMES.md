@@ -34,3 +34,16 @@ Scale: every take was judged against Jacob's hand (≈1.5 palm widths = 5 in). T
 1. 07 shot mode on refs views 4–8 and on the first-frame picks above (full res).
 2. B5b fix (a or b) and H61 product body (composite or edit): about $0.28 if both are done by edit.
 3. Video is blocked until the owner says go (AtlasCloud balance now reads $127, but the Gate C brief says no video).
+
+## Re-take round (2026-11-26, after 07-SHOT.md; user ruling BRIEF.md 2026-11-26)
+Scope: only 07's K02 re-take list (H61, B2, B5b) + the H63 / B5a video-action rewrites. Nano Banana Pro Edit 2k 9:16, edits of 07's named bases, refs = approved Jacob v1d/v2d + turntable `K02-34right.jpg`. 5 calls × $0.14 = **$0.70** (cap $1.60), all via `atlas_poll.sh`, purpose `first-frames`. Checklist applied to every take: rings (K02 = everyone bare), scale 5 in, trousers per cast (Jacob cherry red, Mary purple, Kobe/Susan tartan), ≤3 sharp faces, turntable outline.
+
+| Shot | Takes | Pick | 05 check |
+|---|---|---|---|
+| H61-B1 | t4 (edit of t3) | **t4** | PASS. Ornament now the turntable outline (snowy ledge + 3D "2026", hanger tab, gold cord), face-up on tissue, ≈1.3 palm widths of Jacob's hand ≈ 5 in. Both his hands and both kid hands 5 fingers, ring fingers bare (native-res crop). Jacob, cocoa, green cuffs, red trousers unchanged. 1 sharp face. S3 carried: scalp reads fully shaved vs the ref buzz cut; hat pompoms still absent. Ornament ≈1/4 frame width (VS2 asked ≈1/3; VS1 floor met) |
+| B2 | t3 (edit of t2 + Jacob v1d/v2d), t4 (edit of t3) | **t3, needs 06 still retouch** | Identity fixed: ginger-brown full beard, bold all-black round glasses, matches B3 t2 (scalp still very short, S3). Kids, box, ornament outline unchanged. **Ring persists on the mug hand** (gold band, native px ≈ x 1490, y 1540). t4, a ring-only edit, left the band unchanged → `_rejected/`. Same fix as B5a: 06 clones the band out on the still (free), 07 glances at the hand |
+| B5b | t4 (edit of t2 + turntable + Jacob v1d), t5 (edit of t4) | **none passes** (best base t5) | Both takes fail the beat (S2, E50): Mary's fingertip still touches the ornament instead of pointing to a side branch, Jacob holds it at the cord top and points at it. Fixed in t5: turntable outline, ≈5 in (about his head width at the same depth, was ≈7 in), Jacob identity (bold round frames, ginger beard), Luna, cord on a centre branch. Two edits at the cap; not retried. Options for the Producer: (a) one fresh generation (not an edit) staging Mary at the tree's **right** side branch away from the ornament, (b) 06 composite Mary's arm, (c) 04 re-words. Not ready for video |
+
+Brief updates (no cost): `B-H63-VID` v2 action = short slide up from the first-frame position, onset ≈0.3s (07 S3). `B-B5a-VID` action = right hand on Kobe's head draws him in, ornament stays in his left hand at chest (07 S3). `B-B5b-FF` refs point to Jacob v3d and Luna v1–3 (07 S3).
+Moved to `_rejected/`: H61 t1–t3, B2 t1/t2/t4, B5b t1–t4. Contact sheet rebuilt (current picks only).
+**Ready for 07 re-check:** H61 t4 (full §2.7), B2 t3 after 06 ring retouch. Still open: B5b.

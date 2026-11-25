@@ -4,7 +4,7 @@ START STATE  [B-B5a-FF (selected) → composition / start frame] · [B-REF-C1 vi
 SUBJECTS     Jacob, Mary, Susan, Kobe, Bailey (labels per REFS-PLAN) · ornament on his knee
 FRAMING      as the first frame
 CAMERA       Shot 1: slow pull-back (dolly out), smooth, ending MWS with Bailey's head in the right of frame
-ACTION       Jacob's left arm sweeps around Mary's and Susan's backs and draws all three kids against his chest; the kids laugh, shoulders shaking; Kobe presses his face into Jacob's shoulder; Jacob's right hand stays on his knee holding the ornament
+ACTION       (v2, fits B5a t1: hug already formed) Jacob's right hand, resting on Kobe's head, draws Kobe's head in to his chest; everyone laughs, shoulders shaking; Jacob's left hand keeps holding the ornament at chest height, front to camera
 SECONDARY    Bailey's tail moves gently; tree lights twinkle
 LIGHT        unchanged
 SHOTS        Shot 1 only

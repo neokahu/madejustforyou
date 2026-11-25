@@ -67,3 +67,10 @@ Cast reference sets for all six concepts approved as shown in `<K>/refs/gateB-co
 
 ## User ruling 2026-11-26 — first-frame re-takes
 Approved: the 07 re-take round (≈24 frames, ≤ $9 across six concepts; K13 cap raised). K01 H76: re-take so the lid comes off on screen (no waiver). 07's other rulings stand as craft fixes (no script change): K02 H61 + B5b re-take; K06 re-take at 5 in with ≤3 sharp faces; K13 B5 back to the planned two-kid action.
+
+## User ruling 2026-11-26 — stuck first frames (method change, approved)
+- **Ornament too big** (K06 F5a/F5b, K13 B6, K01 B4): generate the scene WITHOUT the ornament (empty branch / hands posed around a small gap); the real render is composited in post at the exact size with shadow (and sway for hanging). Video is generated from that ornament-free plate.
+- **Wrong action** (K02 B5b, K13 B5, K01 B6a): re-stage the brief so the error is hard to make (e.g. Mary's hands on a side branch out of reach); one take each.
+- **K04 B3:** the approved B4 plate as still + move ($0).
+- **Caption/UI band** (K13 B2, B3, 1Ba; K01 B2): 06 reframes/crops in; re-take only if the crop cuts the action.
+- Scene video starts now on every frame 07 has passed.

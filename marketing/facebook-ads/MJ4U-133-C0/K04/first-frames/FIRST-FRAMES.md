@@ -32,3 +32,19 @@ Per `GATE-C-PREP-BRIEF.md`. No video. Media: `products/MJ4U-133-family-wood-orna
 - 07 shot-mode on all of the above (views 4–8, two identity photos, six frames). Watch for: B5b ornament overlap and wardrobe, B2 scale, Olivia's v6 cuff crop, young-Grandpa likeness.
 - If 07 rejects B5b t2: one edit pass ($0.14) "trousers black / red tartan / black; the open hand moves to rest on his knee"; the frame cap was already used.
 - Video waits for the owner's top-up.
+
+## Re-take round (2026-11-26, after 07-SHOT.md; user ruling 2026-11-26)
+Re-took only 07's list: B2, B3, B5a, B5b and Olivia v7. Every take was checked against the GATE-C-PREP re-take checklist (rings, 5 in scale, trousers, ≤3 sharp faces, outline = turntable). NBP Edit 2k, ≤2 takes per frame. Downloads went through `atlas_poll.sh` (first-frames / refs).
+**Spend:** 7 × $0.14 + 1 × $0.0384 = **$1.02** (cap $1.40). One B3 submit failed upstream ("Origin service error") and was not downloaded or logged. K04 ledger total is now $4.37.
+Contact sheet `contact.jpg`: 1A t3 · B2 t3 · B3 (open, rejected t3 shown) · B4 plate · B5a t2 · B5b t4.
+
+| Shot | Kept | Self-check (05; 07 to re-check) |
+|---|---|---|
+| B5a | **K04-B5a-F1-t2.jpg** (edit of t1) | PASS. Grandpa's trousers are black and Grandma's red tartan; everything else is held (round glasses, Olivia soft in the background). Bare fingers on all visible hands. Ornament ≈0.74× head width (about 5 in), the same as t1. |
+| B5b | **K04-B5b-F1-t4.jpg** (t3 → t4 edits of t2) | PASS with S3. The raised palm is gone. Olivia's arm is around him, her hands on both his shoulders; Grandma's hand is on his arm. Grandpa's left arm is out of frame behind Olivia (read as a hug). Ornament ≈0.83× head width (t2 was 1.1×), which matches B5a within about 10%. Trousers black / red tartan / black. 3 sharp faces; Rosie seated, head up. Bare fingers. **S3:** the ornament sits slightly above his palm instead of resting on it; the video brief should start with it settling into the palm. t3 was rejected because the palm was still raised and the ornament still at ≈1.1×. |
+| B2 | **K04-B2-F1-t3.png** (t2 → t3 edits of t1) | PASS with S3. The phone is portrait, face-up, flat green. At 1080 w it sits at x≈600–874, y≈960–1517 (screen top ≈y 960, as 07 asked), 270 px wide. It is ≈95 px left of the brief, which the green screen insert absorbs. Ornament face-up, cord, outline = turntable, at y≈754–1219; it reads ≈4.6 in against the 7.1 cm phone. Hand comes from the top edge with the index on the print near Grandma, bare, on a white sleeve (the black snowflake band is gone; the red cuff band is barely visible: S3). **S3:** the print came out **portrait** (Grandpa / Rosie / Grandma, black and tartan trousers). 06 composites a portrait centre crop of PROP-lastyear-photo onto it, not the full landscape photo. t2 was rejected because the phone was still landscape and low. |
+| B3 | **none: still OPEN** | t2 (edit with t1 as the scene ref) copied t1: heads still under the band, ≈30° yaw. t3 (no scene ref) is face-on and low enough, but the generator drew a **different product**: a photo-print plaque with photoreal people and "2026" (S1, outline ≠ turntable). Two-take cap used. Proposal for 07/Producer: one more NBP take ($0.14) with `K04-B4-plate-t1` as the composition and ornament ref (same box/table, face-on, thin edge) plus the hands and photo props, or build B3 as still + move from the B4 plate with the photo-in-hand composited in. |
+| Olivia v7 | **C3-olivia-v7-watching-t2.jpeg** (Seedream, refs v1+v2) | PASS. Long box braids past the shoulders, Santa hat, soft smile, gaze off right, hands clasped at the waist, bare. The old v7 is in `refs/_rejected/`. |
+
+Moved to `first-frames/_rejected/`: B2 t1/t2, B3 t1/t2/t3, B5a t1, B5b t2/t3.
+Still open from 07 (not in this round): ring paint-out on PROP-lastyear-photo-t1e and the scale-plate glint (06); 1A S3 notes go into the video brief.

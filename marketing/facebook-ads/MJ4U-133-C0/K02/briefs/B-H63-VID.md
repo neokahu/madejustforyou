@@ -1,10 +1,10 @@
-BRIEF  K02-H63-B1-VID  v1                   output: video   regime: energy
+BRIEF  K02-H63-B1-VID  v2                   output: video   regime: energy
 PURPOSE      0.00–2.00 of arm B: the gift slides in right under "NOTHING" (box-slide hit at 0.3s); the lettering stays readable ≥1.0s.
 START STATE  [B-H63-FF (selected) → composition / start frame] · [K02-34left.jpg → product body]
 SUBJECTS     Kobe's hand := green cuff, kid-sized · ornament := the flat sheet in the box
 FRAMING      top-down, as the first frame
 CAMERA       Shot 1: camera locked overhead, steady (the push-in 100→110% is added in post so the composited lettering needs no track). Guard: needs ACK-OPENMOVE with this reason, explained to the user.
-ACTION       Kobe's right hand slides the open box up across the table onto the lower part of the sheet, stopping below the sheet's middle, then lifts away down to the bottom edge
+ACTION       (v2, 07 2026-11-25: the first frame already shows the box fully in) Kobe's right hand, resting on the box's near rim, slides the open box a short way up onto the lower half of the sheet, stopping below the lettering zone; onset ≈0.3s; the hand then stays resting on the rim
 SECONDARY    n/a
 LIGHT        unchanged
 SHOTS        Shot 1 only

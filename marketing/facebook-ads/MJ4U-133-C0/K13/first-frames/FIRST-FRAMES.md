@@ -46,3 +46,23 @@ Rejected (`first-frames/_rejected/`):
 - B2 jeans knee.
 
 Video waits for the top-up.
+
+## Re-take round (2026-11-26, after 07 review; user ruling 2026-11-26)
+> Only the 7 frames 07 listed. Nano Banana Pro Edit 2k, ≤2 takes per frame. **Spend $1.40 = the round's hard cap** (10 × $0.14). K13 ledger now **$4.75**. All jobs via `atlas_poll.sh`, LEDGER_PURPOSE=first-frames, statuses set.
+> Refs: L1 room, Mom v5 (plain cuffs), Lily v6 + X1 (one-buckle collar), Noah v5, render-1600 (ornament outline), P1a (5-in palm scale), X2 (bed). Self-checked by 05 against the 07 checklist (rings, 5 in, tartan, ≤3 faces, outline, band). **Not final: back to 07.**
+
+| Shot | Current keeper | 05 self-check | Still open |
+|---|---|---|---|
+| 1A | `FF-1A-t1.jpg` (unchanged) | t2 rejected: kids in Santa hats; action still in the band | **S2 band open.** No budget left; 06 crop-in fallback or one more take |
+| 1Ba | `ST-1Ba-plate-t2.png` (empty plate) | Empty bed + coiled collar, blank tag; no ornament, so 06 composites the render at 5 in. Collar sits at the top of the band (≈y 1080 at 1080 w; plan 800–980) | S2 marginal: 06 shifts the still's crop/move start up ≈100 px, or re-take |
+| 1Bb | `ST-1Bb-plate-t4.jpg` (tighter plate) | Option (a): one fir branch across the upper third, large sharp needles, open bokeh centre, nothing hanging at right. 650-px layer should now read ≈5 in | 07 to re-measure needles vs the layer |
+| B2 | `FF-B2-t3.png` | **S1s fixed:** K13 outline (from render), Mom's fingers bare (native crop), red tartan, plain cuff. Ornament ≈1.8× her knuckle width → ≈6 in (borderline) | **S2:** collar and Lily's hands in the band; kids sit low |
+| B3 | `FF-B3-t5.png` | t4 rejected (round disc with generated text, wrong product). t5: K13 outline, ≈1.6× palm (5 in), 3 faces = refs, tartan, fingers bare | **S2:** palm at lap/chest height still in the band |
+| B5 | `FF-B5-t4.jpg` | t3 rejected (Mom brown-haired, identity drift). t4: Mom ginger = refs, ornament hangs ≈ Lily's face width (5 in), outline ✓ | **FAIL:** Noah's face cut by the right edge, his hand on the ornament; Lily not touching it (planned two-kid action not met). Needs a take |
+| B6 | `FF-B6-t3.png` | t2 rejected (giant ornament). t3: kept-ending start ✓ (Lily's hand lifting off the collar on the bed), outline ✓ | **FAIL S1:** ornament ≈7× bauble width (≥35 cm); collar in the band; lamp in frame. Needs a take |
+
+Moved to `_rejected/`: FF-1A-t2, FF-B3-t4, FF-B5-t3, FF-B6-t2, and the superseded FF-B2-t2, FF-B3-t3, ST-1Ba-t1, ST-1Bb-plate-t3, FF-B5-t2, FF-B6-t1.
+Contact sheet rebuilt: `contact.jpg` (1A, 1Ba, 1Bb, B2, B3, B5, B6).
+
+Lessons: NBP ignores "upper half" placement; the action lands at 55–65% height (the band) in 5 of 6 people frames. Next try: compose for 4:5 / ask for a higher camera with a large foreground, or accept 06's crop-in fallback. "About the width of the red baubles" did not hold scale in a wide shot (B6); a hand or face anchor works better (B3, B5).
+Needed from Producer: budget for B5 + B6 (≈$0.28–0.56), and a ruling on the band (re-take vs 06 crop-in) for 1A, B2, B3.
