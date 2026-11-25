@@ -41,3 +41,12 @@ Product truth: the face on every generated ornament is a placeholder. Only `rend
 2. The ring state is visible only on SCALE-palm (Grace). Daniel's band shows on no reference yet (D3 or view 6, hands).
 3. Mochi has no fully side-on profile (M3 is a front-¾). It is enough for B7 (high-angle ¾).
 4. The window and lamp edges in the LOC plates are acceptable on reference plates, but must stay off-screen in scene frames.
+
+## Fix pass after 07 (2026-11-25, owner ruling "Gate B fixes and ornament size")
+| file | role | verdict | cost |
+|---|---|---|---|
+| K10-G2b-34left-face.png | Grace ¾ face view (closes 07 S2, E46) | PASS: same face, centre part, no fringe, gold studs, red Fair Isle with the white band, all matching G1. Made from G1 only (no chained drift); her face is turned toward frame-left. | $0.14 (NBP, ledger purpose `refs`) |
+- **Ornament size, K10 = 5 in (E41).** 07 measured SCALE-palm at ≈4.6–5 in and SCALE-branch at ≈5.5 in. Both are within plausible 5 in, so no re-take (07 did not flag them).
+- Grace now has 2 face views (G1, G2b) plus the back-of-head view (G2) for B4.
+- Still open (07 S3, not in this pass): D3 (Daniel full body), a view showing Daniel's ring (both needed before B4), and G3 (Grace full body, needed before B2). Room-plate edges must stay out of scene frames.
+- Gate B spend total ≈ $1.56 (first pass $1.42 + fix $0.14). Contact sheet rebuilt with G2b.
