@@ -74,3 +74,11 @@ Approved: the 07 re-take round (≈24 frames, ≤ $9 across six concepts; K13 ca
 - **K04 B3:** the approved B4 plate as still + move ($0).
 - **Caption/UI band** (K13 B2, B3, 1Ba; K01 B2): 06 reframes/crops in; re-take only if the crop cuts the action.
 - Scene video starts now on every frame 07 has passed.
+
+## User ruling 2026-11-26 — fallbacks for the stuck shots (approved)
+- K01 B4 → still + move: Grandma's approved B3 frame, real 7 in ornament composited in her hands, slow push-in.
+- K06 F5b → implied: ornament already hanging (F5a plate + composite); Sofia's finger stays on printed Mateo, only her head turns to the baby (04 fallback).
+- K13 B5 → implied: ornament already hanging (B6 plate + composite); the kids' hands withdraw from the branch.
+- K02 B5b → implied: ornament already at centre; Jacob's hand lowers away (cut ≤2 s before the cord pinch).
+- K13 B3, K01 B2 → one re-frame take each (wider so the caption band clears without cutting a face).
+04 records the beat-description changes; 07 checks the results with the rest before Gate C.
