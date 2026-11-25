@@ -10,11 +10,11 @@ _SESSION-LOGS/
   sessions/<YYYY-MM-DD-slug>.md ← full detailed per-session logs
 ```
 
-## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-25)
+## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-26)
 
 _Scope of this worktree: products + ads only. Support tickets live in the `customer-support` worktree._
 
-1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate A + **Gate B approved** (2026-11-25); turntable pipeline (E37 amended) + tracking test pass; cost ledger live. Running: Gate C prep (views 4–8 + first frames). Next: owner top-up → scene video → Gate C → edit → Gate D → upload ≈ Nov 30.
+1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate A + **Gate B approved** (2026-11-25); turntable pipeline (E37 amended) + tracking test pass; cost ledger live. First frames through 07 + re-takes; ornament-free-plate method for stuck shots; **scene video batch 1 running** (2026-11-26). Next: video batch 2 → 07 → Gate C → edit → Gate D → upload ≈ Nov 30.
 Full detail: `sessions/2026-11-25-mj4u-133-c0-gates-a-b.md` (RESUME HERE); earlier `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md`. Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
 
 ## Current state by area
