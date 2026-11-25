@@ -142,3 +142,5 @@ Source: `05-SUMMARY.md` item 2, `K01/shotlist.md` § BLOCKED for 04, `K01/refs/R
 | Cast table: Michael's trousers and sweater; Cooper live without a hat | **Corrected** to the render (black trousers, cream Fair Isle with a navy reindeer band); Cooper live = no hat, red collar. | Render wins (E44); no caption words affected. |
 
 Totals now 33 (H76) / 34 (H79). Q3, Q6, Q12 and conflict 5 updated; conflict 9 added.
+
+- **Owner ruling 2026-11-25:** H79 set on two lines, "She counted / every face." (84 px). Resolved.

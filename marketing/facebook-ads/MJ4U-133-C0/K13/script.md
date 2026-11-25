@@ -163,3 +163,5 @@ Source: `05-SUMMARY.md` §7, `K13/shotlist.md` §4 R1–R7; BRIEF § User ruling
 | Caption widths (04 re-measure) | Line breaks added to every body card and to H16 (same words); H17 flagged (C8). | E4/E57 width; K13 uses the lower band, so the breaks also keep each card ≤2 lines. |
 
 Captions words and totals unchanged (36 / 42). Header, Q3, Q6 updated; C8 added.
+
+- **Owner ruling 2026-11-25:** C8 resolved: the H17 hook card is set at 77 px.

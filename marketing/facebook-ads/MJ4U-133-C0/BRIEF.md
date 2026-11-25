@@ -50,3 +50,9 @@ Source: `05-SUMMARY.md`.
 6. **K04 recording:** the cursor at 0.0 s is patched in post (06); script wording "Circle selected" → "round-glasses option"; no re-record.
 7. **04 items:** 04 resolves the per-concept wording/fallback flags in `05-SUMMARY.md` §7 in one pass.
 8. **Reference budget (cheaper plan):** Gate B = cast views 1–3 only (Nano Banana Pro Edit) + scale plates; views 4–8 only for people with close-ups, made on Seedream v5 Pro Edit from views 1–3, after Gate B; background people ≤3 views. ACK-OPENMOVE approved where plates are generated fixed-camera and the move is added in the edit.
+
+## User ruling 2026-11-25 — hook caption widths (04 follow-up)
+- K01 **H79** "She counted every face." → set on two lines: "She counted / every face." at the house size (84 px). Words unchanged.
+- K10 **H15** "Her childhood ornaments / finally have company." → this hook card at **76 px** (house size 84 elsewhere).
+- K13 **H17** "His bed is empty. / His spot on the tree isn't." → this hook card at **77 px**.
+Not a precedent for body captions; 06 applies these per card in the caption sheet.

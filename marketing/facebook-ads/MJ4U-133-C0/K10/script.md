@@ -153,3 +153,5 @@ Source: `05-SUMMARY.md` §7 and item 5, `K10/shotlist.md` §4 flags F1–F7, B7 
 | Caption widths (04 re-measure) | Beat 2 → `Every ornament inside / was only hers.` (6 w, 1.88 w/s); beat 5 re-broken `Daniel, Grace / and Mochi. 2026.` (same words); beat 4 and H01 line breaks added; H15 flagged (C7). | E4/E57 width. |
 
 Totals now 37 (H01) / 35 (H15). Q6, C4 updated; C7 added.
+
+- **Owner ruling 2026-11-25:** C7 resolved: the H15 hook card is set at 76 px.
