@@ -7,6 +7,7 @@ Ledger: marketing/facebook-ads/media-cost-ledger.csv (append-only; one row per p
   media_ledger.py log  <prediction_id> <local_file> [--purpose P] [--notes N] [--status kept|rejected|test]
   media_ledger.py sum  [--by test_id|concept|product_id|model|purpose] [--test MJ4U-133-C0]
   media_ledger.py set  <prediction_id> status=<kept|rejected|test> [notes=...]
+  media_ledger.py refresh                          # re-read price for rows logged before Atlas billed them
   media_ledger.py reconcile [--since 2026-11-24]   # pull AtlasCloud job history: log missing jobs
                                                     # (matched to local files by content hash) and fill
                                                     # request params / prompt / timing on every row
@@ -284,6 +285,17 @@ if __name__ == "__main__":
         cmd_log(a[1], a[2], opts(a[3:]))
     elif a[0] == "set" and len(a) >= 3:
         cmd_set(a[1], dict(x.split("=", 1) for x in a[2:]))
+    elif a[0] == "refresh":
+        rows = read(); n = 0
+        for r in rows:
+            if r["prediction_id"] and not r["price_usd"]:
+                try:
+                    d = prediction(r["prediction_id"])
+                    if d.get("price"):
+                        r["price_usd"] = d["price"]; r["charge_status"] = d.get("charge_status", ""); n += 1
+                except Exception:
+                    pass
+        write(rows); print(f"refresh: filled {n} blank prices")
     elif a[0] == "reconcile":
         cmd_reconcile(opts(a[1:]).get("since", "2026-11-24"))
     elif a[0] == "sum":
