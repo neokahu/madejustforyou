@@ -61,3 +61,6 @@ Not a precedent for body captions; 06 applies these per card in the caption shee
 - Approved: K02 Jacob skin fix (refine + views 2–3, ≈$0.42); K04 1B-R plate re-take with a true 3 mm edge (or thin in post); K10 Grace ¾ face view (≈$0.14).
 - **Ornament size per concept (E41):** K01 = **7 in**; K02, K04, K06, K10, K13 = **5 in**. Scale plates that read otherwise are re-taken (07: K02 and K04 plates read 6–7 in).
 - After these fixes the owner reviews the contact sheets for Gate B.
+
+## GATE B — approved by the user 2026-11-25
+Cast reference sets for all six concepts approved as shown in `<K>/refs/gateB-contact.jpg` (incl. K02 Jacob at Susan's tone; 07 summary `refs-07-GATE-B-SUMMARY.md`). Next: views 4–8 for close-up people (Seedream, refs = views 1–3), image first frames per shot, 07 shot mode, then scene video (owner top-up needed before video).
