@@ -82,3 +82,6 @@ Approved: the 07 re-take round (≈24 frames, ≤ $9 across six concepts; K13 ca
 - K02 B5b → implied: ornament already at centre; Jacob's hand lowers away (cut ≤2 s before the cord pinch).
 - K13 B3, K01 B2 → one re-frame take each (wider so the caption band clears without cutting a face).
 04 records the beat-description changes; 07 checks the results with the rest before Gate C.
+
+## User ruling 2026-11-26 — K04 B2
+K04 B2 = still + move from its approved first frame, with the real phone screen recording (`ads/screen-recordings/K04-personalizer-circle-glasses.mov`, clean before/after frames, cursor patched) composited on the phone in post. No further generation for this shot.
