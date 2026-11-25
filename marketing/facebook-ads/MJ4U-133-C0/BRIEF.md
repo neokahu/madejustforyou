@@ -64,3 +64,6 @@ Not a precedent for body captions; 06 applies these per card in the caption shee
 
 ## GATE B — approved by the user 2026-11-25
 Cast reference sets for all six concepts approved as shown in `<K>/refs/gateB-contact.jpg` (incl. K02 Jacob at Susan's tone; 07 summary `refs-07-GATE-B-SUMMARY.md`). Next: views 4–8 for close-up people (Seedream, refs = views 1–3), image first frames per shot, 07 shot mode, then scene video (owner top-up needed before video).
+
+## User ruling 2026-11-26 — first-frame re-takes
+Approved: the 07 re-take round (≈24 frames, ≤ $9 across six concepts; K13 cap raised). K01 H76: re-take so the lid comes off on screen (no waiver). 07's other rulings stand as craft fixes (no script change): K02 H61 + B5b re-take; K06 re-take at 5 in with ≤3 sharp faces; K13 B5 back to the planned two-kid action.
