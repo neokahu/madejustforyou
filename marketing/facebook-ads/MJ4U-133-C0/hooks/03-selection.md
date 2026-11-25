@@ -13,7 +13,7 @@ Scores are advisory (no calibration set), so they rank candidates only. Choices 
 | K13 | A "Without him" (F2×T5) | **H16** · "First Christmas without Biscuit." | H24 | H16 beat H24 in both orders (90 vs 82), and its cold read was clear (pet memorial, mom + kids). If H24 is swapped in, its stockings must come back in the body (S4 3). |
 | K13 | B "Still on the tree" (F6×T5) | **H17** · "His bed is empty. His spot on the tree isn't." | H21 | H17 beat H21 in both orders. The product reads sharp by 0.4s and the cold read was clear. H21 opens on a crying child in ECU (07 risk). H30 was rejected: without a loss cue it reads as a new pet. |
 | K04 | A "Thought made visible" (F11×T7) | **H33** · "She matched it to last year's photo." | H31 | H33 beat H31 in both orders: a stronger onset (she lifts it) and the product at about 55%. Both pay at 2.0–2.5s with the photo. H32 (UI preview, judge-A kill) was not considered. |
-| K04 | B "That's him" (F7×T3) | **H34** · "Same glasses. Same grin. Same Grandpa." | H35 | H34 beat H35 in both orders. H35 has a G1 fail from judge A (a crop with no hanger and no object named), and its decades-younger Grandpa is the hardest prop in the pool. H34 shows the hanger and the cut edge, and its cold read was clear. **07 check:** "Same Grandpa" must read as matching attributes, not as a likeness claim (F6). If 07 rules it a claim, use H35. |
+| K04 | B "That's him" (F7×T3) | ~~H34~~ → **H35** · "Different decade. Same round glasses." (reserve promoted 2026-11-25, see §7) | none left | **Superseded 2026-11-25:** H34 rejected (07 claim check S1, `K04/07-claim-check.md`); H35 promoted under conditions in §7. Original reasoning: | H34 beat H35 in both orders. H35 has a G1 fail from judge A (a crop with no hanger and no object named), and its decades-younger Grandpa is the hardest prop in the pool. H34 shows the hanger and the cut edge, and its cold read was clear. **07 check:** "Same Grandpa" must read as matching attributes, not as a likeness claim (F6). If 07 rules it a claim, use H35. |
 | K06 | A "The line names the moment" (F2×T3) | **H46** · "First Christmas as four." | H47 (**only with arm B = H49**) | H46 beat H47 in both orders. H47 has a G1 fail from judge A (a crop of one figure). H47 may never run next to H50, so if H46 fails, arm B moves to H49 as well. |
 | K06 | B "The newest one appears" (F5×T7) | **H50** · "The newest one on the ledge." | H49 | H50 beat H49 in both orders (92 vs 89). H49's frame 1 (whole ornament on the branch, about 65%) is too close to H46's, so H50's ECU of one figure with a pull-back is the more distinct pair. Its cold read was clear. |
 | K02 | A F2×T9 | **H61** · "He asked for nothing this Christmas." | H62 | H61 beat H62 in both orders (87 vs 72; H62 is 9 words with "everyone" only partly in frame). Its cold read was clear (dad, gift from the kids). |
@@ -48,7 +48,7 @@ Common terms (00C §8): primary = hook rate (3s plays ÷ impressions); secondary
 
 - `MJ4U-133_C0_K10X1-H01` / `-H15` · mechanism-arm (bundle): F9×T1 vs F2×T5→T3 · H: a "secret before she finds it" opener holds the giver longer than "it landed" · hook rate · gate as above · control K01.
 - `MJ4U-133_C0_K13X1-H16` / `-H17` · mechanism-arm (bundle), T5 base: F2 "without him" vs F6 "still on the tree" · H: showing his place on the tree inside the hook beats holding the absence · hook rate · guardrail: negative comments/hides · control K01.
-- `MJ4U-133_C0_K04X1-H33` / `-H34` · mechanism-arm (bundle): F11×T7 vs F7×T3 · H: the giver's act of matching beats recognising the person · hook rate · control K01.
+- ~~`MJ4U-133_C0_K04X1-H33` / `-H34`~~ (withdrawn 2026-11-25; re-frozen as H33 / H35 in §7) · mechanism-arm (bundle): F11×T7 vs F7×T3 · H: the giver's act of matching beats recognising the person · hook rate · control K01.
 - `MJ4U-133_C0_K06X1-H46` / `-H50` · mechanism-arm (bundle): F2×T3 vs F5×T7 · H: naming the moment over the full ornament beats revealing the newest figure · hook rate · control K01.
 - `MJ4U-133_C0_K02X1-H61` / `-H63` · format-arm: F2 vs F14, T9 held · H: the joke carried by a physical artefact beats the joke in the caption · hook rate · control K01.
 - `MJ4U-133_C0_K01X1-H76` / `-H79` · format-arm: F5 vs F10, T7 held · H: a reveal of the object beats a reaction face · hook rate · control = itself (round baseline).
@@ -78,3 +78,49 @@ H57 (K06, 92, no defects; best spare for a later K06 swap) · H60, H52, H59, H55
   All other winners were CLEAR on what is sold, for whom and what happens next.
 - **Ledger:** `_ledgers/hooks.csv` rows have **not** been written in this pass. Status still owed: selected / reserve / parked / cut for the 60 cards, with F, T and primitives tags.
   Re-tags pending first: H80 CT3→CT1, H05 SU, H17 F6 (C: a cut, not a transformation), H15 T5, H54 T9→T3/T4.
+
+## 7. K04 update, 2026-11-25 (targeted: arm B swap; not a full re-selection)
+
+Trigger: role 07's claim check (`K04/07-claim-check.md` §1) failed H34 at S1 (E43, P2/E40). "Same grin" claims a likeness that the product cannot print: F6 has no expression option, and the render shows one template smile on all three people. The owner ruled (BRIEF.md, "User rulings 2026-11-24 (council questions)", item 3) that the reserve goes in, as §1 said. Role 04 has already rewritten `K04/script.md` with H35 (`MJ4U-133_C0_K04X1-H35_E0_v01`).
+
+### 7.1 Arm decisions
+| Arm | Winner | Reserve | Status |
+|---|---|---|---|
+| A "Thought made visible" (F11×T7) | **H33** "She matched it to last year's photo." | H31 | unchanged |
+| B "That's him" (F7×T3) | **H35** "Different decade. Same round glasses." (reserve promoted) | **none** | promoted, **conditional** (§7.3) |
+| — | H34 "Same glasses. Same grin. Same Grandpa." | — | **REJECTED**: failed the 07 claim check, S1, never waivable. See `K04/07-claim-check.md` §1. It does not go to the parked list. |
+
+No pairwise rerun: H35 is the only arm-B card left that survived 02 (median 85.0, survive·flag). All other arm-B candidates were cut at 02 or parked as explore cards on a different F×T.
+
+### 7.2 Distinctness, H33 vs H35 (step 4): **PASS**
+- Declared axis: mechanism-arm (bundle), F11×T7 vs F7×T3. Both format and trigger differ, as declared. Discovery only, not attributable to either factor alone.
+- Frame-1 picture: H33 = close on an open kraft box, two hands lifting the whole ornament (VS2, about 55% width). H35 = vertical split with a faded young-Grandpa photo on the left and an ornament crop on the right. Different subject, composition and onset (a lift at 0.3s vs a colour-warm ON3 at 0.3s). Different audio (bed vs a sync hit). Not a caption-only difference.
+- Captions share no words except "photo"/"glasses" themes; no shared line.
+- Body overlap: H35's left photo (young Grandpa, decades ago) is a different prop from the body's "last year's photo" at 2.0s, so the hook does not repeat into beat 2. That was the problem §4.6 fixed for H34, and it no longer applies.
+- Shared-hook rule: n/a (one body, one hook per ad).
+
+### 7.3 Outsider cold read, H35 (step 2, mandatory): **PASS with conditions** (as carded: FAIL)
+Method: two fresh Sonnet contexts given only a text description of frame 1, onset and caption, muted, 3s at phone size. Neither context had seen the brief, cards or product. No still exists yet, so this is a description read. The Gate D human read on the cut is still owed.
+
+| Version | What sold | For whom | What next | Promise read | Result |
+|---|---|---|---|---|---|
+| **As carded** (right half = tight crop of the Grandpa figure only) | "a personalized gift item (likely a custom print/portrait)"; unsure if "photo restoration, a cartoon product or a greeting card" | grandparent, bought by an adult child | "a reveal of the actual product (mug, portrait, ornament)" | turn an old photo into a cartoon keepsake | **FAIL** on what is sold. Confirms judge A's G1. |
+| **Conditioned** (right half shows the printed "Grandpa" label, the wooden hanger tab with its hole and string, and the cut edge against the background) | "a small personalized wooden ornament printed with a cartoon portrait of 'Grandpa'" | "for a grandfather; bought by an adult child or grandchild" | more then-vs-now comparisons, then the product and CTA | "turn an old family photo into a keepsake capturing someone's likeness" | **PASS** on what / for whom / next. **Flag** on the promise (below). The reader noted the "Grandpa" label and ornament shape "are easy to miss at a glance". |
+
+**Flag (to 07 and the Gate D read, S2):** both readers took the split as a photo-to-portrait service. The caption claims only the glasses, an F6 choice, so the 07 claim check still passes. But the frame-1 grammar (photo beside print) implies that the print is made from the photo, and that is the same S2 misread 07 logged for H33, only stronger here because it sits in frame 1. The only cure inside the locked hook is the body's personalizer insert (beat 2, about 4.8–6.0s, "Circle" selected). **For arm B that insert is a hard requirement, not an option.**
+
+### 7.4 Conditions for 05 (fixed 0–6s requirements, arm B)
+1. **Right half of frame 1** must show, legible at phone size from 0.0s: the printed Grandpa figure **with his "Grandpa" name label**, the **hanger tab with its hole (plus string)**, and **a cut edge** of the ornament against a plain background, so it reads as a thin wooden piece. On this render the tab sits at top centre, behind Grandma and Olivia, not above Grandpa. The crop must therefore span from Grandpa to the tab (the upper-left region of the ornament). A partial Grandma at the crop edge is acceptable. A tight figure-only crop is **not** acceptable: it failed the read.
+2. The printed glasses must be at least as large on screen as the photo's glasses (the caption compares them).
+3. The young-Grandpa photo is built image-first from the locked cast refs, matched to the print (deep brown skin, circle glasses; E44). It must be plainly a memory prop of the living Grandpa (E49), with no memorial grade.
+4. Caption band clear of the "Grandpa" label, the tab and both pairs of glasses (E60).
+5. Body: the personalizer insert (real screen recording, "Circle") must ship in the shared body. If 05 or 06 drop it, arm B fails this selection.
+6. Body pays (step 3): PASS on script. Glasses in last year's photo, then the printed glasses at about 4.0s, product in frame throughout 2.0–6.0.
+
+**If the 05 still fails a fresh cold read** (product unread, or "for whom" wrong), arm B has **no reserve left**: H34 is rejected and no other F7×T3 card survived 02. **01 must then supply a new F7×T3 card**; 03 does not write one.
+
+### 7.5 Re-frozen pre-registration line (replaces the K04 line in §3)
+- `MJ4U-133_C0_K04X1-H33` / `-H35` · mechanism-arm (bundle): F11×T7 (H33) vs F7×T3, T5 secondary (H35) · H: the giver's act of matching beats recognising the person (the glasses across decades) · primary metric: hook rate · gate per plan · control K01 · bundle: not attributable to format or trigger alone · frozen 2026-11-25.
+
+### 7.6 Ledger
+`_ledgers/hooks.csv` is still not written (see §6). When it is: H34 = rejected (07 claim S1), H35 = selected (K04 arm B), arm-B reserve = none.
