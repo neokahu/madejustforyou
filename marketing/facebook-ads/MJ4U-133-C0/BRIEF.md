@@ -97,3 +97,7 @@ Two 20.0 s instrumental candidates, ElevenLabs Music v2.5 via AtlasCloud (paid A
 - `.../music/bed-B-guitar-musicbox.mp3`: guitar and piano, then music box and strings (mean −18.1 dB).
 Owner picks one; it is used in all 12 ads (E6).
 - **Owner pick 2026-11-26: bed A (piano + celesta)** for all 12 ads; 06 normalises loudness (it renders quiet).
+
+## Owner Gate C feedback (2026-11-26, in progress)
+- **K01 H76:** owner says "AI changed original design". Next session: check whether the OUTLINE/shape differs from the K01 render (→ re-take or still+move; the printed face alone is a placeholder covered by the tracked real render). Do not ship H76 until resolved.
+- **K01 B3:** v1–v4 are four takes; none is clean (fingernail touches the print). Fix = 06 roto of the nail on the best take, or a still + move of the B3 frame without the finger. Owner to see the fixed version.
