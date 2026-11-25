@@ -31,3 +31,7 @@ Gate A is approved (BRIEF.md). Each 05 agent takes ONE concept folder `<K>/` and
 - **O5** frame-1 plan per hook arm + thumbnail still plan (in shotlist or a short file).
 - Flag anything that changes *what* a beat shows, its duration or words → back to 04/owner; do not change it yourself.
 Do not commit. Do not edit other concepts' folders.
+
+## Cost logging (2026-11-25, owner request) — mandatory
+Every generated asset is logged in `marketing/facebook-ads/media-cost-ledger.csv` (charged price from the AtlasCloud API + width/height/duration/fps/bytes + product/test/concept/purpose + kept/rejected/test). `scripts/atlas_poll.sh` logs automatically on download; for anything downloaded another way run `python3 scripts/media_ledger.py log <prediction_id> <file> --purpose <p> --status <kept|rejected|test>`. Totals: `python3 scripts/media_ledger.py sum --by concept --test MJ4U-133-C0`.
+**Real charged prices (2026-11-24/25):** Seedream v5 Pro Edit 2048² = **$0.072**/img (not $0.04); Nano Banana Pro Edit 2k = $0.14; Seedance 2.0 Fast ref-to-video 5s 720p with 3 reference images = **$0.78** (≈$0.156/s, not $0.072/s). Budget with these.
