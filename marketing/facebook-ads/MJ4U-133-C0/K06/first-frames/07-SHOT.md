@@ -84,3 +84,10 @@ Cheaper option to put to the owner (not a waiver from 07): if the F5a re-take st
 6. **F5b-t1:** 05 KEEP conditional. 07 FIX: S2 for the pointing target, plus the inherited S1s.
 7. **C4-mateo-06-hands:** 05 S3 "hands look large/old". 07 ACCEPT: plausible infant hands, and they are not used in any shot.
 8. Agreed with 05: the rejections of P1-t1, F5a-t1, F5a-t2, F5a-t3 and F5b-t2; C2-mom-05 has the wrong baby (07 also found the bare left ring finger); Sofia-06 thumb S3.
+
+## Re-check 2026-11-26 (07, SHOT mode)
+Method: 07 measured first (full-res frames, hand/ring crops, caption band overlaid), then read 05 self-check. Only frames re-taken 2026-11-26 are judged; earlier verdicts stand.
+| Frame | Verdict | Reason |
+|---|---|---|
+| K06-P1-t4 | ACCEPT | Outline = render (tab, names Dad/Mom/Sofia/Mateo, 2026, snow base). Scale ≈6 needle lengths vs SA1 ≈5 in: S1 closed. Hangs from a branch. S3: ornament fills the frame; 4:5 crop keeps it whole. |
+| F5a / F5b | RESHOOT (S1 open) | Not re-taken. Ruling: ornament-free plate + composite. |

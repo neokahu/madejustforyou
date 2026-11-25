@@ -88,3 +88,14 @@ Not ready: B2, B3, B4, B6 (and B4's ref D4).
 | **Total** | | | | **≈$0.64–1.27** |
 
 A re-check reruns the full §2.7 list on each new frame, plus the dimension check.
+
+## Re-check 2026-11-26 (07, SHOT mode)
+Method: 07 measured first (full-res frames, hand/ring crops, caption band overlaid), then read 05 self-check. Only frames re-taken 2026-11-26 are judged; earlier verdicts stand.
+| Frame | Verdict | Reason |
+|---|---|---|
+| refs/K10-D4b-leaning | ACCEPT | Right hand bare; one band (left hand) per couple ref; face, sweater, pose = D1. |
+| K10-B2-ff-t3 | ACCEPT | Near flap closed under her flat right hand; no grip on the far flap; tartan. |
+| K10-B3-ff-t4 | ACCEPT | Bauble hand bare, other hand one wedding band (Grace, allowed); open kraft tray + red tissue, no hat. |
+| K10-B4-ff-t4 | ACCEPT | Red tartan, lidless tray, Daniel in doorway; ≤2 sharp faces. |
+| K10-B6-ff-t3 | ACCEPT | Tartan, eyes on the ornament, right hand bare above the tab; ornament true 5 in. |
+S3 carried: frames 1536×2752 (06 trims to 9:16).

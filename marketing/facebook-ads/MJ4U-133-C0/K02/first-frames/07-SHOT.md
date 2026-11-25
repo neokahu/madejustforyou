@@ -103,3 +103,11 @@ Not ready: H61-B1, B2, B5b (re-takes below). B4 and B6 have no generation.
 
 ## Re-check scope after fixes
 H61, B2, B5b re-takes: full §2.7 run (serves, outline/scale 5 in, no generated text outside the placeholder face, identity vs v1–3 and vs B3 t2, rings, 5 fingers, sharp faces ≤3, 9:16 + 4:5 band, one move/one action). B5a: ring only. Then the video gate (07 shot mode on ≥5 frames per clip) for every shot.
+
+## Re-check 2026-11-26 (07, SHOT mode)
+Method: 07 measured first (full-res frames, hand/ring crops, caption band overlaid), then read 05 self-check. Only frames re-taken 2026-11-26 are judged; earlier verdicts stand.
+| Frame | Verdict | Reason |
+|---|---|---|
+| K02-H61-FF-t4 | ACCEPT | Outline = turntable (snowy ledge, 2026, tab, gold cord), face-up on tissue, ≈5 in vs Jacob's hand; hands 5 fingers, ring fingers bare. S1 closed. |
+| K02-B2-FF-t3 | ACCEPT conditional | Jacob identity fixed (ginger-brown beard, black round glasses, matches B3-t2). Ring persists per 05: usable only after 06 still retouch removes it; 07 re-checks the retouched still before video. |
+| B5b | RESHOOT (S2 open) | No passing take (t5 fingertip still touches ornament). Ruling: re-stage, one take. |

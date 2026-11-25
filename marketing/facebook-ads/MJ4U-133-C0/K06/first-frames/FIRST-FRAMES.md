@@ -51,3 +51,21 @@ Options for the Producer/owner (05 can't pick these without a ruling):
 1. **Fresh F5a generation without a base image** (refs: Sofia-01, Mom-01, Mateo-04 hold, Dad-02, render, P1-t4 for light): the P1-t4 approach fixed scale only after the base image was dropped. ≈$0.28, 2 takes, then F5b from the keeper (≈$0.28). Risk: F5a-t1 lost every identity with 6 refs.
 2. Owner rules 7 in for K06 beat 5 only (07's option): this fixes the scale, but not the "2024" outline (no waiver).
 3. Before F5a is used, defocus Dad on the still ($0, local) whichever option is chosen.
+
+## Stuck-frames round (role 05, 2026-11-26, user ruling "stuck first frames": ornament-free plate method)
+Cross-concept round spend $1.12 (8 × NBP Edit 2k $0.14; one K06 F5b submit blocked by Atlas's content filter, no output, not logged). K06 share **$0.28**. All via `atlas_poll.sh`, LEDGER_PURPOSE=first-frames. Checklist applied (rings, scale, trousers, ≤3 sharp faces, outline).
+
+| File | 05 verdict | Evidence |
+|---|---|---|
+| **K06-F5a-plate-t1.png** | **KEEP (ornament-free plate) → 07** | edit of F5a-t5 (tartan already fixed): ornament + cord removed, branch tip empty at Sofia's chest height; Sofia's right thumb + index pinched in the air just under the tip (≈ x 1060, y 1310 at 1536×2752), bare. Red tartan trousers ✓. Mom: gold band on her left hand ✓ (ruled). Mateo upright, ¾, eyes open ✓. Dad softer than t4 but still fairly sharp: **06 defocus Dad's region on the still before video ($0)** to keep ≤3 sharp faces |
+| K06-F5b-plate-t2.png | REJECT (`_rejected/`) | edit of F5a-plate-t1: index extended, thumb folded ✓, but she points at Mateo's swaddle with the fingertip ≈1 cm from it (near-contact) and well left of where the ornament's right end goes → misses E50 "points at printed Mateo". Take cap used (t1 blocked) |
+| K06-F5a-t4 | moved to `_rejected/` | superseded by the plate |
+
+**Composite spec for 06 (F5a, also the start state for V5a):**
+- Source: real render (front, flat) on a 2D layer over the plate; video V5a is generated from the plate, the render is tracked on Sofia's pinch point.
+- Anchor: render hanger-hole centre ≈ 15 px below Sofia's pinch point (plate ≈ 1060, 1310 at 1536×2752); gold cord drawn from the hole up to the branch tip (≈ 1075, 1260).
+- Scale (5 in): render width **290–300 px** at 1536 w = ≈2 of Sofia's palm widths (07's F5a-t4 measure: hand wrist→fingertip ≈290 px = 12.5 cm). 06 re-measures her hand on the plate and sets width = 1.02 × that length.
+- Shadow: soft contact shadow on Sofia's sweater/needles behind, 20 % opacity, offset +8 px right/+10 px down (key from frame left), blur 12 px.
+- Sway: ±2° about the hole, ≈1.2 s period, decaying from her release in V5a. Face stays square to camera.
+
+**F5b status:** still open. Options: (a) one more NBP take from F5a-plate-t1 aiming the fingertip at "empty air 3 cm right of where the pinch was" (≈$0.14), (b) build 5b from V5a's last frame (Sofia's hand lowers, then 06 crop to MCU), (c) owner accepts "points at Mateo" for 5b (04/07 call). F5b-t1 stays only as a pose reference.

@@ -66,3 +66,25 @@ Contact sheet rebuilt: `contact.jpg` (1A, 1Ba, 1Bb, B2, B3, B5, B6).
 
 Lessons: NBP ignores "upper half" placement; the action lands at 55–65% height (the band) in 5 of 6 people frames. Next try: compose for 4:5 / ask for a higher camera with a large foreground, or accept 06's crop-in fallback. "About the width of the red baubles" did not hold scale in a wide shot (B6); a hand or face anchor works better (B3, B5).
 Needed from Producer: budget for B5 + B6 (≈$0.28–0.56), and a ruling on the band (re-take vs 06 crop-in) for 1A, B2, B3.
+
+## Stuck-frames round (role 05, 2026-11-26, user ruling "stuck first frames")
+K13 share **$0.28** (2 × NBP Edit 2k), via `atlas_poll.sh` (first-frames). Checklist applied.
+
+| Shot | File | 05 verdict | Evidence |
+|---|---|---|---|
+| B6 | **FF-B6-plate-t1.png** | **KEEP (ornament-free plate) → 07** | edit of FF-B6-t3: the oversized ornament is gone, fir branches intact where it hung; Mom, Lily (hand lifting off the collar), Noah, bed and collar unchanged; tartan ✓, fingers bare ✓, 3 faces. Lamp still at left (S3, 06 patch) |
+| B5 | FF-B5-t5.png | REJECT (`_rejected/`) | Noah now fully in frame ✓ and Mom behind both ✓, but **Noah holds the ornament up by its cord** (not on the branch, not holding the branch tip), the ornament lost its figures (plain "2026" plank, outline ≠ turntable, S1), Lily's raised hand reads as a wave. One-take cap used. FF-B5-t4 stays (fails: Noah cut by the edge) |
+
+**Composite spec for 06 (B6 plate):** render hanging from the branch where the old ornament hung (hole centre ≈ x 743, y 690 at 1536×2752; tie the gold cord to the nearest branch tip). Scale 5 in = **1.6 × the diameter of the nearest red bauble at the same depth** (baubles ≈ 8 cm); 06 measures that bauble on the plate (expect ≈ 70–80 px render width). Shadow: none on the needles beyond a 10 % darkening, blur 8 px. Sway ±1.5°, 1.4 s. Note: at true 5 in the ornament is small in this wide; the kept-ending reads from the collar, the ornament is context.
+
+**B5 next:** a fresh generation (not an edit), refs Lily v5/v6, Noah v5, Mom v5, L1, as an **ornament-free plate** (Noah's left hand on the empty lowest branch tip, Lily's right hand 10 cm in front of the empty spot), then the render composited. ≈$0.14–0.28, needs Producer OK.
+
+## Caption-band reframes for 06 (no generation). Band y 1015–1245, key zone y 285–1005, at 1080 × 1920 (frame scaled to 1080 w, centre-cropped)
+Crop box = source window in 1080-w coordinates, scaled up to 1080 × 1920.
+
+| Shot | Action span now (y) | Crop box (x, y, w, h) | Zoom | Result | Cuts action? |
+|---|---|---|---|---|---|
+| B2 (FF-B2-t3) | ornament + collar + Lily's hands ≈ 875–1120 | **(70, 250, 939, 1670)** | 1.15 | action → y ≈ 719–1001, Lily's head top ≈ 495 | No. Trims ≈70 px of Mom's face at the left edge (already edge-cut) and Noah's right shoulder |
+| B3 (FF-B3-t5) | ornament on palm ≈ 1100–1345 | none works | needs ≥ 1.59 | clearing the band at 1.59 starts the window at y ≈ 712: **cuts Mom's face (head ≈ 300–665)** | **Yes → re-take** (higher camera / ornament at chest height), ≈$0.14 |
+| 1Ba (ST-1Ba-plate-t2) | collar + tag ≈ 965–1195 | **(115, 408, 850, 1512)** | 1.27 | collar → y ≈ 707–1001; 5 in render composited above it in the key zone | No (empty plate; source still ≥1209 px wide) |
+| 1A | not in this round's list | — | — | — | — |

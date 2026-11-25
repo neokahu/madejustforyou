@@ -95,3 +95,13 @@ Related refs checked (not views 4–8):
 | **Total** | | | | **$0.56–1.12** (fits the $1.64 left under the $4.00 Gate C cap) |
 
 Re-check after re-takes: §2.7 items 1–7 and 10 on each new frame, plus scale against the plate and B5a↔B5b continuity.
+
+## Re-check 2026-11-26 (07, SHOT mode)
+Method: 07 measured first (full-res frames, hand/ring crops, caption band overlaid), then read 05 self-check. Only frames re-taken 2026-11-26 are judged; earlier verdicts stand.
+| Frame | Verdict | Reason |
+|---|---|---|
+| K04-B5a-F1-t2 | ACCEPT | Grandpa black trousers, Grandma red tartan; bare fingers; ornament ≈5 in; one action held. |
+| K04-B5b-F1-t4 | ACCEPT | Raised palm gone; Olivia's arms round him, Grandma's hand on his arm (connection). Ornament in open palm ≈5 in; bare fingers in crop; tartan. |
+| K04-B2-F1-t3 | ACCEPT | Phone portrait, face-up, flat green (≈270 px at 1080 w); 06 insert fits. Printed photo + ornament flat, outline true. S3: phone ≈95 px left of brief. |
+| C3-olivia-v7-watching-t2 | ACCEPT | Long box braids, Santa hat, soft smile, hands clasped and bare. |
+| B3 | per ruling | Use the approved B4 plate as still + move ($0). |

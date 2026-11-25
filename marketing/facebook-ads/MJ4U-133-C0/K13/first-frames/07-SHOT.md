@@ -97,3 +97,14 @@ Budget note: FIRST-FRAMES.md puts the K13 ledger at $3.35 against a $3.50 hard c
 | FF-B6 | PASS | FIX S1 (≥35 cm) + S2 band/4:5 + S2 Gate A item 1 |
 | Views 4–8 | PASS ×15 | ACCEPT ×15 (agree), with S3 notes on the cuffs and Lily v5's collar |
 | Generated text | — | agree: only placeholder names on the ornament face; tags blank; no other text |
+
+## Re-check 2026-11-26 (07, SHOT mode)
+Method: 07 measured first (full-res frames, hand/ring crops, caption band overlaid), then read 05 self-check. Only frames re-taken 2026-11-26 are judged; earlier verdicts stand.
+| Frame | Verdict | Reason |
+|---|---|---|
+| FF-B2-t3 | ACCEPT with 06 crop | S1s closed: K13 outline from render, Mom's fingers bare, red tartan, plain cuff. Ornament ≈6 in (S3 borderline). Collar and Lily's hands at ≈50 % height = band: a top-left-anchored ≈80 % crop-in moves the action to ≈62 % and keeps Mom's face and the ornament whole; it cuts only knees and floor. |
+| FF-B3-t5 | ACCEPT with 06 crop | Outline true, ≈5 in (≈1.6 palm), 3 faces = refs, tartan, fingers bare. Palm sits just below / at the band edge; the same top-anchored crop-in clears it without cutting the palm. |
+| ST-1Ba-plate-t2 | ACCEPT | Ornament-free plate: empty bed, coiled collar, blank tag. 06 composites the render at 5 in with shadow; 06 starts the move ≈ higher so the collar clears the band. |
+| ST-1Bb-plate-t4 | ACCEPT, 06 measure | One branch, sharp needles, open bokeh centre, nothing hanging. Nearest needles ≈185 px at 1536 w; 06 sizes the hanging layer to ≈6–7 needle lengths (≈5 in, SA1) and checks before render (the 650-px figure is only right if it is at 1080 w and those needles are the reference). |
+| B5, B6 | RESHOOT (open) | Not passed this round (B5 action/Noah cut; B6 ≥35 cm). Ruling: re-stage / ornament-free plate. |
+| 1A | 06 crop | Band per ruling; unchanged keeper. |

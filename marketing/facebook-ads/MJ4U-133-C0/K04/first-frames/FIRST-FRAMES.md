@@ -48,3 +48,12 @@ Contact sheet `contact.jpg`: 1A t3 · B2 t3 · B3 (open, rejected t3 shown) · B
 
 Moved to `first-frames/_rejected/`: B2 t1/t2, B3 t1/t2/t3, B5a t1, B5b t2/t3.
 Still open from 07 (not in this round): ring paint-out on PROP-lastyear-photo-t1e and the scale-plate glint (06); 1A S3 notes go into the video brief.
+
+## Stuck-frames round (2026-11-26, user ruling): B3 = still + move from the approved B4 plate ($0, no generation)
+B3 no longer needs a generated frame or video. 06 builds it from `K04-B4-plate-t1.jpg` + the real render, the same composite as B4 (render at native res, contact shadow, 2160 × 3840 canvas). The photo-in-hand and the hand action are dropped; "Even Rosie / got a spot" is served by printed Rosie. B3 is a tight ECU so B3 → B4 is a scale jump (B4 opens wide at 1200 px).
+- **Move (one, in the edit):** slow push-in, ease-in-out, first 0.3 s nearly still, 2.8 s (6.00–8.80).
+- **Start:** render **1900 px** wide (output 1080 × 1920), render point **(0.80, 0.56)** (printed Rosie) at output **(540, 760)**: Rosie ≈140 px wide, inside the protected zone 505–1250, below the band 300–500.
+- **End:** render **2020 px** wide (106 %), same render point at (540, 760).
+- Crop on the 2160 canvas: width 1137 → 1069 px around that point. Native check: 2020 px output ≤ 3185 px render (and 2693 px at 1440 w) ✓.
+- Shadow/plate: as B4; no hands, no photo. Cut: hard in from B2, hard out to B4 (wide 1200 px) = scale jump.
+- Risk: printed Olivia/Grandma may enter the left edge at 1900 px; that is fine (still on the product).

@@ -67,7 +67,8 @@ def main():
         sys.exit(0)
 
     ti = data.get("tool_input", {}) or {}
-    prompt = (ti.get("prompt") or "").strip()
+    # AtlasCloud nests the prompt inside "params" (found 2026-11-26: every Atlas call bypassed the guard).
+    prompt = (ti.get("prompt") or (ti.get("params") or {}).get("prompt") or "").strip()
     if not prompt:
         sys.exit(0)
 

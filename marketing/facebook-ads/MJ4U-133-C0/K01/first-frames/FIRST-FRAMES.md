@@ -51,3 +51,18 @@ All NBP Edit 2k 9:16 ($0.14 each), from the 07-listed keepers + turntable `K01-f
 
 Unchanged: B3-t2 (06 crop), B6b-t1 (ready). Doc fix: keeper extensions above are the files on disk.
 Learned: (1) an edit from a source that has a ring keeps the ring unless the edit asks for nothing else; ring removal works as a single-purpose edit. (2) NBP Edit holds the size of a held product; scale has to be set when the product enters the frame, not edited down.
+
+## 6 · Stuck-frames round (role 05, 2026-11-26, user ruling "stuck first frames")
+K01 share **$0.42** (3 × NBP Edit 2k), via `atlas_poll.sh` (first-frames). Checklist applied. All three takes rejected (`_rejected/`).
+
+| Shot | File | 05 verdict | Evidence |
+|---|---|---|---|
+| B4 | FF-B4-plate-t1.png | REJECT | edit of FF-B4-t2: ornament removed ✓, but her hands are stacked vertically (one palm down at the chest, one palm up ≈30 cm lower), so there is no 7 in gap to seat the render |
+| B4 | FF-B4-plate-t2.jpg | REJECT | hands side by side but **palms out to camera ("stop" gesture)**, and **Grandma gained glasses** (identity drift vs refs). Two-take cap used |
+| B6a | FF-B6a-t4.png | REJECT | the right-edge third arm is gone ✓, but **Leo has no hand by the ornament at all**, so the planned action (his right index beside the right cut edge) has no start state. FF-B6a-t3 stays as the current best (S2 third arm open) |
+
+**B4 next (needs Producer OK, ≈$0.14–0.28):** a fresh generation, not an edit (NBP edits keep the old hand pose and ornament size): refs Grandma v1/v6-hands, Grandpa v1, L1, prompt "both hands at chest height holding the left and right edges of a flat 18 cm card, thumbs on the front edge" with a **plain kraft card** as the placeholder body; 06 composites the 7 in render over the card (card width = render width ≈ 1.25 × Grandma's face width). Composite spec held until a plate passes.
+**B6a next:** one edit of FF-B6a-t3 that moves the green-cuff hand so it joins Leo's right shoulder (one arm, his), or 06 rotoscopes the stray hand out and the video action becomes "Leo's right hand rises into frame to point" (no generation).
+
+## 7 · Caption-band reframe, B2 (no generation). Band y 290–500; bottom UI zone from y ≈1248 (1080 × 1920)
+FF-B2-t2: faces span y ≈ 550–1010, box y ≈ 1250–1450, so the content (≈900 px) is taller than the clear zone 500–1248 (748 px). **No crop works**: any crop-in enlarges it; a plain shift up of ≥200 px puts Michael's face in the band. **A crop would cut the action → re-take**: one NBP outpaint/zoom-out edit (≈$0.14, earlier t3 was blocked by the permission classifier, not by Atlas) or 06 scales the still to ≈0.83 and extends the top/bottom by outpainting.

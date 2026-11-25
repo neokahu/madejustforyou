@@ -117,3 +117,13 @@ Re-check on every re-take: identity vs views 1–3 and the print, **rings (1:1 c
 
 ## Proposed criterion (S3, for the user)
 - Add **"ring check at 1:1 on every visible hand"** as a standing line in 05's self-check. NBP added a ring in 6 of its 10 frames (H76-t2, H79-t1/t1e, B2-t1/t1e, B4-t1) despite the must-not-change list. The builder's self-check missed it on both kept frames.
+
+## Re-check 2026-11-26 (07, SHOT mode)
+Method: 07 measured first (full-res frames, hand/ring crops, caption band overlaid), then read 05 self-check. Only frames re-taken 2026-11-26 are judged; earlier verdicts stand.
+| Frame | Verdict | Reason |
+|---|---|---|
+| FF-H76-t5 | ACCEPT | Lid low and angled over the box, ornament not yet revealed in full; hands bare in crop; tartan. Video: lid comes off on screen (user ruling met). |
+| FF-H79-t3 | ACCEPT | Ring gone, both hands bare. Emma's eyes clear of the band. Two faces. 06 composites the ornament at 7 in (S3 carried). |
+| FF-B2-t2 (still) | ACCEPT with 06 crop | Ring gone. Box sits at ≈67 % height; 06 crop-in/reframe (ruling 2026-11-26) clears the UI zone without cutting the box or the faces. S3: Michael's hat brim touches the band. |
+| FF-B6a-t3 | ACCEPT | Die-cut turntable outline (tab, ledges, 2026, snow base), no plank. ≈7 in in Grandma's hands; no extra arm found; hands bare. |
+| B4 | RESHOOT (S1 open) | No new keeper. Per ruling: ornament-free plate + 06 composite. |

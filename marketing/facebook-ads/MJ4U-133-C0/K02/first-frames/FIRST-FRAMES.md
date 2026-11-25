@@ -47,3 +47,12 @@ Scope: only 07's K02 re-take list (H61, B2, B5b) + the H63 / B5a video-action re
 Brief updates (no cost): `B-H63-VID` v2 action = short slide up from the first-frame position, onset ≈0.3s (07 S3). `B-B5a-VID` action = right hand on Kobe's head draws him in, ornament stays in his left hand at chest (07 S3). `B-B5b-FF` refs point to Jacob v3d and Luna v1–3 (07 S3).
 Moved to `_rejected/`: H61 t1–t3, B2 t1/t2/t4, B5b t1–t4. Contact sheet rebuilt (current picks only).
 **Ready for 07 re-check:** H61 t4 (full §2.7), B2 t3 after 06 ring retouch. Still open: B5b.
+
+## Stuck-frames round (role 05, 2026-11-26, user ruling "stuck first frames")
+K02 share **$0.14** (1 × NBP Edit 2k), via `atlas_poll.sh` (first-frames). Checklist applied (everyone bare, 5 in, trousers, faces, outline).
+
+| Shot | File | 05 verdict | Evidence |
+|---|---|---|---|
+| B5b | **K02-B5b-FF-t6.png** (edit of t5) | **PARTIAL → 07** | **Fixed:** Mary stands at the tree's far left, both hands on a low side branch ≈60 cm from the ornament, nothing touched (the 07 S2). Jacob's left hand at his side; his right hand bare (1:1), identity (bold round glasses, ginger beard), Luna, outline, ≈5 in all held from t5. **Open S2:** Jacob still pinches the gold cord above the hanger tab (free hang), not the ornament's lower edge with the cord already over the branch, so a release would drop it. One-take cap used |
+
+t5 moved to `_rejected/`. Video option that avoids a re-take: V5b action = "his fingers slip the cord loop over the branch tip, then his hand lowers away" (the cord-top grip is the natural start for that), 04/07 to confirm it still serves "Mary reaches, he hangs it". Contact sheet rebuilt (`products/.../K02/first-frames/contact.jpg`).

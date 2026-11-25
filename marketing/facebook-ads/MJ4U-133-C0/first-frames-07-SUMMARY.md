@@ -33,3 +33,16 @@ This round covers the views 4–8 refs and the image first frames for all six co
 **Process note:** K10's FIRST-FRAMES.md sits in the media folder, not in `K10/first-frames/` of the docs folder.
 
 **Re-check after re-takes:** all ring, scale, wardrobe and caption-band items on the re-taken frames, plus dimensions and the 4:5-safe centre.
+
+## Re-check 2026-11-26: READY FOR VIDEO (all concepts, incl. first-review passes)
+Measured by 07 before reading 05's notes; detail in each `<K>/first-frames/07-SHOT.md` → "Re-check 2026-11-26". "(06 crop)" = caption-band fix by 06 crop-in per the 2026-11-26 ruling; 07 judged the crop keeps the action. "(06 retouch)" = 07 re-checks the still after retouch.
+
+- **K01:** H76-t5 · H79-t3 (06 composites 7 in) · B2-t2 still (06 crop) · B3-t2 (06 crop) · B6a-t3 · B6b-t1
+- **K02:** H61-t4 · H63-t1 · B3-t2 · B2-t3 (06 retouch: ring) · B5a-t1 (06 retouch: ring)
+- **K04:** 1A · B2-t3 · B3 = B4 plate (still + move) · B4 plate · B5a-t2 · B5b-t4 · Olivia v7-t2 (ref)
+- **K06:** P1-t4
+- **K10:** B1A-t1 · B1B-t2 · B2-t3 · B3-t4 · B4-t4 · B5-t1 · B6-t3 · B7-t2 · D4b (ref)
+- **K13:** 1A (06 crop) · 1Ba plate-t2 (06 composite 5 in) · 1Bb plate-t4 (06 sizes layer by needles) · B2-t3 (06 crop) · B3-t5 (06 crop)
+
+**Not ready (open):** K01 B4 (S1 scale) · K02 B5b (S2 action) · K06 F5a, F5b (S1 scale/outline) · K13 B5, B6 (action; S1 scale). All go to the ornament-free plate / re-stage route in BRIEF 2026-11-26.
+**Carried S3/process:** K04 last-year photo ring paint-out (06); K10 frames 1536×2752 (06 trims); K10 notes file still in the media tree.
