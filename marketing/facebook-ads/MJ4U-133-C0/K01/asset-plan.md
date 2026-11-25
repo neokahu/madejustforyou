@@ -68,3 +68,9 @@ Owner action: AtlasCloud balance is ~$15. The planned subtotal alone ($16.44) is
 
 ## 6 · Scene ledger (O6)
 `marketing/facebook-ads/_ledgers/scene-ledger.csv` is empty. Rows for K01's shipped shots are written when the ads ship, not now. B2, B3, B4, B5, B6a, B6b and B7 are byte-identical across `-H76` and `-H79` (controlled test reuse, logged). Tell the media buyer Meta may treat the two as one creative.
+
+
+## Reference budget rework (owner ruling 2026-11-25, BRIEF.md item 8) — supersedes the reference rows above
+- **Gate B (now):** 7 people/dog × views 1–3 (NBP) = 21 img $2.94 + scale plate $0.42 + room plate $0.14 → **$3.50 (≈$4.40 with re-rolls)**. Views 1–3 = front · ¾ · profile/full body; a person never gets more than 3 views before Gate B.
+- **After Gate B:** views 4–8 on Seedream for Grandma, Grandpa, Emma, Leo: 20 img ≈ $0.80. Views 4–8 only for people with close-ups, on Seedream v5 Pro Edit with views 1–3 as the references (refs = 1–3, never a previous new view). Background people stay at ≤3 views.
+- If 07 finds Seedream drifts identity on views 4–8, re-make only the failing views on Nano Banana Pro.

@@ -51,3 +51,9 @@ Of the 17.5 s of K06-only picture, 9.2 s (hook, 2 and 4) costs only P1. Beats 1�
 ## Takes policy
 
 Images: draft 2K, select from N, change one variable per retry. Video: 720p is both draft and final, because Seedance is not seed-reproducible at a new resolution, so the first frame is the cheap gate. Past 8 takes on any shot, use the named fallback (V3: 2.5D still; V5b: head-turn variant, which needs 04's OK). Don't keep re-rolling.
+
+
+## Reference budget rework (owner ruling 2026-11-25, BRIEF.md item 8) — supersedes the reference rows above
+- **Gate B (now):** Dad, Mom, Sofia, Mateo × views 1–3 (NBP) = 12 img $1.68 + scale plate $0.28 → **$1.96 (≈$2.50)**. Views 1–3 = front · ¾ · profile/full body; a person never gets more than 3 views before Gate B.
+- **After Gate B:** views 4–8 Seedream for the 4 (20 img) ≈ $0.80. Views 4–8 only for people with close-ups, on Seedream v5 Pro Edit with views 1–3 as the references (refs = 1–3, never a previous new view). Background people stay at ≤3 views.
+- If 07 finds Seedream drifts identity on views 4–8, re-make only the failing views on Nano Banana Pro.

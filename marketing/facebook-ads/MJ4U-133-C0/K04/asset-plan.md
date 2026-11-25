@@ -74,3 +74,9 @@ Shot list with verified in/out windows · `refs/` · accepted assets named by sh
 - B3/B4: same table, box · C3 hands / none · upright · MCU push / CU→ECU push · daylight left
 - B5a/B5b: living room, sage-green wall, beige sofa · C1, C2, C3, C4 · in hand · MCU push-in / MS pull-back · daylight left, warm tree bokeh right
 Cross-concept check for the Producer: K01 also has an aged Grandpa in round glasses and a living-room box-opening; K04's cast (deep brown skin), room (sage-green wall) and frame 1 differ. Confirm against K01's 05 plan when it lands.
+
+
+## Reference budget rework (owner ruling 2026-11-25, BRIEF.md item 8) — supersedes the reference rows above
+- **Gate B (now):** Grandpa, Grandma, Olivia, Rosie × views 1–3 (NBP) = 12 img $1.68 + scale plate $0.28 + 1B-R plate $0.14 → **$2.10 (≈$2.60)**. Views 1–3 = front · ¾ · profile/full body; a person never gets more than 3 views before Gate B.
+- **After Gate B:** views 4–8 Seedream for the 3 people (15 img) $0.60 + identity photos (last year's, young Grandpa; NBP, 2 takes each) $0.56. Views 4–8 only for people with close-ups, on Seedream v5 Pro Edit with views 1–3 as the references (refs = 1–3, never a previous new view). Background people stay at ≤3 views.
+- If 07 finds Seedream drifts identity on views 4–8, re-make only the failing views on Nano Banana Pro.

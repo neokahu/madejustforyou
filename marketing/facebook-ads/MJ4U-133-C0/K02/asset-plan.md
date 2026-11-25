@@ -57,3 +57,9 @@ Cheaper option (not recommended for faces): views 4–8 of each person on Seedre
 - B4 move parameters (shot list): scale 0.70, centre x 900→2300 source px, names at frame y 1150–1230, cubic ease, 3.2s; 4:5 variant.
 - H63 post push-in 100→110% centred (540, 900) and the lettering plate at x 250–830, y 560–880.
 - B5b optional sway on the 2D layer (≤3°, damped).
+
+
+## Reference budget rework (owner ruling 2026-11-25, BRIEF.md item 8) — supersedes the reference rows above
+- **Gate B (now):** Jacob, Mary, Kobe, Susan, Bailey, Luna × views 1–3 (NBP) = 18 img $2.52 + scale plate $0.28 → **$2.80 (≈$3.50)**. Views 1–3 = front · ¾ · profile/full body; a person never gets more than 3 views before Gate B.
+- **After Gate B:** views 4–8 Seedream for the 4 people (20 img) + Bailey paws-on-armrest (1) ≈ $0.85. Views 4–8 only for people with close-ups, on Seedream v5 Pro Edit with views 1–3 as the references (refs = 1–3, never a previous new view). Background people stay at ≤3 views.
+- If 07 finds Seedream drifts identity on views 4–8, re-make only the failing views on Nano Banana Pro.

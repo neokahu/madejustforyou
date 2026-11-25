@@ -54,3 +54,9 @@ Back up every new file with `scripts/backup-media.sh`; nothing media goes into g
 | R6 | H15 hook is a still with a rack focus: motion gate (E34, report) may read low | B1B | 3-take GEN-VIDEO plate in contingency |
 | R7 | Three C0 hooks open on hands + kraft box (K01 H76, K04 H33, K10 H01) | B1A | different setting, cast and framing; 07 checks E16 across the six 05 lists |
 | R8 | Generated ornament under the render layer moves (spin) and its cord/edge shows | B6 (placeholder present) | opaque render covers the silhouette; generated cord painted out, cord drawn in post; reject if anything shows |
+
+
+## Reference budget rework (owner ruling 2026-11-25, BRIEF.md item 8) — supersedes the reference rows above
+- **Gate B (now):** Daniel, Grace, Mochi × views 1–3 (NBP) = 9 img $1.26 + 4 props + 2 rooms on Seedream $0.24 + scale plate $0.28 → **$1.78 (≈$2.20)**. Views 1–3 = front · ¾ · profile/full body; a person never gets more than 3 views before Gate B.
+- **After Gate B:** views 4–8 Seedream for Daniel, Grace (10 img) $0.40 + Mochi view 4 $0.04. Views 4–8 only for people with close-ups, on Seedream v5 Pro Edit with views 1–3 as the references (refs = 1–3, never a previous new view). Background people stay at ≤3 views.
+- If 07 finds Seedream drifts identity on views 4–8, re-make only the failing views on Nano Banana Pro.

@@ -10,7 +10,8 @@ All six concepts have O1 shotlist, O2 refs plan, O3 briefs, O4 asset plan, O5 fr
 | K06 | 8 | $11.60 | $15.60 | beats 1–4 product-only; H50 pixel gate passes |
 | K10 | 8 | $15.36 | $19.90 | casting + top caption band need confirming |
 | K13 | 9 | $20.90 | $26.00 | E60 waiver asked for beat 4 |
-| **Total** | | **≈ $101.6** | **≈ $134** | inside the $300 cap; Atlas balance $15.11 → top-up needed |
+| **Total** | | **≈ $101.6** | **≈ $134** | before the reference rework |
+| **Total after reference rework (2026-11-25)** | | **≈ $80** | **≈ $112** | Gate B refs ≈ $14 base / ≈ $17 with re-rolls; views 4–8 after Gate B ≈ $4.5 |
 
 ## Round-wide decisions needed (owner / 04 / 07)
 1. **Name legibility vs caption band** (E39 ≥100 px vs E57 safe zones / E60 no text over names/year): K01 b5, K02 b4, K06 (printed "Dad" max ~78 px), K10 B5 (E67 crop), K13 b4. Producer recommendation: E39 floor 75 px for printed names in proof beats; the year may be read in the adjacent shot; never move the caption band over names (E60 holds).

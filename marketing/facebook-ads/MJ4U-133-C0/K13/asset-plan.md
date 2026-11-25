@@ -53,3 +53,9 @@ Current AtlasCloud balance ≈ $15: K13 alone exceeds it once video starts. The 
 
 ## 4. Post work that 06 must budget (time, not money)
 Planar tracking on 5 generated clips, one of them a moving hand-held raise (1A, rule 1 exception); tag-text tracking on a swinging tag (1A) and a turning collar (B2); 2D sway on 1Bb and B5; a depth composite in B6 if the plate's depth of field fails.
+
+
+## Reference budget rework (owner ruling 2026-11-25, BRIEF.md item 8) — supersedes the reference rows above
+- **Gate B (now):** Mom, Noah, Lily × views 1–3 (NBP) = 9 img $1.26 + collar, bed, room on Seedream $0.15 + scale plate $0.28 → **$1.69 (≈$2.10)**. Views 1–3 = front · ¾ · profile/full body; a person never gets more than 3 views before Gate B.
+- **After Gate B:** views 4–8 Seedream for the 3 (15 img) $0.60. Views 4–8 only for people with close-ups, on Seedream v5 Pro Edit with views 1–3 as the references (refs = 1–3, never a previous new view). Background people stay at ≤3 views.
+- If 07 finds Seedream drifts identity on views 4–8, re-make only the failing views on Nano Banana Pro.

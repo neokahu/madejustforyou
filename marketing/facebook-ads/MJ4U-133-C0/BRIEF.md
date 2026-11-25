@@ -39,3 +39,14 @@ Open before generation (not Gate A items): 03 re-freezes K04 as H33/H35 + H35 3s
 ## User ruling 2026-11-24 — product pipeline (E37 amended)
 Build the ornament like the MJ4U-111 lamp: per-concept **turntable** from the one flat render (front, ¾-left, ¾-right, edge-on, blank back) → multi-reference video (cast refs + turntable) so holds, hanging, scale and light are physical → **real artwork composited and tracked over the face in post**. E37 amended accordingly (CRITERIA.md). Validate on K01 first (~$1–2, AtlasCloud) before scaling. Council round-wide rule 1 ("never hung by the string on camera") is to be revisited after the validation.
 K04 personalizer insert = one tap (Glasses → Circle), ~1.5–2s on screen; raw recording ~10s on the user's phone.
+
+## User rulings 2026-11-25 (05 planning questions, "go with your recommendations")
+Source: `05-SUMMARY.md`.
+1. **Top-up:** AtlasCloud to be topped up by the owner (no generation beyond ≈$15 until then).
+2. **Name legibility (E39 amended):** printed names in proof beats ≥ **75 px** wide at 1080w (was 100 px); the caption band never covers printed names (E60 holds); the year may be read in the adjacent shot instead of the same frame.
+3. **K01 beat 5:** 04 shortens the roll-call caption to fit the 950 px safe width (≤2 lines).
+4. **Casting:** K10 = East Asian-American couple with gold wedding bands (matches the render); no Santa hats on the live cast in K06 and K13; K13 Mom's ring finger bare.
+5. **Tracking:** free OpenCV planar-tracking test on the K01 test clip before any scene spend; if it fails, tracked shots fall back to still + move.
+6. **K04 recording:** the cursor at 0.0 s is patched in post (06); script wording "Circle selected" → "round-glasses option"; no re-record.
+7. **04 items:** 04 resolves the per-concept wording/fallback flags in `05-SUMMARY.md` §7 in one pass.
+8. **Reference budget (cheaper plan):** Gate B = cast views 1–3 only (Nano Banana Pro Edit) + scale plates; views 4–8 only for people with close-ups, made on Seedream v5 Pro Edit from views 1–3, after Gate B; background people ≤3 views. ACK-OPENMOVE approved where plates are generated fixed-camera and the move is added in the edit.
