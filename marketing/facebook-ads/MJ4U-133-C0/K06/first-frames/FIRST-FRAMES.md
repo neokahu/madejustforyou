@@ -69,3 +69,8 @@ Cross-concept round spend $1.12 (8 × NBP Edit 2k $0.14; one K06 F5b submit bloc
 - Sway: ±2° about the hole, ≈1.2 s period, decaying from her release in V5a. Face stays square to camera.
 
 **F5b status:** still open. Options: (a) one more NBP take from F5a-plate-t1 aiming the fingertip at "empty air 3 cm right of where the pinch was" (≈$0.14), (b) build 5b from V5a's last frame (Sofia's hand lowers, then 06 crop to MCU), (c) owner accepts "points at Mateo" for 5b (04/07 call). F5b-t1 stays only as a pose reference.
+
+## Fallbacks (owner ruling 2026-11-26) — role 05
+| shot | file | verdict | notes |
+|---|---|---|---|
+| F5b | K06-F5b-FF-t3.jpg | REJECT (`_rejected/`) | NBP edit of F5a-plate-t1 for "finger on Mateo's spot": she points at the real baby's foot instead, and the branch tip went out of frame. Third NBP miss on this pose. **F5b video is generated from F5a-plate-t1 directly** (the pinch stays at the hanger, and 06 places the render so printed Mateo sits under her fingertips). $0.14 |

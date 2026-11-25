@@ -66,3 +66,14 @@ K01 share **$0.42** (3 × NBP Edit 2k), via `atlas_poll.sh` (first-frames). Chec
 
 ## 7 · Caption-band reframe, B2 (no generation). Band y 290–500; bottom UI zone from y ≈1248 (1080 × 1920)
 FF-B2-t2: faces span y ≈ 550–1010, box y ≈ 1250–1450, so the content (≈900 px) is taller than the clear zone 500–1248 (748 px). **No crop works**: any crop-in enlarges it; a plain shift up of ≥200 px puts Michael's face in the band. **A crop would cut the action → re-take**: one NBP outpaint/zoom-out edit (≈$0.14, earlier t3 was blocked by the permission classifier, not by Atlas) or 06 scales the still to ≈0.83 and extends the top/bottom by outpainting.
+
+## Fallbacks (owner ruling 2026-11-26) — role 05
+**K01 B4 → still + move (no generation).** The ruling names "Grandma's approved B3 frame", but K01's B3 keeper (FF-B3-t2) is the ornament-in-box ECU with no hands in it. The only approved frame with Grandma and Grandpa together and her hands on the gift is **B2 (FF-B2-wide-t1, below; FF-B2-t2 if 07 rejects the wide take)**. 05 uses that frame; **Producer/04 please confirm**.
+- Frame: FF-B2-wide-t1.png (1536×2752), MCU crop on Grandma + Grandpa: crop width ≈ 940 px (61%) at 9:16, centre ≈ (760, 1420). 06 re-measures.
+- Composite: the real render (`K01` 7 in turntable front, real names), standing upright in the open box on her lap, its lower edge tucked behind the front flap of the box and her hands on the box sides. It covers the generated "2026" disc. Scale: 7 in = 1.25 × Grandma's face width (face ≈ 183 px at 1536 w → render width ≈ 230 px; 06 re-measures). Contact shadow on the tissue; light from frame-left, matching the lamp.
+- Move: push-in 100% → 106%, ease-out, over 2.1 s (6.90–9.00). Start centre = crop centre; end centre = the render's centre. Built at native resolution.
+- Risk: Grandpa (frame-left) is not leaning in as the shotlist says; the caption "Grandpa needed / a closer look" leans on his gaze. Check that his eyes are on the box.
+
+| shot | file | verdict | notes |
+|---|---|---|---|
+| B2 re-frame | **FF-B2-wide-t1.png** | **KEEP → 07** | NBP Edit 2k, edit of FF-B2-t2, zoom out ≈80%. All faces and the box (y ≈ 0.63) sit above the bottom UI zone, and the tallest Santa hat clears the top edge. Rings checked 1:1 on every visible hand: all bare. Generated "2026" disc in the box is a placeholder (composite). Lamp and the dog unchanged. $0.14 |

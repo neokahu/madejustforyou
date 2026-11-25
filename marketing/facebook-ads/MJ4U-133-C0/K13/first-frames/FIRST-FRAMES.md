@@ -88,3 +88,9 @@ Crop box = source window in 1080-w coordinates, scaled up to 1080 × 1920.
 | B3 (FF-B3-t5) | ornament on palm ≈ 1100–1345 | none works | needs ≥ 1.59 | clearing the band at 1.59 starts the window at y ≈ 712: **cuts Mom's face (head ≈ 300–665)** | **Yes → re-take** (higher camera / ornament at chest height), ≈$0.14 |
 | 1Ba (ST-1Ba-plate-t2) | collar + tag ≈ 965–1195 | **(115, 408, 850, 1512)** | 1.27 | collar → y ≈ 707–1001; 5 in render composited above it in the key zone | No (empty plate; source still ≥1209 px wide) |
 | 1A | not in this round's list | — | — | — | — |
+
+## Fallbacks (owner ruling 2026-11-26) — role 05
+| shot | file | verdict | notes |
+|---|---|---|---|
+| B5 (implied) | **FF-B5-implied-t1.png** | **KEEP → 07** | NBP Edit of FF-B6-plate-t1: Lily's right hand and Noah's left hand rest with their fingertips on the lowest branch near the trunk, above the bed (the empty spot where the ornament hangs). Mom kneels behind with her hand on Noah. Fingers bare; tartan; 3 faces; lamp at left (S3, as in B6). 06 composites the 5 in render between the two hands (≈1.6 palm widths). $0.14 |
+| B3 re-frame | **FF-B3-wide-t1.png** | **KEEP → 07** | NBP Edit of FF-B3-t5, zoomed out ≈80%. Faces y ≈ 0.25–0.40; palm and ornament at y ≈ 0.59 (was ≈0.66). A bottom-anchored 88% crop puts the palm at ≈0.53, so the caption band clears without cutting a face. Fingers bare. The generated ornament is a placeholder (render composited). $0.14 |
