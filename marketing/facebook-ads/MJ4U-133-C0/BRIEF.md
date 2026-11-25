@@ -85,3 +85,8 @@ Approved: the 07 re-take round (≈24 frames, ≤ $9 across six concepts; K13 ca
 
 ## User ruling 2026-11-26 — K04 B2
 K04 B2 = still + move from its approved first frame, with the real phone screen recording (`ads/screen-recordings/K04-personalizer-circle-glasses.mov`, clean before/after frames, cursor patched) composited on the phone in post. No further generation for this shot.
+
+## User ruling 2026-11-26 — K01 B4 + Gate C post fixes
+- **K01 B4** = slow push-in still on the B2 wide frame (Grandma with the open box), the real 7 in render composited in the box; caption → **"Grandma took / a closer look."** (04's flagged alternative).
+- Post fixes for 06 (no generation): K01 B2 clone the invented "2026" disc; K01 B3 roto the nail; K02 B5b add the 0.9 s "2026" end-state read as a composite hold; K06 5b still+move from the F5a plate; composites from passed plates for K04 1B, K06 5a, K13 B6, K10 B5.
+- With these, the shot table in `clips-07-SUMMARY.md` is the Gate C source list; next role is 06 (edit).
