@@ -14,7 +14,7 @@ _SESSION-LOGS/
 
 _Scope of this worktree: products + ads only. Support tickets live in the `customer-support` worktree._
 
-1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate A + **Gate B approved** (2026-11-25); turntable pipeline (E37 amended) + tracking test pass; cost ledger live. First frames through 07 + re-takes; ornament-free-plate method for stuck shots; **scene video batch 1 running** (2026-11-26). Next: video batch 2 → 07 → Gate C → edit → Gate D → upload ≈ Nov 30.
+1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate A + **Gate B approved** (2026-11-25); turntable pipeline (E37 amended) + tracking test pass; cost ledger live. First frames through 07 + re-takes; ornament-free-plate method for stuck shots; **scene video batch 1 running** (2026-11-26). All generation done (clips, stills/composite plates, music bed A). Accepted shots in `products/.../MJ4U-133-C0/REVIEW-accepted-shots/`. **NEXT: 06 rough-cuts all 12 ads FIRST so the owner can watch full 20 s ads** (owner: clips alone read as 'no story'), then fix dead spots → polish → 07 FINAL → Gate D → upload ≈ Nov 30. Open: K01 H76 outline vs render (owner flag), K01 B3 nail.
 Full detail: `sessions/2026-11-25-mj4u-133-c0-gates-a-b.md` (RESUME HERE); earlier `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md`. Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
 
 ## Current state by area
