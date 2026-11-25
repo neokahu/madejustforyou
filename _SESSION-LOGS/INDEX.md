@@ -14,9 +14,8 @@ _SESSION-LOGS/
 
 _Scope of this worktree: products + ads only. Support tickets live in the `customer-support` worktree._
 
-1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate 0 approved, renders done, 12 hooks selected; 6 scripts (04) done · council done + scripts revised 2026-11-24 (owner took all council recommendations; K04 arm B → H35) → **GATE A approved 2026-11-24** →
-   real personalizer assets (K02 transparent, K04 screen rec) + K01 b2 still proof → 05 visuals → build → QA → launch ≈ Nov 30 (Christmas cutoff Dec 11).
-Full detail: `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md` (RESUME HERE). Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
+1. **MJ4U-133 ornament C0** (`marketing/facebook-ads/MJ4U-133-C0/`): Gate A + **Gate B approved** (2026-11-25); turntable pipeline (E37 amended) + tracking test pass; cost ledger live. Running: Gate C prep (views 4–8 + first frames). Next: owner top-up → scene video → Gate C → edit → Gate D → upload ≈ Nov 30.
+Full detail: `sessions/2026-11-25-mj4u-133-c0-gates-a-b.md` (RESUME HERE); earlier `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md`. Deep-plan background: `sessions/2026-11-19-video-team-ads-db.md`.
 
 ## Current state by area
 
@@ -66,6 +65,7 @@ Full detail: `sessions/2026-11-23-mj4u-133-c0-shopify-ids.md` (RESUME HERE). Dee
 
 | Date | Log | Topics |
 |---|---|---|
+| 2026-11-25 | [mj4u-133-c0-gates-a-b](sessions/2026-11-25-mj4u-133-c0-gates-a-b.md) | ad-testing-framework, video-prompting, platforms |
 | 2026-10-08 | [suncatcher-ads-built](sessions/2026-10-08b-suncatcher-ads-built.md) | suncatcher, character-refs, script-method |
 | 2026-10-08 | [research-consolidated-handoff](sessions/2026-10-08-research-consolidated-handoff.md) | platforms, character-refs, script-method |
 | 2026-09-26 | [testing-complete-both-products](sessions/2026-09-26-testing-complete-both-products.md) | suncatcher, blanket, text-fidelity, prompt-guard |
