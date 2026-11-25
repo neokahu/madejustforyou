@@ -96,3 +96,4 @@ Two 20.0 s instrumental candidates, ElevenLabs Music v2.5 via AtlasCloud (paid A
 - `products/MJ4U-133-family-wood-ornament/ads/MJ4U-133-C0/music/bed-A-piano-celesta.mp3`: sparse felt piano for 0–6 s, then celesta, bells and strings, warm resolve (quiet: mean −28.6 dB, so 06 normalises).
 - `.../music/bed-B-guitar-musicbox.mp3`: guitar and piano, then music box and strings (mean −18.1 dB).
 Owner picks one; it is used in all 12 ads (E6).
+- **Owner pick 2026-11-26: bed A (piano + celesta)** for all 12 ads; 06 normalises loudness (it renders quiet).
