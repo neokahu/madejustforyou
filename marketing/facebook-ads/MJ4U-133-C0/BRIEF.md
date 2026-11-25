@@ -56,3 +56,8 @@ Source: `05-SUMMARY.md`.
 - K10 **H15** "Her childhood ornaments / finally have company." → this hook card at **76 px** (house size 84 elsewhere).
 - K13 **H17** "His bed is empty. / His spot on the tree isn't." → this hook card at **77 px**.
 Not a precedent for body captions; 06 applies these per card in the caption sheet.
+
+## User ruling 2026-11-25 — Gate B fixes and ornament size
+- Approved: K02 Jacob skin fix (refine + views 2–3, ≈$0.42); K04 1B-R plate re-take with a true 3 mm edge (or thin in post); K10 Grace ¾ face view (≈$0.14).
+- **Ornament size per concept (E41):** K01 = **7 in**; K02, K04, K06, K10, K13 = **5 in**. Scale plates that read otherwise are re-taken (07: K02 and K04 plates read 6–7 in).
+- After these fixes the owner reviews the contact sheets for Gate B.
