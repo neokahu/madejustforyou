@@ -12,7 +12,9 @@ Each adapter must define:
 - minimum and billable duration, and cost
 - known failure modes with tested fixes
 
-Every adapter must keep the principles in §4.2 of the role-05 research: positive framing, one move per shot, never re-describing what a reference carries, limbs located in space, no generated text, the product never drawn, draft low and select from N.
+Every adapter must keep the principles in §4.2 of the role-05 research: positive framing, one move per shot, never re-describing what a reference carries, limbs located in space, no generated text, the product's printed face never generated in a shipped frame, draft low and select from N.
+
+**Product body vs printed face (2026-11-24, MJ4U-133 E37 amendment):** a generator may draw the product's physical body (shape, edge, scale, light, hands, hanging) from a per-product **turntable** (flat real artwork → ¾-left / ¾-right views via an image-edit model), so holds and hanging look physical. Its generated face/print is a placeholder: the real artwork is composited and tracked over it in post. Method and test evidence: `../../ai-product-review-consistency-method.md` (lamp) and `marketing/facebook-ads/MJ4U-133-C0/RENDERS.md` (ornament: single-flat-sheet prompt wording; a free-hanging flat object spins in video, so keep it facing camera and add sway in post).
 
 ## Current adapters (tool-specific docs written before this team existed)
 | Tool / class | Adapter |
