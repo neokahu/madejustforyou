@@ -101,3 +101,4 @@ Owner picks one; it is used in all 12 ads (E6).
 ## Owner Gate C feedback (2026-11-26, in progress)
 - **K01 H76:** owner says "AI changed original design". Next session: check whether the OUTLINE/shape differs from the K01 render (→ re-take or still+move; the printed face alone is a placeholder covered by the tracked real render). Do not ship H76 until resolved.
 - **K01 B3:** v1–v4 are four takes; none is clean (fingernail touches the print). Fix = 06 roto of the nail on the best take, or a still + move of the B3 frame without the finger. Owner to see the fixed version.
+- **Folders (2026-11-26):** accepted takes copied to `products/MJ4U-133-family-wood-ornament/ads/MJ4U-133-C0/REVIEW-accepted-shots/<K>/NN_<file>` (shot order); every other take moved to `<K>/clips/_attempts/` (paths in CLIPS.md/ledger refer to the old `clips/` location). Keep this split for all future rounds.
