@@ -90,3 +90,9 @@ K04 B2 = still + move from its approved first frame, with the real phone screen 
 - **K01 B4** = slow push-in still on the B2 wide frame (Grandma with the open box), the real 7 in render composited in the box; caption → **"Grandma took / a closer look."** (04's flagged alternative).
 - Post fixes for 06 (no generation): K01 B2 clone the invented "2026" disc; K01 B3 roto the nail; K02 B5b add the 0.9 s "2026" end-state read as a composite hold; K06 5b still+move from the F5a plate; composites from passed plates for K04 1B, K06 5a, K13 B6, K10 B5.
 - With these, the shot table in `clips-07-SUMMARY.md` is the Gate C source list; next role is 06 (edit).
+
+## Music bed (2026-11-26)
+Two 20.0 s instrumental candidates, ElevenLabs Music v2.5 via AtlasCloud (paid API account; charged $0.059 each, prediction IDs e78dc6b0295b45d1bc0096dd514835d9 and a920287e3c3244cb9de2e278485cc982 in the media ledger = licence/paid-plan evidence for E65; confirm ElevenLabs' commercial-use terms for API output before upload):
+- `products/MJ4U-133-family-wood-ornament/ads/MJ4U-133-C0/music/bed-A-piano-celesta.mp3`: sparse felt piano for 0–6 s, then celesta, bells and strings, warm resolve (quiet: mean −28.6 dB, so 06 normalises).
+- `.../music/bed-B-guitar-musicbox.mp3`: guitar and piano, then music box and strings (mean −18.1 dB).
+Owner picks one; it is used in all 12 ads (E6).
