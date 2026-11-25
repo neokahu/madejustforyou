@@ -98,3 +98,11 @@ Defect lines:
 | B7 | shared end card (06) |
 
 Re-take total K01: B3 $0.78 + B6a ≈$0.77, ≈ **$1.55**; plus B4, ≈$0.77, not yet generated.
+
+## Re-check 2026-11-26b (07, SHOT mode, independent of 05)
+07 extracted 5 frames inside each claimed window at full res (720×1280) plus 1:1 crops at the risk points, before reading 05's notes.
+| item | frames | verdict | reason |
+|---|---|---|---|
+| B6a-v2 (FF-B6a-t5) | 0.0/0.6/1.2/1.9/2.6 | **ACCEPT 0.00–2.60** | hands = Grandma's two + Leo's; no extra arm in any frame; Grandpa bare-headed; ornament square, still, in frame; family smiles to lens. Leo's index points at the ornament edge, not his chest (S3, harmless). Placeholder names scrambled → tracked render (gate D) |
+| B2 wide frame (FF-B2-wide-t1) | still, full res + crop x500 y1500 | **FIX** | `[S2] FF-B2-wide-t1.png · still · V2/V3 spurious product · a round wooden disc reading "2026" with a hanger loop sits on the box tissue; not the real ornament outline · fix owner 05 (NBP edit: plain red tissue, nothing in the box top) or 06 clone · re-check: box top clean at 1:1`. Cast otherwise matches the print: Grandpa, Grandma, Emma, Michael, Sarah, Leo, Cooper (golden) |
+| B4 still+move spec | FF-B4-t2 at full res | **OPEN** | spec names "Grandma's approved B3 frame", which has no faces; FF-B4-t2 (Grandma + Grandpa) holds an ornament ≈13 in wide against the 7 in ruling, with her hands on its ends, so a rescale leaves the hands holding air. Owner to confirm the frame; then 05 re-composites the 7 in render into the hands (new hand pose) and 07 re-checks. Caption `Grandpa needed / a closer look.` is true only if Grandpa is in the chosen frame |

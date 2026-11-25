@@ -89,3 +89,11 @@ At 2.0 → 4.6 → 7.6 in the edit, the same girl changes hair and trousers twic
 | B2 | S1 | 05 | FF edit (pigtails, tartan, hand under the ornament, X1 collar), then 1 video take (4 s) | **≈$0.77** (max $1.54) |
 
 B5 and B6 are not re-takes: they need first-frame passes and clips (≈$0.63–0.78 per clip once a frame passes).
+
+## Re-check 2026-11-26b (07, SHOT mode, independent of 05)
+07 extracted 5 frames inside each claimed window at full res (720×1280) plus 1:1 crops at the risk points, before reading 05's notes.
+| item | frames | verdict | reason |
+|---|---|---|---|
+| B2-v2 (FF-B2-t4) | 0.0/0.6/1.3/2.0/2.6 | **ACCEPT 0.00–2.60** | Lily: pigtails + red tartan every frame (S1 fixed); collar one red loop, turned in her hands, no morph; Noah's hand on her arm (connection); dry eyes. Ornament stands on the rug against her shins, not held by Mom (S3 staging deviation, accepted); placeholder → tracked render |
+| B3-wide-v2 | 0.0/1.2/2.5/3.7/5.0 + 1:1 crops at 2.5, 5.0 | **ACCEPT 0.00–5.00** (composite-conditional) | stays wide; ornament still on Mom's palms, fingers bare, none on the print; 3 faces = refs; tartan; Lily holds the collar. The placeholder carries an invented second "2026" floating above the figures: 06 must cover or paint it out where the real render's outline does not reach (V3/text, checked at gate D) |
+| B5-v1 | 0.0/0.6/1.2/2.0/3.0 | **ACCEPT 0.00–3.00** | both kids' hands visible leaving the branch in 0.2–1.2 and settling; Mom's hand on Noah; bed + collar unchanged; no ornament in plate → 06 composites the 5 in render at the touched spot, tracked. Lamp at left S3 |

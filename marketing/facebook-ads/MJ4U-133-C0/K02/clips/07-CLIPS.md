@@ -102,3 +102,11 @@ Defect lines:
 | B6 | shared end card (06) |
 
 Re-take total K02: B3 $0.94 + B5a $0.78 (+ ≈$0.14 FF ring edit) = **≈$1.86**. Plus B5b, $0.78, not yet generated.
+
+## Re-check 2026-11-26b (07, SHOT mode, independent of 05)
+07 extracted 5 frames inside each claimed window at full res (720×1280) plus 1:1 crops at the risk points, before reading 05's notes.
+| item | frames | verdict | reason |
+|---|---|---|---|
+| B3-v4 | 1.4/2.4/3.4/4.4/5.5 | **ACCEPT 1.40–5.60** (composite-conditional) | ornament lies flat in the box all take, never lifted; box in frame; brows → grin ≈3.3 s; glasses, beard stable; no rings. The placeholder sits 180° to camera; 06 corner-pins the real render in the same orientation and outline (physics: it faces Jacob) and must cover the placeholder fully; 07 checks the pin at gate D |
+| B5a-v2 | 0.3/0.9/1.5/2.2/2.9 + 1:1 hand crops at 0.9, 2.2 | **ACCEPT 0.30–2.90** | no ring on the ornament hand at 1:1; Kobe shows the back of his head only → 3 sharp faces (Jacob, Mary, Susan); Bailey (white dog) still on the armrest; nobody stands; ornament front to camera (tracked render). Push-in instead of pull-back: S3 |
+| B5b-v2 | 2.0/2.5/3.0/3.5/4.0 | **ACCEPT 2.00–4.00** | hand releases ≈2.2 and is down by 3.0; ornament hangs still, shape held; Mary (red Fair Isle, purple trousers) and Luna (white cat, dark patches) match the cast. **OPEN beyond the clip:** beat 5b is 2.9 s and the script keeps the "2026 end-state read ≥0.9 s at ≈60 % width"; in this wide clip the ornament is ≈10 % of width. No source for that 0.9 s is defined (05/06; E32 2 s floor applies) |

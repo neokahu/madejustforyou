@@ -28,3 +28,9 @@ Defects:
 - **K06-5a** and **K06-5b**: no plate and no clip. F5a/F5b remain RESHOOT (S1 open); ruling 2026-11-26 = ornament-free plate + real render composited in post. Plates, then video, owed by 05.
 - K06-A-1, K06-B-1, K06-2, K06-4: still + move of the real render on the accepted P1-t4 plate (no clip needed; 06 builds).
 - K06-6: shared end card, round asset (Producer), not in this gate.
+
+## Re-check 2026-11-26b (07, SHOT mode, independent of 05)
+07 extracted 5 frames inside each claimed window at full res (720×1280) plus 1:1 crops at the risk points, before reading 05's notes.
+| item | frames | verdict | reason |
+|---|---|---|---|
+| F5b-v1 | 0.0/0.4/0.7/1.0/1.25/1.5 + face crops | **FIX → still+move** | in 0.4–1.5 Sofia's head stays aimed at her raised hand and the branch; no clear turn up to Mateo is visible, so the named move is not delivered, and 1.1 s would need ≈0.38× to fill the 2.9 s beat (slow-motion faces, S2). **Ruling: the still+move from the F5a plate is the better fallback** (one slow push, ornament render composited and tracked so Sofia's index aims at printed Mateo, 5 in scale, Mateo's face in frame). `[S2] K06-F5b-v1.mp4 · 00:00.40–00:01.50 · motion + duration · head turn absent, 1.1 s vs 2.9 s · fix owner 06 (still+move from K06-F5a-plate-t1) · re-check: finger on printed Mateo, scale, 2.9 s` |

@@ -74,3 +74,10 @@ Measured on 0.0, 0.2, 0.8, 1.5, 2.2, 2.9, 3.5, 4.0 + full-res crops at 0.2/2.2/3
 - **K04-1B** (arm B): stills only; split composite + fresh muted cold read still owed (07-SHOT).
 - K04-1A: accepted only after 06's retime export is re-checked.
 - K04-B6: shared end card, round asset (Producer), not in this gate.
+
+## Re-check 2026-11-26b (07, SHOT mode, independent of 05)
+07 extracted 5 frames inside each claimed window at full res (720×1280) plus 1:1 crops at the risk points, before reading 05's notes.
+| item | frames | verdict | reason |
+|---|---|---|---|
+| B5a-v2 (F1-t3) | 1.0/1.5/2.1/2.7/3.2 | **ACCEPT 1.00–3.20** | Grandpa taps his temple 1.0–2.1, laughs from 2.7; round glasses stable; ornament hangs from the cord in his raised hand, face-on, no spin, width constant by eye (scale holds at out); Olivia: box braids + Santa hat every frame; Grandma's hand on his knee. Note: F1-t3 still owes its first-frame row in FIRST-FRAMES/07 (covered here by the in-window frames) |
+| B2 still (K04-B2-F1-t3, user ruling 2026-11-26) | still at full res 1536×2752 | **ACCEPT as still+move** | fingertip on Grandma in the photo (stop 1) serves "Grandma's red sweater"; Grandpa's round glasses read in the photo and in the print; hand: deep brown skin, no ring, short nails, white cuff (matches continuity); ornament face-on, names Grandpa/Grandma/Olivia/Rosie, ≈12 cm wide against the phone (≈7.5 cm) and the 4×6 photo, so 5 in holds; green screen clean and flat for the pin. Conditions for gate D: the screen recording is pinned inside the green area with clean before/after frames and the cursor patched; one slow move only. The finger tour (stops 2–5) is dropped by the ruling (S3) |
