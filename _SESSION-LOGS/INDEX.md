@@ -10,7 +10,7 @@ _SESSION-LOGS/
   sessions/<YYYY-MM-DD-slug>.md ← full detailed per-session logs
 ```
 
-## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-24)
+## ⏸ IN PROGRESS — RESUME HERE  (as of 2026-11-25)
 
 _Scope of this worktree: products + ads only. Support tickets live in the `customer-support` worktree._
 
